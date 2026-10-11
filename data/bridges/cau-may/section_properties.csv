@@ -1,0 +1,37 @@
+# Cau May main bridge (3-span continuous PC box girder 55+90+55 m). Vertical-bending I = Iyy (MIDAS convention: z = vertical/depth axis, y = transverse; z(+)+z(-) = 2.40 m mid-span, 5.40 m at pier, which identifies z as the depth axis).
+# Sources: [LRFR-p3] "04 - Danh gia tai trong cau chinh.pdf" (Drive 1HNyul9T5k12wWprgo9gNZMh-w0qRNyWw) p.3, cross-section drawings with dimensions (mm); [LRFR-p4] same file p.4 material table; [LRFR-p5] same file p.5 section-property table; [LRFR-3.3.1] same file sec. 3.3.1 (model description); [RPT] "01 - Bao cao kiem dinh cau May 20200730 (TRANG IN).pdf" (Drive 1Hr4cAlZxpEQEZLbudIAYmSj_rZSZdXKU) sec. 1 (H = 2.40 m mid-span, 5.40 m at pier top, f'c 45 MPa).
+# 'polygon_check' rows = this work (code/analysis/wp3_sections.py) from the p.3 dimensions, fillets R300 ignored; used only to validate the polygon routine later applied to Thai Binh.
+section,quantity,value,unit,source,note
+mid-span,depth_at_axis,2.400,m,RPT sec.1; LRFR-p3 (2400),
+mid-span,A,7.233,m2,LRFR-p5,
+mid-span,Iyy_vertical,5.482,m4,LRFR-p5,used as I_mid in the FE
+mid-span,Izz_lateral,64.482,m4,LRFR-p5,
+mid-span,Ixx_torsion,11.756,m4,LRFR-p5,
+mid-span,z_minus_soffit_to_centroid,1.572,m,LRFR-p5,
+mid-span,top_width,11.700,m,LRFR-p3,
+mid-span,bottom_width,5.550,m,LRFR-p3,
+mid-span,web_thickness_normal,0.400,m,LRFR-p3,web slope 1:8
+mid-span,bottom_slab,0.250,m,LRFR-p3,
+mid-span,top_slab_at_axis,0.272,m,LRFR-p3,
+mid-span,flange_root/tip,0.550/0.250,m,LRFR-p3,
+mid-span,A_polygon_check,7.215,m2,this work,-0.3% vs LRFR-p5
+mid-span,I_polygon_check,5.164,m4,this work,-5.8% vs LRFR-p5
+pier face (sat tru),depth_at_axis,5.400,m,RPT sec.1; LRFR-p3 (5283+117),
+pier face (sat tru),A,14.437,m2,LRFR-p5,
+pier face (sat tru),Iyy_vertical,59.612,m4,LRFR-p5,used as I_pier in the FE
+pier face (sat tru),Izz_lateral,90.826,m4,LRFR-p5,
+pier face (sat tru),Ixx_torsion,74.456,m4,LRFR-p5,
+pier face (sat tru),z_minus,3.053,m,LRFR-p5,
+pier face (sat tru),bottom_width,4.800,m,LRFR-p3,
+pier face (sat tru),web_thickness_normal,0.600,m,LRFR-p3,
+pier face (sat tru),bottom_slab,0.800,m,LRFR-p3,
+pier face (sat tru),top_slab_at_axis,0.472,m,LRFR-p3,
+pier face (sat tru),A_polygon_check,14.360,m2,this work,-0.5%
+pier face (sat tru),I_polygon_check,58.085,m4,this work,-2.6%
+on pier (tren tru; diaphragm),A,29.945,m2,LRFR-p5,not used (diaphragm length unknown)
+on pier (tren tru; diaphragm),Iyy_vertical,79.814,m4,LRFR-p5,not used
+over transition pier T5/T8,A,16.127,m2,LRFR-p5,depth 2.40 m; not used
+over transition pier T5/T8,Iyy_vertical,8.714,m4,LRFR-p5,not used
+all,Ec,36057,MPa,LRFR-p4,f'c = 45 MPa
+all,supports,T5/T8 movable pot bearings; T6/T7 monolithic; elastic pile-cap springs,-,LRFR-3.3.1,pier/foundation stiffness values not given [NEED VALUE]
+all,depth_law_between_sections,[NEED VALUE],-,-,assumed parabolic soffit over Lv = 44 m (bracket 40-45 m) from pier axis; I(h) = I_mid (h/h_mid)^n with n = 2.943 fitted to Iyy 5.482/59.612

@@ -1,0 +1,32 @@
+# Thai Binh main bridge (3-span continuous PC box girder 42+63+42 m, spans N12-N14, piers T11-T14).
+# Sources: [TM] "T.Minh Thai Binh - 10-9-2020.doc" (Drive 1LZZj8e5R0HtDuHVhP6-bAZkVOFLdgE39), sec. "Ket cau phan tren" / "Phan cau chinh" and concrete table; [RPT] "01 - Bao cao kiem dinh cau Lang Am - 00 Bao cao.docx" (Drive 1IRzsxC7iDgwO_te3stJ3l40S1NA_mmps) sec. 3.2.
+# No A, I or E table exists in the files read. I values below are COMPUTED in this work (code/analysis/wp3_sections.py) from the TM dimensions plus ANALOGUE dimensions taken from the Cau May drawing (marked [NEED VALUE]); polygon routine validated on Cau May (A within 0.5%, I within 6%).
+section,quantity,value,unit,source,note
+all,spans,42+63+42,m,TM; RPT,
+all,top_width,11.700,m,TM,
+all,crossfall,2,%,TM,
+all,cantilever_segments,2x7 x 3.5 m per pier,-,TM,K0 and closure lengths not given [NEED VALUE]
+all,soffit,parabolic,-,TM,
+all,supports,T12/T13 rigidly fixed to girder (ngam cung); end piers on pot bearings,-,TM (says T10-T14; RPT says T11-T14),pier dimensions not given [NEED VALUE]
+all,fc_girder_and_main_piers,45,MPa,TM concrete table items 2-3,
+all,Ec,36057,MPa,derived,same f'c and TCVN 11823 formula as Cau May (0.043 x 2500^1.5 x sqrt(45))
+mid-span,depth,2.000,m,TM,also at the two girder ends
+mid-span,bottom_width,5.759,m,TM,
+mid-span,web_thickness,0.250,m,TM,taken normal to web
+mid-span,top_slab_in_box,0.250,m,TM,
+mid-span,flange_tip_min,0.220,m,TM,
+mid-span,bottom_slab,[NEED VALUE],m,-,baseline 0.25 (Cau May absolute); variant 0.21 (Cau May t/H)
+mid-span,flange_root,[NEED VALUE],m,-,0.55 (Cau May)
+mid-span,haunches,[NEED VALUE],-,-,top 1.5 m wide; bottom 0.3x0.3 (Cau May)
+mid-span,I_vertical_computed_baseline,3.177,m4,this work,t_bot = 0.25
+mid-span,I_vertical_computed_variant,2.941,m4,this work,t_bot = 0.21
+mid-span,A_computed_baseline,6.349,m2,this work,
+pier,depth,4.000,m,TM,
+pier,bottom_width,4.800,m,TM,
+pier,web_thickness,0.600,m,TM,'near main pier'
+pier,bottom_slab,[NEED VALUE],m,-,baseline 0.80 (Cau May absolute); variant 0.59 (Cau May t/H)
+pier,I_vertical_computed_baseline,25.531,m4,this work,t_bot = 0.80
+pier,I_vertical_computed_variant,23.744,m4,this work,t_bot = 0.59
+pier,A_computed_baseline,11.716,m2,this work,
+all,web_slope,0.24,m/m,derived,(5.759-4.8)/2/(4.0-2.0) assuming fixed web/flange junction
+all,depth_law_between_sections,[NEED VALUE],-,-,parabolic over Lv = 30.5 m (bracket 28-31.5) from pier axis; I(h) = I_mid (h/h_mid)^n n = 3.007
