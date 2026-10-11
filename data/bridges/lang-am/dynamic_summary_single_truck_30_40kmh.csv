@@ -1,5 +1,5 @@
 # Source: 00 Bao cao.docx Bang 23 (SDA-830C, mid-span, one truck at 30-40 km/h). ymax/ymin in mm are summary values only, not time histories. Vertical-direction frequency per 01 Phu luc do dong. NB: report table lists f rows as "Doc cau / Thang dung / Ngang cau"; Phu luc lists identical numbers in the same order (row 2 = vertical).
-span,type,f_row1_long_Hz,f_row2_vertical_Hz,f_row3_transverse_Hz,ymax_mm,ymin_mm,one_plus_IM
+# Source: 00 Bao cao.docx Bang 23 (SDA-830C, mid-span, one truck at 30-40 km/h). ymax/ymin are summary values, not time histories. CAUTION: row labels in the text extraction are probably shifted; row1 (lowest f, e.g. 2.88 Hz for the 63 m span) is most plausibly the vertical mode - verify against the original docx/PDF tables.
 N2,hollow slab 20 m simple,5.18,7.87,12.88,1.295,0.980,1.321
 N4,Super-T simple,3.41,5.54,6.68,1.950,1.575,1.238
 N11,Super-T simple,3.22,5.82,6.91,2.140,1.615,1.325
