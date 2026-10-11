@@ -1,0 +1,22 @@
+# Source: Drive 1tBVDpSpfDRS4egD0cLYjW27ezxPa-_u7 (sheet "Sheet1", block "ĐỘ VÕNG") and report 1PUvyx34cZI4SBf7268wEXlx5RKlT_TsB Tables 3,4,8,9. Span N1 (38.3 m girders), mid-span, 12 trucks (3 long x 2 x 2 units), static; theory = Midas model.
+load_case,girder,measured_mm,theory_midas_mm,hsppn_measured,hsppn_theory
+concentric,1,5.635,10.13,0.362,0.337
+concentric,2,6.920,12.41,0.445,0.413
+concentric,3,7.255,13.71,0.467,0.456
+concentric,4,6.505,12.87,0.418,0.428
+concentric,5,4.780,11.03,0.307,0.367
+concentric,6,5.740,11.03,0.349,0.367
+concentric,7,7.120,12.87,0.432,0.428
+concentric,8,7.530,13.71,0.457,0.456
+concentric,9,6.950,12.41,0.422,0.413
+concentric,10,5.590,10.13,0.340,0.337
+eccentric,1,8.090,14.89,0.515,0.512
+eccentric,2,7.970,14.47,0.507,0.498
+eccentric,3,6.670,12.27,0.424,0.422
+eccentric,4,5.195,9.28,0.330,0.319
+eccentric,5,3.520,7.25,0.224,0.249
+eccentric,6,8.530,16.55,0.496,0.544
+eccentric,7,8.010,15.48,0.466,0.508
+eccentric,8,7.215,12.72,0.420,0.418
+eccentric,9,6.100,9.27,0.355,0.304
+eccentric,10,4.515,6.88,0.263,0.226

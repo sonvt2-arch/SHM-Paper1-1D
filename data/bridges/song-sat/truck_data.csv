@@ -1,0 +1,9 @@
+# Source: report 1PUvyx34cZI4SBf7268wEXlx5RKlT_TsB sec 7.1; xlsx 1tBVDpSpfDRS4egD0cLYjW27ezxPa-_u7 sheet Sheet1 (truck table). Only 6 of the 12 trucks have weights listed; per-axle loads [NEED VALUE].
+truck_no,plate,gross_t
+1,34E-00602,27.56
+2,34H-02024,27.86
+3,34H-02072,28.04
+4,34H-02169,28.01
+5,34H-02147,27.69
+6,34H-02135,28.11
+# 4 axles; spacings a1=1.80 m, a2=3.20 m, a3=1.35 m; track width b=1.85 m; per-axle load split [NEED VALUE] (sheet shows 15%,15%,35%,35% = 4.2,4.2,9.8,9.8 t for ~28 t)

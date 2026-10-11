@@ -1,0 +1,11 @@
+# Source: 01 - Bao cao kiem dinh cau Lang Am - 00 Bao cao.docx, Bang 11, 12, 34 (Thai Binh bridge, 3-span continuous box 42+63+42 m). Static test, one reading per load case (truck group parked in the named span).
+span,sensor_location,n_trucks_in_scheme,defl_centered_mm,defl_eccentric_mm,calc_mm_centered_and_eccentric
+N12,right_edge,4,3.22,3.28,3.58
+N12,centre,4,3.21,3.22,3.58
+N12,left_edge,4,3.19,3.15,3.58
+N13,right_edge,6,6.03,6.04,6.25
+N13,centre,6,6.03,6.03,6.25
+N13,left_edge,6,6.03,6.01,6.25
+N14,right_edge,4,3.66,3.68,3.82
+N14,centre,4,3.65,3.61,3.82
+N14,left_edge,4,3.64,3.54,3.82

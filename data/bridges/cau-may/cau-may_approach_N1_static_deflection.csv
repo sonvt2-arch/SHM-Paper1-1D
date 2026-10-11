@@ -1,0 +1,7 @@
+# Source: 04 - Đo tĩnh - N1.xlsx (sheet "foxz N1-V"). Approach span N1 (Super-T girders, deck slab thermally continuous), 6 trucks ~25 t, girder midspan, dial-gauge readings (units 0.01 mm) converted by the report to mm; MIDAS = report FE value.
+girder,centric_measured_mm,centric_midas_mm,eccentric_measured_mm,eccentric_midas_mm
+1,9.39,9.53,5.46,5.57
+2,10.44,12.01,7.82,8.13
+3,11.42,13.29,11.00,11.83
+4,10.41,12.01,12.62,14.78
+5,9.50,9.53,13.43,15.87

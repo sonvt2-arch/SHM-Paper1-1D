@@ -1,0 +1,1432 @@
+Engineering Structures Load observability from the deflection integral of continuous beams: invariance theorem, closed-form blind configurations, dynamic validity and experimental validation --Manuscript Draft--
+
+Manuscript Number: ENGSTRUCT-D-26-08490
+
+Article Type: Research Paper
+
+Section/Category: Middle East/Asia (except mainland China, Taiwan, Hong Kong, Macau, Singapore,
+
+Japan, Korea)
+
+Keywords: Deflection integral; Load identification; Continuous beam; Bridge weigh-in-motion;
+
+Load observability; Measurement uncertainty
+
+Corresponding Author: Thai-Son Vu
+
+Hanoi University of Civil Engineering
+
+First Author: Quoc-Bao Nguyen
+
+Order of Authors: Quoc-Bao Nguyen
+
+Thai-Son Vu
+
+Hung-Son Nguyen
+
+Manuscript Region of Origin:
+
+Abstract: Identifying the gross weight of vehicles crossing a bridge normally requires a dedicated
+
+weigh-in-motion installation, or an ill-posed inverse problem solved from a dense sensor array. This paper shows that a single deflection sensor suffices if the response is integrated over a complete crossing, and develops the result into a framework for load observability on continuous beams. An invariance theorem is proved: for any linear-elastic beam and any fixed measurement point, the integral of the measured deflection over the passage of a convoy equals the total load times a constant that depends only on the structure and the sensor position, and not on the axle number, spacings or positions. That constant is shown to equal the deflection at the sensor under a uniformly distributed load, normalised by the load intensity, which yields a closed form for a two-span beam of arbitrary span and stiffness ratio. The configurations in which the deflection integral carries no information about the load then follow analytically: for uniform stiffness the critical span ratio is 1.45743 and the optimal sensor position is 0.42154 of the span. The reciprocal of the constant therefore acts as a load-observability indicator, computable before any instrument is installed. Laboratory tests on a 2 x 2500 mm steel continuous beam identify one-, two- and three-axle groups to within 1.19 % and 0.70 % by the two proposed estimators. A constant-force moving-load study bounds the dynamic error below 1 % once the crossing time exceeds eight fundamental periods, and an error budget shows that zero-offset drift, and not random noise, dominates.
+
+Opposed Reviewers:Powered by Editorial Manager® and ProduXion Manager® from Aries Systems Corporation
+
+Cover letter
+
+Thai-Son Vu | Department of Bridge and Road Engineering, Hanoi University of Civil Engineering 55 Giai Phong Road, Hai Ba Trung District, Hanoi 100000, Viet Nam | sonvt2@huce.edu.vn | +84 971 899 888
+
+16 August 2026
+
+The Editor-in-Chief, Engineering Structures, Elsevier
+
+Subject: Submission of an original research paper
+
+Dear Editor,
+
+We wish to submit for consideration in Engineering Structures an original research paper entitled “Load observability from the deflection integral of continuous beams: invariance theorem, closed-form blind configurations, dynamic validity and experimental validation”, by Quoc- Bao Nguyen, Thai-Son Vu and Hung-Son Nguyen.
+
+Identifying the gross weight of a vehicle crossing a bridge normally requires a dedicated weigh- in-motion installation or an ill-posed inverse problem solved from a dense sensor array. The paper shows that a single deflection sensor is sufficient if the response is integrated over a complete crossing, and proves an invariance theorem: the integral equals the total load times a constant that depends only on the structure and the sensor position, and not on the number of axles, their spacings or their positions. That constant is shown to be the deflection at the sensor under a uniformly distributed load, normalised by the load intensity, which yields a closed form for a two- span beam of arbitrary span and stiffness ratio and, with it, the configurations in which the deflection integral carries no information about the load. For uniform stiffness the critical span ratio is the exact value 1.45743 and the optimal sensor position is 0.42154 of the span, both agreeing with independent finite element evaluation to eleven significant figures.
+
+Laboratory tests on a 2 × 2500 mm steel continuous beam identify one-, two- and three-axle load groups to within 1.19 % and 0.70 % by the two estimators proposed. A moving-load finite element study bounds the dynamic error below 1 % once the crossing time exceeds eight fundamental periods, and a complete error budget shows that zero-offset drift, and not random noise, is the dominant error source.
+
+We believe the work suits Engineering Structures because its conclusions are stated in a form a designer can act on: a closed-form observability indicator evaluated before any instrument is installed, a rule for sensor placement, an explicit family of configurations to avoid, and a speed criterion. The limitations are stated without qualification in the manuscript: the dynamic study models a constant force and is not a vehicle–bridge interaction analysis, the unequal-span results are analytical and numerically verified but not yet tested experimentally, and no field data are reported.
+
+We thank you for considering this submission.
+
+Yours sincerely,
+
+Thai-Son Vu, on behalf of all authors
+
+Highlights
+
+Highlights
+
+Load observability from the deflection integral of continuous beams: invariance theorem, closed-form blind configurations, dynamic validity and experimental validation
+
+● Deflection integrated over a crossing gives total load, whatever the axle spacing
+
+● The invariance constant is the sensor deflection under a uniform load per unit q
+
+● Closed form for unequal spans gives exact blind ratio (3+√33)/6 = 1.45743
+
+● Sensitivity scales as 1/|Cm|, a load-observability indicator known before design
+
+● Quasi-static estimator errs below 1 % once crossing time exceeds eight periods
+
+Click Manuscript
+
+here to view linked References
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 2 Load observability from the deflection integral of continuous beams: 3 invariance theorem, closed-form blind configurations, dynamic 4 validity and experimental validation 5 Quoc-Bao Nguyena, Thai-Son Vua,∗ , Hung-Son Nguyena 6 a Department of Bridge and Road Engineering, Hanoi University of Civil Engineering, 55 Giai Phong Road, 7 Bach Mai Ward, Hanoi 100000, Viet Nam 8 ∗ Corresponding author. 9 Thai-Son Vu, Department of Bridge and Road Engineering, Hanoi University of Civil Engineering, 55 Giai 10 Phong Road, Bach Mai Ward, Hanoi 100000, Viet Nam. 11 Tel.: +84 971 899 888. E-mail: sonvt2@huce.edu.vn 12 E-mail addresses: baonq@huce.edu.vn (Q.-B. Nguyen), sonvt2@huce.edu.vn (T.-S. Vu), sonnh@huce.edu.vn (H.-S. 13 Nguyen). 14
+
+1
+
+Highlights 15 1 2 16
+
+● Deflection integrated over a crossing gives total load, whatever the axle spacing 3 4 17
+
+● The invariance constant is the sensor deflection under a uniform load per unit q 5 6 18
+
+● Closed form for unequal spans gives exact blind ratio (3+√33)/6 = 1.45743 7 8 19
+
+● Sensitivity scales as 1/|Cm|, a load-observability indicator known before design 9 10 20 ● Quasi-static estimator errs below 1 % once crossing time exceeds eight periods 11 12 21 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 2
+
+Abstract 22 1 2 23 Identifying the gross weight of vehicles crossing a bridge normally requires a dedicated weigh-in- 3 4 5 24
+
+25 motion installation, or an ill-posed inverse problem solved from a dense sensor array. This paper shows that a single deflection sensor suffices if the response is integrated over a complete crossing, and 6 26 develops the result into a framework for load observability on continuous beams. An invariance theorem 7 8 9 27
+
+28 is proved: for any linear-elastic beam and any fixed measurement point, the integral of the measured deflection over the passage of a convoy equals the total load times a constant that depends only on the 10 11 12 29
+
+30 structure and the sensor position, and not on the axle number, spacings or positions. That constant is shown to equal the deflection at the sensor under a uniformly distributed load, normalised by the load 13 31 intensity, which yields a closed form for a two-span beam of arbitrary span and stiffness ratio. The 14 15 16 32
+
+33 configurations in which the deflection integral carries no information about the load then follow analytically: for uniform stiffness the critical span ratio is 1.45743 and the optimal sensor position is 17 18 19 34
+
+35 0.42154 of the span. The reciprocal of the constant therefore acts as a load-observability indicator, computable before any instrument is installed. Laboratory tests on a 2 x 2500 mm steel continuous beam 20 36 identify one-, two- and three-axle groups to within 1.19 % and 0.70 % by the two proposed estimators. 21 22 23 37
+
+38 A constant-force moving-load study bounds the dynamic error below 1 % once the crossing time exceeds eight fundamental periods, and an error budget shows that zero-offset drift, and not random 24 25 39 noise, dominates. 26 27 40 Keywords 28 29 30 41 42 Deflection integral; Load identification; Continuous beam; Bridge weigh-in-motion; Load observability; Measurement uncertainty 31 32 43 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 3
+
+Nomenclature 44 1 2 ai longitudinal offset of axle i from the leading axle (mm) 3 4 Cm invariance constant at measurement point m, equal to the area under the deflection influence line
+
+(mm2/N) 5 6 7 8 E, I, EI Iy L1, L2 Young modulus (MPa), second moment of area (mm4), flexural rigidity (N mm2)
+
+deflection integral over the complete crossing (mm2) length of the instrumented span and of the adjacent span (mm) 9 l common span length in the equal-span case, L1 = L2 = l (mm) 10 L total structural length, L = L1 + L2 = 2l for equal spans (mm) 11 12 13 14 ρL, ρEI ξ μ span ratio L2/L1 and stiffness ratio EI2/EI1 non-dimensional sensor position, ξ = xm/L1 configuration parameter of Eq. (11a), unity for a symmetric beam 15 Om relative precision efficiency of the invariance-preserving estimator, Eq. (15a) 16 17 18 19 Tcr, T1 m Nrep crossing time and fundamental period of the structure (s)
+
+measurement point; xm its abscissa number of repeated crossings averaged to obtain the reference integral 20 P, P0, Pt total load; calibrated reference (standard) load; unknown service load (N) 21 22 23 24 RA, RB, RC s v vertical support reactions (N)
+
+abscissa of a beam cross-section measured from support A (mm) traverse speed of the load group (mm/s) 25 wm(x) deflected shape produced by a unit load applied at m (mm/N) 26 x abscissa of the leading load measured from support A (mm) 27 28 29 30 ym γ Δx deflection measured at point m (mm)
+
+relative gain (scale-factor) error of the deflection chain sampling interval along the crossing (mm) 31 ε0 zero-offset (baseline) error of the deflection signal (mm) 32 33 34 35 ηm(x) deflection influence line at m for a unit moving load (mm/N)
+
+σa standard deviation of the additive random measurement noise (mm) BPM, SLM, LWM Beam Property-based Method; Standard Load-based Method; Load Weighing Method 36 37 38 45 1. Introduction 39 40 46 Overloaded heavy vehicles are among the principal drivers of premature deterioration of highway 41 42 47 bridges. Loads well beyond the design envelope increase stress ranges, accelerate fatigue crack growth, 43 44 48 reduce residual capacity and, in extreme cases, contribute directly to collapse. The failure of a span of 45 46 49 the Yangmingtan Bridge in Harbin in 2012 under four simultaneously crossing overloaded trucks \[1\] is 47 48 49 50 a documented illustration. In other well-known cases, such as the I-35W bridge in Minneapolis \[2\] and 50 51 51 the Polcevera viaduct in Genoa \[3,4\], heavy traffic acted together with design deficiencies or material 52 53 52 degradation. Reliable knowledge of the loads actually carried is therefore not an academic refinement 54 55 53 but a prerequisite for risk-informed asset management \[5-7\]. 56 57 58 54 Direct enforcement relies on static weigh stations and on pavement weigh-in-motion (WIM) 59 60 55 systems. Pavement WIM is a mature technology \[8,9\], but installation, maintenance and enforcement 61 62 63 64 65
+
+4
+
+infrastructure 56 remain costly \[10\]. Its metrological requirements are well codified \[11\], yet coverage is 1 2 3 57 sparse and, decisively for the present purpose, a pavement WIM station measures the vehicle rather 4 5 58 than the response of any particular bridge. 6 7 8 59 Bridge weigh-in-motion (BWIM), introduced by Moses \[12\], instead instruments the structure itself 9 10 60 and infers axle loads from the measured response through the influence line. The approach has matured 11 12 61 considerably: influence lines can now be calibrated directly from measurements rather than assumed 13 14 62 \[13\], regularisation stabilises the inverse problem \[14\], accuracy and robustness have been 15 16 63 systematically improved \[15,16\], and contactless variants have been demonstrated \[17\]. In parallel, a 17 18 19 64 large body of moving-force identification (MFI) research has developed time-domain, frequency- 20 21 65 domain and interpretive formulations \[18-20\], extensions to multi-span bridges on elastic bearings \[21\] 22 23 66 and to periodically supported beams \[22\], identification of the dynamic axle-load history itself \[23\], 24 25 67 steepest-descent \[24\] and inverse-problem \[25\] formulations, Bayesian \[26\] and Kalman-filter \[27\] 26 27 28 68 estimators, and physics-informed machine-learning surrogates \[28\]. What these families share is that 29 30 69 they aim at the full axle-load history and consequently require either several sensors, an accurate 31 32 70 structural model, or a regularised inversion whose conditioning degrades with noise. 33 34 35 71 A third line of work reverses the instrumentation entirely and extracts bridge properties from the 36 37 72 response of a passing vehicle \[29\], while advances in vision-based measurement have made non-contact 38 39 73 deflection recording practical in the field \[30\]. Response-based damage identification on girder bridges 40 41 42 74 is a further active branch of the same literature \[31\]. 43 44 75 A markedly less demanding question is often the operationally relevant one: not how the load is 45 46 47 76 distributed between axles, but what the gross weight of the crossing vehicle is. For that question an 48 49 77 integral quantity suffices. Andersen and Mukhopadhyay observed as early as 1950 that the deflected 50 51 78 form of a beam contains integral information about the load distribution \[32\], and previous work by the 52 53 79 present authors exploited the integral of the mid-span deflection to identify the total load on simply 54 55 80 supported beams \[33\]. The purpose of the present paper is to place that idea on a general footing and, 56 57 58 81 more importantly, to establish what actually limits its accuracy. 59 60 61 62 63 64 65
+
+5
+
+The 82 contributions are as follows. The invariance of the deflection integral is proved as a theorem 1 2 3 83 valid for any linear-elastic beam and any measurement point, in place of a case-by-case demonstration, 4 5 84 and the invariance constant is given three equivalent characterisations, the last of these, the deflection 6 7 85 at the sensor under a uniformly distributed load normalised by its intensity, reduces its evaluation to a 8 9 86 textbook problem. That reduction yields a closed form for a two-span beam of arbitrary span and 10 11 87 stiffness ratio, and hence an analytical condition for the configurations in which the deflection integral 12 13 14 88 carries no information about the load at all. The critical span ratio and the optimal sensor position, which 15 16 89 a purely numerical study would report as approximate values, both emerge as exact algebraic roots. The 17 18 90 measurement sensitivity is shown to scale as the reciprocal of the invariance constant, so that a single 19 20 91 scalar serves as a load-observability and conditioning indicator for the whole method; a Cauchy- 21 22 23 92 Schwarz argument quantifies what invariance costs in relative precision. A complete error budget shows 24 25 93 that the dominant error source is not the random noise usually studied but the zero-offset drift of the 26 27 94 signal, and that the two estimators respond to systematic and random errors in opposite ways. Finally, 28 29 95 a moving-load finite element study delimits the range of speeds over which the quasi-static assumption 30 31 32 96 underlying the theorem is defensible, replacing an untested premise with a quantitative criterion; the 33 34 97 study covers bridge dynamics under a constant force and is explicitly not a substitute for a vehicle- 35 36 98 bridge interaction analysis. 37 38 39 99 The two-span continuous beam is retained as the demonstration case: it is the simplest statically 40 41 100 indeterminate configuration in which moment redistribution and span interaction are present, it admits 42 43 101 closed-form results throughout, and it is representative of a large population of highway overpasses and 44 45 102 secondary bridges. Section 2 develops the theory, including the closed form and the observability 46 47 48 103 framework; Section 3 reports the numerical and experimental validation; Section 4 the error budget, the 49 50 104 dynamic study and the observability map; Section 5 the discussion, the multi-sensor extension and the 51 52 105 moment outlook; and Section 6 the conclusions. 53 54 55 56 106 2. Theoretical framework 57 58 107 2.1. Deflection response of a two-span continuous beam under a moving load 59 60 61 62 63 64 65
+
+6
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Consider a prismatic beam of constant flexural rigidity EI resting on three supports: A at x = 0 and C at 108
+
+x = 2l are rollers, and B at x = l is a hinged (pinned) support that restrains vertical displacement only. 109
+
+Rotation at B is free and continuous across the support; the beam is therefore statically indeterminate to 110
+
+the first degree, not two independent propped cantilevers. The geometry is shown in Fig. 1. 111 112 Fig. 1 – General layout of the two-span continuous beam under a single concentrated load: (a) load on span AB; (b) load 113 on span BC. 114
+
+A concentrated load P, representing one axle and applied quasi-statically, travels from A to C. Its 115
+
+instantaneous abscissa is x. Taking the bending moment at B as the redundant and applying the three- 116
+
+moment equation gives MB = -Px(l2 - x2)/(4l2) for a load on span AB, from which the reactions follow: 117
+
+(1)
+
+When the load is on span BC, the corresponding expressions are obtained by the symmetry 118
+
+substitution x → 2l - x: 119
+
+(2)
+
+7
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+As a check, for x = l/2 Eq. (1) yields RA = 13P/32, RB = 11P/16 and RC = -3P/32, the classical values 120
+
+for a two-span continuous beam with a simple interior support; the negative value of RC reflects the 121
+
+uplift developed at the far support. The bending moment at a section s within span AB follows from 122
+
+equilibrium: 123
+
+(3)
+
+With the Euler-Bernoulli relation 124
+
+(4)
+
+the deflection is obtained by double integration. The sequence is set out explicitly below, because 125
+
+the conditions are often listed in a way that double-counts them. The static indeterminacy is resolved 126
+
+first: the redundant MB follows from the single compatibility condition that the rotation at B be 127
+
+continuous, which is exactly what the three-moment equation enforces. Once MB is known, the bending- 128
+
+moment field M(s) is fully determined, and M(0) = M(2l) = 0 is a property of that field rather than an 129
+
+additional condition to impose. 130
+
+Double integration is then carried out on the three intervals separated by the load point and by the 131
+
+interior support, \[0, x\], \[x, l\] and \[l, 2l\], introducing six constants. These are fixed by six displacement 132
+
+conditions: y(0) = 0; continuity of y and of dy/ds at s = x, where the shear force jumps; y(l) = 0 133
+
+approached from each side; and y(2l) = 0. Continuity of slope and of curvature at s = l is not imposed 134
+
+here: the former is already embodied in MB, and the latter follows from the continuity of M(s). 135
+
+Integration gives 136
+
+(5)
+
+8
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+The response of practical interest is the deflection at the mid-point of the first span, obtained by 137
+
+setting s = l/2. Normalising by the load magnitude defines the deflection influence line η(x) at that 138
+
+measurement point: 139
+
+(6)
+
+Equation (6) is continuous and twice differentiable at x = l/2 and at x = l, and vanishes at x = 0, l 140
+
+and 2l. Note that the third branch carries the denominator 64EI and not 192EI; the factor of three is 141
+
+easily lost when the expression is factorised, and it can be verified independently against Eq. (5) with s 142
+
+\= l/2. 143
+
+For a load at mid-span, the deflection is 2.875Pl3/192EI, that is 71.9 % of the value Pl3/48EI for a 144
+
+simply supported beam of the same span. Taking the maximum over the load position, at x = 0.480l, 145
+
+gives 72.1 %. The stiffening effect of the negative moment at B is thus significant but moderate, and it 146
+
+is the reason why the influence line changes sign at x = l: for loads on the second span, the instrumented 147
+
+mid-span lifts. 148
+
+2.2. The deflection-integral invariance theorem 149
+
+The identification methods proposed here rest on a single property, which is stated below in the 150
+
+generality in which it actually holds. The proof uses only linearity and the compact support of the 151
+
+influence line; nothing in it is specific to two spans, to equal spans, to a prismatic beam, or to 152
+
+instrumentation at mid-span. 153
+
+Theorem (invariance of the deflection integral). Let a linear-elastic beam structure of total length L 154
+
+have time-invariant properties, and let m be a fixed measurement point. Let ηm(x) denote the influence 155
+
+line of the vertical deflection at m due to a unit vertical force applied at abscissa x, with ηm(x) = 0 for 156
+
+x outside \[0, L\]. Let a convoy of n forces Pi with fixed relative spacings ai (a1 = 0) traverse the structure 157
+
+quasi-statically, and let x be the abscissa of the leading force. Then the deflection measured at m is 158
+
+9
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+(7)
+
+and its integral over the complete passage satisfies 159
+
+(8)
+
+where 160
+
+(9)
+
+The constant Cm depends only on the structure and on the position of the measurement point. It is 161
+
+independent of the number of loads, of their individual magnitudes and of their spacings. 162
+
+Proof. Superposition gives Eq. (7). Integrating term by term and substituting u = x - ai in each term 163
+
+maps every integration domain onto the same interval, because ηm vanishes outside \[0, L\]; each term 164
+
+therefore contributes PiCm regardless of ai. Summation gives Eq. (8). ∎ 165
+
+The infinite limits require care, since this is the point at which the property is most easily lost in 166
+
+practice. The integration must extend from the instant the leading axle enters the structure to the instant 167
+
+the trailing axle leaves it, that is over \[0, L + amax\]. Truncating the record at x = L, as would be natural 168
+
+for a single load, removes the tail of every trailing axle. For the two-span beam that tail lies in the region 169
+
+where the influence line is negative, so the truncation error does not cancel and produces a systematic 170
+
+overestimate of the load. All measurements reported in Section 3 extend to L + amax for this reason. 171
+
+Corollary (Maxwell-Betti form of the constant). Let wm(x) be the deflected shape of the structure 172
+
+under a single unit load applied statically at m. Then 173
+
+Proof. By the Maxwell-Betti reciprocal theorem, the deflection at m due to a unit load at x equals 174
+
+the deflection at x due to a unit load at m, that is ηm(x) = wm(x) for all x. Applying Betti’s reciprocal- 175
+
+work theorem once more, now between two load systems on the same structure (a unit point load at m, 176
+
+whose deflection field is wm, and a uniformly distributed load of intensity q0 over the whole length, 177
+
+whose field is wq), the work of the second system on the displacements of the first equals the work of 178
+
+the first on those of the second, that is q0∫wm dx = 1 · wq(xm). Hence 179
+
+10
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+(10)
+
+The last member of Eq. (10) is the most useful of the three. It states that the invariance constant is the 180
+
+deflection at the sensor produced by a uniformly distributed load over the whole structure, 181
+
+divided by the intensity of that load. Since q0 has dimensions of force per unit length, the quotient 182
+
+wq(xm)/q0 carries the dimensions of length squared per unit force, as Cm must. This has three practical 183
+
+consequences. It can be read off a standard structural-analysis table, so closed forms are available for 184
+
+any configuration for which the response to a uniform load is known; this is exploited in Section 2.3. It 185
+
+can be obtained from a single static analysis of an existing bridge model. And on a structure whose 186
+
+properties are unknown, it can be measured directly: load the deck uniformly with a known intensity 187
+
+q0, record the deflection at the sensor, and divide by q0. No influence line, no moving load and no 188
+
+knowledge of EI are required. As a check on the algebra, the closed form derived in Section 2.3 agrees 189
+
+with a finite element evaluation of Eq. (10) to eleven significant figures. 190
+
+The hypotheses themselves impose two limitations. Linearity is essential: the theorem does not 191
+
+survive material or geometric nonlinearity, support uplift, or friction at the bearings. Time invariance is 192
+
+equally essential: Cm must be the same throughout the crossing, which excludes significant thermal drift 193
+
+of the stiffness within a single passage. This is a mild condition for a crossing lasting a few seconds and 194
+
+a demanding one for a comparison between measurement campaigns separated by months. 195
+
+2.3. Closed form for a two-span beam of arbitrary span and stiffness ratio 196
+
+For the equal-span beam of Fig. 1 instrumented at the mid-point of the first span, the constant follows 197
+
+by integrating Eq. (6) directly: 198
+
+(11)
+
+The contribution of the second span is negative and amounts to three quarters of the value 199
+
+contributed by a single span segment, so the cancellation between the two spans is substantial: the net 200
+
+constant is only 4/7 of the positive contribution alone. That cancellation is benign for the theory but, as 201
+
+11
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Sections 4.2 and 5.1 show, it governs both the sensitivity to baseline drift and the existence of 202
+
+configurations in which the method fails outright. 203
+
+The third member of Eq. (10) is what makes the general case tractable. Rather than deriving an 204
+
+influence line for unequal spans and integrating it, we compute the deflection at the sensor under a 205
+
+uniform load of intensity q0 and divide by q0, which is a first-degree statically indeterminate problem. 206
+
+Let the instrumented span have length L1 and rigidity EI1, the adjacent span L2 and EI2, and let the sensor 207
+
+be at xm on span 1. Taking the hogging moment at the interior support as the redundant and imposing 208
+
+rotational continuity gives MB = -q0(L13/EI1 + L23/EI2)/\[8(L1/EI1 + L2/EI2)\] for a uniform load of intensity 209
+
+q0; superposing the simply supported response and the end-moment response, evaluating at xm and 210
+
+dividing by q0 yields, in non-dimensional form, 211
+
+(11a)
+
+Equation (11a) carries the entire parametric behaviour of the method. The geometry and the stiffness 212
+
+distribution enter only through the single scalar μ, which is unity for a symmetric beam; the sensor 213
+
+position enters only through ξ. The dependence of μ on the two ratios is not monotonic over the whole 214
+
+plane, so it is worth recording the derivative signs. Differentiating with respect to ρL gives a numerator 215
+
+ρEI(3ρL2 - 1) + 2ρL3, which for ρEI = 1 vanishes at ρL = 1/2; μ therefore falls slightly as the adjacent span 216
+
+grows from very short to half the instrumented span, reaching 0.750 there, and rises thereafter, passing 217
+
+through 1 at equal spans and 3 at ρL = 2. The dependence on ρEI changes sign at equal spans: ∂μ/∂ρEI ∝ 218
+
+ρL(1 - ρL2), so a stiffer adjacent span lowers μ when that span is the longer one and raises it when it is 219
+
+the shorter one, with no effect at all when the spans are equal. Setting ξ = 1/2 and μ = 1 recovers F = 220
+
+1/8 and hence Cm = L14/192EI1, Eq. (11). Table 1 compares Eq. (11a) with a finite element evaluation 221
+
+of Eq. (10) over the whole parameter range; the two agree to eleven significant figures, which is the 222
+
+numerical confirmation that the closed form is exact and not an approximation. 223
+
+Table 1 – Closed form, Eq. (11a), against finite element evaluation of Eq. (10). Values are 192EI1Cm/L14, dimensionless. 224
+
+Case ρL ρEI ξ Closed form Finite element Difference equal spans 1.0 1.0 0.50 1.00000000 1.00000000 1 x 10-11
+
+12
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Case ρL ρEI ξ Closed form Finite element Difference short adjacent span 0.5 1.0 0.50 1.37500000 1.37500000 1 x 10-11 long adjacent span 1.3 1.0 0.50 0.41500000 0.41500000 9 x 10-11 blind configuration 1.45743 1.0 0.50 0.00000000 0.00000000 7 x 10-11 beyond blind 2.0 1.0 0.50 -2.00000000 -2.00000000 8 x 10-12 optimal sensor 1.0 1.0 0.42154 1.03989535 1.03989535 9 x 10-11 sensor near support 1.0 1.0 0.70 0.60480000 0.60480000 1 x 10-11
+
+2.3.1. Blind configurations 225 Because Cm enters the estimator as a divisor, the configurations for which it vanishes are configurations 226
+
+in which the deflection integral carries no information whatever about the total load. We call them blind 227
+
+configurations, and Eq. (11a) locates them exactly. Setting F = 0 and dividing by ξ, which is non-zero 228
+
+for any sensor away from the support, gives a condition on μ alone, which then inverts for the stiffness 229
+
+ratio: 230
+
+(11b)
+
+For a sensor at mid-span, μcrit = 5/3, and for uniform stiffness the condition reduces to a quadratic 231
+
+whose positive root is exact. The same equation, differentiated with respect to ξ at μ = 1, gives the 232
+
+sensor position that maximises Cm and hence minimises the measurement sensitivity, also as an exact 233
+
+root: 234
+
+(11c)
+
+The two constants that a purely numerical parametric study would report as “about 1.46” and “about 235
+
+0.42” are therefore the algebraic numbers (3 + √33)/6 and (1 + √33)/16. The same surd governs both 236
+
+because both conditions are quadratics generated by the same cubic F. At the optimum the constant 237
+
+exceeds its mid-span value by the exact factor 1.039895, that is 3.99 %, confirming to four figures the 238
+
+numerical result of Section 4.5. 239
+
+The blind locus deserves a physical reading, which Section 5.1 supplies in full: for a uniform load 240
+
+spread over both spans, the adjacent span lifts the sensor exactly as much as its own span pushes it 241
+
+13
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+down. A configuration is blind when a uniformly loaded structure shows no deflection at all at the point 242
+
+being monitored. Stated that way, the condition can be checked in the field with a single static test, 243
+
+before any decision about instrumentation is taken. 244
+
+2.4. Beam Property-based Method (BPM) 245
+
+If E, I and l are known, the constant is known and the total load follows immediately from Eq. (8): 246
+
+(12)
+
+The method requires no knowledge of the number of axles, of their spacings or of their positions, 247
+
+and it uses a single sensor. Its accuracy is limited by the accuracy of EI and l. Because the constant 248
+
+varies as l4, a 1 % error in span length produces a 4 % error in the identified load; this sensitivity is 249
+
+often overlooked and is included explicitly in the error budget of Section 4.1. 250
+
+2.5. Numerical evaluation of the deflection integral 251
+
+Field and laboratory records are discrete. Writing yi for the deflection sampled at abscissa xi = iΔx, the 252
+
+trapezoidal rule gives 253
+
+(13)
+
+The half-weights at the two ends are not optional. They vanish only when the record begins and 254
+
+ends exactly at zero deflection, which holds for the idealised laboratory case but not on a bridge carrying 255
+
+residual deflection or a second vehicle. Simpson quadrature, at identical experimental cost, gives 256
+
+(14)
+
+The influence line of Eq. (6) is piecewise cubic and of class C2, so Simpson quadrature is nearly 257
+
+exact whereas the trapezoidal rule converges only as Δx2. Table 3 quantifies the difference: at the 258
+
+sampling interval used in the present tests, Δx = 250 mm, the trapezoidal rule underestimates the exact 259
+
+integral by 0.500 % while Simpson quadrature errs by 0.027 %. Since this bias is systematic, it 260
+
+propagates one-for-one into the identified load in BPM. Reporting it explicitly, and preferably removing 261
+
+it by using Eq. (14), costs nothing. 262
+
+14
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+2.6. Standard Load-based Method (SLM) 263
+
+On an existing bridge, EI is rarely known to better than a few per cent: section loss, cracking of concrete, 264
+
+composite action with the deck and the actual stiffness of the bearings all contribute. The Standard 265
+
+Load-based Method removes the need to know it. A vehicle or set of weights of accurately known total 266
+
+mass P0 is driven across the instrumented structure and its deflection integral Iy,0 is recorded. Because 267
+
+both crossings share the same constant Cm, the ratio eliminates it: 268
+
+(15)
+
+The procedure is: (i) weigh a reference load; (ii) record the deflection during one or, preferably, 269
+
+several complete crossings of that load and average the resulting integrals; (iii) record the deflection 270
+
+during the unknown crossing; (iv) evaluate both integrals with the same quadrature rule and the same 271
+
+sampling grid; (v) apply Eq. (15). 272
+
+The requirement that both integrals be evaluated identically is not a formality. Together with EI, it 273
+
+is what allows the quadrature bias of Section 2.5 to cancel. That cancellation is exact only when the two 274
+
+integrands are sampled identically relative to the grid, which in practice means axle spacings that are 275
+
+integer multiples of Δx; Section 4.1 quantifies what survives when they are not. More generally, and as 276
+
+shown quantitatively in Section 4, SLM cancels every error that is common to the two crossings: 277
+
+flexural rigidity, span length, quadrature rule, sensor gain, bearing flexibility, and any pre-existing 278
+
+minor damage, while leaving errors that differ between them. The complementary conclusion, which is 279
+
+easily stated the wrong way round, is that SLM does not reduce independent random noise; it increases 280
+
+it, unless the reference integral is averaged. Section 4.3 quantifies both effects. 281
+
+15
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+282 Fig. 2 – Identification workflow. Both methods share the same measurement and integration chain and differ only in 283 how the invariance constant Cm is obtained. 284
+
+2.7. Load observability, conditioning, and the price of invariance 285
+
+Both estimators divide by Cm, so to first order the measurement sensitivity of the method is 286
+
+δP/P ∝ 1/|Cm|, 287
+
+and |Cm| plays a role analogous to that of a condition number in a regularised inverse problem, although 288
+
+it is not one in the strict linear-algebra sense: it is a single dimensional scalar rather than a ratio of 289
+
+singular values. It is available in closed form, it is available in closed form from Eq. (11a) before any 290
+
+instrument is installed, and it answers three practical questions at once: whether a given span 291
+
+arrangement can observe the load at all (Section 2.3.1), where the sensor should be placed, and how 292
+
+tight the baseline stability must be (Section 4.2). We therefore propose |Cm|, or its dimensionless form 293
+
+192EI1Cm/L14, as a load-observability indicator for deployments of this method. 294
+
+A second, sharper question is how much precision the invariance property costs. The deflection 295
+
+integral is the inner product of the measured record with a uniform weight. That choice is what makes 296
+
+the estimate independent of axle spacing, since a translation of the integrand leaves its integral 297
+
+unchanged only when the weight is constant. Any other weighting destroys the invariance. If the 298
+
+structure were known and the axle configuration were not at issue, the statistically optimal weighting 299
+
+16
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+under additive white noise would instead be the influence line itself, giving the matched-filter estimator. 300
+
+Comparing the two variances gives 301
+
+(15a)
+
+The inequality is Cauchy-Schwarz applied to the pair (ηm, 1), with equality only if the influence line 302
+
+is constant. Om is therefore a dimensionless relative precision efficiency in (0, 1\] that quantifies the 303
+
+price of invariance. It is a ratio of standard deviations, not of variances, so it should not be read as an 304
+
+efficiency in the estimation-theoretic sense; the corresponding variance ratio is Om2. For the equal-span 305
+
+beam instrumented at mid-span, evaluating the integrals in closed form gives Om = 2√44765/1279 = 306
+
+0.331: the deflection-integral estimator retains one third of the precision of the best possible estimator 307
+
+that knows the structure and the axle positions. The cost is real. What it secures is an estimate that 308
+
+requires neither the influence line nor the axle configuration, which is the information least likely to be 309
+
+available when an unknown vehicle crosses an unknown bridge. 310
+
+The two indicators answer different questions. Sensor placement maximises |Cm|, because the 311
+
+achievable precision at fixed noise and record length scales with it; Om measures how far short of the 312
+
+theoretical optimum the invariance-preserving estimator falls, and it decreases monotonically as the 313
+
+sensor moves away from the outer support. For the present specimen |Cm| is maximised at ξ = 0.4215 314
+
+while Om decreases steadily with ξ, so the two criteria do not coincide, and placement should follow the 315
+
+first. 316
+
+3\. Numerical and experimental validation 317
+
+3.1. Finite element model 318
+
+The beam was modelled in Abaqus \[34\] using two-node beam elements with the measured geometric 319
+
+and material properties, linear elastic material behaviour and static analysis, the load being applied 320
+
+successively at each of the sampling abscissae. For a concentrated load applied at a node, cubic beam 321
+
+17
+
+elements 322 reproduce the exact nodal displacements of the Euler-Bernoulli solution; agreement with Eq. 1 2 3 323 (6) at the sampling points is therefore expected to be exact to machine precision and is, in itself, 4 5 324 evidence of correct implementation and of nothing further. The finite element model earns its place 6 7 325 elsewhere: it is used to verify the Maxwell-Betti corollary of Eq. (10), which has no closed form for a 8 9 326 general configuration, and to carry out the parametric study of unequal spans and sensor position 10 11 327 reported in Section 4.5. 12 13 14 328 The adequacy of the Euler-Bernoulli assumption for the present specimen can be settled 15 16 329 analytically, without recourse to a Timoshenko model. The ratio of the shear to the bending contribution 17 18 19 330 to the deflection under a concentrated load is 12EI/(κGAl2), with A = 186.5 mm2, G = E/2(1 + ν) = 76.9 20 21 331 GPa and a shear coefficient κ = 0.54 estimated from the two webs of the tube. This gives 8 x 10-4, that 22 23 332 is 0.08 %. Shear deformation is thus an order of magnitude below the experimental scatter reported in 24 25 333 Section 3.3 and can be neglected here, as the span-to-depth ratio of 100 would suggest. The conclusion 26 27 28 334 is specific to this specimen: for short, deep girders, where that ratio falls below about 15, the shear 29 30 335 contribution would reach several per cent and the influence line of Eq. (6) would have to be recomputed 31 32 336 on a Timoshenko basis. 33 34 35 337 Computational implementation. All computations reported in this paper were implemented by the 36 37 338 authors as scripts, in Python for the analysis and in Node.js for document assembly, with the assistance 38 39 339 of a generative AI tool. This covers the symbolic verification of the analytical solution of Section 2.1, 40 41 42 340 the closed-form derivation of Section 2.3, the quadrature and Monte Carlo studies of Sections 2.5 and 43 44 341 4.3, the parametric study of Section 4.5 and the moving-load analysis of Section 4.6. Every script is 45 46 342 provided as supplementary material together with the console output of each run, and every result was 47 48 343 checked against an independent route: the symbolic results against direct numerical evaluation, the 49 50 344 closed form of Eq. (11a) against a finite element evaluation of Eq. (10), the computed fundamental 51 52 53 345 frequency against its analytical value, and the time integration against a time-step convergence study. 54 55 346 The authors reviewed and verified all derivations and results and take full responsibility for them. 56 57 58 347 3.2. Experimental programme 59 60 61 62 63 64 65
+
+18
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Tests were carried out at the Laboratory of Transportation Technology and Systems, Department of 348
+
+Bridge and Road Engineering, Hanoi University of Civil Engineering. The specimen, shown in Fig. 3, 349
+
+was a steel beam of total length 5400 mm resting on three supports to form a two-span continuous beam 350
+
+with equal spans of 2500 mm. The end supports were steel cylinders acting as rollers and the interior 351
+
+support was a triangular steel prism acting as a knife edge, restraining vertical displacement while 352
+
+allowing rotation. 353 354 Fig. 3 – Experimental model: (a) elevation and instrumentation; (b) general view of the test rig. 355
+
+The cross-section was a hollow square tube of outer dimensions 25 mm x 25 mm and wall thickness 356
+
+2.03 mm, both averaged from measurements on the specimen, giving a second moment of area I = 16 357
+
+529.8 mm4. With E = 200 GPa, the flexural rigidity is EI = 3.3060 x 109 N mm2 and the theoretical 358
+
+invariance constant is Cm = l4/192EI = 61.541 mm2/N. 359
+
+Deflection at the mid-point of the first span was measured with a linear variable differential 360
+
+transformer (LVDT) of range 0-50 mm and resolution 0.005 mm, connected to a TDS-303 data logger. 361
+
+19
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Loads were calibrated steel weights suspended from the beam at positions spaced 250 mm apart along 362
+
+the whole traverse, so that Δx = 250 mm and n = 10 segments per span. Each reported deflection is the 363
+
+mean of three separate loading and unloading cycles; the scatter of those repeats constitutes the Type 364
+
+A component of the uncertainty and is bounded in Section 4.6 by the transducer resolution. 365
+
+Three load configurations were tested: a single load of 4.143 kg including its suspension hook; two 366
+
+loads of 2 145 g and 4 684 g at a fixed spacing of 250 mm, simulating a two-axle vehicle; and three 367
+
+loads of 2 550 g, 5 100 g and 5 100 g at spacings of 250 mm and 500 mm, simulating a three-axle 368
+
+vehicle. In each case the record extends to x = 2l + amax, that is 5000, 5250 and 5750 mm respectively, 369
+
+in accordance with the requirement established in Section 2.2. 370
+
+3.3. Validation of the influence line 371
+
+Fig. 4 compares the analytical influence line of Eq. (6) with the finite element results and the 372
+
+measurements for the single load; the numerical values are listed in Table 2. 373 374 Fig. 4 – Mid-span deflection of span AB as a function of the position of a single 40.64 N load: analytical, finite element 375 and measured. The lower panel gives the absolute difference between measurement and theory. Shaded areas A+ and A- 376 are the positive and negative contributions to the deflection integral. 377
+
+20
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Table 378 379
+
+2 – Mid-span deflection of span AB under a single concentrated load of 40.64 N. Differences are given in absolute terms, since relative differences are meaningless near the supports where the deflection vanishes. x (mm) Analytical
+
+(mm)
+
+Finite element (mm)
+
+Measured (mm)
+
+Measured minus analytical (mm) 0 0.0000 0.0000 0.0000 0.0000 250 0.8874 0.8874 0.8844 -0.0030 500 1.6968 1.6968 1.6975 +0.0007 750 2.3501 2.3501 2.3525 +0.0024 1000 2.7693 2.7693 2.7738 +0.0045 1250 2.8764 2.8764 2.8827 +0.0063 1500 2.6253 2.6253 2.6363 +0.0110 1750 2.0980 2.0980 2.1100 +0.0120 2000 1.4087 1.4087 1.4213 +0.0126 2250 0.6713 0.6713 0.6838 +0.0125 2500 0.0000 0.0000 0.0000 0.0000 2750 -0.5132 -0.5132 -0.5069 +0.0063 3000 -0.8644 -0.8644 -0.8556 +0.0088 3250 -1.0715 -1.0715 -1.0600 +0.0115 3500 -1.1526 -1.1526 -1.1438 +0.0088 3750 -1.1255 -1.1255 -1.1200 +0.0055 4000 -1.0085 -1.0085 -1.0013 +0.0072 4250 -0.8194 -0.8194 -0.8175 +0.0019 4500 -0.5763 -0.5763 -0.5816 -0.0053 4750 -0.2971 -0.2971 -0.3019 -0.0048 5000 0.0000 0.0000 0.0000 0.0000 380 The finite element and analytical curves coincide to machine precision, as anticipated. The measured 381 curve reproduces the analytical one closely: the largest absolute deviation is 0.0125 mm, which is 0.43 382 % of the maximum deflection and two and a half times the LVDT resolution. Expressing this deviation 383 as a relative error at each point, as is sometimes done, produces a misleading maximum of 1.86 % at x 384 = 2250 mm simply because the deflection there is small; the absolute measure is the meaningful one. 385 The residuals in the lower panel of Fig. 4 are predominantly positive on both spans, which indicates a 386 small systematic component, plausibly a slight flexibility of the supports or a small overestimate of the 387 assumed EI, rather than pure random scatter. This observation is taken up in Section 4. 388 Table 3 compares the deflection integrals. The exact value from Eq. (11) is 2501.19 mm2. Applying 389 the trapezoidal rule to the exact influence line sampled every 250 mm gives 2488.68 mm2, that is 0.500 390 % low; this is quadrature bias, not experimental error, and it is present in the analytical column as well. 391 The measured integral is 2513.43 mm2, exceeding the exact value by 0.49 %. 392 393
+
+Table 3 – Deflection integral for the single-load configuration (mm2). The distinction between the exact value and its trapezoidal approximation is essential for interpreting the results. Quantity Value (mm2) Difference from exact Exact, Eq. (11): P0l4/192EI 2501.19 —
+
+21
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Quantity Value (mm2) Difference from exact Analytical influence line, trapezoidal rule, Δx = 250 mm 2488.68 -0.500 % Analytical influence line, Simpson rule, Δx = 250 mm 2501.85 +0.027 % Finite element, trapezoidal rule, Δx = 250 mm 2488.68 -0.500 % Measured, trapezoidal rule, Δx = 250 mm 2513.43 +0.49 %
+
+3.4. Identification of the total load 394
+
+The measured mid-span deflections for the three configurations are listed in Table 4 and were used to 395
+
+identify the total load by BPM, Eq. (12), and by SLM, Eq. (15), with the single-load crossing as the 396
+
+reference. Results are compared in Table 5 with direct weighing (LWM). 397
+
+Table 4 – Measured mid-span deflection of span AB for the three load configurations. Each record extends to 2l + amax. 398
+
+x (mm) Single load (mm) Two loads (mm) Three loads (mm) 0 0 0 0 250 0.8844 0.4625 0.5525 500 1.6975 1.8813 1.0450 750 2.3525 3.1413 2.5413 1000 2.7738 4.0988 4.8700 1250 2.8827 4.6350 6.7588 1500 2.6363 4.6238 7.9350 1750 2.1100 4.0688 8.2775 2000 1.4213 3.1375 7.6825 2250 0.6838 1.9600 6.2800 2500 0 0.7715 4.3725 2750 -0.5069 -0.2689 2.2975 3000 -0.8556 -1.0063 0.3021 3250 -1.0600 -1.4988 -1.2588 3500 -1.1438 -1.7813 -2.3650 3750 -1.1200 -1.8600 -3.0363 4000 -1.0013 -1.7738 -3.3300 4250 -0.8175 -1.5525 -3.2663 4500 -0.5816 -1.2213 -2.9450 4750 -0.3019 -0.8125 -2.4125 5000 0 -0.3325 -1.7088
+
+5250 0 -1.0713
+
+5500 -0.3650
+
+5750 0
+
+Table 5 – Identified total loads compared with direct weighing. 399 Configuration Method Iy (mm2) Identified load (N) Identified load (g) Deviation from LWM
+
+Two loads LWM (weighing) — 66.99 6829.0 —
+
+BPM, Eq. (12) 4168.15 67.73 6904.2 +1.10 %
+
+SLM, Eq. (15) 4168.15 67.40 6870.6 +0.61 %
+
+Three loads LWM (weighing) — 125.08 12750.0 —
+
+BPM, Eq. (12) 7788.93 126.57 12901.7 +1.19 %
+
+SLM, Eq. (15) 7788.93 125.95 12838.9 +0.70 %
+
+22
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Both methods identify the total load to better than 1.2 %, and SLM is consistently the more accurate 400
+
+of the two. The reason is visible in the numbers themselves. The ratio of the two estimates is identical 401
+
+for both configurations, 1.00489, and equals the ratio of the measured single-load integral to its exact 402
+
+value, 2513.43/2501.19. In other words, the entire difference between BPM and SLM is the calibration 403
+
+error of the reference crossing: SLM absorbs it, BPM does not. This is the common-mode cancellation 404
+
+predicted in Section 2.6, observed directly. 405
+
+The apparent accuracy of BPM benefits from a partial cancellation of two errors of opposite sign: 406
+
+the trapezoidal quadrature underestimates the integral by 0.50 %, while the measured deflections exceed 407
+
+theory by about 1.6 %. Correcting the quadrature bias alone would raise the BPM deviation from +1.10 408
+
+% to +1.61 %. Reporting the two effects separately, as done here, gives a more honest picture than a 409
+
+single aggregate figure. 410
+
+Fig. 5 provides the most direct visual evidence for the invariance property: the three load 411
+
+configurations produce visibly different deflection histories, yet the areas under them are proportional 412
+
+to the respective total loads with the same constant of proportionality. Fig. 6 presents the same evidence 413
+
+quantitatively as a calibration line. A regression through the origin gives Iy = 62.229 P with R2 = 414
+
+0.99998, against the theoretical 61.541 mm2/N, a slope 1.12 % above theory that is consistent with the 415
+
+residual pattern of Fig. 4 and attributable to a small overestimate of the assumed flexural rigidity or to 416
+
+support flexibility. 417 418 Fig. 5 – Analytical illustration of the invariance property, computed from the influence line of Eq. (6) for a total load of 419 40.64 N. The three axle configurations produce markedly different deflection histories, yet the shaded signed areas are 420
+
+23
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+equal to within round-off. The figure is a demonstration of the theorem, not a measurement; the experimental evidence is 421 the calibration line of Fig. 6. 422 423 Fig. 6 – Calibration line: measured deflection integral against total applied load for the three configurations, compared 424 with the theoretical slope l4/192EI. 425
+
+4\. Error budget, robustness and domain of validity 426
+
+The agreement reported in Section 3 was obtained in a laboratory, on a beam of accurately known 427
+
+properties, with a static load and a stable thermal environment. None of these conditions holds on an 428
+
+in-service bridge. This section therefore develops the error budget explicitly, so that the laboratory 429
+
+results can be extrapolated rather than merely admired. 430
+
+4.1. Measurement model and error propagation 431
+
+The deflection actually recorded at sample i is modelled as 432
+
+(16) where γ is the relative gain (scale-factor) error of the transducer and conditioning chain, ε0 is a zero- 433
+
+offset or baseline error, and σa is the standard deviation of the additive random noise. This 434
+
+decomposition replaces the purely multiplicative model yi(1 + σξi) used in earlier studies, which has the 435
+
+unphysical property of predicting zero noise wherever the deflection vanishes, that is at the supports, 436
+
+where a real transducer is no quieter than anywhere else. 437
+
+Propagating Eq. (16) through Eq. (12) gives, to first order, the error budget of BPM: 438
+
+24
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+(17)
+
+where eq,t is the quadrature bias of Section 2.5 and δvt/vt is the relative error in the traverse speed, 439
+
+discussed in Section 4.4. The subscript t is not decorative: every term refers to the target crossing 440
+
+specifically. The corresponding budget for SLM involves two crossings and is obtained by 441
+
+differentiating Eq. (15): 442
+
+(18)
+
+The contrast between Eqs. (17) and (18) is the central methodological result of this paper, but it 443
+
+must be stated precisely. What SLM removes outright are the two structural terms: the flexural rigidity 444
+
+and the span length with its fourfold amplification, which belong to the constant Cm and cancel 445
+
+identically in the ratio. Every other term survives as a difference between the reference and the target 446
+
+crossing. It vanishes only to the extent that the corresponding error is common-mode in fact, and each 447
+
+of the three deserves its own condition. 448
+
+● Gain. γt − γ0 = 0 requires the same transducer and conditioning chain, with no recalibration and 449
+
+no thermal drift of the scale factor between the two campaigns. A gain error that is stable over 450
+
+months cancels completely; one that drifts does not, and the residual is the drift, not the gain. 451
+
+● Quadrature. eq,t − eq,0 = 0 requires the same rule and the same sampling grid and, less 452
+
+obviously, an integrand of the same shape relative to that grid. In the present tests the 453
+
+cancellation appears to be complete to the precision computed: with Δx = 250 mm the 454
+
+trapezoidal bias on the exact influence line is −0.5000 % for the single-axle reference and 455
+
+−0.5000 % for both the two- and three-axle groups. The reason is that their spacings, 250 and 456
+
+500 mm, happen to be integer multiples of Δx, so each shifted copy of the influence line is 457
+
+sampled at the same points relative to itself and inherits the same relative bias; this also 458
+
+presumes the record is long enough to cover every copy in full, as it is here. The coincidence is 459
+
+not robust. Had the spacing been 300 mm the bias would have been −0.110 %, and at 375 mm 460
+
+it would have changed sign to +0.249 %, in which case the residual eq,t − eq,0 would have reached 461
+
+25
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+0.4 to 0.75 %. Since real axle spacings will not generally be multiples of the sampling interval, 462
+
+this term cannot be relied upon to cancel in the field. That is a further reason to use Simpson 463
+
+quadrature or a finer grid, where the bias is small for either crossing and the difference between 464
+
+them smaller still. 465
+
+● Zero drift. This term never cancels fully, even when the offset itself is identical, because the 466
+
+sensitivity L/Iy differs between the two crossings. With ε0,t = ε0,0 = ε0 the residual is ε0(Lt/Iy,t − 467
+
+L0/Iy,0), which for the present two-load case is ε0(0.1260 − 0.1989) mm-1, a partial cancellation 468
+
+of about 37 % rather than a removal. Choosing a reference load as heavy as the vehicles of 469
+
+interest makes the two sensitivities similar and the cancellation nearly complete; a light 470
+
+reference load makes it worse, not better. 471
+
+What is left, once these conditions are met, is the accuracy of the reference weighing δP0/P0, which is 472
+
+under the operator’s control and can be made small, together with the difference of the two speed errors. 473
+
+Random noise does not appear in Eq. (18) because it has zero mean; it enters through the variance and 474
+
+is treated in Section 4.3. 475
+
+4.2. Zero-offset drift: the dominant error source 476
+
+A constant offset ε0 superimposed on the deflection record contributes ε0Ltot to the integral, where Ltot 477
+
+is the length of the record. Because the influence line changes sign at the interior support, the positive 478
+
+and negative parts of the integral partly cancel, the net constant being only 4/7 of the positive 479
+
+contribution as noted in Section 2.3, whereas the offset contribution does not cancel at all. The relative 480
+
+bias is therefore 481
+
+(19)
+
+and it is amplified by exactly the same cancellation that makes the method elegant. Table 6 evaluates 482
+
+Eq. (19) for the three experimental configurations, and Fig. 7 plots it. 483
+
+Table 6 – Bias of the identified load caused by a zero-offset error ε0 of the deflection signal, from Eq. (19). 484
+
+Configuration Iy (mm2) Ltot (mm) ε0 = 0.005 mm
+
+(LVDT resolution) ε0 = 0.02 mm ε0 = 0.05 mm Single load 2513 5000 +0.99 % +3.98 % +9.95 % Two loads 4168 5250 +0.63 % +2.52 % +6.30 %
+
+26
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+Configuration Iy (mm2) Ltot (mm) ε0 = 0.005 mm
+
+(LVDT resolution) ε0 = 0.02 mm ε0 = 0.05 mm Three loads 7789 5750 +0.37 % +1.48 % +3.69 %
+
+485 Fig. 7 – Bias of the identified total load as a function of the zero-offset error of the deflection signal. 486
+
+An offset no larger than the resolution of the transducer already biases the identified load by 0.4 to 1.0 487
+
+%, comparable to the total error reported in Section 3 and larger than the effect of any plausible random 488
+
+noise. On a real bridge, where thermal gradients and support settlement routinely produce baseline shifts 489
+
+of a few hundredths of a millimetre over the duration of a monitoring session, the resulting bias reaches 490
+
+2 to 10 %. Baseline re-zeroing immediately before and after each crossing, and rejection of records 491
+
+whose end values differ by more than a set tolerance, are therefore not refinements but prerequisites. 492
+
+More encouragingly, the bias is inversely proportional to Iy and therefore to the total load. The 493
+
+method becomes more accurate as the vehicle becomes heavier. For an overload screening application 494
+
+this is exactly the right direction of degradation: the estimate is least reliable for light vehicles, which 495
+
+are of no interest, and most reliable for the heavy vehicles the system is intended to detect. 496
+
+4.3. Monte Carlo robustness analysis 497
+
+A Monte Carlo study was performed with 200 000 realisations per case, using the measurement model 498
+
+of Eq. (16). Four scenarios were considered: gain error alone with a standard deviation of 2 %; zero 499
+
+offset alone with a standard deviation of 0.005 mm, equal to the transducer resolution; additive random 500
+
+noise alone with σa = 0.0025 mm, half the resolution; and the three combined. Each realisation perturbed 501
+
+the measured deflection record, recomputed the integral with the same trapezoidal rule and the same 502
+
+27
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+grid, and re-identified the load with both methods. For SLM, two reference conditions were 503
+
+distinguished: an averaged reference, in which the reference integral is taken as noise-free because it 504
+
+has been obtained from many repeated calibration crossings, and a single noisy reference obtained from 505
+
+one crossing only. Results are summarised in Table 7 for the two-load configuration; the three-load 506
+
+configuration behaves identically to within 0.1 percentage point. 507
+
+Table 7 – Monte Carlo results for the two-load configuration, 200 000 realisations. Bias is the mean relative error with 508 respect to direct weighing; p5 and p95 are the 5th and 95th percentiles of that error. 509
+
+Error source Method Reference Bias (%) Std. dev. (%) p5 (%) p95 (%) Gain, σγ = 2 % BPM — +1.10 2.01 -2.21 +4.40
+
+SLM averaged +0.61 2.00 -2.69 +3.90
+
+SLM single +0.66 2.85 -3.94 +5.41
+
+Zero offset, σε = 0.005 mm BPM — +1.10 0.64 +0.05 +2.15
+
+SLM averaged +0.61 0.63 -0.43 +1.65
+
+SLM single +0.62 1.19 -1.31 +2.60
+
+Random, σa = 0.0025 mm BPM — +1.10 0.07 +0.99 +1.21 SLM averaged +0.61 0.07 +0.50 +0.72
+
+SLM single +0.61 0.13 +0.40 +0.82
+
+All three combined BPM — +1.10 2.12 -2.39 +4.59
+
+SLM averaged +0.61 2.11 -2.87 +4.08
+
+SLM single +0.65 3.09 -4.34 +5.83
+
+510 Fig. 8 – Distribution of the relative identification error under the combined error model, two-load configuration. 511
+
+Two of the results run against natural expectations and are worth setting out. 512
+
+The first concerns random noise. Its effect is negligible: with σa equal to half the transducer 513
+
+resolution, the standard deviation of the identified load is 0.07 %. This is a direct consequence of 514
+
+integration, which averages independent perturbations over some twenty samples. A robustness claim 515
+
+28
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+based solely on random noise therefore overstates the method considerably. The systematic terms, gain 516
+
+and offset, dominate by more than an order of magnitude. 517
+
+The second concerns SLM. Because SLM is a ratio, it might be supposed that noise present in both 518
+
+measurements will cancel. This is true of common-mode error and false of independent error. For 519
+
+independent random perturbations of the two integrals, the relative variances add: 520
+
+(20)
+
+The right-hand form, and with it the familiar factor of the square root of two at Nrep = 1, is not 521
+
+general. It holds only under two conditions that should be stated rather than assumed: the reference 522
+
+integral must come from a single crossing, Nrep = 1, and the two crossings must carry the same relative 523
+
+standard deviation, σI,t/Iy,t = σI,0/Iy,0. Neither is automatic. In the present tests the reference is the single- 524
+
+axle crossing, whose deflection integral is only 60 % of the two-axle one, so its relative variance is the 525
+
+larger of the two and the observed factor is 1.47 rather than 1.41: under the combined model the standard 526
+
+deviation of SLM rises from 2.11 % with an averaged reference to 3.09 % with a single one, while BPM 527
+
+remains at 2.12 % (Table 7). The discrepancy is not an inconsistency but a direct consequence of the 528
+
+unequal relative variances, and it points the same way as Section 4.1: a light reference load is a poor 529
+
+reference. 530
+
+The practical prescription follows immediately and is inexpensive. Perform the calibration crossing 531
+
+several times and average the resulting integrals; with Nrep of order five the second term of Eq. (20) falls 532
+
+below a fifth of the first, and with Nrep of ten it is negligible. Use a reference load comparable in 533
+
+magnitude to the vehicles being screened. Under those two conditions SLM dominates BPM in both 534
+
+respects: the bias is smaller, because the structural terms cancel, and the scatter is equal. 535
+
+4.4. Traverse speed and the space-time conversion 536
+
+The theorem of Section 2.2 concerns an integral over space, whereas a bridge monitoring system records 537
+
+a time history. The two are related by 538
+
+(21)
+
+29
+
+so 539 that for a crossing at constant speed the required integral is the time integral of the deflection 1 2 3 540 multiplied by the speed. The relative error in speed therefore propagates one-for-one into the identified 4 5 541 load: a speed known to 3 % gives a load known to no better than 3 %. This term is absent from the 6 7 542 laboratory tests reported here, where the load was positioned statically, and it is likely to be the largest 8 9 543 single contributor in a field deployment. 10 11 12 544 The deflection signal itself, however, contains the information needed to remove it, and the two 13 14 545 determinations written in Eq. (21) must be distinguished carefully because they refer to different 15 16 546 distances. For a single axle the influence line of Eq. (6) vanishes at x = l and at x = 2l. The interval 17 18 19 547 between those two zero crossings of the record corresponds to the second span alone, so the speed is v 20 21 548 = l/(t2 - t1). If instead the entry instant at x = 0 and the exit instant at x = 2l are used, the distance travelled 22 23 549 is the whole beam and the speed is v = 2l/(tout - tin). Both expressions are correct and mutually consistent; 24 25 550 conflating them costs a factor of two in the identified load, which is why they are written out separately 26 27 28 551 here. The interior zero crossing is the more useful of the two markers in practice, because entry and exit 29 30 552 instants are defined by a signal emerging from and returning to the noise floor, whereas the interior zero 31 32 553 is a clean sign change. 33 34 35 554 One caveat is essential. The zeros at x = l and x = 2l belong to the influence line of a single axle. 36 37 555 For a convoy the measured signal is a superposition of shifted influence lines and its sign changes do 38 39 556 not occur at those abscissae, so the two-zero-crossing rule applies only to an isolated axle or to a 40 41 42 557 calibration run with a single-axle reference. For a multi-axle group the speed should instead be obtained 43 44 558 by a least-squares fit of the measured history to the analytical response of Eq. (7), with v and the axle 45 46 559 spacings as parameters, a one-dimensional search that is inexpensive and uses the same single channel. 47 48 560 Either way, self-calibration of speed from the response is possible without axle detectors or external 49 50 561 instrumentation. This is a distinctive advantage of instrumenting a continuous beam rather than a simply 51 52 53 562 supported one, whose influence line has no interior zero, and it deserves dedicated experimental study. 54 55 563 A related restriction should be stated plainly. Because the integral must span a complete crossing, 56 57 58 564 the method yields the gross weight of a load group after the crossing is finished. It is not a real-time, 59 60 565 axle-by-axle estimator, and if two vehicles are on the structure simultaneously the integral returns their 61 62 63 64 65
+
+30
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+combined weight. On a two-lane overpass, separating simultaneous crossings would require a second 566
+
+sensor or vehicle-detection hardware; within the scope of a single deflection channel, the honest 567
+
+statement is that overlapping crossings must be detected and discarded. 568
+
+4.5. Domain of validity: span ratio and sensor position 569
+
+The theorem holds for arbitrary geometry, but the usefulness of the resulting estimator depends on the 570
+
+magnitude of Cm: if the constant is small, the deflection integral carries little information about the load 571
+
+and every error term of Eq. (17) is amplified. The constant was therefore computed by finite elements, 572
+
+using the Maxwell-Betti corollary of Eq. (10), for span ratios L2/L1 between 0.4 and 2.0 and for sensor 573
+
+positions along the instrumented span. Results are shown in Fig. 9. 574 575 Fig. 9 – Parametric study of the invariance constant: (a) effect of the span ratio, with the sensor at mid-span of span 1, 576 showing the net constant together with its positive and negative contributions; (b) effect of the sensor position along span 577 1, equal spans. 578
+
+The closed form of Section 2.3 makes this study exact rather than exploratory: Eq. (11a) is evaluated 579
+
+directly, and Fig. 9 reproduces the finite element curves to plotting accuracy. The mechanical origin of 580
+
+both curves is taken up in Section 5.1; here the results are stated. Fig. 9(a) reveals a limitation with no 581
+
+counterpart in simply supported beams. As the adjacent span lengthens, its negative contribution to the 582
+
+integral grows until it exactly offsets the positive contribution of the instrumented span. The constant 583
+
+vanishes at a span ratio of 1.457, and Eq. (12) becomes singular; in a neighbourhood of that ratio the 584
+
+method is unusable however accurate the measurements. Beyond it the constant changes sign, so that 585
+
+the integral remains formally usable but the response is dominated by the uninstrumented span. The 586
+
+practical rule is simple and should be checked before any deployment: instrument the longer span, and 587
+
+31
+
+verify 588 that the ratio of the adjacent span to the instrumented span is comfortably below 1.46. For the 1 2 3 589 equal-span configuration studied here the margin is ample. 4 5 590 Fig. 9(b) examines the choice of sensor position, which the theorem leaves free. The constant is 6 7 8 591 maximised at xm = 0.42L1, but the gain over mid-span instrumentation is only 4.0 %, while the constant 10 9 592 falls sharply as the sensor approaches either support, to 10 % of its maximum at 0.9L1. Mid-span 11 12 593 instrumentation, chosen here on practical grounds, is therefore very nearly optimal, and the result also 13 14 594 indicates that moderate errors in sensor placement are of little consequence, whereas placing a sensor 15 16 595 near a support would be seriously detrimental. 17 18 19 596 Because both the blind locus and the optimal sensor position are now available in closed form, the 20 21 597 parametric study can be extended from a single line to the whole design plane at no cost. Fig. 10 maps 22 23 24 598 the dimensionless constant over the span ratio and the stiffness ratio, with the blind locus of Eq. (11b) 25 26 599 superimposed. The analytical locus and the zero contour of the numerically evaluated field coincide, 27 28 600 which is a further check on the algebra. The map serves as a design chart. A configuration is read off 29 30 601 directly, and the hatched band, where |192EI1Cm/L14| \< 0.2, marks arrangements that should not be 31 32 33 602 instrumented at mid-span at all, since there the measurement sensitivity exceeds five times its value for 34 35 603 the equal-span case. 36 37 38 604 Two further readings of the map are worth recording. The stiffness of the adjacent span is not 39 40 605 neutral, but its effect is directional and not simply adverse, and the sign depends on the span ratio. 41 42 606 Differentiating μ gives ∂μ/∂ρEI ∝ ρL(1 - ρL2), so μ decreases with ρEI when the adjacent span is the longer 43 44 607 one and increases when it is the shorter one; since Cm decreases with μ, stiffening a long adjacent span 45 46 47 608 raises Cm while stiffening a short one lowers it. Whether a given change moves a configuration towards 48 49 609 or away from blindness therefore depends on which side of the locus it starts, and Cm may pass through 50 51 610 zero on the way: at ρL = 1.6 the constant rises from -0.78 at ρEI = 0.5 to +0.33 at ρEI = 4, crossing zero 52 53 611 at ρEI = 2.14. The map should be consulted; no rule of thumb is reliable here. And the blind locus is a 54 55 612 one-dimensional curve in a two-dimensional plane, so a configuration that is blind at mid-span can 56 57 58 613 almost always be rescued by moving the sensor: Fig. 9(b) shows that at ρL = 1.45, where a mid-span 59 60 61 62 63 64 65
+
+32
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+sensor gives 192EI1Cm/L14 = 0.021, a sensor at ξ = 0.266 recovers 0.233, an elevenfold improvement. 614
+
+Blindness is a property of the pair (configuration, sensor position), not of the structure alone. 615 616 Fig. 10 – Load observability of a two-span beam: (a) dimensionless invariance constant over the span and stiffness ratios 617 for a mid-span sensor, with the closed-form blind locus of Eq. (11b) (thick line) and the near-blind band |192EI1Cm/L14| \< 618 0.2 (hatched); (b) dependence on sensor position for several span ratios, with the exact optimum ξ\* = (1 + √33)/16 for the 619 symmetric case. 620
+
+Table 8 – Normalised invariance constant 192EI1Cm/L14 as a function of the span ratio, sensor at mid-span of span 1. 621 L2/L1 0.5 0.7 0.8 1.0 1.2 1.3 1.4 1.457 1.6
+
+192EI1Cm/L14 1.375 1.315 1.240 1.000 0.640 0.415 0.160 0 -0.440
+
+4.6. Dynamic validity of the quasi-static assumption 622
+
+The theorem of Section 2.2 assumes that the response at each instant is the static response to the 623
+
+instantaneous load position. This is the one premise of the method that the laboratory programme cannot 624
+
+test, since the loads were positioned statically. We therefore quantify it numerically, with one restriction 625
+
+stated at the outset: what follows models a constant force traversing the beam, so it isolates the 626
+
+dynamics of the bridge. It is not a vehicle-bridge interaction analysis. A sprung vehicle contributes its 627
+
+own body-bounce and axle-hop frequencies and, on a rough deck, a contact force that fluctuates about 628
+
+the static axle load; the bounds obtained below are therefore necessary conditions for the quasi-static 629
+
+estimator, not sufficient ones for real traffic. Section 5.4 returns to this distinction. 630
+
+The specimen was modelled with the same beam elements, now with a consistent mass matrix (ρ = 631
+
+7850 kg/m3, A = 186.5 mm2, giving 1.464 kg/m) and Rayleigh damping calibrated to 2 % at the first 632
+
+and third modes. The computed fundamental frequency is 11.942 Hz, which agrees to four figures with 633
+
+the analytical value (π/l)2√(EI/ρA)/2π for the antisymmetric mode of a two-span beam. A constant force 634
+
+33
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+crosses at speed v; the equations of motion are integrated with the Newmark average-acceleration 635
+
+scheme, the load being distributed to the current element by its Hermite shape functions. The mid-span 636
+
+record is integrated over the crossing window and compared with the quasi-static value CmP. The result 637
+
+was verified to be independent of the time step: refining from 1000 to 16 000 steps changes the error 638
+
+by 0.002 percentage points. 639
+
+The natural dimensionless parameter is the ratio of the crossing time to the fundamental period, 640
+
+Tcr/T1 = 2l f1/v. Fig. 11 shows the error over a sweep of 47 speeds spanning Tcr/T1 from 0.6 to 120, and 641
+
+Table 9 collects the envelope. 642 643 Fig. 11 – Error of the quasi-static deflection-integral estimator for a constant force crossing at speed v, as a function of 644 the ratio of crossing time to fundamental period. Shaded bands mark ±1 % and ±5 %. 645
+
+Table 9 – Envelope of the dynamic error of the quasi-static estimator over the sweep of Fig. 11. 646
+
+Tcr/T1 ≥ 2 3 4 6 8 10 15 20 max |Edyn| (%) 17.6 8.6 3.8 1.7 1.00 0.32 0.15 0.08 The behaviour is not monotonic, the error oscillating with speed as the classical moving-load literature 647
+
+would lead one to expect \[35\], so the envelope, not any individual value, is the appropriate summary. 648
+
+It gives a clean applicability criterion: 649
+
+(22)
+
+34
+
+and 650 the quasi-static estimator should not be used at all below Tcr/T1 ≈ 2.5, where the error exceeds 1 2 3 651 15 % and changes sign erratically. 4 5 652 The mechanism is not the one usually assumed. The dynamic error is not a residue of free vibration 6 7 8 653 that damping would remove: repeating the analysis with ζ between 0.5 % and 5 % changes the error 10 9 654 substantially and monotonically, and reducing damping reduces the error rather than increasing it. Nor 11 12 655 does it disappear if the record is extended past the exit instant, although extending it by four fundamental 13 14 656 periods does roughly halve it. The dominant contribution is that at high speed the beam has not returned 15 16 657 to its datum when the load leaves: the deflection at the exit instant reaches 39 % of the static peak at 17 18 19 658 Tcr/T1 = 1.5, so the integral over the crossing window is a truncated one. This suggests a practical 20 21 659 refinement for fast crossings: integrate until the free response has decayed, or fit and subtract the free- 22 23 660 vibration tail. The two schemes tried here recover part but not all of the discrepancy: extending the 24 25 661 window by four fundamental periods roughly halves it. This does not establish that no post-processing 26 27 28 662 can recover the quasi-static value at rapid crossings, only that the two simplest candidates do not; a 29 30 663 scheme that succeeded would have to model the residual response rather than average it. 31 32 33 664 It is useful to know roughly where real structures fall on this scale, though the following should be 34 35 665 read as an order-of-magnitude orientation and not as a design rule. Fundamental frequencies of short- 36 37 666 span highway bridges vary widely with material, deck type and boundary conditions, and any single 38 39 667 formula for them is at best indicative. Table 10 therefore lists the ratio for a few plausible combinations, 40 41 42 668 in place of a closed criterion on speed. 43 44 45 46 669
+
+670 47 Table 10 – Indicative values of the crossing-time ratio for short-span bridges. Frequencies are plausible ranges for the span concerned, not predictions; the ratio, not the speed, is the criterion. Individual span L1 (m) Plausible f1 (Hz) v = 14 m/s (50 km/h) v = 22 m/s (80 km/h) v = 33 m/s (120 km/h) 48 10 8 - 14 11 - 20 7 - 13 5 - 8 49 15 5 - 9 11 - 19 7 - 12 5 - 8 50 51 52 53 671
+
+20 4 - 7 11 - 20 7 - 13 5 - 8 30 2.5 - 5 11 - 21 7 - 14 4 - 9 The ratio is remarkably insensitive to span, because the crossing length and the period scale in opposite 54 55 672 directions and largely cancel; it is governed almost entirely by speed. And at speeds typical of the two- 56 57 58 673 span overpasses at which the method is aimed, roughly 50 to 80 km/h, the ratio falls in the range 7 to 59 60 674 20, so the dynamic contribution is of order 1 % or below and is not the limiting term in the error budget 61 62 63 64 65
+
+35
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+of Section 4.7, which is governed by baseline stability and speed measurement. At motorway speeds 675
+
+the margin narrows and the dynamic term should be evaluated for the specific structure rather than 676
+
+assumed small. In every case the ratio, which requires only f1 and v, is what should be checked; it is not 677
+
+converted into a speed limit here, since that would import a frequency correlation this study has not 678
+
+established. 679
+
+Finally, the invariance property itself survives the introduction of dynamics, though it degrades. 680
+
+Repeating the analysis for a fixed total load distributed over one, two and three axles with spacings 681
+
+from 0.5 to 1.5 m, the spread of the identified integrals is 0.33 % at Tcr/T1 = 11.9 and 1.95 % at Tcr/T1 = 682
+
+3.0. Spacing invariance is thus exact in the quasi-static limit and approximate in the dynamic one, with 683
+
+the departure controlled by the same ratio. 684
+
+4.7. Combined uncertainty budget 685
+
+Table 11 assembles the individual contributions into an indicative budget in the format of the Guide to 686
+
+the Expression of Uncertainty in Measurement \[36\], for two situations: the present laboratory tests and 687
+
+a plausible field deployment on a short-span concrete continuous bridge. The Type A entries are 688
+
+bounded, not measured: since each reported deflection is the mean of three cycles and the residuals of 689
+
+Fig. 4 do not exceed two and a half times the transducer resolution, the repeat scatter of the deflection 690
+
+integral is below 0.1 %, and the Monte Carlo results of Section 4.3 show that even a random component 691
+
+of half the resolution contributes only 0.07 %. Field values are estimates based on the sensitivity 692
+
+coefficients derived above and on reported values of environmental drift in long-term monitoring 693
+
+\[37,38\]; they are an order-of-magnitude extrapolation, not a measured result, and are labelled as such. 694
+
+Table 11 – Indicative uncertainty budget for the identified total load. Standard uncertainties, combined in quadrature for 695 independent contributions and summed algebraically for systematic ones. The laboratory column is bounded by the 696 present measurements; the field columns are extrapolations by sensitivity coefficient and are not measured results. 697
+
+Contribution Type Sensitivity Laboratory (SLM) Field estimate (SLM) Field estimate (BPM) Flexural rigidity EI B 1 cancels cancels 5-15 % Span length l B 4 cancels cancels 0.4-2 % Sensor gain γ B 1 cancels cancels 1-2 % Quadrature bias eq B 1 cancels cancels 0.5 % Reference weighing P0 B 1 0.1 % 0.5-1 % — Zero offset ε0 B Ltot/Iy 0.4-1 % 2-10 % 2-10 % Traverse speed v B 1 — 1-3 % 1-3 % Dynamic effects (Tcr/T1 ≥ 8) B 1 — \< 1 % \< 1 %
+
+36
+
+Contribution Type Sensitivity Laboratory (SLM) Field estimate (SLM) Field estimate 1 (BPM) 2 3 4 Random transducer noise resolution) σa (bounded by the
+
+A Reference scatter (Nrep = 1) A \< 0.1 1 \< 0.1 % 0.1-0.3 % 0.1-0.3 %
+
+\< 0.1 % 0.1-0.3 % — 5 Combined standard uncertainty 0.5-1.1 % 3-11 % 6-19 % 6 7 698 The budget makes explicit what the laboratory results cannot show. In the laboratory, SLM is limited 8 9 699 by zero offset and by the accuracy of the reference weighing, and the combined uncertainty of 0.5 to 10 11 700 1.1 % is consistent with the deviations of 0.61 and 0.70 % actually observed. In the field, baseline 12 13 14 701 stability and speed measurement dominate, and a realistic expectation is a few per cent for SLM and 15 16 702 roughly twice that for BPM. This is far from the accuracy of a certified weighing device, and the method 17 18 703 should not be presented as a substitute for one. It is, however, entirely sufficient for the screening 19 20 704 application for which it is intended: the margins of interest in overload screening are usually a 21 22 705 substantial fraction of the permitted load rather than a few per cent of it, because enforcement tolerances 23 24 25 706 and the design live loads of \[39\] and \[40\] against which they are set are themselves coarse. An estimator 26 27 707 with an uncertainty of 3 to 5 % is therefore able to flag candidate vehicles for weighing at the cost of a 28 29 708 single displacement transducer, although the margin available in any particular jurisdiction depends on 30 31 709 its own tolerance rules and should be checked before a screening threshold is set. 32 33 34 35 710 5. Discussion 36 37 711 5.1. Physical interpretation of the invariance and of the conditioning 38 39 712 The theorem of Section 2.2 is proved from linearity and compact support alone, and the parametric 40 41 713 results of Section 4.5 were obtained numerically. Both deserve a mechanical reading, because that 42 43 44 714 reading turns three apparently separate findings, the invariance, the critical span ratio and the dominance 45 46 715 of baseline drift, into consequences of a single feature of the structure. 47 48 49 716 The invariance itself is the simplest of the three. At a fixed sensor, the response produced by each 50 51 717 axle is a spatially shifted, load-scaled copy of one and the same displacement influence line. Changing 52 53 718 the axle spacing changes where each copy appears along the record, and therefore changes the 54 55 719 instantaneous shape of the signal, but a translation cannot change the signed area of the function being 56 57 720 translated. Integration over a complete passage discards exactly the translational information and retains 58 59 60 61 62 63 64 65
+
+37
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+
+only the load scaling, so the sum of the areas is proportional to the total load. The invariance is therefore 721
+
+a property of integrating a convoy of shifted copies, not of the two-span geometry. 722
+
+The constant admits an equally concrete reading. By the corollary of Eq. (10), Cm is the signed area 723
+
+of the deflected shape produced by a unit load applied at the sensor. It is therefore a global flexibility 724
+
+of the structure viewed from the measurement point rather than an algebraic conversion factor, 725
+
+which is why a single-point measurement can carry information about the total load applied anywhere 726
+
+on the structure: reciprocity converts the deflection recorded at one point into an integrated statement 727
+
+about the flexibility of the whole system, and the deflection integral reads that statement off directly. 728
+
+For a continuous beam this global flexibility is a signed sum, and it is the sign that governs 729
+
+everything else. Continuity across the interior support makes the deflection at the sensor positive while 730
+
+the load is on the instrumented span and negative while it is on the adjacent one, so 731
+
+(23)
+
+Table 12 evaluates the two parts, and Fig. 9(a) plots them. The positive contribution is remarkably 732
+
+insensitive to the geometry: over the whole range examined it varies only between 1.50 and 2.00 in 733
+
+units of L14/192EI1, because it is governed by the instrumented span, whose length is fixed. The negative 734
+
+contribution, by contrast, sweeps from -0.125 to -4.00, because it is governed by the adjacent span, so 735
+
+the degeneracy is driven almost entirely by one of the two terms. 736
+
+Table 12 – Signed decomposition of the invariance constant, in units of L14/192EI1, sensor at mid-span of span 1. 737
+
+L2/L1 0.5 0.8 1.0 1.2 1.3 1.4 1.457 1.6 2.0 Cm+ (instrumented span) 1.500 1.667 1.750 1.818 1.848 1.875 1.890 1.923 2.000 Cm- (adjacent span) -0.125 -0.427 -0.750 -1.178 -1.433 -1.715 -1.888 -2.292 -4.000 Cm (net) 1.375 1.240 1.000 0.640 0.415 0.160 0.001 -0.369 -2.000 |Cm-|/Cm+ 0.08 0.26 0.43 0.65 0.78 0.91 1.00 1.19 2.00 The critical span ratio is correspondingly an exact statement, not a numerical observation: it is the ratio 738
+
+at which the two contributions cancel algebraically, |Cm-| = Cm+, which Table 12 locates at L2/L1 = 1.457 739
+
+with 1.890 against 1.888. The cancellation is exact rather than fortuitous. The estimator P = Iy/Cm 740
+
+38
+
+becomes 741 singular there because the structure has, in the integral sense and as seen from that sensor, no 1 2 3 742 net flexibility left to report. 4 5 743 The same decomposition explains why the optimal sensor position is not at mid-span. Moving the 6 7 8 744 sensor from 0.50L1 to 0.42L1 reduces the positive contribution only slightly, from 1.750 to 1.732, but 10 9 745 reduces the magnitude of the negative one appreciably, from 0.750 to 0.692; the net constant therefore 11 12 746 rises from 1.000 to 1.040. The optimum is displaced towards the outer support not because the 13 14 747 instrumented span responds better there, but because the adjacent span interferes less. On a simply 15 16 748 supported beam, where no negative contribution exists, mid-span is optimal by symmetry; the shift 17 18 19 749 observed here is a direct signature of continuity. Because the gain is only 4 %, mid-span remains a 20 21 750 reasonable practical choice, although the mechanism becomes relevant when the span ratio is 22 23 751 unfavourable and every percent of Cm matters. 24 25 26 752 Finally, the cancellation accounts for the result of Section 4.2 that a small baseline offset is more 27 28 753 damaging than random noise of comparable size. Zero-mean fluctuations are partly averaged out by the 29 30 754 integration, whereas a constant offset accumulates over the whole record and contributes ε0Ltot without 31 32 33 755 any cancellation at all. That contribution is then compared against a net integral that is itself the residue 34 35 756 of a large cancellation: for equal spans the net constant is only 4/7 of the positive part alone, and near 36 37 757 the critical ratio it is a small residue of two nearly equal terms. The relative damage done by an offset 38 39 758 is therefore amplified by precisely the mechanism that makes Cm small. Refining the sampling grid does 40 41 42 759 nothing about this; re-zeroing the baseline does. 43 44 760 These threads join in a single practical statement. The measurement sensitivity of both estimators 45 46 47 761 scales as 1/|Cm|, so |Cm| serves as a load-observability and conditioning indicator for this inverse 48 49 762 problem, and it can be computed before any instrument is installed from one static analysis, or measured 50 51 763 from one static calibration test. It simultaneously answers where to put the sensor, whether a given span 52 53 764 arrangement is usable at all, and how tight the baseline stability must be. Reporting |Cm| for any 54 55 765 deployment of this method would serve the same purpose as reporting the condition number of a 56 57 58 766 regularised inverse problem. 59 60 61 62 63 64 65
+
+39
+
+5.2. 767 Relation to existing bridge weigh-in-motion and moving-force identification methods 768 Table 13 situates the present approach relative to the two established families. The comparison is made 769 on the basis of what each method requires and delivers, not on headline accuracy figures, which are not 770 comparable across different structures and load populations. 771
+
+Table 13 – Positioning of the deflection-integral approach relative to established methods. Pavement WIM BWIM (Moses type) MFI / inverse methods Deflection integral
+
+(this work) Output Axle loads and GVW Axle loads and GVW Full axle-load time history Total load of the group
+
+only Sensors Pavement-embedded array Several strain gauges plus axle detectors Dense array; often accelerometers 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 Structural model One displacement channel Not required Influence line required (measured or assumed) Full model required Only the scalar Cm 18 19 Inverse problem None Least squares, well posed Ill posed; needs
+
+regularisation None; a single division 20 21 Speed needed Measured internally Yes Yes Yes; obtainable from the
+
+signal itself 22 23 Dynamic effects Handled by design Averaged or filtered Explicitly modelled Quantified: \< 1 % for
+
+Tcr/T1 ≥ 8 24 Relative cost High Moderate Moderate to high Low 25 26 772 The deflection-integral approach is a reduced alternative to BWIM rather than a competitor to it. it 27 28 773 answers a narrower question with a much smaller installation and without an inverse problem. Its natural 29 30 774 role is dense, low-cost screening across many secondary structures, with instrumented BWIM or 31 32 775 enforcement weighing reserved for the vehicles it flags. 33 34 35 36 37 776
+
+777 5.3. Two extensions of the framework The theorem admits two extensions that require no new assumptions. Both are stated for completeness 38 39 40 778 and pursued elsewhere; neither is claimed as a result of the present study. 41 42 779 Several sensors. Nothing restricts the structure to one measurement point. With s sensors each 43 44 45 780 crossing yields a vector of deflection integrals, every entry proportional to the same total load with its 46 47 781 own constant, so the model is a one-parameter linear one, I = cP + ε, estimated by weighted least squares 48 49 782 with variance (cTΣ-1c)-1. The single-sensor method is the case s = 1. Precisions add in inverse-variance 50 51 783 fashion; a sensor near a blind configuration carries almost no weight, so the map of Fig. 10 doubles as 52 53 54 784 a sensor-selection chart; and because the zero-drift errors of sensors sharing a logger and a thermal 55 56 785 environment are strongly correlated, Σ must be estimated and not assumed diagonal, or the multi-sensor 57 58 786 variance will be optimistic by exactly the factor by which the drift is common. Optimal placement then 59 60 787 becomes the maximisation of cTΣ-1c. 61 62 63 64 65
+
+40
+
+Higher 788 response moments. The deflection integral is the zeroth moment of the record. Repeating 1 2 3 789 the argument of Section 2.2 with an extra factor x under the integral gives M1 = S1Ptot + Cm ΣPiai with 4 5 790 S1 = ∫u ηm(u)du, so that the load centroid of the convoy, measured from the leading axle, is ā = M1/M0 - 6 7 791 S1/Cm. For the equal-span beam instrumented at mid-span the structural constant is exact and simple, 8 9 792 S1/Cm = -l/4. The relation is verified to machine precision on finely sampled synthetic records (171.5 10 11 793 mm against 171.5 mm for the two-axle group, 400.0 against 400.0 for the three-axle group). It is, 12 13 14 794 however, far more demanding of data than the zeroth moment, because the centroid is a difference of 15 16 795 two terms of order 450 and 625 mm yielding a result of order 170 mm, so errors are amplified about 17 18 796 2.6-fold; on the present Δx = 250 mm grid the quadrature error alone displaces it by 5 to 9 mm and the 19 20 797 measurement errors of this campaign by roughly 60 mm. It is therefore recorded here as an exact 21 22 23 798 theoretical relation, not an experimental result, and note that it would require a sampling interval of l/20 24 25 799 or finer, Simpson quadrature and an order of magnitude better baseline stability to become usable. 26 27 28 800 5.4. Limitations 29 30 801 The limitations of the present study should be stated without qualification. 31 32 33 802
+
+● Vehicle dynamics. Section 4.6 quantifies the effect of bridge dynamics under a constant moving 34 35 803 force and bounds it below 1 % for Tcr/T1 ≥ 8. It does not model the vehicle: a sprung mass 36 37 804 introduces its own body-bounce and axle-hop frequencies, and the contact force is then no 38 39 805 longer constant. The invariance theorem applies to the instantaneous contact forces, so a 40 41 42 806 fluctuating contact force whose mean departs from the static axle load would bias the estimate. 43 44 807 A full vehicle-bridge interaction study including road roughness is required before the 1 % 45 46 808 figure is claimed for real traffic. 47 48 49 809
+
+● Scale and material. Validation used one small-scale steel specimen with a span-to-depth ratio 50 51 810 of 100 and idealised knife-edge supports. Concrete bridges introduce cracking, creep, 52 53 811 composite action with the deck and bearing friction, none of which is represented. 54 55 56 812
+
+● Single geometry tested. The unequal-span results are analytical and verified numerically, but 57 58 813 not experimentally. The predicted blind configuration is a strong, falsifiable prediction well 59 60 814 within reach of a laboratory rig: moving one support of the present specimen to give spans of 61 62 63 64 65
+
+41
+
+2500 815 and 3644 mm should make the deflection integral vanish and the identification fail 1 2 3 816 outright, while the individual deflection readings remain perfectly ordinary. This is the most 4 5 817 decisive single experiment the framework suggests. 6 7 818
+
+● Direct evidence for invariance. The three configurations tested differ in both total load and axle 8 10 9 819 spacing, so the invariance property is verified here only indirectly, through the linearity of the 11 12 820 calibration line of Fig. 6 (R2 = 0.99998). A direct test, holding the total load fixed while varying 13 14 821 the axle spacing (for instance 50 + 50 N at 250, 500, 750 and 1000 mm, and 25 + 50 + 25 N), 15 16 822 would produce visibly different deflection histories whose integrals must agree to within the 17 18 19 823 measurement uncertainty of about 1 %. It needs no new apparatus and is the first experiment 20 21 824 recommended here. 22 23 825
+
+● Transverse position and load distribution. A real vehicle applies loads across the deck width; 24 25 26 826 the present one-dimensional treatment implicitly assumes that the transverse position does not 27 28 827 affect the measured deflection, which is true only for a torsionally stiff deck with a centrally 29 30 828 placed sensor. 31 32 33 829 5.5. Recommendations for field implementation 34 35 830
+
+● Before anything else, evaluate Cm from Eq. (11a), or from a single static analysis or uniform- 36 37 831 load test, and locate the configuration on the map of Fig. 10. If |192EI1Cm/L14| \< 0.2, do not 38 39 832 instrument that point: the measurement sensitivity there is at least five times its equal-span 40 41 42 833 value. 43 44 834
+
+● Instrument the longer span, at approximately 0.42 of its length, and verify that the configuration 45 46 47 835 lies clear of the blind locus of Eq. (11b); for uniform stiffness this means an adjacent-to- 48 49 836 instrumented span ratio well below (3 + √33)/6 = 1.457. 50 51 837
+
+● Measure or estimate f1 for the structure and check that the crossing time exceeds eight 52 53 54 838 fundamental periods, Tcr/T1 = 2l f1/v ≥ 8. Do not substitute a speed limit for this check: the ratio 55 56 839 depends on the actual frequency, which varies widely between structures of the same span. 57 58 840
+
+● Re-zero the deflection baseline immediately before and after each crossing, and reject records 59 60 61 841 whose end values differ by more than a preset tolerance; this addresses the dominant error term. 62 63 64 65
+
+42
+
+● 842 Use Simpson quadrature, or a sampling interval of l/20 or finer, to eliminate the quadrature 1 2 3 843 bias. 4 5 844
+
+● Prefer SLM, and obtain the reference integral by averaging at least five crossings of the 6 7 845 calibrated vehicle so that the reference contributes negligible scatter. 8 10 9 846
+
+● Extract the traverse speed from the interior zero crossings of the deflection record, and cross- 11 12 847 check it against an independent measurement during commissioning. 13 14 15 848
+
+● Repeat the reference calibration periodically, since SLM cancels only those changes in Cm that 16 17 849 are common to the two crossings. 18 19 20 21 850 6. Conclusions 22 23 851 This paper has established, on a general basis, that the integral of the deflection measured at a single 24 25 852 fixed point over a complete crossing is proportional to the total load carried by the crossing group, with 26 27 853 a constant of proportionality that depends only on the structure and the sensor position. The principal 28 29 854 results are as follows. 30 31 32 855
+
+● The invariance property is a theorem valid for any linear-elastic beam structure, any span 33 34 856 arrangement and any measurement point, not a special feature of a particular configuration. It 35 36 857 requires only linearity, time invariance and integration over the complete passage from the entry 37 38 39 858 of the leading axle to the exit of the trailing one. 40 41 859
+
+● The invariance constant admits three equivalent characterisations: the area under the influence 42 43 44 860 line, the area under the deflected shape produced by a unit load at the sensor, and the deflection 45 46 861 at the sensor under a uniformly distributed load, normalised by its intensity. The last reduces 47 48 862 its evaluation to a textbook problem and makes it directly measurable on a structure whose 49 50 863 properties are unknown. 51 52 53 864
+
+● That reduction yields a closed form for a two-span beam of arbitrary span and stiffness ratio, 54 55 865 in which the entire parametric dependence collapses onto a single scalar μ. The configurations 56 57 866 that cannot observe the load, those for which the constant vanishes, follow analytically: the 58 59 60 867 blind locus is ρEI = ρL(3ρL2 - 5)/2 for a mid-span sensor. For uniform stiffness the critical span 61 62 63 64 65
+
+43
+
+ratio 868 is the exact root (3 + √33)/6 = 1.45743, and the optimal sensor position is (1 + √33)/16 = 1 2 3 869 0.42154 of the span, at which the constant exceeds its mid-span value by exactly 3.99 %. Both 4 5 870 constants agree with independent finite element evaluation to eleven significant figures. 6 7 871
+
+● Because both estimators divide by the invariance constant, |Cm| serves as a load-observability 8 10 9 872 and conditioning indicator, computable before any instrument is installed. A Cauchy-Schwarz 11 12 873 bound quantifies the price of invariance in relative precision: the uniformly weighted estimator 13 14 874 retains Om = 0.331 of the precision of the optimal matched filter for the equal-span beam, Om 15 16 875 being a ratio of standard deviations. Uniform weighting is what makes the estimate independent 17 18 19 876 of axle spacing, and that is what the lost efficiency buys. 20 21 877
+
+● For a two-span continuous beam of equal spans instrumented at mid-span of the first span, the 22 23 878 constant is l4/192EI. Laboratory tests on a 2 x 2500 mm steel beam identified the total load of 24 25 26 879 one-, two- and three-axle groups to within 1.19 % by BPM and 0.70 % by SLM. 27 28 880
+
+● SLM cancels every common-mode error (flexural rigidity, span length, sensor gain and 29 30 881 quadrature bias), as was verified directly: the ratio between the BPM and SLM estimates equals 31 32 33 882 the calibration error of the reference crossing, 1.00489, for both configurations. SLM does not, 34 35 883 however, reduce independent random noise; a single noisy reference crossing increases its 36 37 884 scatter by the square root of two, and the reference integral should be averaged over repeated 38 39 885 crossings. 40 41 42 886
+
+● The dominant error source is the zero offset of the deflection signal, not random noise. An 43 44 887 offset equal to the transducer resolution biases the identified load by 0.4 to 1.0 %, whereas 45 46 888 random noise of half that magnitude contributes 0.07 %. The bias is inversely proportional to 47 48 49 889 the load, so accuracy improves for heavier vehicles, which is favourable for overload screening. 50 51 890
+
+● Replacing the trapezoidal rule by Simpson quadrature removes a systematic bias of 0.500 % at 52 53 891 the sampling interval used, at no experimental cost. 54 55 56 892
+
+● A finite element study of a constant force crossing the beam, covering bridge dynamics only, 57 58 893 bounds the dynamic error of the quasi-static estimator: it is below 1 % when the crossing time 59 60 894 exceeds eight fundamental periods and below 4 % beyond four, with erratic failure below about 61 62 63 64 65
+
+44
+
+2.5. 895 For plausible frequencies of short-span bridges the ratio is governed almost entirely by 1 2 3 896 speed rather than by span, and at the 50 to 80 km/h typical of two-span overpasses it falls 4 5 897 between about 7 and 20, so the dynamic contribution is of order 1 % or below. Spacing 6 7 898 invariance survives into the dynamic regime, degrading from 0.33 % spread at Tcr/T1 = 12 to 8 9 899 1.95 % at 3. 10 11 12 900
+
+● All of these results follow from a single mechanical feature. Continuity across the interior 13 14 901 support splits the invariance constant into a positive contribution from the instrumented span 15 16 902 and a negative one from the adjacent span. Their algebraic cancellation sets the critical span 17 18 19 903 ratio, displaces the optimal sensor position away from mid-span, and amplifies the relative 20 21 904 damage done by baseline drift. Since the measurement sensitivity scales as 1/|Cm|, that quantity 22 23 905 serves as a load-observability and conditioning indicator that can be evaluated before any 24 25 906 instrument is installed. 26 27 28 907
+
+● The theorem admits two extensions requiring no new assumptions, noted for completeness 29 30 908 rather than claimed: a one-parameter weighted least-squares formulation for several sensors, 31 32 909 and a first-moment relation that returns the load centroid exactly but demands roughly an order 33 34 35 910 of magnitude better data than the gross weight. 36 37 911 A combined uncertainty budget indicates 0.5 to 1.1 % in the laboratory and 3 to 11 % for a field 38 39 912 deployment using SLM, dominated by baseline stability and traverse speed rather than by dynamics. 40 41 42 913 That level of accuracy does not compete with certified weighing, but it is sufficient for low-cost 43 44 914 screening of traffic overload with a single displacement channel per structure. The most decisive 45 46 915 experiments the framework now suggests are, in order: a direct invariance test at constant total load and 47 48 916 varying axle spacing; a laboratory realisation of the predicted blind configuration at ρL = 1.45743, where 49 50 917 the method should fail completely while the individual deflection readings remain unremarkable; and 51 52 53 918 field validation on an in-service continuous bridge. A vehicle-bridge interaction study including road 54 55 919 roughness, and a Bayesian formulation returning credible intervals, are the natural theoretical 56 57 920 continuations. 58 59 60 61 62 63 64 65
+
+45
+
+CRediT 921 authorship contribution statement 1 2 922 Quoc-Bao Nguyen: Conceptualization, Methodology, Formal analysis, Software, Writing – original 3 4 923 draft. Thai-Son Vu: Conceptualization, Investigation, Validation, Supervision, Project administration, 5 6 7 924 Writing – review & editing. Hung-Son Nguyen: Investigation, Data curation, Visualization, Writing – 8 9 925 review & editing. 10 11 12 13 926 Declaration of competing interest 14 15 927 The authors declare that they have no known competing financial interests or personal relationships that 16 17 928 could have appeared to influence the work reported in this paper. 18 19 20 21 22 929
+
+930 Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used Claude in order to improve the language, 23 24 25 931 readability, and formatting of the manuscript. After using this tool/service, the authors reviewed and 26 27 932 edited the content as needed and take full responsibility for the content of the publication. 28 29 30 31 933 Acknowledgements 32 934 The authors gratefully acknowledge the Laboratory of Transportation Technology and Systems, 33 34 35 935 Department of Bridge and Road Engineering, Hanoi University of Civil Engineering, for providing the 36 37 936 test facilities used in this study. 38 39 40 41 937 Funding 42 938 This research did not receive any specific grant from funding agencies in the public, commercial or not- 43 44 45 939 for-profit sectors. 46 47 48 940 Data availability 49 50 941 The measured deflection data supporting the findings of this study are given in full in Tables 2 and 4. 51 52 942 The scripts used for the symbolic verification of the analytical solution, the quadrature study, the Monte 53 54 55 943 Carlo analysis, the closed-form derivation and the moving-load finite element study, together with all 56 57 944 derived data in comma-separated form, are provided as supplementary material and are also available 58 59 945 from the corresponding author on reasonable request. 60 61 62 63 64 65
+
+46
+
+References 946 1 2 3 4 5 947 948 949 950 \[1\] Fan Y, et al. Analysis for Yangmingtan Bridge collapse. Eng Fail Anal 2015;56:20–27. https://doi.org/10.1016/j.engfailanal.2015.05.003. \[2\] Salem HM, Helmy HM. Numerical investigation of collapse of the Minnesota I-35W bridge. Eng Struct 2014;59:635–45. https://doi.org/10.1016/j.engstruct.2013.11.022. 10 11 12 13 14 6 7 8 9 951
+
+952 953 954 955 956 957 958 \[3\] Invernizzi S, Montagnoli F, Carpinteri A. Very high cycle corrosion fatigue study of the collapsed Polcevera bridge, Italy. J Bridge Eng 2022;27:04021102. https://doi.org/10.1061/(ASCE)BE.1943-5592.0001807. \[4\] Morgese M, et al. Post-collapse analysis of Morandi’s Polcevera viaduct in Genoa, Italy. J Civ Struct Health Monit 2020;10:69–85. https://doi.org/10.1007/s13349-019-00370-7. \[5\] Ventura R, Barabino B, Maternini G. Estimating the frequency of traffic overloading on road bridges. J Traffic Transp Eng (Engl Ed) 2024;11:776–96. https://doi.org/10.1016/j.jtte.2023.11.005. \[6\] Li H, Wang T, Wu G. Nonlinear vibration analysis of beam-like bridges with multiple breathing cracks under moving vehicle load. Mech Syst Signal Process 2023;186:109866. https://doi.org/10.1016/j.ymssp.2022.109866. 15 16 17 959
+
+960 961 \[7\] Fattorini F, et al. Application to the territorial authorities of the guidelines for the classification and management of risk of existing bridges: the case study of the Municipality of Rome. Procedia Struct Integr 2023;44:689–96. https://doi.org/10.1016/j.prostr.2023.01.090. 18 19 20 21 22 23 24 962
+
+963 964 965 966 967 \[8\] Gajda J, Sroka R, Burnos P, Daniol M. Long-term assessment of the properties of load sensors applied in weigh- in-motion systems. Sensors 2025;25:2421. https://doi.org/10.3390/s25082421. \[9\] Federal Highway Administration. Long-term bridge performance program: weigh-in-motion system accuracy and precision. Washington, DC: FHWA, U.S. Department of Transportation; 2016. \[10\] Federal Highway Administration. Comprehensive truck size and weight study: costs of weigh stations. Washington, DC: FHWA, U.S. Department of Transportation; 2009. 25 968 26 969 \[11\] Jacob B, OBrien EJ, Jehaes S, editors. Weigh-in-motion of road vehicles: final report of the COST 323 action. Paris: LCPC; 2002. 27 28 29 30 31 32 33 970
+
+971 972 973 974 975 \[12\] Moses F. Weigh-in-motion system using instrumented bridges. Transp Eng J ASCE 1979;105:233–49. https://doi.org/10.1061/TPEJAN.0000783. \[13\] OBrien EJ, Quilligan MJ, Karoumi R. Calculating an influence line from direct measurements. Proc Inst Civ Eng Bridge Eng 2006;159:31–4. https://doi.org/10.1680/bren.2006.159.1.31. \[14\] OBrien EJ, Rowley CW, González A, Green MF. A regularised solution to the bridge weigh-in-motion equations. Int J Heavy Veh Syst 2009;16:310–27. https://doi.org/10.1504/IJHVS.2009.027135. 34 35 976
+
+977 \[15\] Žnidarič A, Kalin J, Kreslin M. Improved accuracy and robustness of bridge weigh-in-motion systems. Struct Infrastruct Eng 2018;14:412–24. https://doi.org/10.1080/15732479.2017.1406958. 36 37 38 39 40 41 42 43 44 978
+
+979 980 981 982 983 984 985 \[16\] Yu Y, Cai CS, Deng L. State-of-the-art review on bridge weigh-in-motion technology. Adv Struct Eng 2016;19:1514–30. https://doi.org/10.1177/1369433216655922. \[17\] Ojio T, Carey C, OBrien EJ, Doherty C, Taylor SE. Contactless bridge weigh-in-motion. J Bridge Eng 2016;21:04016032. https://doi.org/10.1061/(ASCE)BE.1943-5592.0000776. \[18\] Law SS, Chan THT, Zeng QH. Moving force identification: a time domain method. J Sound Vib 1997;201:1–22. https://doi.org/10.1006/jsvi.1996.0774. \[19\] Chan THT, Law SS, Yung TH, Yuan XR. An interpretive method for moving force identification. J Sound Vib 1999;219:503–24. https://doi.org/10.1006/jsvi.1998.1904. 45 46 47 48 49 50 51 52 53 986 987 988 989 990 991 992 993 \[20\] Law SS, Zhu XQ. Study on different beam models in moving force identification. J Sound Vib 2000;234:661–79. https://doi.org/10.1006/jsvi.2000.2867. \[21\] Zhu XQ, Law SS. Moving load identification on multi-span continuous bridges with elastic bearings. Mech Syst Signal Process 2006;20:1759–82. https://doi.org/10.1016/j.ymssp.2005.06.004. \[22\] Hoang T, et al. Calculation of force distribution for a periodically supported beam subjected to moving loads. J Sound Vib 2017;388:327–38. https://doi.org/10.1016/j.jsv.2016.10.031. \[23\] Deng L, Cai CS. Identification of dynamic vehicular axle loads: theory and simulations. J Vib Control 2010;16:2167–94. https://doi.org/10.1177/1077546309351221. 54 55 994
+
+995 \[24\] Chen Z, et al. Identification of multi-axle vehicle loads on beam type bridge based on minimal residual norm steepest descent method. J Sound Vib 2023;563:117866. https://doi.org/10.1016/j.jsv.2023.117866. 56 57 58 59 60 996
+
+997 998 999 \[25\] Katori H. Inverse problems for an Euler-Bernoulli beam: identification of bending rigidity and external loads. World J Mech 2018;8:192–9. https://doi.org/10.4236/wjm.2018.85014. \[26\] Luo S, Jiang J, Zhang F, Mohamed MS. Distributed dynamic load identification of beam structures using a Bayesian method. Appl Sci 2023;13:2537. https://doi.org/10.3390/app13042537. 61 62 63 64 65
+
+47
+
+\[27\] 1000 1 1001 Jiang J, et al. Real-time identification of dynamic loads using inverse solution and Kalman filter. Appl Sci 2020;10:6767. https://doi.org/10.3390/app10196767. 2 3 1002
+
+1003 \[28\] Kapoor T, Wang H, Núñez A, Dollevoet R. Physics-informed machine learning for moving load problems. J Phys Conf Ser 2024;2647:152003. https://doi.org/10.1088/1742-6596/2647/15/152003. 10 11 12 13 4 5 6 7 8 9 1004 1005 1006 1007 1008 1009 1010 1011 1012 \[29\] Yang YB, Lin CW, Yau JD. Extracting bridge frequencies from the dynamic response of a passing vehicle. J Sound Vib 2004;272:471–93. https://doi.org/10.1016/S0022-460X(03)00378-X. \[30\] Feng D, Feng MQ. Computer vision for SHM of civil infrastructure: from dynamic response measurement to damage detection – a review. Eng Struct 2018;156:105–17. https://doi.org/10.1016/j.engstruct.2017.11.018. \[31\] Nguyen DH, et al. Damage detection in girder bridges using modal curvatures gapped smoothing method and convolutional neural network: application to Bo Nghi bridge. Theor Appl Fract Mech 2020;109:102728. https://doi.org/10.1016/j.tafmec.2020.102728. \[32\] Andersen P, Mukhopadhyay SK. Determination of load distribution on a beam from measurements on its deflected form. Minneapolis: University of Minnesota; 1950. 14 15 16 1013 1014 1015 \[33\] Nguyen QB, Hoang T, Nguyen HS. Determination of the load applied on a simple supported beam based on measured deflection data. J Sci Technol Civ Eng (HUCE) 2024;18:61–71. https://doi.org/10.31814/stce.huce2024- 18(2V)-05. 17 18 19 20 21 1016
+
+1017 1018 1019 \[34\] Smith M. ABAQUS/Standard user’s manual, version 6.9. Providence, RI: Dassault Systèmes Simulia Corp.; 2009. \[35\] Frýba L. Vibration of solids and structures under moving loads. 3rd ed. London: Thomas Telford; 1999. \[36\] Joint Committee for Guides in Metrology. JCGM 100:2008. Evaluation of measurement data – guide to the expression of uncertainty in measurement (GUM). Sèvres: BIPM; 2008. 22 23 24 25 26 27 28 29 30 1020 1021 1022 1023 1024 1025 1026 1027 \[37\] Sohn H. Effects of environmental and operational variability on structural health monitoring. Philos Trans R Soc A 2007;365:539–60. https://doi.org/10.1098/rsta.2006.1935. \[38\] Cross EJ, Koo KY, Brownjohn JMW, Worden K. Long-term monitoring and data analysis of the Tamar Bridge. Mech Syst Signal Process 2013;35:16–34. https://doi.org/10.1016/j.ymssp.2012.08.026. \[39\] European Committee for Standardization. EN 1991-2:2003. Eurocode 1: actions on structures. Part 2: traffic loads on bridges. Brussels: CEN; 2003. \[40\] American Association of State Highway and Transportation Officials. AASHTO LRFD bridge design specifications. 10th ed. Washington, DC: AASHTO; 2024. 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 48
+
+Declaration of competing interests
+
+Declaration of interests
+
+☒ The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+☐ The authors declare the following financial interests/personal relationships which may be considered as potential competing interests:
+
+<https://www2.cloud.editorialmanager.com/engstruct/viewRCResults.aspx?pdf=1&docID=91574&rev=0&fileID=2060359&msid=539f9d4c-902b-4435-b723-829406018c7d>   
+<https://www2.cloud.editorialmanager.com/engstruct/viewRCResults.aspx?pdf=1&docID=91574&rev=0&fileID=2060359&msid=539f9d4c-902b-4435-b723-829406018c7d>   

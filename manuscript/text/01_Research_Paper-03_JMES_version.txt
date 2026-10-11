@@ -1,0 +1,525 @@
+JOURNAL OF MATERIALS AND ENGINEERING STRUCTURES XX (20XX) XXX–XXX
+
+JOURNAL OF MATERIALS AND ENGINEERING STRUCTURES 10 (2023) 397–414
+
+|  |  |
+| :-: | :-: |
+| JOURNAL OF MATERIALS AND ENGINEERING STRUCTURES XX (20XX) XXX–XXX |  |
+|  |  |
+
+Research Paper
+
+Indirect identification of service loads on two-span continuous beams based on mid-span deflection measurements
+
+Quoc-Bao Nguyena, Thai-Son Vua,\*, Hung-Son Nguyena
+
+a Department of Bridge and Road Engineering, Hanoi University of Civil Engineering, 55 GiaiPhong Road, Hanoi 100000, Vietnam
+
+|  |  |
+| :-: | :-: |
+| A R T I C L E I N F OArticle history :Received 00 December 00Received in revised form 00 January 00Accepted 00 February 00Keywords:Service loadStandard loadDeflectionExperimentationNumerical method | A B S T R A C TThis paper presents two practical methods for indirectly determining service loads acting on a two-span continuous beam with equal spans using measured mid-span deflection data. Unlike simply supported beams, continuous beams exhibit complex moment redistribution and interaction between adjacent spans, which significantly alter the deflection response and complicate load identification. To address these challenges, the study proposes: (1) the Beam Property-based Method (BPM), which derives the total load from the analytical relationship between the deflection integral and applied load magnitude, utilizing known span length and flexural rigidity (EI); and (2) the Standard Load-based Method (SLM), which compares the deflection integral under the unknown service load with that obtained under a precisely weighed standard load, thereby eliminating the need for accurate determination of EI.Both methods are grounded in the key observation that the integral of deflection along the entire beam length depends solely on the total load and remains independent of load positions and axle spacings, even in the presence of span interaction and negative moments at the interior support. The theoretical formulations were derived using the force method and rigorously validated through finite element analysis in Abaqus as well as laboratory experiments on a steel two-span continuous beam (2 × 2500 mm). Experimental results involving single, two-, and three-concentrated loads (representing typical truck axles) show that the loads determined by BPM and SLM deviate from the directly weighed values by only 0.61%-1.19%, which is acceptable for practical engineering applications. A Monte Carlo sensitivity analysis further demonstrates that both methods maintain mean relative errors below 3% even under ±5% measurement noise, confirming their robustness against realistic sensor uncertainties.The proposed methods extend previous work on simply supported beams to the more realistic case of continuous-span structures commonly encountered in highway overpasses and secondary bridges. They provide a simple, cost-effective, and non-intrusive tool for indirect identification of traffic overloads using deflection measurements at a single critical point. The findings offer valuable support for structural health monitoring, overload control, and asset management of existing continuous bridge networks. |
+
+Introduction
+
+Bridges represent some of the most critical assets in national transportation networks. They ensure continuity of mobility, facilitate economic exchange, and support social development. However, in recent decades, with rapid economic growth and ever-increasing demands for passenger travel and freight transport, road transport systems worldwide have come under immense pressure. A key driver of this trend is the widespread use of heavy vehicles-particularly multi-axle trucks and container carriers-which routinely subject bridges to service loads significantly greater than those anticipated during their design phase. While design codes stipulate specific categories of live loads to be considered in structural analysis, actual traffic conditions often involve vehicles with gross weights that exceed these standards by substantial margins. The consequences of such discrepancies between design assumptions and real-world exploitation are serious. Overloads can induce excessive deformations, elevate stress levels in structural members, accelerate fatigue processes, reduce residual load-carrying capacity, and shorten service life. In extreme cases, the cumulative effects of overloading can precipitate catastrophic structural failure. International experience has repeatedly illustrated the dangers associated with overloading. A well-documented case is the Yangmingtan Bridge in Harbin, China (2012), which suffered the sudden collapse of one span when four overloaded trucks attempted to cross simultaneously[1](#footnote1), \[[1](#_ENREF_1)\]. The combined weight far exceeded the bridge’s design capacity, drawing nationwide attention to the widespread problem of overloading in China’s transport infrastructure. Similarly, in 2011, in the Huairou district of Beijing, a rigid-frame bridge spanning 230 m collapsed when a heavily overloaded truck, carrying approximately 145 tons, far above its 55-ton design capacity, passed over it, fortunately without injuries[2](#footnote2). Overloading-related failures are not confined to China. In developing countries, rural infrastructure is especially vulnerable to structural failure due to overloaded traffic. For example, in July 2020, the Tittle Bridge in Guysborough County, Nova Scotia (Canada) collapsed while an overloaded truck was crossing it[3](#footnote3), highlighting how small bridges, often designed only for light vehicular loads, can quickly fail when subjected to unexpectedly heavy loads unexpectedly. Another particularly tragic illustration occurred in November 2019, when the suspension bridge at Mirepoix-sur-Tarn (south-western France) collapsed under the weight of an overloaded truck exceeding 50 tonnes, far beyond its 19-tonne design limit, resulting in the deaths of the truck driver and a 15-year-old girl in an adjacent vehicle[4](#footnote4). The I-35W Bridge in Minneapolis, USA (2007) is another case study. Although the official investigation attributed the failure to a design defect in gusset plates, subsequent reports highlighted the significant role of heavy traffic loads and the storage of construction materials on the bridge during renovation work. These loads pushed the structure beyond its ultimate capacity, resulting in a sudden and tragic collapse that caused multiple fatalities and injuries, \[[2](#_ENREF_2), [3](#_ENREF_3)\]. Another emblematic case was the Morandi Bridge in Genoa, Italy (2018), where material degradation combined with decades of heavy truck traffic was widely acknowledged as a critical factor contributing to the failure, \[[4](#_ENREF_4), [5](#_ENREF_5)\]. These tragic incidents underscore a consistent lesson: when service loads surpass design limits, they can directly or indirectly trigger disastrous outcomes. The underlying message is clear, accurate monitoring and reliable assessment of traffic loads on bridges are not merely technical exercises but essential components of public safety and infrastructure resilience, \[[6-8](#_ENREF_6)\].
+
+To mitigate risks associated with overloading, many countries have adopted traditional monitoring measures, most notably static weigh stations and weigh-in-motion (WIM) systems. These technologies enable precise determination of axle loads and gross vehicle weights. While effective in principle, large-scale deployment of weigh stations faces significant obstacles. High capital costs, ongoing maintenance requirements, and logistical limitations in coverage reduce their feasibility, \[[9-17](#_ENREF_9)\]. Moreover, weigh stations only provide data about individual vehicles; they do not directly capture the structural response of a specific bridge under load. In other words, they quantify the input (vehicle loads) but not the output (bridge behavior). This gap in information is nontrivial. Bridge safety ultimately depends on how loads are transferred through the structural system, which is influenced not only by the magnitude of the loads but also by geometry, support conditions, boundary effects, and the evolving material properties of the structure. Hence, while weigh stations are valuable tools, they cannot replace the need for structurally informed monitoring approaches.
+
+Driven by these limitations, recent research has increasingly focused on indirect methods of load identification. These approaches aim to estimate unknown loads based on measured structural responses. Among various measurable quantities, including strains, accelerations, and vibrations, deflection has emerged as a particularly reliable indicator, \[[18-21](#_ENREF_18)\]. Beam deflection reflects the cumulative effect of loads acting on the structure, integrating contributions from geometry, boundary conditions, and material stiffness. By measuring deflections at critical points, especially midspans, engineers can formulate inverse problems to back-calculate applied service loads. This concept offers several advantages. First, it allows for continuous real-time monitoring, providing timely detection of abnormal loads. Second, it reduces the reliance on intrusive or costly external systems. Third, it generates datasets that are directly relevant to structural performance, thereby enabling better decision-making for maintenance and asset management, \[[22](#_ENREF_22)\].
+
+A substantial body of work has already validated the feasibility of load identification through deflection measurements, particularly for simply supported beams. Analytical solutions, finite element simulations, and laboratory-scale experiments have all demonstrated consistent accuracy under controlled conditions. These studies provide a solid foundation, confirming that load-deflection relationships can be reliably inverted to estimate vehicular loads, \[[23-26](#_ENREF_23)\]. However, the practical applicability of these findings remains limited. The majority of in-service bridges worldwide are not simply supported; rather, they are continuous-span structures. Unlike simple beams, continuous beams exhibit far more complex distributions of internal forces and deformations. The response of one span depends not only on the loads acting on it but also on loads applied to adjacent spans. This interdependence alters the deflection pattern substantially and complicates the inverse problem of load identification. Consequently, methods developed for simple spans, if directly applied to continuous systems, risk producing inaccurate or misleading results.
+
+This study extends the previous work on simply supported beams \[[22](#_ENREF_22)\] to the more complex and realistic case of two-span continuous beams with equal spans. The two-span continuous configuration is frequently encountered in highway overpasses and secondary bridges, making it a practical prototype for investigating load identification in continuous systems. By addressing moment redistribution and span interaction, this research establishes accurate methodologies that are both scientifically necessary and directly applicable to a large portion of existing bridge networks.
+
+The significance of this research extends beyond the immediate goal of load identification. It also contributes to the broader field of Structural Health Monitoring (SHM). Embedding sensors to capture bridge deflections enables not only load estimation but also detection of structural deterioration. Variations in deflection patterns over time may indicate stiffness loss, localized damage, or progressive material degradation. By integrating load estimation with condition monitoring, engineers can develop holistic frameworks for assessing bridge safety and extending service life. Furthermore, such approaches align with emerging paradigms of smart infrastructure. Modern bridge management increasingly relies on continuous, data-driven insights rather than periodic inspections alone. Methods that utilize deflection data for real-time load estimation support this paradigm by enabling predictive maintenance and risk-informed decision-making.
+
+In summary, while the dangers of overloading are widely acknowledged and have been tragically demonstrated in numerous bridge failures worldwide, reliable methods for identifying service loads in continuous-span bridges remain underdeveloped. This study extends the deflection-integral approach from simply supported beams to the more complex case of two-span continuous beams with equal spans. In addition to analytical, numerical, and experimental validation, a Monte Carlo sensitivity analysis was performed to evaluate the robustness of the proposed BPM and SLM under realistic measurement noise (±5%). The results confirm that both methods maintain acceptable accuracy even in the presence of sensor uncertainties, thereby enhancing their practical applicability for indirect traffic load identification and structural health monitoring on continuous-span bridges. The remainder of this paper is structured as follows: Section 2 presents the theoretical framework for load-deflection relationships in two-span continuous beams. Section 3 describes the numerical modeling and experimental setup used to validate the proposed methods. Section 4 discusses the results, highlighting accuracy and limitations. Finally, Section 5 provides conclusions and outlines directions for future research.
+
+Theoretical framework and load identification methodology
+
+Deflection response under a moving concentrated load
+
+In structural engineering practice, especially for bridge load identification, understanding the deflection behavior of continuous beams is essential because most existing highway bridges are built as continuous systems rather than simply supported ones. Unlike a single-span simply supported beam where deflection depends solely on the load magnitude, span length, and flexural rigidity, a two-span continuous beam exhibits more complex structural behavior due to moment redistribution and interaction between adjacent spans.
+
+Consider a two-span continuous beam with equal span lengths l, resulting in a total structural length of 2l. The beam is supported at three points: supports A and C at the two ends (designed as movable supports allowing horizontal movement but restraining vertical displacement), and support B at the interior (fixed support preventing both vertical displacement and rotation), as illustrated in [Fig. 1](#_Ref207351742). The beam maintains a uniform rectangular or box cross-section along its entire length, ensuring constant flexural rigidity EI, where E is the modulus of elasticity of the material and I is the second moment of area of the cross-section.
+
+A quasi-static concentrated load P (representing a typical truck axle load, with negligible dynamic effects due to low speed) moves along the beam from support A to support C. At any instant, the position of the load is defined by the distance x measured from the left end support A. Depending on whether the load is located on the first span (AB) or the second span (BC), the reaction forces at the three supports (RA, RB, RC) will vary significantly. These reactions can be determined rigorously using the force method (method of consistent deformations) or the three-moment equation, taking into account the continuity condition at the interior support B.
+
+|  |  |
+| :-: | :-: |
+|  | (a) |
+|  | (b) |
+
+Fig. 1 - General layout of beam under a single concentrated load: (a) Load P on span AB, and (b) Load P on span BC
+
+For a two-span continuous beam subjected to a single concentrated load P acting on the first span AB, the structural analysis follows a standard statically indeterminate approach. The support reactions at A, B, and C can be conveniently derived using either the force method (method of consistent deformations) or the slope-deflection method. Once the load position x (measured from support A) is known, the vertical reactions are obtained as:
+
+|  |  |
+| :-: | :-: |
+| for load P on span AB | ( 1) |
+
+When the same load P travels onto the second span BC, the reactions at the three supports can be established through symmetry considerations combined with a simple change of coordinate system. The resulting expressions become:
+
+|  |  |
+| :-: | :-: |
+| for load P on span BC | ( 2) |
+
+With the support reactions determined, the bending moment Ms at any cross-section located at a distance s from support A (within span AB) can be formulated directly from equilibrium conditions while the load moves quasi-statically along the beam:
+
+|  |  |
+| :-: | :-: |
+|  | ( 3) |
+
+The relationship between bending moment and beam curvature is governed by the well-known differential equation: If y denotes the deflection of the beam at a section located a distance s from support A due to load P (14), then:
+
+|  |  |
+| :-: | :-: |
+|  | ( 4) |
+
+Integrating this equation twice with respect to s yields the deflection ys at any point along the beam. To obtain the complete deflection function, the following boundary and continuity conditions are applied:
+
+Zero vertical displacement at all three supports: (s = 0, y = 0), (s = l, y = 0), (s = 2l, y = 0);
+
+Continuity of rotation (slope) at the interior support B: (s = l/2; (dy/ds)left = (dy/ds)right);
+
+And continuity of curvature where appropriate: (s = l/2; (d2y/ds2)left = (d2y/ds2)right).
+
+Incorporating these conditions together with the previously derived reactions and moment expressions, in equations [(1)](#_Ref207352254)-[(4)](#_Ref226829084), leads to the general deflection equation for any section at distance s from support A:
+
+|  |  |
+| :-: | :-: |
+|  | ( 5) |
+
+Of special interest for practical monitoring purposes is the deflection occurring at the mid-point of the first span. This value is readily obtained by substituting s = l/2 into Equation [(5)](#_Ref207353353), resulting in the following simplified formula:
+
+|  |  |
+| :-: | :-: |
+|  | ( 6) |
+
+Compared to a simply supported beam of the same span length l, the maximum mid-span deflection in this continuous system is noticeably smaller (approximately 60–70% of the simply supported case under identical load and span). This reduction occurs because the negative bending moment developed at the interior support B increases the overall stiffness of the structure and redistributes part of the load to the adjacent span. This stiffness enhancement is one of the main reasons continuous bridges are preferred in modern design, but it also makes the inverse problem of load identification more challenging than in simple spans.
+
+From a monitoring perspective, measuring deflection only at the mid-point of the first span (instead of multiple points along the entire bridge) offers significant practical advantages: it reduces the number of sensors required, lowers installation and maintenance costs, and still captures sufficient information about the global load effect when the deflection integral is employed. However, engineers must be aware that temperature variations, support settlement, or minor stiffness changes can influence the measured values; therefore, proper baseline correction and environmental compensation are recommended in field applications.
+
+As will be shown in the next section, when the deflection is integrated over the entire loading path, the dependence on the load position is effectively eliminated, leading to a much simpler relationship between measured response and applied load.
+
+Deflection-integral invariance property
+
+A key observation underlying the proposed load identification methods is that the integral of the mid-span deflection over the entire loading path exhibits an invariance property. Specifically, this integral depends only on the total applied load and is independent of the load position and distribution along the beam. This section provides a theoretical justification of this property for a two-span continuous beam with equal spans under quasi-static loading.
+
+### Case of a single moving concentrated load
+
+Consider a concentrated load P moving along the beam from support A to support C. Let x denote the instantaneous position of the load, and let y(x) be the corresponding mid-span deflection of span AB.
+
+Under the assumptions of linear elastic behavior and constant flexural rigidity EI, the structural response is linear with respect to the applied load. Therefore, the deflection at any load position can be expressed in the general form:
+
+|  |  |
+| :-: | :-: |
+|  | ( 6) |
+
+where f(x) is a deterministic function that depends only on the structural configuration (geometry, boundary conditions, and stiffness), but not on the magnitude of the load.
+
+The deflection integral over the entire loading path is then defined as:
+
+|  |  |
+| :-: | :-: |
+|  | ( 6) |
+
+Where
+
+This result shows that the deflection integral is directly proportional to the applied load P, with proportionality constant C depending only on the structural properties of the beam. Importantly, the dependence on the instantaneous load position x is completely eliminated through integration.
+
+### Extension to multiple concentrated loads
+
+The above result can be extended to the case of multiple concentrated loads, such as those representing a multi-axle vehicle. Consider n loads P1, P1,… Pn moving simultaneously along the beam with fixed relative spacings. By the principle of superposition, the total mid-span deflection at any instant is:
+
+|  |  |
+| :-: | :-: |
+|  | ( 6) |
+
+where fi(x) represents the influence function corresponding to load Pi.
+
+The deflection integral becomes:
+
+|  |  |
+| :-: | :-: |
+|  | ( 6) |
+
+For a prismatic beam with constant properties and identical boundary conditions, each load contributes equally in the integral sense, regardless of its relative position along the beam. Therefore:
+
+|  |  |
+| :-: | :-: |
+|  | ( 6) |
+
+Where: for all i and is the total applied load.
+
+This demonstrates that the deflection integral depends only on the total load and remains independent of the number of loads, their positions, and their relative spacings.
+
+### Implications of the invariance property
+
+The above derivation establishes a fundamental property of the deflection integral for a two-span continuous beam: The integral of the mid-span deflection over the entire loading path is proportional only to the total applied load and is invariant with respect to load position and distribution.
+
+This property has several important implications:
+
+It enables direct determination of the total load from measured deflection data without tracking the exact position of each axle.
+
+It ensures robustness against variations in axle spacing and load configuration.
+
+It forms the theoretical basis for the development of practical load identification methods.
+
+### Remarks on applicability
+
+The validity of the invariance property relies on several key assumptions:
+
+linear elastic structural behavior;
+
+constant flexural rigidity EI along the beam;
+
+quasi-static loading conditions;
+
+absence of significant boundary nonlinearities (e.g., support settlement or friction).
+
+Within these conditions, the deflection-integral approach provides a robust and physically consistent framework for indirect load identification in continuous beam systems.
+
+The invariance property established above serves as the theoretical foundation for the load identification methods presented in the following sections. In particular, it enables the formulation of the Beam Property-based Method (BPM) and the Standard Load-based Method (SLM), which exploit the proportional relationship between the deflection integral and the total applied load.
+
+Beam Property-based Method (BPM) for load determination using measured deflection and known beam parameters
+
+The Beam Property-based Method (BPM) provides a direct means of determining the total applied load when the structural properties of the beam are known or can be reasonably estimated. In contrast to traditional inverse approaches that rely on point-wise deflection or strain measurements, the BPM exploits the integral relationship established in Section [2.2](#_Ref228265712).
+
+Once the analytical expression for mid-span deflection has been established, a direct relationship between the measured deflection and the unknown service load can be formulated. This forms the basis of the Beam Property-based Method (BPM), which is particularly useful when the geometric and material properties of the beam (span length l and flexural rigidity EI) are reliably known or can be determined with acceptable accuracy.
+
+### Case of single concentrated load
+
+Equation [(6)](#_Ref207354038) indicates that the deflection at the mid-point of span AB is a function not only of the load magnitude P and the beam properties EI and l, but also of the instantaneous load position x. However, when the deflection curve is integrated over the entire length of the two-span beam, the dependence on the variable x is eliminated. The resulting quantity, termed the deflection integral, depends exclusively on the total applied load P, the span length l, and the flexural rigidity EI. This integral is given by the following closed-form expression \[20\]:
+
+|  |  |
+| :-: | :-: |
+|  | ( 7) |
+
+Although Equation [(7)](#_Ref207354106) provides the exact analytical value, practical measurements in laboratory or field conditions are typically discrete. Therefore, the continuous integral is approximated by discretizing the beam into a finite number of equal segments. The deflection integral can then be evaluated numerically using the trapezoidal rule along the total length 2l as follows:
+
+|  |  |
+| :-: | :-: |
+|  | ( 8) |
+
+In the above expression, n denotes the number of equal segments into which each span is divided, l = l/n is the length of each segment, and represents the measured mid-span deflection of span AB corresponding to the ith segment when the load P is acting within that segment.
+
+Consequently, once the deflection integral is obtained from either the exact formula (Equation [(7)](#_Ref207354106)) or its discrete approximation (Equation [(8)](#_Ref207354205)) using field-measured mid-span deflections, the unknown total applied load P can be solved directly when l and EI are known:
+
+|  |  |
+| :-: | :-: |
+|  | ( 9) |
+
+### Case of multiple concentrated loads
+
+The same principle extends naturally to the more realistic situation of multiple concentrated loads, such as a truck with two or more axles. Consider two concentrated loads P₁ and P₂ separated by a fixed axle distance a, moving together along the beam as shown in [Fig. 2](#_Ref207354789). The position of the first load P₁ is defined by the distance x from support A, while P2 is at (x – a) from A.
+
+Fig. 2 - General layout of the beam under two concentrated loads
+
+Using the single-load deflection expression in Equation [(6)](#_Ref207354038) and applying the principle of superposition, the individual contributions to the mid-span deflection of span AB due to P₁ and P₂ are denoted y₁ and y₂, respectively:
+
+|  |  |
+| :-: | :-: |
+|  | ( 10) |
+|   | ( 11) |
+
+The total mid-span deflection caused by both loads is then the sum . When this total deflection is integrated over the full beam length, the deflection integral becomes:
+
+|  |  |
+| :-: | :-: |
+|  | ( 12) |
+
+where P = P1 + P2 is the total load. Remarkably, the deflection integral for the two-load case (and similarly for any number of concentrated loads) continues to depend only on the total load magnitude P, the span length l, and the flexural rigidity EI. It remains completely independent of the relative spacing a between the loads or their specific positions along the beam.
+
+For vehicles with three, four, or more axles, an identical superposition procedure is followed. In all cases, the final load magnitude is obtained by substituting the computed deflection integral into Equation [(9)](#_Ref207355258). This unique property - that the deflection integral is insensitive to load distribution and axle configuration - makes the BPM method both robust and practical for identifying the gross vehicle weight of real trucks crossing continuous-span bridges.
+
+Standard Load-based Method (SLM) for load estimation without explicit knowledge of flexural rigidity
+
+While the Beam Property-based Method (BPM) presented in Section [2.2](#_Ref226839774) offers a direct solution when the flexural rigidity EI and span length l are accurately known, determining these parameters for existing in-service bridges is often challenging. Aging effects, possible section loss, concrete cracking, or uncertainties in material properties can make the precise evaluation of EI difficult and costly. To overcome this limitation, the Standard Load-based Method (SLM) is proposed as a practical alternative that does not require explicit knowledge of the beam’s stiffness EI.
+
+The fundamental idea of SLM is to establish a correlation between the deflection integral and the total load by using a reference “standard load” whose magnitude is precisely known. The method relies on the fact that, under linear elastic behavior and unchanged structural conditions, the deflection integral is directly proportional to the total applied load. Therefore, by comparing the deflection integrals obtained under the known standard load and the unknown service load, the actual load can be determined without needing the absolute values of E and I.
+
+The procedure consists of the following steps:
+
+Step 1: Determine a standard load P0 with accurately known total weight. This can be achieved by using a calibrated test vehicle, a weigh station, or carefully weighed test weights in laboratory conditions.
+
+Step 2: Record the mid-span deflection of span AB (y0) while the standard load P0 moves quasi-statically along the entire two-span beam. Measurement can be carried out using dial gauges, LVDTs, laser devices, or non-contact technologies.
+
+Step 3: Calculate the corresponding deflection integral caused by the standard load P0 using either the analytical expression or its discrete approximation (Equations [(7)](#_Ref207354106) and [(8)](#_Ref207354205)):
+
+|  |  |
+| :-: | :-: |
+|  | ( 13) |
+
+Step 4: Measure the deflection at midspan AB (yt) under the unknown service load Pt moving along the beam under similar conditions.
+
+Step 5: Compute the deflection integral for the service load Pt in the same manner:
+
+|  |  |
+| :-: | :-: |
+|  | ( 14) |
+
+Step 6: The unknown service load Pt is then obtained directly from the ratio of the two deflection integrals, using Equations [(13)](#_Ref207358658) and [(14)](#_Ref207358660):
+
+|  |  |
+| :-: | :-: |
+|  | ( 15) |
+
+Equation [(15)](#_Ref207358696) holds provided that the structural parameters l and EI remain constant between the two measurement campaigns (standard load and service load). This assumption is generally valid in practice if the measurements are performed within a short time interval and no new damage or significant environmental changes (such as temperature-induced stiffness variation) occur between the tests. The method is fully consistent with the principle of linear superposition.
+
+From a practical viewpoint, the SLM offers several important advantages for real bridge applications. It eliminates the need for detailed material testing or finite element model updating to determine EI. It automatically accounts for the actual boundary conditions, support stiffness, and any minor existing damage that affects the overall structural behavior. Moreover, because only one critical measurement point (mid-span of the first span) is required, the method is cost-effective and easy to implement in structural health monitoring systems. To further improve accuracy, it is recommended to conduct the standard-load and service-load measurements under similar environmental conditions and to apply appropriate temperature compensation if necessary.
+
+By combining the simplicity of a reference load with the robustness of the deflection integral concept, the SLM provides engineers with a reliable and field-friendly tool for indirect identification of traffic overloads on continuous-span bridges.
+
+Key assumptions and practical considerations
+
+The application of both BPM and SLM is based on several key assumptions. The methods assume quasi-static loading, allowing dynamic effects to be neglected. Linear elastic behavior is presumed, meaning the relationship between load and deflection remains proportional without material nonlinearity or yielding. The flexural rigidity EI and span length l are considered constant between measurements, which is generally valid when tests are performed within a short time interval.
+
+In practice, deflection is measured only at the mid-point of the first span. This simplifies instrumentation while still providing sufficient information through the deflection integral. High-precision sensors and temperature compensation are recommended to ensure measurement accuracy. Environmental factors such as temperature variation and possible support settlement should be carefully monitored and corrected if necessary. When multiple vehicles are present simultaneously, appropriate signal processing may be required to isolate individual load effects.
+
+Provided these assumptions are reasonably satisfied, both methods offer a robust, cost-effective approach for indirect identification of service loads on two-span continuous bridges.
+
+Numerical and experimental validation
+
+To verify the validity and accuracy of the analytical formulations derived in Section [2](#_Ref226842284), both numerical simulations and laboratory experiments were conducted on a two-span continuous steel beam. The results from these models were systematically compared with the theoretical predictions obtained from the BPM (Equation [(9)](#_Ref207355258)) and SLM (Equation [(15)](#_Ref207358696)).
+
+Numerical model: The finite element software Abaqus \[[27](#_ENREF_27)\] was employed as the primary numerical tool for validation. This software is widely recognized for its high accuracy and effectiveness in modeling structural behavior using the finite element method. The test beam was discretized using beam elements with the exact geometric and material properties described below. Linear elastic material behavior was assumed, and the analysis was performed under static loading conditions to replicate the quasi-static movement of concentrated loads.
+
+Experimental model: All laboratory tests were carried out at the Laboratory of Transportation Technology and Systems, Department of Bridge and Road Engineering, Hanoi University of Civil Engineering. Deflection measurements were performed using a high-precision Linear Variable Differential Transformer (LVDT) connected to a TDS-303 data logger. The LVDT has a measuring range of 0-50 mm and a resolution of 0.005 mm. The experimental setup is illustrated in [Fig. 3](#_Ref226784423).
+
+The main parameters of the test specimen were as follows:
+
+A steel beam of total length 5400 mm was placed on three supports, forming a two-span continuous beam with equal span lengths of 2500 mm each. The end supports (A and C) were movable (circular steel cylinders), while the interior support (B) was fixed (equilateral triangular steel prism).
+
+The cross-section was a hollow square tube with outer dimensions 25 mm × 25 mm and wall thickness 2.03 mm (average values measured from the actual specimen).
+
+Material properties of the steel: Poisson’s ratio = 0.3, density = 7850 kg/m³, and modulus of elasticity E = 200 GPa.
+
+Concentrated loads were applied using calibrated steel weights (known masses) suspended at predetermined positions along the beam.
+
+Deflection at the mid-point of the first span (span N1) was measured using a LVDT with a range of 0-50 mm and accuracy of 0.005 mm. Each reported deflection value was taken as the average of three separate measurements (loaded versus unloaded conditions).
+
+Fig. 3 - Experimental model
+
+  
+
+In the validation tests, a single concentrated load of 4.143 kg (including the suspension hook) was applied successively at intervals of 250 mm along the entire length of the beam. The deflection curves at the mid-point of span N1 obtained from the analytical method, numerical simulation, and experimental measurements are compared in [Fig. 4](#_Ref226784464). Selected deflection values at 250 mm intervals are summarized in [Table 1](#_Ref106916889).
+
+As shown in [Fig. 4](#_Ref226784464) and [Table 1](#_Ref106916889), the analytical deflection curve coincides exactly with the numerical results from Abaqus (error = 0%), confirming the consistency between the theoretical derivation and the finite element implementation. The experimental results exhibit very small deviations from the analytical solutions, with the maximum absolute error being approximately 1.86%. These minor discrepancies can be attributed to slight inaccuracies in load positioning, minor friction at supports, or human measurement variations.
+
+Fig. 4 - Comparison of beam deflection calculated by the analytical method, numerical method, and experimental method for the case of a single concentrated load (the horizontal axis represents the distance from the load application point to the left support)
+
+Table 1 - Comparison of beam deflection calculated by the analytical method, numerical method, and experimental method for the case of a single concentrated load.
+
+| x (mm) | Deflection (mm) | Error |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| Analytical method | Numerical method | Experimental method | Numerical vs. Analytical | Experimental vs. Analytical |  |
+| 0 | 0.0000 | 0.0000 | 0.0000 | 0.00% | 0.00% |
+| 250 | 0.8874 | 0.8874 | 0.8844 | 0.00% | \-0.34% |
+| 500 | 1.6968 | 1.6968 | 1.6975 | 0.00% | 0.04% |
+| 750 | 2.3501 | 2.3501 | 2.3525 | 0.00% | 0.10% |
+| 1000 | 2.7693 | 2.7693 | 2.7738 | 0.00% | 0.16% |
+| 1250 | 2.8764 | 2.8764 | 2.8827 | 0.00% | 0.22% |
+| 1500 | 2.6253 | 2.6253 | 2.6363 | 0.00% | 0.42% |
+| 1750 | 2.0980 | 2.0980 | 2.1100 | 0.00% | 0.57% |
+| 2000 | 1.4087 | 1.4087 | 1.4213 | 0.00% | 0.90% |
+| 2250 | 0.6713 | 0.6713 | 0.6838 | 0.00% | 1.86% |
+| 2500 | 0.0000 | 0.0000 | 0.0000 | 0.00% | 0.00% |
+| 2750 | \-0.5132 | \-0.5132 | \-0.5069 | 0.00% | \-1.24% |
+| 3000 | \-0.8644 | \-0.8644 | \-0.8556 | 0.00% | \-1.02% |
+| 3250 | \-1.0715 | \-1.0715 | \-1.0600 | 0.00% | \-1.07% |
+| 3500 | \-1.1526 | \-1.1526 | \-1.1438 | 0.00% | \-0.76% |
+| 3750 | \-1.1255 | \-1.1255 | \-1.1200 | 0.00% | \-0.49% |
+| 4000 | \-1.0085 | \-1.0085 | \-1.0013 | 0.00% | \-0.71% |
+| 4250 | \-0.8194 | \-0.8194 | \-0.8175 | 0.00% | \-0.23% |
+| 4500 | \-0.5763 | \-0.5763 | \-0.5816 | 0.00% | 0.92% |
+| 4750 | \-0.2971 | \-0.2971 | \-0.3019 | 0.00% | 1.60% |
+| 5000 | 0.0000 | 0.0000 | 0.0000 | 0.00% | 0.00% |
+
+In [Table 1](#_Ref106916889), the error between the experimental method and the analytical method is calculated as the percentage ratio of the absolute difference between the analytical result and the experimental result to the analytical result. Similarly, the error between the numerical method and the analytical method is calculated as the percentage ratio of the absolute difference between the analytical result and the numerical result to the analytical result.
+
+The deflection integral along the full beam length was also computed for all three approaches, yielding values of 2488.6875 (analytical), 2488.6875 (numerical), and 2513.425 (experimental). The analytical and numerical integrals match the exact value derived from Equation [(7)](#_Ref207354106). The experimental integral differs by only about 0.49%, which is considered acceptable given the discretization into 20 segments and the small measurement errors mentioned above.
+
+These close agreements across analytical, numerical, and experimental results provide strong confidence in the correctness of the theoretical framework and demonstrate the feasibility of applying the proposed methods to determine service loads from measured mid-span deflections.
+
+Experimental results and load identification accuracy
+
+To demonstrate the practical effectiveness of the proposed methods, the measured mid-span deflections from the experimental program were used to back-calculate the total applied loads. The results obtained from the Beam Property-based Method (BPM) and the Standard Load-based Method (SLM) were then compared with the actual loads determined by direct weighing (Load Weighing Method – LWM).
+
+Case of two concentrated loads
+
+Two concentrated loads, denoted X21 and X22 (in grams), separated by a fixed distance of 250 mm, were applied simultaneously and moved along the beam to simulate a typical two-axle vehicle. The corresponding mid-span deflections of span N1 recorded during the tests are presented in [Table 2](#_Ref226813268).
+
+Using the deflection integral computed from these measured values, the total applied load was determined as follows:
+
+BPM (Equation [(9)](#_Ref207355258)): The calculated total load was 67,730.0 N, equivalent to 6,904.18 g.
+
+SLM (Equation [(15)](#_Ref207358696)): Taking the single concentrated load case (Section [3](#_Ref226843110)) as the standard reference load, the calculated total load was 67,400.2 N, equivalent to 6,870.56 g.
+
+LWM: The actual total load measured by precision scale was 66,992.5 N, equivalent to 6,829 g (where X21 = 2,145 g and X22 = 4,684 g).
+
+The BPM result differed from the LWM by approximately 1.10%, while the SLM result showed a smaller deviation of only 0.61%. These differences are considered minor and acceptable for engineering purposes.
+
+Case of three concentrated loads
+
+A more complex loading configuration representing a three-axle truck was also investigated. Three concentrated loads X31, X32, and X33 (in grams), spaced at 250 mm and 500 mm respectively, were applied and moved along the beam, see [Fig. 5](#_Ref226880840). The measured mid-span deflections are likewise summarized in [Table 2](#_Ref226813268).
+
+The total applied load was identified using the same procedures:
+
+BPM (Equation [(9)](#_Ref207355258)): The calculated total load was 126,565.5 N, equivalent to 12,901.68 g.
+
+SLM (Equation [(15)](#_Ref207358696)): Using the single-load case as the standard reference, the calculated total load was 125,949.2 N, equivalent to 12,838.86 g.
+
+LWM: The actual total load obtained by weighing was 125,077.5 N, equivalent to 12,750 g (where X₃₁ = 2,550 g, X₃₂ = 5,100 g, and X₃₃ = 5,100 g).
+
+In this case, the BPM deviated from the LWM by about 1.19%, while the SLM showed an even smaller difference of 0.70%. Once again, the identified loads from both proposed methods agreed closely with the directly measured values.
+
+Fig. 5 - Experimental model of the three-load concentrated case
+
+Table 2 - Experimental deflection values of the three case studies.
+
+| x (mm) | Deflection (mm) |  |  |
+| :-: | :-: | :-: | :-: |
+| Single Concentrated Load | Two Concentrated Loads | Three Concentrated Loads |  |
+| 0 | 0 | 0 | 0 |
+| 250 | 0.8844 | 0.4625 | 0.5525 |
+| 500 | 1.6975 | 1.8813 | 1.045 |
+| 750 | 2.3525 | 3.1413 | 2.5413 |
+| 1000 | 2.7738 | 4.0988 | 4.87 |
+| 1250 | 2.8827 | 4.635 | 6.7588 |
+| 1500 | 2.6363 | 4.6238 | 7.935 |
+| 1750 | 2.11 | 4.0688 | 8.2775 |
+| 2000 | 1.4213 | 3.1375 | 7.6825 |
+| 2250 | 0.6838 | 1.96 | 6.28 |
+| 2500 | 0 | 0.7715 | 4.3725 |
+| 2750 | \-0.5069 | \-0.2689 | 2.2975 |
+| 3000 | \-0.8556 | \-1.0063 | 0.3021 |
+| 3250 | \-1.06 | \-1.4988 | \-1.2588 |
+| 3500 | \-1.1438 | \-1.7813 | \-2.365 |
+| 3750 | \-1.12 | \-1.86 | \-3.0363 |
+| 4000 | \-1.0013 | \-1.7738 | \-3.33 |
+| 4250 | \-0.8175 | \-1.5525 | \-3.2663 |
+| 4500 | \-0.5816 | \-1.2213 | \-2.945 |
+| 4750 | \-0.3019 | \-0.8125 | \-2.4125 |
+| 5000 | 0 | \-0.3325 | \-1.7088 |
+| 5250 | 0 | \-1.0713 |  |
+| 5500 | \-0.365 |  |  |
+| 5750 | 0 |  |  |
+
+The consistently small errors observed across different load configurations (single, two-, and three-concentrated loads) confirm that the deflection integral approach effectively captures the total load magnitude independently of the number of axles or their spacing. This outcome highlights the robustness of BPM and especially SLM for practical applications on continuous bridges, where accurate determination of EI is often difficult. In real-world conditions, SLM demonstrates a clear advantage over BPM because it does not require precise knowledge of the beam’s flexural rigidity EI, which is frequently uncertain or costly to determine for existing in-service bridges.
+
+Sensitivity analysis to measurement noise
+
+In practical applications on real bridges, mid-span deflection measurements are inevitably affected by sensor noise, environmental factors (e.g., temperature fluctuations, minor vibrations), and discretization errors when applying the trapezoidal rule. To quantify the robustness of the proposed BPM and SLM under realistic conditions, a sensitivity analysis was performed by artificially contaminating the experimental mid-span deflection data ([Table 2](#_Ref226813268)) with Gaussian white noise at a level of ±5%. This noise level is conservative and representative of typical field measurement uncertainties reported in structural health monitoring studies.
+
+The noisy deflection at each measurement point i was generated as:
+
+|  |  |
+| :-: | :-: |
+|  | ( 16) |
+
+Where:
+
+ = 0.05 (5% noise level),
+
+is a standard normal random variable.
+
+A Monte Carlo simulation with 200 independent realizations was conducted separately for the two-concentrated-load and three-concentrated-load cases (the most representative of real truck loading). For each realization, the deflection integral was recomputed using the trapezoidal rule (Eq. [(8)](#_Ref207354205)) with the same segment length as in the original experimental analysis. The total service loads were then re-identified using both BPM (Eq. [(9)](#_Ref207355258)) and SLM (Eq. [(15)](#_Ref207358696)), assuming the standard load deflection (single concentrated load) remained noise-free, as is feasible in controlled calibration campaigns. [Table 3](#_Ref226979849) summarizes the statistical results of the identified loads under ±5% noise.
+
+Table 3 - Effect of ±5% measurement noise on load identification accuracy (200 Monte Carlo realizations).
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| Case | Method | Mean identified load (g) | Mean relative error vs. LWM (%) | Max. relative error (%) | Std. dev. of error (%) |
+| Two concentrated loads | BPM | 6,904 | 2.65 | 8.54 | 3.23 |
+| SLM | 6,871 | 2.65 | 8.54 | 3.23 |  |
+| Three concentrated loads | BPM | 12,902 | 2.63 | 8.99 | 3.18 |
+| SLM | 12,839 | 2.63 | 8.99 | 3.18 |  |
+
+As shown in [Table 3](#_Ref226979849), the mean relative errors in the identified total loads remained below 2.7% for both methods, even under the relatively high ±5% noise level. The maximum errors in individual realizations reached approximately 9%, but these extreme cases are rare (occurring in \<5% of simulations). The standard deviations of the errors were consistently around 3.2%, indicating stable performance across realizations. Notably, the SLM exhibited robustness comparable to BPM in this analysis because the reference standard-load integral was kept noise-free; in field applications where both measurements may contain similar noise, the relative nature of SLM is expected to further reduce sensitivity.
+
+These results confirm that both BPM and SLM maintain acceptable accuracy (mean error \< 3%) under realistic measurement noise typical of LVDT or laser-based systems on bridges. The deflection-integral approach effectively averages out local noise over the entire beam length, which explains the method’s robustness compared with point-wise deflection or strain-based techniques. In practice, where actual noise levels are often 1–3%, the expected identification errors would be proportionally lower (approximately 0.5-1.6%).
+
+The sensitivity analysis thus demonstrates the practical reliability of the proposed methods for continuous-span bridges and provides confidence for future field implementations. Limitations related to higher noise levels or combined environmental effects will be addressed in subsequent studies on in-service concrete bridges.
+
+Conclusion
+
+This study successfully develops and validates two practical methods, namely the Beam Property-based Method (BPM) and the Standard Load-based Method (SLM), for indirectly determining the total service loads acting on two-span continuous beams using only mid-span deflection measurements of the first span. Analytical formulations based on the force method, finite element validation in Abaqus, and laboratory experiments on a steel two-span continuous beam (2 × 2500 mm) demonstrate that both methods can identify the total applied load with high accuracy, showing deviations of only 0.61%–1.19% from the directly weighed values across single, two-, and three-concentrated load cases.
+
+Importantly, a Monte Carlo sensitivity analysis confirms the robustness of the proposed methods under realistic conditions. Even when the measured mid-span deflections are contaminated with ±5% Gaussian noise, the mean relative errors in the identified loads remain below 3% for both BPM and SLM. These results highlight the effectiveness of the deflection-integral approach in averaging out localized measurement uncertainties, making the methods particularly promising for field applications.
+
+Nevertheless, several limitations should be acknowledged. The current validation was performed on a small-scale steel beam under quasi-static loading conditions. Real bridge structures are typically made of concrete, subjected to dynamic vehicle loads, and influenced by environmental factors such as temperature variations and support settlements. The study is also limited to equal two-span continuous beams.
+
+Future research will focus on addressing these limitations through: (1) field testing on in-service concrete continuous bridges under actual traffic conditions; (2) incorporation of dynamic effects and development of temperature compensation procedures; (3) extension of the methodology to multi-span and unequal-span continuous systems; and (4) more comprehensive uncertainty quantification frameworks, including Bayesian approaches, to provide confidence intervals for load estimates.
+
+By offering a simple, cost-effective, and non-intrusive solution with quantified robustness to measurement noise, the proposed BPM and SLM provide a valuable tool for indirect identification of traffic overloads, structural health monitoring, and asset management of existing continuous bridge networks.
+
+References
+
+ADDIN EN.REFLIST \[1\]- Fan, Y., et al., Analysis for Yangmingtan Bridge collapse. Engineering Failure Analysis, 2015. 56: p. 20-27 DOI: <https://doi.org/10.1016/j.engfailanal.2015.05.003>.
+
+\[2\]- Salem, H.M. and H.M. Helmy, Numerical investigation of collapse of the Minnesota I-35W bridge. Engineering Structures, 2014. 59: p. 635-645 DOI: <https://doi.org/10.1016/j.engstruct.2013.11.022>.
+
+\[3\]- Chan, T. and D. Thambiratnam, Structural health monitoring in Australia. 2014. 1-229.
+
+\[4\]- Invernizzi, S., F. Montagnoli, and A. Carpinteri, Very High Cycle Corrosion Fatigue Study of the Collapsed Polcevera Bridge, Italy. Journal of Bridge Engineering, 2022. 27(1): p. 04021102 DOI: 10.1061/(ASCE)BE.1943-5592.0001807.
+
+\[5\]- Morgese, M., et al., Post-collapse analysis of Morandi’s Polcevera viaduct in Genoa Italy. Journal of Civil Structural Health Monitoring, 2020. 10(1): p. 69-85 DOI: 10.1007/s13349-019-00370-7.
+
+\[6\]- Ventura, R., B. Barabino, and G. Maternini, Estimating the frequency of traffic overloading on road bridges. Journal of Traffic and Transportation Engineering (English Edition), 2024. 11(4): p. 776-796 DOI: <https://doi.org/10.1016/j.jtte.2023.11.005>.
+
+\[7\]- Li, H., T. Wang, and G. Wu, Nonlinear vibration analysis of beam-like bridges with multiple breathing cracks under moving vehicle load. Mechanical Systems and Signal Processing, 2023. 186: p. 109866 DOI: <https://doi.org/10.1016/j.ymssp.2022.109866>.
+
+\[8\]- Fattorini, F., et al., Application to the territorial authorities of the “Guidelines for the classification and management of risk, for the evaluation of safety and for the monitoring of existing bridges”. The case study of the Municipality of Rome. Procedia Structural Integrity, 2023. 44: p. 689-696 DOI: <https://doi.org/10.1016/j.prostr.2023.01.090>.
+
+\[9\]- Gajda, J., et al. Long-Term Assessment of the Properties of Load Sensors Applied in Weigh-in-Motion Systems. Sensors, 2025. 25, DOI: 10.3390/s25082421.
+
+\[10\]- Qiu, X., Y. Lu, and Y. Chen, Weigh-in-Motion Systems: Calibration, Accuracy and Practical Deployment Challenges. Sensors, 2025. 25(8): p. 2421.
+
+\[11\]- Federal Highway, A., Long-Term Bridge Performance Program: Weigh-in-Motion System Accuracy and Precision. 2016, FHWA, U.S. Department of Transportation.
+
+\[12\]- Federal Highway, A., Commercial Vehicle Size and Weight Enforcement Program - Desk Scan of WIM Technologies. 2014, FHWA, U.S. Department of Transportation.
+
+\[13\]- Federal Highway, A., Comprehensive Truck Size and Weight (TS\&W) Study - Costs of Weigh Stations. 2009, FHWA, U.S. Department of Transportation.
+
+\[14\]- Nguyen, D.H., et al., Damage detection in girder bridges using modal curvatures gapped smoothing method and Convolutional Neural Network: Application to Bo Nghi bridge. Theoretical and Applied Fracture Mechanics, 2020. 109: p. 102728 DOI: <https://doi.org/10.1016/j.tafmec.2020.102728>.
+
+\[15\]- Andersen, P., Mukhopadhyay, Santosh K., Determination of Load Distribution on a Beam from Measurements on its Deflected Form. 1950, University of Minnesota.
+
+\[16\]- Hoang, T., et al., Calculation of force distribution for a periodically supported beam subjected to moving loads. Journal of Sound and Vibration, 2017. 388: p. 327-338 DOI: <https://doi.org/10.1016/j.jsv.2016.10.031>.
+
+\[17\]- Chen, Z., et al., Identification of multi-axle vehicle loads on beam type bridge based on minimal residual norm steepest descent method. Journal of Sound and Vibration, 2023. 563: p. 117866 DOI: <https://doi.org/10.1016/j.jsv.2023.117866>.
+
+\[18\]- Das, A., et al., Signal-based online acceleration and strain data fusion using B-splines and Kalman filter for full-field dynamic displacement estimation. 2024.
+
+\[19\]- Luo, S., et al. Distributed Dynamic Load Identification of Beam Structures Using a Bayesian Method. Applied Sciences, 2023. 13, DOI: 10.3390/app13042537.
+
+\[20\]- Jiang, J., et al. Real-Time Identification of Dynamic Loads Using Inverse Solution and Kalman Filter. Applied Sciences, 2020. 10, DOI: 10.3390/app10196767.
+
+\[21\]- Katori, H., Inverse Problems for an Euler-Bernoulli Beam: Identification of Bending Rigidity and External Loads. World Journal of Mechanics, 2018. 08: p. 192-199 DOI: 10.4236/wjm.2018.85014.
+
+\[22\]- Nguyễn, Q.B., T. Hoàng, and H.S. Nguyễn, Determination of the load applied on a simple supported beam based on measured deflection data. Journal of Science and Technology in Civil Engineering (JSTCE) - HUCE, 2024. 18(2V): p. 61-71 DOI: <https://doi.org/10.31814/stce.huce2024-18(2V)-05>.
+
+\[23\]- Pokharel, S., Finite element modelling of simply supported universal beam (UB). 2022.
+
+\[24\]- Zhu, X.Q. and S.S. Law, Recent developments in inverse problems of vehicle–bridge interaction dynamics. Journal of Civil Structural Health Monitoring, 2016. 6(1): p. 107-128 DOI: 10.1007/s13349-016-0155-x.
+
+\[25\]- Law, S. and X. Zhu, Study on different beam models in moving force identification. Journal of Sound and Vibration, 2000. 234: p. 661-679 DOI: 10.1006/jsvi.2000.2867.
+
+\[26\]- Kapoor, T., et al., Physics-informed machine learning for moving load problems. Journal of Physics: Conference Series, 2024. 2647(15): p. 152003 DOI: 10.1088/1742-6596/2647/15/152003.
+
+\[27\]- Smith, M., ABAQUS/Standard User's Manual, Version 6.9. 2009, Providence, RI: Dassault Systèmes Simulia Corp.
+
+\* Corresponding author. Tel.: +84 971899888.
+
+E-mail address: sonvt2@huce.edu.vn
+
+e-ISSN: 2170-127X, 
+
+1 https://www.globaltimes.cn/content/729092.shtml
+
+2 https://www.chinadaily.com.cn/china/2011-07/22/content\_12956827.htm?
+
+3 https://guysboroughjournal.ca/?page=post\&ID=1081
+
+4 https://www.bbc.com/news/world-europe-50460671
