@@ -87,3 +87,8 @@ Quy tắc chung:
   - *Structures*: phạm vi kết cấu rộng, chấp nhận lý thuyết + thí nghiệm + nghiên cứu điển hình. Đây là lựa chọn mặc định.
   - *Measurement*: hợp nếu bài xoay trục sang quan sát được, ngân sách sai số và bố trí cảm biến. Nhưng bài IMS 2025 cũng đăng ở đây, nên phải phân biệt thật rõ.
 - Gói chạy ngay: WP1 (tài liệu, tính mới, kiểm DOI), WP2 (nghiệm kín 3 nhịp), WP3 (Cầu Mây, Thái Bình với EI(x) lấy từ thuyết minh thiết kế nếu đọc được), WP4 (bản ghi động Gie Cục, Phương Độ). Phần nào thiếu metadata thì ghi rõ giả thiết và chờ số liệu tác giả xin về.
+
+## 6. Quyết định bổ sung (2026-10-11, sau WP1–WP4)
+- Không làm thêm thí nghiệm. Bỏ WP6.
+- Dàn ý trong `docs/04_tong_hop_ket_qua_lo_trinh_A.md` §2 đã được duyệt. Bắt đầu WP7 (viết bản thảo cho *Structures*), sau đó WP8 (phản biện đỏ và kiểm tra).
+- Thái Bình không đưa vào phân tích chính vì mô hình chưa khớp; chỉ nêu ở phần hạn chế và hướng tiếp theo.
