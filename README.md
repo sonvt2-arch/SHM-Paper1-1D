@@ -32,6 +32,7 @@ Trạng thái chi tiết và việc còn lại: **`docs/05_trang_thai_va_viec_ti
 | `03_thu_xin_so_lieu.md` | Thư xin số liệu thô gửi người lập báo cáo kiểm định |
 | `04_tong_hop_ket_qua_lo_trinh_A.md` | Tổng hợp WP1–WP4 và dàn ý đã duyệt |
 | `05_trang_thai_va_viec_tiep_theo.md` | Trạng thái hiện tại, việc còn lại |
+| `06_huong_dan_chia_file_len_drive.md` | Cách chia file lớn (≤ 2 MB/phần) để chuyển từ Drive lên GitHub |
 | `novelty_matrix.md`, `reference_check.md` | WP1: tổng quan tính mới, kiểm tra DOI, chọn tạp chí |
 | `wp2_three_span_theory.md` | WP2: nghiệm kín dầm liên tục 3 nhịp |
 | `wp3_continuous_bridges.md` | WP3: Cầu Mây và Thái Bình |
