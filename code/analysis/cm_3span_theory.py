@@ -249,7 +249,7 @@ if __name__ == "__main__":
     rm = [r for r in sp.Poly(cubm, b).nroots(n=15) if r.is_real and r > 0]
     print("Mid main-span, uniform EI: 3 b^3 + 10 b^2 - 12 = 0  -> beta_crit =", rm)
 
-    print("Whole side span blind (mu = 2, i.e. mu_crit(xi->0)): beta^3 - 3 beta - rho = 0;"
+    print("End of side-span blind locus, no positive C_m on the whole side span (mu = 2, i.e. mu_crit(xi->0)): beta^3 - 3 beta - rho = 0;"
           " rho=1 -> beta = 2 cos(pi/9) =", sp.N(2 * sp.cos(sp.pi / 9), 15),
           " check:", sp.N((2 * sp.cos(sp.pi / 9))**3 - 3 * 2 * sp.cos(sp.pi / 9) - 1, 5))
     nb = [r for r in sp.Poly(30 * b**3 - 69 * b - 16, b).nroots(n=15) if r.is_real and r > 0]

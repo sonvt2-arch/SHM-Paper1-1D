@@ -82,7 +82,7 @@ B. Blind configurations and optimal sensor position
   FE at beta_crit, mid side (exact zero)         closed= 0.000000000000  FE= 0.000000000000  abserr=1.0e-13 OK
   beta=1.2: rho_crit=-1.908000 <= 0 -> no blind stiffness ratio
   FE at rho_crit=0.994500, beta=1.7              closed= 0.000000000000  FE= 0.000000000000  abserr=1.8e-13 OK
- whole side span blind when mu>=2: beta^3-3beta-1=0 -> beta = 2cos(pi/9) = 1.879385241571817
+ side-span blind locus ends (no positive C_m on the whole side span) when mu>=2: beta^3-3beta-1=0 -> beta = 2cos(pi/9) = 1.879385241571817
   FE at beta=2cos(pi/9), xi=0.05 (should be < 0) closed=-0.000950000000  FE=-0.000950000000  relerr=4.6e-11 OK
  beta_crit (mid main, uniform EI): 3b^3+10b^2-12=0 -> 0.964705646959921
   FE at beta_crit, mid main (exact zero)         closed= 0.000000000000  FE= 0.000000000000  abserr=1.3e-13 OK

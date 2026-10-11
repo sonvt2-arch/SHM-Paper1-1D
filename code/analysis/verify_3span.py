@@ -86,7 +86,7 @@ for beta in [1.2, 1.7]:
     else:
         print(f"  beta={beta}: rho_crit={rc:.6f} <= 0 -> no blind stiffness ratio")
 bw = 2 * np.cos(np.pi / 9)
-print(f" whole side span blind when mu>=2: beta^3-3beta-1=0 -> beta = 2cos(pi/9) = {bw:.15f}")
+print(f" side-span blind locus ends (no positive C_m on the whole side span) when mu>=2: beta^3-3beta-1=0 -> beta = 2cos(pi/9) = {bw:.15f}")
 check("FE at beta=2cos(pi/9), xi=0.05 (should be < 0)", th.side_norm(0.05, bw),
       fe_norm([1, bw, 1], 0.05, 1, 1.0))
 bm = [r for r in np.roots([3, 10, 0, -12]) if abs(r.imag) < 1e-14 and r.real > 0][0].real
