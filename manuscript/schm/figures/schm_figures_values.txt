@@ -1,0 +1,64 @@
+figure	quantity	value
+Fig3	Cau May marker beta = 90/55, xi = 0.5; N_side	1.636364, 0.163223
+Fig7	k_FE (kN m/rad); calibration B alpha, k	2.7482e+07; 0.7162, 1.1991e+08
+Fig7a	n, Lv, max EI/EI_mid	2.9428, 44.0, 10.8741
+Fig7 N8, 0.4L of side span	cal A: C_m (m2/kN), N_m, R_m	4.37612e-05, 0.1815, 0.1832
+Fig7 N8, 0.4L of side span	cal B: C_m (m2/kN), N_m, R_m	1.14702e-04, 0.4757, 0.5556
+Fig7 N8, 0.4L of side span	pinned piers: N_m	0.0301
+Fig7 N8, 0.4L of side span	fixed piers: N_m	0.4216
+Fig7 N7, mid centre span	cal A: C_m (m2/kN), N_m, R_m	3.60969e-04, 0.2088, 0.5865
+Fig7 N7, mid centre span	cal B: C_m (m2/kN), N_m, R_m	4.04606e-04, 0.2340, 0.7717
+Fig7 N7, mid centre span	pinned piers: N_m	0.2480
+Fig7 N7, mid centre span	fixed piers: N_m	0.1467
+FigS1	N8, 0.4L (installed) cal A N_m	0.1815
+FigS1	N8, mid side span (alternative) cal A N_m	0.1051
+FigS1	N7, mid centre (installed) cal A N_m	0.2088
+FigS1	N8, 0.4L (installed) cal B N_m	0.4757
+FigS1	N8, mid side span (alternative) cal B N_m	0.3772
+FigS1	N7, mid centre (installed) cal B N_m	0.2340
+FigS1	N8, 0.4L (installed) pinned..fixed bound N_m	0.0228 … 0.4461
+FigS1	N8, mid side span (alternative) pinned..fixed bound N_m	-0.0659 … 0.3753
+FigS1	N7, mid centre (installed) pinned..fixed bound N_m	0.1448 … 0.2628
+FigS1	N8, 0.4L (installed) cal A R_m	0.1832
+FigS1	N8, mid side span (alternative) cal A R_m	0.1113
+FigS1	N7, mid centre (installed) cal A R_m	0.5865
+FigS1	N8, 0.4L (installed) cal B R_m	0.5556
+FigS1	N8, mid side span (alternative) cal B R_m	0.4888
+FigS1	N7, mid centre (installed) cal B R_m	0.7717
+Fig8	Gie Cuc I N1 raw e1 tare only (%)	1.2
+Fig8	Gie Cuc I N1 raw e2 tare only (%)	2.7
+Fig8	Gie Cuc I N2 raw e1 tare only (%)	0.0
+Fig8	Gie Cuc I N2 raw e2 tare only (%)	0.0
+Fig8	Gie Cuc I N3 raw e1 tare only (%)	-5.6
+Fig8	Phuong Do N1 raw e1 tare only (%)	-36.4
+Fig8	Phuong Do N1 proc e1 tare only (%)	-1.9
+Fig8	Phuong Do N2 raw e1 tare only (%)	6.2
+Fig8	Gie Cuc I N1 raw e1 cubic (quiet samples) (%)	2.0
+Fig8	Gie Cuc I N1 raw e2 cubic (quiet samples) (%)	3.5
+Fig8	Gie Cuc I N2 raw e1 cubic (quiet samples) (%)	1.7
+Fig8	Gie Cuc I N2 raw e2 cubic (quiet samples) (%)	3.6
+Fig8	Gie Cuc I N3 raw e1 cubic (quiet samples) (%)	1.7
+Fig8	Phuong Do N1 raw e1 cubic (quiet samples) (%)	-1.2
+Fig8	Phuong Do N1 proc e1 cubic (quiet samples) (%)	0.1
+Fig8	Phuong Do N2 raw e1 cubic (quiet samples) (%)	1.2
+Fig8	Gie Cuc I N1 raw e1 high-pass 0.1 Hz (%)	-58.3
+Fig8	Gie Cuc I N1 raw e2 high-pass 0.1 Hz (%)	-82.1
+Fig8	Gie Cuc I N2 raw e1 high-pass 0.1 Hz (%)	-44.4
+Fig8	Gie Cuc I N2 raw e2 high-pass 0.1 Hz (%)	-48.2
+Fig8	Gie Cuc I N3 raw e1 high-pass 0.1 Hz (%)	-49.5
+Fig8	Phuong Do N1 raw e1 high-pass 0.1 Hz (%)	-70.7
+Fig8	Phuong Do N1 proc e1 high-pass 0.1 Hz (%)	-71.5
+Fig8	Phuong Do N2 raw e1 high-pass 0.1 Hz (%)	-72.3
+Fig8	Gie Cuc I N1 raw e1 high-pass 0.5 Hz (%)	-101.2
+Fig8	Gie Cuc I N1 raw e2 high-pass 0.5 Hz (%)	-97.6
+Fig8	Gie Cuc I N2 raw e1 high-pass 0.5 Hz (%)	-101.4
+Fig8	Gie Cuc I N2 raw e2 high-pass 0.5 Hz (%)	-102.3
+Fig8	Gie Cuc I N3 raw e1 high-pass 0.5 Hz (%)	-101.9
+Fig8	Phuong Do N1 raw e1 high-pass 0.5 Hz (%)	-101.0
+Fig8	Phuong Do N1 proc e1 high-pass 0.5 Hz (%)	-101.9
+Fig8	Phuong Do N2 raw e1 high-pass 0.5 Hz (%)	-101.1
+Fig9	Gie Cuc I N1 proc e1: I_LP/I, net/abs	0.9999, 0.001
+Fig9	Gie Cuc I N2 proc e1: I_LP/I, net/abs	0.9999, 0.001
+Fig9	Gie Cuc I N3 proc e1: I_LP/I, net/abs	1.0, 0.0
+Fig9	Phuong Do N1 proc e1: I_LP/I, net/abs	1.0006, 0.003
+Fig9	Phuong Do N2 proc e1: I_LP/I, net/abs	1.0006, 0.009

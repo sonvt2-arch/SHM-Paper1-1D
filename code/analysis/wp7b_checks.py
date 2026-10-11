@@ -1,16 +1,19 @@
 """WP7b - mechanical checks of manuscript/v2 (word counts, highlights,
 equation citations, placeholders).
 
-Run:  python3 code/analysis/wp7b_checks.py
+Run:  python3 code/analysis/wp7b_checks.py [manuscript_dir]
+      (default manuscript/v2; e.g. manuscript/schm for the SCHM version)
 Counting rules: inline math $...$ counts as one word; display equations,
 tables, headings, figure captions, appendices, declarations and references
 are excluded from the main-text count (Introduction to end of Section 8).
 """
 import os
 import re
+import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-V2 = os.path.join(ROOT, "manuscript", "v2")
+V2 = os.path.join(ROOT, sys.argv[1]) if len(sys.argv) > 1 else \
+    os.path.join(ROOT, "manuscript", "v2")
 ms = open(os.path.join(V2, "manuscript.md"), encoding="utf-8").read()
 
 
@@ -40,8 +43,9 @@ for line in main.splitlines():
     keep.append(s)
 print(f"Main text (Sections 1-8, prose only): {words(' '.join(keep))} words")
 
-hl = [l[2:].strip() for l in open(os.path.join(V2, "highlights.md"), encoding="utf-8")
-      if l.startswith("- ")]
+hl_path = os.path.join(V2, "highlights.md")
+hl = [l[2:].strip() for l in open(hl_path, encoding="utf-8")
+      if l.startswith("- ")] if os.path.exists(hl_path) else []
 for h in hl:
     print(f"Highlight ({len(h)} chars): {h}")
 
