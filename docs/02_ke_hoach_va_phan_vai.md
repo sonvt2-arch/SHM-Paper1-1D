@@ -74,9 +74,16 @@ Quy tắc chung:
 | 4–6 | WP7, WP8 (lộ trình A) | Bản thảo A đạt ≥ 8/10 ở vòng đọc bàn mô phỏng |
 | 6–18 | WP5 (lộ trình B), cập nhật WP7, WP8 | Bản thảo B nộp tạp chí SHM |
 
-## 5. Việc cần tác giả quyết định hoặc cung cấp
+## 5. Quyết định của tác giả (2026-10-11)
 
-1. Thư từ chối của Engineering Structures (ENGSTRUCT-D-26-08490). Thư nằm trong hộp thư sonvt2@huce.edu.vn, không có trên Drive.
-2. Có liên hệ được đơn vị kiểm định để xin file thô SDA-830C và mô hình MIDAS không.
-3. Có cầu liên tục nào (Cầu Mây, Thái Bình hoặc cầu vượt 2–3 nhịp gần Hà Nội) xin đo bổ sung được không. Có thiết bị gì: LVDT, máy toàn đạc robot, camera, radar giao thoa.
-4. Chọn tạp chí đích cho lộ trình A.
+1. **Engineering Structures (ENGSTRUCT-D-26-08490):** từ chối tại bàn, chỉ nêu không phù hợp phạm vi tạp chí.
+2. **Số liệu thô, mô hình MIDAS:** tác giả sẽ hỏi người lập báo cáo kiểm định. Thư xin số liệu: `docs/03_thu_xin_so_lieu.md`.
+3. **Đo bổ sung trên cầu liên tục:** không có. Bỏ WP5. WP6 (thí nghiệm bổ sung trên mô hình hiện có) để tuỳ chọn.
+4. **Lộ trình: A**, chỉ dùng dữ liệu có sẵn, 4–6 tuần, đích *Structures* hoặc *Measurement*.
+
+### Hệ quả cho lộ trình A
+- Bài không được tự nhận là "kiểm chứng hiện trường" trên cầu liên tục. Phần cầu thật được viết là **ứng dụng tiêu chí quan sát được và kiểm tra nhất quán trên dữ liệu kiểm định có sẵn**.
+- Chọn tạp chí sau WP1:
+  - *Structures*: phạm vi kết cấu rộng, chấp nhận lý thuyết + thí nghiệm + nghiên cứu điển hình. Đây là lựa chọn mặc định.
+  - *Measurement*: hợp nếu bài xoay trục sang quan sát được, ngân sách sai số và bố trí cảm biến. Nhưng bài IMS 2025 cũng đăng ở đây, nên phải phân biệt thật rõ.
+- Gói chạy ngay: WP1 (tài liệu, tính mới, kiểm DOI), WP2 (nghiệm kín 3 nhịp), WP3 (Cầu Mây, Thái Bình với EI(x) lấy từ thuyết minh thiết kế nếu đọc được), WP4 (bản ghi động Gie Cục, Phương Độ). Phần nào thiếu metadata thì ghi rõ giả thiết và chờ số liệu tác giả xin về.
