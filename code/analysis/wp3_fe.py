@@ -5,6 +5,8 @@ Independent of code/analysis/cm_multispan.py (WP2); written for WP3.
 Units: kN, m.  Deflection positive DOWNWARD (load positive downward).
 """
 import numpy as np
+import scipy.sparse as sp
+from scipy.sparse.linalg import splu
 
 
 class Bridge:
@@ -27,28 +29,33 @@ class Bridge:
             xs += list(np.linspace(a, b, n + 1)[1:])
         self.x = np.array(xs)
         n = len(self.x)
-        K = np.zeros((2 * n, 2 * n))
+        h = np.diff(self.x)
+        EIe = EI(0.5 * (self.x[:-1] + self.x[1:])) * np.ones(n - 1)
+        rows, cols, vals = [], [], []
         for e in range(n - 1):
-            h = self.x[e + 1] - self.x[e]
-            k = EI(0.5 * (self.x[e] + self.x[e + 1])) / h ** 3 * np.array(
-                [[12, 6 * h, -12, 6 * h], [6 * h, 4 * h * h, -6 * h, 2 * h * h],
-                 [-12, -6 * h, 12, -6 * h], [6 * h, 2 * h * h, -6 * h, 4 * h * h]])
+            he = h[e]
+            k = EIe[e] / he ** 3 * np.array(
+                [[12, 6 * he, -12, 6 * he], [6 * he, 4 * he * he, -6 * he, 2 * he * he],
+                 [-12, -6 * he, 12, -6 * he], [6 * he, 2 * he * he, -6 * he, 4 * he * he]])
             idx = [2 * e, 2 * e + 1, 2 * e + 2, 2 * e + 3]
-            K[np.ix_(idx, idx)] += k
+            for a in range(4):
+                for b_ in range(4):
+                    rows.append(idx[a]); cols.append(idx[b_]); vals.append(k[a, b_])
         node = [int(np.argmin(abs(self.x - s))) for s in self.sup]
         fixed = [2 * i for i in node]
         for i in node[1:3]:
             if np.isinf(k_rot):
                 fixed.append(2 * i + 1)
-            else:
-                K[2 * i + 1, 2 * i + 1] += k_rot
+            elif k_rot > 0:
+                rows.append(2 * i + 1); cols.append(2 * i + 1); vals.append(k_rot)
+        K = sp.csc_matrix((vals, (rows, cols)), shape=(2 * n, 2 * n))
         self.free = np.setdiff1d(np.arange(2 * n), fixed)
-        self.Kff = K[np.ix_(self.free, self.free)]
+        self.lu = splu(K[self.free][:, self.free].tocsc())
         self.n = n
 
     def solve(self, F):
         u = np.zeros(2 * self.n)
-        u[self.free] = np.linalg.solve(self.Kff, F[self.free])
+        u[self.free] = self.lu.solve(F[self.free])
         return u[0::2]
 
     def point_load(self, xp, P=1.0):

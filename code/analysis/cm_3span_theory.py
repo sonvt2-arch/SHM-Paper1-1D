@@ -252,6 +252,11 @@ if __name__ == "__main__":
     print("Whole side span blind (mu = 2, i.e. mu_crit(xi->0)): beta^3 - 3 beta - rho = 0;"
           " rho=1 -> beta = 2 cos(pi/9) =", sp.N(2 * sp.cos(sp.pi / 9), 15),
           " check:", sp.N((2 * sp.cos(sp.pi / 9))**3 - 3 * 2 * sp.cos(sp.pi / 9) - 1, 5))
+    nb = [r for r in sp.Poly(30 * b**3 - 69 * b - 16, b).nroots(n=15) if r.is_real and r > 0]
+    print("Near-blind edge |N|=0.2, mid side, uniform EI: mu = 23/15 <=> 30 b^3 - 69 b - 16 = 0 ->", nb)
+    for nm, bb in [("Cau May", sp.Rational(90, 55)), ("Thai Binh", sp.Rational(63, 42))]:
+        print(f"  {nm}: beta={float(bb):.6f}  rho_crit(mid side)={float(3*bb*(2*bb**2-5)/4):.6f}"
+              f"  neg/pos(mid side, uniform)={float(6*bb**3/(15*bb+4)):.6f}")
     print("\nOptimal side-span sensor: d/dxi F = 0  <=>",
           sp.factor(sp.expand(2 * sp.diff(F_side, xi) / 8)), "= 0")
     for bb in [1.0, 1.2, 1.4, 1.5, 90 / 55, 1.6, 1.7]:
@@ -265,4 +270,9 @@ if __name__ == "__main__":
     print("Span-wise contributions, main sensor (normalised by Lm^4/192EIm):")
     for j in range(3):
         print(f"  span {j+1}:", main_contrib(j))
+    from scipy.optimize import brentq
+    print("\nAsymmetric, uniform EI, mid span-1 sensor: blind L1/L2 for given L3/L2")
+    for a3_ in [0.3, 0.5, 0.6, 0.8, 1.0, 1.2]:
+        r = brentq(lambda a: general_norm(0.5, (a, 1.0, a3_)), 0.3, 1.2, xtol=1e-14)
+        print(f"  L3/L2={a3_:.2f}: L1/L2_crit={r:.6f}  (L2/L1={1/r:.6f})")
     print("\nFigure:", make_maps())

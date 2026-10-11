@@ -31,7 +31,7 @@ def check(label, cf, num, scale=None):
     return err
 
 
-def fe_norm(spans, xm, Lref, EIref, EIs=None, route="udl", load_spans=None, ne=60):
+def fe_norm(spans, xm, Lref, EIref, EIs=None, route="udl", load_spans=None, ne=12):
     kw = dict(ne_per_span=ne)
     if EIs is not None:
         kw["EI"] = fe.piecewise_EI(spans, EIs)
@@ -62,12 +62,13 @@ for beta, rho in [(1.0, 1.0), (1.5, 1.0), (90 / 55, 1.0), (1.2, 2.0), (1.8, 0.7)
         check(f"main eta={eta} (IL integral)", cf,
               fe_norm(spans, Ls + eta * beta * Ls, beta * Ls, rho, EIs, "il"))
 
-print("\n Dimensional bridges (uniform EI = 1, metres):")
+print("\n Dimensional bridges (uniform EI = 1, metres; 12 elements/span: prismatic Hermite"
+      " elements are nodally exact, finer meshes only add round-off):")
 for name, spans in [("Cau May 55+90+55", [55, 90, 55]), ("Thai Binh 42+63+42", [42, 63, 42])]:
     b = spans[1] / spans[0]
-    check(f"{name} mid side", th.side_norm(0.5, b), fe_norm(spans, spans[0] / 2, spans[0], 1.0, ne=200))
+    check(f"{name} mid side", th.side_norm(0.5, b), fe_norm(spans, spans[0] / 2, spans[0], 1.0))
     check(f"{name} mid main", th.main_norm(0.5, b),
-          fe_norm(spans, spans[0] + spans[1] / 2, spans[1], 1.0, ne=200))
+          fe_norm(spans, spans[0] + spans[1] / 2, spans[1], 1.0))
 
 print("\n" + "=" * 100)
 print("B. Blind configurations and optimal sensor position")
@@ -159,7 +160,7 @@ for spans, EIs, xi in [([0.6, 1, 0.8], [1, 1, 1], 0.5), ([0.5, 1, 0.7], [1, 1.4,
                        ([1.1, 1, 0.4], [1, 0.8, 1.2], 0.6), ([42, 63, 50], [1, 1, 1], 0.5)]:
     cf = th.general_norm(xi, spans, EIs)
     check(f"spans={spans} EI={EIs} xi={xi}", cf,
-          fe_norm(spans, xi * spans[0], spans[0], EIs[0], EIs, ne=100))
+          fe_norm(spans, xi * spans[0], spans[0], EIs[0], EIs))
 
 print("\n" + "=" * 100)
 print("E. Haunched box girder (variable EI): FE convergence vs force method")
@@ -214,20 +215,21 @@ def haunch_brk(spans, lc_side):
 
 
 spans = [55, 90, 55]
+HN = fe.haunch_nodes(spans)
 for n in (2.0, 3.0):
     EIf = fe.haunch_EI(spans, 2.4, 5.4, n)
     for lab, xm, Lr in [("mid side", 27.5, 55), ("mid main", 100.0, 90)]:
         ref = 192 * force_method(spans, xm, EIf, haunch_brk(spans, None)) / Lr**4
-        out = []
-        for ne in (100, 200, 400, 800):
-            v = 192 * fe.Cm_udl(spans, xm, ne_per_span=ne, EI=EIf, ngauss=4) / Lr**4
-            out.append(v)
-        errs = [abs(v - ref) / max(abs(ref), 1e-300) for v in out]
-        print(f"  Cau May n={n} {lab}: force method {ref:.12f}")
-        print("    FE ne/span=100,200,400,800: " +
-              "  ".join(f"{v:.12f} (rel {e:.1e})" for v, e in zip(out, errs)))
-        if errs[-1] > TOL:
-            fails.append(f"haunch FE convergence n={n} {lab}")
+        print(f"  Cau May n={n} {lab}: force method (adaptive quad) {ref:.12f}")
+        for kind, ng, nes in [("flex", 8, (5, 10, 20, 40)), ("hermite", 4, (50, 100, 200))]:
+            out = [192 * fe.Cm_udl(spans, xm, ne_per_span=ne, EI=EIf, kind=kind, ngauss=ng,
+                                   extra_nodes=(xm,) + HN) / Lr**4 for ne in nes]
+            errs = [abs(v - ref) / abs(ref) for v in out]
+            print(f"    {kind:7s} ne/span={nes}: " +
+                  "  ".join(f"{v:.12f} (rel {e:.1e})" for v, e in zip(out, errs)))
+            if kind == "flex" and errs[2] > TOL:
+                fails.append(f"haunch flex FE n={n} {lab}")
+print("  -> flex element at 20 elements/span is used for all haunched results below.")
 print("  (piecewise-constant EI check of the FE stiffness routine, ngauss=4, rho=1.7):")
 check("  side xi=0.5, beta=1.5, rho=1.7, ngauss=4", th.side_norm(0.5, 1.5, 1.7),
       192 * fe.Cm_udl([1, 1.5, 1], 0.5, ne_per_span=60,
@@ -236,14 +238,15 @@ check("  side xi=0.5, beta=1.5, rho=1.7, ngauss=4", th.side_norm(0.5, 1.5, 1.7),
 print("\n" + "=" * 100)
 print("F. Haunched results (EI normalised at h_mid; ASSUMPTIONS: I ~ h^n, constant E,")
 print("   parabolic soffit with vertex at main mid-span; side-span haunch length Lc_side;")
-print("   no constant-depth pier segment; FE ne/span=800, 4-point Gauss)")
+print("   no constant-depth pier segment; flex FE, 20 el./span, 8-point Gauss)")
 print("=" * 100)
 
 
-def side_scan(spans, EIf, ne=800):
+def side_scan(spans, EIf, nodes, ne=20):
     """Max over sensor positions in span 1 (coarse grid then golden refinement)."""
     from scipy.optimize import minimize_scalar
-    f = lambda x: -fe.Cm_udl(spans, x * spans[0], ne_per_span=ne, EI=EIf, ngauss=4)
+    f = lambda x: -fe.Cm_udl(spans, x * spans[0], ne_per_span=ne, EI=EIf, kind="flex",
+                             ngauss=8, extra_nodes=(x * spans[0],) + nodes)
     g = np.linspace(0.1, 0.9, 17)
     v = [f(x) for x in g]
     k = int(np.argmin(v))
@@ -252,8 +255,9 @@ def side_scan(spans, EIf, ne=800):
     return r.x, -192 * r.fun / spans[0] ** 4
 
 
-def negpos_fe(spans, xm, EIf, ne=800):
-    c = [fe.Cm_udl(spans, xm, load_spans=[j], ne_per_span=ne, EI=EIf, ngauss=4) for j in range(3)]
+def negpos_fe(spans, xm, EIf, nodes, ne=20):
+    c = [fe.Cm_udl(spans, xm, load_spans=[j], ne_per_span=ne, EI=EIf, kind="flex", ngauss=8,
+                   extra_nodes=(xm,) + nodes) for j in range(3)]
     c = np.array(c)
     return c[c < 0].sum() / c[c > 0].sum()
 
@@ -268,12 +272,15 @@ def haunch_table(name, spans, ratios, lc_list, hm=1.0):
         for n in (2.0, 2.5, 3.0):
             for lc in lc_list:
                 EIf = fe.haunch_EI(spans, hm, r * hm, n, lc)
-                s = 192 * fe.Cm_udl(spans, spans[0] / 2, ne_per_span=800, EI=EIf, ngauss=4) / spans[0]**4
-                m = 192 * fe.Cm_udl(spans, spans[0] + spans[1] / 2, ne_per_span=800, EI=EIf,
-                                    ngauss=4) / spans[1]**4
-                nps = negpos_fe(spans, spans[0] / 2, EIf)
-                npm = negpos_fe(spans, spans[0] + spans[1] / 2, EIf)
-                xo, vo = side_scan(spans, EIf)
+                nd = fe.haunch_nodes(spans, lc)
+                kw = dict(ne_per_span=20, EI=EIf, kind="flex", ngauss=8)
+                s = 192 * fe.Cm_udl(spans, spans[0] / 2, extra_nodes=(spans[0] / 2,) + nd,
+                                    **kw) / spans[0]**4
+                xmm = spans[0] + spans[1] / 2
+                m = 192 * fe.Cm_udl(spans, xmm, extra_nodes=(xmm,) + nd, **kw) / spans[1]**4
+                nps = negpos_fe(spans, spans[0] / 2, EIf, nd)
+                npm = negpos_fe(spans, xmm, EIf, nd)
+                xo, vo = side_scan(spans, EIf, nd)
                 lcv = lc if lc is not None else 0.5 * spans[1]
                 shift = s - th.side_norm(0.5, spans[1] / spans[0])
                 print(f"  {r:12.3f} {n:4.1f} {lcv:8.1f} {s:11.4f} {shift:8.4f} {nps:8.4f}"
@@ -283,9 +290,9 @@ def haunch_table(name, spans, ratios, lc_list, hm=1.0):
 
 
 rows_cm = haunch_table("Cau May (h 2.4 m mid-span, 5.4 m pier)", [55, 90, 55],
-                       [5.4 / 2.4], [None, 55.0], hm=2.4)
+                       [5.4 / 2.4], [None, 55.0, 30.0], hm=2.4)
 rows_tb = haunch_table("Thai Binh (depths NOT available: parametrised by h_pier/h_mid)",
-                       [42, 63, 42], [1.5, 2.0, 2.5, 3.0], [None])
+                       [42, 63, 42], [1.0, 1.5, 2.0, 2.25, 2.5, 3.0], [None])
 
 os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"), exist_ok=True)
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "haunch_3span.csv"), "w") as fh:

@@ -1,0 +1,6 @@
+sensor,n_trucks,W_total_t,meas_mean_mm,report_FE_mm,k_FE_kNm_per_rad,pred_base_kFE_mm,FE_over_pred_kFE,meas_over_pred_kFE,meas_over_pred_kFE_variants_min,meas_over_pred_kFE_variants_max,alpha_EIeff_over_EIdesign_at_kFE,pred_base_pinned_mm,pred_base_fixed_mm,pred_lo_mm,pred_hi_mm,meas_over_pred_pinned,meas_over_pred_fixed,meas_over_pred_min,meas_over_pred_max,meas_over_reportFE,EIeff_over_EIreportFE,meas_per_tonne_mm
+CM N8 0.4L (22 m from T8),4,100,5.553,5.935,2.748e+07,5.686,1.044,0.9767,0.9619,0.9809,1.088,7.183,2.75,2.705,7.847,0.7732,2.02,0.7077,2.053,0.9357,1.069,0.05553
+CM N7 mid-span,6,150,15.42,16.7,2.748e+07,17.32,0.9642,0.8904,0.8875,0.9014,1.088,22.99,8.336,8.218,24.65,0.6709,1.85,0.6257,1.877,0.9235,1.083,0.1028
+TB N12 mid-span,4,122.1,3.212,3.58,1.429e+08,3.181,1.125,1.01,0.9967,1.012,1.061,5.927,2.48,1.885,8.093,0.5419,1.295,0.475,1.317,0.8971,1.115,0.0263
+TB N13 mid-span,6,183.2,6.028,6.25,1.429e+08,7.638,0.8183,0.7893,0.7876,0.7972,1.061,17.56,5.706,4.508,22.45,0.3433,1.057,0.302,1.074,0.9645,1.037,0.03291
+TB N14 mid-span,4,122.1,3.63,3.82,1.429e+08,3.368,1.134,1.078,1.066,1.08,1.061,6.34,2.609,1.955,8.471,0.5725,1.391,0.5014,1.415,0.9503,1.052,0.02972

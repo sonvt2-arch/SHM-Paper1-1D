@@ -1,0 +1,13 @@
+lab 2x2.5 m, mid span 1                192EI*Cm/L^4 =   1.0000   neg/pos =  -0.429
+Cau May 55+90+55, mid side span        192EI*Cm/L^4 =   0.1632   neg/pos =  -0.921
+Cau May 55+90+55, mid main span        192EI*Cm/L^4 =   0.7546   neg/pos =  -0.301
+Thai Binh 42+63+42, mid side span      192EI*Cm/L^4 =   0.4808   neg/pos =  -0.764
+Thai Binh 42+63+42, mid main span      192EI*Cm/L^4 =   0.7051   neg/pos =  -0.368
+
+Haunched box (EI normalised at h_mid; I ~ h^n assumed; side-span haunch length = L_m/2):
+Cau May n=2.0 mid side  192EI_mid*Cm/L^4 =  -0.0242
+Cau May n=2.0 mid main  192EI_mid*Cm/L^4 =   0.3549
+Cau May n=2.5 mid side  192EI_mid*Cm/L^4 =  -0.0404
+Cau May n=2.5 mid main  192EI_mid*Cm/L^4 =   0.2913
+Cau May n=3.0 mid side  192EI_mid*Cm/L^4 =  -0.0494
+Cau May n=3.0 mid main  192EI_mid*Cm/L^4 =   0.2388
