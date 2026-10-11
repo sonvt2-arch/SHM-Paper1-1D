@@ -89,7 +89,7 @@ The invariance constant is the deflection at the sensor under a uniform load ove
 
 ### 2.2. Two-span continuous beam
 
-Let the instrumented span have length $L_1$ and rigidity $EI_1$, the adjacent span $L_2 = \rho_L L_1$ and $EI_2 = \rho_{EI}EI_1$, and the sensor be at $\xi = x_m/L_1$. The interior support moment under a uniform load follows from slope continuity. Superposing the simply supported response and the end-moment response, evaluating at the sensor and dividing by $q_0$ gives (Appendix A)
+Let the instrumented span have length $L_1$ and rigidity $EI_1$, the adjacent span $L_2 = \rho_L L_1$ and $EI_2 = \rho_{EI}EI_1$, and the sensor be at $\xi = x_m/L_1$ (Fig. 1a). The interior support moment under a uniform load follows from slope continuity. Superposing the simply supported response and the end-moment response, evaluating at the sensor and dividing by $q_0$ gives (Appendix A)
 
 $$C_m=\frac{L_1^4}{24EI_1}F(\xi,\mu),\qquad F(\xi,\mu)=\xi(1-2\xi^2+\xi^3)-\frac{\mu}{2}\,\xi(1-\xi^2), \tag{4}$$
 
@@ -208,7 +208,7 @@ Fig. 5 compares the analytical influence line (Appendix A, Eq. (A.2)) with the m
 
 | Quantity | Value (mm²) | Difference from exact |
 |---|---|---|
-| Exact, $P_0l^4/(192EI)$ | 2501.19 | — |
+| Exact, $P_0l^4/(192EI)$ | 2501.19 | n/a |
 | Analytical influence line, trapezoidal rule, $\Delta x$ = 250 mm | 2488.68 | −0.500 % |
 | Analytical influence line, Simpson rule, $\Delta x$ = 250 mm | 2501.85 | +0.027 % |
 | Measured, trapezoidal rule, $\Delta x$ = 250 mm | 2513.43 | +0.49 % |
@@ -223,10 +223,10 @@ The measured records of the two- and three-load groups (Appendix C) were used to
 
 | Configuration | Method | $I_y$ (mm²) | Identified load (N) | Deviation |
 |---|---|---|---|---|
-| Two loads | Weighing | — | 66.99 | — |
+| Two loads | Weighing | n/a | 66.99 | n/a |
 | | BPM | 4168.15 | 67.73 | +1.10 % |
 | | SLM | 4168.15 | 67.40 | +0.61 % |
-| Three loads | Weighing | — | 125.08 | — |
+| Three loads | Weighing | n/a | 125.08 | n/a |
 | | BPM | 7788.93 | 126.57 | +1.19 % |
 | | SLM | 7788.93 | 125.95 | +0.70 % |
 
@@ -379,12 +379,12 @@ Table 9 assembles an indicative budget in the format of the GUM [43] for the lab
 | Span length $l$ | B | 4 | cancels | cancels | 0.4–2 % |
 | Sensor gain $\gamma$ | B | 1 | cancels | cancels | 1–2 % |
 | Quadrature bias $e_q$ | B | 1 | cancels | cancels | 0.5 % |
-| Reference weighing $P_0$ | B | 1 | 0.1 % | 0.5–1 % | — |
+| Reference weighing $P_0$ | B | 1 | 0.1 % | 0.5–1 % | n/a |
 | Zero offset $\varepsilon_0$ | B | $L_\mathrm{tot}/I_y$ | 0.4–1 % | 2–10 % | 2–10 % |
-| Traverse speed $v$ | B | 1 | — | 1–3 % | 1–3 % |
-| Dynamic effects ($T_\mathrm{cr}/T_1 \ge 8$) | B | 1 | — | < 1 % | < 1 % |
+| Traverse speed $v$ | B | 1 | n/a | 1–3 % | 1–3 % |
+| Dynamic effects ($T_\mathrm{cr}/T_1 \ge 8$) | B | 1 | n/a | < 1 % | < 1 % |
 | Random noise $\sigma_a$ | A (bound) | < 0.1 | < 0.1 % | 0.1–0.3 % | 0.1–0.3 % |
-| Reference scatter ($N_\mathrm{rep}$ = 1) | A (bound) | 1 | < 0.1 % | 0.1–0.3 % | — |
+| Reference scatter ($N_\mathrm{rep}$ = 1) | A (bound) | 1 | < 0.1 % | 0.1–0.3 % | n/a |
 | **Combined** | | | **0.5–1.1 %** | **3–11 %** | **6–19 %** |
 
 In the laboratory, SLM is limited by zero offset and reference weighing, and the combined 0.5–1.1 % is consistent with the observed deviations of 0.61 % and 0.70 %. In the field, baseline stability and speed dominate. The ranges are scenario-based and must be verified for each structure and instrumentation chain. They fall short of a certified weighing device, and the method is proposed for preliminary overload screening, with the decision threshold set sufficiently apart from the legal limit and the design live loads [46,47]; establishing that threshold requires field calibration and lies outside this study.
@@ -460,16 +460,16 @@ The study used 200 000 realisations of Eq. (16) per case: gain error alone ($\si
 
 | Error source | Method | Reference | Bias | Std. dev. | p5 | p95 |
 |---|---|---|---|---|---|---|
-| Gain, $\sigma_\gamma$ = 2 % | BPM | — | +1.10 | 2.01 | −2.21 | +4.40 |
+| Gain, $\sigma_\gamma$ = 2 % | BPM | n/a | +1.10 | 2.01 | −2.21 | +4.40 |
 | | SLM | averaged | +0.61 | 2.00 | −2.69 | +3.90 |
 | | SLM | single | +0.66 | 2.85 | −3.94 | +5.41 |
-| Zero offset, $\sigma_\varepsilon$ = 0.005 mm | BPM | — | +1.10 | 0.64 | +0.05 | +2.15 |
+| Zero offset, $\sigma_\varepsilon$ = 0.005 mm | BPM | n/a | +1.10 | 0.64 | +0.05 | +2.15 |
 | | SLM | averaged | +0.61 | 0.63 | −0.43 | +1.65 |
 | | SLM | single | +0.62 | 1.19 | −1.31 | +2.60 |
-| Random, $\sigma_a$ = 0.0025 mm | BPM | — | +1.10 | 0.07 | +0.99 | +1.21 |
+| Random, $\sigma_a$ = 0.0025 mm | BPM | n/a | +1.10 | 0.07 | +0.99 | +1.21 |
 | | SLM | averaged | +0.61 | 0.07 | +0.50 | +0.72 |
 | | SLM | single | +0.61 | 0.13 | +0.40 | +0.82 |
-| Combined | BPM | — | +1.10 | 2.12 | −2.39 | +4.59 |
+| Combined | BPM | n/a | +1.10 | 2.12 | −2.39 | +4.59 |
 | | SLM | averaged | +0.61 | 2.11 | −2.87 | +4.08 |
 | | SLM | single | +0.65 | 3.09 | −4.34 | +5.83 |
 
