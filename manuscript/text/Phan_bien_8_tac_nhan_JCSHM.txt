@@ -1,0 +1,228 @@
+# Phản biện tám tác nhân, chấm điểm và khuyến nghị — "Load observability of continuous bridge beams from a single deflection sensor"
+
+Bản thảo: `JCSHM_Submission.docx` (Nguyen, Vu, Nguyen). Đích suy ra từ tên tệp: Journal of Civil Structural Health Monitoring (Springer). Kiểm theo bộ nguyên tắc nội bộ v2.0.
+
+Kiểm đếm bằng chương trình: tóm tắt 244 từ (trần 250); thân bài ~16.000 từ; **không có dấu gạch ngang dài nào trong văn xuôi**; không từ nào trong danh sách khai tử; câu trung vị 24 từ, trung bình 26,1; mục hạn chế đặt trước kết luận; 40 tài liệu, phần lớn có DOI.
+
+**Kết luận chung: nộp được sau một vòng sửa ngắn trên bàn giấy.** Đây là bản thảo tốt nhất trong ba bản tôi đã kiểm cho nhóm. Phần toán đúng, tôi đã kiểm lại bằng ký hiệu và số học gần như toàn bộ. Ba điểm cần xử lý: một lỗi thập phân, một khoảng trống về định vị tài liệu, và một khoảng trống bằng chứng mà chính bài đã chỉ ra và có thể lấp trong một ngày thí nghiệm.
+
+---
+
+## A1 — Chuyên gia đầu ngành 1: cân động trên cầu và giám sát hiện trường
+
+**A1-1 (quan trọng nhất về thực tiễn). Bài chuyển một bài toán khó thành một bài toán khó khác, và chưa nói ra điều đó.**
+Sức thuyết phục của phương pháp nằm ở chỗ chỉ cần một kênh đo. Nhưng kênh ấy là **chuyển vị tuyệt đối**, đại lượng khó đo nhất trên cầu đang khai thác: không có mốc cố định dưới gầm, LVDT cần giá đỡ tựa đất, hệ thị giác máy tính và radar đều mang trôi nền riêng theo nhiệt độ và rung giá đỡ. Trong khi đó Mục 4.2 kết luận rằng sai lệch điểm không là nguồn sai số trội, và Bảng 11 giả định ε₀ trong khoảng 0,02 đến 0,05 mm cho hiện trường. Với hệ đo chuyển vị không tiếp xúc, con số đó lạc quan đáng kể; các hệ thị giác thường đạt bậc phần mười milimét, và trôi nền của giá camera theo nhiệt độ trong một buổi đo còn lớn hơn.
+
+Bài trích Feng và Feng [30] về đo chuyển vị bằng thị giác nhưng không nêu độ chính xác đạt được. Cần một đoạn ngắn: liệt kê hai đến ba loại cảm biến khả dĩ (LVDT có giá tựa đất, thị giác máy tính, radar giao thoa), nêu ε₀ đạt được của từng loại theo tài liệu, rồi đọc ngược qua Eq. (19) ra sai số tải trọng tương ứng. Nếu kết quả cho thấy chỉ một số loại cảm biến đủ ổn định, đó là một kết luận có ích chứ không phải một điểm yếu, và nó biến Bảng 11 từ một kịch bản giả định thành một tiêu chí lựa chọn thiết bị.
+
+**A1-2. Căng thẳng nội tại giữa hai luận điểm bán hàng của bài, chưa được nói thẳng.**
+Điểm mạnh được quảng bá là ước lượng không cần biết cấu hình trục xe. Nhưng Mục 4.4 cho thấy để đổi tích phân theo thời gian sang tích phân theo không gian phải biết tốc độ, và với đoàn nhiều trục thì tốc độ chỉ lấy được bằng cách khớp bình phương tối thiểu đáp ứng đo với Eq. (7), trong đó **khoảng cách trục là tham số**. Nói cách khác, tính bất biến giải phóng ta khỏi cấu hình trục ở bước ước lượng tải, rồi phép đổi không gian sang thời gian đưa nó quay lại ở bước trước đó. Bài nêu cả hai sự thật ở hai chỗ khác nhau nhưng không đặt cạnh nhau. Phải đặt cạnh nhau, ở cuối Mục 4.4, và nói rõ điều còn lại sau khi trừ đi: cái được giải phóng là **độ lớn từng trục**, không phải toàn bộ thông tin hình học. Người phản biện sẽ tìm ra chỗ này, tốt hơn là ta nói trước.
+
+**A1-3. Hiện diện đồng thời nhiều xe.** Mục 4.4 xử lý đúng về nguyên tắc: phát hiện và loại bỏ. Nhưng với cầu vượt hai làn ở tốc độ 50 đến 80 km/h, tỉ lệ lượt xe nặng bị loại có thể lớn. Một ước lượng đơn giản theo mô hình Poisson với lưu lượng giả định, đưa vào Mục 5.5, sẽ cho biết hệ sàng lọc còn giữ được bao nhiêu phần trăm lượt xe. Không có con số đó, khuyến nghị "loại bỏ" là một lỗ hổng chứ không phải một giải pháp.
+
+**A1-4. Nhiệt độ và hiệu chuẩn lại.** Với cầu bê tông, EI biến thiên theo nhiệt độ trong ngày, nên C_m cũng vậy. SLM chỉ khử được phần chung giữa hai lượt đo; nếu lượt chuẩn cách lượt đo vài tháng thì phần chung gần như không còn. Bài có khuyến nghị hiệu chuẩn định kỳ, nhưng nên định lượng: biến thiên EI x% trong ngày cho sai số tải x%, cùng bậc với chính ngưỡng sàng lọc.
+
+---
+
+## A2 — Chuyên gia đầu ngành 2: cơ học kết cấu và lý thuyết đường ảnh hưởng
+
+**A2-1. Định lý và hệ quả đều đúng, và tôi đã kiểm lại bằng ký hiệu.** Chứng minh ở Mục 2.2 chỉ dùng chồng chất và giá compact, hợp lệ và tổng quát đúng như bài nói. Hệ quả Maxwell–Betti cũng đúng. Nhưng phải nói rõ một điều mà bài đang để mờ: quan hệ "diện tích dưới đường ảnh hưởng chuyển vị tại m bằng chuyển vị tại m dưới tải phân bố đều đơn vị" là **kết quả kinh điển**, hệ quả trực tiếp của Müller-Breslau cộng Betti, có trong sách giáo khoa phân tích kết cấu. Bài gọi nó là hệ quả và nói nó "quy về một bài toán sách giáo khoa", cách nói đó trung thực, nhưng không có trích dẫn sách nào kèm theo. Thêm một trích dẫn giáo trình. Chi phí bằng không, và nó chặn trước lời phê "lý thuyết là sách giáo khoa được trình bày như phát hiện".
+
+**A2-2 (khuyến nghị có giá trị cao nhất trong toàn báo cáo). Định lý không hề bị giới hạn ở chuyển vị, và mở rộng sang biến dạng sẽ gỡ đúng nút thắt hiện trường của A1-1.**
+Chứng minh chỉ dùng tuyến tính và giá compact, nên nó áp cho **mọi** đại lượng đáp ứng tuyến tính: biến dạng tại một mặt cắt, góc xoay, phản lực gối. Với biến dạng, hằng số bất biến trở thành biến dạng tại đầu đo dưới tải phân bố đều đơn vị, vẫn lấy được từ một lần phân tích tĩnh hoặc một lần chất tải đều, và toàn bộ khung quan sát được, quỹ tích mù, vị trí đặt tối ưu, ngân sách sai số vẫn giữ nguyên hình thức.
+
+Điều này quan trọng vì biến dạng là đại lượng mà mọi hệ BWIM hiện có đã đo được, bằng thiết bị rẻ, không cần mốc cố định, và không mang bài toán trôi nền tuyệt đối của chuyển vị. Nói cách khác, một đoạn bổ sung có thể biến phương pháp từ "cần một cảm biến khó lắp" thành "dùng được ngay với thiết bị BWIM tiêu chuẩn". Chi phí: một tiểu mục ngắn ở Mục 2.2 phát biểu định lý cho đại lượng đáp ứng tổng quát, một dòng thêm vào Bảng 13, và một câu trong tóm tắt. Không cần thí nghiệm mới, không cần tính toán mới.
+
+Cần lưu ý một điểm khi viết: với biến dạng uốn tại giữa nhịp một của dầm liên tục, đường ảnh hưởng cũng đổi dấu, nên vẫn tồn tại cấu hình mù, chỉ khác quỹ tích. Đó là nội dung của một bài tiếp theo chứ không phải của bài này, nhưng phát biểu tổng quát thì phải có ngay ở đây.
+
+**A2-3. Từ "observability" đang được dùng rộng hơn nghĩa của nó.** Cái quan sát được là **tổng tải**, và chỉ tổng tải. Ánh xạ từ đoàn tải sang I_y là ánh xạ nhiều-một một cách triệt để: mọi đoàn có cùng tổng cho cùng một giá trị. Đó chính là điểm mạnh của phương pháp, nhưng chữ observability trong lý thuyết hệ thống có nghĩa mạnh hơn nhiều. Nên gọi rõ là **total-load observability** ở mọi chỗ, kể cả tiêu đề nếu được, và thêm một câu ở Mục 2.7 nói rõ tính không đơn ánh là bản chất chứ không phải khiếm khuyết.
+
+**A2-4. Khối lượng chuyển động và tỉ số khối lượng của mẫu thí nghiệm.** Nghiên cứu động ở Mục 4.6 dùng **lực không đổi**, và bài nói rõ điều đó, rất tốt. Nhưng nếu sau này làm thí nghiệm động trên chính giàn hiện có, cần biết trước: dầm nặng 1,464 kg/m × 5,4 m ≈ 7,9 kg, còn tải là 4,14 kg, tức tỉ số khối lượng khoảng 0,52. Ở tỉ số đó hiệu ứng khối lượng chuyển động sẽ chi phối và kết quả sẽ không đại diện cho xe tải trên cầu thật, nơi tỉ số nhỏ hơn hai bậc. Nêu điều này trong Mục 5.4 để tránh một thí nghiệm sai hướng.
+
+---
+
+## A3 — Chuyên gia đầu ngành 3: đo lường và đánh giá độ không đảm bảo
+
+**A3-1. Thành phần loại A đang được chặn trong khi dữ liệu để đo nó đã có sẵn.**
+Mục 3.2 ghi rằng mỗi giá trị chuyển vị là trung bình của ba chu kỳ chất và dỡ tải. Mục 4.7 lại nói các mục loại A "được chặn chứ không được đo", suy từ phần dư của Hình 4 và từ Monte Carlo. Nhưng ba chu kỳ đó chính là dữ liệu để tính độ lệch chuẩn thực nghiệm tại từng điểm, rồi lan truyền qua phép cầu phương ra độ không đảm bảo loại A của I_y. Đây là phép tính mười phút trên số liệu đã nằm trong máy, và nó thay một chặn ước lượng bằng một con số đo được, đúng tinh thần của GUM mà bài viện dẫn. Không làm việc này là điểm yếu đo lường lớn nhất của bản thảo.
+
+**A3-2. Lỗi thập phân trong Mục 4.1, xuất hiện hai lần.**
+Bài viết rằng phần dư trôi điểm không cho trường hợp hai tải là ε₀(0,1260 − 0,1989) mm⁻¹. Tính lại: L_t/I_y,t = 5250/4168,15 = **1,2596** mm⁻¹ và L₀/I_y,0 = 5000/2513,43 = **1,9893** mm⁻¹. Cả hai con số in trong bài nhỏ hơn giá trị đúng đúng mười lần. Tỉ lệ triệt tiêu 37% thì vẫn đúng, vì nó là tỉ số, nên kết luận không đổi; nhưng hai con số phải sửa, và đơn vị mm⁻¹ giữ nguyên.
+
+Nhân đây, cụm "a partial cancellation of about 37%" cần nói rõ 37% là tỉ số nào. Từ số liệu: phần dư 0,7298ε₀ so với số hạng tham chiếu 1,9893ε₀ cho 36,7%, còn so với số hạng của lượt đo 1,2596ε₀ thì SLM giảm sai lệch được 42%. Hai cách đọc, một con số; phải chọn một và viết ra công thức.
+
+**A3-3. Cột "Bias" của Bảng 7 không mang thông tin.** Ba giá trị +1,10 và +0,61 lặp lại y hệt ở mọi hàng, vì Monte Carlo với nhiễu trung bình không thì không đổi được độ chệch tất định. Đó là một phép kiểm tra nhất quán tốt, nhưng nên nói ra như vậy một câu, kẻo người đọc tưởng đó là kết quả mô phỏng.
+
+**A3-4. Tải chuẩn nhẹ hơn tải đo, đúng điều bài khuyên không nên làm.**
+Mục 4.1 và 4.3 kết luận rằng tải chuẩn nhẹ là tải chuẩn tồi, vì nó làm phương sai tương đối của lượt chuẩn lớn hơn và làm phần triệt tiêu trôi nền kém đi. Trong chính thí nghiệm, tải chuẩn là lượt đơn 4,143 kg còn tải đo là 6,829 và 12,750 kg. Nghĩa là kết quả 0,61 và 0,70% đạt được **bất chấp** một lựa chọn chuẩn không tối ưu. Đó là một điểm mạnh nếu nói ra: một câu ở Mục 3.4 rằng lượt chuẩn nặng hơn sẽ còn cho kết quả tốt hơn, biến một điểm có thể bị chê thành một dư địa được kiểm soát.
+
+**A3-5. Chưa nêu cấp chính xác của quả cân.** Bảng 11 gán 0,1% cho δP₀/P₀ trong phòng thí nghiệm. Nêu cấp chính xác của bộ quả cân chuẩn để con số đó có nguồn. Cũng cần nói rõ các khối lượng 2145 g, 4684 g, 2550 g, 5100 g có bao gồm móc treo hay không, vì tỉ số SLM phụ thuộc trực tiếp vào điều đó và lượt đơn thì đã ghi rõ là có bao gồm móc.
+
+**A3-6. Dải 3 đến 11% và 6 đến 19% quá rộng để dùng được.** Một dải hơn ba lần chỉ nói rằng chưa biết. Nên thay bằng hai kịch bản cụ thể, mỗi kịch bản có giá trị giả định ghi rõ cho từng dòng, chẳng hạn "cầu bê tông nhịp 20 m, đo bằng thị giác, ε₀ = 0,05 mm, v biết đến 2%", rồi cho một con số cho mỗi kịch bản.
+
+---
+
+## A4 — Kiểm tính mới và tầm quan trọng trên thế giới
+
+**A4-1 (chặn nộp). Quan hệ trung tâm không mới, và họ tài liệu gần nhất không được trích.**
+Ý "tích phân đáp ứng theo một lượt qua bằng tổng tải nhân diện tích đường ảnh hưởng" đã có trong cộng đồng BWIM dưới tên **influence area**, và tra cứu cho thấy một công trình rất gần: một chỉ số **Integral Mean of Strain** đề xuất năm 2025 trên tạp chí Measurement, với quan hệ lý thuyết giữa tích phân biến dạng và tổng trọng lượng đoàn tàu, chủ đích tránh hiệu chuẩn tham số, kiểm chứng bằng mô phỏng với sai số dưới 1% và thử nghiệm cầu thật dưới 5%. Nguyên lý là một, chỉ khác đại lượng đo và loại phương tiện.
+
+Danh mục 40 tài liệu của bản thảo không có mục nào thuộc họ này. Phần tổng quan hiện dẫn từ Andersen và Mukhopadhyay 1950 [32] thẳng tới bài trước của chính nhóm [33], bỏ trống bảy mươi năm ở giữa. Với một tạp chí chuyên ngành giám sát kết cấu, người phản biện gần như chắc chắn đến từ cộng đồng BWIM và sẽ nhận ra ngay.
+
+**Cách sửa, và nó làm bài mạnh lên chứ không yếu đi.** Thêm một đoạn vào Mục 1 điểm qua họ phương pháp tích phân và diện tích ảnh hưởng, rồi phát biểu lại tính mới cho đúng chỗ: cái mới không phải quan hệ tích phân, mà là **những gì quan hệ ấy kéo theo khi kết cấu là siêu tĩnh**. Cụ thể là bốn thứ tôi không tìm thấy trong tài liệu:
+
+1. **Cấu hình mù.** Quỹ tích C_m = 0 ở dạng đóng, Eq. (11b), và tỉ số nhịp tới hạn (3+√33)/6. Đây là kết quả có ý nghĩa cảnh báo thiết kế và tôi không thấy tương đương ở đâu.
+2. **Dạng đóng cho dầm hai nhịp với tỉ số nhịp và tỉ số độ cứng bất kỳ**, thu gọn toàn bộ hình học vào một tham số μ duy nhất, Eq. (11a).
+3. **|C_m| như một chỉ số quan sát được tải trọng trước khi lắp đặt**, dùng để chọn vị trí cảm biến và để quyết định có nên lắp hay không.
+4. **Giá của tính bất biến**, O_m ≤ 1 theo Cauchy–Schwarz, với giá trị chính xác 2√44765/1279 cho trường hợp đối xứng. Đây là phần tinh tế nhất của bài và cũng là phần dễ bị bỏ qua nhất nếu tóm tắt không nêu.
+
+Đặt bốn thứ đó làm trục, tính mới của bài vững. Đặt "định lý bất biến" làm trục, bài dễ bị bác.
+
+**Tầm quan trọng và độ phù hợp tạp chí.** JCSHM là đích đúng: khung quan sát được và tiêu chí đặt cảm biến trước khi triển khai thuộc đúng phạm vi của tạp chí, và bài đã trích hai công trình từng đăng ở đó ([4] và [16] thuộc dòng liên quan). Ứng dụng sàng lọc quá tải trên cầu vượt thứ cấp bằng một kênh đo là một đề xuất có giá trị thực tiễn rõ ràng ở bối cảnh Việt Nam và các nước tương tự.
+
+---
+
+## A5 — Phản biện đối kháng (sáu câu hỏi)
+
+**Kết quả có đúng không.** Có. Tôi đã kiểm độc lập gần như toàn bộ, xem A6.
+
+**Có mới không.** Một phần, xem A4-1.
+
+**Có quan trọng không.** Có, với điều kiện A1-1 được xử lý; nếu không có cảm biến đủ ổn định thì khung đẹp mà không triển khai được.
+
+**Có tái lập được không.** Có, và đây là điểm mạnh nhất của bản thảo. Toàn bộ số liệu đo nằm trong Bảng 2 và Bảng 4, mã và log của từng lần chạy nộp kèm, mọi con số truy được về một script. Hiếm gặp.
+
+**Kết luận có vượt bằng chứng không.** Hai chỗ.
+
+Thứ nhất, **tính bất biến, tức luận điểm trung tâm của bài, chưa được kiểm trực tiếp**. Ba cấu hình thí nghiệm khác nhau **cả** về tổng tải **và** về khoảng cách trục, nên chúng chỉ chứng minh tuyến tính giữa I_y và P, không tách được ảnh hưởng của khoảng cách. Bài tự thừa nhận điều này ở Mục 5.4 và tự đề xuất đúng thí nghiệm cần làm. Xem khuyến nghị.
+
+Thứ hai, R² = 0,99998 trên ba điểm trải một hệ số ba về tải, hồi quy qua gốc, gần như không thể không cao; nó không phải bằng chứng cho bất cứ điều gì. Con số có thông tin là độ tán của I_y/P: tôi tính được 61,85, 62,22 và 62,27 mm²/N, tức trải 0,69%, trong đó chính điểm chuẩn lượt đơn là điểm lệch. Thay R² bằng ba con số đó và bình luận rằng độ lệch của điểm chuẩn chính là chênh lệch BPM và SLM đã nêu ở cùng mục.
+
+Thêm một chỗ nhỏ: Mục 6 viết rằng thí nghiệm "identified one-, two- and three-axle groups", trong khi Bảng 5 chỉ nhận dạng hai và ba tải, còn lượt đơn là lượt chuẩn. Tóm tắt viết đúng, kết luận viết quá. Sửa kết luận theo tóm tắt.
+
+**Có đọc được không.** Có. Văn phong sạch, xem A8.
+
+**Điểm cần nói thẳng hơn:** toàn bộ chương trình thí nghiệm là **tĩnh**, tải được đặt lần lượt ở từng vị trí lấy mẫu chứ không có lượt qua thật nào. Bài nói điều này ở Mục 4.6, nhưng chữ "crossing" dùng khắp Mục 3 dễ khiến người đọc lướt hiểu nhầm. Thêm một mệnh đề vào tóm tắt và vào câu đầu Mục 3.2.
+
+---
+
+## A6 — Kiểm số liệu và tái lập
+
+Tôi đã kiểm lại độc lập, bằng ký hiệu với sympy và bằng số học. **Những mục sau đúng chính xác:**
+
+- Đường ảnh hưởng Eq. (6): liên tục tại x = l/2 và x = l, triệt tiêu tại 0, l và 2l. Tích phân ba nhánh cho lần lượt 59/64, 53/64 và −1/4 đúng như bài ghi, và tổng cho **C_m = l⁴/192EI** đúng.
+- Độ võng khi tải ở giữa nhịp: 23l³/(8·192EI) = 2,875Pl³/192EI, bằng 71,9% giá trị dầm đơn giản; cực đại tại x = l√(3/13) = 0,480l cho 72,1%. Cả hai đúng.
+- Dạng đóng Eq. (11a) và tham số μ: đúng. Đạo hàm ∂μ/∂ρ_L cho tử số ρ_EI(3ρ_L²−1) + 2ρ_L³, triệt tiêu tại ρ_L = 1/2 khi ρ_EI = 1, cho μ = 0,750; μ = 1 tại nhịp bằng nhau; μ = 3 tại ρ_L = 2. ∂μ/∂ρ_EI ∝ ρ_L(1−ρ_L²). Tất cả đúng.
+- Quỹ tích mù Eq. (11b): μ_crit = 2(1+ξ−ξ²)/(1+ξ) đúng, rút ra được nhờ (ξ−1) là nhân tử chung của tử và mẫu; μ_crit = 5/3 tại ξ = 1/2 đúng; ρ_EI^crit = ρ_L(ρ_L²−μ)/(μ−1) đúng.
+- Eq. (11c): 3ρ_L² − 3ρ_L − 2 = 0 cho ρ_L = (3+√33)/6 = 1,45743 đúng (nghiệm ρ_L = −1 đã được ước lược đúng cách); 8ξ² − ξ − 1 = 0 cho ξ* = (1+√33)/16 = 0,4215352 đúng.
+- Hệ số vượt trội tại vị trí tối ưu: tôi tính được **1,039895348**, khớp đến chữ số cuối với 1,03989535 trong Bảng 1 và 1,039895 trong Mục 2.3.1.
+- **O_m = 2√44765/1279 = 0,33085** đúng. Tôi tính lại ∫η² = 1279 l⁷/10321920 và ra đúng biểu thức của bài. Đây là chỗ dễ sai nhất trong bài và nó đúng.
+- Bảng 8 toàn bộ chín giá trị: 1,375 / 1,315 / 1,240 / 1,000 / 0,640 / 0,415 / 0,160 / 0 / −0,440. Đúng cả chín.
+- Bảng 12 nhất quán với Bảng 8 ở mọi cột (tổng hai phần bằng giá trị net).
+- Mục 4.5: tại ρ_L = 1,45 mid-span cho 0,02125 và ξ = 0,266 cho 0,23311, tỉ số 11,0 lần, đúng. Tại ρ_L = 1,6, C_m đi từ −0,783 ở ρ_EI = 0,5 tới +0,331 ở ρ_EI = 4, cắt không tại ρ_EI = 2,144. Đúng cả ba.
+- Mục 4.5: C_m tại ξ = 0,9 bằng 9,7% cực đại, khớp với "10%".
+- Đặc trưng mặt cắt: I = 16.529,76 mm⁴, A = 186,52 mm², EI = 3,306×10⁹ N·mm², C_m = 61,541 mm²/N. Đúng.
+- Tỉ số cắt trên uốn 12EI/(κGAl²) = 8,20×10⁻⁴. Đúng.
+- Tần số cơ bản: (π/l)²√(EI/ρA)/2π = 11,94 Hz. Đúng, và việc lấy dạng phản đối xứng làm dạng cơ bản của dầm hai nhịp đều là đúng.
+- Nhận dạng tải: BPM 67,73 N (+1,10%) và 126,57 N (+1,19%); SLM 67,40 N (+0,61%) và 125,94 N (+0,69%). Đúng cả bốn. Tỉ số BPM/SLM = 1,004893 đúng bằng 2513,43/2501,19.
+- Bảng 6: các độ chệch 0,99 / 0,63 / 0,37% từ Eq. (19). Đúng.
+- Mục 5.3: trọng tâm đoàn tải 171,5 mm cho nhóm hai trục và 400,0 mm cho nhóm ba trục, đúng; hệ số khuếch đại 453,5/171,5 = 2,6 lần, đúng.
+- Cấu hình mù của mẫu: 2500 × 1,45743 = 3643,6 mm, khớp với 3644 mm ở Mục 5.4.
+
+**Những chỗ sai hoặc cần sửa:**
+
+1. **Lỗi thập phân, Mục 4.1.** "(0,1260 − 0,1989) mm⁻¹" phải là **(1,2596 − 1,9893) mm⁻¹**. Xem A3-2.
+2. **Câu bị lặp nguyên văn, Mục 3.1.** "The finite element model is instead used to verify the Maxwell–Betti corollary of Eq. (10) and to carry out the parametric study: it is used to verify the Maxwell-Betti corollary of Eq. (10), which has no closed form for a general configuration, and to carry out the parametric study of unequal spans and sensor position reported in Section 4.5." Vế sau lặp lại vế trước. Giữ một.
+3. **Phát biểu Hệ quả bị thiếu công thức.** Ở Mục 2.2, Hệ quả kết thúc bằng "Then" rồi xuống thẳng "Proof." Công thức mà hệ quả khẳng định chỉ xuất hiện sau chứng minh dưới dạng Eq. (10). Phải đưa Eq. (10) vào chính phát biểu.
+4. **"Three quarters of the value contributed by a single span segment", Mục 2.3.** Trong đơn vị l⁴/192EI, ba đóng góp là +0,922, +0,828 và −0,750. Con số 0,750 không phải ba phần tư của bất kỳ đóng góp nào được liệt kê; nó là giá trị 3/4 trong đơn vị chuẩn hoá. Câu này sai như đang viết. Viết lại theo Bảng 12: đóng góp âm bằng 0,750 so với tổng dương 1,750, và net bằng 4/7 tổng dương.
+5. **Thứ tự trích bảng.** Bảng 3 được trích ở Mục 2.5, trước Bảng 2 ở Mục 3.3. Đổi số hoặc dời câu.
+6. **Bảng 12 ghi net = 0,001 tại ρ_L = 1,457** trong khi Bảng 8 ghi 0 tại cùng tỉ số và Bảng 1 ghi 0 tại 1,45743. Ba bảng nên dùng cùng số chữ số và cùng giá trị tỉ số.
+7. **I_y chính xác 2501,19 mm²** so với giá trị tôi tính lại 2501,01. Chênh 0,007%, có thể do làm tròn 9,81 hay P. Không đáng kể nhưng nên tính lại từ số chưa làm tròn theo chuẩn nội bộ.
+8. **Mục 3.4 nói "the measured deflections exceed theory by about 1,6 %"** trong khi độ dốc hiệu chuẩn được mô tả là cao hơn lý thuyết 1,12%. Hai con số nhất quán với nhau (chênh đúng bằng độ chệch cầu phương 0,5%) nhưng người đọc không thấy được điều đó. Thêm nửa câu giải thích, hoặc quy cả hai về cùng một cơ sở cầu phương.
+
+---
+
+## A7 — Kiểm toán học và thống kê
+
+**A7-1. Chứng minh định lý đúng.** Chồng chất cho Eq. (7); phép đổi biến u = x − a_i ánh xạ mọi miền tích phân về cùng một khoảng nhờ giá compact; mỗi số hạng cho P_i·C_m. Không có kẽ hở. Điều kiện tích phân từ 0 đến L + a_max được nêu đúng và lý do phần đuôi rơi vào vùng âm của đường ảnh hưởng cũng đúng, đây là loại chi tiết mà phần lớn bài báo bỏ qua.
+
+**A7-2. Bất đẳng thức O_m ≤ 1 đúng và chặt.** Cauchy–Schwarz áp cho cặp (η_m, 1) với dấu bằng khi và chỉ khi η hằng. Việc bài nói rõ O_m là tỉ số độ lệch chuẩn chứ không phải tỉ số phương sai, và nêu luôn O_m² là tỉ số phương sai, là mức cẩn thận đáng ghi nhận.
+
+**A7-3. Một chỗ lập luận cần chặt hơn: hai tiêu chí đặt cảm biến.** Mục 2.7 kết luận rằng khi hai tiêu chí không trùng nhau thì theo tiêu chí thứ nhất, tức cực đại |C_m|. Kết luận đúng, nhưng lý do phải viết ra: với nhiễu cộng có phương sai cố định, phương sai của ước lượng trọng số đều tỉ lệ 1/C_m², nên cực tiểu phương sai đúng là cực đại |C_m|; còn O_m so sánh với một ước lượng khác mà ta không dùng, nên nó không phải tiêu chí đặt cảm biến. Một câu là đủ, nhưng thiếu câu ấy thì đoạn đọc như một lựa chọn tuỳ tiện giữa hai chỉ số.
+
+**A7-4. Cầu phương.** Kết luận rằng Simpson gần như chính xác vì đường ảnh hưởng là đa thức bậc ba từng khúc lớp C² là đúng, và bài chỉ ra đúng rằng độ chệch cầu phương chỉ triệt tiêu trong SLM khi khoảng cách trục là bội của Δx. Phân tích ở gạch đầu dòng "Quadrature" trong Mục 4.1 là một trong những đoạn tốt nhất bài, vì nó tự phá bỏ một sự trùng hợp có lợi cho chính mình. Giữ nguyên.
+
+**A7-5. Monte Carlo 200.000 lần là thừa** so với độ chính xác cần thiết, và độ chệch không đổi qua mọi kịch bản, xem A3-3. Không sai, chỉ nên nói ra.
+
+---
+
+## A8 — Biên tập, trình bày và thủ tục
+
+**Điểm mạnh.** Không dấu gạch ngang dài trong văn xuôi. Không từ nào trong danh sách khai tử. Không tiêu mục nào mở bằng "Figure X shows". Tóm tắt 244 từ, trong trần. Mục hạn chế 5.4 đặt trước kết luận. Có CRediT, xung đột lợi ích, đạo đức, khai báo AI, data availability và code availability đầy đủ theo khuôn Springer. Tài liệu tham khảo đúng định dạng JCSHM và gần như đều có DOI. Nomenclature đầy đủ. Đây là bản thảo được chuẩn bị cẩn thận.
+
+**A8-1. Độ dài.** Thân bài khoảng 16.000 từ, 11 hình, 13 bảng. Bài JCSHM điển hình khoảng một nửa. Ba chỗ cắt được mà không mất nội dung: Mục 4.3 Monte Carlo chuyển phần lớn sang phụ lục điện tử, giữ lại Bảng 7 và hai kết luận ngược trực giác; Mục 5.3 hai mở rộng chuyển hẳn sang phần bổ trợ vì chính bài nói chúng không được tuyên bố là kết quả; Bảng 2 và Bảng 4 là số liệu thô, chuyển sang phần bổ trợ và giữ Hình 4 trong bài. Mục tiêu khoảng 10.000 từ.
+
+**A8-2. Đánh số phương trình.** Chuỗi 11, 11a, 11b, 11c rồi 15, 15a phá vỡ thứ tự tuần tự. Springer thích đánh số liên tục. Đánh lại từ đầu.
+
+**A8-3. Nhất quán ký hiệu tên riêng.** "Maxwell--Betti" và "Maxwell-Betti" xuất hiện xen kẽ. Chọn một.
+
+**A8-4. Câu cuối bài.** Kết luận đóng bằng một câu tổng kết cơ chế. Theo chuẩn nội bộ, câu cuối nên là hướng đi tiếp hoặc tài nguyên trao lại cộng đồng. Ở đây có sẵn cả hai: thí nghiệm cấu hình mù, và bộ mã cùng log đã công bố. Đảo trật tự đoạn cuối.
+
+**A8-5. Tiêu đề.** 13 từ, trong dải 8 đến 15, từ khoá mạnh đứng trước. Nếu nhận khuyến nghị A2-2 thì nên đổi "from a single deflection sensor" thành "from a single response channel" để tiêu đề bao được cả biến dạng.
+
+---
+
+## Chấm điểm
+
+Thang 10 là bản thảo mẫu mực ở tạp chí đích, 7 là mức nộp được với kỳ vọng major revision, dưới 6 là chưa nên nộp.
+
+| Tiêu chí | Trọng số | Điểm | Lý do quyết định điểm |
+|---|---|---|---|
+| Tính đúng đắn kỹ thuật | 25% | 8,5 | Tôi kiểm lại được gần như mọi phương trình và con số, tất cả đúng, kể cả O_m và các nghiệm đại số; trừ vì một lỗi thập phân và một câu mô tả sai tỉ lệ đóng góp |
+| Chất lượng đo lường và thống kê | 15% | 6,5 | Loại A bị chặn trong khi dữ liệu ba chu kỳ đã có; dải hiện trường 3–11% quá rộng; cột bias của Monte Carlo không mang tin |
+| Tính mới | 15% | 6,0 | Quan hệ tích phân đã có trong họ influence area và IMS; cái mới là quỹ tích mù, dạng đóng, chỉ số quan sát được và biên O_m, nhưng đang bị đặt sai trục |
+| Tầm quan trọng | 10% | 7,0 | Tiêu chí đặt cảm biến trước triển khai có giá trị thực; bị chặn bởi tính khả thi của phép đo chuyển vị tuyệt đối |
+| Kết luận so với bằng chứng | 10% | 7,5 | Phạm vi được rào cẩn thận, phần động nói rõ chỉ là lực không đổi; trừ vì tính bất biến chưa được kiểm trực tiếp và kết luận nói quá về "one-, two- and three-axle groups" |
+| Khả năng tái lập | 10% | 9,0 | Toàn bộ số liệu trong bảng, mã và log của từng lần chạy nộp kèm, mọi con số truy được về script. Tốt nhất trong ba bản thảo |
+| Trình bày và văn phong v2.0 | 10% | 7,5 | Sạch về văn phong và cấu trúc; trừ vì độ dài, câu lặp, hệ quả thiếu công thức, thứ tự bảng |
+| Thủ tục nộp | 5% | 8,0 | Khai báo đầy đủ, định dạng Springer đúng, DOI gần đủ; trừ vì đánh số phương trình không tuần tự |
+
+**Tổng có trọng số: 7,5/10.** Trên ngưỡng nộp.
+
+So sánh trong nhóm: JCSHM 7,5; JNNFM 6,3; PRE 5,8. Bản này khác hai bản kia ở chỗ nó không có lỗi nào đe doạ kết luận. Những gì còn lại là định vị, đo lường và trình bày, tức là loại việc làm được mà không cần chờ kết quả mới.
+
+---
+
+## Khuyến nghị nâng cấp
+
+### Vòng 0 — bàn giấy, ba đến năm ngày, làm trước khi nộp
+
+| # | Việc | Mục | Điểm sau |
+|---|---|---|---|
+| 1 | Sửa lỗi thập phân 0,1260 và 0,1989; nói rõ 37% là tỉ số nào | A3-2 | |
+| 2 | Thêm đoạn tổng quan họ influence area và IMS; đặt lại trục tính mới sang bốn kết quả siêu tĩnh | A4-1 | +0,4 |
+| 3 | Tính và báo độ không đảm bảo loại A từ ba chu kỳ đã đo | A3-1 | +0,2 |
+| 4 | Thay R² bằng ba giá trị I_y/P và độ tán 0,69%; sửa kết luận về "one-, two- and three-axle" | A5 | +0,2 |
+| 5 | Thêm đoạn về cảm biến chuyển vị khả dụng và ε₀ đạt được, đọc ngược qua Eq. (19) | A1-1 | +0,3 |
+| 6 | Nói thẳng căng thẳng giữa bất biến cấu hình trục và nhu cầu biết tốc độ | A1-2 | +0,1 |
+| 7 | Sửa câu lặp, phát biểu hệ quả, câu "three quarters", thứ tự bảng, đánh số phương trình, cắt độ dài về ~10.000 từ | A6, A8 | +0,2 |
+
+Tổng sau vòng 0: khoảng **8,6**. Nộp được với kỳ vọng minor đến major revision nhẹ.
+
+### Vòng 1 — mở rộng lý thuyết, bàn giấy, giá trị cao nhất trên công sức
+
+**Phát biểu định lý cho đại lượng đáp ứng tuyến tính bất kỳ, không chỉ chuyển vị (A2-2).** Một tiểu mục ngắn, một dòng trong Bảng 13, một câu trong tóm tắt và có thể một chữ trong tiêu đề. Nó mở phương pháp ra toàn bộ hạ tầng BWIM đo biến dạng đang tồn tại, và nó gỡ đúng điểm yếu hiện trường nặng nhất mà A1-1 nêu. Không cần dữ liệu mới.
+
+### Vòng 2 — hai thí nghiệm, mỗi thí nghiệm một ngày trên giàn đã có
+
+**2a. Kiểm trực tiếp tính bất biến.** Giữ tổng tải cố định, đổi khoảng cách trục: 50 + 50 N tại 250, 500, 750 và 1000 mm, rồi 25 + 50 + 25 N. Các đường đáp ứng khác hẳn nhau, các tích phân phải trùng trong phạm vi khoảng 1%. Chính bài đã viết ra thí nghiệm này ở Mục 5.4 và gọi nó là thí nghiệm đầu tiên nên làm. Hiện tại luận điểm trung tâm của bài chỉ được chứng minh gián tiếp; sau thí nghiệm này nó được chứng minh trực tiếp.
+
+**2b. Chứng minh cấu hình mù.** Dời gối giữa để có nhịp 2500 và 3644 mm, và cho thấy tích phân độ võng triệt tiêu trong khi từng số đọc độ võng vẫn hoàn toàn bình thường. Đây là một **dự đoán thất bại được kiểm chứng**, loại bằng chứng thuyết phục nhất mà một bài lý thuyết có thể đưa ra, và cực hiếm trong tài liệu ngành. Bài tự gọi đây là "thí nghiệm quyết định nhất mà khung lý thuyết gợi ra", và tôi đồng ý.
+
+Sau vòng 2, bài ở khoảng **9,0**, và với 2b trong tay, tiêu đề nên đặt cấu hình mù ở vị trí trung tâm. Ở mức đó có thể cân nhắc một đích cao hơn trong cùng dòng, chẳng hạn Engineering Structures hoặc Mechanical Systems and Signal Processing, dù JCSHM vẫn là lựa chọn hợp với phần quan sát được và đặt cảm biến.
+
+### Ba việc không nên làm
+
+Đừng thêm mô phỏng tương tác xe cầu vào bài này. Mục 4.6 đã rào phạm vi rất rõ ràng và đúng cách; mở ra sẽ kéo theo độ nhám mặt cầu, mô hình treo, và một bài thứ hai. Đừng bỏ Bảng 11 vì nó "không phải GUM chính thức"; nó đã tự khai báo đúng và nó có ích. Và đừng làm nhẹ đi Mục 5.4, vì chính danh sách hạn chế đó khiến người phản biện tin phần còn lại.
+
+Sau khi sửa, chạy lại toàn bộ tám vai theo NT-10, không kiểm chọn lọc phần vừa sửa.

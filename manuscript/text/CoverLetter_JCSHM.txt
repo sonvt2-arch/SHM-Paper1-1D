@@ -1,0 +1,31 @@
+Cover letter
+
+Thai-Son Vu | Department of Bridge and Road Engineering, Hanoi University of Civil Engineering
+
+55 Giai Phong Road, Bach Mai Ward, Hanoi 100000, Viet Nam | sonvt2@huce.edu.vn | +84 971 899 888
+
+22 August 2026
+
+The Editor-in-Chief
+
+Journal of Civil Structural Health Monitoring
+
+Dear Editor,
+
+We wish to submit for consideration as an Original Paper the manuscript entitled “Load observability of continuous bridge beams from a single deflection sensor: invariance, blind configurations and laboratory validation”, by Quoc-Bao Nguyen, Thai-Son Vu and Hung-Son Nguyen.
+
+Before a monitoring system can weigh traffic, a prior question has to be answered: given where the instrument is placed, is the load observable at all? The manuscript answers that question for continuous beams. We prove that the integral of the deflection recorded at one fixed point over a complete crossing equals the total load times a constant of the structure and the sensor position, independent of how many axles there are, how they are spaced, or where they sit. By reciprocity that constant is the deflection at the sensor under a uniformly distributed load, so it follows from a single static analysis performed before any instrument is bought.
+
+Two consequences are of direct use to a monitoring designer. First, the constant has a closed form for a two-span beam of arbitrary span and stiffness ratio, from which the configurations that carry no load information follow analytically: at uniform stiffness the blind span ratio is 1.45743 and the most observable sensor position is 0.42154 of the span. A bridge close to that ratio cannot be weighed from that sensor, however good the instrument. Second, the reciprocal of the constant is a load-observability indicator that ranks candidate sensor positions in advance.
+
+The method is verified against a closed-form solution, against finite element analysis, and against laboratory measurement. Tests on a two-span steel beam of 2 x 2500 mm identify one-, two- and three-axle groups to within 1.19 % and 0.70 % by the two estimators proposed, against direct weighing. A moving constant-force study, which covers bridge dynamics only and not vehicle–bridge interaction, bounds the quasi-static error below 1 % once the crossing time exceeds eight fundamental periods. A measurement-error budget identifies zero-offset drift, rather than random noise, as the quantity that governs field accuracy. Every number in the paper is produced by a script, and the scripts, the measured data and the console log of every run are supplied as supplementary material.
+
+The limitations are stated without qualification in the manuscript. The experimental programme is at laboratory scale; the treatment is one-dimensional, so transverse load position is outside its scope; the field entries of the uncertainty budget are sensitivity-based scenarios rather than validated performance limits; and the blind configuration, which is the paper’s sharpest prediction, has not yet been tested experimentally. Section 6 sets out the test that would do so.
+
+We believe the work fits the scope of the Journal of Civil Structural Health Monitoring because it concerns what a monitoring installation on a civil structure can and cannot determine about the loads acting on it, and because it is supported by laboratory verification rather than by numerical work alone.
+
+The manuscript is original, has not been published previously, is not under consideration by any other journal, and has been read and approved by all authors. All declarations required by the journal are included with this submission.
+
+Yours sincerely,
+
+Thai-Son Vu, on behalf of the authors

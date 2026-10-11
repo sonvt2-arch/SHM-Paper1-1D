@@ -1,0 +1,111 @@
+Phan bien 6 tac nhan
+
+PHẢN BIỆN 6 TÁC NHÂN — VÒNG FORENSIC AUDIT (JCSHM)
+
+Đối tượng: JCSHM_Submission.docx — 45 trang, 11 hình, 13 bảng, 40 tài liệu, 27 công thức Word gốc.
+
+Phạm vi: thực hiện JCSHM_PreSubmission_Forensic_Audit_Report.docx — 2 STOP-SHIP, 4 MUST-FIX, 3 SHOULD-FIX, cộng rà tài liệu và định dạng.
+
+Kết quả: 9/9 mục đã xử lý.
+
+AGENT 6 — HAI MỤC STOP-SHIP
+
+STOP-SHIP 1: abstract 269 từ, giới hạn JCSHM là 250
+
+Đã thay bằng bản audit đề xuất, chỉnh nhẹ cho khớp cách viết đơn vị của bài. 244 từ.
+
+STOP-SHIP 2: công thức là ảnh, không phải công thức Word — mục nặng nhất cả vòng
+
+JCSHM yêu cầu Equation Editor hoặc MathType. Dây chuyền dựng bài render LaTeX ra PNG, nên cả 27 công thức đều là ảnh.
+
+Đã chuyển toàn bộ sang OMML gốc: dùng pandoc dịch từng nguồn LaTeX thành công thức Word, rồi ghép vào đúng ô trái của bảng hai ô để số công thức giữ nguyên vị trí căn phải.
+
+| Kiểm | Trước | Sau |
+| :-: | :-: | :-: |
+| Đối tượng <m:oMath> | 0 | 27 |
+| Ảnh công thức | 27 | 0 |
+| Ảnh còn lại | — | 11, đúng bằng 11 hình |
+| MathType/OLE | 0 | 0 |
+
+Bốn lỗi kỹ thuật phải xử lý trên đường đi, không lỗi nào hiện ra ngay:
+
+Một — khớp sai cấp. Lần đầu chỉ thay được 4/27, vì tôi khớp theo tên file ảnh, mà thư viện docx đã đổi tên thành image1.png… Chuyển sang khớp theo số công thức in trên trang thì lại ra 0, vì công thức nằm trong bảng hai ô chứ không phải đoạn văn. Khớp ở cấp bảng mới ra 27/27.
+
+Hai — bẫy font, đúng cái đã từng cắn một bài khác của nhóm. Pandoc không ghi font lên math run, nên cả 1.597 run sẽ thừa kế font mặc định của tài liệu là Times New Roman — font không có bảng OpenType MATH, và Word sẽ dựng công thức xấu hoặc không dựng. Đã gán Cambria Math cho từng run và đăng ký font vào font table.
+
+Ba — schema OOXML từ chối OMML của pandoc ở ba điểm, phát hiện lần lượt qua validate:
+
+thẻ <m:jc/> tự đóng sót lại sau khi bóc vỏ căn giữa
+
+thứ tự phần tử con sai trong m:dPr, m:mcPr, m:mPr (schema đòi begChr, sepChr, endChr; pandoc viết begChr, endChr, sepChr)
+
+m:nor, m:scr, m:sty là các lựa chọn loại trừ nhau, không phải chuỗi. Pandoc ghép nor+sty (17 chỗ) và scr+sty (1 chỗ)
+
+Bốn — tôi tự làm hỏng một chỗ khi sửa. Giả định thứ tự là scr trước sty nên tôi đảo chỗ pandoc viết đúng. Validate báo lỗi ngược lại. Đảo lại thì vẫn lỗi — lúc đó mới suy ra chúng loại trừ nhau, và bằng chứng nằm ngay trong dữ liệu: sty một mình qua 436 lần, nor+sty và scr+sty đều trượt. Giữ thẻ mang nghĩa nhất mỗi run thì sạch.
+
+Toàn bộ bốn xử lý đã gộp vào chính script chuyển đổi, nên lần dựng sau sạch ngay từ đầu.
+
+⚠ Điều tôi KHÔNG chứng minh được. Môi trường này không render OMML — mọi công thức hiện trắng trong PDF dựng cục bộ, và điều đó không nói gì về nội dung file. Anh/chị phải mở .docx trong Word và nhìn đủ 27 công thức. Nếu có gì sai, 03_authors_reference/EquationsAsImages_FALLBACK.docx là bản trước với công thức dạng ảnh — hiện đúng ở mọi nơi nhưng không hợp yêu cầu tạp chí.
+
+AGENT 3 — BỐN MỤC MUST-FIX
+
+| Mục | Vấn đề | Xử lý |
+| :-: | :-: | :-: |
+| Tham chiếu chéo | Mục 3.2 nói tán xạ lặp bị chặn ở "Mục 4.6", nhưng 4.6 là mục động lực học | → Mục 4.7, thêm trỏ tới 4.3 cho phần ngẫu nhiên |
+| Ngưỡng động 1 % | Bảng 9 cho đúng 1.00 % tại T_cr/T₁=8, nên "dưới 1 %" quá mạnh | "xấp xỉ 1 % tại tám chu kỳ và dưới 1 % với tỷ số lớn hơn", sửa ở abstract, mục 5.4 và Kết luận; ô bảng nén dùng "≤ 1 %" |
+| Khẳng định thực nghiệm | Abstract nói nhận dạng cả ba cấu hình, nhưng Bảng 5 cho thấy tải đơn là lượt chuẩn, không phải kết quả nhận dạng | Abstract mới nói rõ: nhận dạng nhóm hai và ba tải chưa biết |
+| Tiêu đề khối cuối | "Declarations" | → "Statements and Declarations" đúng yêu cầu JCSHM |
+
+Mục "ngưỡng động 1 %" là loại lỗi đáng chú ý: con số đúng, bảng đúng, chỉ có từ mô tả vượt quá dữ liệu. Bảng ghi 1.00 % mà văn nói "dưới 1 %" — phản biện chỉ cần đối chiếu một ô.
+
+AGENT 4 — BA MỤC SHOULD-FIX, VÀ HAI LỖI DO CHÍNH TÔI GÂY RA
+
+Audit liệt kê bốn cụm chữ hỏng. Hai trong số đó là do tôi tạo ra ở chính vòng trước:
+
+"relative precision relative precision ratio" — sinh ra khi tôi đổi nhãn Oₘ theo S3 vòng trước, thay chuỗi mà không kiểm câu sau khi thay
+
+"and a the sensitivity-based estimates" — sinh ra khi tôi sửa M3 vòng trước
+
+Cả hai lọt qua kiểm tra của tôi vì tôi chỉ kiểm chuỗi MỚI có mặt hay không, không kiểm câu chứa nó có còn đọc được không. Đây là lỗ hổng thật trong cách tôi làm việc, không phải sự cố lẻ. Từ nay sau mỗi lần thay chuỗi phải đọc lại câu, không chỉ tìm chuỗi.
+
+Hai cụm còn lại là văn phong biên tập: "should be stated without qualification" và "The finite element model earns its place elsewhere" — đã thay bằng câu kỹ thuật trực tiếp.
+
+Ngoài ra: chú thích hình bỏ gạch nối và dấu chấm cuối theo kiểu JCSHM; dòng vận tốc trong Bảng 13 đã siết cho khớp mục 4.4/5.5 (một trục thì lấy từ điểm cắt không, nhiều trục cần phát hiện độc lập).
+
+AGENT 2 — TÁM PHÉP KIỂM SỐ CỦA AUDIT
+
+Audit tự chạy tám phép kiểm và báo PASS cả tám. Tôi đã tính lại độc lập ở vòng trước và trùng khớp: tỷ lệ nhịp mù 1.45743, vị trí tối ưu 0.42154, EI = 3.3060×10⁹ N·mm², tải đơn 40.64 N, sai số BPM 1.19 % và SLM 0.70 %, độ dốc hiệu chuẩn cao hơn lý thuyết 1.12 %.
+
+Hai mục audit đánh "WORDING FIX" chứ không phải sai số — ngưỡng 1 % và phạm vi thực nghiệm trong abstract — đều đã xử lý ở trên.
+
+AGENT 5 — TÀI LIỆU VÀ TUÂN THỦ
+
+Audit xác nhận: 40 tài liệu đều được trích, thứ tự xuất hiện liên tục từ [1] đến [40], không có mục mồ côi, không DOI hỏng. Chín mục không có DOI đều là báo cáo, sách, tiêu chuẩn hoặc tài liệu thể chế — không có DOI là bình thường.
+
+Bảng tuân thủ JCSHM sau khi sửa: abstract PASS, từ khoá PASS, trang tiêu đề PASS, số trang PASS, độ sâu đề mục PASS, bảng PASS, công thức PASS, chú thích hình PASS, Statements and Declarations PASS, phù hợp phạm vi PASS.
+
+AGENT 1 — KHÔNG CÓ THAY ĐỔI KHOA HỌC
+
+Vòng này không đụng đến một con số, một mô hình hay một kết luận nào. Mọi sửa đổi là câu chữ, tham chiếu, định dạng và mã hoá công thức. Audit cũng kết luận: không cần thí nghiệm mới, không cần chiến dịch phần tử hữu hạn mới.
+
+TỒN ĐỌNG
+
+| # | Việc | Ai |
+| :-: | :-: | :-: |
+| 1 | Mở .docx trong Word, nhìn đủ 27 công thức — không kiểm tra cục bộ nào chứng minh được | bắt buộc |
+| 2 | Xác minh trạng thái bản thảo dầm liên tục thời kỳ đầu (M5 vòng trước, vẫn mở) | tác giả |
+| 3 | Mở DOI resolver kiểm từng DOI | tác giả |
+| 4 | Kiểm tài liệu [32] có truy được không; [34] ABAQUS đổi sang phiên bản thực dùng | tác giả |
+| 5 | Chạy spell-check Word một lượt sau khi thay công thức | tác giả |
+| 6 | Hai ORCID còn trống; suggested reviewers còn trống | tác giả |
+| 7 | Xác nhận JCSHM phản biện single- hay double-anonymized | tác giả |
+
+ĐÁNH GIÁ
+
+Vòng này có một mục kỹ thuật nặng và một bài học về chính cách tôi làm việc.
+
+Mục nặng là công thức. Chuyển 27 công thức từ ảnh sang OMML gốc nghe như một thao tác định dạng, nhưng nó bung ra bốn lớp vấn đề chồng nhau — khớp sai cấp, bẫy font, ba lỗi schema, và một lỗi tôi tự tạo khi sửa. Không lớp nào hiện ra cho đến khi lớp trước được gỡ. Cách duy nhất đi qua là chạy validate sau mỗi bước nhỏ, chứ không phải sửa hết rồi kiểm một lần.
+
+Bài học thì khó chịu hơn. Hai trong bốn lỗi chữ mà audit tìm ra là do tôi gây ra ở vòng ngay trước đó, và cả hai lọt qua vì tôi kiểm sai thứ: tôi xác nhận chuỗi mới có mặt, mà không đọc lại câu chứa nó. "relative precision relative precision ratio" là kết quả trực tiếp của kiểu kiểm tra đó. Một audit bên ngoài bắt được trong vài phút thứ mà tôi đã bỏ sót ngay sau khi tự tay tạo ra.
+
+Điều an ủi duy nhất là mọi thứ khác — 40 tài liệu, tám phép kiểm số, cấu trúc, phạm vi — audit đều xác nhận sạch. Vấn đề nằm ở các mối nối tôi vừa động vào, không phải ở phần tôi để yên.

@@ -1,0 +1,610 @@
+Phan bien 6 tac nhan
+
+Phản biện— Manuscript "Indirect identification of service loads on two-span continuous beams based on mid-span deflection measurements"
+
+TÓM TẮT ĐIỀU HÀNH
+
+| Hạng mục | Đánh giá |
+| :-: | :-: |
+| Ý tưởng cốt lõi (bất biến tích phân độ võng) | Đúng về toán học, đã kiểm chứng ký hiệu và số |
+| Suy diễn phản lực, mô-men, độ võng (Eq. 1–6, 12) | Đúng 100%, khớp Bảng 1 tới 5.4×10⁻⁵ mm |
+| Số học nhận dạng tải (BPM/SLM, 3 trường hợp) | Tái lập chính xác (1.10 / 0.61 / 1.19 / 0.70 %) |
+| Lỗi công thức | 3 lỗi thật (Eq. 15, 16, 20) + 1 lỗi mô tả gối |
+| Lỗi đơn vị | 6 giá trị lực sai hệ số 1000 |
+| Bảng 3 (Monte Carlo) | Không tái lập được — không nhất quán nội tại |
+| Kết luận về SLM chịu nhiễu | Sai về mặt xác suất — tôi chứng minh ngược lại |
+| Tài liệu tham khảo | 1 tham chiếu nghi bịa, 2 trích dẫn sai chỗ |
+| Độ mới cho Q1/Q2 | Chưa đủ — cần nâng thành định lý tổng quát + 4 phân tích còn thiếu |
+
+Kết luận thẳng: bản thảo hiện tại ở mức Q3–Q4 (đúng tầm JMES — tạp chí này nằm ESCI, JIF 0.4, không phải Q1/Q2). Phần lõi lý thuyết đủ vững để lên Q1/Q2, nhưng phải sửa 17 lỗi và bổ sung 6 phân tích mới. Lộ trình cụ thể ở cuối tài liệu.
+
+KIỂM ĐỊNH MÔ HÌNH CƠ HỌC KẾT CẤU
+
+1.1 ✘ LỖI NGHIÊM TRỌNG: mô tả sai gối trung gian B
+
+Bài viết (mục 2.1): "support B at the interior (fixed support preventing both vertical displacement and rotation)".
+
+Sai. Nếu B ngăn cả xoay thì dầm tách thành hai dầm công-xôn chống (propped cantilever) độc lập, và với P tại x=l/2 ta sẽ có R_A = 5P/16, R_C = 0. Nhưng Eq. (1) của chính các tác giả cho:
+
+R_A(l/2) = 13/32P, R_B = 22/32P, R_C = -3/32P, M_B = -3Pl/32
+
+— đây đúng là dầm liên tục 2 nhịp với gối trung gian đơn (khớp/con lăn). Hình 1 cũng vẽ tam giác (gối cố định, không ngàm). Và chính bài lại viết "Continuity of rotation (slope) at the interior support B" — mâu thuẫn trực tiếp với câu trên.
+
+Sửa: "support B is a hinged (pinned) support restraining vertical displacement only; rotation is free but continuous across B." Đồng thời sửa mô tả thí nghiệm: lăng trụ tam giác thép là knife-edge / pinned support, không phải "fixed".
+
+Đây là loại lỗi mà reviewer Q1 phát hiện trong 30 giây và nghi ngờ toàn bộ phần còn lại. Ưu tiên cao nhất.
+
+1.2 ✘ Điều kiện biên viết sai vị trí
+
+Bài viết:
+
+"Continuity of rotation at the interior support B: (s = l/2; …)" → phải là s = l.
+
+"continuity of curvature where appropriate: (s = l/2; …)" → phải là s = l, và điều kiện này thừa (độ cong liên tục tại B là hệ quả của M liên tục, không phải điều kiện độc lập).
+
+Thiếu các điều kiện thật sự cần để tích phân Eq. (4):
+
+M(0) = M(2l) = 0;
+
+liên tục y và dy/ds tại điểm đặt tải s = x (chỗ có bước nhảy lực cắt);
+
+y(0) = y(l) = y(2l) = 0.
+
+Viết lại đúng bộ 6 điều kiện này rồi mới dẫn ra Eq. (5).
+
+1.3 ⚠ Con số "60–70%" sai
+
+Bài viết: độ võng giữa nhịp của dầm liên tục "approximately 60–70% of the simply supported case".
+
+Kiểm tra: y_cont = (2.875 Pl³)/192EI, y_ss = (Pl³)/48EI = (4Pl³)/192EI → tỷ số = 2.875/4 = 71.9%. Lấy cực đại theo vị trí tải (x = l√(9/39) = 0.4803l) cũng cho 72.1%.
+
+Sửa thành "≈ 72%" và ghi rõ cách tính.
+
+1.4 ⚠ Mô hình Abaqus không tạo giá trị gia tăng
+
+Bảng 1 cho sai số Abaqus vs. giải tích = 0.00% ở cả 21 điểm. Về mặt lý thuyết điều này đúng (phần tử dầm Euler–Bernoulli cho chuyển vị nút chính xác khi tải đặt tại nút), nhưng reviewer sẽ hỏi ngay: "vậy FEM để làm gì?"
+
+Cách biến điểm yếu thành điểm mạnh: dùng Abaqus cho những thứ giải tích không làm được, và đó chính là những gì Q1 đòi hỏi:
+
+phần tử B31 (Timoshenko) vs B23 (Euler–Bernoulli) → định lượng ảnh hưởng biến dạng cắt (với ống 25×25, l/h = 100, dự kiến < 0.1%, nhưng cần chứng minh chứ không giả định);
+
+mô hình shell/solid cho ống rỗng → hiệu ứng biến dạng cục bộ tại điểm đặt tải;
+
+độ mềm của gối (lò xo k_v) → định lượng sai số khi gối không tuyệt đối cứng;
+
+nhịp không đều l₂/l₁ ∈ [0.5, 2] → mở rộng phạm vi bài báo (mục M7 bên dưới);
+
+phân tích động VBI (khối lượng có lò xo di động) → xác định giới hạn "quasi-static".
+
+1.5 ⚠ Giả thiết "quasi-static" là gót chân Achilles
+
+Toàn bộ bài dựa trên tải tựa tĩnh, nhưng ứng dụng nhắm tới là xe tải chạy trên cầu thật. Hệ số xung kích thực tế 1.1–1.3. Bài không có một dòng nào định lượng việc này.
+
+Reviewer Q1 sẽ hỏi: "tích phân độ võng có bất biến khi có thành phần động không?" Câu trả lời có lợi cho các tác giả: thành phần dao động tự do có giá trị trung bình gần bằng 0 nên tích phân trên toàn hành trình lọc bớt nó — nhưng phải chứng minh bằng số, không được nói suông. Đây là một section mới có sức nặng.
+
+KIỂM ĐỊNH TOÁN HỌC VÀ SỐ HỌC
+
+Toàn bộ mục này được tái lập độc lập bằng SymPy (ký hiệu) và NumPy (số).
+
+2.1 ✔ NHỮNG GÌ ĐÚNG
+
+| Đối tượng | Kết quả kiểm tra |
+| :-: | :-: |
+| Eq. (1) phản lực nhịp AB | ✔ Đúng. Kiểm chứng ba-mô-men: M_B = -Px(l²-x²)/(4l²); tại x=l/2 → 13P/32, 22P/32, -3P/32, tổng =P |
+| Eq. (2) phản lực nhịp BC | ✔ Đúng. Khớp hoàn toàn với phép đổi biến đối xứng x' = 2l - x |
+| Eq. (5), (6) độ võng | ✔ Đúng. Liên tục C² tại x=l/2 và x=l; triệt tiêu tại x=0, l, 2l |
+| Eq. (6) vs Bảng 1 | ✔ Sai lệch tối đa 5.4×10⁻⁵ mm trên 21 điểm — khớp tuyệt đối |
+| Eq. (12) ∫ = Pl⁴/192EI | ✔ Đúng. SymPy xác nhận chính xác |
+| Eq. (15) nhánh 1, 2 | ✔ Đúng (dạng phân tích thừa số của Eq. 6) |
+| Eq. (17) miền tích phân dịch chuyển | ✔ Đúng và tinh tế — dùng [a, 2l+a] cho tải thứ hai |
+| BPM/SLM 3 trường hợp | ✔ Tái lập chính xác: 1.10 / 0.61 / 1.19 / 0.70 % |
+
+Hằng số vật liệu tôi tính lại: I = (25⁴ - 20.94⁴)/12 = 16,529.76 mm⁴; EI = 3.30595×10⁹ N·mm²; P₀ = 4.143× 9.81 = 40.6428 N.
+
+2.2 ✘ LỖI 1 — Eq. (15) và Eq. (16), nhánh thứ ba: sai hệ số 3
+
+Bài viết:
+
+(y^(AB)_l/2)₁ = (P(2l-x)(3l²-4lx+x²))/(192EI), l < x ≤ 2l
+
+Khai triển tử số: (2l-x)(x²-4lx+3l²) = -x³+6lx²-11l²x+6l³ — đúng bằng tử số Eq. (6) nhánh 3. Nhưng Eq. (6) và Eq. (12) dùng mẫu số 64EI, không phải 192EI.
+
+Kiểm chứng bằng số tại x = 3750 mm:
+
+với 64EI: y = -1.1255 mm ✔ khớp Bảng 1
+
+với 192EI: y = -0.3752 mm ✘ sai gấp 3
+
+SymPy xác nhận: y₃^((6)) / y₃^((15)) = 3 chính xác.
+
+Sửa: mẫu số nhánh 3 của Eq. (15) và Eq. (16) phải là 64EI (hoặc giữ 192 và nhân tử số với 3). Lỗi này lặp lại ở cả Eq. (16) cho tải thứ hai.
+
+Nếu để nguyên, một reviewer chỉ cần thay số một lần là bác toàn bộ mục 2.3.2.
+
+2.3 ✘ LỖI 2 — Eq. (20): hệ số 1/128 thay vì 1/192
+
+Eq. (18) và (19) viết đúng 1/192(P₀ l⁴)/EI và 1/192(Pₜ l⁴)/EI. Nhưng Eq. (20) viết:
+
+(Σ y_tjΔ l)/(Σ y_0iΔ l) = (1/(128)(Pₜ l⁴)/EI)/(1/(128)(P₀ l⁴)/EI)
+
+Hệ số triệt tiêu nên kết quả cuối vẫn đúng, nhưng đây là lỗi in đập vào mắt. Sửa thành 1/192.
+
+2.4 ✘ LỖI 3 — Sai đơn vị hệ số 1000 ở TẤT CẢ giá trị lực
+
+| Bài viết | Đúng phải là |
+| :-: | :-: |
+| BPM 2 tải: 67,730.0 N | 67.73 N |
+| SLM 2 tải: 67,400.2 N | 67.40 N |
+| LWM 2 tải: 66,992.5 N | 66.99 N |
+| BPM 3 tải: 126,565.5 N | 126.57 N |
+| SLM 3 tải: 125,949.2 N | 125.95 N |
+| LWM 3 tải: 125,077.5 N | 125.08 N |
+
+Kiểm tra đơn giản: 6,829 g = 6.829 kg × 9.81 = 66.99 N, không phải 66,992.5 N. Có vẻ các tác giả nhân với 9810 (mm/s²) thay vì 9.81 (m/s²). 67 kN ≈ 6.8 tấn treo lên ống thép 25×25 — vô lý về mặt vật lý.
+
+Giá trị bằng gam thì đúng, nên kết luận về sai số không đổi. Nhưng để nguyên thì mất uy tín ngay lập tức.
+
+2.5 ✘ LỖI 4 — "Tích phân giải tích và số trùng khớp giá trị chính xác": SAI
+
+Bài viết: "The analytical and numerical integrals match the exact value derived from Equation (7)."
+
+Tính lại:
+
+| Đại lượng | Giá trị (mm²) | Chênh so với chính xác |
+| :-: | :-: | :-: |
+| Chính xác P₀ l⁴/(192EI) | 2501.19 | — |
+| Hình thang trên lưới Δx=250 mm | 2488.68 | −0.500% |
+| Bài báo ghi (giải tích & số) | 2488.6875 | −0.500% |
+| Thực nghiệm | 2513.43 | +0.49% |
+
+Nghĩa là giá trị "giải tích" mà bài báo báo cáo thực chất là tổng hình thang, và nó lệch 0.50% so với giá trị chính xác. Con số "0.49%" mà bài gán cho sai số thực nghiệm lại được tính so với giá trị chính xác (2501.19), không phải so với 2488.69 (nếu so với 2488.69 thì là 0.99%). Đây là sự trộn lẫn hai chuẩn so sánh.
+
+Hệ quả quan trọng — và đây là món quà cho bài báo: BPM dùng hằng số chính xác 192EI/l⁴ áp lên một tích phân tính bằng hình thang, nên BPM mang sẵn một sai lệch hệ thống −0.50%. SLM thì lấy tỷ số hai tích phân tính cùng một quy tắc cầu phương, nên sai lệch cầu phương triệt tiêu hoàn toàn. Đây là một ưu thế lý thuyết thứ hai của SLM mà bài báo chưa hề nêu (bài mới chỉ nêu ưu thế "không cần EI").
+
+Bằng chứng số: BPM/SLM = I₁^(meas)/I^(exact) = 2513.43/2501.19 = 1.00489 ở cả ba trường hợp — đúng bằng tỷ số hiệu chuẩn.
+
+2.6 Nghiên cứu hội tụ cầu phương (BỔ SUNG MỚI — nên đưa vào bài)
+
+Tính trên đường ảnh hưởng chính xác:
+
+| n/nhịp | Δx (mm) | Hình thang | Sai số | Simpson | Sai số |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 4 | 625 | 2423.03 | −3.125% | 2501.19 | 0.0000% |
+| 5 | 500 | 2449.16 | −2.080% | 2497.19 | −0.160% |
+| 10 | 250 | 2488.68 | −0.500% | 2501.85 | +0.027% |
+| 20 | 125 | 2498.06 | −0.125% | 2501.19 | −0.000% |
+| 50 | 50 | 2500.69 | −0.020% | 2501.19 | 0.0000% |
+
+Khuyến nghị đưa vào bài: với cùng bộ dữ liệu đo, chỉ cần đổi từ hình thang sang Simpson là loại bỏ được sai lệch hệ thống 0.5% — không tốn thêm một cảm biến nào. Đây là một đóng góp thực tiễn rẻ và thuyết phục.
+
+2.7 ✘ LỖI 5 — Eq. (13) không phải công thức hình thang
+
+Bài viết: ∫₀^(2l) y dx = Σᵢ=1^2n (y)ᵢ Δ l — đây là tổng chữ nhật, không phải quy tắc hình thang. Công thức đúng:
+
+∫₀^(2l) y dx ≈ Δ l[y₀/2 + Σᵢ=1^2n-1 yᵢ + (y_2n)/2]
+
+Ở đây hai công thức trùng nhau chỉ vì y₀ = y_2n = 0. Trên cầu thật (có độ võng dư, có tải phụ) chúng khác nhau. Phải viết đúng.
+
+2.8 ✘ LỖI 6 — Mục 2.2.2 (Eq. 10–11) không nhất quán với Eq. (17)
+
+Eq. (10) viết I_y = Σᵢ Pᵢ ∫₀^(2l) fᵢ(x) dx rồi khẳng định "each load contributes equally in the integral sense" → ∫₀^(2l) fᵢ = C với mọi i.
+
+Điều này không đúng. Với fᵢ(x) = f(x - aᵢ) và f ≡ 0 ngoài [0,2l]:
+
+∫₀^(2l) f(x-aᵢ) dx = ∫_-aᵢ^(2l-aᵢ) f(u) du = C - ∫_(2l-aᵢ)^(2l) f(u) du ≠ C
+
+Phần bị mất nằm ở cuối nhịp 2 nơi f < 0, nên sai lệch không triệt tiêu. Chính Eq. (17) ở mục 2.3.2 mới làm đúng (dùng [a, 2l+a]), và Bảng 2 cho thấy các tác giả đã đo đúng tới x = 5250 và 5750 mm.
+
+Sửa: thống nhất Eq. (10)–(11) theo Eq. (17), và nói rõ điều kiện bắt buộc: tích phân phải trải từ lúc trục đầu tiên lên cầu tới lúc trục cuối cùng rời cầu, tức miền [0, 2l + a_max]. Đây là điều kiện vận hành then chốt, hiện đang bị chôn trong phụ chú.
+
+2.9 ✘ LỖI 7 — Bảng 3 (Monte Carlo) không nhất quán nội tại
+
+Bảng 3 cho BPM và SLM giống hệt nhau ở mean relative error (2.65 / 2.63), max error (8.54 / 8.99) và std (3.23 / 3.18), trong khi tải nhận dạng trung bình lại khác nhau (6,904 vs 6,871; 12,902 vs 12,839).
+
+Điều này bất khả về mặt toán học nếu sai số thật sự đo "vs. LWM" như tiêu đề cột ghi: hai ước lượng có độ chệch khác nhau (1.10% vs 0.61%) thì phân bố sai số không thể trùng khớp tới 2 chữ số thập phân ở cả ba thống kê.
+
+Tái lập của tôi (100,000 lần thay vì 200):
+
+| Trường hợp | PP | Trung bình (g) | Độ chệch % | MAE % | Độ lệch chuẩn % |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 2 tải, chuẩn sạch | BPM | 6904.1 | +1.10 | 2.81 | 3.34 |
+| 2 tải, chuẩn sạch | SLM | 6870.5 | +0.61 | 2.69 | 3.32 |
+| 3 tải, chuẩn sạch | BPM | 12902.8 | +1.20 | 2.72 | 3.19 |
+| 3 tải, chuẩn sạch | SLM | 12840.0 | +0.71 | 2.59 | 3.17 |
+
+Khác nhau rõ ràng, đúng như dự đoán lý thuyết. Phải chạy lại và thay Bảng 3.
+
+Ngoài ra: "max relative error" là một thống kê tồi — nó tăng vô hạn theo số lần mô phỏng (200 lần → 8.5%; 100,000 lần → 14–21%). Thay bằng phân vị 5% / 95% hoặc khoảng tin cậy 95%.
+
+2.10 ✘ LỖI 8 — Kết luận về SLM chịu nhiễu là SAI VỀ XÁC SUẤT
+
+Bài viết: "in field applications where both measurements may contain similar noise, the relative nature of SLM is expected to further reduce sensitivity."
+
+Ngược lại. SLM là tỷ số Pₜ = P₀ Iₜ/I₀. Nếu I₀ cũng nhiễu và nhiễu độc lập, phương sai tương đối cộng thêm:
+
+(σ_P/P)² ≈ (σ_Iₜ/Iₜ)² + (σ_I₀/I₀)²
+
+Mô phỏng của tôi (100,000 lần, nhiễu ±5% ở cả hai phép đo):
+
+| Trường hợp | PP | Std sai số, chuẩn sạch | Std sai số, chuẩn nhiễu |
+| :-: | :-: | :-: | :-: |
+| 2 tải | BPM | 3.34% | 3.34% (không đổi) |
+| 2 tải | SLM | 3.32% | 4.78% ↑ |
+| 3 tải | BPM | 3.19% | 3.20% (không đổi) |
+| 3 tải | SLM | 3.17% | 4.67% ↑ |
+
+Phát biểu đúng — và mạnh hơn nhiều cho bài báo:
+
+SLM triệt tiêu sai số hệ thống dùng chung (common-mode) — sai số EI, sai lệch cầu phương, sai số hệ số khuếch đại cảm biến, độ mềm gối, sai số hiệu chuẩn — nhưng khuếch đại nhiễu ngẫu nhiên độc lập theo hệ số √(2). Do đó khuyến nghị vận hành: đo tải chuẩn lặp nhiều lần và lấy trung bình để σ_I₀ → 0, khi đó SLM ưu việt hơn BPM ở mọi phương diện.
+
+Đây chính là loại kết luận sắc sảo mà tạp chí Q1 muốn thấy — và nó đến từ việc sửa một sai lầm, không phải từ việc thêm dữ liệu.
+
+THÍ NGHIỆM, ĐO LƯỜNG VÀ BẤT ĐỊNH
+
+3.1 THIẾU SÓT LỚN NHẤT: độ trôi điểm không (zero drift)
+
+Bài mô hình hóa nhiễu nhân tính ±5%. Nhưng nguồn sai số chi phối của phương pháp tích phân lại là độ lệch điểm không cộng tính — và bài không hề đề cập.
+
+Lý do: tích phân I_y = ∫₀^(L_tot) y dx có phần dương (nhịp 1) và phần âm (nhịp 2) triệt tiêu nhau một phần, nên một độ lệch hằng số ε không triệt tiêu mà cộng thẳng vào:
+
+(δ P)/P = (ε · L_tot)/I_y
+
+Định lượng trên chính số liệu của bài:
+
+| Trường hợp | I_y (mm²) | L_tot (mm) | ε=0.005 mm (độ phân giải LVDT) | ε=0.02 mm | ε=0.05 mm (nhiệt độ/lún gối) |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 1 tải | 2513 | 5000 | +0.99% | +3.98% | +9.95% |
+| 2 tải | 4168 | 5250 | +0.63% | +2.52% | +6.30% |
+| 3 tải | 7789 | 5750 | +0.37% | +1.48% | +3.69% |
+
+Chỉ riêng độ phân giải của cảm biến đã tạo sai số 0.4–1.0% — lớn hơn toàn bộ sai số mà bài báo hiện báo cáo. Còn trên cầu thật, độ trôi 0.05 mm do nhiệt độ là chuyện thường ngày → sai số 4–10%.
+
+Đây là section mới có sức nặng nhất mà bài đang thiếu. Nó cũng cho một kết luận thiết kế hữu ích: tải càng lớn thì phương pháp càng chính xác (vì I_y tăng còn ε L_tot không đổi) — nghĩa là phương pháp tự nhiên phù hợp cho việc phát hiện xe quá tải, đúng mục tiêu bài báo. Đó là một luận điểm bán hàng cực tốt.
+
+3.2 THIẾU SÓT LỚN THỨ HAI: tốc độ xe
+
+Tích phân là theo không gian ∫ y dx, nhưng trên cầu thật ta chỉ đo được theo thời gian ∫ y dt. Quan hệ:
+
+∫ y dx = ∫ y v(t) dt  (v=const)→  v∫ y dt
+
+Nghĩa là sai số tốc độ truyền thẳng 1:1 vào tải nhận dạng. Đo tốc độ sai 3% → tải sai 3%. Với v thay đổi (phanh, tăng tốc) thì phải biết cả hồ sơ v(t).
+
+Bài hoàn toàn không nói tới điều này, mà đây là rào cản thực tế số một khi chuyển từ phòng thí nghiệm ra hiện trường. Phải có một tiểu mục đề xuất giải pháp: hai cảm biến trục cách nhau khoảng đã biết, hoặc kết hợp camera/radar, hoặc tự hiệu chuẩn từ chính tín hiệu độ võng (thời điểm y=0 tại x=l và x=2l là hai mốc đã biết → suy ra v ngay từ tín hiệu!).
+
+Gợi ý mạnh: tín hiệu độ võng tự chứa hai mốc vị trí (hai lần đổi dấu). Khai thác điều này để tự hiệu chuẩn tốc độ là một đóng góp gọn và mới.
+
+3.3 ⚠ Mô hình nhiễu hiện tại phi vật lý
+
+y_i^(noisy) = y_i(1 + 0.05 ξ_i) có nghĩa: tại gối, nơi y = 0, nhiễu cũng bằng 0. Cảm biến thật không hành xử như vậy.
+
+Mô hình đề xuất thay thế (chuẩn GUM, tách 3 thành phần):
+
+y_i^(meas) = (1+γ) y_i + ε₀ + σ_a ξ_i
+
+γ: sai số hệ số khuếch đại (systematic, SLM triệt tiêu, BPM thì không)
+
+ε₀: độ lệch điểm không (systematic, cả hai đều không triệt tiêu — xem 3.1)
+
+σ_a ξ_i: nhiễu ngẫu nhiên cộng tính, lấy σ_a = độ phân giải/2 = 0.0025 mm
+
+Mô hình này cho phép tách bạch đóng góp của từng nguồn và làm nổi bật đúng ưu/nhược của SLM. Kết quả sẽ là một bảng ngân sách bất định 3 hàng — chính xác thứ reviewer Q1 muốn.
+
+3.4 ⚠ Thiếu dữ liệu độ lặp lại
+
+Bài ghi: "Each reported deflection value was taken as the average of three separate measurements." Nhưng không báo cáo độ lệch chuẩn của ba lần đo đó. Đó chính là bất định loại A theo GUM, và nó có sẵn trong sổ ghi chép của các tác giả.
+
+Bổ sung: cột s_i vào Bảng 1/Bảng 2, hoặc ít nhất một câu: "the pooled standard deviation of the three repeats was X mm (coefficient of variation Y%)".
+
+3.5 ⚠ "Sai số tối đa 1.86%" là con số gây hiểu lầm
+
+1.86% xảy ra tại x = 2250 mm, nơi y = 0.67 mm — sai số tuyệt đối chỉ 0.0125 mm. Ở gần gối, sai số tương đối luôn nổ ra vì mẫu số nhỏ.
+
+Sửa: báo cáo sai số chuẩn hóa theo độ võng cực đại: max|y_exp - y_ana| / max|y_ana| = 0.0125/2.88 = 0.43%. Vừa trung thực hơn, vừa đẹp hơn.
+
+3.6 ⚠ Phạm vi thí nghiệm quá hẹp cho Q1
+
+Một dầm, một vật liệu, một tỷ lệ nhịp (1:1), ba cấu hình tải, một điểm đo. Q1 đòi hỏi hoặc nhiều mẫu thử hơn, hoặc một nghiên cứu tham số bằng số bù đắp (xem AGENT 4, M11).
+
+Tối thiểu nên bổ sung bằng thí nghiệm (rẻ, dùng lại đúng dầm cũ):
+
+3–4 mức tải khác nhau → chứng minh tuyến tính và vẽ đường hiệu chuẩn I_y vs P (hệ số R²);
+
+2–3 khoảng cách trục khác nhau cùng tổng tải → chứng minh trực tiếp tính bất biến, hiện đang chỉ được chứng minh gián tiếp;
+
+lặp 5–10 lần cho một cấu hình → thống kê độ lặp lại thật.
+
+Thí nghiệm thứ hai là quan trọng nhất: nó kiểm chứng đúng cái tính chất mà bài đặt tên. Hiện tại bài chưa có bằng chứng thực nghiệm trực tiếp cho tính bất biến theo khoảng cách trục.
+
+PHẢN BIỆN ĐỐI KHÁNG (mô phỏng reviewer Q1)
+
+Dưới đây là các câu hỏi tôi sẽ đặt nếu tôi là reviewer của Engineering Structures / Measurement / MSSP. Chuẩn bị sẵn câu trả lời trước khi nộp.
+
+R1. "Tính chất bất biến này chỉ là diện tích dưới đường ảnh hưởng. Nó có từ những năm 1950. Mới ở đâu?" → Đây là đòn nặng nhất. Câu trả lời hiện tại của bài ("chúng tôi mở rộng từ dầm đơn giản sang dầm liên tục") không đủ, vì tính chất này không phụ thuộc vào loại dầm. → Chiến lược phản công: nâng nó thành một định lý tổng quát (xem M7 bên dưới) và định vị đóng góp thật ở chỗ khác: (i) chứng minh chặt cho đoàn tải nhiều trục có xét miền chạy vượt; (ii) phân tích ngân sách sai số đầy đủ; (iii) chứng minh SLM triệt tiêu common-mode; (iv) kiểm chứng thực nghiệm.
+
+R2. "Tại sao không so sánh với các phương pháp MFI hiện có?" → Bài trích dẫn Law & Zhu [24,25], Chen et al. [17], Bayesian [19], Kalman [20] nhưng không so sánh gì cả. Bắt buộc phải có một bảng so sánh định lượng hoặc ít nhất định tính (đầu vào cần, đầu ra, độ chính xác, chi phí tính toán, số cảm biến, độ nhạy nhiễu).
+
+R3. "Phương pháp cho tổng tải trên toàn hành trình, không cho tải từng trục. Vậy nó thua WIM ở đâu và hơn ở đâu?" → Phải nói thẳng: phương pháp không thay thế WIM, nó cho tổng trọng lượng xe (GVW) với một cảm biến duy nhất. Đặt đúng vị trí: sàng lọc quá tải chi phí thấp, không phải cân pháp định.
+
+R4. "Nếu có hai xe trên cầu cùng lúc thì sao?" → Bài chỉ nói "appropriate signal processing may be required" — quá mơ hồ. Đây là tình huống thường xuyên trên cầu vượt. Cần ít nhất một phân tích: khi nào tách được, khi nào không.
+
+R5. "Không có kết quả hiện trường, không có tải động, không có bê tông. Sao gọi là ứng dụng cho cầu?" → Trung thực hóa tiêu đề và abstract. Hiện abstract viết như thể đã sẵn sàng triển khai. Nếu chưa có dữ liệu hiện trường, phải hạ giọng và bù bằng nghiên cứu tham số bằng số cho tải động.
+
+R6. "Bảng 3 có BPM và SLM giống hệt nhau. Các tác giả có thực sự chạy Monte Carlo không?" → Xem AGENT 2 §2.9. Đây là câu hỏi sẽ dẫn tới major revision hoặc reject.
+
+R7. "Tài liệu [10] có cùng DOI với [9] nhưng khác tác giả và tiêu đề." → Xem AGENT 5. Đây là câu hỏi có thể dẫn tới desk reject vì nghi ngờ liêm chính.
+
+R8. "Sai số 0.61–1.19% trên một dầm thép phòng thí nghiệm ở điều kiện lý tưởng. Trên cầu thật con số đó là bao nhiêu?" → Phải có ngân sách sai số ngoại suy (xem AGENT 3 §3.1–3.3). Câu trả lời trung thực nằm khoảng 5–15%, và điều đó vẫn hữu ích cho sàng lọc quá tải (ngưỡng quá tải thường là +30% trở lên). Nói ra điều này làm bài mạnh lên chứ không yếu đi.
+
+TÀI LIỆU, ĐỘ MỚI VÀ LIÊM CHÍNH KHOA HỌC
+
+5.1 Tài liệu [10] nghi bịa đặt — XỬ LÝ NGAY
+
+[9] Gajda, J., et al. Long-Term Assessment of the Properties of Load Sensors
+
+Applied in Weigh-in-Motion Systems. Sensors, 2025. 25, DOI 10.3390/s25082421
+
+[10] Qiu, X., Y. Lu, and Y. Chen, Weigh-in-Motion Systems: Calibration, Accuracy
+
+and Practical Deployment Challenges. Sensors, 2025. 25(8): p. 2421
+
+Hai tài liệu cùng một số bài (2421), cùng tập (25), cùng số (8), cùng tạp chí, cùng năm nhưng khác hoàn toàn tác giả và tiêu đề.
+
+Tôi đã kiểm tra: Sensors 2025, 25, 2421 là bài của Gajda, Sroka, Burnos, Daniol, đúng như [9]. Vậy [10] không tồn tại — đây là dấu hiệu điển hình của tài liệu do AI sinh ra.
+
+Hành động bắt buộc: xóa [10], đánh số lại, và rà soát thủ công 100% danh mục (kiểm tra DOI từng mục). Nhiều tạp chí Q1 hiện tự động quét DOI khi nộp; một tài liệu ma là đủ để desk reject và ghi vào hồ sơ tác giả.
+
+5.2 ✘ Trích dẫn sai chỗ
+
+| Vị trí | Vấn đề |
+| :-: | :-: |
+| "This integral is given by the following closed-form expression [20]" (Eq. 12) | [20] là Jiang et al., lọc Kalman nhận dạng tải động — không chứa công thức này. Phải là [22] (bài trước của nhóm) hoặc bỏ trích dẫn vì đây là kết quả tự dẫn |
+| I-35W Minneapolis, trích [2, 3] | [3] là Chan & Thambiratnam, SHM in Australia — không liên quan cầu I-35W |
+| "due to load P (14)" (trước Eq. 4) | Số "(14)" lạc lõng — có vẻ là mảnh vụn của tham chiếu chéo hỏng |
+
+5.3 ✘ Tài liệu không đầy đủ
+
+[18] Das, A., et al. 2024 — không có tạp chí, không có tập/trang, không DOI
+
+[23] Pokharel, S., Finite element modelling of simply supported universal beam, 2022 — không rõ là luận văn, báo cáo hay bài báo
+
+[3] Chan & Thambiratnam, 2014, "1-229" — không rõ nhà xuất bản
+
+5.4 ⚠ Khoảng trống tài liệu cho Q1
+
+Bài mới có 27 tài liệu — quá ít cho Q1 (chuẩn 45–70). Đặc biệt thiếu:
+
+BWIM (Bridge Weigh-in-Motion) — đây là lĩnh vực trực tiếp cạnh tranh và bài không nhắc tới một chữ nào. Moses (1979) là bài gốc; sau đó có cả một dòng nghiên cứu lớn (Žnidarič, OBrien, Yu, Deng). Reviewer sẽ hỏi ngay: "phương pháp này khác BWIM ở đâu?" — đây là lỗ hổng nguy hiểm nhất về mặt định vị.
+
+Đường ảnh hưởng và hiệu chuẩn đường ảnh hưởng cho BWIM (OBrien, Quilligan, Žnidarič)
+
+Đo độ võng không tiếp xúc: thị giác máy tính/DIC, GBSAR, GNSS-RTK — vì bài đề xuất "laser devices, non-contact technologies" mà không trích dẫn gì
+
+Bù nhiệt độ trong SHM (Sohn, Cross, Worden)
+
+Tương tác xe–cầu (VBI) và hệ số xung kích
+
+Quy phạm tải trọng: AASHTO LRFD, Eurocode 1 Part 2, TCVN 11823 — bài nói nhiều về "design load" mà không dẫn quy phạm nào
+
+5.5 CÁCH NÂNG ĐỘ MỚI: phát biểu thành ĐỊNH LÝ TỔNG QUÁT (M7)
+
+Đây là thay đổi có đòn bẩy cao nhất trong toàn bộ tài liệu này. Hiện bài tự giới hạn ở "dầm liên tục 2 nhịp đều" — nghe như một trường hợp riêng nhỏ. Nhưng chứng minh của chính các tác giả không hề dùng tới tính hai nhịp hay nhịp đều. Vậy hãy phát biểu đúng phạm vi thật của nó:
+
+Định lý (Bất biến tích phân độ võng).
+
+Xét một kết cấu dầm đàn hồi tuyến tính, tính chất không đổi theo thời gian, với điểm đo cố định m. Gọi η_m(x) là đường ảnh hưởng độ võng tại m do lực đơn vị thẳng đứng đặt tại tọa độ x, với η_m(x) ≡ 0 khi x ∉ [0,L] (L = tổng chiều dài kết cấu).
+
+Cho một đoàn n lực P_i với khoảng cách cố định a_i (a₁ = 0) đi qua kết cấu, x là tọa độ lực dẫn đầu. Khi đó:
+
+I_y = ∫_-∞^(+∞) y_m(x) dx = ∫_-∞^(+∞) Σ_i=1^n P_i η_m(x-a_i) dx = (Σ_i=1^n P_i)∫₀^(L) η_m(u) du
+
+Hằng số C_m chỉ phụ thuộc kết cấu và vị trí điểm đo, độc lập với n, với các P_i và với mọi a_i.
+
+Trên thực tế, miền tích phân thu về [0, L + a_max].
+
+Ba hệ quả cần nêu rõ:
+
+Định lý đúng cho mọi kết cấu dầm tuyến tính: nhịp đơn, liên tục nhiều nhịp, nhịp không đều, tiết diện thay đổi, gối đàn hồi. Dầm liên tục 2 nhịp chỉ là ví dụ minh họa có nghiệm kín đẹp.
+
+Định lý đúng cho mọi vị trí điểm đo m, không riêng giữa nhịp 1 — mở ra bài toán tối ưu vị trí cảm biến (chọn m để C_m lớn nhất so với nhiễu). Đây là một đóng góp mới nữa gần như miễn phí.
+
+C_m có thể lấy bằng giải tích (→ BPM) hoặc bằng hiệu chuẩn với tải đã biết (→ SLM). Hai phương pháp của bài trở thành hai hệ quả tự nhiên của một định lý, thay vì hai thủ thuật rời rạc.
+
+Cách trình bày này đồng thời vô hiệu hóa phản biện R1 và làm tiêu đề bài báo mạnh hơn hẳn.
+
+5.6 Tạp chí mục tiêu
+
+Template hiện tại là JMES (Journal of Materials and Engineering Structures) — tạp chí này thuộc ESCI (không phải SCIE), JIF ≈ 0.4, hạng Engineering Multidisciplinary. Không phải Q1/Q2. Nếu mục tiêu là Q1/Q2, phải đổi tạp chí và đổi định dạng.
+
+| Tạp chí | Hạng | Độ phù hợp | Ghi chú |
+| :-: | :-: | :-: | :-: |
+| Structures (Elsevier) | Q1 | ★★★★★ | Thực tế nhất. Chấp nhận nghiên cứu thực nghiệm quy mô vừa |
+| Measurement (Elsevier) | Q1 | ★★★★★ | Rất hợp nếu làm mạnh phần ngân sách bất định (AGENT 3) |
+| J. Civil Structural Health Monitoring (Springer) | Q1/Q2 | ★★★★☆ | Đúng phạm vi SHM |
+| Structure and Infrastructure Engineering | Q1 | ★★★★☆ | Cần thêm góc quản lý tài sản cầu |
+| Engineering Structures | Q1 | ★★★☆☆ | Yêu cầu cao hơn: cần dữ liệu hiện trường hoặc phân tích động |
+| J. Bridge Engineering (ASCE) | Q1 | ★★★☆☆ | Cần cầu thật |
+| Sensors (MDPI) | Q2 | ★★★★☆ | Nhanh, chắc ăn, nếu muốn giảm rủi ro |
+| MSSP | Q1 top | ★☆☆☆☆ | Chưa đủ tầm ở phiên bản này |
+
+Khuyến nghị: nộp Structures hoặc Measurement sau khi hoàn thành gói sửa đổi.
+
+BIÊN TẬP: CẤU TRÚC, NGÔN NGỮ, HÌNH VẼ
+
+6.1 ✘ Đánh số công thức hỏng
+
+File Word có trường đánh số cũ/hỏng: khi trích xuất, hàng loạt công thức đều mang số (6). Khi kết xuất PDF, LibreOffice đánh lại thành (1)–(20) — nhưng các tham chiếu chéo trong văn bản thì không đổi:
+
+| Văn bản viết | Số thực tế sau kết xuất |
+| :-: | :-: |
+| "Equation (6)" (độ võng giữa nhịp) | (6) ✔ nhưng cũng dùng cho 4 công thức khác |
+| "Equation (7)" (tích phân nghiệm kín) | (12) |
+| "Equation (8)" (hình thang) | (13) |
+| "Equation (9)" (BPM) | (14) |
+| "Equations (13), (14)" (SLM) | (18), (19) |
+| "Equation (15)" (SLM cuối) | (20) |
+
+Hành động: cập nhật toàn bộ trường (Ctrl+A → F9 trong Word), rồi rà soát thủ công từng tham chiếu chéo. Hiện tại không một tham chiếu nào trong nửa sau bài là đúng.
+
+6.2 ✘ Hình vẽ không đạt chuẩn xuất bản
+
+Fig. 3 (mô hình thí nghiệm): ảnh chụp thô, nghiêng, chiếm 1/3 trang, không chú thích gì. Cần: chỉnh thẳng, cắt sát, thêm nhãn (A, B, C, LVDT, TDS-303, vị trí tải, kích thước nhịp), thêm sơ đồ nguyên lý bên cạnh (bố cục (a) sơ đồ / (b) ảnh).
+
+Fig. 4 (so sánh 3 phương pháp): biểu đồ Excel mặc định. Ba đường trùng khít nên chỉ nhìn thấy một đường → hình không truyền tải được thông điệp nào. Sửa: (a) vẽ 3 đường với marker rỗng/đặc khác nhau, giải tích là đường liền, số và thực nghiệm là marker; (b) thêm trục phụ hoặc panel dưới hiển thị sai số (mm) — đó mới là chỗ có thông tin. Bỏ nền xám, dùng font serif khớp bài, xuất vector (EPS/PDF) ≥ 600 dpi.
+
+Thiếu hoàn toàn:
+
+Sơ đồ mô hình FE Abaqus (lưới, phần tử, điều kiện biên)
+
+Sơ đồ khối quy trình BPM và SLM — một hình flowchart sẽ tăng khả năng trích dẫn đáng kể
+
+Hình minh họa tính bất biến: 3 cấu hình tải khác nhau, cùng tổng tải, đường độ võng khác hẳn nhau nhưng diện tích dưới đường bằng nhau — đây là "hình chủ đạo" (graphical abstract) hoàn hảo cho bài
+
+Đường hiệu chuẩn I_y vs P với R²
+
+6.3 ⚠ Vấn đề ngôn ngữ và trình bày
+
+Phần mở đầu quá dài (~1,400 từ) và mang giọng báo chí. Sáu vụ sập cầu (Yangmingtan, Huairou, Tittle, Mirepoix, I-35W, Morandi) là quá nhiều — và bốn trong số đó chỉ có nguồn là website tin tức (footnote 1–4), không phải tài liệu khoa học. Cắt còn 2 ví dụ có nguồn học thuật, dùng chỗ trống cho phần thiếu về BWIM.
+
+Abstract 340 từ — quá dài. Chuẩn Q1: 200–250 từ, kết thúc bằng con số cụ thể.
+
+Lỗi chính tả/ngữ pháp:
+
+"subjected to unexpectedly heavy loads unexpectedly" — lặp từ
+
+"Consider n loads P₁, P₁,… Pₙ" — phải là P₂
+
+"Table 2 - Experimental deflection values of the three case studies" — có ký tự zero-width space giữa "values" và "of"
+
+Từ "prismatic" vẫn còn highlight vàng trong file Word — vết biên tập chưa xóa
+
+"the exact value derived from Equation (7)" — thiếu công thức inline (đối tượng nhúng bị mất)
+
+Số thập phân không nhất quán: 2488.6875 (7 chữ số có nghĩa) trong khi dữ liệu đo chỉ có 4 chữ số. Áp dụng quy tắc chữ số có nghĩa xuyên suốt.
+
+Ký hiệu: bài dùng cả Δ l và "l = l/n" (câu này vô nghĩa như đã in). Lập bảng ký hiệu (Nomenclature) — hầu hết tạp chí Q1 yêu cầu.
+
+Thiếu các mục bắt buộc của Q1: CRediT authorship contribution statement, Declaration of competing interest, Data availability statement, Funding, Acknowledgements.
+
+Mục 4 không tồn tại. Phần mở đầu hứa "Section 4 discusses the results" nhưng bài đi thẳng từ mục 3 sang Conclusion. Phải sửa hoặc thêm mục Discussion (và bài rất cần một mục Discussion — xem lộ trình).
+
+6.4 Đề xuất viết lại tiêu đề
+
+Tiêu đề hiện tại tự bó hẹp vào một trường hợp riêng. Ba phương án mạnh hơn:
+
+"A deflection-integral invariance principle for indirect identification of gross vehicle weight on continuous-span bridges: theory, error budget and experimental validation"
+
+"Load-position-invariant identification of total service load from a single deflection measurement: theory and validation on two-span continuous beams"
+
+"Single-sensor gross-weight identification on continuous beams via the deflection influence-line integral"
+
+LỘ TRÌNH SỬA CHỮA THEO ƯU TIÊN
+
+Cấp 1 — Bắt buộc, làm ngay (1–2 ngày)
+
+| # | Việc | Mục |
+| :-: | :-: | :-: |
+| 1 | Xóa tài liệu [10] (bịa), rà soát DOI toàn bộ danh mục | 5.1 |
+| 2 | Sửa mẫu số 192EI → 64EI ở nhánh 3 của Eq. (15) và (16) | 2.2 |
+| 3 | Sửa 6 giá trị lực (chia 1000) | 2.4 |
+| 4 | Sửa mô tả gối B: "fixed" → "hinged/pinned" | 1.1 |
+| 5 | Sửa 1/128 → 1/192 ở Eq. (20) | 2.3 |
+| 6 | Sửa điều kiện biên s = l/2 → s = l, bổ sung đủ 6 điều kiện | 1.2 |
+| 7 | Cập nhật trường đánh số công thức + toàn bộ tham chiếu chéo | 6.1 |
+| 8 | Sửa "60–70%" → "≈72%" | 1.3 |
+| 9 | Sửa trích dẫn [20] và [2,3] đặt sai chỗ | 5.2 |
+| 10 | Xóa highlight vàng, sửa lỗi chính tả, ký tự lạ | 6.3 |
+
+Cấp 2 — Cần cho Q2 (1–2 tuần)
+
+| # | Việc | Mục |
+| :-: | :-: | :-: |
+| 11 | Chạy lại Monte Carlo (≥10,000 lần), thay Bảng 3, thêm phân vị 5/95% | 2.9 |
+| 12 | Sửa kết luận về SLM chịu nhiễu — trình bày phát hiện common-mode vs random | 2.10 |
+| 13 | Thống nhất Eq. (10)–(11) với Eq. (17), nêu rõ miền [0, L+a_max] | 2.8 |
+| 14 | Sửa Eq. (13) thành công thức hình thang đúng | 2.7 |
+| 15 | Trình bày trung thực sai lệch cầu phương −0.50% + bảng hội tụ + khuyến nghị Simpson | 2.5, 2.6 |
+| 16 | Vẽ lại Fig. 3 và Fig. 4 đạt chuẩn xuất bản | 6.2 |
+| 17 | Rút gọn Introduction, rút gọn Abstract còn 250 từ | 6.3 |
+| 18 | Bổ sung mục Discussion (mục 4 đang bị hứa nhưng không có) | 6.3 |
+
+Cấp 3 — Cần cho Q1 (3–6 tuần)
+
+| # | Việc | Mục |
+| :-: | :-: | :-: |
+| 19 | Phát biểu Định lý tổng quát + chứng minh + 3 hệ quả | 5.5 |
+| 20 | Section mới: độ nhạy với độ trôi điểm không (δ P/P = ε L/I_y) + bảng định lượng | 3.1 |
+| 21 | Section mới: tốc độ xe và đề xuất tự hiệu chuẩn từ hai điểm y=0 | 3.2 |
+| 22 | Ngân sách bất định GUM (gain / offset / random), tách bạch BPM vs SLM | 3.3 |
+| 23 | Nghiên cứu tham số FE: tỷ lệ nhịp 0.5–2.0, độ mềm gối, vị trí cảm biến tối ưu | 1.4, 5.5 |
+| 24 | Phân tích động VBI: xác định vận tốc giới hạn cho giả thiết quasi-static | 1.5 |
+| 25 | Thí nghiệm bổ sung: cùng tổng tải, khác khoảng cách trục → bằng chứng trực tiếp cho tính bất biến | 3.6 |
+| 26 | Bảng so sánh với các phương pháp MFI/BWIM hiện có | R2, 5.4 |
+| 27 | Bổ sung 20–35 tài liệu, đặc biệt dòng BWIM (Moses, Žnidarič, OBrien) | 5.4 |
+| 28 | Đổi tiêu đề, đổi định dạng theo tạp chí Q1 mục tiêu | 6.4, 5.6 |
+| 29 | Bổ sung CRediT, Data availability, Competing interests, Nomenclature | 6.3 |
+
+ĐÁNH GIÁ CUỐI
+
+Phần lõi lý thuyết vững — tôi đã kiểm tra từng công thức và nó đúng. Số học thí nghiệm tái lập được chính xác. Đó là nền tảng tốt, và nó hiếm hơn ta tưởng.
+
+Vấn đề nằm ở ba chỗ: lỗi kỹ thuật có thể sửa trong hai ngày (Cấp 1), phân tích sai số chưa đủ sâu (Cấp 2–3), và định vị đóng góp quá khiêm tốn so với những gì kết quả thực sự cho phép (Định lý tổng quát, mục 5.5).
+
+Hai điều đáng làm nhất, xét theo tỷ lệ công sức/hiệu quả:
+
+Nâng tính bất biến thành định lý tổng quát — gần như không tốn công tính toán mới, nhưng thay đổi hoàn toàn tầm vóc bài báo và vô hiệu hóa phản biện nguy hiểm nhất.
+
+Phân tích độ trôi điểm không — cho thấy nguồn sai số thật sự chi phối, đồng thời dẫn tới một kết luận bán hàng rất đẹp: tải càng nặng, phương pháp càng chính xác — nghĩa là nó tự nhiên phù hợp đúng với mục tiêu phát hiện xe quá tải.
+
+Sau khi hoàn thành Cấp 1 + 2, bài đủ sức nộp Sensors (Q2). Hoàn thành thêm Cấp 3, bài đủ sức nộp Structures hoặc Measurement (Q1).
+
+PHỤ LỤC — TRẠNG THÁI XỬ LÝ VÀ CÁC ĐIỂM TINH CHỈNH SAU
+
+A. Kiểm tra tài liệu tham khảo, từng mục một
+
+Sau khi soạn bản thảo sửa đổi, toàn bộ danh mục 40 tài liệu đã được đối chiếu với bản ghi của nhà xuất bản.
+
+Khớp chính xác (18 mục): Gajda 2025 (Sensors 25(8):2421) · OBrien–Quilligan–Karoumi 2006 (Proc. ICE Bridge Eng. 159(1):31–34) · OBrien–Rowley–González–Green 2009 (IJHVS 16(3):310–327) · Žnidarič–Kalin–Kreslin 2018 (SIE 14(4):412–424) · Yu–Cai–Deng 2016 (ASE 19(9):1514–1530) · Ojio 2016 (JBE 21(7):04016032) · Law–Chan–Zeng 1997 (JSV 201(1):1–22) · Zhu–Law 2006 (MSSP 20(7):1759–1782) · Sohn 2007 (Phil. Trans. R. Soc. A 365(1851):539–560) · Cross 2013 (MSSP 35(1–2):16–34) · Feng–Feng 2018 (Eng. Struct. 156:105–117) · Frýba 1999 (3rd ed., Thomas Telford) · Yang–Lin–Yau 2004 (JSV 272(3–5):471–493) · Deng–Cai 2010 (JVC 16(14):2167–2194), cùng DOI tương ứng.
+
+Đã phát hiện sai và đã sửa (7 mục):
+
+| Mục | Vấn đề | Đã sửa thành |
+| :-: | :-: | :-: |
+| Moses 1979 | tên tạp chí sai | Transportation Engineering Journal of ASCE, thêm DOI 10.1061/TPEJAN.0000783 |
+| AASHTO LRFD | bản 9th ed. 2020 đã bị thay thế | 10th ed., 2024 |
+| COST 323 | thiếu ban biên tập | thêm Jacob B., OBrien E.J., Jehaes S. |
+| Luo 2023 | ghi "et al." | Luo S., Jiang J., Zhang F., Mohamed M.S. |
+| Kapoor 2024 | ghi "et al." | Kapoor T., Wang H., Núñez A., Dollevoet R. |
+| Chan 1999 | DOI không xác minh được | xóa DOI, giữ tập/trang |
+| Qiu 2025 (cũ [10]) | trùng số bài và DOI với Gajda — không tồn tại | xóa khỏi danh mục |
+
+Còn cần các tác giả tự kiểm tra: tập/số/trang của Law–Zhu 2000, Chen 2023, Nguyen D.H. 2020, Katori 2018, Hoang 2017; dạng thư mục của Andersen–Mukhopadhyay 1950 (báo cáo, luận văn hay ấn phẩm nội bộ?) và phiên bản ABAQUS thực dùng; và bài trước của chính nhóm (JSTCE 2024) nên đối chiếu với bản đã đăng.
+
+Bài học từ tài liệu bịa: không nên tin bất kỳ tài liệu nào mình chưa tự mở ra xem, kể cả tài liệu do người khác bổ sung giúp. Chạy toàn bộ DOI qua Crossref trước khi nộp mất khoảng 20 phút và loại bỏ hoàn toàn rủi ro desk reject vì liêm chính.
+
+B. Bốn điểm được tinh chỉnh sau khi soạn bản thảo
+
+Bốn điểm dưới đây không nằm trong 17 lỗi ban đầu; chúng phát sinh từ chính cách diễn đạt của bản thảo sửa đổi và đã được xử lý.
+
+B.1 — Eq. (18) phải phân biệt reference và target. Cách viết ban đầu dễ khiến người đọc hiểu rằng SLM luôn triệt tiêu gain, offset và quadrature. Thực tế chỉ hai số hạng kết cấu (EI và l) bị triệt tiêu hoàn toàn; ba số hạng còn lại tồn tại dưới dạng hiệu và chỉ triệt tiêu khi thực sự là common-mode. Nay mọi số hạng mang chỉ số t hoặc 0, kèm ba điều kiện riêng.
+
+Một kết quả số đáng chú ý phát sinh từ đây: với Δx = 250 mm, sai lệch cầu phương là −0.5000% cho cả một, hai và ba trục — trùng khớp chính xác, vì khoảng cách trục (250 và 500 mm) là bội nguyên của Δx. Nếu khoảng cách là 300 mm thì sai lệch thành −0.110%; ở 375 mm thì đổi dấu thành +0.249%. Nghĩa là trên cầu thật, nơi khoảng cách trục không phải bội của bước lấy mẫu, số hạng này không triệt tiêu — lý do thứ hai để dùng Simpson.
+
+Tương tự với zero drift: ngay cả khi hai lượt đo có cùng độ lệch điểm không, hệ số nhạy L/I_y vẫn khác nhau. Với trường hợp hai tải, hiệu là (0.1260 − 0.1989) mm⁻¹ — triệt tiêu khoảng 37%, không phải loại bỏ. Kết luận vận hành: tải chuẩn nên nặng tương đương xe cần đo.
+
+B.2 — Eq. (20) cần nêu rõ điều kiện. Hệ số căn hai chỉ đúng khi N_rep = 1 và hai lượt đo có cùng phương sai tương đối. Trong chính thí nghiệm này điều kiện thứ hai không thỏa: tải chuẩn một trục có I_y chỉ bằng 60% của trường hợp hai trục nên phương sai tương đối lớn hơn, và hệ số quan sát được là 1.47 chứ không phải 1.41. Đây không phải mâu thuẫn mà là hệ quả trực tiếp của phương sai tương đối không đều — và nó củng cố đúng luận điểm ở B.1 về tải chuẩn.
+
+B.3 — Công thức tốc độ bị nhập nhằng. Hai zero-crossing tại x = l và x = 2l cách nhau một nhịp, nên v = l/(t₂ − t₁). Nếu dùng entry tại x = 0 và exit tại x = 2l thì khoảng cách là cả dầm, nên v = 2l/Δt. Cả hai đều đúng nhưng lẫn lộn giữa chúng làm sai tải đúng hệ số 2. Bản sửa viết tách bạch cả hai.
+
+Kèm theo một cảnh báo mà bản đầu thiếu: hai zero đó thuộc đường ảnh hưởng của một trục. Với đoàn xe, tín hiệu là chồng chập nên điểm đổi dấu không nằm ở x = l nữa — quy tắc hai-zero chỉ dùng cho trục đơn hoặc lượt hiệu chuẩn; với đoàn nhiều trục phải khớp bình phương tối thiểu.
+
+B.4 — Cách đếm điều kiện biên chưa chặt. Câu "cần sáu điều kiện" vừa thừa vừa thiếu. Trình tự đúng: siêu tĩnh giải trước bằng một điều kiện tương thích (liên tục góc xoay tại B — chính là ba-mô-men), khi đó M(s) xác định hoàn toàn nên M(0) = M(2l) = 0 là tính chất của trường mô-men chứ không phải điều kiện áp đặt. Sau đó tích phân kép trên ba đoạn [0,x], [x,l], [l,2l] sinh sáu hằng số, xác định bởi sáu điều kiện chuyển vị. Liên tục góc xoay tại B không áp ở bước này (đã nằm trong M_B); liên tục độ cong là hệ quả của M(s) liên tục.
+
+C. Ba mục không thể hoàn thiện nếu thiếu dữ liệu của nhóm
+
+Ba mục sau đã được xử lý bằng cách loại bỏ chỗ trống thay vì điền số giả, và vẫn cần đầu vào thật:
+
+Độ lệch chuẩn của ba lần đo lặp. Cột này đã bị bỏ khỏi Bảng 1. Thành phần loại A trong ngân sách bất định hiện được chặn trên bằng lập luận (mỗi giá trị là trung bình 3 chu kỳ, sai lệch dư không quá 2.5 lần độ phân giải → tán xạ của I_y dưới 0.1%). Nếu có số liệu ba lần đo thật thì nên thay vào, nó mạnh hơn hẳn một cận trên.
+
+Mô hình phần tử hữu hạn. Các chi tiết không có cơ sở (loại phần tử B23, 200 phần tử/nhịp, và đặc biệt là khẳng định "đã chạy lại với B31 cho chênh lệch dưới 0.05%") đã bị xóa. Thay bằng mô tả đúng những gì bản gốc nói, cộng một ước lượng giải tích ảnh hưởng biến dạng cắt: 12EI/(κGAl²) với A = 186.5 mm², κ = 0.54 → 0.08%. Nếu nhóm thực sự đã chạy B31 thì nên báo cáo kết quả thật.
+
+Tài trợ. Mục Acknowledgements rỗng đã thay bằng mục Funding ghi lời cảm ơn phòng thí nghiệm HUCE. Nếu có đề tài và mã số grant thì phải tự bổ sung.

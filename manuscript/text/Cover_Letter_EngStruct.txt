@@ -1,0 +1,29 @@
+Cover letter - Engineering Structures
+
+Thai-Son Vu |
+
+Department of Bridge and Road Engineering, Hanoi University of Civil Engineering
+
+55 Giai Phong Road, Hai Ba Trung District, Hanoi 100000, Viet Nam | sonvt2@huce.edu.vn | +84 971 899 888
+
+16 August 2026
+
+The Editor-in-Chief, Engineering Structures, Elsevier
+
+Subject: Submission of an original research paper
+
+Dear Editor,
+
+We wish to submit for consideration in Engineering Structures an original research paper entitled “Load observability from the deflection integral of continuous beams: invariance theorem, closed-form blind configurations, dynamic validity and experimental validation”, by Quoc-Bao Nguyen, Thai-Son Vu and Hung-Son Nguyen.
+
+Identifying the gross weight of a vehicle crossing a bridge normally requires a dedicated weigh-in-motion installation or an ill-posed inverse problem solved from a dense sensor array. The paper shows that a single deflection sensor is sufficient if the response is integrated over a complete crossing, and proves an invariance theorem: the integral equals the total load times a constant that depends only on the structure and the sensor position, and not on the number of axles, their spacings or their positions. That constant is shown to be the deflection at the sensor under a uniformly distributed load, normalised by the load intensity, which yields a closed form for a two-span beam of arbitrary span and stiffness ratio and, with it, the configurations in which the deflection integral carries no information about the load. For uniform stiffness the critical span ratio is the exact value 1.45743 and the optimal sensor position is 0.42154 of the span, both agreeing with independent finite element evaluation to eleven significant figures.
+
+Laboratory tests on a 2 × 2500 mm steel continuous beam identify one-, two- and three-axle load groups to within 1.19 % and 0.70 % by the two estimators proposed. A moving-load finite element study bounds the dynamic error below 1 % once the crossing time exceeds eight fundamental periods, and a complete error budget shows that zero-offset drift, and not random noise, is the dominant error source.
+
+We believe the work suits Engineering Structures because its conclusions are stated in a form a designer can act on: a closed-form observability indicator evaluated before any instrument is installed, a rule for sensor placement, an explicit family of configurations to avoid, and a speed criterion. The limitations are stated without qualification in the manuscript: the dynamic study models a constant force and is not a vehicle–bridge interaction analysis, the unequal-span results are analytical and numerically verified but not yet tested experimentally, and no field data are reported.
+
+We thank you for considering this submission.
+
+Yours sincerely,
+
+Thai-Son Vu, on behalf of all authors

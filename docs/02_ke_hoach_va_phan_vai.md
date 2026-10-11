@@ -9,6 +9,14 @@
 
 Lý thuyết không bị chê. Vấn đề là **bằng chứng thực nghiệm chỉ có ống thép 25 × 25 × 2 mm, nhịp 2 × 2,5 m, tải treo tĩnh**. Ngoài ra còn rủi ro trùng ý tưởng với nhánh BWIM dùng "diện tích đường ảnh hưởng" và chỉ số *Integral Mean of Strain* (Measurement, 2025) mà phản biện nội bộ đã nêu. Bài phải trích dẫn và phân biệt rõ.
 
+Hồ sơ chẩn đoán trên Drive (`docs/rejection_evidence.md`) còn nêu thêm các điểm yếu phải sửa ở mọi lộ trình:
+- **Tính mới:** định lý bất biến có thể bị coi là hệ quả sơ cấp của tích chập Moses (1979) và của khái niệm diện tích đường ảnh hưởng. Đóng góp phải đặt vào phần mà cầu giản đơn không có: vết mù, chỉ số quan sát được, vị trí tối ưu dạng nghiệm kín, áp dụng cho cầu liên tục thật.
+- **Thí nghiệm:** tải treo tĩnh nên bất biến chưa được kiểm trực tiếp (cùng tổng tải, đổi khoảng cách trục).
+- **Độ dài:** khoảng 16–17 nghìn từ, cần rút về 8–9 nghìn.
+- **Tài liệu tham khảo:** nghi một tài liệu không có thật (Qiu 2025). Phải kiểm từng DOI.
+- **Nhịp nộp bài:** 9 lần nộp trong 9 ngày; nên dừng nộp cho tới khi có bằng chứng mới.
+- Thư xin bài gửi ES tự nhận "no field data are reported".
+
 **Mục tiêu bản mới:** giữ khung lý thuyết (định lý bất biến, Maxwell–Betti, nghiệm kín, cấu hình mù, chỉ số quan sát được). Bổ sung ba lớp bằng chứng: (i) dữ liệu kiểm định có sẵn của cầu thật; (ii) mở rộng lý thuyết sang cầu liên tục 3 nhịp, dạng phổ biến nhất ở Việt Nam; (iii) một đợt đo hiện trường hoặc mô hình lớn có tỷ lệ đủ để suy ra công trình.
 
 ## 1. Hai lộ trình
@@ -68,7 +76,7 @@ Quy tắc chung:
 
 ## 5. Việc cần tác giả quyết định hoặc cung cấp
 
-1. Thư từ chối của Engineering Structures (nếu có), để lưu vào `docs/`.
+1. Thư từ chối của Engineering Structures (ENGSTRUCT-D-26-08490). Thư nằm trong hộp thư sonvt2@huce.edu.vn, không có trên Drive.
 2. Có liên hệ được đơn vị kiểm định để xin file thô SDA-830C và mô hình MIDAS không.
 3. Có cầu liên tục nào (Cầu Mây, Thái Bình hoặc cầu vượt 2–3 nhịp gần Hà Nội) xin đo bổ sung được không. Có thiết bị gì: LVDT, máy toàn đạc robot, camera, radar giao thoa.
 4. Chọn tạp chí đích cho lộ trình A.

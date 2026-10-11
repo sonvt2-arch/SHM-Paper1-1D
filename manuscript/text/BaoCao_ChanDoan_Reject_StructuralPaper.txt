@@ -1,0 +1,373 @@
+HỒ SƠ CHẨN ĐOÁN · DEFLECTION-INTEGRAL LOAD OBSERVABILITY · HUCE
+
+Vì sao chuỗi bài bị từ chối, và phải làm gì tiếp
+
+Chín lần nộp trong chín ngày tới tám tạp chí. Bốn quyết định từ chối, hai trong số đó trả lời dưới 24 giờ. Bản chẩn đoán này kết luận: vấn đề không nằm ở toán học — phần lõi số học của Paper 1 kiểm tra lại đúng tới 0,01% — mà nằm ở định vị đóng góp, chọn tạp chí, và nhịp nộp bài.
+
+Thực hiện bởi 6 agent song song · 27.08.2026 · Nguồn: Google Drive “2. Structural paper”, Gmail, và khảo sát học thuật 2024–2026.
+
+1. Kết luận trong một trang
+
+Bài không bị từ chối vì sai. Bài bị từ chối vì được đọc sai — và nhịp nộp bài khiến biên tập viên không có lý do để đọc kỹ.
+
+Ba tạp chí cơ học tổng quát (JSV, IJMS, và nhiều khả năng cả Engineering Structures) đều đọc công trình như kỹ thuật cầu, trong khi bản thảo được viết như cơ học lý thuyết. Đây là scope mismatch, không phải phán quyết về chất lượng khoa học.
+
+| Chỉ số | Giá trị | Ý nghĩa |
+| :-: | :-: | :-: |
+| Nhịp nộp bài | 9 lần / 9 ngày | Trung bình 1 ngày/lần — kích hoạt cờ trùng lặp trong Editorial Manager |
+| IJMS ra quyết định | ≈ 7 giờ | Không thể có peer review → desk reject |
+| JSV ra quyết định | ≈ 20 giờ | Desk reject |
+| Tài liệu tham khảo Paper 2 | 16 mục | Chuẩn Q1 là 45–70; MSSP đọc đây là khảo sát chưa hoàn chỉnh |
+| Độ dài bản dài nhất | 22.392 từ | SHM khuyến nghị ~8.000 từ |
+| Sai số khi kiểm lại số học | ≤ 0,01 % | Nền tảng kỹ thuật vững — đây là vốn cần giữ |
+
+Ba việc quyết định kết quả 6 tháng tới
+
+Dừng nhịp nộp bài. Một bản thảo — một tạp chí — một thời điểm. Đây là việc duy nhất không thể sửa bằng cách viết lại, và là việc rẻ nhất.
+
+Đổi định vị đóng góp. Ngừng bán “một định lý mới”. Bán một lý thuyết observability cho BWIM: cái gì quan sát được, cái gì nằm trong null space, đặt cảm biến ở đâu.
+
+Đổi bậc thang tạp chí. Với dữ liệu phòng thí nghiệm hiện có, cửa đúng là Measurement, Structures, JCSHM — không phải MSSP/JSV/IJMS.
+
+Điều cần giữ vững: kiểm toán độc lập 12 đại lượng của Paper 1 — mô men quán tính, EI, hằng số Cm, tỷ số cắt/uốn, hằng số mù (3+√33)/6 = 1,45743, toàn bộ sai lệch BPM/SLM (+1,10 / +0,61 / +1,19 / +0,70 %) — không đại lượng nào sai quá 0,01%. Nền tảng số học của nhóm cao hơn mặt bằng chung.
+
+2. Dòng thời gian nộp bài
+
+Dựng lại từ metadata của các file PDF do Editorial Manager sinh ra và lưu trên Drive. Ngày nộp là bằng chứng trực tiếp; ngày quyết định được chặn khoảng bằng thời điểm tạo tài liệu phản ứng.
+
+| Ngày | Tạp chí | Mã bản thảo | Bài | Kết quả |
+| :-: | :-: | :-: | :-: | :-: |
+| 16.08 | Engineering Structures | ENGSTRUCT-D-26-08490 | P1 · 1D | Từ chối trong ≤ 6 ngày |
+| 17.08 | MSSP | MSSP26-6169 | P2 · 2D | Đang xét |
+| 18.08 | J. Bridge Eng. (ASCE) | JRNBEENG-S-26-00668 | P4 | Nộp lại sau 1 ngày |
+| 19.08 | J. Bridge Eng. (ASCE) | BEENG-8785 | P4 (lần 2) | Chưa rõ |
+| 19.08 | J. Sound and Vibration | JSV-D-26-02424 | P3 · 3D | Desk reject ≈ 20 giờ |
+| 20.08 | Int. J. Mechanical Sciences | IJMS-D-26-07138 | P3 (lần 2) | Desk reject ≈ 7 giờ |
+| 22.08 | J. Civil SHM (Springer) | CSHM-S-26-01166 | P1 (lần 2) | Đang xét |
+| 23.08 | Structural Health Monitoring | SHM-26-1367 | P3 (lần 3) | Đang xét |
+| 24.08 | MSSP | MSSP26-6346 | P7 · load–damage | Đang xét |
+
+Ngoài chuỗi này, tháng 8/2026 còn có các gói nộp song song thuộc những dòng nghiên cứu khác của cùng tác giả (SuperT/fire, AMM, TWS, IJSS, JCOMB, AJSE). Tổng nhịp thực tế cao hơn bảng trên.
+
+Lý do từ chối — nguyên văn
+
+Không tìm thấy thư quyết định gốc nào trong hộp thư vuthaison@gmail.com: địa chỉ đăng ký trong Editorial Manager là sonvt2@huce.edu.vn. Các trích dẫn dưới đây lấy từ ghi chú nội bộ của nhóm trên Drive — nguồn thứ cấp, do chính tác giả viết lại ngay sau khi nhận quyết định.
+
+“The paper was desk-rejected by IJMS as ‘marginal to the journal scope’, after an earlier rejection at JSV. Both are broad mechanics and vibration journals, and both read the work as bridge engineering.” — README_START_HERE.docx, bundle SHM, 23.08.2026
+
+“The IJMS decision explicitly criticized depth, novelty/significance, and presentation … it indicates that the manuscript did not sufficiently satisfy IJMS expectations for core mechanical-science scope.” — IJMS_to_SHM_Detailed_Revision_Plan, 21.08.2026
+
+Hai lỗi tự gây, do chính nhóm ghi nhận: (1) cover letter gửi IJMS bị thiếu tên bài ở câu mở đầu; (2) đoạn khai báo mô tả P1 và P2 là “lower-dimensional special cases” — câu đó khiến biên tập viên đọc P3 như một bài mở rộng 1D→2D→3D, tức tăng dần chứ không đột phá. Đây gần như chắc chắn là câu đã giết bài.
+
+Với Engineering Structures: không có bất kỳ mô tả lý do nào trên Drive. Việc lấy lại thư này từ hộp thư HUCE là việc điều tra ưu tiên số một.
+
+3. Sáu nguyên nhân, xếp theo mức sát thương
+
+01 · Scope mismatch — nộp cho tạp chí không phải cửa của mình [CHÍ MẠNG]
+
+Trong 8 tạp chí đã nộp, chỉ 3 tạp chí thực sự đúng cửa: JCSHM, Engineering Structures, JBE. Năm lần còn lại là lãng phí có thể tránh được.
+
+JSV yêu cầu nội dung sound or vibration. P3 lại chứng minh rằng số hạng quán tính và cản triệt tiêu khi tích phân — nộp cho một tạp chí dao động một bài chứng minh dao động không quan trọng.
+
+IJMS loại trừ tường minh “design-based studies using established formulae” và “work previously submitted to other journals”.
+
+MSSP đòi đóng góp mới về signal / information processing. Phép cộng hình thang trên 20 điểm đo tĩnh không đáp ứng được.
+
+Vì sao đây là nguyên nhân số một: nó giải thích trọn vẹn cả 4 quyết định từ chối, và chính nhóm đã tự kết luận đúng như vậy trong ghi chú nội bộ.
+
+02 · Nhịp nộp bài để lại dấu vết trong hệ thống [CHÍ MẠNG]
+
+Elsevier dùng chung một instance Editorial Manager. Hệ thống đối chiếu mọi submission theo tiêu đề (40%), danh sách tác giả (30%), abstract (30%), và gắn cờ “D” cho tác giả nộp nhiều lần trong thời gian ngắn. Bốn lần nộp Elsevier trong 5 ngày (ES, MSSP, JSV, IJMS) hiện lên trên cùng một hồ sơ tác giả.
+
+Nộp lại MSSP26-6346 sau MSSP26-6169 mà không qua kênh appeal chính thức là một lỗi quy trình riêng: Elsevier chỉ chấp nhận thư có chữ “Appeal” kèm mã bản thảo ở tiêu đề, có phản hồi từng điểm, trong vòng 1 tháng.
+
+Điều bị bỏ lỡ: Article Transfer Service. Chuyển bài qua ATS là con đường hợp lệ, có dấu vết chính thức — biên tập viên bên nhận biết bài đến từ đâu, và bản thảo không kích hoạt duplicate check. Tự nộp lại nơi khác tạo bản ghi mới và làm đúng điều ngược lại.
+
+03 · Novelty bị định vị sai — và bị chính tác giả hạ thấp [CHÍ MẠNG]
+
+Định lý cốt lõi Iy = Cm·ΣPi là thành phần tần số 0 của phương trình Moses (1979). Phương trình Moses y(x) = ΣPi·η(x−ai) là một tích chập; theo tính chất sơ cấp ∫(f∗g) = (∫f)(∫g), kết quả bất biến là hệ quả hiển nhiên. Một reviewer có nền xử lý tín hiệu nhận ra trong 30 giây.
+
+Nghiêm trọng hơn: hệ quả vật lý đã là kiến thức phổ thông trong BWIM suốt 45 năm — GVW luôn được ước lượng chính xác hơn tải trục riêng lẻ (Lydon 2016; Yu–Cai–Deng 2016; Jian 2022). Định lý của nhóm là lời giải thích toán học cho hiện tượng đã biết, không phải một phát hiện.
+
+Nhưng có tin tốt: tổng quan influence line mới nhất và toàn diện nhất — Cai, Chen & Zhu (2025), SHM, DOI 10.1177/14759217251350415 — không hề đề cập phương pháp dựa trên tích phân/diện tích để tính GVW. Kết quả đã ngầm hiểu nhưng chưa từng được phát biểu tường minh như một nguyên lý bất biến. Khoảng trống hẹp nhưng có thật.
+
+04 · Kiểm chứng không tương xứng với điều được tuyên bố [NẶNG]
+
+Thí nghiệm của Paper 1 là quả cân treo tĩnh, dịch từng 250 mm — 20 điểm dữ liệu cho toàn hành trình, ba cấu hình tải, ba lần lặp, một ống thép 25×25×2,03 mm. Đây là dựng lại đường ảnh hưởng bằng tay, không phải weigh-in-motion. Toàn bộ phần khó của BWIM — dynamics, road roughness, VBI, axle detection, tách xe — bị loại khỏi thí nghiệm bằng cấu tạo.
+
+Và điểm gay gắt nhất: tính bất biến — luận điểm trung tâm — chưa từng được kiểm chứng trực tiếp. Thí nghiệm chứng minh trực tiếp lại rẻ và dùng đúng dầm cũ: giữ nguyên tổng tải, đổi khoảng cách trục 250 / 500 / 750 / 1000 mm.
+
+Cover letter đã tự nói ra: “and no field data are reported” (ES), “All results are analytical or numerical” (MSSP). Với AE của Engineering Structures, một bài BWIM không dữ liệu cầu thật là desk-reject tự động — không cần mở file PDF.
+
+05 · Không có so sánh baseline định lượng [NẶNG]
+
+Bảng định vị trong Paper 1 là bảng định tính — các ô ghi “High / Moderate / Low”, “Required / Not required”. Không có một con số nào so sánh với bất kỳ phương pháp nào khác trong toàn bộ bài. Chuẩn tối thiểu ở cấp Q1: chạy Moses BWIM và một MFI có Tikhonov trên cùng bộ dữ liệu, báo cáo GVW error, RMSE, thời gian tính, số cảm biến cần.
+
+06 · Bản thảo quá dài, thư mục quá mỏng [NẶNG]
+
+Không bài nào nằm trong giới hạn thực tế của tạp chí đích. P1-ES 17.058 từ (ES nhận 8–10k); P3-SHM 22.392 từ (SHM khuyến nghị ~8k). Abstract P3-JSV 377 từ trong khi JSV giới hạn 200.
+
+Ở chiều ngược lại, không bài nào đạt dải 45–70 tài liệu tham khảo của Q1. P2 chỉ có 16 tài liệu, phủ toàn bộ lĩnh vực BWIM bằng đúng 9 mục.
+
+Và có một tài liệu ma đã được phát hiện: mục Qiu 2025 trùng số bài, số tập và DOI với Gajda 2025 — đã xóa. Nhiều tạp chí Q1 hiện tự động quét DOI khi nộp; một tài liệu không tồn tại là đủ để desk-reject vì nghi ngờ liêm chính. Chạy toàn bộ danh mục qua Crossref mất 20 phút.
+
+4. Bằng chứng đo được
+
+Trùng lặp: không phải salami, mà là bản sinh đôi
+
+Đối chiếu 8-gram nguyên văn giữa toàn bộ 8 bản thảo. Kết quả ngược với giả thiết ban đầu ở một điểm quan trọng.
+
+| Cặp bản thảo | Trùng 8-gram | Đọc như thế nào |
+| :-: | :-: | :-: |
+| P1 ↔ P2 ↔ P3 ↔ P7 (chéo) | 0,5 – 3,3 % | AN TOÀN. Mức nhiễu. Introduction, theory, phương pháp được viết lại hoàn toàn khác nhau — đây là điểm mạnh thực sự. |
+| P3-JSV ↔ P3-SHM | 30,7 % | CHẤP NHẬN ĐƯỢC. Viết lại tử tế sau khi JSV từ chối. |
+| P1-ES ↔ P1-CSHM | 81,1 % | RỦI RO. Cùng một bài, đổi tiêu đề, viết lại abstract. Nếu bản CSHM đăng trước, bản ES sẽ ra ~78 %. |
+| P2-MSSP ↔ P2-EngStruct (REVISED) | 97,3 % | NGUY HIỂM. 92,6 % câu giống hệt. Khác biệt: thêm một đồng tác giả, và xóa các trích dẫn [1]. |
+
+ĐÍNH CHÍNH QUAN TRỌNG: bản Paper2_EngStruct_Submission_REVISED.docx chưa có bằng chứng đã được nộp — không tìm thấy PDF Editorial Manager tương ứng, và Engineering Structures chỉ có một mã duy nhất (ENGSTRUCT-D-26-08490, thuộc Paper 1). Nghĩa là đây là rủi ro tiềm tàng chưa xảy ra. ĐỪNG NỘP NÓ. Nếu cả hai bản cùng nằm trong hệ Elsevier, iThenticate sẽ trả về trên 90 % và cờ đỏ tự động.
+
+Tính độc lập: điểm yếu chí mạng của Paper 2
+
+P2 mở đầu Introduction bằng chính kết quả của P1, và dùng hằng số chưa đăng làm bằng chứng kiểm định mô hình số:
+
+“Verification of the grillage model: as the transverse stiffness vanishes the blind span ratio converges to the closed-form beam value (3+√33)/6 = 1.45743 of the companion study [1].” — Chú thích Bảng 3, MSSP_Manuscript.docx — trong đó [1] ghi “Submitted.”, không tạp chí, không năm
+
+Cách “sửa” trong bản REVISED lại tệ hơn: giữ nguyên câu chữ nhưng xóa [1], khiến hằng số 1,45743 xuất hiện không nguồn. Từ tự-trích-dẫn-chưa-đăng, nó biến thành tái sử dụng không khai báo.
+
+Dấu vết AI: rủi ro thấp hơn lo ngại
+
+Quét 32 cụm sáo rỗng đặc trưng LLM trên toàn bộ 8 bản thảo. Không có “delve into”, “it is worth noting”, “paves the way”, “robust framework”, “shed light on”, “valuable insights”. Độ biến thiên độ dài câu CV = 0,66–0,80, đúng dải của người viết học thuật. Rủi ro bị AI-detector gắn cờ: khoảng 15–25 %.
+
+Nhưng có hai chỗ tự tố không cần thiết. P1-ES chèn vào phần Phương pháp câu: “…in Python for the analysis and in Node.js for document assembly, with the assistance of a generative AI tool.” Câu này nói với reviewer rằng chính bản thảo được máy lắp ráp; nó không được yêu cầu ở đâu cả, và nằm sai chỗ — khai báo AI thuộc về mục Declaration.
+
+Lỗi kỹ thuật cần sửa ngay
+
+| Vị trí | Lỗi | Mức |
+| :-: | :-: | :-: |
+| P1-ES/CSHM · Bảng 4 | Cột bị lệch: cột “Single load” có giá trị −0,3650 mm tại x = 5500, trong khi tải đơn đã rời dầm tại x = 5000. Giá trị vật lý bất khả. | Sửa ngay |
+| P1-ES · Bảng 5 | Cấu trúc bảng vỡ: header 6 cột, các hàng chỉ có 5 ô. Sẽ render sai trong PDF nộp. | Sửa ngay |
+| P3-SHM | Đánh số bảng nhảy 5 → 7. Chuỗi “Table 6” xuất hiện 0 lần trong toàn văn. | Sửa ngay |
+| P7 (MSSP26-6346) | Dùng boilerplate của SAGE trong bài Elsevier. Không CRediT, không Nomenclature, không mục Discussion. | Sửa ngay |
+| P2 · P3 | Mục cuối tên là “Experimental … and conclusions” nhưng không có thí nghiệm. Đổi thành “Proposed experimental tests”. | Cao |
+| P1 · P2 | Phương trình mồ côi: P1 không tham chiếu Eq. (2)(3)(4)(9)(13); P2 không tham chiếu Eq. (3)(6)(10)(11)(14). | Cao |
+| Toàn bộ | Thiếu 9–16 DOI mỗi bài; “OBrien EJ” ở P1/P2/P3 nhưng “O’Brien EJ” ở P7. | Cao |
+
+5. Novelty: giữ gì, bỏ gì
+
+Reviewer sẽ hỏi: “Cái này chỉ là diện tích dưới đường ảnh hưởng, đã có từ 1979. Mới ở đâu?” Câu trả lời phải chuẩn bị trước, và phải trung thực.
+
+| Thành phần | Trạng thái | Phải làm gì |
+| :-: | :-: | :-: |
+| Định lý tích phân Iy = Cm·ΣPi | ĐÃ CÓ | Hệ quả sơ cấp của tích chập trong công thức Moses 1979. Đặt lại thành lemma, ghi công Moses, không claim tính mới toán học. |
+| SLM — hiệu chuẩn bằng tải chuẩn | ĐÃ CÓ | Thực hành chuẩn của BWIM từ 1979 (O’Brien 2006; Zhao 2015; Žnidarič 2020). Giữ được chỉ khi định vị lại: hiệu chuẩn MỘT VÔ HƯỚNG Cm thay vì cả hàm η(x) — giảm bài toán hiệu chuẩn từ vô hạn chiều xuống 1 chiều. |
+| BPM — dùng EI giải tích | ĐÃ CÓ | BWIM thế hệ đầu, đã bị coi là kém chính xác hơn IL đo đạc. Trình bày như đóng góp là rủi ro. |
+| Định lý động ∫(Mü+Cu̇+Ku)dt | ĐÃ CÓ | Impulse–momentum cổ điển. Phải trung thực: trên cửa sổ hữu hạn, M[u̇] và C[u] KHÔNG triệt tiêu trừ khi kết cấu nghỉ ở cả hai đầu. |
+| Sign reversal của kernel ngang | ĐÃ CÓ | Kinh điển Courbon / Guyon–Massonnet. Tự nó không mới. |
+| Bất biến với sai số hình dạng IL | BẢO VỆ ĐƯỢC | Estimator chỉ phụ thuộc DIỆN TÍCH của η, nên mọi sai số hiệu chuẩn IL bảo toàn diện tích đều triệt tiêu hoàn toàn. Mạnh nhất, định lượng được, chưa có trong y văn. ĐƯA LÊN LÀM ĐÓNG GÓP CHÍNH. |
+| Lane cancellation / blind configuration | BẢO VỆ ĐƯỢC | Điểm không của kernel Cm(y): một xe đi ở làn y* hoàn toàn không xuất hiện trong tích phân, dù nặng bao nhiêu. Negative identifiability result thật sự. |
+| Blind locus dạng đóng | BẢO VỆ ĐƯỢC | ρL = (3+√33)/6 = 1,45743 và ξopt = (1+√33)/16 = 0,42154. Sạch, mới, có ý nghĩa thực hành trực tiếp. |
+| Điều kiện hạng đa cảm biến | BẢO VỆ ĐƯỢC | rank(C) = q để phục hồi tải theo làn → quy tắc thiết kế bố trí cảm biến cho toán tử tích phân, khác OSP modal truyền thống. |
+
+Câu trả lời mạnh nhất cho reviewer
+
+Đảo ngược logic bài toán ngược. Toàn bộ BWIM từ Moses đến nay giải bài toán ill-posed để tìm {Pi} rồi lấy GVW như sản phẩm phụ. Bản thảo làm ngược lại: chỉ giải duy nhất phiếm hàm well-posed. Hệ quả — estimator không cần axle detection, không cần số trục, không cần khoảng cách trục, tức miễn nhiễm với đúng ba nguồn sai số mà cả dòng “virtual axle / nothing-on-road / vision-based axle detection” đang phải chống đỡ.
+
+Nhưng phải thừa nhận thẳng trong bài ba cái giá phải trả, nếu không reviewer sẽ tự phát hiện và mất niềm tin:
+
+Vẫn cần biết vận tốc chính xác — bài toán chuyển từ “cần axle spacing” sang “cần v”. Đây là đánh đổi chứ không phải bữa trưa miễn phí.
+
+Multi-presence: tính chồng chất khiến tích phân trả về tổng tải của mọi xe trên cầu, không tách được từng xe.
+
+Trôi nhiệt của Cm — Žnidarič & Kalin (2020) cho thấy IL thay đổi trên 11 % theo mùa.
+
+Nguồn sai số bị bỏ quên — và nó là nguồn chi phối
+
+Bản thảo mô hình nhiễu nhân tính ±5 %. Nhưng nguồn sai số chi phối của phương pháp tích phân là độ lệch điểm không cộng tính: δP/P = ε·Ltot/Iy. Chỉ riêng độ phân giải LVDT (ε = 0,005 mm) đã tạo sai số 0,4–1,0 % — lớn hơn toàn bộ sai số mà bài hiện báo cáo. Trên cầu thật, trôi nhiệt ε = 0,05 mm là chuyện thường ngày → sai số 4–10 %.
+
+Và đây là luận điểm bán hàng đẹp nhất mà bài đang bỏ lỡ: tải càng nặng thì Iy càng lớn còn ε·Ltot không đổi, nên phương pháp càng chính xác khi xe càng nặng — tự nhiên phù hợp đúng mục tiêu phát hiện xe quá tải.
+
+6. Kế hoạch hành động
+
+Cấp 1 — Dừng chảy máu · 72 giờ · BẮT BUỘC
+
+Không nộp bản P2-EngStruct. Nó trùng 97,3 % với P2-MSSP đang treo, cùng hệ Elsevier. Một quyết định không làm gì cả, và nó loại bỏ rủi ro nghiêm trọng nhất trong hồ sơ.
+
+Rà soát tình trạng “under consideration”. P1 hiện ở JCSHM; P3 hiện ở SHM. Xác nhận không bản nào của cùng một bài đang treo ở hai nơi. Nếu có, rút ngay và chủ động — khai báo trước khi bị phát hiện là chuyện thường lệ; bị phát hiện trước khi khai báo thì không.
+
+Lấy toàn văn 4 thư quyết định từ hộp thư sonvt2@huce.edu.vn và từ mục “Submissions with a Decision” trong Editorial Manager của từng tạp chí. Không thể sửa cái mình chưa đọc.
+
+Chạy toàn bộ danh mục tài liệu qua Crossref. Mỗi DOI phải mở được. 20 phút, loại bỏ hoàn toàn rủi ro liêm chính.
+
+Xóa câu “Node.js for document assembly” khỏi phần Phương pháp; chuyển khai báo AI về đúng mục Declaration, khai một lần, nhất quán.
+
+Sửa 4 lỗi kỹ thuật chí mạng ở mục 4 (Bảng 4, Bảng 5, đánh số bảng P3-SHM, boilerplate SAGE trong P7).
+
+Cấp 2 — Làm bản thảo đủ sức qua cửa biên tập · 30 ngày
+
+Viết lại định vị đóng góp. Đặt định lý cốt lõi thành “known result, restated as lemma, attributed to Moses 1979”. Dồn trọng lượng vào bất biến-hình-dạng-IL, lane cancellation, blind locus, điều kiện hạng.
+
+Viết lại Introduction của P2 để không mở đầu bằng “A companion study [1]”. Chứng minh lại 1,45743 tại chỗ, hoặc kiểm định grillage bằng một nguồn đã đăng.
+
+Nâng thư mục lên 45–60 mục, bắt buộc phủ BWIM 2020–2026.
+
+Cắt độ dài 35–40 %. Chuyển số liệu thô và bảng kiểm chứng sang supplementary. Abstract về 200–250 từ, kết thúc bằng con số cụ thể.
+
+Thêm bảng so sánh định lượng với Moses BWIM và một MFI có Tikhonov trên cùng bộ dữ liệu: GVW error, RMSE, số cảm biến, chi phí tính toán.
+
+Thêm mục ngân sách sai số theo GUM, tách ba thành phần: gain (SLM triệt tiêu), offset (cả hai đều không triệt tiêu), random (SLM khuếch đại theo hệ số √2).
+
+Thêm mục vận tốc xe và đề xuất tự hiệu chuẩn từ hai điểm y = 0. Kèm cảnh báo: quy tắc hai-zero chỉ dùng cho trục đơn hoặc lượt hiệu chuẩn.
+
+Cấp 3 — Làm bài đủ tầm Q1 thật · 3–6 tháng
+
+Thí nghiệm bất biến trực tiếp. Giữ nguyên tổng tải, đổi khoảng cách trục 250 / 500 / 750 / 1000 mm. Rẻ, dùng đúng dầm cũ, và nó kiểm chứng đúng cái tính chất mà bài đặt tên.
+
+Thí nghiệm tải di động. Xe mô hình chạy trên dầm, 4–5 tốc độ, ≥30 lượt, lấy mẫu ≥1 kHz.
+
+Thí nghiệm cấu hình mù. Dời gối để nhịp đạt tỷ lệ 1,45743 và cho thấy phương pháp sập. Đây là falsifiable prediction mạnh nhất của cả framework — có nó, novelty tăng gấp đôi.
+
+Phân tích VBI có road roughness (ISO 8608 class A–C), mô hình quarter-car rồi half-car. Xác định ngưỡng vận tốc mà giả thiết quasi-static bắt đầu sai đáng kể.
+
+Dữ liệu cầu thật. Một cầu vượt 2 nhịp, một cảm biến chuyển vị, 20 lượt xe tải có cân đối chứng.
+
+7. Hướng nghiên cứu cần đổi
+
+NGUYÊN TẮC CỐT LÕI: Đừng viết thêm bài “mở rộng 1D → 2D → 3D” nữa. Đã ba bài, và biên tập viên IJMS đã đọc đúng chuỗi đó thành “tăng dần, không đột phá”. Bước tiếp theo phải đổi bản chất bài toán (moment bậc cao) hoặc đổi độ chân thực (VBI, dữ liệu hiện trường) — không phải đổi số chiều.
+
+| Hướng | Hot | Khả thi | Đông đúc | Nhận định |
+| :-: | :-: | :-: | :-: | :-: |
+| Moment bậc cao M0/M1/M2 → axle-level BWIM không cần time-history inversion | ★★★★★ | ★★★★★ | Trống | Ưu tiên số 1. Trả lời đúng điểm nghẽn “closely spaced axles” mà y văn 2025 công khai thừa nhận, bằng closed-form thay vì ANN. Không tìm thấy công trình đi trước. |
+| VBI + road roughness cho bất biến tích phân | ★★★★★ | ★★★★☆ | Thấp | Bắt buộc phải làm. Vừa vá lỗ hổng phản biện lớn nhất, vừa cưỡi sóng VBI. |
+| Observability / null space + optimal sensor placement | ★★★★☆ | ★★★★★ | Rất trống | Lĩnh vực BWIM chưa có lý thuyết observability. Rủi ro: quá lý thuyết — phải kèm case study. |
+| Self-localizing two-sensor (GVW + vị trí ngang, không camera) | ★★★★★ | ★★★★☆ | Đang lấp nhanh | Cạnh tranh gay gắt với influence-surface PINN và vision-WIM. Lợi thế: 2 cảm biến, không ML, rẻ hơn một bậc. Phải công bố sớm. |
+| Cm làm damage indicator (biết tải → theo dõi kết cấu) | ★★★★☆ | ★★★★☆ | Trung bình | Rất hợp thời; đồng thời mở cửa vào population-based SHM. |
+| PIML với bất biến tích phân làm hard constraint | ★★★★★ | ★★★☆☆ | Trống ở góc này | PINN cho SHM hiện chỉ phạt residual của PDE; chưa ai nhúng conservation law làm ràng buộc cứng. Làm sau khi có bài lý thuyết. |
+| Digital twin / asset management | ★★★★☆ | ★★☆☆☆ | Cực đông | Chỉ nên là một mục “ứng dụng” trong bài khác. |
+| Computer vision / UAV / DIC đo độ võng | ★★★☆☆ | ★★☆☆☆ | Bão hòa | Không phải thế mạnh. Chỉ dùng như phương tiện đo trong thí nghiệm. |
+
+Cơ hội đúng thời điểm: tháng 8/2025 xuất hiện tổng quan toàn diện đầu tiên về influence line trong SHM (Cai, Chen & Zhu, SHM) — dấu hiệu kinh điển của một lĩnh vực vừa đạt khối lượng tới hạn. Tổng quan đó khẳng định “static characteristics” bị bỏ quên so với vibration-based methods, và đang được lấp đầy. Đây chính xác là mảnh đất của nhóm, và cửa sổ đang mở.
+
+Thêm một cầu nối phần cứng: cảm biến sợi quang phân bố (DFOS) hiện đã mở rộng được phép đo độ võng rời rạc thành dữ liệu liên tục theo không gian. Nếu đo được độ võng liên tục, các moment bậc cao trở nên khả thi ngay — nền tảng phần cứng lý tưởng cho hướng ưu tiên số 1.
+
+8. Năm đề tài nên viết trong 12 tháng
+
+Bài 1 · 0–3 tháng · FLAGSHIP
+
+Response-Moment Bridge Weigh-in-Motion: Closed-Form Recovery of Gross Weight, Load Centroid and Axle Distribution from a Single Sensor Without Time-History Inversion
+
+→ MSSP hoặc Engineering Structures
+
+Đánh trúng bài toán closely-spaced-axles mà cả dòng ANN/Bayesian đang vật lộn, bằng một lời giải giải tích. M0 → tổng tải, M1 → trọng tâm đoàn tải, M2 → độ trải. Đây là bài đổi bản chất bài toán, không phải đổi số chiều.
+
+Bài 2 · 3–6 tháng
+
+Is the Deflection-Integral Invariant Robust to Vehicle–Bridge Interaction and Road Roughness? A Theoretical and Numerical Assessment
+
+→ Journal of Sound and Vibration hoặc Engineering Structures
+
+VBI + roughness là điều kiện bắt buộc để bất kỳ phương pháp BWIM nào được chấp nhận. Bài này vá điểm yếu lớn nhất của nhóm trước khi reviewer phát hiện — và lần này JSV là đúng cửa, vì nội dung thật sự là dao động.
+
+Bài 3 · 6–9 tháng
+
+Load Observability of Instrumented Bridges: A Null-Space and Fisher-Information Framework for Optimal Sensor Placement in Bridge Weigh-in-Motion
+
+→ Structural Health Monitoring hoặc SCHM
+
+Biến các ý tưởng rời rạc thành một lý thuyết chung, tạo vị thế dẫn dắt. Lấp đúng khoảng trống mà tổng quan IL 2025 thừa nhận. Phải kèm case study.
+
+Bài 4 · 6–9 tháng
+
+Camera-Free Simultaneous Estimation of Gross Vehicle Weight and Transverse Position Using Two Deflection Sensors: Theory and Field Validation
+
+→ Automation in Construction hoặc Measurement
+
+Cạnh tranh trực diện với vision-WIM và influence-surface PINN nhưng chi phí phần cứng thấp hơn một bậc. Rất hấp dẫn với cơ quan quản lý cầu. Cửa sổ đang đóng dần.
+
+Bài 5 · 9–12 tháng
+
+From Load Observability to Damage Observability: The Response-Integral Coefficient as a Traffic-Load-Normalized, Transferable Damage Index for Populations of Bridges
+
+→ Structural Health Monitoring hoặc JCSHM
+
+Ghép hai làn sóng — IL-based damage detection và population-based SHM / transfer learning. PBSHM đang cần đúng thứ này: một feature bất biến giữa các cầu.
+
+9. Bậc thang tạp chí theo trạng thái bản thảo
+
+Kịch bản A — Bản thảo hiện trạng, chỉ có dữ liệu phòng thí nghiệm
+
+| # | Tạp chí | Vì sao |
+| :-: | :-: | :-: |
+| 1 | Measurement (Elsevier, Q1) | Scope nêu rõ “estimation techniques, mathematical models for measurement purposes”. Nhận dạng tải LÀ bài toán đo gián tiếp — đúng lõi tạp chí. Không đòi field data. |
+| 2 | Structures (Elsevier, Q1) | Rộng, thực tế, chấp nhận nghiên cứu thực nghiệm quy mô vừa. Cùng nhà với ES nên dùng được ATS. |
+| 3 | Smart Structures and Systems | Q2, chuyên SHM, chấp nhận lab-scale. |
+| 4 | Sensors (MDPI) | Nhanh, chắc ăn. Cân nhắc APC và uy tín trong cộng đồng cầu. |
+
+Kịch bản B — Sau khi hoàn thành Cấp 2
+
+| # | Tạp chí | Vì sao |
+| :-: | :-: | :-: |
+| 1 | Structural Control and Health Monitoring (Wiley) | Scope nhận đóng góp lý thuyết SHM. Lưu ý: gần như toàn bộ Gold OA — cần xác nhận ngân sách APC trước. |
+| 2 | J. Civil Structural Health Monitoring (Springer) | Tạp chí duy nhất ghi rõ chấp nhận “laboratory verifications” thay cho field data. Đã có CSHM-S-26-01166 ở đây — nếu bị từ chối, chỉ quay lại qua APPEAL có phản hồi từng điểm, không nộp lại như bài mới. |
+| 3 | Structure and Infrastructure Engineering (T&F) | Ưu tiên góc quản lý tài sản cầu — hợp với luận điểm observability của tổng tải. |
+
+Kịch bản C — Sau khi có dữ liệu cầu thật
+
+| # | Tạp chí | Vì sao |
+| :-: | :-: | :-: |
+| 1 | Structural Health Monitoring (SAGE) | Đòi “balanced studies containing both theoretical and experimental aspects”. Lưu ý: acceptance 23,1 %, trung vị quyết định đầu tiên 6 ngày — đây là tạp chí desk-reject rất nhanh. |
+| 2 | Journal of Bridge Engineering (ASCE) | Dữ liệu cầu thật là “đồng tiền” của cộng đồng ASCE. |
+| 3 | Engineering Structures | Lúc này đóng góp mới đủ tầm “innovative application of structural principles”. |
+
+LOẠI KHỎI DANH SÁCH cho tới khi bản chất bài đổi: JSV, IJMS, MSSP, Applied Mathematical Modelling, NDT&E International. Ngoại lệ duy nhất: JSV trở lại đúng cửa nếu và chỉ nếu bài mới thật sự về VBI và động lực học (đề tài Bài 2).
+
+Quy tắc vận hành
+
+Một bản thảo — một tạp chí — một thời điểm. Không ngoại lệ.
+
+Chỉ nộp nơi mới sau khi có quyết định từ chối bằng văn bản. Giữa hai lần nộp phải có tối thiểu 2–4 tuần làm việc thực chất. Nộp lại sau 24 giờ là bằng chứng rằng không phản hồi nào được xử lý — và biên tập viên đọc được điều đó.
+
+Bị từ chối ở tạp chí Elsevier → dùng Article Transfer Service, không tự nộp lại nơi khác.
+
+Trước mỗi lần nộp lại: viết lại tiêu đề và abstract theo ngôn ngữ của tạp chí đích; tái định khung novelty; thêm 5–8 trích dẫn từ chính tạp chí đó; định dạng lại theo author guidelines; thêm mục thảo luận thẳng thắn về giới hạn kèm lộ trình.
+
+Cover letter không bao giờ viết “no field data are reported”. Nói rõ đóng góp và phạm vi; giới hạn thuộc về mục Limitations trong bài.
+
+Khai báo AI đúng mẫu của từng nhà xuất bản, một lần, đúng chỗ. Elsevier: “Declaration of generative AI and AI-assisted technologies in the manuscript preparation process”.
+
+10. Điều không nên làm
+
+Chủ đề đã bão hòa — viết nữa sẽ bị từ chối vì incremental
+
+CNN/LSTM/Transformer phát hiện hư hỏng từ dữ liệu dao động — bão hòa nặng nhất, đã có hàng chục review.
+
+Thêm một thuật toán regularization/Tikhonov cải tiến cho moving force identification — dòng nghiên cứu 25 năm; chỉ đổi hàm phạt sẽ bị từ chối.
+
+Framework digital twin cho một cầu cụ thể — quá nhiều framework, quá ít bằng chứng vận hành.
+
+Vision/UAV đo chuyển vị kèm hiệu chỉnh chuyển động camera — kín chỗ, 2024–2025 đã có ít nhất 5 bài về đúng bài toán homography/ROI.
+
+Drive-by trích xuất tần số riêng từ mô hình xe 1-DOF, chỉ mô phỏng số — 20 năm, đã có review tổng kết; chỉ còn chỗ cho full-scale field validation.
+
+Ứng dụng LLM/foundation model vào SHM ở mức khái niệm — bong bóng đang phình, không có lợi thế cạnh tranh cho nhóm.
+
+Sai lầm quy trình đừng lặp lại
+
+Giải quyết vấn đề độc lập bằng cách xóa trích dẫn. Nó biến tự-trích-dẫn-chưa-đăng thành tái sử dụng không khai báo — tệ hơn hẳn.
+
+Nộp lại cùng tạp chí sau reject mà không qua kênh appeal chính thức.
+
+Đưa vào bản thảo bất kỳ tài liệu nào chưa tự mở ra xem. Trong quá trình rà soát, một công cụ tra cứu đã trả về sai DOI cho Žnidarič & Kalin (2020) — đúng cơ chế sinh ra tài liệu ma. Mỗi DOI phải đối chiếu tối thiểu hai nguồn độc lập.
+
+Khai trong cover letter rằng các bài liên quan là “lower-dimensional special cases”. Câu này mời biên tập viên đọc bài mới như một mở rộng tăng dần.
+
+Để danh sách tác giả thay đổi giữa các bài cùng dòng nghiên cứu mà không có lý do rõ ràng.
+
+Điều đáng nghe nhất
+
+Ý tưởng không dở. Nó nhỏ nhưng vững, và blind locus (3+√33)/6 là một kết quả đẹp mà không ai khác có. Phần số học kiểm tra lại đúng tới 0,01 % — điều hiếm hơn ta tưởng.
+
+Vấn đề là một ý tưởng vừa phải đã bị trải ra bảy bài và tám tạp chí trong chín ngày, với một thí nghiệm treo quả cân bằng tay. Nhịp nộp bài đang gây hại lớn hơn mọi khiếm khuyết kỹ thuật trong bản thảo — và nó là thứ duy nhất trong danh sách này không thể sửa bằng cách viết lại. Hãy xử lý nó trước.
+
+PHƯƠNG PHÁP. Sáu agent chạy song song: (1) phản biện vai AE hàng đầu về SHM/BWIM; (2) truy vết hồ sơ nộp bài qua Gmail và Drive; (3) khảo sát xu hướng 2024–2026 qua 14 truy vấn trên WebSearch, Scholar Gateway và alphaXiv; (4) phân tích scope và chính sách 8 tạp chí từ nguồn chính thức; (5) thẩm định prior art với 34 DOI đã kiểm chứng; (6) kiểm toán kỹ thuật 11 file trên Drive, đối chiếu 8-gram và tính lại 12 đại lượng của Paper 1.
+
+GIỚI HẠN BẰNG CHỨNG. Không tìm thấy thư quyết định gốc của bất kỳ tạp chí nào — hộp thư Gmail cá nhân không phải địa chỉ đăng ký trong Editorial Manager. Mọi trích dẫn lý do từ chối là nguồn thứ cấp, lấy từ ghi chú nội bộ do chính nhóm viết ngay sau khi nhận quyết định. Lý do từ chối của Engineering Structures hoàn toàn chưa xác định. Số liệu CiteScore/acceptance rate của các tạp chí Elsevier lấy từ nguồn thứ cấp; IF và acceptance rate của SHM (SAGE) và JCSHM (Springer) là số liệu chính thức từ nhà xuất bản.
