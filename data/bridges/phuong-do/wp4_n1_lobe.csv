@@ -1,0 +1,6 @@
+case,max_up_mm,t_up_s,min_down_mm,ratio_up_over_down,int_pos_mm_s,int_neg_mm_s,int_net_mm_s
+"Vong0, tare (no correction)",4.844,6.15,-11.167,0.434,5.539,-12.936,-7.397
+"Vong0, linear pre/post (b)",3.585,6.15,-11.837,0.303,2.955,-14.591,-11.637
+"Vong0, poly3 (c1)",3.646,6.15,-11.832,0.308,3.101,-14.594,-11.493
+"Vong0, HP 0.1 Hz",5.226,6.15,-9.112,0.574,6.091,-9.499,-3.407
+"Vong (processed, as delivered)",3.484,6.15,-7.37,0.473,3.677,-8.394,-4.718

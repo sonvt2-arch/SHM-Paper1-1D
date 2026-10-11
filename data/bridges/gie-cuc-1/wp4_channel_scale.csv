@@ -1,0 +1,4 @@
+bridge,span,k,c_mm,corr,rng_raw_mm,rng_proc_mm
+gie-cuc-1,N1,1.0,0.0,1.0,10.8,10.8
+gie-cuc-1,N2,3.25,6.825,1.0,2.6,8.45
+gie-cuc-1,N3,5.152,11.591,1.0,1.8,9.27

@@ -1,0 +1,5 @@
+bridge,span,channel,T_record_s,I_whole_record_tare_mm_s,I_whole_record_poly3_mm_s,diff_pct,eps0_equiv_mm
+phuong-do,N1,raw,15.0,-8.09,11.49,-170.4,-1.306
+phuong-do,N1,proc,15.0,4.34,4.81,-9.9,-0.032
+phuong-do,N2,raw,15.0,8.48,6.32,34.2,0.144
+phuong-do,N2,proc,15.0,11.38,8.48,34.2,0.193

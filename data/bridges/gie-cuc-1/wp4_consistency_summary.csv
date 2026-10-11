@@ -1,0 +1,17 @@
+bridge,channel,speed_source,set,n,mean,sd,cv_pct,min,max
+gie-cuc-1,proc,v_fit,all complete major events,5,108.34,36.03,33.26,70.17,153.24
+gie-cuc-1,proc,v_fit,largest event per span,3,132.46,20.28,15.31,112.73,153.24
+gie-cuc-1,proc,v_nom30,all complete major events,5,61.49,22.29,36.25,37.79,90.32
+gie-cuc-1,proc,v_nom30,largest event per span,3,76.28,13.09,17.15,64.42,90.32
+gie-cuc-1,proc,v_nom35,all complete major events,5,71.74,26.01,36.25,44.09,105.37
+gie-cuc-1,proc,v_nom35,largest event per span,3,88.99,15.27,17.16,75.15,105.37
+gie-cuc-1,proc,v_nom40,all complete major events,5,81.99,29.72,36.25,50.39,120.42
+gie-cuc-1,proc,v_nom40,largest event per span,3,101.71,17.45,17.15,85.89,120.42
+gie-cuc-1,raw,v_fit,all complete major events,5,61.83,55.19,89.26,21.58,153.24
+gie-cuc-1,raw,v_fit,largest event per span,3,71.14,71.25,100.14,25.51,153.24
+gie-cuc-1,raw,v_nom30,all complete major events,5,35.39,32.77,92.58,11.63,90.32
+gie-cuc-1,raw,v_nom30,largest event per span,3,41.51,42.36,102.06,14.38,90.32
+gie-cuc-1,raw,v_nom35,all complete major events,5,41.29,38.23,92.59,13.56,105.37
+gie-cuc-1,raw,v_nom35,largest event per span,3,48.42,49.42,102.06,16.78,105.37
+gie-cuc-1,raw,v_nom40,all complete major events,5,47.19,43.69,92.59,15.5,120.42
+gie-cuc-1,raw,v_nom40,largest event per span,3,55.34,56.48,102.05,19.18,120.42

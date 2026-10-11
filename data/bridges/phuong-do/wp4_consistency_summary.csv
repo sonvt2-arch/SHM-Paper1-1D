@@ -1,0 +1,17 @@
+bridge,channel,speed_source,set,n,mean,sd,cv_pct,min,max
+phuong-do,proc,v_fit,all complete major events,2,59.2,15.37,25.95,48.34,70.07
+phuong-do,proc,v_fit,largest event per span,2,59.2,15.37,25.95,48.34,70.07
+phuong-do,proc,v_nom30,all complete major events,2,54.94,21.05,38.31,40.06,69.83
+phuong-do,proc,v_nom30,largest event per span,2,54.94,21.05,38.31,40.06,69.83
+phuong-do,proc,v_nom35,all complete major events,2,64.1,24.56,38.32,46.73,81.47
+phuong-do,proc,v_nom35,largest event per span,2,64.1,24.56,38.32,46.73,81.47
+phuong-do,proc,v_nom40,all complete major events,2,73.26,28.07,38.32,53.41,93.11
+phuong-do,proc,v_nom40,largest event per span,2,73.26,28.07,38.32,53.41,93.11
+phuong-do,raw,v_fit,all complete major events,2,80.4,39.89,49.61,52.2,108.61
+phuong-do,raw,v_fit,largest event per span,2,80.4,39.89,49.61,52.2,108.61
+phuong-do,raw,v_nom30,all complete major events,2,74.5,31.78,42.66,52.03,96.98
+phuong-do,raw,v_nom30,largest event per span,2,74.5,31.78,42.66,52.03,96.98
+phuong-do,raw,v_nom35,all complete major events,2,86.92,37.08,42.66,60.7,113.14
+phuong-do,raw,v_nom35,largest event per span,2,86.92,37.08,42.66,60.7,113.14
+phuong-do,raw,v_nom40,all complete major events,2,99.34,42.38,42.66,69.37,129.3
+phuong-do,raw,v_nom40,largest event per span,2,99.34,42.38,42.66,69.37,129.3

@@ -1,0 +1,144 @@
+====================================================================================================
+A. Symmetric three-span, closed form vs FE (both FE routes: w_q(x_m)/q0 and exact integral of influence line)
+====================================================================================================
+ beta=1.00000 rho=1.0
+  side xi=0.25 (udl)                             closed= 1.031250000000  FE= 1.031249999914  relerr=8.4e-11 OK
+  side xi=0.25 (IL integral)                     closed= 1.031250000000  FE= 1.031249999935  relerr=6.3e-11 OK
+  side xi=0.5 (udl)                              closed= 1.300000000000  FE= 1.299999999903  relerr=7.4e-11 OK
+  side xi=0.5 (IL integral)                      closed= 1.300000000000  FE= 1.299999999908  relerr=7.1e-11 OK
+  side xi=0.7 (udl)                              closed= 0.890400000000  FE= 0.890399999935  relerr=7.3e-11 OK
+  side xi=0.7 (IL integral)                      closed= 0.890400000000  FE= 0.890399999886  relerr=1.3e-10 OK
+  main eta=0.3 (udl)                             closed= 0.016800000000  FE= 0.016800000007  relerr=4.5e-10 OK
+  main eta=0.3 (IL integral)                     closed= 0.016800000000  FE= 0.016800000040  relerr=2.4e-09 OK
+  main eta=0.5 (udl)                             closed= 0.100000000000  FE= 0.099999999991  relerr=9.0e-11 OK
+  main eta=0.5 (IL integral)                     closed= 0.100000000000  FE= 0.100000000008  relerr=8.2e-11 OK
+ beta=1.50000 rho=1.0
+  side xi=0.25 (udl)                             closed= 0.519230769231  FE= 0.519230769240  relerr=1.8e-11 OK
+  side xi=0.25 (IL integral)                     closed= 0.519230769231  FE= 0.519230769201  relerr=5.8e-11 OK
+  side xi=0.5 (udl)                              closed= 0.480769230769  FE= 0.480769230782  relerr=2.6e-11 OK
+  side xi=0.5 (IL integral)                      closed= 0.480769230769  FE= 0.480769230702  relerr=1.4e-10 OK
+  side xi=0.7 (udl)                              closed= 0.110492307692  FE= 0.110492307704  relerr=1.1e-10 OK
+  side xi=0.7 (IL integral)                      closed= 0.110492307692  FE= 0.110492307660  relerr=2.9e-10 OK
+  main eta=0.3 (udl)                             closed= 0.525107692308  FE= 0.525107692297  relerr=2.0e-11 OK
+  main eta=0.3 (IL integral)                     closed= 0.525107692308  FE= 0.525107692316  relerr=1.5e-11 OK
+  main eta=0.5 (udl)                             closed= 0.705128205128  FE= 0.705128205113  relerr=2.2e-11 OK
+  main eta=0.5 (IL integral)                     closed= 0.705128205128  FE= 0.705128205133  relerr=7.2e-12 OK
+ beta=1.63636 rho=1.0
+  side xi=0.25 (udl)                             closed= 0.320764462810  FE= 0.320764462815  relerr=1.6e-11 OK
+  side xi=0.25 (IL integral)                     closed= 0.320764462810  FE= 0.320764462760  relerr=1.6e-10 OK
+  side xi=0.5 (udl)                              closed= 0.163223140496  FE= 0.163223140491  relerr=3.0e-11 OK
+  side xi=0.5 (IL integral)                      closed= 0.163223140496  FE= 0.163223140426  relerr=4.3e-10 OK
+  side xi=0.7 (udl)                              closed=-0.191811570248  FE=-0.191811570260  relerr=6.1e-11 OK
+  side xi=0.7 (IL integral)                      closed=-0.191811570248  FE=-0.191811570324  relerr=4.0e-10 OK
+  main eta=0.3 (udl)                             closed= 0.566688888889  FE= 0.566688888916  relerr=4.7e-11 OK
+  main eta=0.3 (IL integral)                     closed= 0.566688888889  FE= 0.566688888924  relerr=6.2e-11 OK
+  main eta=0.5 (udl)                             closed= 0.754629629630  FE= 0.754629629670  relerr=5.3e-11 OK
+  main eta=0.5 (IL integral)                     closed= 0.754629629630  FE= 0.754629629667  relerr=4.9e-11 OK
+ beta=1.20000 rho=2.0
+  side xi=0.25 (udl)                             closed= 0.861513157895  FE= 0.861513157836  relerr=6.8e-11 OK
+  side xi=0.25 (IL integral)                     closed= 0.861513157895  FE= 0.861513157853  relerr=4.9e-11 OK
+  side xi=0.5 (udl)                              closed= 1.028421052632  FE= 1.028421052553  relerr=7.7e-11 OK
+  side xi=0.5 (IL integral)                      closed= 1.028421052632  FE= 1.028421052555  relerr=7.4e-11 OK
+  side xi=0.7 (udl)                              closed= 0.631856842105  FE= 0.631856842047  relerr=9.2e-11 OK
+  side xi=0.7 (IL integral)                      closed= 0.631856842105  FE= 0.631856842049  relerr=8.9e-11 OK
+  main eta=0.3 (udl)                             closed= 0.315957894737  FE= 0.315957894761  relerr=7.5e-11 OK
+  main eta=0.3 (IL integral)                     closed= 0.315957894737  FE= 0.315957894763  relerr=8.4e-11 OK
+  main eta=0.5 (udl)                             closed= 0.456140350877  FE= 0.456140350894  relerr=3.8e-11 OK
+  main eta=0.5 (IL integral)                     closed= 0.456140350877  FE= 0.456140350882  relerr=1.1e-11 OK
+ beta=1.80000 rho=0.7
+  side xi=0.25 (udl)                             closed=-0.019852941176  FE=-0.019852941081  relerr=4.8e-09 OK
+  side xi=0.25 (IL integral)                     closed=-0.019852941176  FE=-0.019852941147  relerr=1.5e-09 OK
+  side xi=0.5 (udl)                              closed=-0.381764705882  FE=-0.381764705773  relerr=2.9e-10 OK
+  side xi=0.5 (IL integral)                      closed=-0.381764705882  FE=-0.381764705843  relerr=1.0e-10 OK
+  side xi=0.7 (udl)                              closed=-0.710640000000  FE=-0.710639999923  relerr=1.1e-10 OK
+  side xi=0.7 (IL integral)                      closed=-0.710640000000  FE=-0.710639999986  relerr=1.9e-11 OK
+  main eta=0.3 (udl)                             closed= 0.538551633987  FE= 0.538551633986  relerr=1.9e-12 OK
+  main eta=0.3 (IL integral)                     closed= 0.538551633987  FE= 0.538551633988  relerr=1.4e-12 OK
+  main eta=0.5 (udl)                             closed= 0.721132897603  FE= 0.721132897605  relerr=1.9e-12 OK
+  main eta=0.5 (IL integral)                     closed= 0.721132897603  FE= 0.721132897613  relerr=1.3e-11 OK
+ beta=0.80000 rho=1.5
+  side xi=0.25 (udl)                             closed= 1.082638888889  FE= 1.082638888795  relerr=8.7e-11 OK
+  side xi=0.25 (IL integral)                     closed= 1.082638888889  FE= 1.082638888815  relerr=6.8e-11 OK
+  side xi=0.5 (udl)                              closed= 1.382222222222  FE= 1.382222222108  relerr=8.3e-11 OK
+  side xi=0.5 (IL integral)                      closed= 1.382222222222  FE= 1.382222222100  relerr=8.8e-11 OK
+  side xi=0.7 (udl)                              closed= 0.968675555556  FE= 0.968675555475  relerr=8.3e-11 OK
+  side xi=0.7 (IL integral)                      closed= 0.968675555556  FE= 0.968675555449  relerr=1.1e-10 OK
+  main eta=0.3 (udl)                             closed=-0.901366666667  FE=-0.901366666552  relerr=1.3e-10 OK
+  main eta=0.3 (IL integral)                     closed=-0.901366666667  FE=-0.901366666457  relerr=2.3e-10 OK
+  main eta=0.5 (udl)                             closed=-0.993055555556  FE=-0.993055555447  relerr=1.1e-10 OK
+  main eta=0.5 (IL integral)                     closed=-0.993055555556  FE=-0.993055555348  relerr=2.1e-10 OK
+
+ Dimensional bridges (uniform EI = 1, metres):
+  Cau May 55+90+55 mid side                      closed= 0.163223140496  FE= 0.163223149612  relerr=5.6e-08 FAIL
+  Cau May 55+90+55 mid main                      closed= 0.754629629630  FE= 0.754629625331  relerr=5.7e-09 OK
+  Thai Binh 42+63+42 mid side                    closed= 0.480769230769  FE= 0.480769224362  relerr=1.3e-08 FAIL
+  Thai Binh 42+63+42 mid main                    closed= 0.705128205128  FE= 0.705128204934  relerr=2.8e-10 OK
+
+====================================================================================================
+B. Blind configurations and optimal sensor position
+====================================================================================================
+ beta_crit (mid side, uniform EI) = sqrt(10/3) cos(acos((2/5)sqrt(6/5))/3) = 1.700593981702490
+   cubic residual 6b^3-15b-4 = -3.55e-15
+  FE at beta_crit, mid side (exact zero)         closed= 0.000000000000  FE= 0.000000000021  abserr=2.1e-11 OK
+  beta=1.2: rho_crit=-1.908000 <= 0 -> no blind stiffness ratio
+  FE at rho_crit=0.994500, beta=1.7              closed= 0.000000000000  FE=-0.000000000041  abserr=4.1e-11 OK
+ whole side span blind when mu>=2: beta^3-3beta-1=0 -> beta = 2cos(pi/9) = 1.879385241571817
+  FE at beta=2cos(pi/9), xi=0.05 (should be < 0) closed=-0.000950000000  FE=-0.000949999986  relerr=1.5e-08 FAIL
+ beta_crit (mid main, uniform EI): 3b^3+10b^2-12=0 -> 0.964705646959921
+  FE at beta_crit, mid main (exact zero)         closed= 0.000000000000  FE= 0.000000000001  abserr=1.4e-12 OK
+
+ xi* (side span, uniform EI): root of 8xi^3-(12-3mu)xi^2+(2-mu)=0
+      beta           mu          xi*      Cm(xi*)      Cm(0.5)        FE(xi*)   FE slope
+   1.00000   0.80000000   0.44603660   1.32176895   1.30000000   1.3217689495    1.3e-06
+   1.20000   0.97428571   0.42508293   1.07563406   1.03857143   1.0756340642   -4.4e-07
+   1.40000   1.20774194   0.38747142   0.75849895   0.68838710   0.7584989498   -1.9e-06
+   1.50000   1.34615385   0.35820014   0.58065335   0.48076923   0.5806533547    1.4e-07
+   1.63636   1.55785124   0.29944923   0.33162780   0.16322314   0.3316278564   -1.2e-04
+   1.70000   1.66563380   0.26077470   0.22018607   0.00154930   0.2201860686   -1.9e-07
+
+====================================================================================================
+C. Span-wise contributions (load on one span only) and negative/positive fraction
+====================================================================================================
+  case                                       C1         C2         C3        sum   neg/pos
+  two-span-like beta=1 side            1.700000  -0.600000   0.200000   1.300000  -0.31579   max FE rel.err 1.5e-10
+  Thai Binh side (beta=1.5)            1.840659  -1.557692   0.197802   0.480769  -0.76415   max FE rel.err 1.5e-10
+  Cau May side (beta=1.636)            1.870395  -1.902566   0.195395   0.163223  -0.92099   max FE rel.err 1.1e-10
+  Thai Binh main (beta=1.5)           -0.205128   1.115385  -0.205128   0.705128  -0.36782   max FE rel.err 1.3e-10
+  Cau May main (beta=1.636)           -0.162159   1.078947  -0.162159   0.754630  -0.30059   max FE rel.err 1.2e-10
+  mid side-span, uniform EI: C1, C2, C3 = [(15*beta**2 + 28*beta + 8)/(2*(beta + 2)*(3*beta + 2)), -3*beta**3/(3*beta + 2), 3*beta/((beta + 2)*(3*beta + 2))]
+  neg/pos = -C2/(C1+C3) = 6*beta**3/(15*beta + 4)
+  influence-line sign per span, Cau May side: ['+', '-', '+']
+  influence-line sign per span, Cau May main: ['-', '+', '-']
+
+====================================================================================================
+D. Asymmetric three spans: general closed form vs FE
+====================================================================================================
+  spans=[0.6, 1, 0.8] EI=[1, 1, 1] xi=0.5        closed= 0.230038022814  FE= 0.230038022616  relerr=8.6e-10 OK
+  spans=[0.5, 1, 0.7] EI=[1, 1.4, 0.9] xi=0.4    closed=-0.367637024571  FE=-0.367637024237  relerr=9.1e-10 OK
+  spans=[1.1, 1, 0.4] EI=[1, 0.8, 1.2] xi=0.6    closed= 1.133566586443  FE= 1.133566586754  relerr=2.7e-10 OK
+  spans=[42, 63, 50] EI=[1, 1, 1] xi=0.5         closed= 0.559394061826  FE= 0.559394061033  relerr=1.4e-09 OK
+
+====================================================================================================
+E. Haunched box girder (variable EI): FE convergence vs force method
+====================================================================================================
+  Cau May n=2.0 mid side: force method -0.024178600262
+    FE ne/span=100,200,400,800: -0.024178598757 (rel 6.2e-08)  -0.024178601167 (rel 3.7e-08)  -0.024178607461 (rel 3.0e-07)  -0.024178529570 (rel 2.9e-06)
+  Cau May n=2.0 mid main: force method 0.354902733252
+    FE ne/span=100,200,400,800: 0.354902730031 (rel 9.1e-09)  0.354902733439 (rel 5.3e-10)  0.354902736817 (rel 1.0e-08)  0.354902703438 (rel 8.4e-08)
+  Cau May n=3.0 mid side: force method -0.049445309589
+    FE ne/span=100,200,400,800: -0.049445306641 (rel 6.0e-08)  -0.049445309625 (rel 7.3e-10)  -0.049445303963 (rel 1.1e-07)  -0.049445302028 (rel 1.5e-07)
+  Cau May n=3.0 mid main: force method 0.238843060757
+    FE ne/span=100,200,400,800: 0.238843056131 (rel 1.9e-08)  0.238843060479 (rel 1.2e-09)  0.238843059336 (rel 5.9e-09)  0.238843054593 (rel 2.6e-08)
+  (piecewise-constant EI check of the FE stiffness routine, ngauss=4, rho=1.7):
+    side xi=0.5, beta=1.5, rho=1.7, ngauss=4     closed= 0.572784810127  FE= 0.572784810084  relerr=7.4e-11 OK
+
+====================================================================================================
+F. Haunched results (EI normalised at h_mid; ASSUMPTIONS: I ~ h^n, constant E,
+   parabolic soffit with vertex at main mid-span; side-span haunch length Lc_side;
+   no constant-depth pier segment; FE ne/span=800, 4-point Gauss)
+====================================================================================================
+
+  Cau May (h 2.4 m mid-span, 5.4 m pier) [55, 90, 55]: uniform EI mid side = 0.1632, mid main = 0.7546
+  h_pier/h_mid    n  Lc_side  side xi=.5    shift  neg/pos     xi*  Cm(xi*)     main  neg/pos
+         2.250  2.0     45.0     -0.0242  -0.1874  -1.0165   0.240   0.1451   0.3549  -0.4219
+         2.250  2.0     55.0     -0.0326  -0.1959  -1.0257   0.231   0.1224   0.3483  -0.3955

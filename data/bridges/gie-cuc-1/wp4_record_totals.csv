@@ -1,0 +1,7 @@
+bridge,span,channel,T_record_s,I_whole_record_tare_mm_s,I_whole_record_poly3_mm_s,diff_pct,eps0_equiv_mm
+gie-cuc-1,N1,raw,15.0,26.05,24.27,7.3,0.119
+gie-cuc-1,N1,proc,15.0,26.05,24.27,7.3,0.119
+gie-cuc-1,N2,raw,15.0,3.28,3.88,-15.5,-0.04
+gie-cuc-1,N2,proc,15.0,10.67,12.62,-15.5,-0.13
+gie-cuc-1,N3,raw,15.0,0.71,1.76,-59.8,-0.07
+gie-cuc-1,N3,proc,15.0,3.64,9.05,-59.8,-0.361
