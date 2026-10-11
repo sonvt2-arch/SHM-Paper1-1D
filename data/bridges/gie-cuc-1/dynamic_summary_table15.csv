@@ -1,0 +1,5 @@
+# Source: report Bang 15 / 01 - KQ do dong Gie.xlsx. Moving truck 30-40 km/h, vibration meter SDA-830C, mid-span of each span.
+span,f_vertical_Hz,T_vertical_s,ymax_mm,ymin_mm,one_plus_IM
+N1,5.573,0.179,10.800,7.950,1.152
+N2,5.871,0.170,7.800,6.200,1.114
+N3,6.012,0.166,8.500,6.650,1.122

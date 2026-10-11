@@ -1,0 +1,22 @@
+# Source: 01 - Bao cao kiem dinh cau Gie - thay Moi.docx, Bang 5-8 (measured, static, 3 trucks x 27.5 t, mid-span N1, dial gauges). Girders D1-D5 = unit 1 (DN1), D6-D10 = unit 2 (DN2). Theory = Midas FE (Bang 19). delta_mm = measured deflection after support-settlement correction.
+unit,girder,case,measured_mm,midas_mm,diff_pct
+DN1,D1,centric,2.81,4.73,40.46
+DN1,D2,centric,3.39,5.04,32.80
+DN1,D3,centric,3.61,5.08,29.05
+DN1,D4,centric,3.12,4.91,36.51
+DN1,D5,centric,2.32,4.49,48.27
+DN2,D6,centric,2.13,4.49,52.60
+DN2,D7,centric,3.35,4.91,31.76
+DN2,D8,centric,3.55,5.08,30.09
+DN2,D9,centric,3.59,5.04,28.76
+DN2,D10,centric,3.01,4.73,36.33
+DN1,D1,eccentric,3.28,5.70,42.56
+DN1,D2,eccentric,3.59,5.48,34.44
+DN1,D3,eccentric,3.61,5.04,28.40
+DN1,D4,eccentric,2.87,4.36,34.27
+DN1,D5,eccentric,1.92,3.48,44.71
+DN2,D6,eccentric,3.75,5.54,32.29
+DN2,D7,eccentric,3.86,5.45,29.15
+DN2,D8,eccentric,3.68,5.12,28.04
+DN2,D9,eccentric,3.23,4.57,29.23
+DN2,D10,eccentric,2.13,3.77,43.57
