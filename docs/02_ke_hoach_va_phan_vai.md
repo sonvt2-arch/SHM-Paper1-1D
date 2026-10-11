@@ -92,3 +92,9 @@ Quy tắc chung:
 - Không làm thêm thí nghiệm. Bỏ WP6.
 - Dàn ý trong `docs/04_tong_hop_ket_qua_lo_trinh_A.md` §2 đã được duyệt. Bắt đầu WP7 (viết bản thảo cho *Structures*), sau đó WP8 (phản biện đỏ và kiểm tra).
 - Thái Bình không đưa vào phân tích chính vì mô hình chưa khớp; chỉ nêu ở phần hạn chế và hướng tiếp theo.
+
+## 7. Chốt tạp chí (2026-10-11)
+- Không nộp *Structures*: tác giả đang có 2 bài khác ở đó.
+- **Tạp chí đích: Structural Control and Health Monitoring (Wiley).** Tác giả xác nhận không phải nộp phí; cần kiểm lại ở bước khai báo phí khi nộp (DOAJ ghi APC tối đa 2.370 USD và có chính sách miễn giảm).
+- Dự phòng: Structure and Infrastructure Engineering (cần đổi khung bài sang lập kế hoạch quan trắc và quản lý).
+- Bản làm việc: `manuscript/v2/` → hoàn thiện thành `manuscript/schm/`.
