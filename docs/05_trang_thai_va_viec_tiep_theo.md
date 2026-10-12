@@ -1,6 +1,8 @@
 # Trạng thái và việc tiếp theo
 
-Cập nhật: 2026-10-11. Nhánh: `claude/focused-bell-33lm0n`.
+Cập nhật: 2026-10-12. Trạng thái: **chờ câu trả lời của người lập báo cáo** (bảng câu hỏi `docs/word/Cau_hoi_bo_sung_so_lieu.docx`). Mô tả đầy đủ: `00_MO_TA_CHI_TIET_DU_AN.md`.
+
+Cập nhật trước: 2026-10-11. Nhánh: `claude/focused-bell-33lm0n`.
 
 ## 1. Đã làm
 

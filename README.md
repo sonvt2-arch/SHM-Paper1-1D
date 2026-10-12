@@ -11,7 +11,8 @@ Tác giả: Quoc-Bao Nguyen, Thai-Son Vu (liên hệ), Hung-Son Nguyen – Bộ 
 | J. Civil Structural Health Monitoring | CSHM-D-26-00881 | Từ chối: phạm vi chỉ gồm công trình thật hoặc mô hình có tỷ lệ đủ suy ra công trình (`docs/decision_letter_JCSHM.md`) |
 | **Structural Control and Health Monitoring** | – | **Đích hiện tại.** Gói nộp ở `manuscript/schm/` |
 
-Trạng thái chi tiết và việc còn lại: **`docs/05_trang_thai_va_viec_tiep_theo.md`**.
+**Khi quay lại, đọc trước: `docs/00_MO_TA_CHI_TIET_DU_AN.md`** (toàn bộ bối cảnh, quyết định, kết quả, bản đồ file và việc cần làm khi có câu trả lời).
+Trạng thái ngắn: `docs/05_trang_thai_va_viec_tiep_theo.md`. Bảng câu hỏi gửi người lập báo cáo: `docs/word/Cau_hoi_bo_sung_so_lieu.docx`.
 
 ## Cấu trúc kho
 
