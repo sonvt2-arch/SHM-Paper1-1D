@@ -179,8 +179,9 @@ ax[1].set_title("(b) strain channel: uniform-load moment; dots = strain blind po
 ax[2].set_title(r"(c) strain channel incl. section sensitivity $c/EI$ (assumption $c\propto h$)")
 ax[1].set_ylim(-2.3, 1.1); ax[2].set_ylim(-1.0, 1.1)
 ax[2].set_xlabel("x from end support T5 (m)")
-for gl, xg in (("N8 0.4L", 178.0), ("N8 mid", 172.5), ("N7", 100.0)):
-    ax[0].text(xg, ax[0].get_ylim()[1] * 0.92, gl, fontsize=7, ha="center",
-               bbox=dict(fc="white", ec="none", pad=0.5))
-ax[0].legend(fontsize=7.5, loc="lower center", ncol=3)
+ax[0].set_ylim(-0.65, 0.85)
+for gl, xg, ha in (("N8 0.4L", 178.0, "left"), ("N8 mid", 172.5, "right"), ("N7", 100.0, "center")):
+    ax[0].text(xg + (0.8 if ha == "left" else -0.8 if ha == "right" else 0), 0.78, gl,
+               fontsize=7, ha=ha, bbox=dict(fc="white", ec="none", pad=0.5))
+ax[0].legend(fontsize=7.5, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.02))
 save(fig, "fig_gc_caumay_channels")
