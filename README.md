@@ -35,6 +35,7 @@ Trạng thái ngắn: `docs/05_trang_thai_va_viec_tiep_theo.md`. Bảng câu h�
 | `05_trang_thai_va_viec_tiep_theo.md` | Trạng thái hiện tại, việc còn lại |
 | `06_huong_dan_chia_file_len_drive.md` | Cách chia file lớn (≤ 2 MB/phần) để chuyển từ Drive lên GitHub |
 | `07_prompt_phien_moi.md` | Các prompt mẫu để mở phiên làm việc mới |
+| `08_cap_nhat_2026-10-18_tra_loi_tu_bai_MSSP.md` | Câu trả lời mới trên Drive (từ bảng hỏi bài MSSP) dùng được cho bài này |
 | `novelty_matrix.md`, `reference_check.md` | WP1: tổng quan tính mới, kiểm tra DOI, chọn tạp chí |
 | `wp2_three_span_theory.md` | WP2: nghiệm kín dầm liên tục 3 nhịp |
 | `wp3_continuous_bridges.md` | WP3: Cầu Mây và Thái Bình |
