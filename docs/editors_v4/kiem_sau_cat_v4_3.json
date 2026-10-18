@@ -1,0 +1,128 @@
+{
+  "tu_phien_ban": "/tmp/claude-0/-home-user-SHM-Paper1-1D/e0d84659-e833-593b-82ad-e0ad845000cf/scratchpad/v4_2.md",
+  "den_phien_ban": "/home/user/SHM-Paper1-1D/manuscript/v4/manuscript.md",
+  "dat": false,
+  "thong_ke": {
+    "so_cau_truoc": 1086,
+    "so_cau_sau": 1093,
+    "khoi_thay_doi": 89,
+    "so_tu_truoc": 14616,
+    "so_tu_sau": 14837,
+    "so_tu_tom_tat": 250,
+    "hong_nang": 0,
+    "hong_vua": 2,
+    "hong_nhe": 9,
+    "ly_do_dat_false": "Không có hỏng mức nặng và không có tham chiếu mồ côi, nhưng khoá còn một số vắng ngoài dự kiến: Δx = 0.1 m (§2.4, câu 5 × 10⁻⁶)."
+  },
+  "vuot_pham_vi": [
+    "Chú thích Fig. 9 thêm khẳng định mới 'which is equivalent to both misfits lying within τ at the best-fit α' (không có trong phiếu sửa; đúng về toán nếu misfit hiểu theo log).",
+    "§2.2 thêm câu nối 'The left-hand side of Eq. (5) is the deflection indicator of Section 2.3, Eq. (10), with EI_ref = EI.' (đúng, khớp Eq. 10).",
+    "§5.1 thêm 'Fig. 8 shows the indicators along the girder for the prismatic model and both calibrations.'",
+    "§3 viết lại câu SLM: 'match the growth of this ratio relative to its one-load value of 1.010' (đúng số học: 1.016/1.010, 1.017/1.010)."
+  ],
+  "chua_lam": [
+    "Một tên mỗi khái niệm chưa trọn: chú thích Fig. 6 vẫn viết 'the wheel-path average' thay vì 'gauge average'.",
+    "Nomenclature có LOO nhưng viết tắt LOO không dùng ở đâu trong bài (bài viết đầy đủ 'leave-one-run-out')."
+  ],
+  "hong": [
+    {
+      "id": "H1",
+      "muc": "vua",
+      "loai": "sai_noi_dung_chu_thich_bang",
+      "truoc": "Table 10 cũ: 'The bounds use the design EI and cover all model-form variants.' và 'Calibration B's N8 value in Table 9 exceeds the fixed-pier bound because calibration B has α = 0.716, whereas the bounds use the design rigidity.'",
+      "sau": "Table 8 mới: 'Haunched rows other than calibration B use the design rigidity; the pinned-pier and fixed-pier rows give the extreme values over all model-form variants.' — nhưng dòng 'Haunched, admissible set (τ = 5.3 %)' gồm các mô hình α = 0.51–1.15, và chú thích ᵇ của chính bảng nói 'The upper part of this range requires α ≈ 0.5'.",
+      "de_xuat": "Giới hạn câu cho đúng đối tượng, ví dụ: 'The pinned-pier, fixed-pier and calibration A rows use the design rigidity (α = 1); calibration B has α = 0.716 and the admissible set spans α = 0.51–1.15.'"
+    },
+    {
+      "id": "H2",
+      "muc": "vua",
+      "loai": "mat_pham_vi_va_so",
+      "truoc": "This price is small, because the white-noise term of Eq. (14) is only about 5 × 10⁻⁶ of the offset term for the parameters of Section 5.3 with $\\Delta x = 0.1$ m.",
+      "sau": "This price is small, because for realistic long-span parameters (Section 5.3) the white-noise term of Eq. (14) is only about 5 × 10⁻⁶ of the offset term.",
+      "de_xuat": "Giữ lại 'with Δx = 0.1 m': §5.3 chỉ nêu σ, δ₀ và chiều dài bản ghi, không nêu Δx, nên tỉ số 5 × 10⁻⁶ không tái lập được. 'realistic long-span parameters' cũng là cách nói chung chung hơn bản trước."
+    },
+    {
+      "id": "H3",
+      "muc": "nhe",
+      "loai": "lap_do_ghep",
+      "truoc": "(§4.2) On day 1 most gauges give a constant whose scatter matches the measured noise (Table 3).",
+      "sau": "Câu mở mới 'The constant is stable within the noise for most gauges, but invariance between trucks can be shown only within wide margins.' và hai đoạn sau vẫn còn 'Invariance between trucks can be shown only coarsely.'",
+      "de_xuat": "Rút gọn một trong hai câu, ví dụ đổi câu sau thành 'On day 1 only one gauge, ch11, ...'."
+    },
+    {
+      "id": "H4",
+      "muc": "nhe",
+      "loai": "lap_do_ghep",
+      "truoc": "(§4.3) To test Section 2.4 on real records, the covariance ...",
+      "sau": "Câu mở mới '... because crossing residuals are much less correlated between gauges than vehicle-free noise.' lặp gần nguyên văn câu sau 'The failure on day 2 is itself a finding: crossing residuals are much less correlated between gauges than the vehicle-free noise, 0.63 against 0.90 ...'",
+      "de_xuat": "Bỏ mệnh đề nguyên nhân ở câu mở, hoặc đổi câu sau thành 'The reason is the correlation: 0.63 against 0.90 ...'."
+    },
+    {
+      "id": "H5",
+      "muc": "nhe",
+      "loai": "lap_do_ghep",
+      "truoc": "(§5.2) không có câu mở",
+      "sau": "'The static data leave the constant of the side-span gauge N8 uncertain by a factor of 6.6 ...' rồi ba đoạn sau: 'Over the admissible set, the absolute constant $C_8$ varies by a factor of 6.6 ...'",
+      "de_xuat": "Chấp nhận được (câu mở báo trước kết quả); có thể bỏ '6.6' ở câu sau và viết 'Over the admissible set, $C_8$ spans 3.0–20 × 10⁻⁵ m²/kN, whereas ...'."
+    },
+    {
+      "id": "H6",
+      "muc": "nhe",
+      "loai": "mat_pham_vi",
+      "truoc": "Strain gauges are blind wherever the uniform-load moment vanishes, and nearly blind in a band around these points, including gauges set back from a pier.",
+      "sau": "Strain gauges are blind wherever the uniform-load moment vanishes, and nearly blind in a band around these points.",
+      "de_xuat": "Có thể giữ, vì tóm tắt đã sát 250 từ; nhưng ý 'gauges set back from a pier' là thông điệp thực hành quan trọng (§2.2)."
+    },
+    {
+      "id": "H7",
+      "muc": "nhe",
+      "loai": "doi_nghia_nhe",
+      "truoc": "Public moving-truck records from a five-span box girder support invariance of the constant only coarsely, because the reference weights hardly vary.",
+      "sau": "On public moving-truck records from a five-span box girder, the constant was invariant only within the 10–27 % that noise and run count allow, ...",
+      "de_xuat": "'was invariant only within 10–27 %' có thể bị hiểu là hằng số dao động tới 27 %; thân bài nói 'cannot exclude differences of up to about 27 %'. Gợi ý: 'invariance of the constant could be shown only within ±10–27 %, the margins that noise and run count allow'."
+    },
+    {
+      "id": "H8",
+      "muc": "nhe",
+      "loai": "ten_khai_niem_khong_nhat_quan",
+      "truoc": "–",
+      "sau": "Chú thích Fig. 6: '(a) day 1, second to first 3-axle truck, 12 gauges and the wheel-path average'",
+      "de_xuat": "Đổi thành 'the gauge average (4 wheel-path gauges)' cho khớp Table 3 và Table 4."
+    },
+    {
+      "id": "H9",
+      "muc": "nhe",
+      "loai": "nomenclature",
+      "truoc": "–",
+      "sau": "| LOO, LOTO | leave-one-run-out and leave-one-truck-out cross-validation | — viết tắt LOO không xuất hiện trong bài; ma trận K = αK_g + kK_p ở Phụ lục C và các ký hiệu C_ε, C_θ, C_V mới định nghĩa ở §2.1 không có trong Nomenclature.",
+      "de_xuat": "Bỏ LOO hoặc dùng nó trong Table 6 và Table 7; cân nhắc thêm C_ε, C_θ, C_V."
+    },
+    {
+      "id": "H10",
+      "muc": "nhe",
+      "loai": "mat_thong_tin_nho",
+      "truoc": "The N7 indicator decreases with pier fixity.",
+      "sau": "(bỏ khi gộp Bảng 9–10 thành Bảng 8 và 9)",
+      "de_xuat": "Dữ liệu vẫn có trong Table 8 (0.263 → 0.145), nên không bắt buộc phải khôi phục."
+    },
+    {
+      "id": "H11",
+      "muc": "nhe",
+      "loai": "thu_tu_trich_dan",
+      "truoc": "Table 13 cũ cũng không được trích dẫn trong văn bản",
+      "sau": "Table 12 (sensitivity budget) chỉ xuất hiện ở chú thích bảng, không có câu nào trong bài trích 'Table 12'.",
+      "de_xuat": "Thêm một lời dẫn trong §6 (lỗi có từ trước, không do lần sửa này gây ra)."
+    }
+  ],
+  "khoa": {
+    "dat_script": false,
+    "so_vang_du_kien_da_xac_nhan": ["40", "0.016", "28.4", "0.91", "0.80", "0.27", "10.4 (in-sample)", "31 (CV lane B)", "0.027 (một lần, câu lane B; Table 3 vẫn giữ)", "0.73 (CI GLS)", "0.64 (α, τ = 3 %)", "0.14–0.27 / 0.12–0.30 / [0.9, 1.3] (prior)", "τ = 4 % row: 4.2×10^7–2.0×10^9, 0.54–0.98", "τ = 3 % row: 1.0–3.0×10^8", "pooled 0.92", "'All 23 channel and average rows' (vẫn có ở danh mục Supplementary)"],
+    "so_vang_ngoai_du_kien": ["Δx = 0.1 m (§2.4) — xem H2"],
+    "so_doi_dang": ["0.14–0.42 → 0.144–0.422 (chú thích ᵇ của Table 8)", "0.12–0.82 → 0.124–0.822 (Table 8)"],
+    "so_moi": ["10–27 % (tóm tắt; lấy từ ±10 %, ±11.8 %, ±26.7 % trong Table 4)", "6.6 (tóm tắt, câu mở §5.2, Kết luận 5; khớp C_8 3.0–20 × 10⁻⁵ và N8 0.124–0.822)", "2.64 % (§5.2; √(1.9–2.0² + 1.75²) = 2.58–2.66, ×2 = 5.3 %, đúng)"],
+    "doi_chieu_bang_8_9_moi": "Đã đối chiếu từng ô. Mọi giá trị N_w của Bảng 9 cũ (0.287/0.163/0.755; 0.181/0.105/0.209; 0.476ᵃ/0.377/0.234) và Bảng 10 cũ (0.124–0.822/–/0.190–0.286; 0.023/−0.066/0.263; 0.446/0.375/0.145; 0.144–0.422; 0.341, α = 0.716) đều đúng ô và đúng đối tượng trong Bảng 8 mới. R (0.14/0.08/0.70; 0.18/0.11/0.59; 0.56/0.49/0.77; 0.13–1.00/–/0.56–1.00) và B_m (0.51/–/0.12, k_g = 4.36×10^7) cũng đúng trong Bảng 9 mới. Chỉ có lỗi ở câu chú thích (H1).",
+    "tham_chieu_bang_hinh": "Các bảng được trích lần lượt từ 1 đến 11 theo đúng thứ tự; Table 12 không được trích (có từ trước). Hình được trích theo thứ tự 1 đến 9: Fig. 8 lần đầu ở §5.1, Fig. 9a ở §5.2. Table 9 (B_m) ở §5.2, Table 10 (dự báo), Table 11 (offset), cùng Table 11 trong dòng ngân sách của Table 12, đều trỏ đúng nội dung mới.",
+    "ky_hieu_cu_sot": "Không còn ε₀, P_ε, m_l/m_r, L_m, EI_m (ngoài Eq. 3, đúng như chủ ý), w^⊤, J_r/C_r, r_m, z_j hay 'boundary-conditioning'. K ở Phụ lục C là ma trận độ cứng, không trùng với \\hat k."
+  },
+  "tham_chieu_mo_coi": []
+}
