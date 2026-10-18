@@ -1,0 +1,5 @@
+A = Znidaric & Kalin 2020, J Civ Struct Health Monit (open access, Springer)
+B = Deng et al. 2025, Applied Sciences 15:6028 (MDPI)
+C = our manuscript v4.4 (anonymised)
+r1: X=A, Y=C, Z=B
+r2: X=C, Y=B, Z=A
