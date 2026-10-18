@@ -1,0 +1,175 @@
+{
+  "tu_phien_ban": "v4.1",
+  "den_phien_ban": "v4.2",
+  "dat": false,
+  "ly_do_dat": "Không có hỏng mức nặng, không có tham chiếu mồ côi. Nhưng khoá chưa khớp: có 6 giá trị số vắng mặt nằm ngoài danh sách dự kiến (E_c = 36 057 MPa; L_v = 40 m; số mũ 2.5; vùng trụ cứng ±1.5 m; cận dưới p = 0.13; cận dưới 0.56 của dải 0.56–0.93). Tất cả đều cùng loại với các số đã chuyển sang Supplementary có chủ ý, nên nhiều khả năng danh sách dự kiến bị sót chứ không phải văn bản hỏng; cần xác nhận rồi bổ sung vào danh sách hoặc khôi phục.",
+  "thong_ke": {
+    "so_cau_truoc": 1048,
+    "so_cau_sau": 1118,
+    "cau_giu_nguyen": 742,
+    "cau_them_thuan": 7,
+    "cau_xoa_thuan": 1,
+    "khoi_doi": 121,
+    "cau_cu_trong_khoi_doi": 305,
+    "cau_moi_trong_khoi_doi": 369,
+    "so_tu_truoc": 14107,
+    "so_tu_sau": 14646,
+    "ti_le_tu_doi_theo_ban_truoc": 0.124,
+    "ti_le_chu_doi": 0.13,
+    "mat_do_so_trung_binh_moi_100_tu_doan_tren_40_tu": {"truoc": 10.16, "sau": 9.58},
+    "doan_tren_200_tu_khong_ke_bang": {"truoc": 5, "sau": 6}
+  },
+  "vuot_pham_vi": [
+    "Abstract: bỏ vế giải thích 'because errors during crossings are much less correlated between gauges' và bỏ câu 'one pier tiltmeter would close this gap'. Phiếu sửa không yêu cầu đổi nội dung Abstract; việc (a) chỉ là giảm mật độ số.",
+    "Abstract: 'on two- and three-span and haunched girders' thành 'on continuous and haunched girders', tức mở rộng phạm vi tuyên bố.",
+    "§5.3: thay tiêu chí chọn vị trí 'whether the noise is set by the strain resolution or by the offset' bằng 'follow the measured noise of the strain instrumentation', làm đổi nội dung lập luận.",
+    "§2.4: 'This price is small' thành 'This price is negligible', tức rào nhẹ hơn và tuyên bố mạnh hơn.",
+    "§5.4 (cuối): 'would close the gap' thành 'would discriminate between the reference calibrations'. Phiếu (e) chỉ yêu cầu sửa Kết luận 5; câu mới vẫn đúng nhưng đổi điều được khẳng định."
+  ],
+  "chua_lam": [
+    "(c) mỗi ký hiệu một nghĩa: g vẫn mang hai nghĩa. Nomenclature định nghĩa g(x) là 'weighting function applied along a record', nhưng §2.5 còn 'Every static response then scales as $\\alpha^{-1}g(\\kappa)$'.",
+    "(c) 'offset-immune' → 'zero-sum': danh từ 'Offset immunity' còn hai chỗ (§2.4: 'Offset immunity helps only if the disturbance is common-mode...'; §4.3: 'Offset immunity therefore pays only for disturbances...'). Không sai về nghĩa, nhưng lệch với thuật ngữ mới.",
+    "(a) tách đoạn dài: đoạn Mở đầu 'The identity behind all of these methods is classical...' tăng lên 204 từ, và đoạn đầu Phụ lục C 'Let $G = K^{-1}$...' (243 từ) chưa tách. Mức nhẹ."
+  ],
+  "hong": [
+    {
+      "id": "H1",
+      "muc": "vua",
+      "loai": "đổi nghĩa / mất phạm vi khi thay ký hiệu (định nghĩa γ)",
+      "truoc": "where $\\rho_L$ and $\\rho_{EI}$ are the span and stiffness ratios of the adjacent to the instrumented span of the two-span beam, and $\\beta = L_m/L_s$ and $\\rho_{EI} = EI_m/EI_s$ for three spans.",
+      "sau": "Here $\\lambda = L_2/L_1$ is the span ratio of the two-span beam, $\\beta = L_m/L_s$ the main-to-side span ratio of the three-span beam, and $\\gamma$ the rigidity of the adjacent (two spans) or main (three spans) span relative to the instrumented span.",
+      "de_xuat": "Ghi tường minh γ = EI_2/EI_1 (hai nhịp) và γ = EI_m/EI_s (ba nhịp), ở §2.2 và trong Nomenclature. Định nghĩa 'relative to the instrumented span' sai khi cảm biến đặt ở nhịp giữa: Phụ lục A dùng γ trong ν cho cảm biến nhịp giữa, mà khi đó γ vẫn phải là EI_m/EI_s. Cụm EI_m/EI_s đã biến mất khỏi bài."
+    },
+    {
+      "id": "H2",
+      "muc": "vua",
+      "loai": "tham chiếu hình sai + mất phạm vi lập luận",
+      "truoc": "This ranking changes when the section gain is included. ... The choice therefore depends on whether the noise is set by the strain resolution or by the offset.",
+      "sau": "The two rankings therefore disagree, and Fig. 8c gives both, so that the choice can follow the measured noise of the strain instrumentation.",
+      "de_xuat": "Fig. 8c chỉ vẽ chỉ số có kể hệ số mặt cắt; xếp hạng theo N_M nằm ở Fig. 8b. Sửa thành 'Figs. 8b and 8c give both' và khôi phục tiêu chí cũ: chọn theo việc nhiễu do độ phân giải biến dạng hay do offset quyết định."
+    },
+    {
+      "id": "H3",
+      "muc": "vua",
+      "loai": "thuật ngữ/ký hiệu lệch (ký hiệu cũ sót, xung đột với nghĩa mới)",
+      "truoc": "Every static response then scales as $\\alpha^{-1}g(\\kappa)$ with $\\kappa = k/\\alpha$.",
+      "sau": "Every static response then scales as $\\alpha^{-1}g(\\kappa)$, where $\\kappa = k/\\alpha$ is the scaled pier stiffness; ... (Nomenclature: '$g(x)$ | weighting function applied along a record')",
+      "de_xuat": "Đổi g(κ) ở §2.5 sang một ký hiệu khác chưa dùng (ví dụ φ(κ)), hoặc viết bằng lời 'a function of κ only'."
+    },
+    {
+      "id": "H4",
+      "muc": "vua",
+      "loai": "mất câu loại trừ hiểu nhầm (Abstract)",
+      "truoc": "Out of sample, GLS weights built from vehicle-free noise were worse than the gauge average (20.4 % against 11.9 % mean absolute error), because errors during crossings are much less correlated between gauges.",
+      "sau": "Out of sample, GLS weights estimated from vehicle-free noise performed worse than the gauge average (20.4 % against 11.9 % mean absolute error).",
+      "de_xuat": "Khôi phục vế 'because errors during crossings are much less correlated between gauges'. Thiếu vế này, người đọc Abstract có thể hiểu GLS tự thân kém, trái với kết luận của bài (lỗi nằm ở mô hình hiệp phương sai)."
+    },
+    {
+      "id": "H5",
+      "muc": "nhe",
+      "loai": "mất phạm vi (Abstract)",
+      "truoc": "From them follow closed-form blind loci for deflection, strain, rotation and reaction channels on two- and three-span and haunched girders. ... one pier tiltmeter would close this gap.",
+      "sau": "Closed forms give the blind loci of deflection, strain, rotation and reaction channels on continuous and haunched girders. ... while the centre-span gauge is well determined.",
+      "de_xuat": "Giữ 'two- and three-span' để khỏi tuyên bố cho mọi dầm liên tục. Cân nhắc giữ ý biện pháp (tiltmeter trên trụ) theo cách diễn đạt của Kết luận 5."
+    },
+    {
+      "id": "H6",
+      "muc": "nhe",
+      "loai": "mất neo / đại từ mơ hồ",
+      "truoc": "This also links the standard-load method to transmissibility-based weighing [34]: a transmissibility is a ratio of response spectra, and at zero frequency a ratio of spectra equals the ratio of the record integrals that the standard-load method uses.",
+      "sau": "It also links SLM to transmissibility-based weighing [34], because at zero frequency a ratio of response spectra equals the ratio of record integrals.",
+      "de_xuat": "Khôi phục mắt xích 'a transmissibility is a ratio of response spectra', và đổi 'It' thành 'This uniformity' để có tiền ngữ rõ."
+    },
+    {
+      "id": "H7",
+      "muc": "nhe",
+      "loai": "đổi mức rào",
+      "truoc": "This price is small, because the white-noise term is a minute fraction of the offset term",
+      "sau": "This price is negligible, because the white-noise term of Eq. (14) is only about 5 × 10⁻⁶ of the offset term for the parameters of Section 5.3 with $\\Delta x = 0.1$ m.",
+      "de_xuat": "Trả về 'small', hoặc giữ 'negligible' nếu tác giả đồng ý với mức khẳng định mạnh hơn."
+    },
+    {
+      "id": "H8",
+      "muc": "nhe",
+      "loai": "câu cụt do tách câu / mất đối tượng",
+      "truoc": "The four gauges without axle spikes fail the invariance test.",
+      "sau": "The four gauges without axle spikes fail.",
+      "de_xuat": "Nêu rõ trượt phép thử nào: 'fail both the χ² test and the invariance test'."
+    },
+    {
+      "id": "H9",
+      "muc": "nhe",
+      "loai": "thuật ngữ còn sót",
+      "truoc": "Offset immunity helps only if ... / Offset immunity therefore pays only ...",
+      "sau": "Offset immunity helps only if the disturbance is common-mode during the crossings themselves ... / Offset immunity therefore pays only for disturbances that are common-mode during crossings",
+      "de_xuat": "Thay bằng 'The zero-sum estimator helps only if ...' và 'The zero-sum estimator therefore pays only ...', cho khớp với (c)."
+    },
+    {
+      "id": "H10",
+      "muc": "nhe",
+      "loai": "tham chiếu kém chính xác",
+      "truoc": "(Table 10; Supplementary Fig. S2)",
+      "sau": "(Section 6; Supplementary Fig. S2)",
+      "de_xuat": "Trỏ thẳng 'Table 13' (dòng 'Speed effect'), vì Section 6 chỉ chứa giá trị này trong bảng."
+    },
+    {
+      "id": "H11",
+      "muc": "nhe",
+      "loai": "Nomenclature",
+      "truoc": "| $\\rho_{EI}$ | stiffness ratio ...; $EI_m/EI_s$ (three spans) |",
+      "sau": "| $F_A$ | end-support reaction |  ...  | $r^2$ | coefficient of determination | (xếp giữa các chữ viết tắt LOTO và TOST)",
+      "de_xuat": "Thêm đơn vị (kN) cho F_A. Chuyển r² lên nhóm ký hiệu. Cân nhắc thêm J (không chỉ số), dùng trong J = CP, J_t/J_0, J_j."
+    },
+    {
+      "id": "H12",
+      "muc": "nhe",
+      "loai": "khẳng định mới chưa có trong bản trước",
+      "truoc": "| 2, lane B, average | ... | 0.749 (0.440–1.276) | fails χ² |",
+      "sau": "| 2, lane B, average | 0.749 (0.440–1.276) | not tested; fails χ² (Table 3) |",
+      "de_xuat": "Xác nhận với tác giả rằng TOST thực sự không chạy cho lane B; nếu có chạy thì ghi 'not shown'."
+    }
+  ],
+  "khoa": {
+    "cong_cu": "kiem_khoa.py so --json",
+    "dat_cong_cu": false,
+    "tong_khoa_goc": 1060,
+    "thieu": 79,
+    "la": 68,
+    "can_xem": 43,
+    "cong_thuc_doi_du_kien": "58 khoá công thức vắng / 56 lạ đều do đổi ký hiệu theo (c): ρ_L→λ, ρ_EI→γ, η→ζ, I_r/I/I_j→J_r/J/J_j, R_A→F_A, N_R→N_F, T_cr→t_cr, P̂_imm→P̂_zs; dấu phẩy cuối Eq. (4), (6), (7), (8) đổi thành dấu chấm; $\\xi_0$/$0.75L$ → $\\xi_0 = 0.75$; $I\\propto h^2$ → 'second moment proportional to $h^2$'; $\\eta_0$ chính văn → Bảng 1/Phụ lục A ($\\zeta_0 = 0.177$). Kiểm từng cái: không có công thức nào đổi nội dung toán.",
+    "cong_thuc_vang_khong_do_ky_hieu": [
+      "$EI_m/EI_s$ (định nghĩa γ cho ba nhịp; xem H1)",
+      "$E_c = 36\\,057$ MPa (§5.1)",
+      "$\\sigma^2\\Delta x/(\\varepsilon_0^2L_\\mathrm{tot})$ và $L_\\mathrm{tot} = 220$ (chuyển thành tham chiếu đến §5.3, nơi vẫn có σ = 0.01 mm, ε0 = 0.1 mm, 220 m: đúng)",
+      "$\\kappa = 10^7$ (đi cùng 1.126, đã dự kiến), $m_l = m_r = \\mu/\\beta^2$ (vẫn có ở Phụ lục A), $2\\cos(\\pi/9)$ (vẫn có ở §2.2), $L_v$ = 40, 45 (biến thể mô hình đã chuyển sang Supplementary)"
+    ],
+    "so_vang_du_kien_da_xac_nhan": ["0.71", "96", "10^5", "16.2", "32.5", "19.4", "13.3", "16.1", "0.69", "0.93", "5.482", "59.61", "45", "3.2", "1.126", "1.091"],
+    "so_vang_ngoai_du_kien": [
+      {"chuoi": "36 057 (E_c, MPa)", "ghi_chu": "Bị bỏ cùng câu chứa 5.482/59.61. Supplementary (ix) ghi 'design section properties', không nói rõ có mô đun đàn hồi."},
+      {"chuoi": "40 (L_v = 40 m)", "ghi_chu": "Bị bỏ cùng biến thể 45 m, đã chuyển vào 'model-form variants (Supplementary Material)'."},
+      {"chuoi": "2.5 (số mũ biến thể)", "ghi_chu": "Bị bỏ cùng 3.2; số lần 2.5 giảm từ 11 xuống 10."},
+      {"chuoi": "1.5 (vùng trụ cứng ±1.5 m)", "ghi_chu": "Bị bỏ cùng biến thể; số lần giảm từ 5 xuống 4."},
+      {"chuoi": "0.13 (cận dưới χ² p của tám gauge)", "ghi_chu": "Đi cặp với 0.71 (đã dự kiến); Supplementary (iv) giờ ghi 'with all χ² p-values'."},
+      {"chuoi": "0.56 (cận dưới dải 0.56–0.93 của hằng số biến dạng tương đối)", "ghi_chu": "Đi cặp với 0.93 (đã dự kiến); 0.56 vẫn còn ở chỗ khác (R của Bảng 9 và Bảng 10)."}
+    ],
+    "so_vang_bao_dong_gia": ["0.177 (vẫn còn ở Phụ lục A: $\\zeta_0 = 0.177$)", "1.7006 (vẫn còn trong Eq. (8), Bảng 1, Kết luận 1: $\\beta = 1.7006$)"],
+    "so_giam_so_lan_da_kiem": "0.92 (8 xuống 6: gộp 'gave 0.92 and 0.92', và Kết luận 3 đổi sang 0.90 theo phiếu e); 6.0 và 18.6 (bỏ CI lặp trong văn, vẫn còn ở Bảng 6); |N_w|<0.2, |N_M|<0.2, τ = 4, w^T C = 1, σ = 0.01, ε0 = 0.1, C∞/C0 (bỏ lặp, định nghĩa vẫn còn). Không mất số liệu.",
+    "tham_chieu_va_viet_tat": "Mất 'Section 7' (câu cũ đã bỏ; Mục 7 vẫn tồn tại). T1/T2 thay bằng lời trong chú thích Bảng 4. Thêm SD (6 lần, có trong Nomenclature).",
+    "rao_don": "'could' 1→2 do phiếu e ('could not resolve differences smaller than'): đúng ý. 'can' 13→14 ở 'the choice can follow...' (xem H2). Không bỏ rào nào."
+  },
+  "tham_chieu_cheo": {
+    "bang": "Bảng 1–13 và A.1 đều có tiêu đề và được trỏ đúng nội dung mới: Bảng 3 (C, CV, χ²), Bảng 4 (tỉ số, TOST), Bảng 5 (tương quan), Bảng 6 (MAE), Bảng 7 (SD dự báo + MAE), Bảng 8 (tập chấp nhận), Bảng 9 (ba mô hình tham chiếu), Bảng 10 (dải, cận, B_m), Bảng 11 (dự báo), Bảng 12 (độ lệch do offset), Bảng 13 (ngân sách sai số). Số liệu chuyển giữa bảng khớp với bản trước.",
+    "phuong_trinh": "Eq. (1)–(16) đầy đủ; mọi tham chiếu trỏ đúng. 981 kiểm tra FE chuyển sang Phụ lục B, có trỏ '(Appendix B)'. 4.4 × 10⁻⁷ chuyển sang Phụ lục C, có trỏ '(FE check in Appendix C)'.",
+    "hinh": "Fig. 1–9 trỏ đúng, trừ 'Fig. 8c gives both' (H2). Fig. 9b có 'valley of best static fit α*(κ)', khớp câu α* = 1.07.",
+    "muc": "Mọi tham chiếu Mục 2.2–6 trỏ đúng. 'parameters of Section 5.3' khớp (σ = 0.01 mm, ε0 = 0.1 mm, 220 m). 'record used in Section 6' khớp với L_tot = 200 m ở Bảng 12.",
+    "ky_hieu_cu_con_sot": "Không còn ρ_L, ρ_EI, I_r, I_j, R_A, N_R, η_0, T_cr, 'sd'. 'offset-immune' chỉ còn ở chú thích Hình 4 (có giải thích nhãn) và nhãn 'immune-eq' của Hình 7 (có giải thích). Còn danh từ 'Offset immunity' (H9) và g(κ) (H3).",
+    "nomenclature": "Ký hiệu mới đều có mục (λ, γ, ζ, J_r, F_A, N_F, t_cr, g(x), m_l/m_r, I, SD, r²). Thiếu đơn vị cho F_A; J, J_j, J_t, z_j không có mục riêng (nhẹ). Không có mục nào thừa."
+  },
+  "phieu_da_lam_dung": [
+    "(b) tách và đánh lại số bảng: đúng, không mất giá trị.",
+    "(d) SLM định nghĩa ở Mở đầu; BPM/SLM ở cuối §2.1; zero-sum định nghĩa ở Mở đầu ('with channel weights that add up to zero').",
+    "(e) Kết luận 3 dùng 0.90; α* = 1.07 được giải thích; Kết luận 5 nêu Cramér–Rao 0.87→0.18; 'standard uncertainty of 2.64 %'; ξ0 = 0.75; 0.59 có chiều; 'moving across'; 'could not resolve differences smaller than'.",
+    "Kiểm khoa học: κ của hiệu chỉnh B = 1.2e8/0.716 = 1.68e8 (đúng). Độ lệch SLM 0.61/0.70 % = 1.016/1.010 và 1.017/1.010 (đúng). 0.476 > 0.446 (đúng với câu 'exceeds the fixed-pier bound'). Pinned→fixed: N8 ×14.0, N7 còn 0.59 (đúng chiều). Không có số nào bị gán sai cầu, sai ngày hay sai hiệu chỉnh."
+  ],
+  "tham_chieu_mo_coi": []
+}
