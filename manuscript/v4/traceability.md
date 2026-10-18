@@ -79,7 +79,7 @@ As V3-T §3 (25 mm, 2.03 mm, 16 530 mm⁴, 200 GPa, 2500 mm, 61.54 mm²/N, 0.005
 | 13–28 m/s; +6 % (−23 to +35 %) | NV4 TASK 2 d2A avg truck+v +6.3 [−22.7, +35.4]; speed ranges 13.2–28.1 m/s |
 | 1227, 3405 windows | NV4 TASK 3 |
 | 0.92 (0.83–0.96); 13.7–32.8 µε m; 0.42 (0.26–0.54) | NV4 TASK 3 |
-| Table 4 (all entries) | NV4 TASK 4 LOO and LOTO blocks; predicted sd column "pred.sd"; day-1 wheel-path worst single = ch4 12.1 |
+| Table 5 (all entries) | NV4 TASK 4 LOO and LOTO blocks; predicted sd column "pred.sd"; day-1 wheel-path worst single = ch4 12.1 |
 | +8.5 points (+2.3 to +15.1) | `docs/pkg1/v4_norbwim_reanalysis.md` §4 paired bootstrap; `results/v4_estimator_paired.csv` |
 | 12.7 % vs 19.8 % | NV4 day2 LOO pred.sd GLS 12.7, average 19.8 |
 | average 5.3, GLS 5.8, best single 4.8 | NV4 day1 12ch LOO |
@@ -112,7 +112,7 @@ As V3-T §3 (25 mm, 2.03 mm, 16 530 mm⁴, 200 GPa, 2500 mm, 61.54 mm²/N, 0.005
 | prior α ∈ [0.9, 1.3]: 0.14–0.27 / 0.12–0.30 | IF "τ = 5.27 % static + prior alpha" (alpha-ref [0.144, 0.267]; design-ref [0.124, 0.297]) |
 | C8 3.0 × 10⁻⁵–2.0 × 10⁻⁴; factor 6.6; C7 3.3–5.0 × 10⁻⁴ | IF τ = 5.27 % static only (C8 [3.00e-05, 1.98e-04]; C7 [3.28e-04, 4.95e-04]); DER 1.98/0.300 = 6.6 |
 | k_g 4.36 × 10⁷; 14.0; 0.59; 0.63; B_m 0.51, 0.12; 6.5 vs 1.5 | V3-T §5 |
-| Table 5 | V3-T §5 (A′ column removed); αEI column from IS N8a |
+| Table 7 | V3-T §5 (A′ column removed); αEI column from IS N8a |
 | 0.341 | IS l. 6 (κ = 1.679e8: N8 index αEI 0.341) |
 | 3.43–3.64 Hz | IF (N6 3.43 … N7 3.64) |
 | 26.0–33.3 m; 0.048; 0.163–0.212; 0.65–1; 5–10 m; ≥ 0.39; one fifth; 0.47–0.61 | V3-T §5 (1A §3) |
@@ -123,7 +123,7 @@ As V3-T §3 (25 mm, 2.03 mm, 16 530 mm⁴, 200 GPa, 2500 mm, 61.54 mm²/N, 0.005
 | 167 µrad | IFI κ = 2.748e7 row (rotT7 = 167.3 µrad) |
 | CRB at A: κ 2.75 × 10⁷, α* 1.07; σ 2.64 %, rotation 3 % assumed; 0.87 → 0.18; 0.24 | IFI header (static 2.64 %, rotation 3.0 % [NEED VALUE] in log, i.e. assumed) and κ = 2.748e7 block (sd ln C8 0.865; +rot T7 0.177; +f1+f3 0.237) |
 | singular at B; 0.04 with tiltmeter | IFI κ = 1.679e8 block (FIM singular; +rot T7 0.040) |
-| Table 6 | V3-T §5 (FP); frequency-ratio row moved to the supplement |
+| Table 8 | V3-T §5 (FP); frequency-ratio row moved to the supplement |
 | factor 2.3 | DER 0.284/0.121 |
 
 ## Section 6
@@ -133,11 +133,11 @@ As V3-T §3 (25 mm, 2.03 mm, 16 530 mm⁴, 200 GPa, 2500 mm, 61.54 mm²/N, 0.005
 | ≤ 1 % at ≥ 8; > 15 % below 2.5 | V3-T §6 (S05) |
 | 200 m; 25.06 t | V3-T §6 |
 | 0.23 mm | V3-T §6 (WP4); now described as drift before re-zeroing (editor 4 concern 6) |
-| Table 7 (all entries) | V3N Part A rows "N7 static set max C", "N7 joint set min C" (= static min), "N8 static set max C", "N8 joint set min C" (= static min, IF C8 3.00e-05) |
+| Table 9 (all entries) | V3N Part A rows "N7 static set max C", "N7 joint set min C" (= static min), "N8 static set max C", "N8 joint set min C" (= static min, IF C8 3.00e-05) |
 | 16–25 %; 41–271 % | V3N Part A |
 | 0.79; 2.05 mm, 13 %; 0.92 | NV4 lane; V3-T §6; NV4 superposition |
 | 12.4 s | V3-T §6 |
-| Table 8 | rows above; "6.6-fold" DER as in §5 |
+| Table 10 | rows above; "6.6-fold" DER as in §5 |
 | 5–12 % | NV4 LOO MAE of average/GLS (day 1 ≈ 5 %, day 2 11.9 %) |
 | 0.6–0.7 % | Table 2 |
 
@@ -148,3 +148,33 @@ As above and V3-T. Appendix D (laboratory data) moved unchanged to the Supplemen
 ## Word counts
 
 `python3 code/analysis/wp7b_checks.py manuscript/v4`: abstract 251 words; main text (Sections 1–8, prose only) about 7,430 words; 16 numbered equations, all cited. Abstract to end of Appendix C including tables and nomenclature: about 10,200 words (same counting rule, inline math = 1 word).
+
+## Readability revision (v4.1): numbers moved between prose and tables
+
+The readability pass (see `readability_changes.md`) changed no value. Tables were renumbered: new Table 4 (noise and crossing residuals) and new Table 6 (admissible set against τ) were inserted, so v4 Tables 4, 5, 6, 7, 8 are now Tables 5, 7, 8, 9, 10. Sources of every value are unchanged and are listed above under their section. Values that moved:
+
+| Value | Was in | Now in | Source (unchanged) |
+|---|---|---|---|
+| ch11 90 % CI 0.904–1.098 | §4.2 prose | Table 3, ch11 row, Equivalence column (TOST uses the 90 % CI; caption says so) | NV4 d1A ch11 |
+| CV 5.8–13.5 %, χ² p 0.13–0.71 (eight gauges) | §4.2 prose | Table 3, new row "eight gauges consistent with the noise" | NV4 d1A rows ch3–ch7, ch10–ch12 |
+| residual/noise variance 2.9–5.1 | §4.2 prose | Table 3, row ch1, ch2, ch8, ch9 | NV4 residual var / quiet var |
+| lane-B χ² p 0.016–0.027, CV 31–40 % | §4.2 prose | Table 3, new row "lane B, range over channels" | NV4 d2B |
+| 0.955 (0.863–1.057); 0.996 | §4.2 prose | Table 3 only (already there) | NV4 d1A |
+| speed slope +6 % per 10 m/s (−23 to +35 %) | §4.2 prose | Table 10 only (already there) | NV4 TASK 2 |
+| 1227, 3405 windows; 0.92 (0.83–0.96); 0.42 (0.26–0.54); 13.7–32.8 µε m | §4.3 prose | Table 4 (0.92 and 0.42 also kept in prose) | NV4 TASK 3 |
+| 0.63; 0.30–0.37; 0.90 | §4.3 prose | Table 4 (0.63 and 0.90 also kept in prose) | NV4 TASK 4 diagnostic |
+| +0.16 on st40, −0.35 on st36 | §4.3 prose | Table 4 | reanalysis §4 |
+| 21.0 % and 14.6 % | §4.3 prose | Table 4 | NV4 TASK 4 diagnostic |
+| 10.4 % vs 28.4 % | §4.3 prose | Table 4 | NV4 GLS-resid IN/LOO RMS |
+| 20.3 %; 12.7 % vs 19.8 %; day 1 5.3/5.8/4.8 % | §4.3 prose | Table 5 only (already there) | NV4 TASK 4 |
+| −1.49, −5.85 µε m/t | §4.4 prose | Table 3 only (already there) | NV4 d1A |
+| κ ≥ 1.8 × 10⁷ (also kept in prose), α 0.51–1.15; τ = 3 %: κ 1.0–3.0 × 10⁸, α 0.64–0.80; τ = 4 %: κ 4.2 × 10⁷–2.0 × 10⁹, α 0.54–0.98 | §5.2 prose | Table 6 | IS |
+| N8 0.14–0.42 (αEI; also kept in prose), 0.12–0.82 (design), α ≈ 0.5; prior α ∈ [0.9, 1.3]: 0.14–0.27 / 0.12–0.30 | §5.2 prose | Table 6 | IS; IF |
+| C8 3.0 × 10⁻⁵–2.0 × 10⁻⁴ | §5.2 prose | Table 6 | IF |
+| B_m 0.51 (N8), 0.12 (N7) | §5.2 prose | Table 7, new column $B_m$ | V3-T §5 |
+| 0.341 (B, αEI normalisation) | §5.2 prose | Table 7, column B, N8 row | IS l. 6 |
+| 0.476 | §5.2 prose | Table 7 only (already there) | V3-T §5 |
+| Abstract: 1.2 %, 2.0–2.2 %, 0.98 (0.70–1.37), 0.63, 0.92, 55 + 90 + 55 m, 0.14–0.42, 0.1 mm, 25 t, 16–25 % | Abstract | removed from the abstract only; each value remains in the body (1.2 % as Table 2's +1.10/+1.19 %) | as listed under Abstract |
+| Abstract: factor 6.6 | §5.2, Table 10 | also in the abstract | IF, DER 1.98/0.300 |
+
+`code/v4/num_diff.py manuscript/v4/manuscript_pre_readability.md manuscript/v4/manuscript.md` confirms that no distinct numeric value disappeared and none appeared.

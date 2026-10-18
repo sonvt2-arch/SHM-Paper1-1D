@@ -49,11 +49,13 @@ Removed from the v4 supplement: v3 S1 (SLM, superseded by the out-of-sample esti
 | Table 1 | Blind loci by channel | as v3 (GCR T1, T2; VG group E) |
 | Table 2 | Laboratory identified loads | as v3 |
 | Table 3 | Field constants and invariance, representative rows; full 23-row table in the supplement | `code/norbwim/logs/v4.log` TASK 1; `results/v4_invariance.csv` |
-| Table 4 | Out-of-sample estimator comparison | `v4.log` TASK 4; `results/v4_estimators.csv`, `v4_estimator_errors.csv` |
-| Table 5 | Cầu Mây deflection indicators (A′ column removed; αEI column added) | `ident_static.log`; `ident_freq.log` |
-| Table 6 | Predicted discriminating measurements (frequency-ratio row moved to the supplement) | `code/fieldplan/results/fieldplan_compute.log` |
-| Table 7 | Offset bias at Cầu Mây over the static admissible set | `code/v3/logs/v3_numbers.log` Part A |
-| Table 8 | Indicative sensitivity budget (speed measurement row added) | values from Sections 3–6 |
+| Table 4 | Vehicle-free noise and crossing residuals (new in the readability revision; values moved from §4.3 prose) | `v4.log` TASK 3, TASK 4 diagnostic; `docs/pkg1/v4_norbwim_reanalysis.md` §4 |
+| Table 5 | Out-of-sample estimator comparison | `v4.log` TASK 4; `results/v4_estimators.csv`, `v4_estimator_errors.csv` |
+| Table 6 | Cầu Mây static admissible set against the tolerance τ (new in the readability revision; values moved from §5.2 prose) | `ident_static.log`; `ident_freq.log` |
+| Table 7 | Cầu Mây deflection indicators (A′ column removed; αEI column added) | `ident_static.log`; `ident_freq.log` |
+| Table 8 | Predicted discriminating measurements (frequency-ratio row moved to the supplement) | `code/fieldplan/results/fieldplan_compute.log` |
+| Table 9 | Offset bias at Cầu Mây over the static admissible set | `code/v3/logs/v3_numbers.log` Part A |
+| Table 10 | Indicative sensitivity budget (speed measurement row added) | values from Sections 3–6 |
 | Table A.1 | Three-span $\xi^*$ and $N_w$ | as v3 |
 
 Moved to the supplement: Appendix D (Table D.1, laboratory data); the joint (static + frequency) admissible set and its column in Table 4 of v3.

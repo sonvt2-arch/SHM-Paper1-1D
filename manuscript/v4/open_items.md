@@ -8,7 +8,7 @@ Items that cannot be closed from the repository. The authors decided that no fur
 |---|---|---|
 | A1 | Title | Current: "Blind loci and design criteria for integral load-monitoring channels on continuous girder bridges, with laboratory verification and an assessment on public field records". Alternatives: (i) "Where can an influence-area integral see the load? Design criteria for continuous girders, verified in the laboratory and assessed on public field records"; (ii) "Designing integral load-monitoring channels for continuous girders: blind loci, identifiability and what field records can and cannot confirm". Choose one; the cover letter must follow. |
 | A2 | Threshold convention | §2.3 keeps $|N_w|<0.2$ and $|N_M|<0.2$ and states that they correspond to 8 % and 20 % of the simply supported mid-span value. Alternative: renormalise $N_w$ by $384EI/(5L^4)$ so that both equal 1 for the simply supported reference; this would rescale every $N_w$ value (Tables 5, A.1, Figs. 2, 3, 8, 9) by 0.4 and change the deflection near-blind bands, which would then have to be recomputed with `code/theory2/gc_theory.py`. Not done in v4. |
-| A3 | Field-test predictions (Table 6) | Kept as predictions. Remove if the Cầu Mây moving-load test will not be carried out. |
+| A3 | Field-test predictions (Table 8) | Kept as predictions. Remove if the Cầu Mây moving-load test will not be carried out. |
 | A4 | Comparison with the original NOR-BWIM accuracy | §4.5 carries `[NEED VALUE]` for the GVW accuracy reported in refs [41–43] (Moghadam et al.) for the same bridge. The papers are paywalled and were not read; supply the value or delete the clause. |
 | A5 | Yan et al. 2022 [34] | Cited from its Crossref record (title, authors, volume, article number). The full text was not read; the sentence in §1 describes the method only from its title and the general property of transmissibilities at zero frequency. Check against the paper. |
 | A6 | Three-load order | As in v3: order chosen by fit (§3). Confirm or supply the laboratory log. |
@@ -18,7 +18,7 @@ Items that cannot be closed from the repository. The authors decided that no fur
 
 | # | Item | Location |
 |---|---|---|
-| B1 | Accuracy class of laboratory weights | Table 8 row "Reference weighing" |
+| B1 | Accuracy class of laboratory weights | Table 10 row "Reference weighing" |
 | B2 | Dial-gauge instrument type, fixed reference datum, temperature correction, load-hold time, zero-reading procedure (editor 4) | §5.1 |
 | B3 | GVW accuracy of the original NOR-BWIM system on the same bridge | §4.5 |
 | B4 | Repository and DOI for the Cầu Mây processed data | Data Availability; cover letter |
@@ -47,7 +47,7 @@ Items that cannot be closed from the repository. The authors decided that no fur
 | D4 | Yan, Hao, Yuen and Papadimitriou [34] | Crossref: MSSP 177 (2022) 109133. Added (see A5). |
 | D5 | Self-citation count (rule VII.8) | `kiem_tu_trich.py dem`: 0 matches with the supervisor's list; within the limit. |
 | D6 | Figure re-plots | Logs and result files unchanged after rerunning `gc_figures.py`, `multisensor_figures.py`, `ident_static.py`, `nb_v4.py` (git status shows only figure files and the label edits in the scripts). |
-| D7 | Multiple presence on a 200 m unit; within-lane wander; speed variation along 605 m | Not quantified; stated as limitations (§6, Table 8). |
+| D7 | Multiple presence on a 200 m unit; within-lane wander; speed variation along 605 m | Not quantified; stated as limitations (§6, Table 10). |
 
 ## E. Carried over and still open
 
