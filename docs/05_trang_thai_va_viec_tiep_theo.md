@@ -1,8 +1,17 @@
 # Trạng thái và việc tiếp theo
 
-Cập nhật: 2026-10-12. Trạng thái: **chờ câu trả lời của người lập báo cáo** (bảng câu hỏi `docs/word/Cau_hoi_bo_sung_so_lieu.docx`). Mô tả đầy đủ: `00_MO_TA_CHI_TIET_DU_AN.md`.
+Cập nhật: 2026-10-18. Trạng thái: **v4.4 chuẩn bị nộp SCHM; chờ thầy điền [NEED VALUE]**. Trước đó (2026-10-12): chờ câu trả lời của người lập báo cáo (bảng câu hỏi `docs/word/Cau_hoi_bo_sung_so_lieu.docx`). Mô tả đầy đủ: `00_MO_TA_CHI_TIET_DU_AN.md`.
 
 Cập nhật trước: 2026-10-11. Nhánh: `claude/focused-bell-33lm0n`.
+
+## Cập nhật 2026-10-18 (khuya): bản v4.4, chuẩn bị nộp
+- **Bản hiện tại: `manuscript/v4/manuscript.md`** (Word/PDF: `manuscript/v4/word/`). Các vòng sửa độ dễ đọc v4.1–v4.4 và điểm chấm: `docs/editors_v4/00_doc_mu_tong_hop.md`.
+- Thầy chọn rút phạm vi: mục 4 (NOR-BWIM) rút gọn; bảng chi tiết sang Supplementary S1–S5; mọi số chuyển đi ghi ở `manuscript/v4/supplementary_moved_values.md`.
+- Hiệu chuẩn người chấm (`docs/editors_v4/hieu_chuan/`): cùng người chấm, bài mình 6,95 > Žnidarič & Kalin 2020 (JCSHM) 6,4 > Deng et al. 2025 (MDPI) 3,75. Mốc 8 quá khắt; dừng sửa văn.
+- Đã thêm trích dẫn Deng et al. 2025 [44] (diện tích trị tuyệt đối đường ảnh hưởng, cầu khung liên tục); tài liệu tham khảo 55.
+- Thầy xác nhận: N8 ở 0,4L = 22 m tính từ gối T8; sáu số đọc = 3 điểm đo trên mặt cắt × 2 sơ đồ xếp xe; Data Availability và Conflicts ghi "an author of this paper"; câu 5.3 về strain gauge giữ trung tính.
+- Đọc mù chuẩn mực XII.13: vòng 1 (`docs/editors_v4/xii13/phieu_v1.json`) 19 mục bắt buộc, đã sửa 18, giữ "Acknowledgments" theo hướng dẫn SCHM; 8 mục cân nhắc thầy đã quyết. Vòng 2 đang chạy. Sau khi thầy điền 7 [NEED VALUE] phải chạy lại một lượt trên bản cuối.
+- Còn chờ thầy: 7 [NEED VALUE] (cấp quả cân, mốc đồng hồ, độ chính xác NOR-BWIM gốc, DOI dữ liệu Cầu Mây, tên tác giả trong mục xung đột lợi ích, quỹ, cảm ơn); khai trùng lặp với 2 bài Structures; Hình 1 và S15; dựng file Supplementary chính thức (bảng S1–S5 lấy từ `supplementary_moved_values.md`).
 
 ## Cập nhật 2026-10-18 (tối): bản v4
 - **Bản làm việc hiện tại: `manuscript/v4/`** (Word: `manuscript/v4/word/Manuscript_v4.docx`). Tên mới: "Blind loci and design criteria for integral load-monitoring channels on continuous girder bridges, with laboratory verification and an assessment on public field records".
