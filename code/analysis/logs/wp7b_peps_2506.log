@@ -1,0 +1,40 @@
+=== Part A: offset-equivalent load P_eps = eps0*L_tot/C_m (Cau May, base model varEI_Lv44) ===
+L_tot = 200.0 m; 25.06 t truck = 245.84 kN; wheelbase 4.95 m would add 2.5 % to L_tot (not included)
+kFE   CM N7 mid-span               C_m = 3.6097e-04 m2/kN  N_m = 0.209  neg/pos = -0.413 | eps0=0.02 mm: P_eps =   11.1 kN, bias(25.06 t) =  4.51 % | eps0=0.05 mm: P_eps =   27.7 kN, bias(25.06 t) = 11.27 %
+kFE   CM N8 0.4L (22 m from T8)    C_m = 4.3761e-05 m2/kN  N_m = 0.181  neg/pos = -0.817 | eps0=0.02 mm: P_eps =   91.4 kN, bias(25.06 t) = 37.18 % | eps0=0.05 mm: P_eps =  228.5 kN, bias(25.06 t) = 92.95 %
+kMeas CM N7 mid-span               C_m = 4.0461e-04 m2/kN  N_m = 0.234  neg/pos = -0.228 | eps0=0.02 mm: P_eps =    9.9 kN, bias(25.06 t) =  4.02 % | eps0=0.05 mm: P_eps =   24.7 kN, bias(25.06 t) = 10.05 %
+kMeas CM N8 0.4L (22 m from T8)    C_m = 1.1470e-04 m2/kN  N_m = 0.476  neg/pos = -0.444 | eps0=0.02 mm: P_eps =   34.9 kN, bias(25.06 t) = 14.19 % | eps0=0.05 mm: P_eps =   87.2 kN, bias(25.06 t) = 35.46 %
+kFE: C_m(N7)/C_m(N8) = 8.25
+kMeas: C_m(N7)/C_m(N8) = 3.53
+
+=== Part B: C_m sensitivity to the pier spring k (design EI, Lv = 44 m) ===
+k_FE = 2.748e+07: N8 0.4L: C_m = 4.3760e-05, N_m = 0.181, neg/pos = -0.817
+k_FE = 2.748e+07: N7 mid: C_m = 3.6097e-04, N_m = 0.209, neg/pos = -0.414
+k = 0.5 k_FE: N8 0.4L: N_m = 0.124, neg/pos = -0.890, C_m/C_m(k_FE) = 0.683
+k = 0.5 k_FE: N7 mid: N_m = 0.224, neg/pos = -0.449, C_m/C_m(k_FE) = 1.071
+k = 2 k_FE: N8 0.4L: N_m = 0.248, neg/pos = -0.701, C_m/C_m(k_FE) = 1.369
+k = 2 k_FE: N7 mid: N_m = 0.191, neg/pos = -0.357, C_m/C_m(k_FE) = 0.917
+d ln C_m / d ln k at k_FE: N8 0.4L: +0.511
+d ln C_m / d ln k at k_FE: N7 mid: -0.115
+alpha = 1.088, k = k_FE: N8 0.4L: N_m (design EI_ref) = 0.160, neg/pos = -0.828
+alpha = 1.088, k = k_FE: N7 mid: N_m (design EI_ref) = 0.194, neg/pos = -0.419
+check kMeas (alpha 0.716, k 1.199e8): N8 0.4L: N_m = 0.476, neg/pos = -0.444
+check kMeas (alpha 0.716, k 1.199e8): N7 mid: N_m = 0.234, neg/pos = -0.228
+
+=== Part C: laboratory linearity (Appendix C, trapezoidal rule, dx = 250 mm) ===
+single P =  40.643 N  I_meas =  2513.42  I_analytical(trap) =  2488.68  ratio = 1.0099  rms(meas-analytical) = 0.0073 mm
+two    P =  66.992 N  I_meas =  4168.15  I_analytical(trap) =  4102.14  ratio = 1.0161  rms(meas-analytical) = 0.0168 mm
+three  P = 125.078 N  I_meas =  7788.92  I_analytical(trap) =  7658.85  ratio = 1.0170  rms(meas-analytical) = 0.0298 mm
+(three-load order: 2550 g leading, 5100 g at +500 mm, 5100 g at +750 mm; rms for the alternative reading 250/500 mm:
+  rms = 0.5529 mm)
+two-load record: 21 intervals (odd -> Simpson needs a 3/8 end panel); three-load: 23; single: 20
+
+=== Part D: Table 9 combined by root-sum-square in every column ===
+Laboratory (SLM)   RSS  0.44 -  1.01 %   (linear sum would give 0.70 - 1.30 %)
+Field (SLM)        RSS  2.30 - 10.54 %   (linear sum would give 3.70 - 15.60 %)
+Field (BPM)        RSS  5.58 - 18.52 %   (linear sum would give 9.50 - 33.30 %)
+
+=== Part E: edges of the near-blind band |N_m| < 0.2, mid-span sensor, uniform EI ===
+N_m = +0.2: two-span rho_L = 1.385061; three-span beta = 1.621399
+N_m = -0.2: two-span rho_L = 1.524695; three-span beta = 1.775021
+three-span beta = 2: mu = 2.25, N_m(mid side span) = -0.875

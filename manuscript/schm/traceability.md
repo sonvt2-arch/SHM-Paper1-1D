@@ -1,6 +1,24 @@
 # Traceability of numeric values in `manuscript/schm/manuscript.md`
 
-## SCHM version (this file's newest block)
+## Update 2026-10-18 (new facts from the authors' answers, `docs/08_cap_nhat_2026-10-18_tra_loi_tu_bai_MSSP.md`)
+
+Source code ANS = authors' answers to the MSSP questionnaires (numbering of that questionnaire; mapped to Paper1 codes in docs/08). WP9 = `code/analysis/logs/wp9_truckweight_check.log` (`code/analysis/wp9_truckweight_check.py`). P7w = `code/analysis/logs/wp7b_peps_2506.log` (`python3 code/analysis/wp7b_peps.py --truck-t 25.06`; the original `wp7b_peps.log` is unchanged).
+
+| Value or statement | Location | Source |
+|---|---|---|
+| Ten weighed trucks, mean 25.06 t; axle spacings 3.60 m, 1.35 m; track 1.85 m; 1.1 m apart transversely, 6.0 m longitudinally; continuous spans loaded from the ten trucks | §4.1 | ANS M3, M4 (data questionnaire), M1 (FEM questionnaire); Paper1 B4 |
+| Daylight, hot and sunny; Mitutoyo dial gauges; positions by tape measure and paint, error < 20 cm each direction | §4.1, §4.4 | ANS C8, C9 (FEM questionnaire); Paper1 B6 |
+| 25.06 t = 245.84 kN ("245.8 kN"); bias at ε0 = 0.02/0.05 mm: A N8 37.18/92.95 %, B N8 14.19/35.46 %, A N7 4.51/11.27 %, B N7 4.02/10.05 % → printed 37/93, 14/35, 4.5/11, 4.0/10 %; P_ε unchanged | Abstract ("35–93 %", "10–11 %"), §6.2, Table 8 (B N8 0.05 mm: 36 → 35 %), §8, cover letter | P7w Part A. Only the B N8 0.05 mm entry changes at printed precision (35.5 → 35.46 %) |
+| Calibration and Table 5/6 values kept with nominal 5 + 10 + 10 t; weighed mean changes measured/model ratios by ≤ 0.003 and indicators by ≤ 0.002 | §4.2 (new sentences), Table 6 caption | WP9 scenarios 1–3: largest ratio change 1.0286 → 1.0261 (scenario 1) and 0.9767 → 0.9743 (scenario 2); largest N_m change 0.1815 → 0.1827 (A N8, scenario 3); α_B 0.7162 → 0.7176, k_FE 2.748 → 2.784 × 10⁷ only if the report FE used 25.06 t |
+| Convoy shift ±0.20 m: N8 ≤ 0.6 % (A 0.43 %, B 0.61 %), N7 0.01 % | §4.4 | WP9 Part P |
+| Authors performed the load tests and may publish the processed data | Data Availability | ANS C12 (data questionnaire): "Được phép công bố do tác giả là người thực hiện thử tải"; Paper1 B8, C6, D6 |
+| Load test by the authors' team within inspection work of Công ty TNHH Tư vấn Đại học Xây dựng | Conflicts of Interest | ANS C12; Paper1 B9; consultant name from the Cầu Mây report (CMI) |
+
+Word counts after this update: see `wp7b_checks.py` output in the hand-over note.
+
+---
+
+## SCHM version
 
 The SCHM manuscript was derived from `manuscript/v2/manuscript.md` by reordering, renaming and tightening only. A two-way check of the sets of numerals (regular expression `\d+(\.\d+)?` over the whole file) found no number in the SCHM file that is absent from v2 and no v2 number that is missing from the SCHM file, so the v2 sources below still apply to every value. Moved text keeps its v2 source:
 
@@ -161,7 +179,7 @@ Verification-report items N1–N5: N1, 0.181 is the rounding of 0.181497 in `wp3
 | I = 5.482 / 59.612 m⁴; Ec = 36 057 MPa; f'c = 45 MPa | CMS rows `Iyy_vertical`, `Ec`; WP3 §1 |
 | T6/T7 monolithic; T5/T8 pot bearings | CMS `supports`; WP3 §1 |
 | June 2020 | CMI §1 (logger 19/06/2020; report 30/07/2020) |
-| 5 + 10 + 10 t, about 25 t, 3.60 m, 1.35 m, 6.0 m, two abreast | CMI §2; WP3 §1 |
+| 5 + 10 + 10 t nominal, 3.60 m, 1.35 m, 6.0 m, two abreast ("about 25 t" and "no weighbridge values" replaced on 2026-10-18 by the weighed mean 25.06 t, see the 2026-10-18 block) | CMI §2; WP3 §1; ANS M3, M4 |
 | Scheme III 4 trucks 100 t, Scheme IV 6 trucks 150 t; axle positions | CMI §2; WP3 §1 row "CM truck positions"; L3 `[positions]` |
 | 0.4L = 22 m | WP3 §1; CMI §3 |
 | eccentric outer wheel 0.6 m from kerb; three repetitions | CMI §2 and §4 |

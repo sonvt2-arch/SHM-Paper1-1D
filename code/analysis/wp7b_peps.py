@@ -1,6 +1,11 @@
 """WP7b - numbers added in manuscript v2 (manuscript/v2/manuscript.md).
 
 Run:  python3 code/analysis/wp7b_peps.py   (writes code/analysis/logs/wp7b_peps.log)
+      python3 code/analysis/wp7b_peps.py --truck-t 25.06
+            (WEIGHED-TRUCK OPTION, added 2026-10-18: Part A uses the mean mass
+             of the 10 weighed Cau May test trucks, 25.06 t, instead of the
+             nominal 25 t; writes code/analysis/logs/wp7b_peps_2506.log and
+             leaves wp7b_peps.log unchanged. Parts B-E do not depend on it.)
 
 Part A  Offset-equivalent load P_eps = eps0 * L_tot / C_m and the load bias
         P_eps / P for the Cau May gauges, for BOTH calibrations of WP3
@@ -19,12 +24,20 @@ Part D  Table 9 combined with one rule (root-sum-square of all standard
 import os
 import sys
 import csv
+import argparse
 import numpy as np
+
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--truck-t", type=float, default=25.0,
+                 help="test-truck gross mass in t for Part A (default: nominal 25 t; "
+                      "weighed mean of the 10 Cau May trucks: 25.06 t)")
+TRUCK_T = _ap.parse_args().truck_t
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
-LOG = os.path.join(HERE, "logs", "wp7b_peps.log")
+LOG = os.path.join(HERE, "logs", "wp7b_peps.log" if TRUCK_T == 25.0
+                   else f"wp7b_peps_{round(TRUCK_T * 100):d}.log")
 out = []
 
 
@@ -39,14 +52,17 @@ g = 9.81  # m/s2, as in the laboratory load values (4.143 kg -> 40.64 N)
 # ------------------------------------------------------------------ Part A
 pr("=== Part A: offset-equivalent load P_eps = eps0*L_tot/C_m (Cau May, base model varEI_Lv44) ===")
 L_tot = 200.0                     # m, 55 + 90 + 55
-truck_kN = 25.0 * g               # nominal test truck 5 + 10 + 10 t
+truck_kN = TRUCK_T * g            # nominal test truck 5 + 10 + 10 t = 25 t (default),
+                                  # or weighed mean 25.06 t with --truck-t 25.06
+TLAB = f"{TRUCK_T:g} t"
+BF = "5.1f" if TRUCK_T == 25.0 else "5.2f"   # default keeps the original log format
 rows = list(csv.DictReader(open(os.path.join(HERE, "results", "wp3_Cm_table.csv"))))
 sel = {}
 for r in rows:
     if r["bridge"] == "CM" and r["model"] == "varEI_Lv44" and r["pier"] in ("kFE", "kMeas") \
             and r["sensor"] in ("CM N8 0.4L (22 m from T8)", "CM N7 mid-span"):
         sel[(r["pier"], r["sensor"])] = r
-pr(f"L_tot = {L_tot} m; 25 t truck = {truck_kN:.2f} kN; wheelbase 4.95 m would add "
+pr(f"L_tot = {L_tot} m; {TLAB} truck = {truck_kN:.2f} kN; wheelbase 4.95 m would add "
    f"{100*4.95/L_tot:.1f} % to L_tot (not included)")
 for (cal, sen), r in sorted(sel.items()):
     Cm = float(r["Cm_m2_per_kN"])           # m2/kN
@@ -54,7 +70,7 @@ for (cal, sen), r in sorted(sel.items()):
            f"neg/pos = {float(r['neg_over_pos']):.3f}"
     for e0_mm in (0.02, 0.05):
         Peps = e0_mm * 1e-3 * L_tot / Cm  # kN
-        line += f" | eps0={e0_mm} mm: P_eps = {Peps:6.1f} kN, bias(25 t) = {100*Peps/truck_kN:5.1f} %"
+        line += f" | eps0={e0_mm} mm: P_eps = {Peps:6.1f} kN, bias({TLAB}) = {100*Peps/truck_kN:{BF}} %"
     pr(line)
 for cal in ("kFE", "kMeas"):
     c8 = float(sel[(cal, "CM N8 0.4L (22 m from T8)")]["Cm_m2_per_kN"])

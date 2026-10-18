@@ -1,0 +1,37 @@
+Weighed mean truck mass 25.06 t vs nominal 25 t: factor f = 1.002400 (+0.24 %); axle loads scaled uniformly (split unknown)
+
+=== Scenario 0: nominal 25 t (should reproduce wp3_run.log) ===
+  k_FE = 2.7482e+07; alpha at k_FE = 1.0880 (misfit % [-4.56, 4.95]); B: alpha = 0.7162, k = 1.1991e+08 (misfit % [-2.78, 2.86])
+  N8 0.4L: model A = 5.686 mm, model B = 5.399 mm, meas/A = 0.9767, meas/B = 1.0286
+  N7 mid: model A = 17.324 mm, model B = 15.866 mm, meas/A = 0.8904, meas/B = 0.9722
+  A N8 0.4L: C_m = 4.3761e-05 m2/kN, N_m = 0.1815, R_m = 0.1832
+  A N7 mid: C_m = 3.6097e-04 m2/kN, N_m = 0.2088, R_m = 0.5865
+  B N8 0.4L: C_m = 1.1470e-04 m2/kN, N_m = 0.4757, R_m = 0.5556
+  B N7 mid: C_m = 4.0461e-04 m2/kN, N_m = 0.2340, R_m = 0.7717
+
+=== Scenario 1: models as calibrated with 25 t, loads x f ===
+  measured/model ratios of scenario 0 divided by f: e.g. 0.977/f = 0.9747, 0.890/f = 0.8879, 1.029/f = 1.0265, 0.972/f = 0.9697
+
+=== Scenario 2: report FE with 25 t (k_FE fixed), measurement fits with 25.06 t ===
+  k_FE = 2.7482e+07; alpha at k_FE = 1.0912 (misfit % [-4.56, 4.96]); B: alpha = 0.7176, k = 1.2035e+08 (misfit % [-2.78, 2.86])
+  N8 0.4L: model A = 5.700 mm, model B = 5.399 mm, meas/A = 0.9743, meas/B = 1.0286
+  N7 mid: model A = 17.365 mm, model B = 15.866 mm, meas/A = 0.8883, meas/B = 0.9722
+  A N8 0.4L: C_m = 4.3761e-05 m2/kN, N_m = 0.1815, R_m = 0.1832
+  A N7 mid: C_m = 3.6097e-04 m2/kN, N_m = 0.2088, R_m = 0.5865
+  B N8 0.4L: C_m = 1.1451e-04 m2/kN, N_m = 0.4749, R_m = 0.5560
+  B N7 mid: C_m = 4.0372e-04 m2/kN, N_m = 0.2335, R_m = 0.7719
+
+=== Scenario 3: all fits with 25.06 t ===
+  k_FE = 2.7835e+07; alpha at k_FE = 1.0882 (misfit % [-4.54, 4.93]); B: alpha = 0.7176, k = 1.2035e+08 (misfit % [-2.78, 2.86])
+  N8 0.4L: model A = 5.687 mm, model B = 5.399 mm, meas/A = 0.9765, meas/B = 1.0286
+  N7 mid: model A = 17.321 mm, model B = 15.866 mm, meas/A = 0.8906, meas/B = 0.9722
+  A N8 0.4L: C_m = 4.4048e-05 m2/kN, N_m = 0.1827, R_m = 0.1849
+  A N7 mid: C_m = 3.6044e-04 m2/kN, N_m = 0.2085, R_m = 0.5873
+  B N8 0.4L: C_m = 1.1451e-04 m2/kN, N_m = 0.4749, R_m = 0.5560
+  B N7 mid: C_m = 4.0372e-04 m2/kN, N_m = 0.2335, R_m = 0.7719
+
+=== Part P: longitudinal shift of the convoy by +/-0.20 m (scenario-0 models, 25.06 t) ===
+  A N8 0.4L: d(0) = 5.700 mm | shift -0.20 m: 5.675 mm (-0.43 %) | shift +0.20 m: 5.723 mm (+0.42 %)
+  A N7 mid: d(0) = 17.365 mm | shift -0.20 m: 17.366 mm (+0.00 %) | shift +0.20 m: 17.363 mm (-0.01 %)
+  B N8 0.4L: d(0) = 5.412 mm | shift -0.20 m: 5.379 mm (-0.61 %) | shift +0.20 m: 5.444 mm (+0.60 %)
+  B N7 mid: d(0) = 15.904 mm | shift -0.20 m: 15.904 mm (+0.00 %) | shift +0.20 m: 15.902 mm (-0.01 %)
