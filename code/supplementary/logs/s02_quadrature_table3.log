@@ -1,0 +1,38 @@
+
+== Table 3: deflection integral, single load (40.64 N), dx = 250 mm =========
+  quantity                                           mm^2       diff   manuscript
+  Exact, P0 l^4/(192EI)                         2501.1871    +0.000 %   2501.19 (n/a)
+  Analytical IL, trapezoidal rule               2488.6811    -0.500 %   2488.68 (-0.500 %)
+  Analytical IL, Simpson rule                   2501.8541    +0.027 %   2501.85 (+0.027 %)
+  Measured, trapezoidal rule                    2513.4250    +0.489 %   2513.43 (+0.49 %)
+  Measured, Simpson rule (not in Table 3)       2526.8000    +1.024 %   - (-)
+  tabulated analytical column (Table C.1), trapezoid: 2488.7000 mm^2
+
+== Number of intervals and Simpson with 3/8 end panel (Section 3.2) =========
+  single n = 20  measured: trap   2513.42  Simpson       2526.80 | analytical: trap -0.5000 %  Simpson +0.0267 %
+  two    n = 21  measured: trap   4168.15  Simpson+3/8   4149.41 | analytical: trap -0.5000 %  Simpson -0.9215 %
+  three  n = 23  measured: trap   7788.92  Simpson+3/8   7799.19 | analytical: trap -0.5000 %  Simpson -0.4442 %
+  (manuscript: 20, 21 and 23 intervals; analytical-record trapezoid bias -0.5000 % for all)
+
+== Quadrature convergence on the exact influence line =======================
+   n/span   dx (mm)    trapezoid     bias %      Simpson      bias %
+        4     625.0     2423.025    -3.1250     2501.187    -0.00000
+        5     500.0     2449.162    -2.0800     2497.185    -0.16000
+       10     250.0     2488.681    -0.5000     2501.854    +0.02667
+       20     125.0     2498.061    -0.1250     2501.187    -0.00000
+       25     100.0     2499.183    -0.0801     2501.181    -0.00026
+       50      50.0     2500.687    -0.0200     2501.188    +0.00004
+      100      25.0     2501.062    -0.0050     2501.187    +0.00000
+  trapezoid bias x (n/10)^2 is constant -> O(dx^2) (Section 2.4)
+
+== Section 6.1: quadrature bias when the spacing is not a multiple of dx ====
+  two-load group, spacing   250 mm: bias -0.500 %; SLM residual (e_q,t - e_q,0) = +0.000 pp
+  two-load group, spacing   300 mm: bias -0.171 %; SLM residual (e_q,t - e_q,0) = +0.329 pp
+  two-load group, spacing   375 mm: bias +0.014 %; SLM residual (e_q,t - e_q,0) = +0.514 pp
+  two-load group, spacing   500 mm: bias -0.500 %; SLM residual (e_q,t - e_q,0) = -0.000 pp
+  (manuscript: 300 mm -0.110 %, 375 mm +0.249 %, residual 0.4-0.75 %)
+  three-load group as tested: bias -0.5000 %
+  single shifted copy, grid offset 50 mm (spacing 300): -0.0200 %; 125 mm (spacing 375): +0.2500 %
+  NOTE: neither interpretation reproduces -0.110 %; +0.249 % is close to the single
+  shifted copy at 125 mm (+0.250 %).  Other load orders/groups tried in
+  REPRODUCTION_REPORT.md also fail.  The manuscript values remain unreproduced.

@@ -1,0 +1,113 @@
+
+== A.1  Reactions for a load P at 0 <= x <= l  (Eq. A.1) ====================
+  R_A - P(x^3-5l^2x+4l^3)/(4l^3)                       0   (manuscript: 0)
+  R_B - P(-x^3+3l^2x)/(2l^3)                           0   (manuscript: 0)
+  R_C - P(x^3-l^2x)/(4l^3)                             0   (manuscript: 0)
+  R_A, R_B, R_C at x = l/2 (/P)                        (13/32, 11/16, -3/32)   (manuscript: 13/32, 11/16, -3/32)
+  M_B + P x (l^2-x^2)/(4l^2)                           0   (manuscript: 0)
+
+== A.2  Influence line at s = l/2, route 1: force method in the load position 
+  force method - Eq. (A.2), branch 1, 0<=x<=l/2        0   (manuscript: 0)
+  force method - Eq. (A.2), branch 2, l/2<x<=l         0   (manuscript: 0)
+  force method - Eq. (A.2), branch 3, l<x<=2l          0   (manuscript: 0)
+
+== A.2  route 2: double integration, load at l/2, Maxwell eta_m(x) = w_m(x) =
+  double integration - Eq. (A.2), branch 1             0   (manuscript: 0)
+  double integration - Eq. (A.2), branch 2             0   (manuscript: 0)
+  double integration - Eq. (A.2), branch 3             0   (manuscript: 0)
+  slope continuity at x = l (not imposed; checks R_B)  0   (manuscript: 0)
+
+== A.2  continuity, twice differentiable, 64EI ==============================
+  eta, eta', eta'' jumps at l/2                        (0, 0, 0)   (manuscript: 0, 0, 0)
+  eta, eta', eta'' jumps at l                          (0, 0, 0)   (manuscript: 0, 0, 0)
+  eta at x = 0, l, 2l                                  (0, 0, 0)
+  branch 3 with 64EI / branch 3 with 192EI             3   (manuscript: factor 3 (64EI, not 192EI))
+  numeric: eta(3750 mm) * 40.64 N = -1.1255 mm  (Table C.1 analytical: -1.1255)
+  max |Eq.(A.2) - Table C.1 analytical column| = 5.4e-05 mm (4-decimal rounding)
+
+== A.2  mid-span values (Appendix A) ========================================
+  eta(l/2) * 192EI/l^3                                 23/8   (manuscript: 2.875)
+  eta(l/2) / (Pl^3/48EI)                               0.718750   (manuscript: 71.9 %)
+  argmax_x eta / l                                     0.480384   (manuscript: 0.480)
+  max eta / (Pl^3/48EI)                                0.720577   (manuscript: 72.1 %)
+
+== Eq. (2)-(3): C_m, A+, A-, R_m (equal spans, mid-span) ====================
+  C_m (integral of Eq. A.2)                            l**4/(192*EI)   (manuscript: l**4/(192*EI))
+  A+ * 192EI/l^4                                       7/4   (manuscript: 1.750)
+  A- * 192EI/l^4                                       -3/4   (manuscript: -0.750)
+  R_m = C_m/A+                                         4/7   (manuscript: 4/7)
+  numeric C_m = 61.5407 mm^2/N (Section 3.1: 61.541); P0 C_m = 2501.19 mm^2 (Table 3: 2501.19)
+  w_q(l/2)/q  (Eq. 3, M_B = -q l^2/8)                  l**4/(192*EI)   (manuscript: l**4/(192*EI))
+  zero of M_q in span 1 (strain blind point)/l         3/4   (manuscript: 0.75)
+
+== Eqs. (4)-(5): two-span closed form from first principles =================
+  C_m - L1^4/(24EI1) F(xi, mu(Eq.5))                   0   (manuscript: 0)
+  mu = -8 M_B/(q L1^2) - Eq. (5)                       0   (manuscript: 0)
+  rho_L = rho_EI = 1, xi = 1/2: C_m                    L_1**4/(192*EI_1)   (manuscript: L1^4/(192 EI1))
+  d mu / d rho_EI                                      -rho_L*(rho_L - 1)*(rho_L + 1)/(rho_EI + rho_L)**2   (manuscript: proportional to rho_L(1-rho_L^2))
+  d mu / d rho_L                                       (3*rho_EI*rho_L**2 - rho_EI + 2*rho_L**3)/(rho_EI + rho_L)**2   (manuscript: numerator rho_EI(3rho_L^2-1)+2rho_L^3)
+  mu(rho_L = 1/2, 1, 2), rho_EI = 1                    (3/4, 1, 3)   (manuscript: 0.750, 1, 3)
+
+== Eq. (6)-(7): blind condition and optimum =================================
+  mu_crit(xi)                                          2*(-xi**2 + xi + 1)/(xi + 1)   (manuscript: 2(1+xi-xi^2)/(1+xi))
+  mu_crit(1/2)                                         5/3   (manuscript: 5/3)
+  rho_EI,crit - rho_L(rho_L^2-mu)/(mu-1)               0   (manuscript: 0)
+  blind condition, uniform stiffness, mid-span         (3*rho_L**2 - 3*rho_L - 2)/3   (manuscript: 3rho^2-3rho-2 = 0)
+  rho_L,crit                                           1/2 + sqrt(33)/6   (manuscript: (3+sqrt(33))/6)
+  rho_L,crit = 1.45743   (manuscript: 1.45743); rig: 2500 mm x rho = 3643.6 mm (manuscript: 3644)
+  dF/dxi at mu = 1 (factored)                          (xi - 1)*(8*xi**2 - xi - 1)/2   (manuscript: contains 8xi^2-xi-1)
+  xi*                                                  1/16 + sqrt(33)/16   (manuscript: (1+sqrt(33))/16)
+  xi* = 0.42154 (0.42154); N(xi*) = 1.03989535 (Table 1: 1.03989535); ratio to mid-span 1.039895 (1.039895)
+  N(0.9)/N(xi*) = 0.0969   (manuscript: 'falls to 10 % of its maximum at 0.9L1')
+
+== Section 2.2 statements (numeric, Eq. 4) ==================================
+  rho_L = 2: N = -2.000000        (manuscript: -2.0, |N| twice the equal-span value)
+  rho_L = 1.6: N(rho_EI = 0.5) = -0.7829, N(rho_EI = 4) = +0.3314   (manuscript: -0.78, +0.33)
+  rho_L = 1.6: zero crossing at rho_EI = 2.1440   (manuscript: 2.14)
+  rho_L = 1.45, xi = 0.5: N = 0.0213   (manuscript: 0.021)
+  rho_L = 1.45, xi = 0.266: N = 0.2331 (manuscript: 0.233); optimum there xi = 0.266, N = 0.2331
+  near-blind band |N| < 0.2: 1.385061 < rho_L < 1.524695   (manuscript: 1.385 < rho_L < 1.525)
+
+== Table 1: closed form Eq. (4) against FE evaluation of Eq. (3) ============
+  case                      rho_L       xi        closed        FE udl     FE IL-int    d(udl)     d(IL)
+  Equal spans             1.00000  0.50000    1.00000000    1.00000000    1.00000000   5.0e-12   7.2e-12  (ms 1.00000000)
+  Short adjacent span     0.50000  0.50000    1.37500000    1.37500000    1.37500000   9.0e-12   8.2e-12  (ms 1.37500000)
+  Long adjacent span      1.30000  0.50000    0.41500000    0.41500000    0.41500000   2.8e-11   1.4e-11  (ms 0.41500000)
+  Blind configuration     1.45743  0.50000    0.00000000   -0.00000000   -0.00000000   1.6e-10   7.0e-11  (ms 0.00000000)
+  Beyond blind            2.00000  0.50000   -2.00000000   -2.00000000   -2.00000000   1.3e-11   6.4e-11  (ms -2.00000000)
+  Optimal sensor          1.00000  0.42154    1.03989535    1.03989535    1.03989535   5.4e-10   5.6e-10  (ms 1.03989535)
+  Sensor near support     1.00000  0.70000    0.60480000    0.60480000    0.60480000   2.8e-12   3.9e-12  (ms 0.60480000)
+  note: 'Blind configuration' uses the exact root; the manuscript lists 1.45743.
+  FE differences are round-off (Hermite elements are nodally exact); their exact
+  size depends on mesh and BLAS and is not expected to equal the printed 1e-11.
+
+== Table A.1: 192EI1 C_m/L1^4, mid-span sensor, uniform stiffness ===========
+  L2/L1 = 0.50000   N = +1.3750   (Table A.1: +1.375)
+  L2/L1 = 0.70000   N = +1.3150   (Table A.1: +1.315)
+  L2/L1 = 0.80000   N = +1.2400   (Table A.1: +1.240)
+  L2/L1 = 1.00000   N = +1.0000   (Table A.1: +1.000)
+  L2/L1 = 1.20000   N = +0.6400   (Table A.1: +0.640)
+  L2/L1 = 1.30000   N = +0.4150   (Table A.1: +0.415)
+  L2/L1 = 1.40000   N = +0.1600   (Table A.1: +0.160)
+  L2/L1 = 1.45743   N = +0.0000   (Table A.1: +0.000)
+  L2/L1 = 1.60000   N = -0.4400   (Table A.1: -0.440)
+
+== Appendix A: span-wise decomposition (units L1^4/(192 EI1), uniform stiffness) 
+  rho_L 0.5..2.0: C+ in [1.500, 2.000] (1.50-2.00); C- in [-0.125, -4.000] (-0.125 to -4.00)
+  equal spans, xi = 0.50: C+ = 1.750, C- = -0.750, net = 1.000 (1.750, -0.750, 1.000)
+  equal spans, xi = 0.42: C+ = 1.732, C- = -0.692, net = 1.040 (1.732, -0.692, 1.040)
+
+== Eq. (15): O_m for the equal two-span beam, mid-span sensor ===============
+  O_m (L_tot = 2l, single axle)                        2*sqrt(44765)/1279   (manuscript: 2*sqrt(44765)/1279)
+  O_m - 2 sqrt(44765)/1279                             0   (manuscript: 0)
+  O_m = 0.3308 (manuscript: 0.331)
+  numeric check at xi = 0.5: 0.330848
+  xi:   0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  0.55  0.60  0.65  0.70  0.75  0.80  0.85  0.90  0.95
+  O_m: 0.399 0.397 0.393 0.387 0.381 0.374 0.365 0.355 0.344 0.331 0.316 0.299 0.279 0.256 0.229 0.197 0.159 0.115 0.063
+  O_m monotonically decreasing in xi: True   (manuscript: decreases monotonically
+  as the sensor moves away from the outer support)
+
+== Section 3.1: shear deformation (order-of-magnitude check, not in files-v2) 
+  span/depth = 100 (manuscript: 100)
+  simply supported span, central load, web shear area: delta_s/delta_b = 8.8e-04
+  (manuscript: 8e-4; the basis of the printed value is not documented, same order)

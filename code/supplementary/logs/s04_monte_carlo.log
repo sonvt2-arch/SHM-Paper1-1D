@@ -1,0 +1,74 @@
+Monte Carlo, N = 200000 per case, seed 20260817; relative error w.r.t. weighing (%)
+error source                                   case   meth reference     bias       sd       p5      p95   Table B.1 (bias sd p5 p95)
+--------------------------------------------------------------------------------------------------------------------------------------------
+Gain, sigma_gamma = 2 %                        two    BPM  n/a          +1.10     2.01    -2.21    +4.40   +1.10 2.01 -2.21 +4.40
+Gain, sigma_gamma = 2 %                        two    SLM  averaged     +0.61     2.00    -2.69    +3.90   +0.61 2.00 -2.69 +3.90
+Gain, sigma_gamma = 2 %                        two    SLM  single       +0.66     2.85    -3.94    +5.41   +0.66 2.85 -3.94 +5.41
+Gain, sigma_gamma = 2 %                        three  BPM  n/a          +1.19     2.03    -2.14    +4.53   
+Gain, sigma_gamma = 2 %                        three  SLM  averaged     +0.70     2.02    -2.61    +4.02   
+Gain, sigma_gamma = 2 %                        three  SLM  single       +0.74     2.86    -3.90    +5.49   
+
+Zero offset, sigma_eps = 0.005 mm              two    BPM  n/a          +1.10     0.64    +0.05    +2.15   +1.10 0.64 +0.05 +2.15
+Zero offset, sigma_eps = 0.005 mm              two    SLM  averaged     +0.61     0.63    -0.43    +1.65   +0.61 0.63 -0.43 +1.65
+Zero offset, sigma_eps = 0.005 mm              two    SLM  single       +0.62     1.19    -1.31    +2.60   +0.62 1.19 -1.31 +2.60
+Zero offset, sigma_eps = 0.005 mm              three  BPM  n/a          +1.19     0.37    +0.57    +1.81   
+Zero offset, sigma_eps = 0.005 mm              three  SLM  averaged     +0.70     0.37    +0.08    +1.31   
+Zero offset, sigma_eps = 0.005 mm              three  SLM  single       +0.71     1.07    -1.04    +2.48   
+
+Random, sigma_a = 0.0025 mm                    two    BPM  n/a          +1.10     0.07    +0.99    +1.21   +1.10 0.07 +0.99 +1.21
+Random, sigma_a = 0.0025 mm                    two    SLM  averaged     +0.61     0.07    +0.50    +0.72   +0.61 0.07 +0.50 +0.72
+Random, sigma_a = 0.0025 mm                    two    SLM  single       +0.61     0.13    +0.40    +0.82   +0.61 0.13 +0.40 +0.82
+Random, sigma_a = 0.0025 mm                    three  BPM  n/a          +1.19     0.04    +1.13    +1.25   
+Random, sigma_a = 0.0025 mm                    three  SLM  averaged     +0.70     0.04    +0.63    +0.76   
+Random, sigma_a = 0.0025 mm                    three  SLM  single       +0.70     0.12    +0.51    +0.89   
+
+Combined                                       two    BPM  n/a          +1.10     2.12    -2.39    +4.59   +1.10 2.12 -2.39 +4.59
+Combined                                       two    SLM  averaged     +0.61     2.11    -2.87    +4.08   +0.61 2.11 -2.87 +4.08
+Combined                                       two    SLM  single       +0.65     3.09    -4.34    +5.83   +0.65 3.09 -4.34 +5.83
+Combined                                       three  BPM  n/a          +1.18     2.05    -2.20    +4.56   
+Combined                                       three  SLM  averaged     +0.69     2.04    -2.67    +4.05   
+Combined                                       three  SLM  single       +0.74     3.04    -4.17    +5.83   
+
+Legacy 5 % multiplicative (not in manuscript)  two    BPM  n/a          +1.10     3.35    -4.40    +6.61   
+Legacy 5 % multiplicative (not in manuscript)  two    SLM  averaged     +0.61     3.33    -4.87    +6.09   
+Legacy 5 % multiplicative (not in manuscript)  two    SLM  single       +0.72     4.77    -6.96    +8.70   
+Legacy 5 % multiplicative (not in manuscript)  three  BPM  n/a          +1.21     3.21    -4.07    +6.48   
+Legacy 5 % multiplicative (not in manuscript)  three  SLM  averaged     +0.71     3.19    -4.54    +5.96   
+Legacy 5 % multiplicative (not in manuscript)  three  SLM  single       +0.83     4.68    -6.68    +8.71   
+
+== Check against Table B.1 (two loads, values rounded to 0.01) ===============
+  Gain, sigma_gamma = 2 %              BPM n/a      match
+  Gain, sigma_gamma = 2 %              SLM averaged match
+  Gain, sigma_gamma = 2 %              SLM single   match
+  Zero offset, sigma_eps = 0.005 mm    BPM n/a      match
+  Zero offset, sigma_eps = 0.005 mm    SLM averaged match
+  Zero offset, sigma_eps = 0.005 mm    SLM single   match
+  Random, sigma_a = 0.0025 mm          BPM n/a      match
+  Random, sigma_a = 0.0025 mm          SLM averaged match
+  Random, sigma_a = 0.0025 mm          SLM single   match
+  Combined                             BPM n/a      match
+  Combined                             SLM averaged match
+  Combined                             SLM single   match
+  0 of 12 rows differ by more than one unit in the last digit
+
+== 'The three-load case agrees within 0.1 percentage point' =================
+  Gain, sigma_gamma = 2 %              BPM n/a      three - two: bias +0.09 sd +0.01 p5 +0.08 p95 +0.12  > 0.1
+  Gain, sigma_gamma = 2 %              SLM averaged three - two: bias +0.09 sd +0.01 p5 +0.08 p95 +0.12  > 0.1
+  Gain, sigma_gamma = 2 %              SLM single   three - two: bias +0.08 sd +0.01 p5 +0.04 p95 +0.08  <= 0.1
+  Zero offset, sigma_eps = 0.005 mm    BPM n/a      three - two: bias +0.09 sd -0.26 p5 +0.52 p95 -0.34  > 0.1
+  Zero offset, sigma_eps = 0.005 mm    SLM averaged three - two: bias +0.09 sd -0.26 p5 +0.52 p95 -0.34  > 0.1
+  Zero offset, sigma_eps = 0.005 mm    SLM single   three - two: bias +0.09 sd -0.12 p5 +0.28 p95 -0.11  > 0.1
+  Random, sigma_a = 0.0025 mm          BPM n/a      three - two: bias +0.09 sd -0.03 p5 +0.14 p95 +0.04  > 0.1
+  Random, sigma_a = 0.0025 mm          SLM averaged three - two: bias +0.09 sd -0.03 p5 +0.14 p95 +0.04  > 0.1
+  Random, sigma_a = 0.0025 mm          SLM single   three - two: bias +0.09 sd -0.01 p5 +0.11 p95 +0.07  > 0.1
+  Combined                             BPM n/a      three - two: bias +0.08 sd -0.07 p5 +0.20 p95 -0.03  > 0.1
+  Combined                             SLM averaged three - two: bias +0.08 sd -0.07 p5 +0.19 p95 -0.03  > 0.1
+  Combined                             SLM single   three - two: bias +0.09 sd -0.05 p5 +0.16 p95 -0.01  > 0.1
+
+== Section 6.3 / Eq. (20) ===================================================
+  (independent re-draw of the combined case, as in files-v2)
+  SLM sd, averaged reference : 2.11 %   (2.11)
+  SLM sd, single reference   : 3.09 %   (3.09)
+  ratio                      : 1.466    (1.47; sqrt 2 = 1.414)
+  BPM sd                     : 2.12 %   (2.12)
+  random noise alone, BPM sd : 0.07 %   (0.07)
