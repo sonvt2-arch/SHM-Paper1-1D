@@ -4,6 +4,14 @@ Cập nhật: 2026-10-12. Trạng thái: **chờ câu trả lời của người
 
 Cập nhật trước: 2026-10-11. Nhánh: `claude/focused-bell-33lm0n`.
 
+## Cập nhật 2026-10-18 (tối): bản v4
+- **Bản làm việc hiện tại: `manuscript/v4/`** (Word: `manuscript/v4/word/Manuscript_v4.docx`). Tên mới: "Blind loci and design criteria for integral load-monitoring channels on continuous girder bridges, with laboratory verification and an assessment on public field records".
+- Gói 1 (lý thuyết 1A/1B/1C: `docs/pkg1/`, `code/theory2/`), gói 3 (NOR-BWIM: `code/norbwim/`, `docs/pkg1/v4_norbwim_reanalysis.md`; đề cương hiện trường: `docs/pkg1/3_de_cuong_...docx`).
+- 4 biên tập viên đọc v3: `docs/editors_v3/00_TONG_HOP_V3.md`. v4 sửa theo đó (`manuscript/v4/changes_from_v3.md`).
+- Kết quả trung thực NOR-BWIM: dữ liệu không đủ phân biệt trọng lượng; bất biến phù hợp nhưng chưa kết luận; GLS/miễn nhiễm kém hơn trung bình ngoài mẫu (20,4% vs 11,9%).
+- Tác giả quyết định không làm thêm thí nghiệm.
+- Còn chờ tác giả: 7 [NEED VALUE] trong bài (cấp quả cân, mốc đồng hồ, độ chính xác NOR-BWIM gốc, DOI dữ liệu Cầu Mây, xung đột lợi ích, quỹ, cảm ơn) + khai trùng lặp với 2 bài Structures, ngày nộp; Hình 1 và S15.
+
 ## Cập nhật 2026-10-18
 - Đưa câu trả lời mới (từ bảng hỏi bài MSSP, `08_cap_nhat_...md`) vào bản SCHM: xe Cầu Mây 25,06 t (dải sai số nhịp biên 35–93%), Data Availability, Conflicts of Interest (còn [NEED VALUE] tên tác giả), thiết bị Mitutoyo, sai số đặt xe < 20 cm (≤ 0,6% ở N8).
 - Xuất Word: `manuscript/schm/word/Manuscript_SCHM.docx`, `Cover_Letter_SCHM.docx` (dựng lại bằng `build_docx.sh --pdf`).
