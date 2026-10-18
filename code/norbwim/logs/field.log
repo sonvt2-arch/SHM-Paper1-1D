@@ -28,3 +28,5 @@ R3    ['T1'] lane=A dir=-1 (res ratio 1.05) v_fit=13.25 r2=0.791 v_spike=[11.449
 R4    ['T1'] lane=A dir=-1 (res ratio 1.15) v_fit=14.50 r2=0.916 v_spike=[12.75] v_script=12.19
 R5    ['T1'] lane=A dir=-1 (res ratio 1.05) v_fit=15.25 r2=0.604 v_spike=[12.75] v_script=12.12
 R6    ['T2'] lane=A dir=-1 (res ratio 0.78) v_fit=14.25 r2=0.630 v_spike=[19.786] v_script=19.9
+R7    ['T2'] lane=A dir=-1 (res ratio 1.33) v_fit=22.75 r2=0.926 v_spike=[19.103] v_script=19.96
+R8    ['T2'] lane=A dir=-1 (res ratio 1.04) v_fit=23.00 r2=0.911 v_spike=[19.786] v_script=19.66
