@@ -678,8 +678,8 @@ def figures(T1, S, E, SM, NZ, G):
         a.axhline(1, color="k", lw=.6)
         a.set_xticks(x)
         a.set_xticklabels(sub.channel, rotation=90, fontsize=7)
-        a.set_title("Day 1: C(T2)/C(T1), both 3-axle" if g == "d1A" else
-                    "Day 2: C(T4, 5-ax)/C(T3, 3-ax)", fontsize=8)
+        a.set_title("(a) Day 1: C(T2)/C(T1), both 3-axle" if g == "d1A" else
+                    "(b) Day 2: C(5-axle)/C(3-axle)", fontsize=8, loc="left")
         a.set_ylabel("ratio of constants (95% CI)")
         a.set_ylim(0.4, 1.6)
     save(fig, "v4_invariance")
@@ -719,7 +719,8 @@ def figures(T1, S, E, SM, NZ, G):
         a.set_xticks(range(len(order)))
         a.set_xticklabels([e.replace("single ", "") for e in order], rotation=90,
                           fontsize=6.5)
-        a.set_title(tag, fontsize=8)
+        a.set_title({"day2 4ch": "(a) Day 2, 4 gauges", "day1 wheel-path 4ch": "(b) Day 1, 4 wheel-path gauges",
+                     "day1 12ch": "(c) Day 1, 12 gauges"}[tag], fontsize=8, loc="left")
         a.set_ylabel("MAE of GVW (%)")
         a.legend(fontsize=6)
     save(fig, "v4_estimators")

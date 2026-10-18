@@ -208,31 +208,30 @@ def main():
         ax.semilogx(KAPPA, s["rho"], color="k" if name == "Lv44" else "0.65", lw=1.4 if name == "Lv44" else 0.7)
     ax.axhline(1.0, color="k", lw=0.5)
     ax.axhspan(np.exp(-2 * tau_rec), np.exp(2 * tau_rec), color="#2a9d8f", alpha=0.15, lw=0,
-               label=f"|ln $\\rho$| $\\leq$ 2$\\tau$, $\\tau$ = {100*tau_rec:.1f} %")
-    ax.axhspan(np.exp(-0.10), np.exp(0.10), color="#2a9d8f", alpha=0.10, lw=0, label="$\\tau$ = 5 %")
+               label=f"admissible band |ln $r_{{87}}$| $\\leq$ 2$\\tau$, $\\tau$ = {100*tau_rec:.1f} %")
     ax.axvline(K_FE, color="#d0563b", ls=":", lw=1); ax.text(K_FE, 1.13, " A", color="#d0563b")
     ax.axvline(1.199e8 / 0.716, color="#3b6fb6", ls=":", lw=1); ax.text(1.68e8, 1.13, " B", color="#3b6fb6")
-    ax.set_ylabel("$\\rho$ = (meas/pred)$_{N8}$ / (meas/pred)$_{N7}$")
+    ax.set_ylabel("$r_{87}$ = (meas/pred)$_{N8}$ / (meas/pred)$_{N7}$")
     ax.set_ylim(0.98, 1.16)
     ax.legend(fontsize=7, loc="upper right")
-    ax.set_title("grey: model-form variants (L$_v$, n, rigid pier zone)", fontsize=8)
+    ax.set_title("(a) ratio misfit; grey: model-form variants (L$_v$, n, rigid pier zone)", fontsize=8, loc="left")
     ax = axs[1]
     ax.semilogx(KAPPA, norm_index(r["C8"], 55), "k", label="N8 index, EI$_{ref}$ = $\\alpha$EI$_{mid}$")
     ax.semilogx(KAPPA, norm_index(r["C8"], 55) / np.exp(r["lnalpha"]), "k--", lw=0.9,
                 label="N8 index, EI$_{ref}$ = design EI$_{mid}$, $\\alpha=\\alpha^*$")
-    ax.semilogx(KAPPA, r["R8"], color="#d0563b", label="N8 $R_m$")
+    ax.semilogx(KAPPA, r["R8"], color="#d0563b", label="N8 $R$")
     ax.semilogx(KAPPA, norm_index(r["C7"], 90), color="#3b6fb6", label="N7 index ($\\alpha$EI$_{mid}$)")
-    ax.semilogx(KAPPA, r["R7"], color="#3b6fb6", ls="--", label="N7 $R_m$")
+    ax.semilogx(KAPPA, r["R7"], color="#3b6fb6", ls="--", label="N7 $R$")
     ok = r["res"] <= tau_rec
     if ok.any():
         ax.axvspan(KAPPA[ok].min(), KAPPA[ok].max(), color="#2a9d8f", alpha=0.15, lw=0)
-    ok5 = r["res"] <= 0.05
-    ax.axvspan(KAPPA[ok5].min(), KAPPA[ok5].max(), color="#2a9d8f", alpha=0.10, lw=0)
     ax.axhline(0.2, color="0.5", ls=":", lw=0.8)
     ax.set_xlabel("$\\kappa = k/\\alpha$ (kN m/rad)")
     ax.set_ylabel("index")
     ax.legend(fontsize=6.5, ncol=2)
+    ax.set_title("(b) indicators along the static valley $\\alpha^*(\\kappa)$", fontsize=8, loc="left")
     fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.png"), dpi=200)
+    fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.pdf"))
     plt.close(fig)
     log.save()
 

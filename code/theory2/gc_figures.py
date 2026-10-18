@@ -100,7 +100,7 @@ for a_, ys in ((ax[0], [0.4, 0.5]), (ax[1], [0.5])):
     a_.axvline(90 / 55, color="0.2", lw=0.8, ls=":")
     for y in ys:
         a_.plot(90 / 55, y, "ko", ms=4)
-ax[0].annotate("Cau May gauges\n(N8 at 0.4L, 0.5L)", (90 / 55, 0.45), (1.9, 0.86),
+ax[0].annotate("Cầu Mây gauges\n(N8 at 0.4L, 0.5L)", (90 / 55, 0.45), (1.9, 0.86),
                fontsize=7.5, arrowprops=dict(arrowstyle="-", lw=0.6))
 ax[1].annotate("N7", (90 / 55, 0.5), (1.75, 0.44), fontsize=7.5,
                arrowprops=dict(arrowstyle="-", lw=0.6))
@@ -114,7 +114,7 @@ save(fig, "fig_gc_strain_map_3span")
 fig, ax = plt.subplots(1, 2, figsize=(10.5, 3.8), constrained_layout=True)
 for a_, spl, title in ((ax[0], th.two_span(1.0), "(a) equal two-span beam"),
                        (ax[1], th.three_span_sym(90 / 55),
-                        r"(b) symmetric three-span, $\beta=1.636$ (Cau May, prismatic)")):
+                        r"(b) symmetric three-span, $\beta=1.636$ (Cầu Mây, prismatic)")):
     x0 = 0.0
     for j, (L, EI, ml, mr) in enumerate(spl):
         s = np.linspace(0, 1, 201)
@@ -174,7 +174,7 @@ for a_ in ax:
 ax[0].set_ylabel(r"$N_w = 192EI_\mathrm{mid}C_w/L^4$")
 ax[1].set_ylabel(r"$N_M = 8M_q/(q_0L^2)$")
 ax[2].set_ylabel(r"$N_{\varepsilon}$ (mid-span section units)")
-ax[0].set_title("(a) deflection channel (indicator of manuscript Eq. 13)")
+ax[0].set_title(r"(a) deflection channel, $N_w$")
 ax[1].set_title("(b) strain channel: uniform-load moment; dots = strain blind points")
 ax[2].set_title(r"(c) strain channel incl. section sensitivity $c/EI$ (assumption $c\propto h$)")
 ax[1].set_ylim(-2.3, 1.1); ax[2].set_ylim(-1.0, 1.1)

@@ -1,10 +1,37 @@
-# Supplementary scripts: SCHM submission
+# Supplementary scripts: manuscript v4 (SCHM)
 
 Scripts and console logs for the manuscript
 
-> *Total-load observability of continuous girder bridges from a single deflection channel: closed-form blind configurations, laboratory verification and sensor placement on an in-service box girder* (`manuscript/schm/manuscript.md`).
+> *Blind loci and design criteria for integral load-monitoring channels on continuous girder bridges, with laboratory verification and an assessment on public field records* (`manuscript/v4/manuscript.md`).
 
-These are the supplementary scripts that the manuscript's "Computational Implementation", "Data Availability" and "Supplementary Materials" sections refer to. The two-span and laboratory scripts (`s01`–`s05`) were rebuilt from the authors' early package `code/original/files-v2/`; the later JCSHM package was not available. The three-span and Cầu Mây analyses live in `code/analysis/`. They are listed below rather than copied. Every manuscript number checked, and whether it reproduces, is listed in [`REPRODUCTION_REPORT.md`](REPRODUCTION_REPORT.md).
+This README is the entry point for the supplementary package of manuscript v4. The scripts are listed where they live; nothing is duplicated. Every number in the manuscript is traced to a log or CSV in `manuscript/v4/traceability.md`. Older material (the two-span and laboratory scripts `s01`–`s05` and the `code/analysis/` scripts) keeps its original, SCHM-v2 equation and table numbers; the second half of this README describes it.
+
+## Manuscript v4: where each result comes from
+
+Run each script from its own folder with `python3 <script>.py` (the `theory2` and `norbwim` scripts import sibling modules, so do not use `-I` for them). All are deterministic; rerunning them regenerates the committed logs and CSV files unchanged.
+
+| v4 location | Script | Log / results |
+|---|---|---|
+| §2.2, Table 1, App. A–B (blind loci of all channels, strain ring, 981 FE checks) | `code/theory2/gc_theory.py`, `gc_fe.py`, `gc_force_method.py`, `verify_general.py`, `gc_results.py` | `code/theory2/logs/verify_general.log`, `gc_results.log`, `results/gc_T*.csv` |
+| Figs. 3, 8; Figs. S5–S6 | `code/theory2/gc_figures.py` | `code/theory2/figures/fig_gc_*` |
+| §2.4, Fig. 4, Figs. S7–S9 (GLS, zero-sum weights, placement, Monte Carlo, structure-aware weights); §5.3 placement at Cầu Mây | `code/theory2/multisensor_core.py`, `multisensor_theory.py`, `multisensor_placement.py`, `multisensor_mc.py`, `multisensor_figures.py` | `code/theory2/logs/multisensor_*.log`, `results/T*.csv`, `placement_*.csv`, `mc_summary.csv` |
+| §2.5, App. C (Möbius law, adjoint sensitivities, Eq. 16) | `code/theory2/ident_theory.py` | `code/theory2/logs/ident_theory.log` |
+| §5.2, Table 5, Fig. 9 (static admissible sets against τ, model-form variants) | `code/theory2/ident_static.py` | `code/theory2/logs/ident_static.log`, `ident_static_scan.npz` |
+| §5.2 priors, supplement frequency interpretation, Figs. S10–S11 | `code/theory2/ident_freq.py` | `code/theory2/logs/ident_freq.log` |
+| §5.3 Cramér–Rao bounds (evaluation points A and B) | `code/theory2/ident_fisher.py` | `code/theory2/logs/ident_fisher.log` |
+| §4.1 crossing integrals, speeds, noise windows | `code/norbwim/nb_io.py`, `nb_events.py`, `nb_field.py` (reads `data/public/...`) | `code/norbwim/logs/field.log`, `results/events_field.csv`, `events_field_qc.csv` |
+| §4.2–4.4, Tables 3–4, Figs. 6–7, Figs. S1–S2 (all channels, 95 % CIs, TOST, speed, noise covariance, out-of-sample estimators, lane, superposition) | `code/norbwim/nb_v4.py` (about 35 s) | `code/norbwim/logs/v4.log`, `results/v4_*.csv`; narrative in `docs/pkg1/v4_norbwim_reanalysis.md` |
+| §4.4 gauge ratios with standard errors; Fig. 5; Figs. S3–S4 | `code/norbwim/nb_tests.py`, `nb_beam.py`, `nb_fig1.py`, `nb_fe_veb.py` | `code/norbwim/logs/tests.log`, `fe_veb.log`, `results/test_*.csv` |
+| §4.4 beam-model span shares and $r^2$; Table 7 (offset bias over the static set) | `code/v3/v3_numbers.py` | `code/v3/logs/v3_numbers.log` |
+| Table 6 (predicted discriminating measurements) | `code/fieldplan/fieldplan_compute.py` | `code/fieldplan/results/fieldplan_compute.log` (figure labels in this script are still Vietnamese; its figures are not used in v4) |
+| §3, Table 2, supplementary laboratory material | `code/supplementary/s01`–`s05` (below) | `code/supplementary/logs/` |
+| Word counts and placeholder check | `code/analysis/wp7b_checks.py manuscript/v4` | console |
+
+Figure files for the manuscript are copied into `manuscript/v4/figures/`; `manuscript/v4/figure_table_plan.md` maps each to its script. The Word and PDF files are built with `bash manuscript/v4/word/build_docx.sh --pdf`.
+
+## Legacy material (SCHM-v2 numbering)
+
+The following sections describe the scripts written for the SCHM v2 manuscript (`manuscript/schm/manuscript.md`). Their equation, table and section numbers refer to that version.
 
 ## How to run
 

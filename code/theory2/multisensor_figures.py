@@ -47,7 +47,7 @@ save(fig, "ms_fig1_Cx_extremes")
 
 # ---------------------------------------------------------------- Fig 2: placement gains
 rows = list(csv.DictReader(open(f"{mc.RES}/placement_vertex.csv")))
-fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.6))
+fig, axs = plt.subplots(1, 3, figsize=(7.2, 3.6))
 ax = axs[0]
 mk = {"2S-eq": "o", "3S-b2.0": "s", "CM-A": "^", "CM-B": "v"}
 for key in mk:
@@ -56,11 +56,11 @@ for key in mk:
              and float(x["eps"]) == 0.1 and int(x["k"]) == k and x["est"] == "gls"]
         rh = [float(x["rho"]) for x in r]
         ax.semilogy(rh, [float(x["ratio"]) for x in r], ls, marker=mk[key], ms=3.5, lw=1,
-                    label=f"{key}, k={k}")
+                    label=f"{key}, k = {k}")
 ax.set_xlabel(r"common-mode fraction $\rho$")
 ax.set_ylabel(r"Var$_k$/Var$_1$ (GLS)")
 ax.set_title("(a) gain over the best single sensor", loc="left")
-ax.legend(ncol=2, fontsize=5.5, frameon=False)
+ax.legend(ncol=2, fontsize=5.5, frameon=False, loc="lower left")
 ax = axs[1]
 for key, c in (("CM-A", COL["gls"]), ("2S-eq", COL["aux"])):
     for rho, ls in ((0.0, ":"), (0.9, "-"), (1.0, "--")):
@@ -69,18 +69,18 @@ for key, c in (("CM-A", COL["gls"]), ("2S-eq", COL["aux"])):
                  float(x["sig"]) == 0.01 and float(x["rho"]) == rho and int(x["k"]) == 3
                  and x["est"] == est]
             ax.loglog([float(x["eps"]) for x in r], [float(x["std_pct"]) for x in r], ls,
-                      color=c, lw=1, label=f"{key} k=3, rho={rho}")
+                      color=c, lw=1, label=f"{key}, k = 3, $\\rho$ = {rho}")
     r = [x for x in rows if x["model"] == key and x["types"] == "d" and float(x["sig"]) == 0.01
          and float(x["rho"]) == 0.0 and int(x["k"]) == 1]
     ax.loglog([float(x["eps"]) for x in r], [float(x["std_pct"]) for x in r], "-", color=c,
-              lw=2.2, alpha=0.35, label=f"{key} single")
+              lw=2.2, alpha=0.35, label=f"{key}, single sensor")
 ax.set_xlabel(r"offset std $\varepsilon_0$ (mm)")
 ax.set_xticks([0.02, 0.05, 0.1, 0.2, 0.5])
 ax.set_xticklabels(["0.02", "0.05", "0.1", "0.2", "0.5"])
 ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
 ax.set_ylabel(r"std of $\hat P$ (% of P)")
 ax.set_title(r"(b) $\sigma_a$ = 0.01 mm", loc="left")
-ax.legend(fontsize=5.2, frameon=False)
+ax.legend(fontsize=5.6, frameon=False, ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.28))
 ax = axs[2]
 t3 = list(csv.DictReader(open(f"{mc.RES}/T3_immune.csv")))
 for key, c in (("2S-eq", COL["aux"]), ("3S-b2.0", COL["immune"]), ("CM-A", COL["gls"])):
@@ -90,7 +90,7 @@ for key, c in (("2S-eq", COL["aux"]), ("3S-b2.0", COL["immune"]), ("CM-A", COL["
 ax.set_xlabel(r"white noise $\sigma_a$ (mm)")
 ax.set_ylabel(r"std of $\hat P$ (% of P)")
 ax.set_title(r"(c) $\rho$ = 1: offset-immune pair", loc="left")
-ax.legend(fontsize=6, frameon=False)
+ax.legend(fontsize=5.6, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.28))
 fig.tight_layout()
 save(fig, "ms_fig2_placement_gain")
 
@@ -110,7 +110,7 @@ for ax, case in zip(axs[:2], ("A", "B")):
         ax.plot(xx, np.exp(-xx**2 / (2 * sd**2)) / (sd * np.sqrt(2 * np.pi)), ":", color=c, lw=1)
     ax.set_xlabel(r"$\hat P - P$ (kN)")
     ax.set_ylabel("density")
-    ax.set_title({"A": "(a) 30+60+30 m", "B": "(b) Cau May, calibration A"}[case], loc="left")
+    ax.set_title({"A": "(a) 30+60+30 m", "B": "(b) Cầu Mây, calibration A"}[case], loc="left")
 axs[0].legend(fontsize=6, frameon=False)
 ax = axs[2]
 for case, mkr in (("A", "o"), ("B", "s")):
