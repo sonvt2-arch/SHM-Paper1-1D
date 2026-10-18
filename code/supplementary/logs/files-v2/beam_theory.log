@@ -1,0 +1,5 @@
+I  = 16529.76 mm^4
+EI = 3.30595e+09 N mm^2
+P0 = 40.6428 N
+C_m = l^4/192EI = 61.5407 mm^2/N
+exact single-load integral = 2501.1871 mm^2

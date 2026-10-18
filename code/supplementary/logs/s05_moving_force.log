@@ -1,0 +1,121 @@
+
+== Model and fundamental frequency ==========================================
+  EI = 3305.95 N m^2, m = 1.46415 kg/m (1.464), C_m = 6.154067e-05 m^2/N
+  with A = 186.5 mm^2 exactly: f1 = 11.9430 Hz
+  FE frequencies (Hz): 11.942, 18.656, 47.770, 60.459
+  f1 FE = 11.9425 Hz, analytical (pi/l)^2 sqrt(EI/m)/2pi = 11.9425 Hz  (manuscript: 11.942)
+  Rayleigh: alpha = 2.4012 1/s, beta = 1.0661e-04 s (2 % at modes 1 and 3)
+  check: unit static load at l/2 -> mid deflection 7.077177e-05 m; Eq. (A.2) 7.077177e-05 m
+  mesh 10 el/span: f1 = 11.9426 Hz
+  mesh 20 el/span: f1 = 11.9425 Hz
+  mesh 80 el/span: f1 = 11.9425 Hz
+
+== Quasi-static limit =======================================================
+  T_cr/T1 =   240: E = -0.0009 %
+  T_cr/T1 =   480: E = -0.0002 %
+
+== Time-step convergence (manuscript: 1000 -> 16 000 steps changes E by 0.002 pp) 
+    Tcr/T1       1000       2000       4000       8000      16000   max-min (pp)
+       1.5   -83.6005   -83.6015   -83.6017   -83.6018   -83.6018   0.0013
+       3.0    -1.3833    -1.3817    -1.3814    -1.3813    -1.3812   0.0021
+       8.0    -0.4732    -0.4732    -0.4731    -0.4731    -0.4731   0.0001
+      30.0    -0.0534    -0.0529    -0.0528    -0.0527    -0.0527   0.0007
+     120.0    -0.0036    -0.0034    -0.0034    -0.0034    -0.0034   0.0002
+
+== Mesh convergence (4000 steps) ============================================
+  Tcr/T1 =  3.0: ne/span 10, 20, 40, 80 -> -1.3811, -1.3813, -1.3814, -1.3814
+  Tcr/T1 =  8.0: ne/span 10, 20, 40, 80 -> -0.4731, -0.4731, -0.4731, -0.4731
+
+== Sweep: 47 speeds, T_cr/T_1 log-spaced 0.6 ... 120 (Fig. 10) ==============
+  Tcr/T1 =    0.600  v =   99.521 m/s  E_dyn = +163.6966 %
+  Tcr/T1 =    0.673  v =   88.693 m/s  E_dyn = +141.6171 %
+  Tcr/T1 =    0.755  v =   79.044 m/s  E_dyn = +108.2298 %
+  Tcr/T1 =    0.848  v =   70.444 m/s  E_dyn =  +69.9288 %
+  Tcr/T1 =    0.951  v =   62.780 m/s  E_dyn =  +31.2739 %
+  Tcr/T1 =    1.067  v =   55.950 m/s  E_dyn =   -7.0293 %
+  Tcr/T1 =    1.198  v =   49.863 m/s  E_dyn =  -47.0110 %
+  Tcr/T1 =    1.344  v =   44.438 m/s  E_dyn =  -80.3343 %
+  Tcr/T1 =    1.508  v =   39.604 m/s  E_dyn =  -82.7326 %
+  Tcr/T1 =    1.692  v =   35.295 m/s  E_dyn =  -43.3586 %
+  Tcr/T1 =    1.898  v =   31.455 m/s  E_dyn =   -3.4593 %
+  Tcr/T1 =    2.130  v =   28.033 m/s  E_dyn =   -5.8352 %
+  Tcr/T1 =    2.390  v =   24.983 m/s  E_dyn =  -17.6352 %
+  Tcr/T1 =    2.682  v =   22.265 m/s  E_dyn =  -10.5652 %
+  Tcr/T1 =    3.009  v =   19.843 m/s  E_dyn =   -1.2887 %
+  Tcr/T1 =    3.377  v =   17.684 m/s  E_dyn =   -7.5488 %
+  Tcr/T1 =    3.789  v =   15.760 m/s  E_dyn =   -2.6349 %
+  Tcr/T1 =    4.251  v =   14.045 m/s  E_dyn =   -3.0403 %
+  Tcr/T1 =    4.770  v =   12.517 m/s  E_dyn =   -2.4408 %
+  Tcr/T1 =    5.353  v =   11.155 m/s  E_dyn =   -2.5222 %
+  Tcr/T1 =    6.006  v =    9.942 m/s  E_dyn =   -0.6658 %
+  Tcr/T1 =    6.739  v =    8.860 m/s  E_dyn =   -1.2887 %
+  Tcr/T1 =    7.562  v =    7.896 m/s  E_dyn =   -1.2549 %
+  Tcr/T1 =    8.485  v =    7.037 m/s  E_dyn =   -0.9903 %
+  Tcr/T1 =    9.521  v =    6.272 m/s  E_dyn =   -0.7370 %
+  Tcr/T1 =   10.683  v =    5.589 m/s  E_dyn =   -0.5110 %
+  Tcr/T1 =   11.988  v =    4.981 m/s  E_dyn =   -0.2498 %
+  Tcr/T1 =   13.451  v =    4.439 m/s  E_dyn =   -0.3230 %
+  Tcr/T1 =   15.093  v =    3.956 m/s  E_dyn =   -0.1841 %
+  Tcr/T1 =   16.936  v =    3.526 m/s  E_dyn =   -0.1510 %
+  Tcr/T1 =   19.003  v =    3.142 m/s  E_dyn =   -0.1207 %
+  Tcr/T1 =   21.323  v =    2.800 m/s  E_dyn =   -0.1114 %
+  Tcr/T1 =   23.926  v =    2.496 m/s  E_dyn =   -0.0813 %
+  Tcr/T1 =   26.847  v =    2.224 m/s  E_dyn =   -0.0663 %
+  Tcr/T1 =   30.124  v =    1.982 m/s  E_dyn =   -0.0526 %
+  Tcr/T1 =   33.801  v =    1.767 m/s  E_dyn =   -0.0427 %
+  Tcr/T1 =   37.928  v =    1.574 m/s  E_dyn =   -0.0337 %
+  Tcr/T1 =   42.558  v =    1.403 m/s  E_dyn =   -0.0272 %
+  Tcr/T1 =   47.753  v =    1.250 m/s  E_dyn =   -0.0215 %
+  Tcr/T1 =   53.583  v =    1.114 m/s  E_dyn =   -0.0171 %
+  Tcr/T1 =   60.124  v =    0.993 m/s  E_dyn =   -0.0135 %
+  Tcr/T1 =   67.464  v =    0.885 m/s  E_dyn =   -0.0108 %
+  Tcr/T1 =   75.699  v =    0.789 m/s  E_dyn =   -0.0085 %
+  Tcr/T1 =   84.940  v =    0.703 m/s  E_dyn =   -0.0068 %
+  Tcr/T1 =   95.310  v =    0.627 m/s  E_dyn =   -0.0054 %
+  Tcr/T1 =  106.945  v =    0.558 m/s  E_dyn =   -0.0043 %
+  Tcr/T1 =  120.000  v =    0.498 m/s  E_dyn =   -0.0034 %
+
+== Table 9: envelope max |E_dyn| over T_cr/T_1 >= threshold =================
+  threshold            2       3       4       6       8      10      15      20
+  this, 47 pts     17.64    7.55    3.04    1.29    0.99    0.51    0.18    0.11
+  manuscript       17.60    8.60    3.80    1.70    1.00    0.32    0.15    0.08
+
+== Dense sweep (300 speeds, 2000 steps) - envelope independent of the speed sampling 
+  threshold            2       3       4       6       8      10      15      20
+  dense            17.64    8.64    4.09    1.77    0.99    0.59    0.23    0.13
+  at T_cr/T_1       2.39    3.47    4.44    6.56    8.56   10.59   15.64   20.40
+  E at exactly the thresholds (4000 steps):
+                   +0.37   -1.38   -0.67   -0.66   -0.47   -0.34   -0.18   -0.11
+  fine scan 4.0-4.6 (61 pts, 4000 steps): max |E| = 4.115 % at T_cr/T_1 = 4.48
+  largest T_cr/T_1 with |E| > 15 %: 2.52  (manuscript: error exceeds 15 % below ~2.5)
+  sign changes of E at T_cr/T_1 = 1.06, 1.97, 2.04
+  Eq. (21): max|E| for >= 8: 0.99 % (<~1 %); for >= 4: 4.09 % (< 4 %)
+
+== Truncation mechanism (T_cr/T_1 = 1.5) ====================================
+  E = -83.60 %; y_mid at exit / static peak = -34.5 %  (manuscript: 39 %)
+  T_cr/T1 =  1.5: window to exit E = -83.602 %; extended by 4 T1 E = -59.920 % (ratio 0.72)
+  T_cr/T1 =  3.0: window to exit E =  -1.381 %; extended by 4 T1 E =  -1.065 % (ratio 0.77)
+  T_cr/T1 =  8.0: window to exit E =  -0.473 %; extended by 4 T1 E =  -0.379 % (ratio 0.80)
+  (manuscript: extending the window by four fundamental periods roughly halves the error)
+
+== Damping (manuscript: 0.5-5 % changes E monotonically; less damping, less error) 
+  Tcr/T1 =   3: zeta 0.5,1,2,3,5 % -> +0.195, -0.381, -1.381, -2.205, -3.428   |E| monotonic: True, increasing with zeta: True
+  Tcr/T1 =   5: zeta 0.5,1,2,3,5 % -> +0.381, +0.017, -0.554, -0.964, -1.466   |E| monotonic: False, increasing with zeta: False
+  Tcr/T1 =   8: zeta 0.5,1,2,3,5 % -> -0.162, -0.290, -0.473, -0.587, -0.699   |E| monotonic: True, increasing with zeta: True
+
+== Damping-model sensitivity of the smooth (high T_cr/T_1) part, 2000 steps =
+  T_cr/T_1:                  4       6       8      10      12      15      20
+  Rayleigh 2 %, modes 1 & 3 -0.674  -0.662  -0.473  -0.336  -0.247  -0.181  -0.110
+  Rayleigh 2 %, modes 1 & 2 -0.675  -0.642  -0.459  -0.330  -0.247  -0.179  -0.110
+  undamped               +0.968  +0.110  +0.000  +0.038  +0.090  +0.007  +0.041
+
+== Multi-axle invariance under dynamics (fixed total load 1 N) ==============
+  speeds 5 m/s (T_cr/T1 = 11.94) and 20 m/s (2.99); equal axle loads;
+  window from entry of the first to exit of the last axle; ratio uses T_cr = 2l/v
+  v =  5.0 m/s: I/(C_m P) - 1 per config (%): -0.26 -0.16 -0.04 -0.04 -0.05 -0.06 -0.06
+     spread (max-min)/mean = 0.23 %   (manuscript: 0.33 % at 11.9, 1.95 % at 3.0)
+  v = 20.0 m/s: I/(C_m P) - 1 per config (%): -1.56 -0.64 +0.34 +0.36 +0.12 -1.93 -1.64
+     spread (max-min)/mean = 2.31 %   (manuscript: 0.33 % at 11.9, 1.95 % at 3.0)
+  configs: 1 axle; then (2 axles, 3 axles) at spacings 0.5, 1.0, 1.5 m
+
+  run time 99 s

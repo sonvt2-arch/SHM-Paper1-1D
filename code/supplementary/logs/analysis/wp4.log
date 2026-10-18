@@ -1,0 +1,231 @@
+[gie-cuc-1 N1 raw] samples=3000 ymin=-10.800 ymax=0.000 mode_baseline(s)=0.139 thr=0.946 tare0=0.100 quiet_block_scatter=0.000 mm quiet_slope=0.0303 mm/s events=4
+[gie-cuc-1 N1 proc] samples=3000 ymin=-10.800 ymax=0.000 mode_baseline(s)=0.139 thr=0.946 tare0=0.100 quiet_block_scatter=0.000 mm quiet_slope=0.0303 mm/s events=4
+[gie-cuc-1 N2 raw] samples=3000 ymin=-4.500 ymax=-1.900 mode_baseline(s)=-0.101 thr=0.697 tare0=2.100 quiet_block_scatter=0.041 mm quiet_slope=-0.0051 mm/s events=2
+[gie-cuc-1 N2 proc] samples=3000 ymin=-7.800 ymax=0.650 mode_baseline(s)=-0.101 thr=0.697 tare0=0.000 quiet_block_scatter=0.134 mm quiet_slope=-0.0166 mm/s events=2
+[gie-cuc-1 N3 raw] samples=3000 ymin=-3.900 ymax=-2.100 mode_baseline(s)=-0.083 thr=0.818 tare0=2.300 quiet_block_scatter=0.000 mm quiet_slope=-0.0020 mm/s events=1
+[gie-cuc-1 N3 proc] samples=3000 ymin=-8.500 ymax=0.773 mode_baseline(s)=-0.083 thr=0.818 tare0=0.258 quiet_block_scatter=0.000 mm quiet_slope=-0.0103 mm/s events=1
+[phuong-do N1 raw] samples=3000 ymin=-11.211 ymax=4.800 mode_baseline(s)=0.180 thr=0.729 tare0=0.044 quiet_block_scatter=0.014 mm quiet_slope=-0.1834 mm/s events=1
+[phuong-do N1 proc] samples=3000 ymin=-7.600 ymax=3.254 mode_baseline(s)=0.180 thr=0.729 tare0=0.230 quiet_block_scatter=0.009 mm quiet_slope=-0.0047 mm/s events=1
+[phuong-do N2 raw] samples=3000 ymin=-7.664 ymax=-1.282 mode_baseline(s)=0.140 thr=0.682 tare0=2.209 quiet_block_scatter=0.035 mm quiet_slope=0.0156 mm/s events=1
+[phuong-do N2 proc] samples=3000 ymin=-7.200 ymax=1.367 mode_baseline(s)=0.140 thr=0.682 tare0=-0.122 quiet_block_scatter=0.047 mm quiet_slope=0.0209 mm/s events=1
+
+=== EVENTS / SPEED ===
+       bridge span channel  event  major  trunc_start  trunc_end  t_start_s  t_end_s  peak_down_mm  peak_up_mm  T10_s  T50_s  T10_complete  v_kmh_IL10  v_kmh_IL50  v_kmh_fit_3axle  v_kmh_fit_pointload  fit_rms_over_peak
+0   gie-cuc-1   N1     raw      1   True        False      False      1.060    2.895        10.163      -0.517  1.775  1.125          True        48.6        53.7             50.9                 49.5              0.022
+1   gie-cuc-1   N1     raw      2   True        False      False      3.920    5.415         4.481      -1.059  1.650  1.140          True        52.3        53.0             54.5                 53.2              0.031
+2   gie-cuc-1   N1     raw      3  False        False      False      8.905   10.010         1.235      -0.808  2.035  1.255         False         NaN         NaN              NaN                  NaN                NaN
+3   gie-cuc-1   N1     raw      4   True        False       True     13.375   14.980         8.295      -0.400  1.640  1.025          True        52.6        58.9              NaN                  NaN                NaN
+4   gie-cuc-1   N1    proc      1   True        False      False      1.060    2.895        10.163      -0.517  1.775  1.125          True        48.6        53.7             50.9                 49.5              0.022
+5   gie-cuc-1   N1    proc      2   True        False      False      3.920    5.415         4.481      -1.059  1.650  1.140          True        52.3        53.0             54.5                 53.2              0.031
+6   gie-cuc-1   N1    proc      3  False        False      False      8.905   10.010         1.235      -0.808  2.035  1.255         False         NaN         NaN              NaN                  NaN                NaN
+7   gie-cuc-1   N1    proc      4   True        False       True     13.375   14.980         8.295      -0.400  1.640  1.025          True        52.6        58.9              NaN                  NaN                NaN
+8   gie-cuc-1   N2     raw      1   True        False      False      0.735    2.305         1.490      -0.000  1.575  0.980          True        54.8        61.6             55.7                 54.3              0.020
+9   gie-cuc-1   N2     raw      2   True        False      False      5.865    7.685         2.210      -0.100  1.830  1.055          True        47.2        57.3             52.5                 51.0              0.020
+10  gie-cuc-1   N2    proc      1   True        False      False      0.735    2.305         4.844       0.000  1.575  0.980          True        54.8        61.6             55.7                 54.3              0.020
+11  gie-cuc-1   N2    proc      2   True        False      False      5.865    7.685         7.181      -0.325  1.830  1.055          True        47.2        57.3             52.5                 51.0              0.020
+12  gie-cuc-1   N3     raw      1   True        False      False      1.145    2.900         1.575      -0.019  1.735  1.080          True        49.8        55.9             53.2                 51.9              0.023
+13  gie-cuc-1   N3    proc      1   True        False      False      1.145    2.900         8.116      -0.096  1.735  1.080          True        49.8        55.9             53.2                 51.9              0.023
+14  phuong-do   N1     raw      1   True        False      False      3.675    7.200        11.774       3.585  1.890  1.260          True        31.1        32.7             33.6                 31.4              0.024
+15  phuong-do   N1    proc      1   True        False      False      3.675    7.200         7.276       3.457  1.795  1.160          True        32.7        35.5             36.2                 33.6              0.047
+16  phuong-do   N2     raw      1   True        False      False      1.990    5.580         5.339       1.061  2.165  1.360          True        27.1        30.2             30.1                 28.0              0.036
+17  phuong-do   N2    proc      1   True        False      False      1.990    5.580         7.167       1.425  2.165  1.360          True        27.1        30.2             30.1                 28.0              0.036
+
+=== BASELINE ===
+       bridge span channel  event  major  pre_level_mm  post_level_mm  eps0_prepost_mm  I_a_raw  I_b_linear  I_c1_poly3  I_c2_hp0.1Hz  I_c3_hp0.5Hz  I_pre_only  dev_pct_a_raw  dev_pct_c1_poly3  dev_pct_c2_hp0.1Hz  dev_pct_c3_hp0.5Hz  dev_pct_pre_only  eps0_eff_mm  bias_paper_Trec15_pct  eps0_quiet_scatter_mm  bias_quietscatter_Trec15_pct
+0   gie-cuc-1   N1     raw      1   True         0.100          0.200            0.100   10.966      10.838      11.050         4.518        -0.130      10.966            1.2               2.0               -58.3              -101.2               1.2        0.053                    7.3                  0.000                           0.0
+1   gie-cuc-1   N1     raw      2   True         0.200          0.100           -0.100    5.030       4.898       5.069         0.874         0.115       4.820            2.7               3.5               -82.1               -97.6              -1.6        0.063                   19.3                  0.000                           0.0
+2   gie-cuc-1   N1     raw      3  False         0.100          0.400            0.300    1.801       1.545       1.551         0.258         0.092       1.801           16.6               0.4               -83.3               -94.0              16.6        0.150                  145.6                  0.000                           0.0
+3   gie-cuc-1   N1     raw      4   True         0.400            NaN              NaN    7.395         NaN       6.601         4.795        -0.115       6.819            NaN               NaN                 NaN                 NaN               NaN          NaN                    NaN                    NaN                           NaN
+4   gie-cuc-1   N1    proc      1   True         0.100          0.200            0.100   10.966      10.838      11.050         4.518        -0.130      10.966            1.2               2.0               -58.3              -101.2               1.2        0.053                    7.3                  0.000                           0.0
+5   gie-cuc-1   N1    proc      2   True         0.200          0.100           -0.100    5.030       4.898       5.069         0.874         0.115       4.820            2.7               3.5               -82.1               -97.6              -1.6        0.063                   19.3                  0.000                           0.0
+6   gie-cuc-1   N1    proc      3  False         0.100          0.400            0.300    1.801       1.545       1.551         0.258         0.092       1.801           16.6               0.4               -83.3               -94.0              16.6        0.150                  145.6                  0.000                           0.0
+7   gie-cuc-1   N1    proc      4   True         0.400            NaN              NaN    7.395         NaN       6.601         4.795        -0.115       6.819            NaN               NaN                 NaN                 NaN               NaN          NaN                    NaN                    NaN                           NaN
+8   gie-cuc-1   N2     raw      1   True         2.100          2.100            0.000    1.395       1.395       1.419         0.776        -0.020       1.395            0.0               1.7               -44.4              -101.4               0.0        0.000                    0.0                  0.041                          44.3
+9   gie-cuc-1   N2     raw      2   True         2.100          2.100            0.000    2.378       2.378       2.465         1.231        -0.056       2.378            0.0               3.6               -48.2              -102.3               0.0        0.000                    0.0                  0.041                          26.0
+10  gie-cuc-1   N2    proc      1   True         0.000          0.000            0.000    4.535       4.535       4.613         2.522        -0.065       4.535            0.0               1.7               -44.4              -101.4               0.0        0.000                    0.0                  0.134                          44.3
+11  gie-cuc-1   N2    proc      2   True         0.000          0.000            0.000    7.730       7.730       8.011         4.001        -0.181       7.730            0.0               3.6               -48.2              -102.3               0.0        0.000                    0.0                  0.134                          26.0
+12  gie-cuc-1   N3     raw      1   True         2.300          2.200           -0.100    1.629       1.726       1.756         0.871        -0.033       1.629           -5.6               1.7               -49.5              -101.9              -5.6       -0.041                   35.7                  0.000                           0.0
+13  gie-cuc-1   N3    proc      1   True         0.258         -0.258           -0.515    8.394       8.893       9.048         4.489        -0.171       8.394           -5.6               1.7               -49.5              -101.9              -5.6       -0.212                   35.7                  0.000                           0.0
+14  phuong-do   N1     raw      1   True         0.044         -2.011           -2.056    7.397      11.637      11.493         3.407        -0.111       7.397          -36.4              -1.2               -70.7              -101.0             -36.4       -1.028                  132.5                  0.014                           1.7
+15  phuong-do   N1    proc      1   True         0.230          0.187           -0.043    4.718       4.807       4.811         1.371        -0.092       4.718           -1.9               0.1               -71.5              -101.9              -1.9       -0.022                    6.8                  0.009                           2.9
+16  phuong-do   N2     raw      1   True         2.218          2.391            0.173    6.628       6.243       6.315         1.729        -0.066       6.590            6.2               1.2               -72.3              -101.1               5.6        0.092                   22.1                  0.035                           8.4
+17  phuong-do   N2    proc      1   True        -0.110          0.122            0.232    8.897       8.380       8.477         2.321        -0.088       8.846            6.2               1.2               -72.3              -101.1               5.6        0.123                   22.1                  0.047                           8.4
+
+=== LOW-PASS (fc=2 Hz) ===
+   span channel  event  major      baseline  fc_Hz  fc_over_f1  I_unfiltered  I_lowpass  ratio_LP_over_unfiltered  I_dynamic_residual  I_abs_residual  cancellation_net_over_abs  peak_unfilt_mm  peak_lowpass_mm  peak_ratio  IM_reported
+1    N1     raw      1   True      b_linear    2.0        0.36        10.838     10.837                    0.9999               0.001           0.754                      0.001          10.644            9.379       1.135        1.152
+4    N1     raw      2   True      b_linear    2.0        0.36         4.898      4.900                    1.0004              -0.002           0.304                      0.007           4.545            4.482       1.014        1.152
+7    N1     raw      3  False      b_linear    2.0        0.36         1.545      1.544                    0.9991               0.001           0.119                      0.012           1.357            1.223       1.110        1.152
+10   N1     raw      4   True  a_tare(only)    2.0        0.36         7.395      7.469                    1.0100              -0.074           1.121                      0.066           8.600            6.950       1.237        1.152
+13   N1    proc      1   True      b_linear    2.0        0.36        10.838     10.837                    0.9999               0.001           0.754                      0.001          10.644            9.379       1.135        1.152
+16   N1    proc      2   True      b_linear    2.0        0.36         4.898      4.900                    1.0004              -0.002           0.304                      0.007           4.545            4.482       1.014        1.152
+19   N1    proc      3  False      b_linear    2.0        0.36         1.545      1.544                    0.9991               0.001           0.119                      0.012           1.357            1.223       1.110        1.152
+22   N1    proc      4   True  a_tare(only)    2.0        0.36         7.395      7.469                    1.0100              -0.074           1.121                      0.066           8.600            6.950       1.237        1.152
+25   N2     raw      1   True      b_linear    2.0        0.34         1.395      1.395                    0.9999               0.000           0.163                      0.001           1.600            1.364       1.173        1.114
+28   N2     raw      2   True      b_linear    2.0        0.34         2.378      2.378                    0.9999               0.000           0.206                      0.001           2.400            2.113       1.136        1.114
+31   N2    proc      1   True      b_linear    2.0        0.34         4.535      4.535                    0.9999               0.000           0.530                      0.001           5.200            4.434       1.173        1.114
+34   N2    proc      2   True      b_linear    2.0        0.34         7.730      7.729                    0.9999               0.001           0.671                      0.001           7.800            6.867       1.136        1.114
+37   N3     raw      1   True      b_linear    2.0        0.33         1.726      1.726                    1.0000               0.000           0.148                      0.000           1.645            1.543       1.066        1.122
+40   N3    proc      1   True      b_linear    2.0        0.33         8.893      8.893                    1.0000               0.000           0.761                      0.000           8.475            7.948       1.066        1.122
+43   N1     raw      1   True      b_linear    2.0        0.39        11.637     11.642                    1.0005              -0.005           1.562                      0.003          11.837           11.534       1.026        1.126
+46   N1    proc      1   True      b_linear    2.0        0.39         4.807      4.810                    1.0006              -0.003           1.142                      0.003           7.384            7.118       1.037        1.126
+49   N2     raw      1   True      b_linear    2.0        0.36         6.243      6.247                    1.0006              -0.004           0.436                      0.009           5.380            5.127       1.049        1.095
+52   N2    proc      1   True      b_linear    2.0        0.36         8.380      8.386                    1.0006              -0.005           0.585                      0.009           7.222            6.882       1.049        1.095
+
+=== LOW-PASS fc sweep, major events, ratio ===
+fc_Hz                            1.0     2.0     3.0
+bridge    span channel event                        
+gie-cuc-1 N1   proc    1      1.0040  0.9999  1.0000
+                       2      1.0100  1.0004  0.9994
+                       4      1.0933  1.0100  1.0002
+               raw     1      1.0040  0.9999  1.0000
+                       2      1.0100  1.0004  0.9994
+                       4      1.0933  1.0100  1.0002
+          N2   proc    1      1.0083  0.9999  0.9999
+                       2      1.0042  0.9999  0.9998
+               raw     1      1.0083  0.9999  0.9999
+                       2      1.0042  0.9999  0.9998
+          N3   proc    1      1.0044  1.0000  1.0001
+               raw     1      1.0044  1.0000  1.0001
+phuong-do N1   proc    1      0.9974  1.0006  1.0003
+               raw     1      1.0019  1.0005  0.9999
+          N2   proc    1      1.0009  1.0006  1.0007
+               raw     1      1.0009  1.0006  1.0007
+
+=== Vong (processed) vs Vong0 (raw): least-squares  Vong = k*Vong0 + c, over the major-event window (PD N1 excluded after the 7.2 s step) ===
+      bridge span      k    c_mm    corr  rng_raw_mm  rng_proc_mm
+0  gie-cuc-1   N1  1.000   0.000  1.0000       10.80        10.80
+1  gie-cuc-1   N2  3.250   6.825  1.0000        2.60         8.45
+2  gie-cuc-1   N3  5.152  11.591  1.0000        1.80         9.27
+3  phuong-do   N1  0.671  -0.110  0.9994       16.01        10.85
+4  phuong-do   N2  1.342   3.087  1.0000        6.38         8.57
+
+=== Whole 15 s record integral: tare-only vs quiet-sample poly3 baseline ===
+      bridge span channel  T_record_s  I_whole_record_tare_mm_s  I_whole_record_poly3_mm_s  diff_pct  eps0_equiv_mm
+0  gie-cuc-1   N1     raw        15.0                     26.05                      24.27       7.3          0.119
+1  gie-cuc-1   N1    proc        15.0                     26.05                      24.27       7.3          0.119
+2  gie-cuc-1   N2     raw        15.0                      3.28                       3.88     -15.5         -0.040
+3  gie-cuc-1   N2    proc        15.0                     10.67                      12.62     -15.5         -0.130
+4  gie-cuc-1   N3     raw        15.0                      0.71                       1.76     -59.8         -0.070
+5  gie-cuc-1   N3    proc        15.0                      3.64                       9.05     -59.8         -0.361
+6  phuong-do   N1     raw        15.0                     -8.09                      11.49    -170.4         -1.306
+7  phuong-do   N1    proc        15.0                      4.34                       4.81      -9.9         -0.032
+8  phuong-do   N2     raw        15.0                      8.48                       6.32      34.2          0.144
+9  phuong-do   N2    proc        15.0                     11.38                       8.48      34.2          0.193
+
+=== CONSISTENCY v*I (complete major events, baseline b) ===
+       bridge span channel  event speed_source   v_ms  I_b_mm_s  v_times_I_mm_m  ref_P_Cm_mm_m_if_static_truck_full_share  implied_share_if_static_truck
+0   gie-cuc-1   N1     raw      1        v_fit  14.14    10.838          153.24                                     132.3                          1.158
+1   gie-cuc-1   N1     raw      1      v_nom30   8.33    10.838           90.32                                     132.3                          0.683
+2   gie-cuc-1   N1     raw      1      v_nom35   9.72    10.838          105.37                                     132.3                          0.796
+3   gie-cuc-1   N1     raw      1      v_nom40  11.11    10.838          120.42                                     132.3                          0.910
+4   gie-cuc-1   N1     raw      2        v_fit  15.14     4.898           74.15                                     132.3                          0.560
+5   gie-cuc-1   N1     raw      2      v_nom30   8.33     4.898           40.82                                     132.3                          0.308
+6   gie-cuc-1   N1     raw      2      v_nom35   9.72     4.898           47.62                                     132.3                          0.360
+7   gie-cuc-1   N1     raw      2      v_nom40  11.11     4.898           54.42                                     132.3                          0.411
+8   gie-cuc-1   N1    proc      1        v_fit  14.14    10.838          153.24                                     132.3                          1.158
+9   gie-cuc-1   N1    proc      1      v_nom30   8.33    10.838           90.32                                     132.3                          0.683
+10  gie-cuc-1   N1    proc      1      v_nom35   9.72    10.838          105.37                                     132.3                          0.796
+11  gie-cuc-1   N1    proc      1      v_nom40  11.11    10.838          120.42                                     132.3                          0.910
+12  gie-cuc-1   N1    proc      2        v_fit  15.14     4.898           74.15                                     132.3                          0.560
+13  gie-cuc-1   N1    proc      2      v_nom30   8.33     4.898           40.82                                     132.3                          0.308
+14  gie-cuc-1   N1    proc      2      v_nom35   9.72     4.898           47.62                                     132.3                          0.360
+15  gie-cuc-1   N1    proc      2      v_nom40  11.11     4.898           54.42                                     132.3                          0.411
+16  gie-cuc-1   N2     raw      1        v_fit  15.47     1.395           21.58                                     132.3                          0.163
+17  gie-cuc-1   N2     raw      1      v_nom30   8.33     1.395           11.63                                     132.3                          0.088
+18  gie-cuc-1   N2     raw      1      v_nom35   9.72     1.395           13.56                                     132.3                          0.102
+19  gie-cuc-1   N2     raw      1      v_nom40  11.11     1.395           15.50                                     132.3                          0.117
+20  gie-cuc-1   N2     raw      2        v_fit  14.58     2.378           34.68                                     132.3                          0.262
+21  gie-cuc-1   N2     raw      2      v_nom30   8.33     2.378           19.82                                     132.3                          0.150
+22  gie-cuc-1   N2     raw      2      v_nom35   9.72     2.378           23.12                                     132.3                          0.175
+23  gie-cuc-1   N2     raw      2      v_nom40  11.11     2.378           26.42                                     132.3                          0.200
+24  gie-cuc-1   N2    proc      1        v_fit  15.47     4.535           70.17                                     132.3                          0.530
+25  gie-cuc-1   N2    proc      1      v_nom30   8.33     4.535           37.79                                     132.3                          0.286
+26  gie-cuc-1   N2    proc      1      v_nom35   9.72     4.535           44.09                                     132.3                          0.333
+27  gie-cuc-1   N2    proc      1      v_nom40  11.11     4.535           50.39                                     132.3                          0.381
+28  gie-cuc-1   N2    proc      2        v_fit  14.58     7.730          112.73                                     132.3                          0.852
+29  gie-cuc-1   N2    proc      2      v_nom30   8.33     7.730           64.42                                     132.3                          0.487
+30  gie-cuc-1   N2    proc      2      v_nom35   9.72     7.730           75.15                                     132.3                          0.568
+31  gie-cuc-1   N2    proc      2      v_nom40  11.11     7.730           85.89                                     132.3                          0.649
+32  gie-cuc-1   N3     raw      1        v_fit  14.78     1.726           25.51                                     132.3                          0.193
+33  gie-cuc-1   N3     raw      1      v_nom30   8.33     1.726           14.38                                     132.3                          0.109
+34  gie-cuc-1   N3     raw      1      v_nom35   9.72     1.726           16.78                                     132.3                          0.127
+35  gie-cuc-1   N3     raw      1      v_nom40  11.11     1.726           19.18                                     132.3                          0.145
+36  gie-cuc-1   N3    proc      1        v_fit  14.78     8.893          131.42                                     132.3                          0.993
+37  gie-cuc-1   N3    proc      1      v_nom30   8.33     8.893           74.11                                     132.3                          0.560
+38  gie-cuc-1   N3    proc      1      v_nom35   9.72     8.893           86.46                                     132.3                          0.653
+39  gie-cuc-1   N3    proc      1      v_nom40  11.11     8.893           98.81                                     132.3                          0.747
+40  phuong-do   N1     raw      1        v_fit   9.33    11.637          108.61                                     115.3                          0.942
+41  phuong-do   N1     raw      1      v_nom30   8.33    11.637           96.98                                     115.3                          0.841
+42  phuong-do   N1     raw      1      v_nom35   9.72    11.637          113.14                                     115.3                          0.981
+43  phuong-do   N1     raw      1      v_nom40  11.11    11.637          129.30                                     115.3                          1.121
+44  phuong-do   N1    proc      1        v_fit  10.06     4.807           48.34                                     115.3                          0.419
+45  phuong-do   N1    proc      1      v_nom30   8.33     4.807           40.06                                     115.3                          0.347
+46  phuong-do   N1    proc      1      v_nom35   9.72     4.807           46.73                                     115.3                          0.405
+47  phuong-do   N1    proc      1      v_nom40  11.11     4.807           53.41                                     115.3                          0.463
+48  phuong-do   N2     raw      1        v_fit   8.36     6.243           52.20                                     115.3                          0.453
+49  phuong-do   N2     raw      1      v_nom30   8.33     6.243           52.03                                     115.3                          0.451
+50  phuong-do   N2     raw      1      v_nom35   9.72     6.243           60.70                                     115.3                          0.526
+51  phuong-do   N2     raw      1      v_nom40  11.11     6.243           69.37                                     115.3                          0.601
+52  phuong-do   N2    proc      1        v_fit   8.36     8.380           70.07                                     115.3                          0.608
+53  phuong-do   N2    proc      1      v_nom30   8.33     8.380           69.83                                     115.3                          0.606
+54  phuong-do   N2    proc      1      v_nom35   9.72     8.380           81.47                                     115.3                          0.706
+55  phuong-do   N2    proc      1      v_nom40  11.11     8.380           93.11                                     115.3                          0.807
+
+=== CONSISTENCY SUMMARY ===
+       bridge channel speed_source                        set  n    mean     sd  cv_pct     min     max
+0   gie-cuc-1    proc        v_fit  all complete major events  5  108.34  36.03   33.26   70.17  153.24
+1   gie-cuc-1    proc        v_fit     largest event per span  3  132.46  20.28   15.31  112.73  153.24
+2   gie-cuc-1    proc      v_nom30  all complete major events  5   61.49  22.29   36.25   37.79   90.32
+3   gie-cuc-1    proc      v_nom30     largest event per span  3   76.28  13.09   17.15   64.42   90.32
+4   gie-cuc-1    proc      v_nom35  all complete major events  5   71.74  26.01   36.25   44.09  105.37
+5   gie-cuc-1    proc      v_nom35     largest event per span  3   88.99  15.27   17.16   75.15  105.37
+6   gie-cuc-1    proc      v_nom40  all complete major events  5   81.99  29.72   36.25   50.39  120.42
+7   gie-cuc-1    proc      v_nom40     largest event per span  3  101.71  17.45   17.15   85.89  120.42
+8   gie-cuc-1     raw        v_fit  all complete major events  5   61.83  55.19   89.26   21.58  153.24
+9   gie-cuc-1     raw        v_fit     largest event per span  3   71.14  71.25  100.14   25.51  153.24
+10  gie-cuc-1     raw      v_nom30  all complete major events  5   35.39  32.77   92.58   11.63   90.32
+11  gie-cuc-1     raw      v_nom30     largest event per span  3   41.51  42.36  102.06   14.38   90.32
+12  gie-cuc-1     raw      v_nom35  all complete major events  5   41.29  38.23   92.59   13.56  105.37
+13  gie-cuc-1     raw      v_nom35     largest event per span  3   48.42  49.42  102.06   16.78  105.37
+14  gie-cuc-1     raw      v_nom40  all complete major events  5   47.19  43.69   92.59   15.50  120.42
+15  gie-cuc-1     raw      v_nom40     largest event per span  3   55.34  56.48  102.05   19.18  120.42
+16  phuong-do    proc        v_fit  all complete major events  2   59.20  15.37   25.95   48.34   70.07
+17  phuong-do    proc        v_fit     largest event per span  2   59.20  15.37   25.95   48.34   70.07
+18  phuong-do    proc      v_nom30  all complete major events  2   54.94  21.05   38.31   40.06   69.83
+19  phuong-do    proc      v_nom30     largest event per span  2   54.94  21.05   38.31   40.06   69.83
+20  phuong-do    proc      v_nom35  all complete major events  2   64.10  24.56   38.32   46.73   81.47
+21  phuong-do    proc      v_nom35     largest event per span  2   64.10  24.56   38.32   46.73   81.47
+22  phuong-do    proc      v_nom40  all complete major events  2   73.26  28.07   38.32   53.41   93.11
+23  phuong-do    proc      v_nom40     largest event per span  2   73.26  28.07   38.32   53.41   93.11
+24  phuong-do     raw        v_fit  all complete major events  2   80.40  39.89   49.61   52.20  108.61
+25  phuong-do     raw        v_fit     largest event per span  2   80.40  39.89   49.61   52.20  108.61
+26  phuong-do     raw      v_nom30  all complete major events  2   74.50  31.78   42.66   52.03   96.98
+27  phuong-do     raw      v_nom30     largest event per span  2   74.50  31.78   42.66   52.03   96.98
+28  phuong-do     raw      v_nom35  all complete major events  2   86.92  37.08   42.66   60.70  113.14
+29  phuong-do     raw      v_nom35     largest event per span  2   86.92  37.08   42.66   60.70  113.14
+30  phuong-do     raw      v_nom40  all complete major events  2   99.34  42.38   42.66   69.37  129.30
+31  phuong-do     raw      v_nom40     largest event per span  2   99.34  42.38   42.66   69.37  129.30
+
+=== TASK 5: Phuong Do N1 positive lobe ===
+Largest single-sample step in Vong (processed): -1.558 mm between t=7.190s and 7.195s (values 1.386 -> -0.172); next largest |step| = 0.610 mm
+Vong0: pre level -0.044, post level (last 3 s) 2.022; Vong post level -0.179
+Vong0 max 4.800 at 6.150s; Vong max 3.254 at 6.150s; Vong0 min -11.211; Vong min -7.600
+Vong0 first reaches the mid-level of the pre/post step after its minimum at t_step = 5.690 s; plateau values: raw[5.75-6.0 s] median = 2.056, raw[7.25-7.5 s] median = 2.033
+Downward lobe (10% level) from 3.645 to 5.535 s (T10=1.890); event window 3.38-7.50
+                                         case  max_up_mm  t_up_s  min_down_mm  ratio_up_over_down  int_pos_mm_s  int_neg_mm_s  int_net_mm_s
+0  Vong0, step baseline at t_step (pre->post)      2.778    6.15      -11.167               0.249         1.823       -12.966       -11.143
+1                 Vong0, tare (no correction)      4.844    6.15      -11.167               0.434         5.539       -12.936        -7.397
+2                  Vong0, linear pre/post (b)      3.585    6.15      -11.837               0.303         2.955       -14.591       -11.637
+3                           Vong0, poly3 (c1)      3.646    6.15      -11.832               0.308         3.101       -14.594       -11.493
+4                            Vong0, HP 0.1 Hz      5.226    6.15       -9.112               0.574         6.091        -9.499        -3.407
+5              Vong (processed, as delivered)      3.484    6.15       -7.370               0.473         3.677        -8.394        -4.718
+
+DAT0034 ch2 vertical: mean=-1.43e-05, std=0.0081, |max|=0.085, distinct values=90, quantum~0.0010 (units as labelled: mm/s^2)
+Double integration of DAT0034 ch2 vs HP-filtered Vong0 N2:
+   hp_Hz  rms_x_from_acc_mm  rms_Vong0_hp_mm  scale_fit   corr
+0    0.3            0.00004           0.4279      209.7  0.022
+1    0.5            0.00002           0.1872    -1847.9 -0.183
+2    1.0            0.00001           0.1055    -2593.8 -0.164
+Energy fraction below 2 Hz: DAT0034 ch2 = 0.013; second derivative of Vong0 N2 = 0.006
+RMS acc 0-2 Hz: DAT0034 = 0.0009; from Vong0 N2 (mm/s^2) = 5.690; ratio = 6391.4

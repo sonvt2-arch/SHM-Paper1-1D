@@ -2,7 +2,8 @@
 
 Model (as described in Section 6.5 of the SCHM manuscript):
   * Euler-Bernoulli two-span beam, spans l = 2.5 m, EI = 3305.95 N m^2 (Section 3.1),
-    Hermite cubic elements, consistent mass, m = rho A = 7850 x 186.5e-6 = 1.464 kg/m;
+    Hermite cubic elements, consistent mass, m = rho A = 7850 x 186.52e-6 = 1.464 kg/m
+    (the unrounded tube area gives f1 = 11.942 Hz; A = 186.5 mm^2 exactly gives 11.943);
   * Rayleigh damping, 2 % at the first and third modes;
   * a constant force P enters at x = 0 at t = 0 and leaves at x = 2l at t = T_cr = 2l/v;
     it is applied through the Hermite shape functions of the element it is on;
@@ -38,8 +39,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 # ----------------------------------------------------------------- SI constants
 L = bt.L_SPAN / 1000.0                       # 2.5 m
 EI = bt.EI * 1e-6                            # N m^2 (N mm^2 -> N m^2)
-A_MS = 186.5e-6                              # m^2, as printed in Section 6.5
-MASS = 7850.0 * A_MS                         # 1.464 kg/m
+A_MS = bt.AREA * 1e-6                        # m^2: 186.52 mm^2 (printed as 186.5 in Section 6.5)
+MASS = 7850.0 * A_MS                         # 1.4642 kg/m (printed as 1.464)
 CM = L ** 4 / (192.0 * EI)                   # m^2/N
 NE = 40                                      # elements per span (chosen; see mesh check)
 NSTEP = 4000                                 # steps per crossing (chosen; see dt check)
@@ -126,7 +127,9 @@ t0 = time.time()
 head("Model and fundamental frequency")
 mdl = MovingForceModel()
 f1_an = (np.pi / L) ** 2 * np.sqrt(EI / MASS) / (2 * np.pi)
-print("  EI = %.2f N m^2, m = %.4f kg/m (1.464), C_m = %.6e m^2/N" % (EI, MASS, CM))
+print("  EI = %.2f N m^2, m = %.5f kg/m (1.464), C_m = %.6e m^2/N" % (EI, MASS, CM))
+print("  with A = 186.5 mm^2 exactly: f1 = %.4f Hz"
+      % ((np.pi / L) ** 2 * np.sqrt(EI / (7850 * 186.5e-6)) / (2 * np.pi)))
 print("  FE frequencies (Hz): " + ", ".join("%.3f" % v for v in mdl.f[:4]))
 print("  f1 FE = %.4f Hz, analytical (pi/l)^2 sqrt(EI/m)/2pi = %.4f Hz  (manuscript: 11.942)"
       % (mdl.f[0], f1_an))
@@ -180,6 +183,14 @@ ed = np.array([mdl.error(r, nstep=2000)[0] for r in rd])
 envd = envelope(rd, ed, TH)
 print("  threshold      " + " ".join("%7g" % v for v in TH))
 print("  dense          " + " ".join("%7.2f" % v for v in envd))
+print("  at T_cr/T_1    " + " ".join("%7.2f" % rd[rd >= T - 1e-12][np.argmax(np.abs(ed[rd >= T - 1e-12]))]
+                                     for T in TH))
+print("  E at exactly the thresholds (4000 steps):")
+print("                 " + " ".join("%+7.2f" % mdl.error(float(T))[0] for T in TH))
+rf = np.linspace(4.0, 4.6, 61)
+ef = np.array([mdl.error(r)[0] for r in rf])
+k = int(np.argmax(np.abs(ef)))
+print("  fine scan 4.0-4.6 (61 pts, 4000 steps): max |E| = %.3f %% at T_cr/T_1 = %.2f" % (abs(ef[k]), rf[k]))
 np.savetxt(os.path.join(HERE, "logs", "s05_sweep_dense.csv"), np.c_[rd, ed], delimiter=",",
            header="Tcr_over_T1,E_dyn_percent", comments="")
 lo = rd[np.abs(ed) > 15]
@@ -211,6 +222,14 @@ for r in (3.0, 5.0, 8.0):
     mono = np.all(np.diff(np.abs(es)) > 0) or np.all(np.diff(np.abs(es)) < 0)
     print("  Tcr/T1 = %3.0f: zeta 0.5,1,2,3,5 %% -> " % r + ", ".join("%+.3f" % e for e in es)
           + "   |E| monotonic: %s, increasing with zeta: %s" % (mono, bool(np.all(np.diff(np.abs(es)) > 0))))
+
+head("Damping-model sensitivity of the smooth (high T_cr/T_1) part, 2000 steps")
+print("  T_cr/T_1:            " + " ".join("%7g" % r for r in (4, 6, 8, 10, 12, 15, 20)))
+for lab, kw in (("Rayleigh 2 %, modes 1 & 3", {}), ("Rayleigh 2 %, modes 1 & 2", dict(modes=(1, 2))),
+                ("undamped", dict(zeta=0.0))):
+    mm = MovingForceModel(**kw)
+    print("  %-22s" % lab + " ".join("%+7.3f" % mm.error(float(r), nstep=2000)[0]
+                                     for r in (4, 6, 8, 10, 12, 15, 20)))
 
 head("Multi-axle invariance under dynamics (fixed total load 1 N)")
 print("  speeds 5 m/s (T_cr/T1 = %.2f) and 20 m/s (%.2f); equal axle loads;" %

@@ -1,0 +1,43 @@
+
+== Eq. (1) and (2) - support reactions ==================================
+equilibrium  sum(R) - P =  0
+at x = l/2 :  R_A = 13/32,  R_B = 11/16,  R_C = -3/32
+expected   :  13P/32, 11P/16, -3P/32  (simple interior support)
+NOTE: these values are NOT those of a beam with a rotation-restrained
+      support at B, which is how the original draft described it.
+symmetry check R_C^BC - R_A^AB(2l-x) = 0
+symmetry check R_A^BC - R_C^AB(2l-x) = 0
+symmetry check R_B^BC - R_B^AB(2l-x) = 0
+
+== Eq. (5) - full deflection field, and its consistency with Eq. (6) ====
+Maxwell reciprocity, branch(a) with s<->x  minus branch(b) : 0
+Eq.(5b) at s=l/2 minus Eq.(6) branch 1 : 0
+Eq.(5a) at s=l/2 minus Eq.(6) branch 2 : 0
+Eq.(5c) at s=l/2 minus Eq.(6) branch 3 : 0
+-> the third branch requires the denominator 64*EI
+continuity at x = l/2 : 0
+value at x = l        : 0 0
+value at x = 2l       : 0
+slope continuity at l : 0
+
+== ERROR FOUND - factorised form printed as Eq. (15)/(16) of the old draft 
+branch 2 (correct)          : 0
+branch 3 as printed, y6/f3  : 3
+-> the printed third branch is a factor of 3 too small (192*EI should read 64*EI)
+at x = 3750 mm : correct = -1.1255 mm  (Table 1 gives -1.1255 mm)
+                 as printed = -0.3752 mm
+
+== Eq. (11) - closed-form invariance constant ===========================
+C_m * P = P*l**4/(192*EI)    (expected P*l**4/(192*EI))
+
+== Eq. (6) against the tabulated values of Table 1 ======================
+max |Eq.(6) - reported analytical| = 5.40e-05 mm
+
+== Unit check on the load values reported in the old draft ==============
+  6829.0 g  ->    66.992 N     old draft printed    66992.5 N  (x 1000)
+ 12750.0 g  ->   125.078 N     old draft printed   125077.5 N  (x 1000)
+-> every force value in the old draft was overstated by a factor of 1000
+
+real	0m1.314s
+user	0m1.797s
+sys	0m0.207s

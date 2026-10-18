@@ -1,0 +1,17 @@
+  (photo not found at dx/word/media/image30.png -- Fig. 3 panel (b) skipped)
+figures written to figs/:
+    fig01_layout.png
+    fig02_twoloads.png
+    fig03_setup.png
+    fig04_influenceline.png
+    fig05_invariance.png
+    fig06_quadrature.png
+    fig07_montecarlo.png
+    fig08_zerodrift.png
+    fig09_calibration.png
+    fig10_parametric.png
+    fig11_flowchart.png
+
+real	1m9.756s
+user	2m34.290s
+sys	0m0.948s
