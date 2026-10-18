@@ -1,0 +1,63 @@
+=== Measured vertical frequencies (CSV, PDF Bang 2.15) ===
+N1 3.11 Hz, N5 3.03 Hz, N6 3.43 Hz, N7 3.64 Hz, N8 3.63 Hz, N9 3.09 Hz, N15 3.04 Hz
+main bridge N6/N7/N8: mean 3.567 Hz, sd 0.118 Hz (3.3 %), band [3.43, 3.64]
+
+=== Mass model (per metre; see doc table) ===
+low  : {'rho': 2.4, 't_as': 0.05, 'barrier': 0.3, 'diaph': False, 'Alaw': 'power'}; SDL 1.837 t/m; m(mid-span) 19.20 t/m, m(pier face, h=5.4) 35.31 t/m; total 4878 t (mean 24.39 t/m)
+base : {'rho': 2.5, 't_as': 0.07, 'barrier': 0.5, 'diaph': True, 'Alaw': 'linear'}; SDL 2.733 t/m; m(mid-span) 20.82 t/m, m(pier face, h=5.4) 37.54 t/m; total 5484 t (mean 27.42 t/m)
+high : {'rho': 2.55, 't_as': 0.1, 'barrier': 1.0, 'diaph': True, 'Alaw': 'linear'}; SDL 4.475 t/m; m(mid-span) 22.92 t/m, m(pier face, h=5.4) 39.98 t/m; total 5932 t (mean 29.66 t/m)
+mass scale relative to base: low 0.889, base 1.000, high 1.082
+mesh check (base, k_FE): ne=5 [1.4271, 2.5409, 3.2876, 4.9457] ne=10 [1.4271, 2.5409, 3.2876, 4.9457]
+
+=== f_i(alpha=1, kappa), base mass; mode type (S/A, span of max amplitude 0=N6,1=N7,2=N8) ===
+kappa=1.00e+06: f1=1.193S  f2=2.329A  f3=3.257S  f4=4.894A
+kappa=3.98e+06: f1=1.224S  f2=2.356A  f3=3.261S  f4=4.900A
+kappa=1.58e+07: f1=1.336S  f2=2.455A  f3=3.275S  f4=4.923A
+kappa=6.31e+07: f1=1.636S  f2=2.751A  f3=3.325S  f4=5.010A
+kappa=2.51e+08: f1=2.084S  f2=3.264A  f3=3.466S  f4=5.268A
+kappa=1.00e+09: f1=2.363S  f2=3.623A  f3=3.650S  f4=5.636A
+kappa=3.98e+09: f1=2.453S  f2=3.744A  f3=3.746S  f4=5.836A
+kappa=1.58e+10: f1=2.476S  f2=3.776A  f3=3.776S  f4=5.899A
+kappa=6.31e+10: f1=2.482S  f2=3.784A  f3=3.784S  f4=5.916A
+kappa=2.51e+11: f1=2.484S  f2=3.786A  f3=3.786S  f4=5.920A
+kappa=1.00e+12: f1=2.484S  f2=3.787A  f3=3.787S  f4=5.921A
+
+=== Mode-shape amplitude at the vibration points (mid N6 x=27.5, mid N7 x=100, mid N8 x=172.5), base, k_FE ===
+mode 1: f=1.427 Hz S, |w|/max at N6/N7/N8 mid = 0.41/1.00/0.41
+mode 2: f=2.541 Hz A, |w|/max at N6/N7/N8 mid = 0.95/0.00/0.95
+mode 3: f=3.288 Hz S, |w|/max at N6/N7/N8 mid = 0.88/0.77/0.88
+mode 4: f=4.946 Hz A, |w|/max at N6/N7/N8 mid = 0.39/0.00/0.39
+mode 5: f=7.947 Hz S, |w|/max at N6/N7/N8 mid = 0.11/1.00/0.11
+
+=== Alpha needed for f_i = measured mean, sqrt(alpha e_d/gamma) f_i(1,kappa) = f_meas ===
+mode 1, mass low : alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [1.910, 8.310] (pinned->fixed: 8.310 -> 1.910)
+mode 1, mass base: alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [2.061, 8.939] (pinned->fixed: 8.939 -> 2.061)
+mode 1, mass high: alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [2.262, 9.775] (pinned->fixed: 9.775 -> 2.262)
+mode 2, mass low : alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [0.823, 2.185] (pinned->fixed: 2.185 -> 0.823)
+mode 2, mass base: alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [0.887, 2.345] (pinned->fixed: 2.345 -> 0.887)
+mode 2, mass high: alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [0.972, 2.558] (pinned->fixed: 2.558 -> 0.972)
+mode 3, mass low : alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [0.823, 1.113] (pinned->fixed: 1.113 -> 0.823)
+mode 3, mass base: alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [0.887, 1.199] (pinned->fixed: 1.199 -> 0.887)
+mode 3, mass high: alpha*e_d/gamma... alpha (e_d=1) needed over kappa range: [0.972, 1.314] (pinned->fixed: 1.314 -> 0.972)
+
+=== Joint admissible sets (static tau and frequency) ===
+tau=5.00% static only: kappa [2.24e+07,1.00e+12] alpha [0.514,1.113] k [2.49e+07,5.21e+11] | N8 design-ref [0.146,0.820] alpha-ref [0.163,0.422] R8 [0.158,1.000] | N7 design-ref [0.192,0.285] R7 [0.574,1.000] | C8 [3.53e-05,1.98e-04] C7 [3.32e-04,4.93e-04] m2/kN
+tau=5.00% static + prior alpha in [0.9,1.3]: kappa [2.24e+07,6.31e+07] alpha [0.900,1.113] k [2.49e+07,5.75e+07] | N8 design-ref [0.146,0.291] alpha-ref [0.163,0.262] R8 [0.158,0.327] | N7 design-ref [0.192,0.211] R7 [0.574,0.657] | C8 [3.53e-05,7.01e-05] C7 [3.32e-04,3.64e-04] m2/kN
+tau=5.00% static + f3 in [3.43,3.64] Hz, base mass, e_d=1: kappa [2.24e+07,2.51e+07] alpha [1.090,1.113] k [2.49e+07,2.74e+07] | N8 design-ref [0.146,0.159] alpha-ref [0.163,0.173] R8 [0.158,0.171] | N7 design-ref [0.192,0.193] R7 [0.574,0.581] | C8 [3.53e-05,3.83e-05] C7 [3.32e-04,3.34e-04] m2/kN
+tau=5.00% static + f3 in band, mass low..high, e_d 1.0..1.2: kappa [2.24e+07,1.06e+08] alpha [0.804,1.113] k [2.49e+07,8.58e+07] | N8 design-ref [0.146,0.383] alpha-ref [0.163,0.307] R8 [0.158,0.444] | N7 design-ref [0.192,0.222] R7 [0.574,0.716] | C8 [3.53e-05,9.23e-05] C7 [3.32e-04,3.84e-04] m2/kN
+tau=5.00% static + f1 in band (mode-1 hypothesis), mass low..high, e_d 1.0..1.2: EMPTY
+tau=5.00% static + f2 in N6..N8 band (mode-2 hypothesis), mass low..high, e_d 1.0..1.2: EMPTY
+tau=5.27% static only: kappa [1.78e+07,1.00e+12] alpha [0.513,1.153] k [2.05e+07,5.22e+11] | N8 design-ref [0.124,0.822] alpha-ref [0.144,0.422] R8 [0.133,1.000] | N7 design-ref [0.190,0.286] R7 [0.562,1.000] | C8 [3.00e-05,1.98e-04] C7 [3.28e-04,4.95e-04] m2/kN
+tau=5.27% static + prior alpha in [0.9,1.3]: kappa [1.78e+07,6.68e+07] alpha [0.900,1.153] k [2.05e+07,6.03e+07] | N8 design-ref [0.124,0.297] alpha-ref [0.144,0.267] R8 [0.133,0.339] | N7 design-ref [0.190,0.211] R7 [0.562,0.663] | C8 [3.00e-05,7.15e-05] C7 [3.28e-04,3.64e-04] m2/kN
+tau=5.27% static + f3 in [3.43,3.64] Hz, base mass, e_d=1: kappa [1.78e+07,2.51e+07] alpha [1.090,1.153] k [2.05e+07,2.75e+07] | N8 design-ref [0.124,0.159] alpha-ref [0.144,0.173] R8 [0.133,0.171] | N7 design-ref [0.190,0.194] R7 [0.562,0.581] | C8 [3.00e-05,3.83e-05] C7 [3.28e-04,3.35e-04] m2/kN
+tau=5.27% static + f3 in band, mass low..high, e_d 1.0..1.2: kappa [1.78e+07,1.12e+08] alpha [0.801,1.153] k [2.05e+07,8.99e+07] | N8 design-ref [0.124,0.390] alpha-ref [0.144,0.312] R8 [0.133,0.458] | N7 design-ref [0.190,0.222] R7 [0.562,0.723] | C8 [3.00e-05,9.39e-05] C7 [3.28e-04,3.84e-04] m2/kN
+tau=5.27% static + f1 in band (mode-1 hypothesis), mass low..high, e_d 1.0..1.2: EMPTY
+tau=5.27% static + f2 in N6..N8 band (mode-2 hypothesis), mass low..high, e_d 1.0..1.2: EMPTY
+
+=== Along the static valley alpha*(kappa): predicted f3 and f1 (base mass, e_d=1) ===
+kappa=1.00e+07: alpha*=1.238, static residual +-5.91 %, f1=1.428 f3=3.636 Hz (low mass 3.774, high 3.474)
+kappa=2.82e+07: alpha*=1.067, static residual +-4.59 %, f1=1.480 f3=3.397 Hz (low mass 3.527, high 3.246)
+kappa=5.01e+07: alpha*=0.946, static residual +-3.73 %, f1=1.527 f3=3.222 Hz (low mass 3.344, high 3.078)
+kappa=1.00e+08: alpha*=0.804, static residual +-2.99 %, f1=1.599 f3=3.013 Hz (low mass 3.128, high 2.879)
+kappa=1.68e+08: alpha*=0.716, static residual +-2.82 %, f1=1.655 f3=2.888 Hz (low mass 2.998, high 2.760)
+kappa=1.00e+09: alpha*=0.559, static residual +-3.69 %, f1=1.766 f3=2.729 Hz (low mass 2.833, high 2.607)

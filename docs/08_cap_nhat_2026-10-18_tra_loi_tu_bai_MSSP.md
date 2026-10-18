@@ -29,3 +29,8 @@ Thư mục Drive "1. Dữ liệu thử tải cầu" có 4 file mới (14–15/10
 1. Tác giả giải nén `Thông tin bổ sung.rar` trên máy, rồi để các file lên Drive. File < 2 MB để nguyên; file lớn hơn chia phần 2 MB bằng 7-Zip (`docs/06_huong_dan_chia_file_len_drive.md`). Quan trọng nhất là phiếu cân 10 xe Cầu Mây và các file Midas (.mcb).
 2. Kiểm xem có mô hình cầu chính Cầu Mây 55+90+55 m trong đó không. Nếu có, chạy lại WP3 để chốt chỉ số tại điểm N8.
 3. Bảng hỏi riêng của Paper1 (B2 kích thước trụ, B3 số đọc ở nhịp không tải, B7 file thô lượt xe chạy, phần A về thí nghiệm) vẫn chưa có trả lời.
+
+## Bổ sung (tác giả đã giải nén, thư mục Drive "Thông tin bổ sung", ID 155ZGfqJiJWN3a6snwIPxfkfY4nyU06ui)
+- `Cầu Mây - M3 - Thông số xe.xlsx` (ID 1u_wKpIrdWn_0h8k-txuhZqxE1-E0iWE8): 10 xe đã cân, tổng tải 24,6–25,66 t, trung bình 25,057 t; khoảng cách trục sau 1,35–1,45 m, trục trước 3,45–3,85 m, vệt bánh 1,85–1,9 m → `data/bridges/cau-may/cau-may_10_trucks_weighed.csv`. Độ lệch chuẩn trọng lượng giữa các xe khoảng 1,4% (dùng cho sai số SLM khi không biết xe nào đứng ở đâu).
+- Thư mục ảnh phiếu cân 10 xe (14 ảnh jpg, mỗi ảnh 0,6–0,9 MB; tải được nếu cần đối chiếu).
+- Mô hình Midas (.mcb): **chỉ có nhịp dẫn** (Cầu Mây super-T N1, N15; Lạng Am N2, N4, N24; Phương Độ N1; Giẽ N1). **Không có mô hình cầu chính liên tục 55+90+55 m của Cầu Mây**, và không có bản vẽ trụ. Câu B1–B3 của bảng hỏi Paper1 vẫn chưa được trả lời. File .mcb là định dạng nhị phân riêng của Midas, không đọc được nếu không có phần mềm.

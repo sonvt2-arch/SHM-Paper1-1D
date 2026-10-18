@@ -1,0 +1,120 @@
+==============================================================================
+(A) CAU MAY 55+90+55 m: n = 2.943, Lv = 44 m, Ec = 36057 MPa
+[A (EI thiet ke, k_FE)] main-span optimum x* = 100.0 m (xi = 0.500), C_m = 3.610e-04 m2/kN; side-span N8 optimum x = 184.5 m (xi from T8 = 0.282), C_m = 5.340e-05; M_q = 0 in N8 at x = [np.float64(171.4)] (dist. from T7 [np.float64(26.3)]); in N7 at [np.float64(80.1), np.float64(119.4)]
+[A' (alpha=1.088, k_FE)] main-span optimum x* = 100.0 m (xi = 0.500), C_m = 3.350e-04 m2/kN; side-span N8 optimum x = 184.7 m (xi from T8 = 0.278), C_m = 4.767e-05; M_q = 0 in N8 at x = [np.float64(171.4)] (dist. from T7 [np.float64(26.3)]); in N7 at [np.float64(80.1), np.float64(120.2)]
+[B (alpha=0.716, k=1.2e8)] main-span optimum x* = 100.0 m (xi = 0.500), C_m = 4.047e-04 m2/kN; side-span N8 optimum x = 182.1 m (xi from T8 = 0.325), C_m = 1.211e-04; M_q = 0 in N8 at x = [np.float64(168.4)] (dist. from T7 [np.float64(23.3)]); in N7 at [np.float64(80.9), np.float64(118.6)]
+[check strain C] A (EI thiet ke, k_FE) S1 bien duoi, M_q=0 o N8 (x=171.3 m): IL area 9.5949e-09 vs uniform 9.5939e-09
+[check strain C] A (EI thiet ke, k_FE) S2 bien duoi giua N7: IL area 1.5548e-06 vs uniform 1.5548e-06
+[check strain C] A' (alpha=1.088, k_FE) S1 bien duoi, M_q=0 o N8 (x=171.3 m): IL area -1.4088e-09 vs uniform -1.4097e-09
+[check strain C] A' (alpha=1.088, k_FE) S2 bien duoi giua N7: IL area 1.4362e-06 vs uniform 1.4362e-06
+[check strain C] B (alpha=0.716, k=1.2e8) S1 bien duoi, M_q=0 o N8 (x=171.3 m): IL area 3.3267e-07 vs uniform 3.3267e-07
+[check strain C] B (alpha=0.716, k=1.2e8) S2 bien duoi giua N7: IL area 1.9488e-06 vs uniform 1.9488e-06
+
+--- (A) sensor constants and predicted signals (peak = extreme of quasi-static record) ---
+units: defl C [m2/kN], record [mm], integral [mm*m]; strain C [m/kN *ue/1e6], record [ue], integral [ue*m]; rot record [urad]
+A  D1 N7 giua nhip (xi* nhip chinh)       C=+3.610e-04 R=+0.59 N=+0.209 T1 pk   +3.24 [-0.88,+3.24] I   +88.53 | T2 pk   +3.22 [-0.88,+3.22] I   +88.53 | T3 pk   +3.87 [-1.06,+3.87] I  +106.23
+A  D2 N8 giua nhip (gan mu)               C=+2.533e-05 R=+0.11 N=+0.105 T1 pk   +1.50 [-0.99,+1.50] I    +6.21 | T2 pk   +1.49 [-0.98,+1.49] I    +6.21 | T3 pk   +1.79 [-1.18,+1.79] I    +7.46
+A  D3 N8 0,4L (vi tri 2020)               C=+4.376e-05 R=+0.18 N=+0.181 T1 pk   +1.62 [-0.95,+1.62] I   +10.73 | T2 pk   +1.61 [-0.95,+1.61] I   +10.73 | T3 pk   +1.94 [-1.14,+1.94] I   +12.88
+A  D4 N8 toi uu x=184.5 m                 C=+5.340e-05 R=+0.25 N=+0.221 T1 pk   +1.48 [-0.78,+1.48] I   +13.10 | T2 pk   +1.47 [-0.78,+1.47] I   +13.10 | T3 pk   +1.77 [-0.94,+1.77] I   +15.72
+A  D5 N6 0,4L (doi xung D3)               C=+4.376e-05 R=+0.18 N=+0.181 T1 pk   +1.62 [-0.95,+1.62] I   +10.73 | T2 pk   +1.61 [-0.95,+1.61] I   +10.73 | T3 pk   +1.94 [-1.14,+1.94] I   +12.88
+A  S1 bien duoi, M_q=0 o N8 (x=171.3 m)   C=+9.595e-09 R=+0.01         T1 pk  +10.23 [-5.67,+10.23] I    +2.35 | T2 pk   +9.72 [-5.65,+9.72] I    +2.35 | T3 pk  +11.76 [-6.78,+11.76] I    +2.82
+A  S2 bien duoi giua N7                   C=+1.555e-06 R=+0.73         T1 pk  +16.68 [-1.98,+16.68] I  +381.32 | T2 pk  +15.94 [-1.97,+15.94] I  +381.32 | T3 pk  +19.27 [-2.37,+19.27] I  +457.59
+A  R1 goc xoay dam tren tru T7            C=-3.537e-06 R=-0.42         T1 pk  -58.14 [-58.14,+47.19] I  -867.42 | T2 pk  -57.99 [-57.99,+46.99] I  -867.42 | T3 pk  -69.60 [-69.60,+56.41] I -1040.91
+A  R2 goc xoay dam tren tru T6            C=+3.537e-06 R=+0.30         T1 pk  +58.14 [-47.19,+58.14] I  +867.42 | T2 pk  +57.99 [-47.00,+57.99] I  +867.42 | T3 pk  +69.60 [-56.41,+69.60] I +1040.91
+B  D1 N7 giua nhip (xi* nhip chinh)       C=+4.047e-04 R=+0.77 N=+0.234 T1 pk   +3.05 [-0.42,+3.05] I   +99.25 | T2 pk   +3.03 [-0.41,+3.03] I   +99.25 | T3 pk   +3.64 [-0.50,+3.64] I  +119.10
+B  D2 N8 giua nhip (gan mu)               C=+9.098e-05 R=+0.49 N=+0.377 T1 pk   +1.42 [-0.49,+1.42] I   +22.31 | T2 pk   +1.41 [-0.49,+1.41] I   +22.31 | T3 pk   +1.70 [-0.59,+1.70] I   +26.77
+B  D3 N8 0,4L (vi tri 2020)               C=+1.147e-04 R=+0.56 N=+0.476 T1 pk   +1.63 [-0.47,+1.63] I   +28.14 | T2 pk   +1.62 [-0.47,+1.62] I   +28.14 | T3 pk   +1.95 [-0.57,+1.95] I   +33.77
+B  D4 N8 toi uu x=184.5 m                 C=+1.187e-04 R=+0.61 N=+0.492 T1 pk   +1.57 [-0.39,+1.57] I   +29.12 | T2 pk   +1.56 [-0.39,+1.56] I   +29.12 | T3 pk   +1.87 [-0.47,+1.87] I   +34.94
+B  D5 N6 0,4L (doi xung D3)               C=+1.147e-04 R=+0.56 N=+0.476 T1 pk   +1.63 [-0.47,+1.63] I   +28.14 | T2 pk   +1.62 [-0.47,+1.62] I   +28.14 | T3 pk   +1.95 [-0.57,+1.95] I   +33.77
+B  S1 bien duoi, M_q=0 o N8 (x=171.3 m)   C=+3.327e-07 R=+0.38         T1 pk  +10.33 [-2.83,+10.33] I   +81.59 | T2 pk   +9.61 [-2.82,+9.61] I   +81.59 | T3 pk  +11.67 [-3.38,+11.67] I   +97.91
+B  S2 bien duoi giua N7                   C=+1.949e-06 R=+0.88         T1 pk  +20.00 [-0.93,+20.00] I  +477.96 | T2 pk  +18.99 [-0.93,+18.99] I  +477.96 | T3 pk  +22.97 [-1.11,+22.97] I  +573.55
+B  R1 goc xoay dam tren tru T7            C=-1.663e-06 R=-0.42         T1 pk  -29.02 [-29.02,+25.06] I  -407.94 | T2 pk  -28.93 [-28.93,+24.96] I  -407.94 | T3 pk  -34.73 [-34.73,+29.96] I  -489.53
+B  R2 goc xoay dam tren tru T6            C=+1.663e-06 R=+0.30         T1 pk  +29.02 [-25.07,+29.02] I  +407.94 | T2 pk  +28.94 [-24.96,+28.94] I  +407.94 | T3 pk  +34.73 [-29.96,+34.73] I  +489.53
+
+--- (A) discriminating A vs B (pier stiffness / EI) ---
+[A (EI thiet ke, k_FE)] C(D2)/C(D1) = 0.070; C(D3)/C(D1) = 0.121; R1 peak T1 = -58.1 urad; S1 integral T1 = +2.35 ue*m, S1 peak T1 = +10.23/-5.67 ue
+[A' (alpha=1.088, k_FE)] C(D2)/C(D1) = 0.064; C(D3)/C(D1) = 0.115; R1 peak T1 = -55.0 urad; S1 integral T1 = -0.35 ue*m, S1 peak T1 = +9.52/-5.36 ue
+[B (alpha=0.716, k=1.2e8)] C(D2)/C(D1) = 0.225; C(D3)/C(D1) = 0.284; R1 peak T1 = -29.0 urad; S1 integral T1 = +81.59 ue*m, S1 peak T1 = +10.33/-2.83 ue
+
+k-sweep (design EI): k [kNm/rad] -> C(D3)/C(D1), C(D2)/C(D1), peak rot T7 (T1) [urad], f1,f2,f3 [Hz]
+k=1.000e+07 alpha=1.000: D3/D1=0.063 D2/D1=0.015 rotT7= -75.7 urad  f = 1.265, 2.374, 3.220 Hz
+k=1.000e+07 alpha=0.716: D3/D1=0.078 D2/D1=0.029 rotT7= -98.9 urad  f = 1.100, 2.036, 2.728 Hz
+k=2.748e+07 alpha=1.000: D3/D1=0.121 D2/D1=0.070 rotT7= -58.1 urad  f = 1.407, 2.505, 3.239 Hz
+k=2.748e+07 alpha=0.716: D3/D1=0.148 D2/D1=0.096 rotT7= -71.0 urad  f = 1.252, 2.180, 2.751 Hz
+k=5.000e+07 alpha=1.000: D3/D1=0.172 D2/D1=0.119 rotT7= -44.9 urad  f = 1.546, 2.644, 3.263 Hz
+k=5.000e+07 alpha=0.716: D3/D1=0.204 D2/D1=0.149 rotT7= -52.4 urad  f = 1.390, 2.322, 2.778 Hz
+k=1.199e+08 alpha=1.000: D3/D1=0.255 D2/D1=0.197 rotT7= -26.5 urad  f = 1.817, 2.937, 3.328 Hz
+k=1.199e+08 alpha=0.716: D3/D1=0.284 D2/D1=0.225 rotT7= -29.0 urad  f = 1.631, 2.594, 2.846 Hz
+k=3.000e+08 alpha=1.000: D3/D1=0.325 D2/D1=0.264 rotT7= -13.0 urad  f = 2.102, 3.279, 3.440 Hz
+k=3.000e+08 alpha=0.716: D3/D1=0.343 D2/D1=0.282 rotT7= -13.6 urad  f = 1.848, 2.863, 2.951 Hz
+k=1.000e+09 alpha=1.000: D3/D1=0.374 D2/D1=0.311 rotT7=  -4.4 urad  f = 2.327, 3.571, 3.597 Hz
+k=1.000e+09 alpha=0.716: D3/D1=0.382 D2/D1=0.318 rotT7=  -4.4 urad  f = 1.997, 3.058, 3.071 Hz
+
+frequencies of the calibrations (mass: rho=2.55 t/m3 x A(h) + 3.0 t/m SDL [assumption]):
+[A (EI thiet ke, k_FE)] f1..f4 = 1.407, 2.505, 3.239, 4.874 Hz; T1 = 0.711 s
+[A' (alpha=1.088, k_FE)] f1..f4 = 1.450, 2.597, 3.376, 5.080 Hz; T1 = 0.690 s
+[B (alpha=0.716, k=1.2e8)] f1..f4 = 1.631, 2.594, 2.846, 4.311 Hz; T1 = 0.613 s
+measured (report, truck-excited, 'vertical' at mid-span): N6 3.43, N7 3.64, N8 3.63 Hz -> not the fundamental of this model; ambient test must resolve modes 1-4
+
+T_cr/T_1 for the main unit (L_tot = 200 m + wheelbase), calibration A f1:
+v =   5 km/h: T_cr =  148.4 s, T_cr/T1 =  208.8; dx at 100 Hz = 1.4 cm
+v =  10 km/h: T_cr =   74.2 s, T_cr/T1 =  104.4; dx at 100 Hz = 2.8 cm
+v =  20 km/h: T_cr =   37.1 s, T_cr/T1 =   52.2; dx at 100 Hz = 5.6 cm
+v =  30 km/h: T_cr =   24.7 s, T_cr/T1 =   34.8; dx at 100 Hz = 8.3 cm
+v =  40 km/h: T_cr =   18.6 s, T_cr/T1 =   26.1; dx at 100 Hz = 11.1 cm
+v =  60 km/h: T_cr =   12.4 s, T_cr/T1 =   17.4; dx at 100 Hz = 16.7 cm
+
+--- (A) offset bias (Eq. 19), truck T1 25 t, % ---
+sensor / cal |  0.01mm  0.02mm  0.05mm  0.10mm  0.20mm  0.50mm
+A  D1 N7 giua nhip (xi* nhip chinh)   |     2.3     4.6    11.6    23.2    46.3   115.8
+A  D2 N8 giua nhip (gan mu)           |    33.0    66.0   164.9   329.9   659.8  1649.4
+A  D3 N8 0,4L (vi tri 2020)           |    19.1    38.2    95.5   191.0   381.9   954.8
+A  D4 N8 toi uu x=184.5 m             |    15.6    31.3    78.2   156.5   313.0   782.4
+A  D5 N6 0,4L (doi xung D3)           |    19.1    38.2    95.5   191.0   381.9   954.8
+B  D1 N7 giua nhip (xi* nhip chinh)   |     2.1     4.1    10.3    20.6    41.3   103.2
+B  D2 N8 giua nhip (gan mu)           |     9.2    18.4    45.9    91.9   183.7   459.3
+B  D3 N8 0,4L (vi tri 2020)           |     7.3    14.6    36.4    72.8   145.7   364.2
+B  D4 N8 toi uu x=184.5 m             |     7.0    14.1    35.2    70.4   140.8   351.9
+B  D5 N6 0,4L (doi xung D3)           |     7.3    14.6    36.4    72.8   145.7   364.2
+(T3 30 t: multiply by 25/30; T4 12 t: by 25/12)
+[check Table 8] A  N7: C_m = 3.610e-04 m2/kN, bias(0.05 mm, 245.8 kN, 200 m) = 11 %
+[check Table 8] A  N8 0.4L: C_m = 4.376e-05 m2/kN, bias(0.05 mm, 245.8 kN, 200 m) = 93 %
+[check Table 8] B  N7: C_m = 4.047e-04 m2/kN, bias(0.05 mm, 245.8 kN, 200 m) = 10 %
+[check Table 8] B  N8 0.4L: C_m = 1.147e-04 m2/kN, bias(0.05 mm, 245.8 kN, 200 m) = 35 %
+
+==============================================================================
+(B) generic overpass, prismatic, on bearings (pinned supports)
+Eq.(8) 3 spans uniform EI: beta -> N(mid side), xi*, N(xi*), N(mid main) [FE]
+beta=1.00: N(mid side)=+1.300  xi*=0.446 N(xi*)=+1.322  N(mid main)=+0.100
+beta=1.20: N(mid side)=+1.039  xi*=0.425 N(xi*)=+1.076  N(mid main)=+0.470
+beta=1.30: N(mid side)=+0.874  xi*=0.409 N(xi*)=+0.925  N(mid main)=+0.576
+beta=1.40: N(mid side)=+0.688  xi*=0.388 N(xi*)=+0.758  N(mid main)=+0.651
+beta=1.50: N(mid side)=+0.481  xi*=0.358 N(xi*)=+0.581  N(mid main)=+0.705
+beta=1.60: N(mid side)=+0.252  xi*=0.318 N(xi*)=+0.398  N(mid main)=+0.744
+beta=1.70: N(mid side)=+0.002  xi*=0.261 N(xi*)=+0.220  N(mid main)=+0.771
+beta=1.80: N(mid side)=-0.270  xi*=0.174 N(xi*)=+0.069  N(mid main)=+0.790
+2 spans uniform EI, mid-span sensor: rho_L -> N
+rho_L=1.000: N(mid) = +0.750
+rho_L=1.200: N(mid) = +0.390
+rho_L=1.300: N(mid) = +0.165
+rho_L=1.400: N(mid) = -0.090
+rho_L=1.457: N(mid) = -0.250
+rho_L=1.500: N(mid) = -0.375
+example beta = 1.6667: Eq.(8) N(mid side) = +0.087, xi* = 0.282, N(xi*) = +0.278
+[24.0, 40.0, 24.0]: M_q = 0 in right side span at x = [73.54] ([9.54] m from pier)
+f1..f3 (EI=6.0e+07, m=18.0 t/m, assumed) = 2.64, 5.66, 6.65 Hz
+v=5 km/h: T_cr=67.8 s, T_cr/T1=179.3
+v=10 km/h: T_cr=33.9 s, T_cr/T1=89.6
+v=20 km/h: T_cr=16.9 s, T_cr/T1=44.8
+v=30 km/h: T_cr=11.3 s, T_cr/T1=29.9
+v=40 km/h: T_cr=8.5 s, T_cr/T1=22.4
+
+--- (B) [24.0, 40.0, 24.0] m sensors, EI = 6.0e7 kNm2 (assumed) ---
+D1 giua nhip chinh                       C=+1.695e-04 R=+0.71 N=+0.763 T1 pk  +2.49 I  +41.58 | T2 pk  +2.46 I  +41.58 | T3 pk  +2.95 I  +49.89 | bias T1 0.01/0.02/0.05 mm: 2.2%/4.5%/11.2%
+D2 giua nhip bien phai (gan mu)          C=+2.514e-06 R=+0.04 N=+0.087 T1 pk  +0.87 I   +0.62 | T2 pk  +0.85 I   +0.62 | T3 pk  +1.02 I   +0.74 | bias T1 0.01/0.02/0.05 mm: 150.7%/301.5%/753.7%
+D3 nhip bien phai xi* (x=81.2 m)         C=+7.998e-06 R=+0.17 N=+0.278 T1 pk  +0.70 I   +1.96 | T2 pk  +0.69 I   +1.96 | T3 pk  +0.82 I   +2.35 | bias T1 0.01/0.02/0.05 mm: 47.4%/94.8%/236.9%
+D4 giua nhip bien trai (doi xung D2)     C=+2.514e-06 R=+0.04 N=+0.087 T1 pk  +0.87 I   +0.62 | T2 pk  +0.85 I   +0.62 | T3 pk  +1.02 I   +0.74 | bias T1 0.01/0.02/0.05 mm: 150.7%/301.5%/753.7%
+S1 bien duoi tai M_q=0 (x=73.5 m)        C=-2.004e-08 R=-0.02 T1 pk +18.02 I   -4.91 | T2 pk +16.75 I   -4.91 | T3 pk +20.33 I   -5.90
+S2 bien duoi giua nhip chinh             C=+1.544e-06 R=+0.80 T1 pk +26.21 I +378.55 | T2 pk +24.50 I +378.55 | T3 pk +29.72 I +454.25
+
+figures written to /home/user/SHM-Paper1-1D/code/fieldplan/figures

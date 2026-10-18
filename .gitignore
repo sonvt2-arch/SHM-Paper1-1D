@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+# large raw/public data and caches (keep out of git; see MANIFEST files)
+data/public/norbwim_figshare26880898/*.dat
+data/public/norbwim_figshare26880898/*.zip
+code/norbwim/cache/
+*.pkl

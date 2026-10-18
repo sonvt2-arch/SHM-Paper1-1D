@@ -1,0 +1,39 @@
+=== (3) Closed form, symmetric prismatic 3-span beam with pier springs ===
+beta = 1.636364, rho_EI = 1, K = k L_s / EI_s
+K=     0.0  mu=1.557851  N_side(0.4) CF=+0.287048 FE=+0.287048 | N_side(0.5) CF=+0.163223 FE=+0.163223 | N_main(0.5) CF=+0.754630 FE=+0.754629
+K=     0.3  mu=1.520844  N_side(0.4) CF=+0.336786 FE=+0.336786 | N_side(0.5) CF=+0.218734 FE=+0.218734 | N_main(0.5) CF=+0.737738 FE=+0.737738
+K=     1.0  mu=1.451029  N_side(0.4) CF=+0.430617 FE=+0.430617 | N_side(0.5) CF=+0.323457 FE=+0.323457 | N_main(0.5) CF=+0.705871 FE=+0.705871
+K=     3.0  mu=1.326128  N_side(0.4) CF=+0.598483 FE=+0.598483 | N_side(0.5) CF=+0.510807 FE=+0.510807 | N_main(0.5) CF=+0.648860 FE=+0.648860
+K=    10.0  mu=1.165612  N_side(0.4) CF=+0.814217 FE=+0.814217 | N_side(0.5) CF=+0.751582 FE=+0.751582 | N_main(0.5) CF=+0.575593 FE=+0.575593
+K=    30.0  mu=1.068826  N_side(0.4) CF=+0.944298 FE=+0.944298 | N_side(0.5) CF=+0.896761 FE=+0.896761 | N_main(0.5) CF=+0.531415 FE=+0.531415
+K=   100.0  mu=1.022600  N_side(0.4) CF=+1.006426 FE=+1.006426 | N_side(0.5) CF=+0.966101 FE=+0.966100 | N_main(0.5) CF=+0.510315 FE=+0.510315
+K= 10000.0  mu=1.000235  N_side(0.4) CF=+1.036484 FE=+1.036483 | N_side(0.5) CF=+0.999647 FE=+0.999646 | N_main(0.5) CF=+0.500107 FE=+0.500107
+max |closed form - FE| = 4.39e-07
+N_side is a Moebius function of K; |dN/dlnK| peaks at K* = 3 + 2rho/beta = 4.2222 (k* = 1.517e+07 kNm/rad for EI_s = EI_mid)
+xi=0.4: N(K=0)=0.2870, N(K->inf)=1.0368, mu_crit=1.771429, blind spring K_crit=-1.1690 (none: N>0 for all K>=0)
+   at K*: N=0.6619, dN/dlnK=0.1874, dlnC/dlnK=0.283
+xi=0.5: N(K=0)=0.1632, N(K->inf)=1.0000, mu_crit=1.666667, blind spring K_crit=-0.6892 (none: N>0 for all K>=0)
+   at K*: N=0.5816, dN/dlnK=0.2092, dlnC/dlnK=0.360
+main span (mid): N(K=0)=0.754630, N(K->inf)=0.500000 (fixed-fixed 0.5)
+
+=== (1) Adjoint sensitivity, haunched model (Lv = 44 m), alpha = 1 ===
+k=2.748e+07 N8 0.4L : C_m=4.3760e-05  S_k adjoint=+0.5115 FD=+0.5108 | S_alpha adjoint=-1.5115 FD=-1.5124 | S_alpha+S_k=-1.000000
+k=2.748e+07 N8 mid  : C_m=2.5333e-05  S_k adjoint=+0.9161 FD=+0.9148 | S_alpha adjoint=-1.9161 FD=-1.9177 | S_alpha+S_k=-1.000000
+k=2.748e+07 N7 mid  : C_m=3.6097e-04  S_k adjoint=-0.1150 FD=-0.1145 | S_alpha adjoint=-0.8850 FD=-0.8847 | S_alpha+S_k=-1.000000
+k=1.675e+08 N8 0.4L : C_m=8.2156e-05  S_k adjoint=+0.1882 FD=+0.1879 | S_alpha adjoint=-1.1882 FD=-1.1883 | S_alpha+S_k=-1.000000
+k=1.675e+08 N8 mid  : C_m=6.5144e-05  S_k adjoint=+0.2461 FD=+0.2458 | S_alpha adjoint=-1.2461 FD=-1.2462 | S_alpha+S_k=-1.000000
+k=1.675e+08 N7 mid  : C_m=2.8976e-04  S_k adjoint=-0.0990 FD=-0.0989 | S_alpha adjoint=-0.9010 FD=-0.9009 | S_alpha+S_k=-1.000000
+
+=== (2) Moebius law C_m(kappa) = C_inf + (C_0-C_inf)/(1+kappa/k_g) ===
+girder pier flexibility: antisymmetric g_a = 2.2944e-08 rad/kNm -> k_g = 1/g_a = 4.3585e+07 kNm/rad; symmetric g_s = 1.1442e-08 -> 8.7399e+07; cross term a^T G0 s = -2.78e-16
+N8 0.4L : C_0=7.2650e-06  C_inf=1.0164e-04  C_inf/C_0=+13.991  max rel. error of Moebius law over k=1e5..1e12: 4.6e-06
+    kappa=2.748e+07 (kappa/k_g=0.630): S_kappa from Moebius law = +0.5115
+    kappa=1.675e+08 (kappa/k_g=3.843): S_kappa from Moebius law = +0.1882
+N8 mid  : C_0=-1.2507e-05  C_inf=8.5349e-05  C_inf/C_0=-6.824  max rel. error of Moebius law over k=1e5..1e12: 2.7e-06
+    kappa=2.748e+07 (kappa/k_g=0.630): S_kappa from Moebius law = +0.9161
+    kappa=1.675e+08 (kappa/k_g=3.843): S_kappa from Moebius law = +0.2461
+N7 mid  : C_0=4.2866e-04  C_inf=2.5362e-04  C_inf/C_0=+0.592  max rel. error of Moebius law over k=1e5..1e12: 1.9e-07
+    kappa=2.748e+07 (kappa/k_g=0.630): S_kappa from Moebius law = -0.1150
+    kappa=1.675e+08 (kappa/k_g=3.843): S_kappa from Moebius law = -0.0990
+Log-sensitivity S_kappa = dlnC_m/dln kappa = -(kappa g_a)(C_0-C_inf) / [(1+kappa g_a)^2 C_m(kappa)]; |dC_m/dln kappa| is largest at kappa = k_g (prismatic case: k_g L_s/EI_s = 3 + 2rho/beta)
+Boundary-conditioning indicator B_m = |S_kappa|: relative error in C_m per relative error in kappa = k/alpha.

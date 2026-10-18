@@ -1,0 +1,61 @@
+sigmas: static per gauge 2.64 % (tau_rec/2), frequency 3.3 %, rotation 3.0 % [NEED VALUE]
+prior on ln gamma': uniform over [-0.300,0.079] (mass low..high, e_d 1.0..1.2) -> sd 0.109; tight alternative sd 0.03
+
+=== Log-sensitivities d ln(.)/d ln kappa at alpha = 1 ===
+kappa=1.000e+07 (alpha*=1.238): S_y8=-0.090 S_y7=-0.110 (S_y8-S_y7=+0.020) S_C8=+0.576 S_C7=-0.067 S_f1=+0.073 S_f3=+0.004 S_rotT8=-0.082 S_rotT7=-0.157; rotT8=349.7 urad, rotT7=184.1 urad (scheme III, alpha*)
+kappa=2.748e+07 (alpha*=1.072): S_y8=-0.171 S_y7=-0.201 (S_y8-S_y7=+0.030) S_C8=+0.511 S_C7=-0.115 S_f1=+0.141 S_f3=+0.009 S_rotT8=-0.154 S_rotT7=-0.330; rotT8=358.5 urad, rotT7=167.3 urad (scheme III, alpha*)
+kappa=5.000e+07 (alpha*=0.947): S_y8=-0.213 S_y7=-0.241 (S_y8-S_y7=+0.028) S_C8=+0.407 S_C7=-0.130 S_f1=+0.174 S_f3=+0.016 S_rotT8=-0.190 S_rotT7=-0.465; rotT8=366.1 urad, rotT7=149.4 urad (scheme III, alpha*)
+kappa=1.679e+08 (alpha*=0.716): S_y8=-0.211 S_y7=-0.211 (S_y8-S_y7=-0.000) S_C8=+0.188 S_C7=-0.099 S_f1=+0.165 S_f3=+0.036 S_rotT8=-0.182 S_rotT7=-0.732; rotT8=381.9 urad, rotT7=95.2 urad (scheme III, alpha*)
+kappa=1.000e+09 (alpha*=0.559): S_y8=-0.076 S_y7=-0.066 (S_y8-S_y7=-0.010) S_C8=+0.039 S_C7=-0.027 S_f1=+0.049 S_f3=+0.029 S_rotT8=-0.063 S_rotT7=-0.939; rotT8=393.7 urad, rotT7=26.5 urad (scheme III, alpha*)
+
+=== Cramer-Rao bounds (1 sigma, log units = relative) on ln kappa, ln alpha, ln C8, ln C7 ===
+C8, C7 with alpha and kappa from the fit: grad ln C = [-1, S_C, 0]; 'C8|y8' = ln(C8/y8), the shape factor a BPM user needs
+-- kappa=1.000e+07, alpha*=1.238
+   (a) closed form: sd ln kappa = sqrt(2)*sigma/|S_y8-S_y7| = 1.907
+   (a) y8,y7                           : sd ln kappa=  1.907  sd ln alpha= 0.192  sd ln C8= 1.289  sd ln C7= 0.066  sd ln(C8/y8)= 1.270  cond=1.1e+04
+   (b) +f3, gamma' wide                : sd ln kappa=  1.123  sd ln alpha= 0.112  sd ln C8= 0.757  sd ln C7= 0.039  sd ln(C8/y8)= 0.748  cond=4.0e+03
+   (b) +f3, gamma' 3%                  : sd ln kappa=  0.742  sd ln alpha= 0.072  sd ln C8= 0.498  sd ln C7= 0.027  sd ln(C8/y8)= 0.494  cond=1.8e+03
+   (b') +f1+f3 (if f1 measured), wide  : sd ln kappa=  0.629  sd ln alpha= 0.065  sd ln C8= 0.425  sd ln C7= 0.027  sd ln(C8/y8)= 0.419  cond=1.4e+03
+   (c) +rot T8                         : sd ln kappa=  1.381  sd ln alpha= 0.132  sd ln C8= 0.927  sd ln C7= 0.042  sd ln(C8/y8)= 0.920  cond=7.8e+03
+   (c) +rot T7 pier                    : sd ln kappa=  0.591  sd ln alpha= 0.070  sd ln C8= 0.409  sd ln C7= 0.033  sd ln(C8/y8)= 0.394  cond=1.4e+03
+   (b)+(c) f3 wide + rot T8            : sd ln kappa=  1.004  sd ln alpha= 0.096  sd ln C8= 0.673  sd ln C7= 0.031  sd ln(C8/y8)= 0.669  cond=4.4e+03
+-- kappa=2.748e+07, alpha*=1.072
+   (a) closed form: sd ln kappa = sqrt(2)*sigma/|S_y8-S_y7| = 1.241
+   (a) y8,y7                           : sd ln kappa=  1.241  sd ln alpha= 0.231  sd ln C8= 0.865  sd ln C7= 0.090  sd ln(C8/y8)= 0.846  cond=4.7e+03
+   (b) +f3, gamma' wide                : sd ln kappa=  0.657  sd ln alpha= 0.121  sd ln C8= 0.456  sd ln C7= 0.048  sd ln(C8/y8)= 0.448  cond=1.5e+03
+   (b) +f3, gamma' 3%                  : sd ln kappa=  0.422  sd ln alpha= 0.076  sd ln C8= 0.291  sd ln C7= 0.031  sd ln(C8/y8)= 0.288  cond=5.9e+02
+   (b') +f1+f3 (if f1 measured), wide  : sd ln kappa=  0.339  sd ln alpha= 0.065  sd ln C8= 0.237  sd ln C7= 0.030  sd ln(C8/y8)= 0.231  cond=4.2e+02
+   (c) +rot T8                         : sd ln kappa=  0.829  sd ln alpha= 0.147  sd ln C8= 0.571  sd ln C7= 0.054  sd ln(C8/y8)= 0.565  cond=2.9e+03
+   (c) +rot T7 pier                    : sd ln kappa=  0.239  sd ln alpha= 0.056  sd ln C8= 0.177  sd ln C7= 0.031  sd ln(C8/y8)= 0.163  cond=2.5e+02
+   (b)+(c) f3 wide + rot T8            : sd ln kappa=  0.581  sd ln alpha= 0.103  sd ln C8= 0.399  sd ln C7= 0.038  sd ln(C8/y8)= 0.396  cond=1.5e+03
+-- kappa=5.000e+07, alpha*=0.947
+   (a) closed form: sd ln kappa = sqrt(2)*sigma/|S_y8-S_y7| = 1.340
+   (a) y8,y7                           : sd ln kappa=  1.340  sd ln alpha= 0.304  sd ln C8= 0.849  sd ln C7= 0.131  sd ln(C8/y8)= 0.830  cond=5.7e+03
+   (b) +f3, gamma' wide                : sd ln kappa=  0.592  sd ln alpha= 0.133  sd ln C8= 0.373  sd ln C7= 0.058  sd ln(C8/y8)= 0.367  cond=1.2e+03
+   (b) +f3, gamma' 3%                  : sd ln kappa=  0.368  sd ln alpha= 0.081  sd ln C8= 0.230  sd ln C7= 0.036  sd ln(C8/y8)= 0.228  cond=4.6e+02
+   (b') +f1+f3 (if f1 measured), wide  : sd ln kappa=  0.287  sd ln alpha= 0.067  sd ln C8= 0.182  sd ln C7= 0.033  sd ln(C8/y8)= 0.178  cond=3.1e+02
+   (c) +rot T8                         : sd ln kappa=  0.777  sd ln alpha= 0.169  sd ln C8= 0.485  sd ln C7= 0.069  sd ln(C8/y8)= 0.482  cond=2.6e+03
+   (c) +rot T7 pier                    : sd ln kappa=  0.147  sd ln alpha= 0.046  sd ln C8= 0.104  sd ln C7= 0.029  sd ln(C8/y8)= 0.091  cond=1.0e+02
+   (b)+(c) f3 wide + rot T8            : sd ln kappa=  0.518  sd ln alpha= 0.112  sd ln C8= 0.322  sd ln C7= 0.046  sd ln(C8/y8)= 0.321  cond=1.3e+03
+-- kappa=1.679e+08, alpha*=0.716
+   (a) y8,y7                           : FIM singular (eig 2.27e-07/3.01e+03)
+   (b) +f3, gamma' wide                : sd ln kappa=  0.925  sd ln alpha= 0.194  sd ln C8= 0.367  sd ln C7= 0.103  sd ln(C8/y8)= 0.369  cond=2.9e+03
+   (b) +f3, gamma' 3%                  : sd ln kappa=  0.537  sd ln alpha= 0.110  sd ln C8= 0.210  sd ln C7= 0.058  sd ln(C8/y8)= 0.214  cond=9.8e+02
+   (b') +f1+f3 (if f1 measured), wide  : sd ln kappa=  0.362  sd ln alpha= 0.078  sd ln C8= 0.145  sd ln C7= 0.044  sd ln(C8/y8)= 0.144  cond=4.9e+02
+   (c) +rot T8                         : sd ln kappa=  1.216  sd ln alpha= 0.247  sd ln C8= 0.476  sd ln C7= 0.128  sd ln(C8/y8)= 0.485  cond=6.4e+03
+   (c) +rot T7 pier                    : sd ln kappa=  0.068  sd ln alpha= 0.029  sd ln C8= 0.040  sd ln C7= 0.024  sd ln(C8/y8)= 0.027  cond=2.4e+01
+   (b)+(c) f3 wide + rot T8            : sd ln kappa=  0.763  sd ln alpha= 0.154  sd ln C8= 0.297  sd ln C7= 0.080  sd ln(C8/y8)= 0.304  cond=2.7e+03
+-- kappa=1.000e+09, alpha*=0.559
+   (a) closed form: sd ln kappa = sqrt(2)*sigma/|S_y8-S_y7| = 3.565
+   (a) y8,y7                           : sd ln kappa=  3.565  sd ln alpha= 0.253  sd ln C8= 0.391  sd ln C7= 0.158  sd ln(C8/y8)= 0.409  cond=3.7e+04
+   (b) +f3, gamma' wide                : sd ln kappa=  3.378  sd ln alpha= 0.239  sd ln C8= 0.369  sd ln C7= 0.149  sd ln(C8/y8)= 0.387  cond=3.6e+04
+   (b) +f3, gamma' 3%                  : sd ln kappa=  3.081  sd ln alpha= 0.216  sd ln C8= 0.335  sd ln C7= 0.134  sd ln(C8/y8)= 0.353  cond=3.0e+04
+   (b') +f1+f3 (if f1 measured), wide  : sd ln kappa=  1.954  sd ln alpha= 0.140  sd ln C8= 0.215  sd ln C7= 0.088  sd ln(C8/y8)= 0.224  cond=1.3e+04
+   (c) +rot T8                         : sd ln kappa=  2.806  sd ln alpha= 0.193  sd ln C8= 0.301  sd ln C7= 0.118  sd ln(C8/y8)= 0.322  cond=3.2e+04
+   (c) +rot T7 pier                    : sd ln kappa=  0.041  sd ln alpha= 0.020  sd ln C8= 0.021  sd ln C7= 0.020  sd ln(C8/y8)= 0.005  cond=8.2e+00
+   (b)+(c) f3 wide + rot T8            : sd ln kappa=  2.741  sd ln alpha= 0.188  sd ln C8= 0.294  sd ln C7= 0.115  sd ln(C8/y8)= 0.314  cond=3.2e+04
+
+=== Global: ratio C_m / y_meas-model over kappa (alpha-free), base model ===
+static tau_rec                : kappa [1.78e+07,1.00e+12]: C8/y8_model in [5.697e-03,3.696e-02] (max/min 6.49); C7/y7_model max/min 1.509
+static + f3 (wide mass/e_d)   : kappa [1.78e+07,1.12e+08]: C8/y8_model in [5.697e-03,1.732e-02] (max/min 3.04); C7/y7_model max/min 1.198
+static + f3 (base mass)       : kappa [1.78e+07,2.51e+07]: C8/y8_model in [5.697e-03,7.237e-03] (max/min 1.27); C7/y7_model max/min 1.026

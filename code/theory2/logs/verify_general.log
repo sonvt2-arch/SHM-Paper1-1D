@@ -1,0 +1,1057 @@
+==============================================================================================================
+A. Two-span beam, all channels, closed form vs FE (udl and influence-line routes)
+==============================================================================================================
+ rho_L=1.0 rho_EI=1.0  mu=1.0000000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.500000000000 FE= 0.499999999995 err=4.7e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=6.2e-15 OK
+  span1 xi=0 V     (udl)                                     closed= 0.750000000000 FE= 0.749999999998 err=2.3e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.500000000000 FE= 0.499999999995 err=4.7e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=4.0e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.750000000000 FE= 0.749999999998 err=2.4e-12 OK
+  span1 xi=0.25 w     (udl)                                  closed= 0.843750000000 FE= 0.843749999991 err=8.8e-12 OK
+  span1 xi=0.25 theta (udl)                                  closed= 0.281250000000 FE= 0.281249999996 err=3.8e-12 OK
+  span1 xi=0.25 M     (udl)                                  closed= 0.500000000000 FE= 0.499999999998 err=2.3e-12 OK
+  span1 xi=0.25 V     (udl)                                  closed= 0.250000000000 FE= 0.249999999997 err=2.5e-12 OK
+  span1 xi=0.25 theta (il)                                   closed= 0.281250000000 FE= 0.281249999996 err=3.8e-12 OK
+  span1 xi=0.25 M     (il)                                   closed= 0.500000000000 FE= 0.499999999998 err=2.3e-12 OK
+  span1 xi=0.25 V     (il)                                   closed= 0.250000000000 FE= 0.249999999998 err=2.3e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed= 1.000000000000 FE= 0.999999999986 err=1.4e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.125000000000 FE=-0.125000000001 err=1.2e-12 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.500000000000 FE= 0.499999999995 err=4.9e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.250000000000 FE=-0.250000000003 err=3.0e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.125000000000 FE=-0.125000000001 err=1.2e-12 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.500000000000 FE= 0.499999999995 err=4.9e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.250000000000 FE=-0.250000000002 err=2.3e-12 OK
+  span1 xi=0.75 w     (udl)                                  closed= 0.468750000000 FE= 0.468749999988 err=1.2e-11 OK
+  span1 xi=0.75 theta (udl)                                  closed=-0.343750000000 FE=-0.343749999997 err=3.3e-12 OK
+  span1 xi=0.75 M     (udl)                                  closed= 0.000000000000 FE=-0.000000000007 err=7.0e-12 OK
+  span1 xi=0.75 V     (udl)                                  closed=-0.750000000000 FE=-0.750000000002 err=1.9e-12 OK
+  span1 xi=0.75 theta (il)                                   closed=-0.343750000000 FE=-0.343749999997 err=3.3e-12 OK
+  span1 xi=0.75 M     (il)                                   closed= 0.000000000000 FE=-0.000000000007 err=7.0e-12 OK
+  span1 xi=0.75 V     (il)                                   closed=-0.750000000000 FE=-0.750000000002 err=1.9e-12 OK
+  span2 xi=0.4 w     (udl)                                   closed= 0.844800000000 FE= 0.844800000035 err=3.5e-11 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.256000000000 FE= 0.256000000009 err=8.7e-12 OK
+  span2 xi=0.4 M     (udl)                                   closed= 0.360000000000 FE= 0.360000000010 err=1.0e-11 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.450000000000 FE= 0.450000000015 err=1.5e-11 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.256000000000 FE= 0.256000000009 err=8.7e-12 OK
+  span2 xi=0.4 M     (il)                                    closed= 0.360000000000 FE= 0.360000000010 err=1.0e-11 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.450000000000 FE= 0.450000000013 err=1.3e-11 OK
+  span2 xi=0.8 w     (udl)                                   closed= 0.716800000000 FE= 0.716800000032 err=3.2e-11 OK
+  span2 xi=0.8 theta (udl)                                   closed=-0.352000000000 FE=-0.352000000014 err=1.4e-11 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.440000000000 FE= 0.440000000028 err=2.8e-11 OK
+  span2 xi=0.8 V     (udl)                                   closed=-0.350000000000 FE=-0.350000000008 err=7.8e-12 OK
+  span2 xi=0.8 theta (il)                                    closed=-0.352000000000 FE=-0.352000000014 err=1.4e-11 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.440000000000 FE= 0.440000000029 err=2.9e-11 OK
+  span2 xi=0.8 V     (il)                                    closed=-0.350000000000 FE=-0.350000000004 err=4.2e-12 OK
+  reaction R0 (udl)                                          closed= 0.750000000000 FE= 0.749999999998 err=2.3e-12 OK
+  reaction R0 (il)                                           closed= 0.750000000000 FE= 0.749999999998 err=2.4e-12 OK
+  reaction R1 (udl)                                          closed= 1.250000000000 FE= 1.250000000007 err=6.7e-12 OK
+  reaction R1 (il)                                           closed= 1.250000000000 FE= 1.250000000007 err=6.7e-12 OK
+  reaction R2 (udl)                                          closed= 0.750000000000 FE= 0.750000000036 err=3.6e-11 OK
+  reaction R2 (il)                                           closed= 0.750000000000 FE= 0.750000000036 err=3.6e-11 OK
+ rho_L=0.5 rho_EI=1.0  mu=0.7500000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.625000000000 FE= 0.625000000000 err=8.8e-15 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=9.2e-16 OK
+  span1 xi=0 V     (udl)                                     closed= 0.812500000000 FE= 0.812500000000 err=7.6e-14 OK
+  span1 xi=0 theta (il)                                      closed= 0.625000000000 FE= 0.625000000000 err=9.5e-15 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=5.1e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.812500000000 FE= 0.812500000000 err=2.1e-14 OK
+  span1 xi=0.25 w     (udl)                                  closed= 1.078125000000 FE= 1.078125000000 err=1.3e-14 OK
+  span1 xi=0.25 theta (udl)                                  closed= 0.382812500000 FE= 0.382812500000 err=1.3e-14 OK
+  span1 xi=0.25 M     (udl)                                  closed= 0.562500000000 FE= 0.562500000000 err=8.6e-14 OK
+  span1 xi=0.25 V     (udl)                                  closed= 0.312500000000 FE= 0.312500000000 err=9.5e-14 OK
+  span1 xi=0.25 theta (il)                                   closed= 0.382812500000 FE= 0.382812500000 err=1.3e-14 OK
+  span1 xi=0.25 M     (il)                                   closed= 0.562500000000 FE= 0.562500000000 err=1.0e-13 OK
+  span1 xi=0.25 V     (il)                                   closed= 0.312500000000 FE= 0.312500000000 err=6.4e-15 OK
+  span1 xi=0.5 w     (udl)                                   closed= 1.375000000000 FE= 1.375000000000 err=1.4e-14 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.093750000000 FE=-0.093750000000 err=2.8e-14 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.625000000000 FE= 0.625000000000 err=1.7e-13 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.187500000000 FE=-0.187500000000 err=6.9e-14 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.093750000000 FE=-0.093750000000 err=2.9e-14 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.625000000000 FE= 0.625000000000 err=2.1e-13 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.187500000000 FE=-0.187500000000 err=3.1e-13 OK
+  span1 xi=0.75 w     (udl)                                  closed= 0.796875000000 FE= 0.796875000000 err=1.3e-13 OK
+  span1 xi=0.75 theta (udl)                                  closed=-0.429687500000 FE=-0.429687500000 err=7.8e-14 OK
+  span1 xi=0.75 M     (udl)                                  closed= 0.187500000000 FE= 0.187500000000 err=1.1e-13 OK
+  span1 xi=0.75 V     (udl)                                  closed=-0.687500000000 FE=-0.687499999999 err=5.0e-13 OK
+  span1 xi=0.75 theta (il)                                   closed=-0.429687500000 FE=-0.429687500000 err=7.7e-14 OK
+  span1 xi=0.75 M     (il)                                   closed= 0.187500000000 FE= 0.187500000000 err=1.3e-13 OK
+  span1 xi=0.75 V     (il)                                   closed=-0.687500000000 FE=-0.687499999999 err=6.7e-13 OK
+  span2 xi=0.4 w     (udl)                                   closed=-2.227200000000 FE=-2.227200000013 err=1.3e-11 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.176000000000 FE= 0.175999999995 err=5.3e-12 OK
+  span2 xi=0.4 M     (udl)                                   closed=-0.840000000000 FE=-0.840000000000 err=2.3e-13 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.950000000000 FE= 0.949999999991 err=9.0e-12 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.176000000000 FE= 0.175999999995 err=5.3e-12 OK
+  span2 xi=0.4 M     (il)                                    closed=-0.840000000000 FE=-0.840000000000 err=4.0e-13 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.950000000000 FE= 0.949999999993 err=6.6e-12 OK
+  span2 xi=0.8 w     (udl)                                   closed=-0.819200000000 FE=-0.819200000018 err=1.8e-11 OK
+  span2 xi=0.8 theta (udl)                                   closed= 0.528000000000 FE= 0.528000000007 err=7.0e-12 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.040000000000 FE= 0.039999999979 err=2.1e-11 OK
+  span2 xi=0.8 V     (udl)                                   closed= 0.150000000000 FE= 0.150000000040 err=4.0e-11 OK
+  span2 xi=0.8 theta (il)                                    closed= 0.528000000000 FE= 0.528000000007 err=7.0e-12 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.040000000000 FE= 0.039999999979 err=2.1e-11 OK
+  span2 xi=0.8 V     (il)                                    closed= 0.150000000000 FE= 0.150000000012 err=1.2e-11 OK
+  reaction R0 (udl)                                          closed= 0.812500000000 FE= 0.812500000000 err=7.6e-14 OK
+  reaction R0 (il)                                           closed= 0.812500000000 FE= 0.812500000000 err=2.0e-14 OK
+  reaction R1 (udl)                                          closed= 1.375000000000 FE= 1.374999999999 err=1.0e-12 OK
+  reaction R1 (il)                                           closed= 1.375000000000 FE= 1.374999999999 err=9.3e-13 OK
+  reaction R2 (udl)                                          closed= 0.250000000000 FE= 0.249999999973 err=2.7e-11 OK
+  reaction R2 (il)                                           closed= 0.250000000000 FE= 0.249999999973 err=2.7e-11 OK
+ rho_L=1.3 rho_EI=1.0  mu=1.3900000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.305000000000 FE= 0.305000000005 err=5.0e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=9.2e-16 OK
+  span1 xi=0 V     (udl)                                     closed= 0.652500000000 FE= 0.652500000002 err=2.5e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.305000000000 FE= 0.305000000005 err=4.8e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=1.8e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.652500000000 FE= 0.652500000002 err=2.4e-12 OK
+  span1 xi=0.25 w     (udl)                                  closed= 0.478125000000 FE= 0.478125000009 err=9.3e-12 OK
+  span1 xi=0.25 theta (udl)                                  closed= 0.122812500000 FE= 0.122812500004 err=4.0e-12 OK
+  span1 xi=0.25 M     (udl)                                  closed= 0.402500000000 FE= 0.402500000003 err=2.5e-12 OK
+  span1 xi=0.25 V     (udl)                                  closed= 0.152500000000 FE= 0.152500000003 err=2.6e-12 OK
+  span1 xi=0.25 theta (il)                                   closed= 0.122812500000 FE= 0.122812500004 err=3.9e-12 OK
+  span1 xi=0.25 M     (il)                                   closed= 0.402500000000 FE= 0.402500000002 err=2.5e-12 OK
+  span1 xi=0.25 V     (il)                                   closed= 0.152500000000 FE= 0.152500000002 err=2.5e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed= 0.415000000000 FE= 0.415000000015 err=1.5e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.173750000000 FE=-0.173749999999 err=1.2e-12 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.305000000000 FE= 0.305000000005 err=4.9e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.347500000000 FE=-0.347499999997 err=2.5e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.173750000000 FE=-0.173749999999 err=1.2e-12 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.305000000000 FE= 0.305000000005 err=4.7e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.347500000000 FE=-0.347499999998 err=2.4e-12 OK
+  span1 xi=0.75 w     (udl)                                  closed=-0.043125000000 FE=-0.043124999987 err=1.3e-11 OK
+  span1 xi=0.75 theta (udl)                                  closed=-0.209687500000 FE=-0.209687500003 err=3.4e-12 OK
+  span1 xi=0.75 M     (udl)                                  closed=-0.292500000000 FE=-0.292499999993 err=7.5e-12 OK
+  span1 xi=0.75 V     (udl)                                  closed=-0.847500000000 FE=-0.847499999997 err=2.6e-12 OK
+  span1 xi=0.75 theta (il)                                   closed=-0.209687500000 FE=-0.209687500003 err=3.3e-12 OK
+  span1 xi=0.75 M     (il)                                   closed=-0.292500000000 FE=-0.292499999993 err=7.2e-12 OK
+  span1 xi=0.75 V     (il)                                   closed=-0.847500000000 FE=-0.847499999997 err=2.6e-12 OK
+  span2 xi=0.4 w     (udl)                                   closed= 1.117462721893 FE= 1.117462721875 err=1.8e-11 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.263100591716 FE= 0.263100591712 err=4.4e-12 OK
+  span2 xi=0.4 M     (udl)                                   closed= 0.466508875740 FE= 0.466508875733 err=6.4e-12 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.405621301775 FE= 0.405621301764 err=1.1e-11 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.263100591716 FE= 0.263100591712 err=4.4e-12 OK
+  span2 xi=0.4 M     (il)                                    closed= 0.466508875740 FE= 0.466508875734 err=5.6e-12 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.405621301775 FE= 0.405621301767 err=8.3e-12 OK
+  span2 xi=0.8 w     (udl)                                   closed= 0.853131360947 FE= 0.853131360931 err=1.6e-11 OK
+  span2 xi=0.8 theta (udl)                                   closed=-0.430106508876 FE=-0.430106508869 err=7.2e-12 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.475502958580 FE= 0.475502958566 err=1.4e-11 OK
+  span2 xi=0.8 V     (udl)                                   closed=-0.394378698225 FE=-0.394378698222 err=2.4e-12 OK
+  span2 xi=0.8 theta (il)                                    closed=-0.430106508876 FE=-0.430106508869 err=7.2e-12 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.475502958580 FE= 0.475502958566 err=1.4e-11 OK
+  span2 xi=0.8 V     (il)                                    closed=-0.394378698225 FE=-0.394378698211 err=1.4e-11 OK
+  reaction R0 (udl)                                          closed= 0.652500000000 FE= 0.652500000002 err=2.5e-12 OK
+  reaction R0 (il)                                           closed= 0.652500000000 FE= 0.652500000002 err=2.4e-12 OK
+  reaction R1 (udl)                                          closed= 1.267307692308 FE= 1.267307692302 err=5.4e-12 OK
+  reaction R1 (il)                                           closed= 1.267307692308 FE= 1.267307692303 err=5.0e-12 OK
+  reaction R2 (udl)                                          closed= 0.794378698225 FE= 0.794378698207 err=1.8e-11 OK
+  reaction R2 (il)                                           closed= 0.794378698225 FE= 0.794378698207 err=1.8e-11 OK
+ rho_L=1.45743 rho_EI=1.0  mu=1.6666722049
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.166663897550 FE= 0.166663897547 err=2.8e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=8.6e-16 OK
+  span1 xi=0 V     (udl)                                     closed= 0.583331948775 FE= 0.583331948774 err=1.4e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.166663897550 FE= 0.166663897547 err=2.9e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE= 0.000000000000 err=6.0e-16 OK
+  span1 xi=0 V     (il)                                      closed= 0.583331948775 FE= 0.583331948774 err=1.5e-12 OK
+  span1 xi=0.25 w     (udl)                                  closed= 0.218744807906 FE= 0.218744807901 err=5.3e-12 OK
+  span1 xi=0.25 theta (udl)                                  closed= 0.010414416759 FE= 0.010414416757 err=2.3e-12 OK
+  span1 xi=0.25 M     (udl)                                  closed= 0.333331948775 FE= 0.333331948774 err=1.4e-12 OK
+  span1 xi=0.25 V     (udl)                                  closed= 0.083331948775 FE= 0.083331948774 err=1.4e-12 OK
+  span1 xi=0.25 theta (il)                                   closed= 0.010414416759 FE= 0.010414416757 err=2.3e-12 OK
+  span1 xi=0.25 M     (il)                                   closed= 0.333331948775 FE= 0.333331948774 err=1.4e-12 OK
+  span1 xi=0.25 V     (il)                                   closed= 0.083331948775 FE= 0.083331948774 err=1.3e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed=-0.000008307350 FE=-0.000008307358 err=8.5e-12 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.208334025613 FE=-0.208334025613 err=7.3e-13 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.166663897550 FE= 0.166663897547 err=2.8e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.416668051225 FE=-0.416668051226 err=1.4e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.208334025613 FE=-0.208334025613 err=7.5e-13 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.166663897550 FE= 0.166663897547 err=2.9e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.416668051225 FE=-0.416668051226 err=1.4e-12 OK
+  span1 xi=0.75 w     (udl)                                  closed=-0.406257268931 FE=-0.406257268939 err=7.4e-12 OK
+  span1 xi=0.75 theta (udl)                                  closed=-0.114581429566 FE=-0.114581429564 err=1.9e-12 OK
+  span1 xi=0.75 M     (udl)                                  closed=-0.500004153675 FE=-0.500004153679 err=4.3e-12 OK
+  span1 xi=0.75 V     (udl)                                  closed=-0.916668051225 FE=-0.916668051227 err=1.6e-12 OK
+  span1 xi=0.75 theta (il)                                   closed=-0.114581429566 FE=-0.114581429564 err=2.0e-12 OK
+  span1 xi=0.75 M     (il)                                   closed=-0.500004153675 FE=-0.500004153679 err=4.4e-12 OK
+  span1 xi=0.75 V     (il)                                   closed=-0.916668051225 FE=-0.916668051227 err=1.6e-12 OK
+  span2 xi=0.4 w     (udl)                                   closed= 1.175580919289 FE= 1.175580919296 err=6.9e-12 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.264614086440 FE= 0.264614086441 err=1.2e-12 OK
+  span2 xi=0.4 M     (udl)                                   closed= 0.489211296597 FE= 0.489211296600 err=3.0e-12 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.396161959751 FE= 0.396161959754 err=2.6e-12 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.264614086440 FE= 0.264614086441 err=1.2e-12 OK
+  span2 xi=0.4 M     (il)                                    closed= 0.489211296597 FE= 0.489211296600 err=3.2e-12 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.396161959751 FE= 0.396161959754 err=2.5e-12 OK
+  span2 xi=0.8 w     (udl)                                   closed= 0.882190459644 FE= 0.882190459649 err=4.8e-12 OK
+  span2 xi=0.8 theta (udl)                                   closed=-0.446754950838 FE=-0.446754950840 err=2.4e-12 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.483070432199 FE= 0.483070432201 err=2.2e-12 OK
+  span2 xi=0.8 V     (udl)                                   closed=-0.403838040249 FE=-0.403838040271 err=2.2e-11 OK
+  span2 xi=0.8 theta (il)                                    closed=-0.446754950838 FE=-0.446754950840 err=2.4e-12 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.483070432199 FE= 0.483070432202 err=2.6e-12 OK
+  span2 xi=0.8 V     (il)                                    closed=-0.403838040249 FE=-0.403838040243 err=5.8e-12 OK
+  reaction R0 (udl)                                          closed= 0.583331948775 FE= 0.583331948774 err=1.4e-12 OK
+  reaction R0 (il)                                           closed= 0.583331948775 FE= 0.583331948774 err=1.5e-12 OK
+  reaction R1 (udl)                                          closed= 1.285892325000 FE= 1.285892325004 err=3.3e-12 OK
+  reaction R1 (il)                                           closed= 1.285892325000 FE= 1.285892325004 err=3.4e-12 OK
+  reaction R2 (udl)                                          closed= 0.803838040249 FE= 0.803838040252 err=3.5e-12 OK
+  reaction R2 (il)                                           closed= 0.803838040249 FE= 0.803838040252 err=3.5e-12 OK
+ rho_L=2.0 rho_EI=1.0  mu=3.0000000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed=-0.500000000000 FE=-0.500000000017 err=1.7e-11 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=9.2e-16 OK
+  span1 xi=0 V     (udl)                                     closed= 0.250000000000 FE= 0.249999999992 err=8.5e-12 OK
+  span1 xi=0 theta (il)                                      closed=-0.500000000000 FE=-0.500000000017 err=1.7e-11 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE= 0.000000000000 err=5.0e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.250000000000 FE= 0.249999999992 err=8.3e-12 OK
+  span1 xi=0.25 w     (udl)                                  closed=-1.031250000000 FE=-1.031250000032 err=3.2e-11 OK
+  span1 xi=0.25 theta (udl)                                  closed=-0.531250000000 FE=-0.531250000014 err=1.4e-11 OK
+  span1 xi=0.25 M     (udl)                                  closed= 0.000000000000 FE=-0.000000000009 err=8.6e-12 OK
+  span1 xi=0.25 V     (udl)                                  closed=-0.250000000000 FE=-0.250000000009 err=8.7e-12 OK
+  span1 xi=0.25 theta (il)                                   closed=-0.531250000000 FE=-0.531250000014 err=1.4e-11 OK
+  span1 xi=0.25 M     (il)                                   closed= 0.000000000000 FE=-0.000000000008 err=8.4e-12 OK
+  span1 xi=0.25 V     (il)                                   closed=-0.250000000000 FE=-0.250000000008 err=8.4e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed=-2.000000000000 FE=-2.000000000051 err=5.1e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.375000000000 FE=-0.375000000004 err=4.4e-12 OK
+  span1 xi=0.5 M     (udl)                                   closed=-0.500000000000 FE=-0.500000000017 err=1.7e-11 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.750000000000 FE=-0.750000000008 err=8.2e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.375000000000 FE=-0.375000000004 err=4.3e-12 OK
+  span1 xi=0.5 M     (il)                                    closed=-0.500000000000 FE=-0.500000000016 err=1.6e-11 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.750000000000 FE=-0.750000000008 err=8.3e-12 OK
+  span1 xi=0.75 w     (udl)                                  closed=-2.156250000000 FE=-2.156250000045 err=4.5e-11 OK
+  span1 xi=0.75 theta (udl)                                  closed= 0.343750000000 FE= 0.343750000012 err=1.2e-11 OK
+  span1 xi=0.75 M     (udl)                                  closed=-1.500000000000 FE=-1.500000000026 err=2.6e-11 OK
+  span1 xi=0.75 V     (udl)                                  closed=-1.250000000000 FE=-1.250000000010 err=9.9e-12 OK
+  span1 xi=0.75 theta (il)                                   closed= 0.343750000000 FE= 0.343750000011 err=1.1e-11 OK
+  span1 xi=0.75 M     (il)                                   closed=-1.500000000000 FE=-1.500000000025 err=2.5e-11 OK
+  span1 xi=0.75 V     (il)                                   closed=-1.250000000000 FE=-1.250000000010 err=9.9e-12 OK
+  span2 xi=0.4 w     (udl)                                   closed= 1.228800000000 FE= 1.228800000020 err=2.0e-11 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.266000000000 FE= 0.266000000004 err=4.5e-12 OK
+  span2 xi=0.4 M     (udl)                                   closed= 0.510000000000 FE= 0.510000000008 err=8.4e-12 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.387500000000 FE= 0.387500000008 err=8.3e-12 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.266000000000 FE= 0.266000000005 err=4.5e-12 OK
+  span2 xi=0.4 M     (il)                                    closed= 0.510000000000 FE= 0.510000000008 err=8.0e-12 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.387500000000 FE= 0.387500000008 err=8.2e-12 OK
+  span2 xi=0.8 w     (udl)                                   closed= 0.908800000000 FE= 0.908800000016 err=1.6e-11 OK
+  span2 xi=0.8 theta (udl)                                   closed=-0.462000000000 FE=-0.462000000007 err=7.4e-12 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.490000000000 FE= 0.490000000013 err=1.3e-11 OK
+  span2 xi=0.8 V     (udl)                                   closed=-0.412500000000 FE=-0.412500000008 err=7.8e-12 OK
+  span2 xi=0.8 theta (il)                                    closed=-0.462000000000 FE=-0.462000000007 err=7.4e-12 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.490000000000 FE= 0.490000000013 err=1.3e-11 OK
+  span2 xi=0.8 V     (il)                                    closed=-0.412500000000 FE=-0.412499999991 err=8.8e-12 OK
+  reaction R0 (udl)                                          closed= 0.250000000000 FE= 0.249999999992 err=8.5e-12 OK
+  reaction R0 (il)                                           closed= 0.250000000000 FE= 0.249999999992 err=8.3e-12 OK
+  reaction R1 (udl)                                          closed= 1.375000000000 FE= 1.375000000011 err=1.1e-11 OK
+  reaction R1 (il)                                           closed= 1.375000000000 FE= 1.375000000011 err=1.1e-11 OK
+  reaction R2 (udl)                                          closed= 0.812500000000 FE= 0.812500000017 err=1.7e-11 OK
+  reaction R2 (il)                                           closed= 0.812500000000 FE= 0.812500000017 err=1.7e-11 OK
+ rho_L=1.6 rho_EI=2.14  mu=1.6673796791
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.166310160428 FE= 0.166310160428 err=3.0e-13 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=1.7e-15 OK
+  span1 xi=0 V     (udl)                                     closed= 0.583155080214 FE= 0.583155080214 err=1.6e-13 OK
+  span1 xi=0 theta (il)                                      closed= 0.166310160428 FE= 0.166310160428 err=3.8e-13 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE= 0.000000000000 err=1.8e-16 OK
+  span1 xi=0 V     (il)                                      closed= 0.583155080214 FE= 0.583155080214 err=2.1e-13 OK
+  span1 xi=0.25 w     (udl)                                  closed= 0.218081550802 FE= 0.218081550803 err=5.6e-13 OK
+  span1 xi=0.25 theta (udl)                                  closed= 0.010127005348 FE= 0.010127005348 err=2.3e-13 OK
+  span1 xi=0.25 M     (udl)                                  closed= 0.333155080214 FE= 0.333155080214 err=2.0e-13 OK
+  span1 xi=0.25 V     (udl)                                  closed= 0.083155080214 FE= 0.083155080214 err=1.9e-13 OK
+  span1 xi=0.25 theta (il)                                   closed= 0.010127005348 FE= 0.010127005348 err=3.0e-13 OK
+  span1 xi=0.25 M     (il)                                   closed= 0.333155080214 FE= 0.333155080214 err=2.4e-13 OK
+  span1 xi=0.25 V     (il)                                   closed= 0.083155080214 FE= 0.083155080214 err=2.8e-13 OK
+  span1 xi=0.5 w     (udl)                                   closed=-0.001069518717 FE=-0.001069518716 err=8.6e-13 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.208422459893 FE=-0.208422459893 err=4.8e-14 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.166310160428 FE= 0.166310160428 err=3.0e-13 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.416844919786 FE=-0.416844919786 err=8.5e-14 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.208422459893 FE=-0.208422459893 err=6.9e-14 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.166310160428 FE= 0.166310160428 err=3.8e-13 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.416844919786 FE=-0.416844919786 err=1.7e-13 OK
+  span1 xi=0.75 w     (udl)                                  closed=-0.407185828877 FE=-0.407185828876 err=7.1e-13 OK
+  span1 xi=0.75 theta (udl)                                  closed=-0.114338235294 FE=-0.114338235294 err=2.1e-13 OK
+  span1 xi=0.75 M     (udl)                                  closed=-0.500534759358 FE=-0.500534759358 err=3.9e-13 OK
+  span1 xi=0.75 V     (udl)                                  closed=-0.916844919786 FE=-0.916844919786 err=1.1e-16 OK
+  span1 xi=0.75 theta (il)                                   closed=-0.114338235294 FE=-0.114338235294 err=2.7e-13 OK
+  span1 xi=0.75 M     (il)                                   closed=-0.500534759358 FE=-0.500534759358 err=5.1e-13 OK
+  span1 xi=0.75 V     (il)                                   closed=-0.916844919786 FE=-0.916844919786 err=3.2e-14 OK
+  span2 xi=0.4 w     (udl)                                   closed= 1.380372192513 FE= 1.380372192513 err=7.5e-14 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.269947192513 FE= 0.269947192514 err=6.2e-13 OK
+  span2 xi=0.4 M     (udl)                                   closed= 0.569207887701 FE= 0.569207887699 err=1.8e-12 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.362830046791 FE= 0.362830046791 err=5.5e-13 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.269947192513 FE= 0.269947192514 err=6.4e-13 OK
+  span2 xi=0.4 M     (il)                                    closed= 0.569207887701 FE= 0.569207887698 err=2.1e-12 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.362830046791 FE= 0.362830046791 err=5.2e-13 OK
+  span2 xi=0.8 w     (udl)                                   closed= 0.984586096257 FE= 0.984586096258 err=1.6e-12 OK
+  span2 xi=0.8 theta (udl)                                   closed=-0.505419117647 FE=-0.505419117648 err=4.9e-13 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.509735962567 FE= 0.509735962570 err=3.3e-12 OK
+  span2 xi=0.8 V     (udl)                                   closed=-0.437169953209 FE=-0.437169953241 err=3.3e-11 OK
+  span2 xi=0.8 theta (il)                                    closed=-0.505419117647 FE=-0.505419117648 err=4.8e-13 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.509735962567 FE= 0.509735962570 err=3.0e-12 OK
+  span2 xi=0.8 V     (il)                                    closed=-0.437169953209 FE=-0.437169953191 err=1.7e-11 OK
+  reaction R0 (udl)                                          closed= 0.583155080214 FE= 0.583155080214 err=1.6e-13 OK
+  reaction R0 (il)                                           closed= 0.583155080214 FE= 0.583155080214 err=2.1e-13 OK
+  reaction R1 (udl)                                          closed= 1.260528074866 FE= 1.260528074866 err=5.1e-13 OK
+  reaction R1 (il)                                           closed= 1.260528074866 FE= 1.260528074866 err=6.4e-13 OK
+  reaction R2 (udl)                                          closed= 0.837169953209 FE= 0.837169953212 err=3.2e-12 OK
+  reaction R2 (il)                                           closed= 0.837169953209 FE= 0.837169953212 err=3.2e-12 OK
+ rho_L=1.0 rho_EI=3.0  mu=1.0000000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.500000000000 FE= 0.500000000001 err=1.3e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=6.2e-15 OK
+  span1 xi=0 V     (udl)                                     closed= 0.750000000000 FE= 0.750000000001 err=6.1e-13 OK
+  span1 xi=0 theta (il)                                      closed= 0.500000000000 FE= 0.500000000001 err=1.3e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=3.9e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.750000000000 FE= 0.750000000001 err=6.3e-13 OK
+  span1 xi=0.25 w     (udl)                                  closed= 0.843750000000 FE= 0.843750000002 err=2.4e-12 OK
+  span1 xi=0.25 theta (udl)                                  closed= 0.281250000000 FE= 0.281250000001 err=1.0e-12 OK
+  span1 xi=0.25 M     (udl)                                  closed= 0.500000000000 FE= 0.500000000001 err=7.2e-13 OK
+  span1 xi=0.25 V     (udl)                                  closed= 0.250000000000 FE= 0.250000000001 err=5.3e-13 OK
+  span1 xi=0.25 theta (il)                                   closed= 0.281250000000 FE= 0.281250000001 err=1.1e-12 OK
+  span1 xi=0.25 M     (il)                                   closed= 0.500000000000 FE= 0.500000000001 err=7.4e-13 OK
+  span1 xi=0.25 V     (il)                                   closed= 0.250000000000 FE= 0.250000000001 err=6.6e-13 OK
+  span1 xi=0.5 w     (udl)                                   closed= 1.000000000000 FE= 1.000000000004 err=3.8e-12 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.125000000000 FE=-0.125000000000 err=3.4e-13 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.500000000000 FE= 0.500000000001 err=1.1e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.250000000000 FE=-0.250000000000 err=3.4e-13 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.125000000000 FE=-0.125000000000 err=3.4e-13 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.500000000000 FE= 0.500000000001 err=1.2e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.250000000000 FE=-0.250000000000 err=4.5e-13 OK
+  span1 xi=0.75 w     (udl)                                  closed= 0.468750000000 FE= 0.468750000003 err=3.5e-12 OK
+  span1 xi=0.75 theta (udl)                                  closed=-0.343750000000 FE=-0.343750000001 err=8.3e-13 OK
+  span1 xi=0.75 M     (udl)                                  closed= 0.000000000000 FE= 0.000000000002 err=2.0e-12 OK
+  span1 xi=0.75 V     (udl)                                  closed=-0.750000000000 FE=-0.749999999999 err=1.2e-12 OK
+  span1 xi=0.75 theta (il)                                   closed=-0.343750000000 FE=-0.343750000001 err=8.5e-13 OK
+  span1 xi=0.75 M     (il)                                   closed= 0.000000000000 FE= 0.000000000002 err=2.0e-12 OK
+  span1 xi=0.75 V     (il)                                   closed=-0.750000000000 FE=-0.749999999999 err=1.1e-12 OK
+  span2 xi=0.4 w     (udl)                                   closed= 0.844800000000 FE= 0.844799999974 err=2.6e-11 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.256000000000 FE= 0.255999999994 err=6.1e-12 OK
+  span2 xi=0.4 M     (udl)                                   closed= 0.360000000000 FE= 0.359999999993 err=6.8e-12 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.450000000000 FE= 0.449999999994 err=6.1e-12 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.256000000000 FE= 0.255999999994 err=6.1e-12 OK
+  span2 xi=0.4 M     (il)                                    closed= 0.360000000000 FE= 0.359999999993 err=7.1e-12 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.450000000000 FE= 0.449999999994 err=6.0e-12 OK
+  span2 xi=0.8 w     (udl)                                   closed= 0.716800000000 FE= 0.716799999976 err=2.4e-11 OK
+  span2 xi=0.8 theta (udl)                                   closed=-0.352000000000 FE=-0.351999999989 err=1.1e-11 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.440000000000 FE= 0.439999999981 err=1.9e-11 OK
+  span2 xi=0.8 V     (udl)                                   closed=-0.350000000000 FE=-0.349999999968 err=3.2e-11 OK
+  span2 xi=0.8 theta (il)                                    closed=-0.352000000000 FE=-0.351999999989 err=1.1e-11 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.440000000000 FE= 0.439999999980 err=2.0e-11 OK
+  span2 xi=0.8 V     (il)                                    closed=-0.350000000000 FE=-0.350000000000 err=3.5e-13 OK
+  reaction R0 (udl)                                          closed= 0.750000000000 FE= 0.750000000001 err=6.3e-13 OK
+  reaction R0 (il)                                           closed= 0.750000000000 FE= 0.750000000001 err=6.4e-13 OK
+  reaction R1 (udl)                                          closed= 1.250000000000 FE= 1.249999999996 err=3.7e-12 OK
+  reaction R1 (il)                                           closed= 1.250000000000 FE= 1.249999999996 err=3.8e-12 OK
+  reaction R2 (udl)                                          closed= 0.750000000000 FE= 0.749999999975 err=2.5e-11 OK
+  reaction R2 (il)                                           closed= 0.750000000000 FE= 0.749999999975 err=2.5e-11 OK
+ rho_L=2.5 rho_EI=1.0  mu=4.7500000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed=-1.375000000000 FE=-1.374999999993 err=6.5e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=1.2e-14 OK
+  span1 xi=0 V     (udl)                                     closed=-0.187500000000 FE=-0.187499999997 err=3.3e-12 OK
+  span1 xi=0 theta (il)                                      closed=-1.375000000000 FE=-1.374999999994 err=6.3e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE= 0.000000000000 err=8.8e-15 OK
+  span1 xi=0 V     (il)                                      closed=-0.187500000000 FE=-0.187499999997 err=3.3e-12 OK
+  span1 xi=0.25 w     (udl)                                  closed=-2.671875000000 FE=-2.671874999988 err=1.2e-11 OK
+  span1 xi=0.25 theta (udl)                                  closed=-1.242187500000 FE=-1.242187499995 err=5.3e-12 OK
+  span1 xi=0.25 M     (udl)                                  closed=-0.437500000000 FE=-0.437499999997 err=3.1e-12 OK
+  span1 xi=0.25 V     (udl)                                  closed=-0.687500000000 FE=-0.687499999996 err=3.6e-12 OK
+  span1 xi=0.25 theta (il)                                   closed=-1.242187500000 FE=-1.242187499995 err=5.2e-12 OK
+  span1 xi=0.25 M     (il)                                   closed=-0.437500000000 FE=-0.437499999997 err=3.1e-12 OK
+  span1 xi=0.25 V     (il)                                   closed=-0.687500000000 FE=-0.687499999996 err=3.6e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed=-4.625000000000 FE=-4.624999999980 err=2.0e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.593750000000 FE=-0.593749999999 err=1.4e-12 OK
+  span1 xi=0.5 M     (udl)                                   closed=-1.375000000000 FE=-1.374999999993 err=7.2e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-1.187500000000 FE=-1.187499999996 err=3.8e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.593750000000 FE=-0.593749999999 err=1.4e-12 OK
+  span1 xi=0.5 M     (il)                                    closed=-1.375000000000 FE=-1.374999999993 err=7.0e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-1.187500000000 FE=-1.187499999997 err=3.4e-12 OK
+  span1 xi=0.75 w     (udl)                                  closed=-4.453125000000 FE=-4.453124999984 err=1.6e-11 OK
+  span1 xi=0.75 theta (udl)                                  closed= 0.945312500000 FE= 0.945312499995 err=4.8e-12 OK
+  span1 xi=0.75 M     (udl)                                  closed=-2.812500000000 FE=-2.812499999991 err=9.2e-12 OK
+  span1 xi=0.75 V     (udl)                                  closed=-1.687500000000 FE=-1.687500000000 err=1.9e-13 OK
+  span1 xi=0.75 theta (il)                                   closed= 0.945312500000 FE= 0.945312499995 err=4.7e-12 OK
+  span1 xi=0.75 M     (il)                                   closed=-2.812500000000 FE=-2.812499999991 err=8.8e-12 OK
+  span1 xi=0.75 V     (il)                                   closed=-1.687500000000 FE=-1.687500000000 err=3.4e-13 OK
+  span2 xi=0.4 w     (udl)                                   closed= 1.213440000000 FE= 1.213439999994 err=6.2e-12 OK
+  span2 xi=0.4 theta (udl)                                   closed= 0.265600000000 FE= 0.265599999997 err=3.3e-12 OK
+  span2 xi=0.4 M     (udl)                                   closed= 0.504000000000 FE= 0.504000000002 err=1.8e-12 OK
+  span2 xi=0.4 V     (udl)                                   closed= 0.390000000000 FE= 0.389999999994 err=5.9e-12 OK
+  span2 xi=0.4 theta (il)                                    closed= 0.265600000000 FE= 0.265599999997 err=3.3e-12 OK
+  span2 xi=0.4 M     (il)                                    closed= 0.504000000000 FE= 0.504000000002 err=2.2e-12 OK
+  span2 xi=0.4 V     (il)                                    closed= 0.390000000000 FE= 0.389999999998 err=2.1e-12 OK
+  span2 xi=0.8 w     (udl)                                   closed= 0.901120000000 FE= 0.901119999989 err=1.1e-11 OK
+  span2 xi=0.8 theta (udl)                                   closed=-0.457600000000 FE=-0.457599999996 err=3.8e-12 OK
+  span2 xi=0.8 M     (udl)                                   closed= 0.488000000000 FE= 0.487999999986 err=1.4e-11 OK
+  span2 xi=0.8 V     (udl)                                   closed=-0.410000000000 FE=-0.410000000005 err=5.4e-12 OK
+  span2 xi=0.8 theta (il)                                    closed=-0.457600000000 FE=-0.457599999996 err=3.8e-12 OK
+  span2 xi=0.8 M     (il)                                    closed= 0.488000000000 FE= 0.487999999986 err=1.4e-11 OK
+  span2 xi=0.8 V     (il)                                    closed=-0.410000000000 FE=-0.409999999979 err=2.1e-11 OK
+  reaction R0 (udl)                                          closed=-0.187500000000 FE=-0.187499999997 err=3.4e-12 OK
+  reaction R0 (il)                                           closed=-0.187500000000 FE=-0.187499999997 err=3.3e-12 OK
+  reaction R1 (udl)                                          closed= 1.475000000000 FE= 1.475000000000 err=1.7e-13 OK
+  reaction R1 (il)                                           closed= 1.475000000000 FE= 1.475000000001 err=9.5e-13 OK
+  reaction R2 (udl)                                          closed= 0.810000000000 FE= 0.809999999982 err=1.8e-11 OK
+  reaction R2 (il)                                           closed= 0.810000000000 FE= 0.809999999982 err=1.8e-11 OK
+==============================================================================================================
+B. Symmetric three-span beam, all channels
+==============================================================================================================
+ beta=1.000000 rho=1.0  mu=0.8000000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.600000000000 FE= 0.600000000005 err=4.8e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=9.2e-16 OK
+  span1 xi=0 V     (udl)                                     closed= 0.800000000000 FE= 0.800000000003 err=2.6e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.600000000000 FE= 0.600000000005 err=4.6e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=3.7e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.800000000000 FE= 0.800000000002 err=2.4e-12 OK
+  span1 xi=0.4 w     (udl)                                   closed= 1.305600000000 FE= 1.305600000013 err=1.3e-11 OK
+  span1 xi=0.4 theta (udl)                                   closed= 0.088000000000 FE= 0.088000000002 err=2.2e-12 OK
+  span1 xi=0.4 M     (udl)                                   closed= 0.640000000000 FE= 0.640000000004 err=4.0e-12 OK
+  span1 xi=0.4 V     (udl)                                   closed=-0.000000000000 FE= 0.000000000001 err=1.2e-12 OK
+  span1 xi=0.4 theta (il)                                    closed= 0.088000000000 FE= 0.088000000002 err=2.2e-12 OK
+  span1 xi=0.4 M     (il)                                    closed= 0.640000000000 FE= 0.640000000004 err=3.7e-12 OK
+  span1 xi=0.4 V     (il)                                    closed=-0.000000000000 FE= 0.000000000002 err=2.1e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed= 1.300000000000 FE= 1.300000000014 err=1.4e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.100000000000 FE=-0.099999999999 err=8.2e-13 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.600000000000 FE= 0.600000000005 err=5.1e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.200000000000 FE=-0.199999999998 err=2.4e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.100000000000 FE=-0.099999999999 err=9.3e-13 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.600000000000 FE= 0.600000000005 err=4.8e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.200000000000 FE=-0.199999999998 err=2.3e-12 OK
+  span1 xi=0.8 w     (udl)                                   closed= 0.563200000000 FE= 0.563200000009 err=9.4e-12 OK
+  span1 xi=0.8 theta (udl)                                   closed=-0.424000000000 FE=-0.424000000005 err=4.9e-12 OK
+  span1 xi=0.8 M     (udl)                                   closed=-0.000000000000 FE= 0.000000000008 err=8.2e-12 OK
+  span1 xi=0.8 V     (udl)                                   closed=-0.800000000000 FE=-0.799999999994 err=6.1e-12 OK
+  span1 xi=0.8 theta (il)                                    closed=-0.424000000000 FE=-0.424000000005 err=4.9e-12 OK
+  span1 xi=0.8 M     (il)                                    closed=-0.000000000000 FE= 0.000000000007 err=7.5e-12 OK
+  span1 xi=0.8 V     (il)                                    closed=-0.800000000000 FE=-0.800000000017 err=1.7e-11 OK
+  span2 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span2 xi=0 theta (udl)                                     closed=-0.200000000000 FE=-0.200000000006 err=5.5e-12 OK
+  span2 xi=0 M     (udl)                                     closed=-0.800000000000 FE=-0.800000000005 err=5.3e-12 OK
+  span2 xi=0 V     (udl)                                     closed= 1.000000000000 FE= 1.000000000001 err=1.3e-12 OK
+  span2 xi=0 theta (il)                                      closed=-0.200000000000 FE=-0.200000000005 err=5.5e-12 OK
+  span2 xi=0 M     (il)                                      closed=-0.800000000000 FE=-0.800000000005 err=5.3e-12 OK
+  span2 xi=0 V     (il)                                      closed= 1.000000000000 FE= 1.000000000001 err=1.3e-12 OK
+  span2 xi=0.25 w     (udl)                                  closed=-0.018750000000 FE=-0.018750000007 err=7.3e-12 OK
+  span2 xi=0.25 theta (udl)                                  closed= 0.087500000000 FE= 0.087499999998 err=2.0e-12 OK
+  span2 xi=0.25 M     (udl)                                  closed=-0.050000000000 FE=-0.050000000004 err=4.1e-12 OK
+  span2 xi=0.25 V     (udl)                                  closed= 0.500000000000 FE= 0.500000000001 err=1.2e-12 OK
+  span2 xi=0.25 theta (il)                                   closed= 0.087500000000 FE= 0.087499999998 err=2.0e-12 OK
+  span2 xi=0.25 M     (il)                                   closed=-0.050000000000 FE=-0.050000000004 err=4.0e-12 OK
+  span2 xi=0.25 V     (il)                                   closed= 0.500000000000 FE= 0.500000000001 err=1.2e-12 OK
+  span2 xi=0.5 w     (udl)                                   closed= 0.100000000000 FE= 0.099999999991 err=8.5e-12 OK
+  span2 xi=0.5 theta (udl)                                   closed= 0.000000000000 FE= 0.000000000001 err=6.4e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.200000000000 FE= 0.199999999997 err=2.9e-12 OK
+  span2 xi=0.5 V     (udl)                                   closed= 0.000000000000 FE= 0.000000000001 err=1.2e-12 OK
+  span2 xi=0.5 theta (il)                                    closed= 0.000000000000 FE= 0.000000000001 err=6.3e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.200000000000 FE= 0.199999999997 err=2.9e-12 OK
+  span2 xi=0.5 V     (il)                                    closed= 0.000000000000 FE= 0.000000000001 err=1.2e-12 OK
+  reaction R0 (udl)                                          closed= 0.800000000000 FE= 0.800000000003 err=2.6e-12 OK
+  reaction R0 (il)                                           closed= 0.800000000000 FE= 0.800000000002 err=2.4e-12 OK
+  reaction R1 (udl)                                          closed= 1.100000000000 FE= 1.100000000009 err=8.6e-12 OK
+  reaction R1 (il)                                           closed= 1.100000000000 FE= 1.100000000008 err=8.5e-12 OK
+  reaction R2 (udl)                                          closed= 1.100000000000 FE= 1.100000000001 err=6.0e-13 OK
+  reaction R2 (il)                                           closed= 1.100000000000 FE= 1.100000000001 err=6.7e-13 OK
+  reaction R3 (udl)                                          closed= 0.800000000000 FE= 0.800000000003 err=2.8e-12 OK
+  reaction R3 (il)                                           closed= 0.800000000000 FE= 0.800000000003 err=2.8e-12 OK
+ beta=1.636364 rho=1.0  mu=1.5578512397
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.221074380165 FE= 0.221074380163 err=2.6e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=2.6e-15 OK
+  span1 xi=0 V     (udl)                                     closed= 0.610537190083 FE= 0.610537190081 err=1.4e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.221074380165 FE= 0.221074380163 err=2.1e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=1.3e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.610537190083 FE= 0.610537190082 err=1.1e-12 OK
+  span1 xi=0.4 w     (udl)                                   closed= 0.287047933884 FE= 0.287047933877 err=6.9e-12 OK
+  span1 xi=0.4 theta (udl)                                   closed=-0.109041322314 FE=-0.109041322315 err=1.3e-12 OK
+  span1 xi=0.4 M     (udl)                                   closed= 0.336859504132 FE= 0.336859504130 err=2.2e-12 OK
+  span1 xi=0.4 V     (udl)                                   closed=-0.189462809917 FE=-0.189462809918 err=1.1e-12 OK
+  span1 xi=0.4 theta (il)                                    closed=-0.109041322314 FE=-0.109041322315 err=1.1e-12 OK
+  span1 xi=0.4 M     (il)                                    closed= 0.336859504132 FE= 0.336859504130 err=1.7e-12 OK
+  span1 xi=0.4 V     (il)                                    closed=-0.189462809917 FE=-0.189462809918 err=7.8e-13 OK
+  span1 xi=0.5 w     (udl)                                   closed= 0.163223140496 FE= 0.163223140488 err=7.7e-12 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.194731404959 FE=-0.194731404959 err=5.2e-13 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.221074380165 FE= 0.221074380162 err=2.8e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.389462809917 FE=-0.389462809919 err=1.6e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.194731404959 FE=-0.194731404959 err=4.6e-13 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.221074380165 FE= 0.221074380163 err=2.2e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.389462809917 FE=-0.389462809919 err=1.3e-12 OK
+  span1 xi=0.8 w     (udl)                                   closed=-0.309844628099 FE=-0.309844628104 err=5.2e-12 OK
+  span1 xi=0.8 theta (udl)                                   closed=-0.075388429752 FE=-0.075388429749 err=2.8e-12 OK
+  span1 xi=0.8 M     (udl)                                   closed=-0.606280991736 FE=-0.606280991739 err=3.7e-12 OK
+  span1 xi=0.8 V     (udl)                                   closed=-0.989462809917 FE=-0.989462809905 err=1.2e-11 OK
+  span1 xi=0.8 theta (il)                                    closed=-0.075388429752 FE=-0.075388429750 err=2.3e-12 OK
+  span1 xi=0.8 M     (il)                                    closed=-0.606280991736 FE=-0.606280991738 err=2.8e-12 OK
+  span1 xi=0.8 V     (il)                                    closed=-0.989462809917 FE=-0.989462809892 err=2.5e-11 OK
+  span2 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span2 xi=0 theta (udl)                                     closed= 0.127314814815 FE= 0.127314814816 err=6.9e-13 OK
+  span2 xi=0 M     (udl)                                     closed=-0.581790123457 FE=-0.581790123456 err=1.2e-12 OK
+  span2 xi=0 V     (udl)                                     closed= 1.000000000000 FE= 0.999999999999 err=6.5e-13 OK
+  span2 xi=0 theta (il)                                      closed= 0.127314814815 FE= 0.127314814815 err=5.6e-13 OK
+  span2 xi=0 M     (il)                                      closed=-0.581790123457 FE=-0.581790123456 err=9.4e-13 OK
+  span2 xi=0 V     (il)                                      closed= 1.000000000000 FE= 0.999999999999 err=5.3e-13 OK
+  span2 xi=0.25 w     (udl)                                  closed= 0.472222222222 FE= 0.472222222223 err=6.6e-13 OK
+  span2 xi=0.25 theta (udl)                                  closed= 0.251157407407 FE= 0.251157407407 err=4.3e-14 OK
+  span2 xi=0.25 M     (udl)                                  closed= 0.168209876543 FE= 0.168209876544 err=5.6e-13 OK
+  span2 xi=0.25 V     (udl)                                  closed= 0.500000000000 FE= 0.499999999999 err=6.0e-13 OK
+  span2 xi=0.25 theta (il)                                   closed= 0.251157407407 FE= 0.251157407407 err=2.7e-14 OK
+  span2 xi=0.25 M     (il)                                   closed= 0.168209876543 FE= 0.168209876544 err=4.8e-13 OK
+  span2 xi=0.25 V     (il)                                   closed= 0.500000000000 FE= 0.499999999999 err=5.0e-13 OK
+  span2 xi=0.5 w     (udl)                                   closed= 0.754629629630 FE= 0.754629629630 err=4.6e-13 OK
+  span2 xi=0.5 theta (udl)                                   closed= 0.000000000000 FE=-0.000000000000 err=1.8e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.418209876543 FE= 0.418209876543 err=7.8e-14 OK
+  span2 xi=0.5 V     (udl)                                   closed= 0.000000000000 FE=-0.000000000000 err=2.7e-13 OK
+  span2 xi=0.5 theta (il)                                    closed= 0.000000000000 FE=-0.000000000000 err=1.6e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.418209876543 FE= 0.418209876543 err=2.1e-14 OK
+  span2 xi=0.5 V     (il)                                    closed= 0.000000000000 FE=-0.000000000000 err=4.5e-13 OK
+  reaction R0 (udl)                                          closed= 0.610537190083 FE= 0.610537190081 err=1.4e-12 OK
+  reaction R0 (il)                                           closed= 0.610537190083 FE= 0.610537190082 err=1.1e-12 OK
+  reaction R1 (udl)                                          closed= 1.147727272727 FE= 1.147727272724 err=3.8e-12 OK
+  reaction R1 (il)                                           closed= 1.147727272727 FE= 1.147727272724 err=3.0e-12 OK
+  reaction R2 (udl)                                          closed= 1.147727272727 FE= 1.147727272727 err=2.9e-13 OK
+  reaction R2 (il)                                           closed= 1.147727272727 FE= 1.147727272727 err=3.0e-13 OK
+  reaction R3 (udl)                                          closed= 0.610537190083 FE= 0.610537190083 err=4.9e-13 OK
+  reaction R3 (il)                                           closed= 0.610537190083 FE= 0.610537190083 err=4.6e-13 OK
+ beta=1.200000 rho=2.0  mu=0.9810526316
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.509473684211 FE= 0.509473684213 err=2.7e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=6.2e-15 OK
+  span1 xi=0 V     (udl)                                     closed= 0.754736842105 FE= 0.754736842107 err=1.4e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.509473684211 FE= 0.509473684213 err=2.6e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=3.3e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.754736842105 FE= 0.754736842107 err=1.4e-12 OK
+  span1 xi=0.4 w     (udl)                                   closed= 1.062265263158 FE= 1.062265263165 err=7.1e-12 OK
+  span1 xi=0.4 theta (udl)                                   closed= 0.040926315789 FE= 0.040926315791 err=1.3e-12 OK
+  span1 xi=0.4 M     (udl)                                   closed= 0.567578947368 FE= 0.567578947371 err=2.1e-12 OK
+  span1 xi=0.4 V     (udl)                                   closed=-0.045263157895 FE=-0.045263157896 err=1.4e-12 OK
+  span1 xi=0.4 theta (il)                                    closed= 0.040926315789 FE= 0.040926315791 err=1.3e-12 OK
+  span1 xi=0.4 M     (il)                                    closed= 0.567578947368 FE= 0.567578947371 err=2.2e-12 OK
+  span1 xi=0.4 V     (il)                                    closed=-0.045263157895 FE=-0.045263157893 err=1.5e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed= 1.028421052632 FE= 1.028421052639 err=7.9e-12 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.122631578947 FE=-0.122631578947 err=5.4e-13 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.509473684211 FE= 0.509473684213 err=2.9e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.245263157895 FE=-0.245263157893 err=1.5e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.122631578947 FE=-0.122631578947 err=5.1e-13 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.509473684211 FE= 0.509473684213 err=2.8e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.245263157895 FE=-0.245263157893 err=1.4e-12 OK
+  span1 xi=0.8 w     (udl)                                   closed= 0.354627368421 FE= 0.354627368426 err=5.4e-12 OK
+  span1 xi=0.8 theta (udl)                                   closed=-0.340715789474 FE=-0.340715789477 err=3.0e-12 OK
+  span1 xi=0.8 M     (udl)                                   closed=-0.144842105263 FE=-0.144842105258 err=4.9e-12 OK
+  span1 xi=0.8 V     (udl)                                   closed=-0.845263157895 FE=-0.845263157888 err=7.1e-12 OK
+  span1 xi=0.8 theta (il)                                    closed=-0.340715789474 FE=-0.340715789477 err=2.9e-12 OK
+  span1 xi=0.8 M     (il)                                    closed=-0.144842105263 FE=-0.144842105259 err=4.6e-12 OK
+  span1 xi=0.8 V     (il)                                    closed=-0.845263157895 FE=-0.845263157900 err=4.8e-12 OK
+  span2 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span2 xi=0 theta (udl)                                     closed=-0.021929824561 FE=-0.021929824565 err=3.1e-12 OK
+  span2 xi=0 M     (udl)                                     closed=-0.681286549708 FE=-0.681286549711 err=3.7e-12 OK
+  span2 xi=0 V     (udl)                                     closed= 1.000000000000 FE= 1.000000000001 err=1.4e-12 OK
+  span2 xi=0 theta (il)                                      closed=-0.021929824561 FE=-0.021929824564 err=3.1e-12 OK
+  span2 xi=0 M     (il)                                      closed=-0.681286549708 FE=-0.681286549711 err=3.6e-12 OK
+  span2 xi=0 V     (il)                                      closed= 1.000000000000 FE= 1.000000000001 err=1.3e-12 OK
+  span2 xi=0.25 w     (udl)                                  closed= 0.248355263158 FE= 0.248355263154 err=3.8e-12 OK
+  span2 xi=0.25 theta (udl)                                  closed= 0.176535087719 FE= 0.176535087718 err=8.7e-13 OK
+  span2 xi=0.25 M     (udl)                                  closed= 0.068713450292 FE= 0.068713450290 err=2.4e-12 OK
+  span2 xi=0.25 V     (udl)                                  closed= 0.500000000000 FE= 0.500000000001 err=1.3e-12 OK
+  span2 xi=0.25 theta (il)                                   closed= 0.176535087719 FE= 0.176535087718 err=8.5e-13 OK
+  span2 xi=0.25 M     (il)                                   closed= 0.068713450292 FE= 0.068713450290 err=2.3e-12 OK
+  span2 xi=0.25 V     (il)                                   closed= 0.500000000000 FE= 0.500000000001 err=1.2e-12 OK
+  span2 xi=0.5 w     (udl)                                   closed= 0.456140350877 FE= 0.456140350873 err=4.1e-12 OK
+  span2 xi=0.5 theta (udl)                                   closed= 0.000000000000 FE= 0.000000000000 err=4.8e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.318713450292 FE= 0.318713450291 err=1.3e-12 OK
+  span2 xi=0.5 V     (udl)                                   closed= 0.000000000000 FE= 0.000000000001 err=9.0e-13 OK
+  span2 xi=0.5 theta (il)                                    closed= 0.000000000000 FE= 0.000000000000 err=4.6e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.318713450292 FE= 0.318713450291 err=1.3e-12 OK
+  span2 xi=0.5 V     (il)                                    closed= 0.000000000000 FE= 0.000000000001 err=1.0e-12 OK
+  reaction R0 (udl)                                          closed= 0.754736842105 FE= 0.754736842107 err=1.4e-12 OK
+  reaction R0 (il)                                           closed= 0.754736842105 FE= 0.754736842107 err=1.4e-12 OK
+  reaction R1 (udl)                                          closed= 1.111483253589 FE= 1.111483253595 err=6.3e-12 OK
+  reaction R1 (il)                                           closed= 1.111483253589 FE= 1.111483253595 err=6.1e-12 OK
+  reaction R2 (udl)                                          closed= 1.111483253589 FE= 1.111483253589 err=1.1e-14 OK
+  reaction R2 (il)                                           closed= 1.111483253589 FE= 1.111483253589 err=3.4e-14 OK
+  reaction R3 (udl)                                          closed= 0.754736842105 FE= 0.754736842106 err=8.4e-13 OK
+  reaction R3 (il)                                           closed= 0.754736842105 FE= 0.754736842106 err=8.6e-13 OK
+ beta=1.800000 rho=0.7  mu=1.9211764706
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.039411764706 FE= 0.039411764698 err=8.3e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=1.9e-16 OK
+  span1 xi=0 V     (udl)                                     closed= 0.519705882353 FE= 0.519705882348 err=4.5e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.039411764706 FE= 0.039411764698 err=7.5e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=2.5e-16 OK
+  span1 xi=0 V     (il)                                      closed= 0.519705882353 FE= 0.519705882349 err=4.0e-12 OK
+  span1 xi=0.4 w     (udl)                                   closed=-0.201261176471 FE=-0.201261176492 err=2.2e-11 OK
+  span1 xi=0.4 theta (udl)                                   closed=-0.203505882353 FE=-0.203505882357 err=3.9e-12 OK
+  span1 xi=0.4 M     (udl)                                   closed= 0.191529411765 FE= 0.191529411757 err=7.2e-12 OK
+  span1 xi=0.4 V     (udl)                                   closed=-0.280294117647 FE=-0.280294117652 err=4.5e-12 OK
+  span1 xi=0.4 theta (il)                                    closed=-0.203505882353 FE=-0.203505882357 err=3.7e-12 OK
+  span1 xi=0.4 M     (il)                                    closed= 0.191529411765 FE= 0.191529411758 err=6.4e-12 OK
+  span1 xi=0.4 V     (il)                                    closed=-0.280294117647 FE=-0.280294117652 err=4.7e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed=-0.381764705882 FE=-0.381764705906 err=2.4e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.240147058824 FE=-0.240147058825 err=1.6e-12 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.039411764706 FE= 0.039411764697 err=8.6e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.480294117647 FE=-0.480294117650 err=3.4e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.240147058824 FE=-0.240147058825 err=1.5e-12 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.039411764706 FE= 0.039411764698 err=7.8e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.480294117647 FE=-0.480294117651 err=3.6e-12 OK
+  span1 xi=0.8 w     (udl)                                   closed=-0.728395294118 FE=-0.728395294135 err=1.7e-11 OK
+  span1 xi=0.8 theta (udl)                                   closed= 0.091741176471 FE= 0.091741176479 err=8.2e-12 OK
+  span1 xi=0.8 M     (udl)                                   closed=-0.896941176471 FE=-0.896941176483 err=1.3e-11 OK
+  span1 xi=0.8 V     (udl)                                   closed=-1.080294117647 FE=-1.080294117642 err=4.8e-12 OK
+  span1 xi=0.8 theta (il)                                    closed= 0.091741176471 FE= 0.091741176478 err=7.6e-12 OK
+  span1 xi=0.8 M     (il)                                    closed=-0.896941176471 FE=-0.896941176482 err=1.2e-11 OK
+  span1 xi=0.8 V     (il)                                    closed=-1.080294117647 FE=-1.080294117625 err=2.2e-11 OK
+  span2 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span2 xi=0 theta (udl)                                     closed= 0.110566448802 FE= 0.110566448803 err=1.4e-12 OK
+  span2 xi=0 M     (udl)                                     closed=-0.592955700799 FE=-0.592955700798 err=4.1e-13 OK
+  span2 xi=0 V     (udl)                                     closed= 1.000000000000 FE= 1.000000000001 err=8.5e-13 OK
+  span2 xi=0 theta (il)                                      closed= 0.110566448802 FE= 0.110566448803 err=1.3e-12 OK
+  span2 xi=0 M     (il)                                      closed=-0.592955700799 FE=-0.592955700799 err=3.1e-13 OK
+  span2 xi=0 V     (il)                                      closed= 1.000000000000 FE= 1.000000000001 err=8.0e-13 OK
+  span2 xi=0.25 w     (udl)                                  closed= 0.447099673203 FE= 0.447099673205 err=2.2e-12 OK
+  span2 xi=0.25 theta (udl)                                  closed= 0.242783224401 FE= 0.242783224402 err=7.7e-13 OK
+  span2 xi=0.25 M     (udl)                                  closed= 0.157044299201 FE= 0.157044299202 err=1.1e-12 OK
+  span2 xi=0.25 V     (udl)                                  closed= 0.500000000000 FE= 0.500000000001 err=6.4e-13 OK
+  span2 xi=0.25 theta (il)                                   closed= 0.242783224401 FE= 0.242783224402 err=7.6e-13 OK
+  span2 xi=0.25 M     (il)                                   closed= 0.157044299201 FE= 0.157044299202 err=1.1e-12 OK
+  span2 xi=0.25 V     (il)                                   closed= 0.500000000000 FE= 0.500000000001 err=7.6e-13 OK
+  span2 xi=0.5 w     (udl)                                   closed= 0.721132897603 FE= 0.721132897606 err=2.9e-12 OK
+  span2 xi=0.5 theta (udl)                                   closed= 0.000000000000 FE=-0.000000000000 err=1.7e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.407044299201 FE= 0.407044299202 err=1.3e-12 OK
+  span2 xi=0.5 V     (udl)                                   closed= 0.000000000000 FE= 0.000000000000 err=1.4e-13 OK
+  span2 xi=0.5 theta (il)                                    closed= 0.000000000000 FE=-0.000000000000 err=1.5e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.407044299201 FE= 0.407044299202 err=1.2e-12 OK
+  span2 xi=0.5 V     (il)                                    closed= 0.000000000000 FE=-0.000000000000 err=9.6e-14 OK
+  reaction R0 (udl)                                          closed= 0.519705882353 FE= 0.519705882348 err=4.5e-12 OK
+  reaction R0 (il)                                           closed= 0.519705882353 FE= 0.519705882349 err=4.0e-12 OK
+  reaction R1 (udl)                                          closed= 1.171533613445 FE= 1.171533613440 err=5.6e-12 OK
+  reaction R1 (il)                                           closed= 1.171533613445 FE= 1.171533613440 err=5.0e-12 OK
+  reaction R2 (udl)                                          closed= 1.171533613445 FE= 1.171533613447 err=1.1e-12 OK
+  reaction R2 (il)                                           closed= 1.171533613445 FE= 1.171533613447 err=1.2e-12 OK
+  reaction R3 (udl)                                          closed= 0.519705882353 FE= 0.519705882352 err=1.4e-12 OK
+  reaction R3 (il)                                           closed= 0.519705882353 FE= 0.519705882352 err=1.4e-12 OK
+ beta=1.224745 rho=0.5  mu=1.0000000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed= 0.500000000000 FE= 0.500000000004 err=4.0e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE=-0.000000000000 err=6.2e-15 OK
+  span1 xi=0 V     (udl)                                     closed= 0.750000000000 FE= 0.750000000002 err=2.1e-12 OK
+  span1 xi=0 theta (il)                                      closed= 0.500000000000 FE= 0.500000000004 err=3.8e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE=-0.000000000000 err=3.1e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.750000000000 FE= 0.750000000002 err=2.0e-12 OK
+  span1 xi=0.4 w     (udl)                                   closed= 1.036800000000 FE= 1.036800000011 err=1.1e-11 OK
+  span1 xi=0.4 theta (udl)                                   closed= 0.036000000000 FE= 0.036000000002 err=1.9e-12 OK
+  span1 xi=0.4 M     (udl)                                   closed= 0.560000000000 FE= 0.560000000003 err=3.2e-12 OK
+  span1 xi=0.4 V     (udl)                                   closed=-0.050000000000 FE=-0.049999999999 err=9.3e-13 OK
+  span1 xi=0.4 theta (il)                                    closed= 0.036000000000 FE= 0.036000000002 err=1.9e-12 OK
+  span1 xi=0.4 M     (il)                                    closed= 0.560000000000 FE= 0.560000000003 err=3.1e-12 OK
+  span1 xi=0.4 V     (il)                                    closed=-0.050000000000 FE=-0.049999999998 err=1.6e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed= 1.000000000000 FE= 1.000000000012 err=1.2e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.125000000000 FE=-0.124999999999 err=8.3e-13 OK
+  span1 xi=0.5 M     (udl)                                   closed= 0.500000000000 FE= 0.500000000004 err=4.2e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.250000000000 FE=-0.249999999998 err=2.4e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.125000000000 FE=-0.124999999999 err=8.1e-13 OK
+  span1 xi=0.5 M     (il)                                    closed= 0.500000000000 FE= 0.500000000004 err=3.9e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.250000000000 FE=-0.249999999998 err=1.9e-12 OK
+  span1 xi=0.8 w     (udl)                                   closed= 0.332800000000 FE= 0.332800000008 err=8.3e-12 OK
+  span1 xi=0.8 theta (udl)                                   closed=-0.332000000000 FE=-0.332000000004 err=4.1e-12 OK
+  span1 xi=0.8 M     (udl)                                   closed=-0.160000000000 FE=-0.159999999993 err=6.6e-12 OK
+  span1 xi=0.8 V     (udl)                                   closed=-0.850000000000 FE=-0.850000000011 err=1.1e-11 OK
+  span1 xi=0.8 theta (il)                                    closed=-0.332000000000 FE=-0.332000000004 err=3.9e-12 OK
+  span1 xi=0.8 M     (il)                                    closed=-0.160000000000 FE=-0.159999999993 err=6.6e-12 OK
+  span1 xi=0.8 V     (il)                                    closed=-0.850000000000 FE=-0.849999999992 err=8.3e-12 OK
+  span2 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span2 xi=0 theta (udl)                                     closed=-0.000000000000 FE=-0.000000000001 err=1.4e-12 OK
+  span2 xi=0 M     (udl)                                     closed=-0.666666666667 FE=-0.666666666668 err=1.6e-12 OK
+  span2 xi=0 V     (udl)                                     closed= 1.000000000000 FE= 1.000000000000 err=4.8e-13 OK
+  span2 xi=0 theta (il)                                      closed=-0.000000000000 FE=-0.000000000001 err=1.4e-12 OK
+  span2 xi=0 M     (il)                                      closed=-0.666666666667 FE=-0.666666666668 err=1.6e-12 OK
+  span2 xi=0 V     (il)                                      closed= 1.000000000000 FE= 1.000000000000 err=4.5e-13 OK
+  span2 xi=0.25 w     (udl)                                  closed= 0.281250000000 FE= 0.281249999998 err=1.8e-12 OK
+  span2 xi=0.25 theta (udl)                                  closed= 0.187500000000 FE= 0.187500000000 err=3.9e-13 OK
+  span2 xi=0.25 M     (udl)                                  closed= 0.083333333333 FE= 0.083333333332 err=1.1e-12 OK
+  span2 xi=0.25 V     (udl)                                  closed= 0.500000000000 FE= 0.500000000001 err=5.8e-13 OK
+  span2 xi=0.25 theta (il)                                   closed= 0.187500000000 FE= 0.187500000000 err=3.8e-13 OK
+  span2 xi=0.25 M     (il)                                   closed= 0.083333333333 FE= 0.083333333332 err=1.1e-12 OK
+  span2 xi=0.25 V     (il)                                   closed= 0.500000000000 FE= 0.500000000000 err=4.9e-13 OK
+  span2 xi=0.5 w     (udl)                                   closed= 0.500000000000 FE= 0.499999999998 err=1.9e-12 OK
+  span2 xi=0.5 theta (udl)                                   closed= 0.000000000000 FE= 0.000000000000 err=2.3e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.333333333333 FE= 0.333333333333 err=5.5e-13 OK
+  span2 xi=0.5 V     (udl)                                   closed= 0.000000000000 FE= 0.000000000001 err=5.3e-13 OK
+  span2 xi=0.5 theta (il)                                    closed= 0.000000000000 FE= 0.000000000000 err=2.2e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.333333333333 FE= 0.333333333333 err=5.3e-13 OK
+  span2 xi=0.5 V     (il)                                    closed= 0.000000000000 FE= 0.000000000000 err=4.0e-13 OK
+  reaction R0 (udl)                                          closed= 0.750000000000 FE= 0.750000000002 err=2.1e-12 OK
+  reaction R0 (il)                                           closed= 0.750000000000 FE= 0.750000000002 err=2.0e-12 OK
+  reaction R1 (udl)                                          closed= 1.112372435696 FE= 1.112372435701 err=5.3e-12 OK
+  reaction R1 (il)                                           closed= 1.112372435696 FE= 1.112372435701 err=5.0e-12 OK
+  reaction R2 (udl)                                          closed= 1.112372435696 FE= 1.112372435696 err=3.9e-13 OK
+  reaction R2 (il)                                           closed= 1.112372435696 FE= 1.112372435696 err=4.1e-13 OK
+  reaction R3 (udl)                                          closed= 0.750000000000 FE= 0.750000000001 err=1.4e-12 OK
+  reaction R3 (il)                                           closed= 0.750000000000 FE= 0.750000000001 err=1.4e-12 OK
+ beta=2.000000 rho=1.0  mu=2.2500000000
+  span1 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span1 xi=0 theta (udl)                                     closed=-0.125000000000 FE=-0.125000000009 err=8.6e-12 OK
+  span1 xi=0 M     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=9.2e-16 OK
+  span1 xi=0 V     (udl)                                     closed= 0.437500000000 FE= 0.437499999995 err=4.8e-12 OK
+  span1 xi=0 theta (il)                                      closed=-0.125000000000 FE=-0.125000000009 err=8.6e-12 OK
+  span1 xi=0 M     (il)                                      closed= 0.000000000000 FE= 0.000000000000 err=1.3e-15 OK
+  span1 xi=0 V     (il)                                      closed= 0.437500000000 FE= 0.437499999995 err=4.7e-12 OK
+  span1 xi=0.4 w     (udl)                                   closed=-0.643200000000 FE=-0.643200000023 err=2.3e-11 OK
+  span1 xi=0.4 theta (udl)                                   closed=-0.289000000000 FE=-0.289000000004 err=4.0e-12 OK
+  span1 xi=0.4 M     (udl)                                   closed= 0.060000000000 FE= 0.059999999992 err=7.7e-12 OK
+  span1 xi=0.4 V     (udl)                                   closed=-0.362500000000 FE=-0.362500000006 err=6.2e-12 OK
+  span1 xi=0.4 theta (il)                                    closed=-0.289000000000 FE=-0.289000000004 err=4.1e-12 OK
+  span1 xi=0.4 M     (il)                                    closed= 0.060000000000 FE= 0.059999999993 err=7.4e-12 OK
+  span1 xi=0.4 V     (il)                                    closed=-0.362500000000 FE=-0.362500000006 err=5.5e-12 OK
+  span1 xi=0.5 w     (udl)                                   closed=-0.875000000000 FE=-0.875000000025 err=2.5e-11 OK
+  span1 xi=0.5 theta (udl)                                   closed=-0.281250000000 FE=-0.281250000001 err=1.5e-12 OK
+  span1 xi=0.5 M     (udl)                                   closed=-0.125000000000 FE=-0.125000000009 err=9.2e-12 OK
+  span1 xi=0.5 V     (udl)                                   closed=-0.562500000000 FE=-0.562500000004 err=3.5e-12 OK
+  span1 xi=0.5 theta (il)                                    closed=-0.281250000000 FE=-0.281250000002 err=1.6e-12 OK
+  span1 xi=0.5 M     (il)                                    closed=-0.125000000000 FE=-0.125000000009 err=9.1e-12 OK
+  span1 xi=0.5 V     (il)                                    closed=-0.562500000000 FE=-0.562500000004 err=3.9e-12 OK
+  span1 xi=0.8 w     (udl)                                   closed=-1.107200000000 FE=-1.107200000017 err=1.7e-11 OK
+  span1 xi=0.8 theta (udl)                                   closed= 0.243000000000 FE= 0.243000000009 err=9.0e-12 OK
+  span1 xi=0.8 M     (udl)                                   closed=-1.160000000000 FE=-1.160000000013 err=1.3e-11 OK
+  span1 xi=0.8 V     (udl)                                   closed=-1.162500000000 FE=-1.162499999951 err=4.9e-11 OK
+  span1 xi=0.8 theta (il)                                    closed= 0.243000000000 FE= 0.243000000009 err=9.1e-12 OK
+  span1 xi=0.8 M     (il)                                    closed=-1.160000000000 FE=-1.160000000013 err=1.3e-11 OK
+  span1 xi=0.8 V     (il)                                    closed=-1.162500000000 FE=-1.162499999959 err=4.1e-11 OK
+  span2 xi=0 w     (udl)                                     closed= 0.000000000000 FE= 0.000000000000 err=0.0e+00 OK
+  span2 xi=0 theta (udl)                                     closed= 0.156250000000 FE= 0.156250000001 err=1.2e-12 OK
+  span2 xi=0 M     (udl)                                     closed=-0.562500000000 FE=-0.562499999997 err=2.6e-12 OK
+  span2 xi=0 V     (udl)                                     closed= 1.000000000000 FE= 0.999999999998 err=1.7e-12 OK
+  span2 xi=0 theta (il)                                      closed= 0.156250000000 FE= 0.156250000001 err=1.2e-12 OK
+  span2 xi=0 M     (il)                                      closed=-0.562500000000 FE=-0.562499999997 err=2.6e-12 OK
+  span2 xi=0 V     (il)                                      closed= 1.000000000000 FE= 0.999999999998 err=1.5e-12 OK
+  span2 xi=0.25 w     (udl)                                  closed= 0.515625000000 FE= 0.515625000001 err=8.6e-13 OK
+  span2 xi=0.25 theta (udl)                                  closed= 0.265625000000 FE= 0.265625000000 err=1.3e-13 OK
+  span2 xi=0.25 M     (udl)                                  closed= 0.187500000000 FE= 0.187500000001 err=9.1e-13 OK
+  span2 xi=0.25 V     (udl)                                  closed= 0.500000000000 FE= 0.499999999998 err=1.8e-12 OK
+  span2 xi=0.25 theta (il)                                   closed= 0.265625000000 FE= 0.265625000000 err=1.5e-13 OK
+  span2 xi=0.25 M     (il)                                   closed= 0.187500000000 FE= 0.187500000001 err=9.8e-13 OK
+  span2 xi=0.25 V     (il)                                   closed= 0.500000000000 FE= 0.499999999998 err=1.8e-12 OK
+  span2 xi=0.5 w     (udl)                                   closed= 0.812500000000 FE= 0.812500000000 err=2.6e-13 OK
+  span2 xi=0.5 theta (udl)                                   closed= 0.000000000000 FE=-0.000000000000 err=3.1e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.437500000000 FE= 0.437500000000 err=3.6e-13 OK
+  span2 xi=0.5 V     (udl)                                   closed= 0.000000000000 FE=-0.000000000001 err=9.7e-13 OK
+  span2 xi=0.5 theta (il)                                    closed= 0.000000000000 FE=-0.000000000000 err=3.2e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.437500000000 FE= 0.437500000000 err=3.9e-13 OK
+  span2 xi=0.5 V     (il)                                    closed= 0.000000000000 FE=-0.000000000001 err=9.8e-13 OK
+  reaction R0 (udl)                                          closed= 0.437500000000 FE= 0.437499999995 err=4.8e-12 OK
+  reaction R0 (il)                                           closed= 0.437500000000 FE= 0.437499999995 err=4.7e-12 OK
+  reaction R1 (udl)                                          closed= 1.187500000000 FE= 1.187499999989 err=1.1e-11 OK
+  reaction R1 (il)                                           closed= 1.187500000000 FE= 1.187499999989 err=1.1e-11 OK
+  reaction R2 (udl)                                          closed= 1.187500000000 FE= 1.187499999998 err=1.8e-12 OK
+  reaction R2 (il)                                           closed= 1.187500000000 FE= 1.187499999998 err=1.8e-12 OK
+  reaction R3 (udl)                                          closed= 0.437500000000 FE= 0.437499999999 err=1.1e-12 OK
+  reaction R3 (il)                                           closed= 0.437500000000 FE= 0.437499999999 err=1.1e-12 OK
+==============================================================================================================
+C. Asymmetric four-span (three-moment equation) and asymmetric three-span
+==============================================================================================================
+ spans=[30, 45, 50, 35] EI=[1.0, 1.4, 1.6, 1.1]
+  span1 xi=0.3 w     (udl)                                   closed= 0.747045567870 FE= 0.747045567870 err=3.1e-13 OK
+  span1 xi=0.3 theta (udl)                                   closed= 0.138237758491 FE= 0.138237758492 err=1.8e-13 OK
+  span1 xi=0.3 M     (udl)                                   closed= 0.486770760404 FE= 0.486770760404 err=1.9e-13 OK
+  span1 xi=0.3 V     (udl)                                   closed= 0.105642300337 FE= 0.105642300337 err=1.9e-13 OK
+  span1 xi=0.3 theta (il)                                    closed= 0.138237758491 FE= 0.138237758492 err=1.6e-13 OK
+  span1 xi=0.3 M     (il)                                    closed= 0.486770760404 FE= 0.486770760404 err=2.5e-13 OK
+  span1 xi=0.3 V     (il)                                    closed= 0.105642300337 FE= 0.105642300336 err=5.6e-13 OK
+  span2 xi=0.5 w     (udl)                                   closed= 0.505756637427 FE= 0.505756637424 err=3.0e-12 OK
+  span2 xi=0.5 theta (udl)                                   closed=-0.035361302586 FE=-0.035361302587 err=5.5e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.335252212476 FE= 0.335252212475 err=9.3e-13 OK
+  span2 xi=0.5 V     (udl)                                   closed=-0.070722605172 FE=-0.070722605173 err=6.1e-13 OK
+  span2 xi=0.5 theta (il)                                    closed=-0.035361302586 FE=-0.035361302587 err=5.3e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.335252212476 FE= 0.335252212475 err=9.1e-13 OK
+  span2 xi=0.5 V     (il)                                    closed=-0.070722605172 FE=-0.070722605174 err=1.3e-12 OK
+  span3 xi=0.65 w     (udl)                                  closed= 0.559568994453 FE= 0.559568994462 err=9.0e-12 OK
+  span3 xi=0.65 theta (udl)                                  closed=-0.152285619358 FE=-0.152285619360 err=1.5e-12 OK
+  span3 xi=0.65 M     (udl)                                  closed= 0.303846689319 FE= 0.303846689325 err=5.3e-12 OK
+  span3 xi=0.65 V     (udl)                                  closed=-0.281975762464 FE=-0.281975762462 err=1.9e-12 OK
+  span3 xi=0.65 theta (il)                                   closed=-0.152285619358 FE=-0.152285619360 err=1.4e-12 OK
+  span3 xi=0.65 M     (il)                                   closed= 0.303846689319 FE= 0.303846689324 err=5.0e-12 OK
+  span3 xi=0.65 V     (il)                                   closed=-0.281975762464 FE=-0.281975762465 err=6.1e-13 OK
+  span4 xi=0.5 w     (udl)                                   closed= 0.721675373070 FE= 0.721675373055 err=1.5e-11 OK
+  span4 xi=0.5 theta (udl)                                   closed= 0.148193718911 FE= 0.148193718911 err=3.3e-13 OK
+  span4 xi=0.5 M     (udl)                                   closed= 0.407225124357 FE= 0.407225124351 err=6.1e-12 OK
+  span4 xi=0.5 V     (udl)                                   closed= 0.296387437822 FE= 0.296387437821 err=1.7e-13 OK
+  span4 xi=0.5 theta (il)                                    closed= 0.148193718911 FE= 0.148193718911 err=2.8e-13 OK
+  span4 xi=0.5 M     (il)                                    closed= 0.407225124357 FE= 0.407225124351 err=6.2e-12 OK
+  span4 xi=0.5 V     (il)                                    closed= 0.296387437822 FE= 0.296387437821 err=3.2e-13 OK
+  reaction R0 (udl)                                          closed= 0.705642300337 FE= 0.705642300336 err=8.3e-14 OK
+  reaction R0 (il)                                           closed= 0.705642300337 FE= 0.705642300336 err=1.3e-13 OK
+  reaction R1 (udl)                                          closed= 1.075309516762 FE= 1.075309516761 err=1.1e-12 OK
+  reaction R1 (il)                                           closed= 1.075309516762 FE= 1.075309516761 err=1.0e-12 OK
+  reaction R2 (udl)                                          closed= 1.042986622206 FE= 1.042986622209 err=2.8e-12 OK
+  reaction R2 (il)                                           closed= 1.042986622206 FE= 1.042986622209 err=2.8e-12 OK
+  reaction R3 (udl)                                          closed= 1.111439393494 FE= 1.111439393496 err=2.5e-12 OK
+  reaction R3 (il)                                           closed= 1.111439393494 FE= 1.111439393496 err=2.4e-12 OK
+  reaction R4 (udl)                                          closed= 0.703612562178 FE= 0.703612562174 err=4.4e-12 OK
+  reaction R4 (il)                                           closed= 0.703612562178 FE= 0.703612562174 err=4.4e-12 OK
+ spans=[40, 70, 25] EI=[1, 2.5, 0.8]
+  span1 xi=0.3 w     (udl)                                   closed= 0.300844963149 FE= 0.300844963144 err=5.4e-12 OK
+  span1 xi=0.3 theta (udl)                                   closed=-0.010904385028 FE=-0.010904385030 err=1.7e-12 OK
+  span1 xi=0.3 M     (udl)                                   closed= 0.364188176689 FE= 0.364188176688 err=1.8e-12 OK
+  span1 xi=0.3 V     (udl)                                   closed= 0.003490147241 FE= 0.003490147240 err=1.5e-12 OK
+  span1 xi=0.3 theta (il)                                    closed=-0.010904385028 FE=-0.010904385030 err=1.7e-12 OK
+  span1 xi=0.3 M     (il)                                    closed= 0.364188176689 FE= 0.364188176688 err=1.7e-12 OK
+  span1 xi=0.3 V     (il)                                    closed= 0.003490147241 FE= 0.003490147240 err=1.1e-12 OK
+  span2 xi=0.5 w     (udl)                                   closed= 1.096949091403 FE= 1.096949091410 err=7.1e-12 OK
+  span2 xi=0.5 theta (udl)                                   closed= 0.012551695933 FE= 0.012551695933 err=3.2e-13 OK
+  span2 xi=0.5 M     (udl)                                   closed= 0.532316363801 FE= 0.532316363804 err=2.7e-12 OK
+  span2 xi=0.5 V     (udl)                                   closed= 0.025103391865 FE= 0.025103391866 err=4.1e-13 OK
+  span2 xi=0.5 theta (il)                                    closed= 0.012551695933 FE= 0.012551695933 err=3.2e-13 OK
+  span2 xi=0.5 M     (il)                                    closed= 0.532316363801 FE= 0.532316363804 err=2.7e-12 OK
+  span2 xi=0.5 V     (il)                                    closed= 0.025103391865 FE= 0.025103391866 err=4.7e-13 OK
+  span3 xi=0.65 w     (udl)                                  closed=-1.786853255935 FE=-1.786853256011 err=7.6e-11 OK
+  span3 xi=0.65 theta (udl)                                  closed= 0.598592108009 FE= 0.598592108022 err=1.2e-11 OK
+  span3 xi=0.65 M     (udl)                                  closed=-0.235556483172 FE=-0.235556483212 err=4.0e-11 OK
+  span3 xi=0.65 V     (udl)                                  closed= 0.518254630837 FE= 0.518254630830 err=7.4e-12 OK
+  span3 xi=0.65 theta (il)                                   closed= 0.598592108009 FE= 0.598592108022 err=1.2e-11 OK
+  span3 xi=0.65 M     (il)                                   closed=-0.235556483172 FE=-0.235556483212 err=4.0e-11 OK
+  span3 xi=0.65 V     (il)                                   closed= 0.518254630837 FE= 0.518254630832 err=5.0e-12 OK
+  span3 xi=0.5 w     (udl)                                   closed=-2.409527785025 FE=-2.409527785105 err=8.1e-11 OK
+  span3 xi=0.5 theta (udl)                                   closed= 0.409127315419 FE= 0.409127315414 err=4.3e-12 OK
+  span3 xi=0.5 M     (udl)                                   closed=-0.636509261675 FE=-0.636509261708 err=3.3e-11 OK
+  span3 xi=0.5 V     (udl)                                   closed= 0.818254630837 FE= 0.818254630822 err=1.5e-11 OK
+  span3 xi=0.5 theta (il)                                    closed= 0.409127315419 FE= 0.409127315414 err=4.3e-12 OK
+  span3 xi=0.5 M     (il)                                    closed=-0.636509261675 FE=-0.636509261708 err=3.3e-11 OK
+  span3 xi=0.5 V     (il)                                    closed= 0.818254630837 FE= 0.818254630823 err=1.4e-11 OK
+  reaction R0 (udl)                                          closed= 0.603490147241 FE= 0.603490147240 err=1.4e-12 OK
+  reaction R0 (il)                                           closed= 0.603490147241 FE= 0.603490147240 err=1.4e-12 OK
+  reaction R1 (udl)                                          closed= 1.160160286736 FE= 1.160160286739 err=2.7e-12 OK
+  reaction R1 (il)                                           closed= 1.160160286736 FE= 1.160160286739 err=2.7e-12 OK
+  reaction R2 (udl)                                          closed= 1.196832929898 FE= 1.196832929892 err=6.5e-12 OK
+  reaction R2 (il)                                           closed= 1.196832929898 FE= 1.196832929892 err=6.5e-12 OK
+  reaction R3 (udl)                                          closed= 0.181745369163 FE= 0.181745369131 err=3.1e-11 OK
+  reaction R3 (il)                                           closed= 0.181745369163 FE= 0.181745369131 err=3.2e-11 OK
+==============================================================================================================
+D. Zeros of the uniform-load moment diagram (strain blind points), xi = s/L
+==============================================================================================================
+ 2-span rho_L=1: 2 closed-form zeros, 2 FE zeros
+  2-span rho_L=1: zero in span 1 (xi)                        closed= 0.750000000000 FE= 0.750000000000 err=3.6e-13 OK
+  2-span rho_L=1: zero in span 2 (xi)                        closed= 0.250000000000 FE= 0.250000000000 err=4.4e-13 OK
+ 2-span rho_L=1.3: 2 closed-form zeros, 2 FE zeros
+  2-span rho_L=1.3: zero in span 1 (xi)                      closed= 0.652500000000 FE= 0.652500000002 err=1.6e-12 OK
+  2-span rho_L=1.3: zero in span 2 (xi)                      closed= 0.205621301775 FE= 0.205621301776 err=7.7e-13 OK
+ 2-span rho_L=0.7, rho_EI=2: 2 closed-form zeros, 2 FE zeros
+  2-span rho_L=0.7, rho_EI=2: zero in span 1 (xi)            closed= 0.783055555556 FE= 0.783055555555 err=5.9e-13 OK
+  2-span rho_L=0.7, rho_EI=2: zero in span 2 (xi)            closed= 0.442743764172 FE= 0.442743764168 err=4.5e-12 OK
+ 3-span beta=1: 4 closed-form zeros, 4 FE zeros
+  3-span beta=1: zero in span 1 (xi)                         closed= 0.800000000000 FE= 0.800000000000 err=1.6e-13 OK
+  3-span beta=1: zero in span 2 (xi)                         closed= 0.276393202250 FE= 0.276393202248 err=1.7e-12 OK
+  3-span beta=1: zero in span 2 (xi)                         closed= 0.723606797750 FE= 0.723606797745 err=4.9e-12 OK
+  3-span beta=1: zero in span 3 (xi)                         closed= 0.200000000000 FE= 0.199999999999 err=1.1e-12 OK
+ 3-span beta=90/55: 4 closed-form zeros, 4 FE zeros
+  3-span beta=90/55: zero in span 1 (xi)                     closed= 0.610537190083 FE= 0.610537190083 err=4.6e-13 OK
+  3-span beta=90/55: zero in span 2 (xi)                     closed= 0.176654257588 FE= 0.176654257588 err=1.3e-13 OK
+  3-span beta=90/55: zero in span 2 (xi)                     closed= 0.823345742412 FE= 0.823345742412 err=1.0e-14 OK
+  3-span beta=90/55: zero in span 3 (xi)                     closed= 0.389462809917 FE= 0.389462809917 err=1.1e-13 OK
+ 3-span beta=1.4, rho=1.8: 4 closed-form zeros, 4 FE zeros
+  3-span beta=1.4, rho=1.8: zero in span 1 (xi)              closed= 0.708717948718 FE= 0.708717948717 err=6.5e-13 OK
+  3-span beta=1.4, rho=1.8: zero in span 2 (xi)              closed= 0.181587204199 FE= 0.181587204199 err=6.7e-13 OK
+  3-span beta=1.4, rho=1.8: zero in span 2 (xi)              closed= 0.818412795801 FE= 0.818412795799 err=1.5e-12 OK
+  3-span beta=1.4, rho=1.8: zero in span 3 (xi)              closed= 0.291282051282 FE= 0.291282051280 err=1.9e-12 OK
+ 4-span: 6 closed-form zeros, 6 FE zeros
+  4-span: zero in span 1 (xi)                                closed= 0.705642300337 FE= 0.705642300336 err=1.2e-13 OK
+  4-span: zero in span 2 (xi)                                closed= 0.172982264535 FE= 0.172982264535 err=3.5e-13 OK
+  4-span: zero in span 2 (xi)                                closed= 0.756295130293 FE= 0.756295130292 err=2.4e-13 OK
+  4-span: zero in span 3 (xi)                                closed= 0.199432960903 FE= 0.199432960903 err=5.1e-14 OK
+  4-span: zero in span 3 (xi)                                closed= 0.818591276633 FE= 0.818591276633 err=7.9e-14 OK
+  4-span: zero in span 4 (xi)                                closed= 0.296387437822 FE= 0.296387437822 err=1.1e-13 OK
+==============================================================================================================
+E. Closed-form blind configurations of non-deflection channels (FE indicator = 0)
+==============================================================================================================
+  2span_endR_blind_rhoL                    = 2.302775638
+  2span_endrot_blind_rhoL                  = 1.618033989
+  2span_Brot_blind_rhoL                    = 1.000000000
+  3span_Brot_blind_beta                    = 1.224744871
+  3span_endrot_blind_beta                  = 1.879385242
+  3span_endR_blind_beta                    = 2.669079088
+  3span_midmain_strain_blind_beta          = 0.839286755
+  3span_midmain_strain_N0.2_beta           = 1.000000000
+  2-span end reaction R_A, rho_L=(1+sqrt13)/2 N_R            closed= 0.000000000000 FE= 0.000000000001 err=1.2e-12 OK
+  2-span end rotation, rho_L=golden ratio N_theta            closed= 0.000000000000 FE=-0.000000000001 err=7.7e-13 OK
+  2-span rotation at B, rho_L=1, rho_EI=3 N_theta            closed= 0.000000000000 FE= 0.000000000000 err=1.1e-14 OK
+  3-span rotation at B, beta=sqrt(3/2), rho=0.5 N_theta      closed= 0.000000000000 FE= 0.000000000000 err=2.2e-13 OK
+  3-span rotation at B, beta=sqrt(3/2), rho=3 N_theta        closed= 0.000000000000 FE=-0.000000000000 err=3.7e-14 OK
+  3-span end rotation, beta=2cos(pi/9) N_theta               closed= 0.000000000000 FE=-0.000000000000 err=2.2e-13 OK
+  3-span end reaction, beta^3-6beta-3=0 N_R                  closed= 0.000000000000 FE= 0.000000000002 err=2.3e-12 OK
+  3-span mid-main moment, beta^3+2beta^2-2=0 N_M             closed= 0.000000000000 FE= 0.000000000000 err=3.8e-13 OK
+  3-span mid-main shear (symmetry), beta=1.6 N_V             closed= 0.000000000000 FE=-0.000000000000 err=2.2e-13 OK
+  3-span mid-main rotation (symmetry), beta=1.6 N_theta      closed= 0.000000000000 FE= 0.000000000000 err=1.5e-14 OK
+  3-span beta=1: mid-main N_M = 0.2 (band edge)              closed= 0.200000000000 FE= 0.200000000000 err=4.1e-13 OK
+==============================================================================================================
+F. Theorem: complete-crossing convoy integral = P_tot * C_r (exact quadrature);
+   piecewise-prismatic girders, incl. elastic rotational springs at the piers
+==============================================================================================================
+ 2-span 30+39 m, EI2/EI1=1.5
+  x_m= 12.00 w      int= 1.2787874269e+06  P_tot*C_r= 1.2787874269e+06  relerr=1.1e-15 OK   truncated-at-L error  23.95 %
+  x_m= 12.00 theta  int=-2.6602235975e+04  P_tot*C_r=-2.6602235975e+04  relerr=2.9e-15 OK   truncated-at-L error  59.40 %
+  x_m= 12.00 M      int= 2.4291963723e+04  P_tot*C_r= 2.4291963723e+04  relerr=4.6e-13 OK   truncated-at-L error  10.01 %
+  x_m= 12.00 V      int=-9.7566968928e+02  P_tot*C_r=-9.7566968930e+02  relerr=1.5e-11 OK   truncated-at-L error  20.76 %
+  x_m= 30.00 M      int=-7.4270090925e+04  P_tot*C_r=-7.4270090925e+04  relerr=1.2e-14 OK   truncated-at-L error   8.18 %
+  x_m=  0.00 R    0  int= 5.0243303093e+03  P_tot*C_r= 5.0243303093e+03  relerr=5.9e-13 OK   truncated-at-L error   4.03 %
+  x_m=  0.00 R    1  int= 2.1630031281e+04  P_tot*C_r= 2.1630031281e+04  relerr=8.0e-13 OK   truncated-at-L error   4.99 %
+ 3-span 30+48+30 m, springs k=2 EI/m
+  x_m= 12.00 w      int= 2.0948896691e+06  P_tot*C_r= 2.0948896691e+06  relerr=1.8e-15 OK   truncated-at-L error   0.04 %
+  x_m= 12.00 theta  int= 1.5498276415e+04  P_tot*C_r= 1.5498276415e+04  relerr=6.6e-15 OK   truncated-at-L error   0.31 %
+  x_m= 12.00 M      int= 3.0768965673e+04  P_tot*C_r= 3.0768965673e+04  relerr=2.2e-12 OK   truncated-at-L error   0.02 %
+  x_m= 12.00 V      int=-4.3591952641e+02  P_tot*C_r=-4.3591952518e+02  relerr=2.8e-09 OK   truncated-at-L error   0.14 %
+  x_m= 30.00 M      int=-5.8077586550e+04  P_tot*C_r=-5.8077586550e+04  relerr=2.9e-15 OK   truncated-at-L error   0.03 %
+  x_m=  0.00 R    0  int= 5.5640804714e+03  P_tot*C_r= 5.5640804714e+03  relerr=3.1e-12 OK   truncated-at-L error   0.01 %
+  x_m=  0.00 R    1  int= 2.1435919500e+04  P_tot*C_r= 2.1435919500e+04  relerr=2.4e-14 OK   truncated-at-L error   0.12 %
+ 3-span 30+48+30 m, fixed piers
+  x_m= 12.00 w      int= 2.1870000122e+06  P_tot*C_r= 2.1870000122e+06  relerr=1.1e-15 OK   truncated-at-L error   0.00 %
+  x_m= 12.00 theta  int= 2.0250000453e+04  P_tot*C_r= 2.0250000453e+04  relerr=6.8e-15 OK   truncated-at-L error   0.00 %
+  x_m= 12.00 M      int= 3.1500000145e+04  P_tot*C_r= 3.1500000145e+04  relerr=1.5e-13 OK   truncated-at-L error   0.00 %
+  x_m= 12.00 V      int=-3.7499998704e+02  P_tot*C_r=-3.7499998716e+02  relerr=3.3e-10 OK   truncated-at-L error   0.00 %
+  x_m= 30.00 M      int=-5.6250000426e+04  P_tot*C_r=-5.6250000426e+04  relerr=3.9e-16 OK   truncated-at-L error   0.00 %
+  x_m=  0.00 R    0  int= 5.6250000107e+03  P_tot*C_r= 5.6250000107e+03  relerr=1.6e-12 OK   truncated-at-L error   0.00 %
+  x_m=  0.00 R    1  int= 2.1374999954e+04  P_tot*C_r= 2.1374999954e+04  relerr=1.3e-14 OK   truncated-at-L error   0.00 %
+==============================================================================================================
+G. Cau May haunched girder (flex elements, h = 0.5 m) vs independent force method
+   (quadrature); indicators normalised by the prismatic references of each span
+==============================================================================================================
+ prismatic, pinned
+  x= 22.0 N_M                                                closed= 0.336859504132 FE= 0.336859504326 err=1.9e-10 OK
+  x= 22.0 N_V                                                closed=-0.189462809917 FE=-0.189462809785 err=1.3e-10 OK
+  x= 22.0 N_th (EI_mid)                                      closed=-0.109041322314 FE=-0.109041322184 err=1.3e-10 OK
+  x= 25.0 N_M                                                closed= 0.283621337340 FE= 0.283621337563 err=2.2e-10 OK
+  x= 25.0 N_V                                                closed=-0.298553719008 FE=-0.298553718870 err=1.4e-10 OK
+  x= 25.0 N_th (EI_mid)                                      closed=-0.160132504610 FE=-0.160132504514 err=9.6e-11 OK
+  x= 27.5 N_M                                                closed= 0.221074380165 FE= 0.221074380412 err=2.5e-10 OK
+  x= 27.5 N_V                                                closed=-0.389462809917 FE=-0.389462809780 err=1.4e-10 OK
+  x= 27.5 N_th (EI_mid)                                      closed=-0.194731404959 FE=-0.194731404894 err=6.4e-11 OK
+  x= 70.0 N_M                                                closed=-0.026234567901 FE=-0.026234567914 err=1.3e-11 OK
+  x= 70.0 N_V                                                closed= 0.666666666667 FE= 0.666666666352 err=3.1e-10 OK
+  x= 70.0 N_th (EI_mid)                                      closed= 0.270061728395 FE= 0.270061728241 err=1.5e-10 OK
+  x=100.0 N_M                                                closed= 0.418209876543 FE= 0.418209876296 err=2.5e-10 OK
+  x=100.0 N_V                                                closed= 0.000000000000 FE= 0.000000000299 err=3.0e-10 OK
+/home/user/SHM-Paper1-1D/code/theory2/gc_force_method.py:54: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  val, _ = quad(lambda s: f(s, L) / self.EI(x0 + s), 0, hi, points=pts or None,
+  x=100.0 N_th (EI_mid)                                      closed= 0.000000000000 FE= 0.000000000010 err=1.0e-11 OK
+  pier T6 girder moment (left) N_M                           closed=-1.557851239669 FE=-1.557851239185 err=4.8e-10 OK
+  pier T6 girder moment (right) N_M                          closed=-0.581790123457 FE=-0.581790123276 err=1.8e-10 OK
+  reaction R0 N_R                                            closed= 0.610537190083 FE= 0.610537190183 err=1.0e-10 OK
+  reaction R1 N_R                                            closed= 1.147727272727 FE= 1.147727272504 err=2.2e-10 OK
+  reaction R2 N_R                                            closed= 1.147727272727 FE= 1.147727272529 err=2.0e-10 OK
+  reaction R3 N_R                                            closed= 0.610537190083 FE= 0.610537190188 err=1.1e-10 OK
+  moment zero at  33.5795 m (in span lengths)                closed= 0.610537190083 FE= 0.610537190207 err=1.2e-10 OK
+  moment zero at  70.8989 m (in span lengths)                closed= 0.787765368699 FE= 0.787765368709 err=1.0e-11 OK
+  moment zero at 129.1011 m (in span lengths)                closed= 1.434456853523 FE= 1.434456853516 err=6.6e-12 OK
+  moment zero at 166.4205 m (in span lengths)                closed= 3.025826446281 FE= 3.025826446165 err=1.2e-10 OK
+ haunched, pinned
+  x= 22.0 N_M                                                closed= 0.115901222438 FE= 0.115901222308 err=1.3e-10 OK
+  x= 22.0 N_V                                                closed=-0.327561735976 FE=-0.327561736047 err=7.1e-11 OK
+  x= 22.0 N_th (EI_mid)                                      closed=-0.094959599075 FE=-0.094959599102 err=2.7e-11 OK
+  x= 25.0 N_M                                                closed= 0.032532380870 FE= 0.032532380725 err=1.4e-10 OK
+  x= 25.0 N_V                                                closed=-0.436652645067 FE=-0.436652645137 err=7.0e-11 OK
+  x= 25.0 N_th (EI_mid)                                      closed=-0.104464138109 FE=-0.104464138119 err=1.0e-11 OK
+  x= 27.5 N_M                                                closed=-0.055123471953 FE=-0.055123472111 err=1.6e-10 OK
+  x= 27.5 N_V                                                closed=-0.527561735976 FE=-0.527561736048 err=7.2e-11 OK
+  x= 27.5 N_th (EI_mid)                                      closed=-0.103651090554 FE=-0.103651090550 err=3.7e-12 OK
+  x= 70.0 N_M                                                closed=-0.232530494483 FE=-0.232530494585 err=1.0e-10 OK
+  x= 70.0 N_V                                                closed= 0.666666666667 FE= 0.666666666681 err=1.4e-11 OK
+  x= 70.0 N_th (EI_mid)                                      closed= 0.074883935241 FE= 0.074883935277 err=3.6e-11 OK
+  x=100.0 N_M                                                closed= 0.211913949961 FE= 0.211913950092 err=1.3e-10 OK
+  x=100.0 N_V                                                closed= 0.000000000000 FE=-0.000000000181 err=1.8e-10 OK
+  x=100.0 N_th (EI_mid)                                      closed= 0.000000000000 FE=-0.000000000015 err=1.5e-11 OK
+  pier T6 girder moment (left) N_M                           closed=-2.110246943905 FE=-2.110246944445 err=5.4e-10 OK
+  pier T6 girder moment (right) N_M                          closed=-0.788086050039 FE=-0.788086050240 err=2.0e-10 OK
+  reaction R0 N_R                                            closed= 0.472438264024 FE= 0.472438263934 err=9.0e-11 OK
+  reaction R1 N_R                                            closed= 1.200109623991 FE= 1.200109624314 err=3.2e-10 OK
+  reaction R2 N_R                                            closed= 1.200109623991 FE= 1.200109624003 err=1.2e-11 OK
+  reaction R3 N_R                                            closed= 0.472438264024 FE= 0.472438263975 err=4.9e-11 OK
+  moment zero at  25.9841 m (in span lengths)                closed= 0.472438264024 FE= 0.472438263944 err=7.9e-11 OK
+  moment zero at  79.2846 m (in span lengths)                closed= 0.880940549374 FE= 0.880940549398 err=2.4e-11 OK
+  moment zero at 120.7154 m (in span lengths)                closed= 1.341281672848 FE= 1.341281672796 err=5.2e-11 OK
+  moment zero at 174.0159 m (in span lengths)                closed= 3.163925372340 FE= 3.163925372393 err=5.4e-11 OK
+ haunched, A (k_FE)
+  x= 22.0 N_M                                                closed= 0.198555288110 FE= 0.198555288047 err=6.3e-11 OK
+  x= 22.0 N_V                                                closed=-0.275902944931 FE=-0.275902944941 err=9.9e-12 OK
+  x= 22.0 N_th (EI_mid)                                      closed=-0.078046766845 FE=-0.078046766850 err=5.8e-12 OK
+  x= 25.0 N_M                                                closed= 0.126457455497 FE= 0.126457455433 err=6.4e-11 OK
+  x= 25.0 N_V                                                closed=-0.384993854022 FE=-0.384993854022 err=3.6e-13 OK
+  x= 25.0 N_th (EI_mid)                                      closed=-0.098420534280 FE=-0.098420534278 err=2.1e-12 OK
+  x= 27.5 N_M                                                closed= 0.048194110138 FE= 0.048194110074 err=6.3e-11 OK
+  x= 27.5 N_V                                                closed=-0.475902944931 FE=-0.475902944917 err=1.4e-11 OK
+  x= 27.5 N_th (EI_mid)                                      closed=-0.106508757536 FE=-0.106508757528 err=7.9e-12 OK
+  x= 70.0 N_M                                                closed=-0.251355124476 FE=-0.251355124482 err=5.7e-12 OK
+  x= 70.0 N_V                                                closed= 0.666666666667 FE= 0.666666666575 err=9.2e-11 OK
+  x= 70.0 N_th (EI_mid)                                      closed= 0.061964370160 FE= 0.061964370169 err=9.1e-12 OK
+  x=100.0 N_M                                                closed= 0.193089319969 FE= 0.193089320006 err=3.7e-11 OK
+  x=100.0 N_V                                                closed= 0.000000000000 FE=-0.000000000114 err=1.1e-10 OK
+  x=100.0 N_th (EI_mid)                                      closed= 0.000000000000 FE=-0.000000000012 err=1.2e-11 OK
+  pier T6 girder moment (left) N_M                           closed=-1.903611779725 FE=-1.903611779819 err=9.4e-11 OK
+  pier T6 girder moment (right) N_M                          closed=-0.806910680031 FE=-0.806910680100 err=6.9e-11 OK
+  reaction R0 N_R                                            closed= 0.524097055069 FE= 0.524097055013 err=5.6e-11 OK
+  reaction R1 N_R                                            closed= 1.180514910146 FE= 1.180514910434 err=2.9e-10 OK
+  reaction R2 N_R                                            closed= 1.180514910146 FE= 1.180514910023 err=1.2e-10 OK
+  reaction R3 N_R                                            closed= 0.524097055069 FE= 0.524097055071 err=2.0e-12 OK
+  moment zero at  28.8253 m (in span lengths)                closed= 0.524097055069 FE= 0.524097055039 err=3.0e-11 OK
+  moment zero at  80.2261 m (in span lengths)                closed= 0.891401461819 FE= 0.891401461816 err=3.1e-12 OK
+  moment zero at 119.7739 m (in span lengths)                closed= 1.330820760403 FE= 1.330820760361 err=4.2e-11 OK
+  moment zero at 171.1747 m (in span lengths)                closed= 3.112266581295 FE= 3.112266581295 err=4.4e-15 OK
+ haunched, B (alpha 0.716, k 1.2e8)
+  x= 22.0 N_M                                                closed= 0.285505774071 FE= 0.285505774113 err=4.2e-11 OK
+  x= 22.0 N_V                                                closed=-0.221558891206 FE=-0.221558891176 err=3.0e-11 OK
+  x= 22.0 N_th (EI_mid)                                      closed=-0.084154738712 FE=-0.084154738722 err=1.0e-11 OK
+  x= 25.0 N_M                                                closed= 0.225264825907 FE= 0.225264825952 err=4.5e-11 OK
+  x= 25.0 N_V                                                closed=-0.330649800297 FE=-0.330649800298 err=9.6e-13 OK
+  x= 25.0 N_th (EI_mid)                                      closed=-0.128579300828 FE=-0.128579300846 err=1.8e-11 OK
+  x= 27.5 N_M                                                closed= 0.156882217589 FE= 0.156882217625 err=3.6e-11 OK
+  x= 27.5 N_V                                                closed=-0.421558891206 FE=-0.421558891281 err=7.5e-11 OK
+  x= 27.5 N_th (EI_mid)                                      closed=-0.152953866188 FE=-0.152953866211 err=2.3e-11 OK
+  x= 70.0 N_M                                                closed=-0.271158272846 FE=-0.271158272920 err=7.4e-11 OK
+  x= 70.0 N_V                                                closed= 0.666666666667 FE= 0.666666666752 err=8.6e-11 OK
+  x= 70.0 N_th (EI_mid)                                      closed= 0.067560386036 FE= 0.067560386054 err=1.8e-11 OK
+  x=100.0 N_M                                                closed= 0.173286171598 FE= 0.173286171639 err=4.1e-11 OK
+  x=100.0 N_V                                                closed= 0.000000000000 FE=-0.000000000018 err=1.8e-11 OK
+  x=100.0 N_th (EI_mid)                                      closed= 0.000000000000 FE= 0.000000000002 err=1.7e-12 OK
+  pier T6 girder moment (left) N_M                           closed=-1.686235564823 FE=-1.686235565141 err=3.2e-10 OK
+  pier T6 girder moment (right) N_M                          closed=-0.826713828402 FE=-0.826713828609 err=2.1e-10 OK
+  reaction R0 N_R                                            closed= 0.578441108794 FE= 0.578441108834 err=4.0e-11 OK
+  reaction R1 N_R                                            closed= 1.159901648388 FE= 1.159901648795 err=4.1e-10 OK
+  reaction R2 N_R                                            closed= 1.159901648388 FE= 1.159901648588 err=2.0e-10 OK
+  reaction R3 N_R                                            closed= 0.578441108794 FE= 0.578441108870 err=7.5e-11 OK
+  moment zero at  31.8143 m (in span lengths)                closed= 0.578441108794 FE= 0.578441108794 err=9.2e-14 OK
+  moment zero at  81.2676 m (in span lengths)                closed= 0.902972832797 FE= 0.902972832801 err=4.5e-12 OK
+  moment zero at 118.7324 m (in span lengths)                closed= 1.319249389425 FE= 1.319249389435 err=9.6e-12 OK
+  moment zero at 168.1857 m (in span lengths)                closed= 3.057922527569 FE= 3.057922527576 err=7.0e-12 OK
+ haunched, fixed
+  x= 22.0 N_M                                                closed= 0.329649251739 FE= 0.329649251671 err=6.8e-11 OK
+  x= 22.0 N_V                                                closed=-0.193969217663 FE=-0.193969217649 err=1.4e-11 OK
+  x= 22.0 N_th (EI_mid)                                      closed=-0.051222070501 FE=-0.051222070495 err=5.2e-12 OK
+  x= 25.0 N_M                                                closed= 0.275427868712 FE= 0.275427868651 err=6.1e-11 OK
+  x= 25.0 N_V                                                closed=-0.303060126754 FE=-0.303060126702 err=5.2e-11 OK
+  x= 25.0 N_th (EI_mid)                                      closed=-0.088835041126 FE=-0.088835041113 err=1.3e-11 OK
+  x= 27.5 N_M                                                closed= 0.212061564674 FE= 0.212061564622 err=5.2e-11 OK
+  x= 27.5 N_V                                                closed=-0.393969217663 FE=-0.393969217594 err=6.9e-11 OK
+  x= 27.5 N_th (EI_mid)                                      closed=-0.111041176945 FE=-0.111041176926 err=1.8e-11 OK
+  x= 70.0 N_M                                                closed=-0.281212038828 FE=-0.281212038883 err=5.5e-11 OK
+  x= 70.0 N_V                                                closed= 0.666666666667 FE= 0.666666666721 err=5.5e-11 OK
+  x= 70.0 N_th (EI_mid)                                      closed= 0.041473218502 FE= 0.041473218510 err=7.9e-12 OK
+  x=100.0 N_M                                                closed= 0.163232405617 FE= 0.163232405673 err=5.7e-11 OK
+  x=100.0 N_V                                                closed=-0.000000000000 FE=-0.000000000040 err=4.0e-11 OK
+  x=100.0 N_th (EI_mid)                                      closed= 0.000000000000 FE=-0.000000000003 err=3.2e-12 OK
+  pier T6 girder moment (left) N_M                           closed=-1.575876870653 FE=-1.575876870316 err=3.4e-10 OK
+  pier T6 girder moment (right) N_M                          closed=-0.836767594383 FE=-0.836767594564 err=1.8e-10 OK
+  reaction R0 N_R                                            closed= 0.606030782337 FE= 0.606030782266 err=7.1e-11 OK
+  reaction R1 N_R                                            closed= 1.149436599803 FE= 1.149436599879 err=7.6e-11 OK
+  reaction R2 N_R                                            closed= 1.149436599803 FE= 1.149436599835 err=3.2e-11 OK
+  reaction R3 N_R                                            closed= 0.606030782337 FE= 0.606030782376 err=3.9e-11 OK
+  moment zero at  33.3317 m (in span lengths)                closed= 0.606030782337 FE= 0.606030782328 err=8.8e-12 OK
+  moment zero at  81.8191 m (in span lengths)                closed= 0.909100959376 FE= 0.909100959392 err=1.6e-11 OK
+  moment zero at 118.1809 m (in span lengths)                closed= 1.313121262847 FE= 1.313121262820 err=2.6e-11 OK
+  moment zero at 166.6683 m (in span lengths)                closed= 3.030332854027 FE= 3.030332854038 err=1.1e-11 OK
+==============================================================================================================
+SUMMARY: 981 checks, tolerance 1e-08, failures: 0
+  max error  A two-span                       5.1e-11
+  max error  B three-span                     4.9e-11
+  max error  C n-span                         8.1e-11
+  max error  D moment zeros                   4.9e-12
+  max error  E blind configs                  2.3e-12
+  max error  F theorem                        2.8e-09
+  max error  G haunch FE vs force method      5.4e-10
+ALL PASS

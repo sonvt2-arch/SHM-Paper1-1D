@@ -1,0 +1,90 @@
+==============================================================================
+T1  single-sensor reduction and the manuscript's O_m
+  2S-eq mid-span, sig=0.01, eps=0.0: w = 2.370370 (1/C = 2.370370); Var GLS = 4.492115e-03, closed form = 4.492115e-03 kN^2
+  2S-eq mid-span, sig=0.01, eps=0.1: w = 2.370370 (1/C = 2.370370); Var GLS = 3.595984e+02, closed form = 3.595984e+02 kN^2
+  2S-eq mid-span, sig=0.02, eps=0.5: w = 2.370370 (1/C = 2.370370); Var GLS = 8.989867e+03, closed form = 8.989867e+03 kN^2
+  O_m (Eq. 15, L_tot = 60 m) = 0.3308 (manuscript 2*sqrt(44765)/1279 = 0.3308)
+  MF white-noise variance / uniform variance, Lrec = 60 m: 0.1096 (= O_m^2 up to the trapezoid end weights)
+==============================================================================
+T2  multi-channel price of invariance O_k (white noise, Lrec = beam length, single axle; equal sig per type: sig_d = 0.01 mm, sig_s = 1 ue)
+  2S-eq    d@15                         C = [0.42188]  O_j = [0.3308]  O_k = 0.3308
+  2S-eq    d@12.6                       C = [0.4387]  O_j = [0.3509]  O_k = 0.3509
+  2S-eq    d@12.6+d@47.4                C = [0.4387, 0.4387]  O_j = [0.3509, 0.3509]  O_k = 0.3509
+  2S-eq    d@12.6+d@30                  C = [0.4387, 0.0]  O_j = [0.3509, nan]  O_k = 0.3509
+  2S-eq    s@30                         C = [-6.74995]  O_j = [0.9057]  O_k = 0.9057
+  2S-eq    d@12.6+s@30                  C = [0.4387, -6.74995]  O_j = [0.3509, 0.9057]  O_k = 0.3544
+  2S-eq    d@12.6+s@12.6+s@30           C = [0.4387, 3.74225, -6.74995]  O_j = [0.3509, 0.4198, 0.9057]  O_k = 0.3547
+  3S-b2.0  d@60                         C = [5.48438]  O_j = [0.4919]  O_k = 0.4919
+  3S-b2.0  d@98.5                       C = [-0.49904]  O_j = [0.2153]  O_k = 0.2153
+  3S-b2.0  d@60+d@98.5                  C = [5.48438, -0.49904]  O_j = [0.4919, 0.2153]  O_k = 0.4836
+  3S-b2.0  d@60+d@21.5+d@98.5           C = [5.48438, -0.49904, -0.49904]  O_j = [0.4919, 0.2153, 0.2153]  O_k = 0.4758
+  CM-A     d@100                        C = [0.36097]  O_j = [0.314]  O_k = 0.3140
+  CM-A     d@178                        C = [0.04376]  O_j = [0.0761]  O_k = 0.0761
+  CM-A     d@100+d@155                  C = [0.36097, -0.01788]  O_j = [0.314, 0.0724]  O_k = 0.3074
+  CM-A     d@100+d@178                  C = [0.36097, 0.04376]  O_j = [0.314, 0.0761]  O_k = 0.2829
+  CM-B     d@100                        C = [0.4047]  O_j = [0.4126]  O_k = 0.4126
+  CM-B     d@178                        C = [0.11474]  O_j = [0.2404]  O_k = 0.2404
+  CM-B     d@100+d@148.9                C = [0.4047, -0.00329]  O_j = [0.4126, 0.0639]  O_k = 0.4121
+  O_k^2 is the C^2/sig^2-weighted mean of the O_j^2: combining channels never
+  raises efficiency relative to the multi-channel matched filter, it lowers variance.
+  Matched filter with random offsets (one axle, known position), 2S-eq d@12.6, sig = 0.01 mm, Lrec = 80 m:
+    eps = 0.00 mm: std MF =    0.020 kN, std integral =    0.064 kN, ratio (O incl. offset) = 0.3039
+    eps = 0.02 mm: std MF =    0.021 kN, std integral =    3.648 kN, ratio (O incl. offset) = 0.0056
+    eps = 0.10 mm: std MF =    0.021 kN, std integral =   18.236 kN, ratio (O incl. offset) = 0.0011
+    eps = 0.50 mm: std MF =    0.021 kN, std integral =   91.179 kN, ratio (O incl. offset) = 0.0002
+==============================================================================
+T3  offset-immune estimator: w'C = 1, sum w_j = 0 (deflection channels)
+    two channels: w = (1, -1)/(C1 - C2); Var = (s1^2 + s2^2) sig_I^2/(C1-C2)^2 + independent-offset part
+  2S-eq    sig=0.01 eps=0.1 rho=0.9: Cmax 0.438699 @ 12.6 m, Cmin 0 @ 0.0 m | std % single 7.2943, GLS-2 3.1797, immune-2 3.2623, immune with support reference 3.2623
+  2S-eq    sig=0.01 eps=0.1 rho=1.0: Cmax 0.438699 @ 12.6 m, Cmin 0 @ 0.0 m | std % single 7.2943, GLS-2 0.0365, immune-2 0.0365, immune with support reference 0.0365
+  2S-eq    sig=0.01 eps=0.5 rho=0.9: Cmax 0.438699 @ 12.6 m, Cmin 0 @ 0.0 m | std % single 36.4715, GLS-2 15.8976, immune-2 16.3106, immune with support reference 16.3106
+  2S-eq    sig=0.01 eps=0.5 rho=1.0: Cmax 0.438699 @ 12.6 m, Cmin 0 @ 0.0 m | std % single 36.4715, GLS-2 0.0365, immune-2 0.0365, immune with support reference 0.0365
+  2S-r2    sig=0.01 eps=0.1 rho=0.9: Cmax 9.40568 @ 62.9 m, Cmin -0.958503 @ 19.8 m | std % single 0.4678, GLS-2 0.1866, immune-2 0.1899, immune with support reference 0.2092
+  2S-r2    sig=0.01 eps=0.1 rho=1.0: Cmax 9.40568 @ 62.9 m, Cmin -0.958503 @ 19.8 m | std % single 0.4678, GLS-2 0.0018, immune-2 0.0018, immune with support reference 0.0020
+  2S-r2    sig=0.01 eps=0.5 rho=0.9: Cmax 9.40568 @ 62.9 m, Cmin -0.958503 @ 19.8 m | std % single 2.3390, GLS-2 0.9331, immune-2 0.9493, immune with support reference 1.0460
+  2S-r2    sig=0.01 eps=0.5 rho=1.0: Cmax 9.40568 @ 62.9 m, Cmin -0.958503 @ 19.8 m | std % single 2.3390, GLS-2 0.0018, immune-2 0.0018, immune with support reference 0.0020
+  3S-b1.4  sig=0.01 eps=0.1 rho=0.9: Cmax 1.05573 @ 51.0 m, Cmin -0.0221049 @ 28.0 m | std % single 4.6224, GLS-2 1.9776, immune-2 2.0249, immune with support reference 2.0673
+  3S-b1.4  sig=0.01 eps=0.1 rho=1.0: Cmax 1.05573 @ 51.0 m, Cmin -0.0221049 @ 28.0 m | std % single 4.6224, GLS-2 0.0183, immune-2 0.0183, immune with support reference 0.0187
+  3S-b1.4  sig=0.01 eps=0.5 rho=0.9: Cmax 1.05573 @ 51.0 m, Cmin -0.0221049 @ 28.0 m | std % single 23.1119, GLS-2 9.8875, immune-2 10.1240, immune with support reference 10.3360
+  3S-b1.4  sig=0.01 eps=0.5 rho=1.0: Cmax 1.05573 @ 51.0 m, Cmin -0.0221049 @ 28.0 m | std % single 23.1119, GLS-2 0.0183, immune-2 0.0183, immune with support reference 0.0187
+  3S-b2.0  sig=0.01 eps=0.1 rho=0.9: Cmax 5.48438 @ 60.0 m, Cmin -0.499041 @ 98.5 m | std % single 1.0211, GLS-2 0.4111, immune-2 0.4186, immune with support reference 0.4567
+  3S-b2.0  sig=0.01 eps=0.1 rho=1.0: Cmax 5.48438 @ 60.0 m, Cmin -0.499041 @ 98.5 m | std % single 1.0211, GLS-2 0.0035, immune-2 0.0035, immune with support reference 0.0039
+  3S-b2.0  sig=0.01 eps=0.5 rho=0.9: Cmax 5.48438 @ 60.0 m, Cmin -0.499041 @ 98.5 m | std % single 5.1054, GLS-2 2.0556, immune-2 2.0928, immune with support reference 2.2832
+  3S-b2.0  sig=0.01 eps=0.5 rho=1.0: Cmax 5.48438 @ 60.0 m, Cmin -0.499041 @ 98.5 m | std % single 5.1054, GLS-2 0.0035, immune-2 0.0035, immune with support reference 0.0039
+  CM-A     sig=0.01 eps=0.1 rho=0.9: Cmax 0.360971 @ 100.0 m, Cmin -0.0178803 @ 155.0 m | std % single 24.7953, GLS-2 10.3447, immune-2 10.5657, immune with support reference 11.0890
+  CM-A     sig=0.01 eps=0.1 rho=1.0: Cmax 0.360971 @ 100.0 m, Cmin -0.0178803 @ 155.0 m | std % single 24.7953, GLS-2 0.0712, immune-2 0.0712, immune with support reference 0.0748
+  CM-A     sig=0.01 eps=0.5 rho=0.9: Cmax 0.360971 @ 100.0 m, Cmin -0.0178803 @ 155.0 m | std % single 123.9761, GLS-2 51.7226, immune-2 52.8271, immune with support reference 55.4438
+  CM-A     sig=0.01 eps=0.5 rho=1.0: Cmax 0.360971 @ 100.0 m, Cmin -0.0178803 @ 155.0 m | std % single 123.9761, GLS-2 0.0712, immune-2 0.0712, immune with support reference 0.0748
+  CM-B     sig=0.01 eps=0.1 rho=0.9: Cmax 0.404704 @ 100.0 m, Cmin -0.00329135 @ 148.9 m | std % single 22.1159, GLS-2 9.5702, immune-2 9.8109, immune with support reference 9.8907
+  CM-B     sig=0.01 eps=0.1 rho=1.0: Cmax 0.404704 @ 100.0 m, Cmin -0.00329135 @ 148.9 m | std % single 22.1159, GLS-2 0.0661, immune-2 0.0661, immune with support reference 0.0667
+  CM-B     sig=0.01 eps=0.5 rho=0.9: Cmax 0.404704 @ 100.0 m, Cmin -0.00329135 @ 148.9 m | std % single 110.5792, GLS-2 47.8499, immune-2 49.0536, immune with support reference 49.4526
+  CM-B     sig=0.01 eps=0.5 rho=1.0: Cmax 0.404704 @ 100.0 m, Cmin -0.00329135 @ 148.9 m | std % single 110.5792, GLS-2 0.0661, immune-2 0.0661, immune with support reference 0.0667
+  Noise-only cost of immunity (rho = 1, eps irrelevant), two channels at Cmax, Cmin:
+    2S-eq    Var(immune)/Var(single, white noise only) = 2 Cmax^2/(Cmax-Cmin)^2 = 2.0000  (Cmin/Cmax = +0.0000)
+    2S-r2    Var(immune)/Var(single, white noise only) = 2 Cmax^2/(Cmax-Cmin)^2 = 1.6472  (Cmin/Cmax = -0.1019)
+    3S-b1.4  Var(immune)/Var(single, white noise only) = 2 Cmax^2/(Cmax-Cmin)^2 = 1.9188  (Cmin/Cmax = -0.0209)
+    3S-b2.0  Var(immune)/Var(single, white noise only) = 2 Cmax^2/(Cmax-Cmin)^2 = 1.6803  (Cmin/Cmax = -0.0910)
+    CM-A     Var(immune)/Var(single, white noise only) = 2 Cmax^2/(Cmax-Cmin)^2 = 1.8157  (Cmin/Cmax = -0.0495)
+    CM-B     Var(immune)/Var(single, white noise only) = 2 Cmax^2/(Cmax-Cmin)^2 = 1.9679  (Cmin/Cmax = -0.0081)
+==============================================================================
+T4  structure-aware invariant weights (eta known), single deflection channel,
+    2S-eq at x = 12.6 m; constraint (g*eta)(s) = 1 on the sample grid s in [0, S]
+  S =   0.0 m (T =  60.0): white noise: Var_opt/Var_unif = 0.1232, CS bound = 0.1232, MF = 0.1232, immune(1'g=0)/unif = 0.1405 | sig = 0.01, eps = 0.1 mm: opt/unif = 2.34e-06, immune/unif = 2.34e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 5.64e-05, 6.42e-05, 1.71e-05; sensor +0.5 m: 1.20e-04, 1.36e-04, 1.72e-05; span-2 EI x1.2: 1.68e-05, 1.80e-05, 1.62e-05
+  S =   2.0 m (T =  62.0): white noise: Var_opt/Var_unif = 0.1513, CS bound = 0.1197, MF = 0.1192, immune(1'g=0)/unif = 0.1782 | sig = 0.01, eps = 0.1 mm: opt/unif = 2.87e-06, immune/unif = 2.87e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 1.38e-05, 1.47e-05, 9.04e-06; sensor +0.5 m: 7.31e-04, 8.58e-04, 8.88e-06; span-2 EI x1.2: 5.85e-04, 6.94e-04, 9.04e-06
+  S =   5.0 m (T =  65.0): white noise: Var_opt/Var_unif = 0.1828, CS bound = 0.1164, MF = 0.1137, immune(1'g=0)/unif = 0.2235 | sig = 0.01, eps = 0.1 mm: opt/unif = 3.44e-06, immune/unif = 3.44e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 1.36e-05, 1.46e-05, 9.06e-06; sensor +0.5 m: 4.41e-04, 5.38e-04, 8.90e-06; span-2 EI x1.2: 9.61e-04, 1.19e-03, 9.06e-06
+  S =  10.0 m (T =  70.0): white noise: Var_opt/Var_unif = 0.2139, CS bound = 0.1155, MF = 0.1056, immune(1'g=0)/unif = 0.2719 | sig = 0.01, eps = 0.1 mm: opt/unif = 3.88e-06, immune/unif = 3.88e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 1.35e-05, 1.47e-05, 8.99e-06; sensor +0.5 m: 3.56e-03, 4.51e-03, 8.83e-06; span-2 EI x1.2: 6.86e-03, 8.82e-03, 8.99e-06
+  S =  20.0 m (T =  80.0): white noise: Var_opt/Var_unif = 0.2624, CS bound = 0.1275, MF = 0.0924, immune(1'g=0)/unif = 0.3556 | sig = 0.01, eps = 0.1 mm: opt/unif = 4.44e-06, immune/unif = 4.44e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 1.36e-05, 1.53e-05, 9.06e-06; sensor +0.5 m: 6.74e-03, 9.10e-03, 8.90e-06; span-2 EI x1.2: 2.26e-02, 3.11e-02, 9.06e-06
+  S =  40.0 m (T = 100.0): white noise: Var_opt/Var_unif = 0.3540, CS bound = 0.1986, MF = 0.0739, immune(1'g=0)/unif = 0.5476 | sig = 0.01, eps = 0.1 mm: opt/unif = 5.47e-06, immune/unif = 5.47e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 1.38e-05, 1.66e-05, 8.81e-06; sensor +0.5 m: 9.25e-03, 1.43e-02, 8.66e-06; span-2 EI x1.2: 3.26e-02, 5.13e-02, 8.81e-06
+  S =  80.0 m (T = 140.0): white noise: Var_opt/Var_unif = 0.5072, CS bound = 0.3748, MF = 0.0528, immune(1'g=0)/unif = 1.0281 | sig = 0.01, eps = 0.1 mm: opt/unif = 7.34e-06, immune/unif = 7.34e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 1.42e-05, 1.96e-05, 9.02e-06; sensor +0.5 m: 1.24e-02, 2.51e-02, 8.86e-06; span-2 EI x1.2: 4.63e-02, 9.59e-02, 9.02e-06
+  S = 160.0 m (T = 220.0): white noise: Var_opt/Var_unif = 0.6779, CS bound = 0.5760, MF = 0.0336, immune(1'g=0)/unif = 2.1016 | sig = 0.01, eps = 0.1 mm: opt/unif = 9.55e-06, immune/unif = 9.55e-06
+      invariance defect (max-min)/mean of h(s), off-grid shifts [opt, immune, uniform]: exact: 1.31e-05, 2.16e-05, 9.00e-06; sensor +0.5 m: 1.35e-02, 4.17e-02, 8.84e-06; span-2 EI x1.2: 5.03e-02, 1.60e-01, 9.00e-06
+  Reading: with eta known exactly, non-uniform invariant weights exist and can be
+  made offset-immune; the uniform weight is the only one whose invariance survives
+  any error in eta (defect 0), which is what SLM relies on.
