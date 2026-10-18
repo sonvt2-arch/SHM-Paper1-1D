@@ -16,3 +16,15 @@ X2r   ['T3?'] lane=A dir=-1 (res ratio 0.90) v_fit=30.25 r2=0.889 v_spike=[26.53
 X2    ['T3?'] lane=B dir=+1 (res ratio 0.61) v_fit=16.75 r2=0.902 v_spike=null v_script=nan
 R13   ['T3'] lane=A dir=-1 (res ratio 1.03) v_fit=18.75 r2=0.886 v_spike=[16.944] v_script=17.1
 R13r  ['T3'] lane=B dir=+1 (res ratio 1.31) v_fit=16.00 r2=0.869 v_spike=null v_script=nan
+R14   ['T3'] lane=A dir=-1 (res ratio 1.16) v_fit=19.75 r2=0.940 v_spike=[16.828] v_script=16.56
+R14r  ['T3'] lane=B dir=+1 (res ratio 0.82) v_fit=11.50 r2=0.810 v_spike=null v_script=nan
+M1    ['T4', 'T3'] lane=A dir=-1 (res ratio 1.16) v_fit=15.00 r2=0.935 v_spike=[13.208, 12.979] v_script=nan
+M1r   ['T4', 'T3'] lane=B dir=+1 (res ratio 0.80) v_fit=17.75 r2=0.610 v_spike=null v_script=nan
+M2    ['T4', 'T3'] lane=A dir=-1 (res ratio 1.20) v_fit=14.50 r2=0.923 v_spike=[13.531, 14.023] v_script=nan
+M2r   ['T4', 'T3'] lane=B dir=+1 (res ratio 0.84) v_fit=16.50 r2=0.597 v_spike=null v_script=nan
+R1    ['T1'] lane=A dir=-1 (res ratio 1.20) v_fit=11.75 r2=0.926 v_spike=[10.389] v_script=10.48
+R2    ['T1'] lane=A dir=-1 (res ratio 0.97) v_fit=14.25 r2=0.927 v_spike=[12.467] v_script=12.11
+R3    ['T1'] lane=A dir=-1 (res ratio 1.05) v_fit=13.25 r2=0.791 v_spike=[11.449] v_script=11.28
+R4    ['T1'] lane=A dir=-1 (res ratio 1.15) v_fit=14.50 r2=0.916 v_spike=[12.75] v_script=12.19
+R5    ['T1'] lane=A dir=-1 (res ratio 1.05) v_fit=15.25 r2=0.604 v_spike=[12.75] v_script=12.12
+R6    ['T2'] lane=A dir=-1 (res ratio 0.78) v_fit=14.25 r2=0.630 v_spike=[19.786] v_script=19.9
