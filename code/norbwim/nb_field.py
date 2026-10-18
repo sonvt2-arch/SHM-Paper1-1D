@@ -224,6 +224,7 @@ def analyse(day, events, df, chans, fs, tcol="Time"):
         if day == 2:
             lag = xlag(Ymat["st40"][i0:i1], Ymat["st31"][i0:i1], fs)
             direction = -1 if lag > 0 else +1        # st40 first -> lane A -> dir -1
+            lane = "A" if direction == -1 else "B"
         else:
             direction = -1                          # ch3/ch4 first in all day-1 runs
         v_fit = dres[direction][1]
@@ -248,7 +249,7 @@ def analyse(day, events, df, chans, fs, tcol="Time"):
     return pd.DataFrame(rows), Ymat, t_all
 
 
-def finalize(day, R, Ymat, t_all, fs, chans, pad=4.0, nbase=8.0, bias=None, gap=None):
+def finalize(day, R, Ymat, t_all, fs, chans, pad=5.0, nbase=8.0, bias=None, gap=None):
     """Speeds/timing per vehicle, window, integral per channel."""
     out = []
     for _, r in R.iterrows():
@@ -358,7 +359,6 @@ def main():
         allev = detect_all(Ymat[ref], fs)
         sub = F[F.day == day]
         for i, r in sub.iterrows():
-            own = [ (json.loads(r.t_first) or [r.te_fit + r.xsens / r.v1])]
             inside = [t for t in allev if r.ta + 1 < t < r.tb - 1]
             # own detections lie within +-25 s of the reference index
             tidx = r.idx / fs
