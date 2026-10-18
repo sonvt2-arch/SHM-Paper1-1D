@@ -12,3 +12,7 @@ X1r   ['T3?'] lane=A dir=-1 (res ratio 0.85) v_fit=30.00 r2=0.881 v_spike=[25.95
 X1    ['T3?'] lane=B dir=+1 (res ratio 0.79) v_fit=17.00 r2=0.920 v_spike=[15.443] v_script=nan
 R12   ['T3'] lane=A dir=-1 (res ratio 1.17) v_fit=31.50 r2=0.916 v_spike=[28.05] v_script=28.16
 R12r  ['T3'] lane=B dir=+1 (res ratio 1.19) v_fit=16.25 r2=0.908 v_spike=[16.053] v_script=nan
+X2r   ['T3?'] lane=A dir=-1 (res ratio 0.90) v_fit=30.25 r2=0.889 v_spike=[26.534] v_script=nan
+X2    ['T3?'] lane=B dir=+1 (res ratio 0.61) v_fit=16.75 r2=0.902 v_spike=null v_script=nan
+R13   ['T3'] lane=A dir=-1 (res ratio 1.03) v_fit=18.75 r2=0.886 v_spike=[16.944] v_script=17.1
+R13r  ['T3'] lane=B dir=+1 (res ratio 1.31) v_fit=16.00 r2=0.869 v_spike=null v_script=nan
