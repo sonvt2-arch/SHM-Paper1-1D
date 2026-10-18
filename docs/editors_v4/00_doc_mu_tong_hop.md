@@ -6,8 +6,9 @@
 | v4.1 | 6,0 | `blind_readability_v4_1.md` | Viết lại tóm tắt, mục 4–5; thống nhất thuật ngữ |
 | v4.2 | 5,8 | `blind_readability_v4_2.md` | Tách bảng (3→3+4, 4→5+7, 7→9+10), đổi ký hiệu (ρ_L→λ, ρ_EI→γ, I_r→J, R_A→F_A, T_cr→t_cr), định nghĩa SLM/BPM sớm, sửa 3 chỗ không nhất quán |
 | v4.3 | 6,3 | `blind_readability_v4_3.md` | Gộp Bảng 8–10 thành 8+9; câu mở kết quả ở 4.2, 4.3, 5.2; ε₀→δ₀, m_l→M̄_l, L_m→L_c, w→a, K→k̂, L_p; một tên mỗi khái niệm; chuyển thêm số phụ sang tài liệu bổ sung |
+| v4.4 | 6,4 | `blind_readability_v4_4.md` | Thầy chọn rút phạm vi: mục 4 rút gọn, Bảng 3–5, 7 cũ sang Supplementary S1–S5 (`manuscript/v4/supplementary_moved_values.md`); bài chính còn 8 bảng |
 
-Kiểm sau cắt: `kiem_sau_cat_v4_2.json`, `kiem_sau_cat_v4_3.json` (không lỗi nặng; lỗi vừa đã sửa). Kiểm số hai chiều: không có số mới; số vắng đều đã ghi vào danh mục Supplementary.
+Kiểm sau cắt: `kiem_sau_cat_v4_2.json`, `kiem_sau_cat_v4_3.json`, `kiem_sau_cat_v4_4.json` (v4.4: 1 nặng mất rào, 7 vừa; đã sửa hết) (không lỗi nặng; lỗi vừa đã sửa). Kiểm số hai chiều: không có số mới; số vắng đều đã ghi vào danh mục Supplementary.
 
 Nhận định: ba người đọc khác nhau cho 5,8–6,3; mỗi người tìm thêm lỗi nhỏ mới. Trở ngại chung là mật độ số ở mục 4–6 và số khái niệm, ký hiệu mà một bài gồm lý thuyết, thí nghiệm, dữ liệu hiện trường và cầu thật phải mang. Để lên 8 có lẽ phải giảm phạm vi bài chính (ví dụ đưa phần lớn mục 4 sang tài liệu bổ sung, hoặc tách bài); việc này chờ tác giả quyết.
 

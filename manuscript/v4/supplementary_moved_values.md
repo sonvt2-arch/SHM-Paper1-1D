@@ -22,7 +22,7 @@ These tables and notes were moved from Section 4 of the main text in the v4.4 re
 | 1, ch1, ch2, ch8, ch9 | 0.740–0.783 | invariance rejected (CIs exclude 1) |
 | 2, st36 | 1.005 (0.735–1.375) | not shown |
 | 2, gauge average (4 gauges) | 0.978 (0.697–1.374) | shown only within ±26.7 % |
-| 2, lane B, average | 0.749 (0.440–1.276) | – (constants fail the χ² test, Table 3) |
+| 2, lane B, average | 0.749 (0.440–1.276) | – (constants fail the χ² test, Table S1) |
 
 **Table S3.** Correlation between gauges of the integrated strain: means over gauge pairs, with 95 % bootstrap CIs in brackets. Vehicle-free windows: 1227 on day 2 and 3405 on day 1. Crossing residual: deviation of a crossing's integral from its calibrated value. –: not computed.
 

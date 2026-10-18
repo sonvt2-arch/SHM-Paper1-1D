@@ -1,0 +1,196 @@
+{
+ "tu_phien_ban": "v4.3 (scratchpad/v4_3.md)",
+ "den_phien_ban": "v4.4 (manuscript/v4/manuscript.md)",
+ "dat": false,
+ "thong_ke": {
+  "khoi_cau_doi_difflib": 27,
+  "khoi_ngoai_muc4": 15,
+  "tong_khoa_goc": 1051,
+  "khoa_vang": 116,
+  "khoa_vang_so": 104,
+  "khoa_vang_tham_chieu": 11,
+  "khoa_vang_cong_thuc": 1,
+  "khoa_la": 2,
+  "so_vang_co_trong_bo_sung": 103,
+  "so_vang_khong_co_trong_bo_sung": 1,
+  "ghi_chu": "Tóm tắt, §7 và Kết luận không đổi chữ nào; các số trường chúng dùng (0.98/0.70–1.37, 20.4 vs 11.9, 0.63 vs 0.90, 10–27 %, 0.79, 0.92) vẫn có trong §4 mới. Thứ tự bảng 1–8 đúng (2.x, 3, 4.3, 5.2→Bảng 4–5, 5.3→Bảng 6, 6→Bảng 7–8); thứ tự hình 1–9 giữ như cũ; Fig. 6b mới được trích và có trong chú thích."
+ },
+ "vuot_pham_vi": [
+  "§6: bỏ '(Table 12)' ở câu mở đầu và thêm 'Table 8 collects all terms' — ngoài phiếu nhưng vô hại, còn sửa được thứ tự trích bảng (bản trước trích Table 12 trước Table 11).",
+  "§4.1: bỏ chi tiết lấy mẫu 100/200 Hz, độ cao dầm, khoảng tốc độ chạy, '5 s at each end', '70 s' — đã có trong ghi chú bổ sung.",
+  "File bổ sung có số không có trong bản trước của bài chính (28.4 % out of sample; χ² p = 0.13–0.71; 0.92 and 0.92; GLS 0.82 CI 0.73–0.91; ±0.56/±0.10 đã có; 0.69 (0.56–0.93); R = 0.51) — ghi là lấy từ log; không đối chiếu được với bản trước, cần tác giả xác nhận với code/norbwim/logs/v4.log."
+ ],
+ "chua_lam": [
+  "Chưa đối chiếu các số của file bổ sung với log gốc (code/norbwim/logs/v4.log).",
+  "Sẵn có từ trước, không do lần sửa này: '5.3 % (day 1)' là SD dự báo trong Bảng 8 nhưng không có nguồn trong S4/ghi chú."
+ ],
+ "hong": [
+  {
+   "id": "H1",
+   "muc": "4.2",
+   "loai": "mat_rao",
+   "truoc": "No speed effect was resolved, but the confidence interval of the slope is too wide to call the constant speed-independent (Section 6; Supplementary Fig. S2).",
+   "sau": "No speed effect was resolved.",
+   "de_xuat": "Giữ lại vế rào: 'No speed effect was resolved, but the confidence interval is too wide to call the constant speed-independent (Table 8).' Bỏ câu 'On day 2 speed and truck are not confounded (13–28 m/s)' cũng làm mất lý do vì sao ngày 2 kiểm được tốc độ.",
+   "muc_do": "nang"
+  },
+  {
+   "id": "H2",
+   "muc": "4.2",
+   "loai": "mat_rao/so_gan_sai_doi_tuong",
+   "truoc": "The two in-line two-truck runs are consistent with superposition, although both fall below the prediction. For the gauge average each gave 0.92 of the summed single-truck predictions (pooled 95 % CI 0.77–1.06); the GLS combination gave 0.82.",
+   "sau": "The two in-line two-truck runs gave 0.92 of the summed single-truck predictions, consistent with superposition.",
+   "de_xuat": "Ghi lại đối tượng của 0.92 ('for the gauge average') và CI làm căn cứ cho 'consistent' (0.77–1.06); giữ rào 'although both fall below the prediction'. Không có CI, 0.92 trông như một sai lệch 8 % được tuyên là phù hợp.",
+   "muc_do": "vua"
+  },
+  {
+   "id": "H3",
+   "muc": "4.2",
+   "loai": "khang_dinh_moi/doi_nghia",
+   "truoc": "The cancellation ratio $R$ of the gauges' influence line is 0.51: span 2 contributes about 170 % of the net integral, and the adjacent spans −26 % and −66 %.",
+   "sau": "The whole 605 m crossing must be integrated, because span 2 contributes about 170 % of the net integral and the adjacent spans cancel the excess.",
+   "de_xuat": "'cancel the excess' không khớp số bản trước: phần dư là 70 điểm nhưng hai nhịp kề góp −92 % (−26 và −66); phần còn lại (+22 %) đến từ các nhịp xa. Viết lại 'and the adjacent spans subtract about 90 %' hoặc giữ hai số.",
+   "muc_do": "vua"
+  },
+  {
+   "id": "H4",
+   "muc": "4.2",
+   "loai": "mat_can_cu/doi_nghia",
+   "truoc": "The four gauges without axle spikes fail the invariance test. Their crossing residuals are much larger than the vehicle-free noise (Table 3), and their constant is 22–26 % lower for the second truck, with 95 % CIs of the ratio that exclude 1 (Table 4, Fig. 6a).",
+   "sau": "The four gauges without axle spikes fail this test: their constant is 22–26 % lower for the second truck.",
+   "de_xuat": "'this test' giờ neo vào câu trước (chứng minh tương đương ±10 %); không chứng minh được tương đương yếu hơn bác bỏ bất biến. Ghi rõ 'fail the invariance test ... with 95 % CIs of the ratio that exclude 1 (Fig. 6a)'.",
+   "muc_do": "vua"
+  },
+  {
+   "id": "H5",
+   "muc": "4.2",
+   "loai": "mat_rao",
+   "truoc": "On day 1 only one gauge, ch11, shows that the two trucks give the same constant within ±10 %.",
+   "sau": "On day 1, eight of the twelve gauges scatter as much as the measured noise predicts, and one gauge, ch11, gives the same constant for both trucks within ±10 % (Fig. 6a).",
+   "de_xuat": "Bỏ 'only' khiến ch11 đọc như một ví dụ, không phải trường hợp duy nhất. Viết 'and only one gauge, ch11, ...'. (Phụ: 'scatter as much as the noise predicts' mạnh hơn 'χ² accepts consistency with the noise' một chút; nên viết 'scatter no more than the measured noise predicts'.)",
+   "muc_do": "vua"
+  },
+  {
+   "id": "H6",
+   "muc": "4.2",
+   "loai": "mat_can_cu",
+   "truoc": "For the gauge average, return trips in the other lane gave constants 0.79 times those of lane A (95 % CI 0.59–1.00). The lane effect is clearly resolved for one gauge only (st36: 0.64, 95 % CI 0.47–0.81).",
+   "sau": "Each lane needs its own constant. For the gauge average, return trips in lane B gave constants 0.79 times those of lane A (95 % CI 0.59–1.00), as also found on another continuous girder [40].",
+   "de_xuat": "Căn cứ duy nhất còn lại có CI chạm 1.00; câu st36 (CI 0.47–0.81, loại trừ 1) là bằng chứng phân giải được. Giữ lại một mệnh đề: 'the effect is clearly resolved only for st36 (0.64, 95 % CI 0.47–0.81)'.",
+   "muc_do": "vua"
+  },
+  {
+   "id": "H7",
+   "muc": "4 (mở đầu) / Supplementary Materials",
+   "loai": "tham_chieu_sai/thieu_S5",
+   "truoc": "It reports every channel with 95 % confidence intervals (CIs), tests equivalence instead of stating agreement, and compares single- and multi-channel estimators out of sample.",
+   "sau": "The per-channel tables, the equivalence tests, the noise correlations and the speed regressions are in the Supplementary Material (Tables S1–S4).",
+   "de_xuat": "Không bảng S1–S4 nào chứa hồi quy tốc độ (chỉ có ở phần ghi chú và Supplementary Fig. S2). Bảng S5 (MAE đầy đủ, LOTO, 4 wheel-path) không được trích ở đâu: cả câu này, chú thích Bảng 3 ('Leave-one-truck-out and in-sample results are in the Supplementary Material') lẫn danh mục Supplementary Materials (iv) chỉ liệt kê Table S1–S4. Sửa thành '(Tables S1–S5; Supplementary Fig. S2 for speed)', thêm 'Table S5' vào chú thích Bảng 3 và vào mục (iv).",
+   "muc_do": "vua"
+  },
+  {
+   "id": "H8",
+   "muc": "supplementary_moved_values.md, Table S2",
+   "loai": "tham_chieu_mo_coi",
+   "truoc": "| 2, lane B, average | 0.749 (0.440–1.276) | – (constants fail the χ² test, Table 3) |",
+   "sau": "| 2, lane B, average | 0.749 (0.440–1.276) | – (constants fail the χ² test, Table 3) |",
+   "de_xuat": "Trong file bổ sung, 'Table 3' giờ là bảng MAE của bài chính; bảng χ² là Table S1. Sửa thành 'Table S1'.",
+   "muc_do": "vua"
+  },
+  {
+   "id": "H9",
+   "muc": "4.3 / chú thích Bảng 3",
+   "loai": "khang_dinh_khong_co_noi_nhan",
+   "truoc": "Leave-one-truck-out (LOTO) results, calibrated on one truck and tested on the other, are given as well (Table 6, Fig. 7).",
+   "sau": "Leave-one-truck-out and in-sample results are in the Supplementary Material.",
+   "de_xuat": "S5 có LOTO nhưng không có cột in-sample; trong file bổ sung giá trị in-sample duy nhất là GLS-resid 10.4 %. Hoặc trỏ tới Fig. 7 (có IN) hoặc bỏ 'in-sample'. Chú thích cũng không nói cột 'Day 1, 4 wheel-path gauges' đã chuyển sang S5.",
+   "muc_do": "nhe"
+  },
+  {
+   "id": "H10",
+   "muc": "4.3",
+   "loai": "mat_rao",
+   "truoc": "Estimating $\\Sigma$ from the crossing residuals instead of vehicle-free windows over-fits with only eight runs (Supplementary Material).",
+   "sau": "(bị xoá) — câu kề còn: 'whereas the covariance of the crossing residuals predicts the observed reverse order (Supplementary Table S4).'",
+   "de_xuat": "Không có câu cảnh báo, người đọc có thể hiểu GLS dùng Σ từ phần dư sẽ tốt. §2.4 vẫn nói 'with enough crossings to avoid over-fitting' nên mức nhẹ; nên giữ nửa câu 'but estimating Σ this way over-fits with eight runs'.",
+   "muc_do": "nhe"
+  },
+  {
+   "id": "H11",
+   "muc": "6, Bảng 8",
+   "loai": "mat_neo",
+   "truoc": "| Residual offset, drift $\\delta_0$ | ... | Table 11; field per-crossing SD of the gauge average predicted 19.8 % (day 2), 5.3 % (day 1) |",
+   "sau": "| Residual offset, drift $\\delta_0$ | ... | Table 7; field per-crossing SD of the gauge average predicted 19.8 % (day 2), 5.3 % (day 1) |",
+   "de_xuat": "19.8 % giờ chỉ có trong Table S4; các hàng 'Speed effect' (+6 %, CI −23 đến +35 %) và 'Speed measurement' (1–2 %) cũng không còn neo trong bài chính. Thêm '(Table S4)' và '(Supplementary Material)'. Lưu ý sẵn có từ trước: '5.3 % (day 1)' SD dự báo không có trong S4 hay trong ghi chú bổ sung (5.3 chỉ là MAE ngày 1), nên cần tác giả xác minh.",
+   "muc_do": "nhe"
+  },
+  {
+   "id": "H12",
+   "muc": "4.2",
+   "loai": "mat_rao_nhe",
+   "truoc": "Gauge-factor spread is unlikely to explain these differences, because the ratio of the st36 and st40 constants changes with the lane: 3.24 ± 0.56 in lane A against 1.82 ± 0.10 in lane B (± one standard error), about 2.5 standard errors apart.",
+   "sau": "The ratio of the st36 and st40 constants also changes with the lane, so gauge-factor spread is an unlikely cause; ...",
+   "de_xuat": "'changes with the lane' nói như sự thật, trong khi chỉ cách nhau khoảng 2.5 SE. Có thể thêm '(about 2.5 standard errors apart; Supplementary Material)'.",
+   "muc_do": "nhe"
+  },
+  {
+   "id": "H13",
+   "muc": "4.2",
+   "loai": "khang_dinh_moi_nhe",
+   "truoc": "A beam model of the girder (...) reproduces the global shape of the strain history ($r^2$ = 0.79–0.94).",
+   "sau": "A beam model of the girder nevertheless explains two global features.",
+   "de_xuat": "Mất kiểm chứng r² mà vẫn khẳng định mô hình 'explains'; mức nhẹ, có thể giữ '(r² = 0.79–0.94 against the strain histories)'.",
+   "muc_do": "nhe"
+  }
+ ],
+ "khoa": {
+  "lenh": "kiem_khoa.py so v4_3.md manuscript.md --json",
+  "dat": false,
+  "la": [
+   "Section 4.2) (đúng theo phiếu: 4.4→4.2, 2 chỗ ở §2.1 dòng 133)",
+   "Fig. 6b) (mới, hợp lệ: có panel (b) trong chú thích Fig. 6)"
+  ],
+  "so_la_trong_ban_sau": [],
+  "canh_bao_rao": "'can' 13→11: ứng với các câu bị xoá ở §4 ('cannot exclude' vẫn còn); mất rào thực sự ở H1, H2, H5, H12.",
+  "tham_chieu_vang": "Table 3)/6)/7)/8)/9)/10/11/12, Section 4.4): đều do đánh lại số đúng theo phiếu (8→4 ... 12→8) hoặc bảng đã chuyển đi; '(Table 12)' ở §6 bị bỏ (xem vuot_pham_vi). $h^2$ chuyển sang file bổ sung."
+ },
+ "so_vang_khong_co_trong_bo_sung": [
+  {
+   "so": "4.5",
+   "nguon": "tiêu đề '### 4.5. What the field records show'",
+   "ket_luan": "không phải số liệu; mục đã đổi số thành 4.4, không có tham chiếu 'Section 4.5' nào trong cả hai bản"
+  }
+ ],
+ "tham_chieu_mo_coi": [
+  {
+   "vi_tri": "supplementary_moved_values.md, Table S2, hàng lane B",
+   "chuoi": "Table 3",
+   "nen_la": "Table S1"
+  },
+  {
+   "vi_tri": "manuscript §4 mở đầu",
+   "chuoi": "speed regressions ... (Tables S1–S4)",
+   "nen_la": "Supplementary Fig. S2 / ghi chú; S1–S4 không chứa hồi quy tốc độ"
+  },
+  {
+   "vi_tri": "toàn bài chính + danh mục Supplementary Materials (iv)",
+   "chuoi": "Table S5 không được trích ở đâu",
+   "nen_la": "thêm vào chú thích Bảng 3, câu mở đầu §4 và mục (iv)"
+  },
+  {
+   "vi_tri": "manuscript Bảng 3, chú thích",
+   "chuoi": "in-sample results are in the Supplementary Material",
+   "nen_la": "Fig. 7 (IN) — S1–S5 không có cột in-sample"
+  },
+  {
+   "vi_tri": "Bảng 8 (§6)",
+   "chuoi": "19.8 %; +6 % per 10 m/s; 1–2 %",
+   "nen_la": "không còn trong bài chính; thêm '(Table S4)'/'(Supplementary Material)'"
+  },
+  {
+   "vi_tri": "Supplementary Figs. S1–S2",
+   "chuoi": "không còn được trích trong thân bài (bản trước trích ở 4.2 và 4.3)",
+   "nen_la": "mức nhẹ; chỉ còn trong danh mục"
+  }
+ ]
+}
