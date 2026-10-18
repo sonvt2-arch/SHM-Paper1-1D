@@ -891,7 +891,7 @@ F. Theorem: complete-crossing convoy integral = P_tot * C_r (exact quadrature);
   x_m= 30.00 M      int=-7.4270090925e+04  P_tot*C_r=-7.4270090925e+04  relerr=1.2e-14 OK   truncated-at-L error   8.18 %
   x_m=  0.00 R    0  int= 5.0243303093e+03  P_tot*C_r= 5.0243303093e+03  relerr=5.9e-13 OK   truncated-at-L error   4.03 %
   x_m=  0.00 R    1  int= 2.1630031281e+04  P_tot*C_r= 2.1630031281e+04  relerr=8.0e-13 OK   truncated-at-L error   4.99 %
- 3-span 30+48+30 m, springs k=2 EI/m
+ 3-span 30+48+30 m, pier springs k = 60 EI_s/L_s
   x_m= 12.00 w      int= 2.0948896691e+06  P_tot*C_r= 2.0948896691e+06  relerr=1.8e-15 OK   truncated-at-L error   0.04 %
   x_m= 12.00 theta  int= 1.5498276415e+04  P_tot*C_r= 1.5498276415e+04  relerr=6.6e-15 OK   truncated-at-L error   0.31 %
   x_m= 12.00 M      int= 3.0768965673e+04  P_tot*C_r= 3.0768965673e+04  relerr=2.2e-12 OK   truncated-at-L error   0.02 %

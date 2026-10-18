@@ -329,3 +329,94 @@
   3S-b2.0  eps=0.50 rho=1.0 k=2 immune: x = [60.0, 98.5] m, std 0.003537% (Var ratio to single best 4.799e-07)
   3S-b2.0  eps=0.50 rho=1.0 k=3 gls   : x = [21.5, 60.0, 98.5] m, std 0.003063% (Var ratio to single best 3.599e-07)
   3S-b2.0  eps=0.50 rho=1.0 k=3 immune: x = [21.5, 60.0, 98.5] m, std 0.003063% (Var ratio to single best 3.599e-07)
+  CM-A     eps=0.10 rho=0.0 k=2 gls   : x = [97.5, 102.5] m, std 17.68% (Var ratio to single best 0.5086)
+  CM-A     eps=0.10 rho=0.0 k=2 immune: x = [100.0, 155.0] m, std 33.41% (Var ratio to single best 1.816)
+  CM-A     eps=0.10 rho=0.0 k=3 gls   : x = [95.0, 100.0, 105.0] m, std 14.64% (Var ratio to single best 0.3488)
+  CM-A     eps=0.10 rho=0.0 k=3 immune: x = [45.0, 100.0, 155.0] m, std 28.93% (Var ratio to single best 1.362)
+  CM-A     eps=0.10 rho=0.5 k=2 gls   : x = [100.0, 155.0] m, std 20.94% (Var ratio to single best 0.7129)
+  CM-A     eps=0.10 rho=0.5 k=2 immune: x = [100.0, 155.0] m, std 23.63% (Var ratio to single best 0.9078)
+  CM-A     eps=0.10 rho=0.5 k=3 gls   : x = [97.5, 102.5, 155.0] m, std 17.24% (Var ratio to single best 0.4836)
+  CM-A     eps=0.10 rho=0.5 k=3 immune: x = [45.0, 100.0, 155.0] m, std 20.46% (Var ratio to single best 0.6809)
+  CM-A     eps=0.10 rho=0.9 k=2 gls   : x = [100.0, 155.0] m, std 10.34% (Var ratio to single best 0.1741)
+  CM-A     eps=0.10 rho=0.9 k=2 immune: x = [100.0, 155.0] m, std 10.57% (Var ratio to single best 0.1816)
+  CM-A     eps=0.10 rho=0.9 k=3 gls   : x = [97.5, 102.5, 155.0] m, std 8.954% (Var ratio to single best 0.1304)
+  CM-A     eps=0.10 rho=0.9 k=3 immune: x = [45.0, 100.0, 155.0] m, std 9.15% (Var ratio to single best 0.1362)
+  CM-A     eps=0.10 rho=1.0 k=2 gls   : x = [100.0, 155.0] m, std 0.07122% (Var ratio to single best 8.251e-06)
+  CM-A     eps=0.10 rho=1.0 k=2 immune: x = [100.0, 155.0] m, std 0.07122% (Var ratio to single best 8.251e-06)
+  CM-A     eps=0.10 rho=1.0 k=3 gls   : x = [45.0, 100.0, 155.0] m, std 0.06168% (Var ratio to single best 6.188e-06)
+  CM-A     eps=0.10 rho=1.0 k=3 immune: x = [45.0, 100.0, 155.0] m, std 0.06168% (Var ratio to single best 6.188e-06)
+  CM-A     eps=0.50 rho=0.0 k=2 gls   : x = [97.5, 102.5] m, std 88.42% (Var ratio to single best 0.5086)
+  CM-A     eps=0.50 rho=0.0 k=2 immune: x = [100.0, 155.0] m, std 167.1% (Var ratio to single best 1.816)
+  CM-A     eps=0.50 rho=0.0 k=3 gls   : x = [95.0, 100.0, 105.0] m, std 73.22% (Var ratio to single best 0.3488)
+  CM-A     eps=0.50 rho=0.0 k=3 immune: x = [45.0, 100.0, 155.0] m, std 144.7% (Var ratio to single best 1.362)
+  CM-A     eps=0.50 rho=0.5 k=2 gls   : x = [100.0, 155.0] m, std 104.7% (Var ratio to single best 0.7129)
+  CM-A     eps=0.50 rho=0.5 k=2 immune: x = [100.0, 155.0] m, std 118.1% (Var ratio to single best 0.9078)
+  CM-A     eps=0.50 rho=0.5 k=3 gls   : x = [97.5, 102.5, 155.0] m, std 86.21% (Var ratio to single best 0.4836)
+  CM-A     eps=0.50 rho=0.5 k=3 immune: x = [45.0, 100.0, 155.0] m, std 102.3% (Var ratio to single best 0.6809)
+  CM-A     eps=0.50 rho=0.9 k=2 gls   : x = [100.0, 155.0] m, std 51.72% (Var ratio to single best 0.1741)
+  CM-A     eps=0.50 rho=0.9 k=2 immune: x = [100.0, 155.0] m, std 52.83% (Var ratio to single best 0.1816)
+  CM-A     eps=0.50 rho=0.9 k=3 gls   : x = [97.5, 102.5, 155.0] m, std 44.77% (Var ratio to single best 0.1304)
+  CM-A     eps=0.50 rho=0.9 k=3 immune: x = [45.0, 100.0, 155.0] m, std 45.75% (Var ratio to single best 0.1362)
+  CM-A     eps=0.50 rho=1.0 k=2 gls   : x = [100.0, 155.0] m, std 0.07122% (Var ratio to single best 3.3e-07)
+  CM-A     eps=0.50 rho=1.0 k=2 immune: x = [100.0, 155.0] m, std 0.07122% (Var ratio to single best 3.3e-07)
+  CM-A     eps=0.50 rho=1.0 k=3 gls   : x = [45.0, 100.0, 155.0] m, std 0.06168% (Var ratio to single best 2.475e-07)
+  CM-A     eps=0.50 rho=1.0 k=3 immune: x = [45.0, 100.0, 155.0] m, std 0.06168% (Var ratio to single best 2.475e-07)
+  CM-B     eps=0.10 rho=0.0 k=2 gls   : x = [97.5, 102.5] m, std 15.79% (Var ratio to single best 0.5097)
+  CM-B     eps=0.10 rho=0.0 k=2 immune: x = [100.0, 149.0] m, std 31.02% (Var ratio to single best 1.968)
+  CM-B     eps=0.10 rho=0.0 k=3 gls   : x = [95.0, 100.0, 105.0] m, std 13.1% (Var ratio to single best 0.3506)
+  CM-B     eps=0.10 rho=0.0 k=3 immune: x = [51.1, 100.0, 148.9] m, std 26.87% (Var ratio to single best 1.476)
+  CM-B     eps=0.10 rho=0.5 k=2 gls   : x = [100.0, 149.0] m, std 19.07% (Var ratio to single best 0.7439)
+  CM-B     eps=0.10 rho=0.5 k=2 immune: x = [100.0, 149.0] m, std 21.94% (Var ratio to single best 0.9839)
+  CM-B     eps=0.10 rho=0.5 k=3 gls   : x = [97.5, 102.5, 148.9] m, std 15.72% (Var ratio to single best 0.5055)
+  CM-B     eps=0.10 rho=0.5 k=3 immune: x = [51.1, 100.0, 148.9] m, std 19% (Var ratio to single best 0.738)
+  CM-B     eps=0.10 rho=0.9 k=2 gls   : x = [100.0, 149.0] m, std 9.57% (Var ratio to single best 0.1873)
+  CM-B     eps=0.10 rho=0.9 k=2 immune: x = [100.0, 149.0] m, std 9.811% (Var ratio to single best 0.1968)
+  CM-B     eps=0.10 rho=0.9 k=3 gls   : x = [97.5, 102.5, 148.9] m, std 8.294% (Var ratio to single best 0.1406)
+  CM-B     eps=0.10 rho=0.9 k=3 immune: x = [51.1, 100.0, 148.9] m, std 8.497% (Var ratio to single best 0.1476)
+  CM-B     eps=0.10 rho=1.0 k=2 gls   : x = [100.0, 149.0] m, std 0.06614% (Var ratio to single best 8.943e-06)
+  CM-B     eps=0.10 rho=1.0 k=2 immune: x = [100.0, 149.0] m, std 0.06614% (Var ratio to single best 8.943e-06)
+  CM-B     eps=0.10 rho=1.0 k=3 gls   : x = [51.1, 100.0, 148.9] m, std 0.05728% (Var ratio to single best 6.707e-06)
+  CM-B     eps=0.10 rho=1.0 k=3 immune: x = [51.1, 100.0, 148.9] m, std 0.05728% (Var ratio to single best 6.707e-06)
+  CM-B     eps=0.50 rho=0.0 k=2 gls   : x = [97.5, 102.5] m, std 78.94% (Var ratio to single best 0.5097)
+  CM-B     eps=0.50 rho=0.0 k=2 immune: x = [100.0, 149.0] m, std 155.1% (Var ratio to single best 1.968)
+  CM-B     eps=0.50 rho=0.0 k=3 gls   : x = [95.0, 100.0, 105.0] m, std 65.48% (Var ratio to single best 0.3506)
+  CM-B     eps=0.50 rho=0.0 k=3 immune: x = [51.1, 100.0, 148.9] m, std 134.3% (Var ratio to single best 1.476)
+  CM-B     eps=0.50 rho=0.5 k=2 gls   : x = [100.0, 149.0] m, std 95.37% (Var ratio to single best 0.7439)
+  CM-B     eps=0.50 rho=0.5 k=2 immune: x = [100.0, 149.0] m, std 109.7% (Var ratio to single best 0.9839)
+  CM-B     eps=0.50 rho=0.5 k=3 gls   : x = [97.5, 102.5, 148.9] m, std 78.62% (Var ratio to single best 0.5055)
+  CM-B     eps=0.50 rho=0.5 k=3 immune: x = [51.1, 100.0, 148.9] m, std 94.99% (Var ratio to single best 0.7379)
+  CM-B     eps=0.50 rho=0.9 k=2 gls   : x = [100.0, 149.0] m, std 47.85% (Var ratio to single best 0.1872)
+  CM-B     eps=0.50 rho=0.9 k=2 immune: x = [100.0, 149.0] m, std 49.05% (Var ratio to single best 0.1968)
+  CM-B     eps=0.50 rho=0.9 k=3 gls   : x = [97.5, 102.5, 148.9] m, std 41.47% (Var ratio to single best 0.1406)
+  CM-B     eps=0.50 rho=0.9 k=3 immune: x = [51.1, 100.0, 148.9] m, std 42.48% (Var ratio to single best 0.1476)
+  CM-B     eps=0.50 rho=1.0 k=2 gls   : x = [100.0, 149.0] m, std 0.06614% (Var ratio to single best 3.577e-07)
+  CM-B     eps=0.50 rho=1.0 k=2 immune: x = [100.0, 149.0] m, std 0.06614% (Var ratio to single best 3.577e-07)
+  CM-B     eps=0.50 rho=1.0 k=3 gls   : x = [51.1, 100.0, 148.9] m, std 0.05728% (Var ratio to single best 2.683e-07)
+  CM-B     eps=0.50 rho=1.0 k=3 immune: x = [51.1, 100.0, 148.9] m, std 0.05728% (Var ratio to single best 2.683e-07)
+==============================================================================
+(4) Cau May: calibration-robust design (min over designs of max over A, B of Var/Var_opt,cal), distinct positions >= 5 m, deflection, sig = 0.01 mm, grid 1.0 m
+  eps=0.1 rho=0.5 k=2 gls   : robust x = [100.0, 152.0] (worst Var ratio 1.0050); A-opt [100.0, 155.0] costs 1.0195 under B; B-opt [100.0, 149.0] costs 1.0188 under A
+  eps=0.1 rho=0.5 k=2 immune: robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.1 rho=0.5 k=3 gls   : robust x = [98.0, 103.0, 152.0] (worst Var ratio 1.0050); A-opt [98.0, 103.0, 155.0] costs 1.0197 under B; B-opt [98.0, 103.0, 149.0] costs 1.0186 under A
+  eps=0.1 rho=0.5 k=3 immune: robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+  eps=0.1 rho=0.9 k=2 gls   : robust x = [100.0, 152.0] (worst Var ratio 1.0090); A-opt [100.0, 155.0] costs 1.0355 under B; B-opt [100.0, 149.0] costs 1.0319 under A
+  eps=0.1 rho=0.9 k=2 immune: robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.1 rho=0.9 k=3 gls   : robust x = [98.0, 103.0, 152.0] (worst Var ratio 1.0090); A-opt [98.0, 103.0, 155.0] costs 1.0359 under B; B-opt [98.0, 103.0, 149.0] costs 1.0321 under A
+  eps=0.1 rho=0.9 k=3 immune: robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+  eps=0.1 rho=1.0 k=2 gls   : robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.1 rho=1.0 k=2 immune: robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.1 rho=1.0 k=3 gls   : robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+  eps=0.1 rho=1.0 k=3 immune: robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=0.5 k=2 gls   : robust x = [100.0, 152.0] (worst Var ratio 1.0050); A-opt [100.0, 155.0] costs 1.0195 under B; B-opt [100.0, 149.0] costs 1.0188 under A
+  eps=0.5 rho=0.5 k=2 immune: robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=0.5 k=3 gls   : robust x = [98.0, 103.0, 152.0] (worst Var ratio 1.0050); A-opt [98.0, 103.0, 155.0] costs 1.0197 under B; B-opt [98.0, 103.0, 149.0] costs 1.0186 under A
+  eps=0.5 rho=0.5 k=3 immune: robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=0.9 k=2 gls   : robust x = [100.0, 152.0] (worst Var ratio 1.0090); A-opt [100.0, 155.0] costs 1.0355 under B; B-opt [100.0, 149.0] costs 1.0319 under A
+  eps=0.5 rho=0.9 k=2 immune: robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=0.9 k=3 gls   : robust x = [98.0, 103.0, 152.0] (worst Var ratio 1.0090); A-opt [98.0, 103.0, 155.0] costs 1.0359 under B; B-opt [98.0, 103.0, 149.0] costs 1.0321 under A
+  eps=0.5 rho=0.9 k=3 immune: robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=1.0 k=2 gls   : robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=1.0 k=2 immune: robust x = [100.0, 152.0] (worst Var ratio 1.0099); A-opt [100.0, 155.0] costs 1.0396 under B; B-opt [100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=1.0 k=3 gls   : robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+  eps=0.5 rho=1.0 k=3 immune: robust x = [48.0, 100.0, 152.0] (worst Var ratio 1.0099); A-opt [45.0, 100.0, 155.0] costs 1.0396 under B; B-opt [51.0, 100.0, 149.0] costs 1.0351 under A
+done
