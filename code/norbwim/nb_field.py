@@ -17,14 +17,17 @@ import nb_io as nio      # noqa: E402
 import nb_events as ev   # noqa: E402
 import nb_beam as bm     # noqa: E402
 
-LOG = open(os.path.join(HERE, "logs", "field.log"), "w")
+# The log file is opened only when this file is run as a script (see __main__ below), so
+# importing nb_field from another script no longer truncates logs/field.log.
+LOG = None
 
 
 def log(*a):
     s = " ".join(str(x) for x in a)
     print(s)
-    LOG.write(s + "\n")
-    LOG.flush()
+    if LOG is not None:
+        LOG.write(s + "\n")
+        LOG.flush()
 
 
 # ---------------------------------------------------------------- truck metadata
@@ -392,4 +395,5 @@ def main():
 
 
 if __name__ == "__main__":
+    LOG = open(os.path.join(HERE, "logs", "field.log"), "w")
     main()

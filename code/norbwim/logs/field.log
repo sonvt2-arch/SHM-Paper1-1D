@@ -30,3 +30,59 @@ R5    ['T1'] lane=A dir=-1 (res ratio 1.05) v_fit=15.25 r2=0.604 v_spike=[12.75]
 R6    ['T2'] lane=A dir=-1 (res ratio 0.78) v_fit=14.25 r2=0.630 v_spike=[19.786] v_script=19.9
 R7    ['T2'] lane=A dir=-1 (res ratio 1.33) v_fit=22.75 r2=0.926 v_spike=[19.103] v_script=19.96
 R8    ['T2'] lane=A dir=-1 (res ratio 1.04) v_fit=23.00 r2=0.911 v_spike=[19.786] v_script=19.66
+R9    ['T2'] lane=A dir=-1 (res ratio 1.17) v_fit=23.00 r2=0.916 v_spike=[19.786] v_script=19.9
+R10   ['T2'] lane=A dir=-1 (res ratio 1.06) v_fit=14.25 r2=0.547 v_spike=[19.103] v_script=18.99
+low-pass fit speed / spike speed (lane A, n=22): median 1.139, sd 0.124
+st40-st31 distance from lane-A spike speed x lag: median 6.019 m, sd 0.090 m (n=12)
+day 2 noise sd of integral (microstrain*s), T=32s: st40=0.723, st36=1.074, st34=0.574, st31=1.324, avg=0.902
+day 2 noise sd of integral (microstrain*s), T=34s: st40=0.774, st36=1.162, st34=0.602, st31=1.394, avg=0.961
+day 2 noise sd of integral (microstrain*s), T=38s: st40=0.868, st36=1.230, st34=0.665, st31=1.484, avg=1.032
+day 2 noise sd of integral (microstrain*s), T=42s: st40=0.990, st36=1.350, st34=0.708, st31=1.674, avg=1.146
+day 2 noise sd of integral (microstrain*s), T=46s: st40=1.053, st36=1.386, st34=0.724, st31=1.723, avg=1.179
+day 2 noise sd of integral (microstrain*s), T=48s: st40=1.079, st36=1.422, st34=0.763, st31=1.760, avg=1.208
+day 2 noise sd of integral (microstrain*s), T=50s: st40=1.127, st36=1.463, st34=0.820, st31=1.818, avg=1.256
+day 2 noise sd of integral (microstrain*s), T=56s: st40=1.284, st36=1.611, st34=0.905, st31=1.998, avg=1.381
+day 2 noise sd of integral (microstrain*s), T=58s: st40=1.291, st36=1.623, st34=0.909, st31=1.987, avg=1.374
+day 2 noise sd of integral (microstrain*s), T=60s: st40=1.304, st36=1.650, st34=0.920, st31=2.043, avg=1.396
+day 2 noise sd of integral (microstrain*s), T=68s: st40=1.745, st36=2.046, st34=1.171, st31=2.696, avg=1.815
+day 1 noise sd of integral (microstrain*s), T=40s: ch1=0.176, ch2=0.181, ch3=0.256, ch4=0.258, ch5=0.346, ch6=0.359, ch7=0.291, ch8=0.179, ch9=0.201, ch10=0.373, ch11=0.433, ch12=0.230, avg=0.275
+day 1 noise sd of integral (microstrain*s), T=42s: ch1=0.190, ch2=0.204, ch3=0.282, ch4=0.263, ch5=0.384, ch6=0.383, ch7=0.309, ch8=0.188, ch9=0.203, ch10=0.396, ch11=0.464, ch12=0.237, avg=0.289
+day 1 noise sd of integral (microstrain*s), T=58s: ch1=0.261, ch2=0.350, ch3=0.432, ch4=0.439, ch5=0.561, ch6=0.597, ch7=0.465, ch8=0.268, ch9=0.400, ch10=0.606, ch11=0.738, ch12=0.352, avg=0.437
+day 1 noise sd of integral (microstrain*s), T=64s: ch1=0.327, ch2=0.375, ch3=0.491, ch4=0.502, ch5=0.617, ch6=0.654, ch7=0.472, ch8=0.346, ch9=0.432, ch10=0.654, ch11=0.768, ch12=0.408, avg=0.475
+day 1 noise sd of integral (microstrain*s), T=68s: ch1=0.386, ch2=0.384, ch3=0.501, ch4=0.540, ch5=0.644, ch6=0.670, ch7=0.525, ch8=0.380, ch9=0.456, ch10=0.689, ch11=0.819, ch12=0.423, avg=0.483
+written results/events_field.csv 34
+      id trucks lane  direction            v_used      v_src  v_script    GVW      T_win foreign_events_s    Idx_st40     Idx_ch4
+0    R15     T4    A         -1          [22.968]     spikes     23.07  25.90  37.183473               []  -21.646292         NaN
+1   R15r     T4    B          1          [20.137]  gauge lag       NaN  25.90  41.004884               []  -40.623510         NaN
+2    R16     T4    A         -1          [22.765]     spikes     22.94  25.90  37.425873               []  -50.510654         NaN
+3   R16r     T4    B          1           [21.96]  gauge lag       NaN  25.90  38.431063               []  -39.375491         NaN
+4    R17     T4    A         -1          [13.821]     spikes     13.80  25.90  55.174011               []  -67.139176         NaN
+5   R17r     T4    B          1          [13.366]  gauge lag       NaN  25.90  56.713379               []  -37.635915         NaN
+6    R18     T4    A         -1          [13.163]     spikes     13.29  25.90  57.432196               []  -66.149366         NaN
+7   R18r     T4    B          1          [13.149]  gauge lag       NaN  25.90  57.483596               []  -64.429361         NaN
+8    R11     T3    A         -1          [27.727]     spikes     27.91  26.80  32.039889               []  -52.514214         NaN
+9   R11r     T3    B          1          [15.844]     spikes       NaN  26.80  48.569806               []  -48.346858         NaN
+10   X1r    T3?    A         -1          [25.957]     spikes       NaN  26.80  33.542782               []  -69.181462         NaN
+11    X1    T3?    B          1          [15.443]     spikes       NaN  26.80  49.571327               [] -116.036388         NaN
+12   R12     T3    A         -1           [28.05]     spikes     28.16  26.80  31.786096               []  -86.553617         NaN
+13  R12r     T3    B          1          [16.053]     spikes       NaN  26.80  48.067651               []  -64.822578         NaN
+14   X2r    T3?    A         -1          [26.534]     spikes       NaN  26.80  33.030828               [] -106.070961         NaN
+15    X2    T3?    B          1          [15.366]  gauge lag       NaN  26.80  49.768508               []  -58.480772         NaN
+16   R13     T3    A         -1          [16.944]     spikes     17.10  26.80  46.065864               []  -56.618856         NaN
+17  R13r     T3    B          1           [15.34]  gauge lag       NaN  26.80  49.838169               []  -50.661243         NaN
+18   R14     T3    A         -1          [16.828]     spikes     16.56  26.80  46.314476               []  -43.565821         NaN
+19  R14r     T3    B          1          [10.656]  gauge lag       NaN  26.80  67.347092               [] -107.646993         NaN
+20    M1  T4+T3    A         -1  [13.208, 12.979]     spikes       NaN  52.70  58.732294               []         NaN         NaN
+21   M1r  T4+T3    B          1   [21.156, 15.38]  gauge lag       NaN  52.70  57.818968               []         NaN         NaN
+22    M2  T4+T3    A         -1  [13.531, 14.023]     spikes       NaN  52.70  57.116159               []         NaN         NaN
+23   M2r  T4+T3    B          1  [18.805, 14.862]  gauge lag       NaN  52.70  60.981271               []         NaN         NaN
+24    R1     T1    A         -1          [10.389]     spikes     10.48  22.82  68.774666               []         NaN  -48.448331
+25    R2     T1    A         -1          [12.467]     spikes     12.11  22.51  58.978102               []         NaN  -53.813060
+26    R3     T1    A         -1          [11.449]     spikes     11.28  22.45  63.333042               []         NaN  -49.785075
+27    R4     T1    A         -1           [12.75]     spikes     12.19  22.18  57.890980               []         NaN  -57.212366
+28    R5     T1    A         -1           [12.75]     spikes     12.12  22.30  57.890980               []         NaN  -39.827218
+29    R6     T2    A         -1          [19.786]     spikes     19.90  22.86  40.857172               []         NaN -200.403956
+30    R7     T2    A         -1          [19.103]     spikes     19.96  22.10  41.960425               []         NaN  -37.674526
+31    R8     T2    A         -1          [19.786]     spikes     19.66  21.17  40.857172               []         NaN  -50.535467
+32    R9     T2    A         -1          [19.786]     spikes     19.90  21.61  40.857172               []         NaN  -42.351615
+33   R10     T2    A         -1          [19.103]     spikes     18.99  22.00  41.960425               []         NaN  -79.266548
