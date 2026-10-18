@@ -286,6 +286,25 @@ for tag, truth in [("D", model), ("D-misspecified", m_mis)]:
                          f"range {rs.min()-1:.4f}..{rs.max()-1:.4f}", f"cfg std {rs.std():.5f}"])
     np_save[f"{tag}_nax"] = nax.astype(np.int8)
 
+# ---------------------------------------------------------------- seed replication
+log("=" * 78)
+log("Seed replication of case D, uniform weight (std ratio MC/theory; SE of one ratio "
+    f"= 1/sqrt(2n) = {1/np.sqrt(2*NREAL):.4f}):")
+g = wts["uniform"]
+for rep in range(1, 5):
+    rng = np.random.default_rng(SEED + 1000 + rep)
+    e_ = []
+    for b0 in range(0, NREAL, BATCH):
+        s, P, nax = configs(rng, BATCH, mc.ALLOW)
+        z = (ch.record(s, P, N) + eps1 * rng.standard_normal((BATCH, 1))
+             + sig1 * rng.standard_normal((BATCH, N)))
+        e_.append(z @ g - P.sum(1))
+    e_ = np.concatenate(e_)
+    r_ = e_.std(ddof=1) / np.sqrt(theory["uniform"])
+    log(f"  replicate {rep}: ratio {r_:.4f}, mean error {e_.mean():+.4f} kN")
+    rows.append([f"D-rep{rep}", "uniform", NREAL, f"{e_.mean():.5g}", "", f"{e_.std(ddof=1):.6g}",
+                 f"{np.sqrt(theory['uniform']):.6g}", f"{r_:.5f}", "", ""])
+
 with open(f"{mc.RES}/mc_summary.csv", "w", newline="") as f:
     wr = csv.writer(f)
     wr.writerow(["case", "estimator", "n", "mean_err_kN", "z_mean_or_pred", "std_kN",

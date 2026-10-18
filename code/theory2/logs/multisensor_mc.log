@@ -1,6 +1,6 @@
 ==============================================================================
 Case A: three-span 30+60+30 m, channels [('d', 60.0), ('d', 98.5), ('d', 15.0)], C = [5.484376, -0.499041, -0.369141], sig = 0.01 mm, eps = 0.1 mm, rho = 0.9
-  [A] 100000 realisations in 109 s, N = 1401 samples/channel
+  [A] 100000 realisations in 92 s, N = 1401 samples/channel
   [A] single (Cmax)          w = [0.182336, 0.0, 0.0]  w'C = 1.000000
       mean error +0.0003 kN (z = +0.04); std 2.5586 kN, theory 2.5527 kN, ratio 1.0023 (+-0.0022)
       noise-free invariance: max |P_hat/P - 1| = 8.55e-07; by axle count std = [2.5557, 2.5563, 2.5441, 2.5572, 2.5671, 2.5716] kN, means = [-0.007, -0.0176, -0.0087, 0.0028, 0.0168, 0.016] kN
@@ -11,20 +11,3 @@ Case A: three-span 30+60+30 m, channels [('d', 60.0), ('d', 98.5), ('d', 15.0)],
       mean error +0.0029 kN (z = +1.01); std 0.9184 kN, theory 0.9160 kN, ratio 1.0026 (+-0.0022)
       noise-free invariance: max |P_hat/P - 1| = 1.36e-06; by axle count std = [0.9205, 0.9163, 0.9124, 0.9221, 0.9178, 0.9213] kN, means = [-0.0112, 0.0068, -0.0096, 0.0022, 0.0113, 0.0183] kN
   [A+drift] common drift d(x) = 0.5 + 0.5 x/Lrec + 0.2 sin(3 pi x/Lrec) mm on every deflection channel; predicted bias w' (sum_i wt_i d_i) 1:
-  [A+drift] 100000 realisations in 127 s, N = 1401 samples/channel
-      single (Cmax)          mean error  +20.2240 kN (predicted  +20.2287), std 2.5449 kN
-      GLS-3                  mean error   +0.7784 kN (predicted   +0.7746), std 0.9108 kN
-      immune-3               mean error   +0.0041 kN (predicted   +0.0000), std 0.9154 kN
-==============================================================================
-Case B: Cau May 55+90+55 m, calibration A, channels [('d', 100.0), ('d', 155.0), ('d', 178.0)], C = [0.360971, -0.01788, 0.04376], sig = 0.01 mm, eps = 0.1 mm, rho = 0.9
-  [B] 100000 realisations in 200 s, N = 2201 samples/channel
-  [B] single (Cmax)          w = [2.770302, 0.0, 0.0]  w'C = 1.000000
-      mean error -0.0908 kN (z = -0.47); std 61.2020 kN, theory 60.9468 kN, ratio 1.0042 (+-0.0022)
-      noise-free invariance: max |P_hat/P - 1| = 9.84e-07; by axle count std = [61.5887, 61.6105, 60.6384, 61.4348, 60.9733, 60.9666] kN, means = [0.4487, -0.0567, -0.0783, -0.0544, -0.8452, 0.042] kN
-  [B] GLS-3                  w = [2.802567, -1.684491, -0.954434]  w'C = 1.000000
-      mean error +0.0031 kN (z = +0.04); std 23.9952 kN, theory 23.9430 kN, ratio 1.0022 (+-0.0022)
-      noise-free invariance: max |P_hat/P - 1| = 1.62e-06; by axle count std = [24.1051, 24.1464, 23.9852, 23.9637, 23.8584, 23.9128] kN, means = [0.1969, -0.1422, -0.0029, -0.0561, -0.0489, 0.0737] kN
-  [B] immune-3               w = [2.807258, -1.776526, -1.030732]  w'C = 1.000000
-      mean error +0.0087 kN (z = +0.11); std 24.2412 kN, theory 24.1997 kN, ratio 1.0017 (+-0.0022)
-      noise-free invariance: max |P_hat/P - 1| = 1.67e-06; by axle count std = [24.3437, 24.3639, 24.2164, 24.2069, 24.1171, 24.2008] kN, means = [0.1822, -0.1472, 0.0015, -0.0568, 0.0014, 0.0727] kN
-  [B+drift] common drift d(x) = 0.5 + 0.5 x/Lrec + 0.2 sin(3 pi x/Lrec) mm on every deflection channel; predicted bias w' (sum_i wt_i d_i) 1:

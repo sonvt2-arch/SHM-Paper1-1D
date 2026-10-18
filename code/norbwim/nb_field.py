@@ -104,6 +104,9 @@ D1 = [
 
 CH2 = ["st40", "st36", "st34", "st31"]
 CH1 = [f"ch{k}" for k in range(1, 13)]
+# day-1 channels with the strongest axle spikes (inferred wheel-path gauges, one per
+# longitudinal station): used for the day-1 channel average "avg"
+AVG1 = ["ch4", "ch5", "ch12", "ch11"]
 
 
 SECOND = {"M1r": 958060, "M2r": 1003680}
@@ -337,8 +340,10 @@ def main():
     os.makedirs(os.path.join(HERE, "results"), exist_ok=True)
     s2 = nio.load_strains200()
     R2, Y2, t2 = analyse(2, D2, s2, CH2, 200)
+    Y2["avg"] = np.mean([Y2[c] for c in CH2], axis=0)
     a1 = nio.load_allstrain()
     R1, Y1, t1 = analyse(1, D1, a1, CH1, 100)
+    Y1["avg"] = np.mean([Y1[c] for c in AVG1], axis=0)
     R = pd.concat([R2, R1])
     ok = R[(R.lane == "A") & R.v_spike.ne("null")]
     vs = ok.v_spike.apply(lambda s: json.loads(s)[0])
@@ -351,8 +356,8 @@ def main():
     gap = float(np.median(gaps))
     log(f"st40-st31 distance from lane-A spike speed x lag: median {gap:.3f} m, "
         f"sd {np.std(gaps):.3f} m (n={len(gaps)})")
-    F2 = finalize(2, R2, Y2, t2, 200, CH2, bias=bias, gap=gap)
-    F1 = finalize(1, R1, Y1, t1, 100, CH1, bias=bias)
+    F2 = finalize(2, R2, Y2, t2, 200, CH2 + ["avg"], bias=bias, gap=gap)
+    F1 = finalize(1, R1, Y1, t1, 100, CH1 + ["avg"], bias=bias)
     F = pd.concat([F2, F1], ignore_index=True)
     # contamination: any other detected vehicle inside the window
     for day, Ymat, tA, fs, ref in [(2, Y2, t2, 200, "st40"), (1, Y1, t1, 100, "ch4")]:
@@ -365,13 +370,20 @@ def main():
             foreign = [round(t - tidx, 1) for t in inside if abs(t - tidx) > 20]
             F.loc[i, "foreign_events_s"] = json.dumps(foreign)
         busy = list(allev)
-        Tw = float(np.median(F[F.day == day].T_win))
-        chans = CH2 if day == 2 else CH1
-        nz = noise_integrals(Ymat, tA, fs, chans, busy, Tw)
-        for c in chans:
-            log(f"day {day} noise integral {c}: T={Tw:.1f}s n={len(nz[c])} "
-                f"mean={nz[c].mean():+.3f} sd={nz[c].std():.3f} microstrain*s")
-            F.loc[F.day == day, f"noise_sd_Idt_{c}"] = nz[c].std()
+        chans = (CH2 if day == 2 else CH1) + ["avg"]
+        step = fs // 20
+        Yd = {c: Ymat[c][::step] for c in chans}
+        td = tA[::step]
+        cache = {}
+        for i in F.index[F.day == day]:
+            Tw = round(float(F.loc[i, "T_win"]) / 2) * 2
+            if Tw not in cache:
+                cache[Tw] = noise_integrals(Yd, td, 20, chans, busy, Tw, n=80)
+            for c in chans:
+                F.loc[i, f"noise_sd_Idt_{c}"] = cache[Tw][c].std()
+        for Tw, nz in sorted(cache.items()):
+            log(f"day {day} noise sd of integral (microstrain*s), T={Tw}s: " +
+                ", ".join(f"{c}={nz[c].std():.3f}" for c in chans))
     F.to_csv(os.path.join(HERE, "results", "events_field.csv"), index=False)
     log("written results/events_field.csv", len(F))
     cols = ["id", "trucks", "lane", "direction", "v_used", "v_src", "v_script", "GVW",

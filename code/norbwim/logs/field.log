@@ -1,1 +1,2 @@
 R15   ['T4'] lane=A dir=-1 (res ratio 1.51) v_fit=25.75 r2=0.902 v_spike=[22.968] v_script=23.07
+R15r  ['T4'] lane=B dir=+1 (res ratio 1.19) v_fit=21.25 r2=0.887 v_spike=null v_script=nan
