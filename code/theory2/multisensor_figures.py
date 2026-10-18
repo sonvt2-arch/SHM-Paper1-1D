@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.ticker
 import multisensor_core as mc
 
 plt.rcParams.update({"font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8,
@@ -74,13 +75,16 @@ for key, c in (("CM-A", COL["gls"]), ("2S-eq", COL["aux"])):
     ax.loglog([float(x["eps"]) for x in r], [float(x["std_pct"]) for x in r], "-", color=c,
               lw=2.2, alpha=0.35, label=f"{key} single")
 ax.set_xlabel(r"offset std $\varepsilon_0$ (mm)")
+ax.set_xticks([0.02, 0.05, 0.1, 0.2, 0.5])
+ax.set_xticklabels(["0.02", "0.05", "0.1", "0.2", "0.5"])
+ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
 ax.set_ylabel(r"std of $\hat P$ (% of P)")
 ax.set_title(r"(b) $\sigma_a$ = 0.01 mm", loc="left")
 ax.legend(fontsize=5.2, frameon=False)
 ax = axs[2]
 t3 = list(csv.DictReader(open(f"{mc.RES}/T3_immune.csv")))
 for key, c in (("2S-eq", COL["aux"]), ("3S-b2.0", COL["immune"]), ("CM-A", COL["gls"])):
-    r = [x for x in t3 if x["model"] == key and float(x["eps"]) == 0.1 and float(x["rho"]) == 1.0]
+    r = [x for x in t3 if x["model"] == key and float(x["eps_mm"]) == 0.1 and float(x["rho"]) == 1.0]
     ax.plot([float(x["sig_mm"]) for x in r], [float(x["std_immune2_pct"]) for x in r], "-o",
             color=c, ms=3, lw=1, label=f"{key} immune pair")
 ax.set_xlabel(r"white noise $\sigma_a$ (mm)")
@@ -168,3 +172,20 @@ ax.legend(fontsize=5.2, frameon=False)
 fig.tight_layout()
 save(fig, "ms_fig4_structure_aware")
 print("figures written to", mc.FIGS)
+
+# ---------------------------------------------------------------- invariance-of-scatter check
+lg = mc.Logger("multisensor_figures.log")
+lg("By-axle-count std relative to pooled std (structure-agnostic estimators, cases A and B):")
+worst = 0.0
+for case, ests in (("A", ("single (Cmax)", "GLS-3", "immune-3")),
+                   ("B", ("single (Cmax)", "GLS-3", "immune-3"))):
+    n = E[f"{case}_nax"]
+    for e in ests:
+        x = E[f"{case}_{e}"]
+        x = x.astype(float)
+        dev = [x[n == k].std(ddof=1) / x.std(ddof=1) - 1 for k in range(1, 7)]
+        cnt = [int((n == k).sum()) for k in range(1, 7)]
+        worst = max(worst, max(abs(d) for d in dev))
+        lg(f"  {case} {e:15s} deviations % {np.round(100*np.array(dev), 2).tolist()} (n per bin {cnt})")
+lg(f"  max |deviation| = {100*worst:.2f} %; SE of one bin std ~ 1/sqrt(2*16700) = "
+   f"{100/np.sqrt(2*16700):.2f} %")

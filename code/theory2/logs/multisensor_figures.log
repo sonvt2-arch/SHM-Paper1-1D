@@ -1,0 +1,8 @@
+By-axle-count std relative to pooled std (structure-agnostic estimators, cases A and B):
+  A single (Cmax)   deviations % [-0.11, -0.09, -0.57, -0.05, 0.33, 0.51] (n per bin [16581, 16702, 16870, 16661, 16689, 16497])
+  A GLS-3           deviations % [0.19, -0.14, -0.62, 0.39, -0.12, 0.29] (n per bin [16581, 16702, 16870, 16661, 16689, 16497])
+  A immune-3        deviations % [0.23, -0.23, -0.66, 0.4, -0.07, 0.31] (n per bin [16581, 16702, 16870, 16661, 16689, 16497])
+  B single (Cmax)   deviations % [0.63, 0.67, -0.92, 0.38, -0.37, -0.38] (n per bin [16579, 16693, 16806, 16686, 16620, 16616])
+  B GLS-3           deviations % [0.46, 0.63, -0.04, -0.13, -0.57, -0.34] (n per bin [16579, 16693, 16806, 16686, 16620, 16616])
+  B immune-3        deviations % [0.42, 0.51, -0.1, -0.14, -0.51, -0.17] (n per bin [16579, 16693, 16806, 16686, 16620, 16616])
+  max |deviation| = 0.92 %; SE of one bin std ~ 1/sqrt(2*16700) = 0.55 %

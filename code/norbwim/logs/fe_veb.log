@@ -1,0 +1,31 @@
+lane 1: n=7 mean Idx/GVW=-0.094 CV=0.025 (with end baseline: CV=1.652)
+  Run17.txt: Idx=-6.0, single-truck prediction -5.8, ratio 1.037; SLM GVW=64.2 t vs 61.900000000000006
+lane 2: n=7 mean Idx/GVW=1.223 CV=0.010 (with end baseline: CV=0.044)
+  Run18.txt: Idx=75.3, single-truck prediction 75.7, ratio 0.994; SLM GVW=61.5 t vs 61.900000000000006
+speed series: CV of Idx = 0.015
+           file  lane trucks axles   GVW                            role    N  duration_s     Idx  Idx_endbase  Idx_per_t  Idx_per_t_endbase
+0      Run2.txt     2      2     3  23.3                       Test 1 L2  801        8.01  28.520       29.596      1.224              1.270
+1    Run1_2.txt     2      1     3  23.2                       Test 2 L2  801        8.01  28.863       28.211      1.244              1.216
+2     Run13.txt     2      1     3  23.2                       Test 3 L2  801        8.01  28.350       27.735      1.222              1.195
+3    Run5_2.txt     2      3     5  32.9                       Test 5 L2  801        8.01  40.197       39.412      1.222              1.198
+4      Run6.txt     2      4     5  38.6                       Test 6 L2  801        8.01  46.967       42.446      1.217              1.100
+5    Run9_2.txt     2      5     4  32.1              Test 7 L2 (calib.)  801        8.01  38.576       38.348      1.202              1.195
+6     Run10.txt     2      6     4  27.8              Test 8 L2 (calib.)  801        8.01  34.147       34.352      1.228              1.236
+7      Run4.txt     1      2     3  23.3                       Test 1 L1  801        8.01  -2.219        0.833     -0.095              0.036
+8    Run3_2.txt     1      1     3  23.2                       Test 2 L1  801        8.01  -2.254        0.293     -0.097              0.013
+9     Run14.txt     1      1     3  23.2                       Test 3 L1  801        8.01  -2.229        0.322     -0.096              0.014
+10   Run7_2.txt     1      3     5  32.9                       Test 5 L1  801        8.01  -3.015       -2.666     -0.092             -0.081
+11     Run8.txt     1      4     5  38.6                       Test 6 L1  801        8.01  -3.632       -4.266     -0.094             -0.111
+12  Run11_2.txt     1      5     4  32.1              Test 7 L1 (calib.)  801        8.01  -2.933       -1.728     -0.091             -0.054
+13    Run12.txt     1      6     4  27.8              Test 8 L1 (calib.)  801        8.01  -2.548       -1.361     -0.092             -0.049
+14    Run17.txt     1    2+4   3+5  61.9  Eva 1: 3-ax + 5-ax in line, L1  801        8.01  -6.029      -19.579     -0.097             -0.316
+15    Run18.txt     2    2+4   3+5  61.9  Eva 2: 3-ax + 5-ax in line, L2  801        8.01  75.251       51.597      1.216              0.834
+                 file   v    N     Idx  Idx_per_t  Idx_endbase  record_length_m
+0  3axle_speed_15.txt  15  951  28.222      1.211       24.107           142.65
+1  3axle_speed_20.txt  20  801  28.520      1.224       29.596           160.20
+2  3axle_speed_22.txt  22  651  28.269      1.213       17.045           143.22
+3  3axle_speed_25.txt  25  551  28.193      1.210       12.006           137.75
+4  3axle_speed_27.txt  27  521  29.093      1.249       15.572           140.67
+5  3axle_speed_30.txt  30  461  27.722      1.190       12.185           138.30
+6  3axle_speed_32.txt  32  431  28.597      1.227        9.869           137.92
+7  3axle_speed_35.txt  35  401  27.948      1.199        8.036           140.35

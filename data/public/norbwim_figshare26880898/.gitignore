@@ -1,0 +1,6 @@
+# files larger than 50 MB (do not commit; re-download from figshare 26880898, see MANIFEST.txt)
+Strains200Hz.dat
+AllStrainData_construction trucks.dat
+# large (34-47 MB) raw tables also kept out of git
+DataWed.csv
+B.csv
