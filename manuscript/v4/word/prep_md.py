@@ -4,7 +4,7 @@ puts a captioned placeholder for each author-supplied figure."""
 import os, re, sys
 src, dst = sys.argv[1], sys.argv[2]
 FIG = os.path.abspath(os.path.join(os.path.dirname(src), "figures"))
-FILES = {2: "Fig2_obs_map_3span.png", 3: "Fig3_channels_prismatic.png", 4: "Fig4_multichannel_gain.png",
+FILES = {1: "Fig1_beams.png", 2: "Fig2_obs_map_3span.png", 3: "Fig3_channels_prismatic.png", 4: "Fig4_multichannel_gain.png",
          5: "Fig5_norbwim_crossings.png", 6: "Fig6_norbwim_invariance.png", 7: "Fig7_norbwim_estimators.png",
          8: "Fig8_caumay_channels.png", 9: "Fig9_caumay_identifiability.png"}
 s = open(src, encoding="utf-8").read()
