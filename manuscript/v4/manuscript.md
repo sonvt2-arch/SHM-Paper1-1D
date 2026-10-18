@@ -94,7 +94,7 @@ A simpler family estimates only the gross weight from the area under the respons
 
 The identity behind all of these methods is classical: the area under an influence line equals the response to a uniform unit load, which is how design codes evaluate distributed lane loads [38]. Combining several channels by generalised least squares (GLS) is equally standard, and its zero-sum variant, with channel weights that add up to zero, is the familiar differential measurement against a reference.
 
-On continuous girders, however, the influence line changes sign over each interior support, and positive and negative areas partly cancel. Gross weight has been obtained without influence lines from distributed fibre-optic strain on a five-span continuous bridge [39]. Lane-specific influence lines were needed on a continuous multi-girder bridge [40], and long-span continuous box girders have been weighed from deck strain [41–43]. Optimal sensor placement for BWIM has been posed through an augmented Kalman filter [44], deflection-based load identification as a regularised stochastic problem [45,46], and measured deflection influence lines have been inverted for the stiffness of continuous girders [47]. None of these studies gives a criterion, available before installation, that says which channel at which position can observe the total load at all, how robustly to uncertain boundary conditions, and what a multi-channel integral estimator can deliver on real records.
+On continuous girders, however, the influence line changes sign over each interior support, and positive and negative areas partly cancel. Gross weight has been obtained without influence lines from distributed fibre-optic strain on a five-span continuous bridge [39]. Lane-specific influence lines were needed on a continuous multi-girder bridge [40], and long-span continuous box girders have been weighed from deck strain [41–43]. Deng et al. used the area under displacement influence lines of a continuous rigid-frame bridge and, because the net area of a multi-span influence line is small, replaced it by the area of its absolute value [44]. Optimal sensor placement for BWIM has been posed through an augmented Kalman filter [45], deflection-based load identification as a regularised stochastic problem [46,47], and measured deflection influence lines have been inverted for the stiffness of continuous girders [48]. None of these studies gives a criterion, available before installation, that says which channel at which position can observe the total load at all, how robustly to uncertain boundary conditions, and what a multi-channel integral estimator can deliver on real records.
 
 This paper supplies such criteria. Neither the influence-area identity nor the GLS estimator is new; the contribution lies in the criteria built on them:
 
@@ -280,11 +280,11 @@ This section asks what integral estimators deliver on real moving-load records f
 
 ### 4.1. Data and reference weights
 
-The Nothing-on-Road BWIM (NOR-BWIM) dataset [48] (CC0 licence) contains strain records of the Virginia Smart Road Bridge, documented in [41–43,49]. The bridge is a post-tensioned concrete box girder continuous over five spans of 86.5 + 3 × 144 + 86.5 m = 605 m. Strain transducers on the soffit of the top slab lie near mid-span of span 2, 158.5 m from the first abutment, in longitudinal stations about 2 m apart under the wheel path.
+The Nothing-on-Road BWIM (NOR-BWIM) dataset [49] (CC0 licence) contains strain records of the Virginia Smart Road Bridge, documented in [41–43,50]. The bridge is a post-tensioned concrete box girder continuous over five spans of 86.5 + 3 × 144 + 86.5 m = 605 m. Strain transducers on the soffit of the top slab lie near mid-span of span 2, 158.5 m from the first abutment, in longitudinal stations about 2 m apart under the wheel path.
 
 Day 1 has 12 channels, labelled with the prefix "ch". They fall into three groups: four wheel-path gauges with clear axle spikes (ch4, ch5, ch11, ch12), a partner gauge at each of these four stations, and four further gauges without axle spikes (ch1, ch2, ch8, ch9). Day 2 has four in-line channels, labelled with the prefix "st" (for example st36 and st40).
 
-The reference weights differ in quality between the days. On day 1, two 3-axle trucks ran in the instrumented lane, and their gross weights were reported by the drivers [49]. On day 2, a 3-axle truck of 26.8 t and a 5-axle truck of 25.9 t were weighed on a static scale [49]. They ran in the instrumented lane (lane A), on the return trip in the other lane (lane B), and in two in-line two-truck runs.
+The reference weights differ in quality between the days. On day 1, two 3-axle trucks ran in the instrumented lane, and their gross weights were reported by the drivers [50]. On day 2, a 3-axle truck of 26.8 t and a 5-axle truck of 25.9 t were weighed on a static scale [50]. They ran in the instrumented lane (lane A), on the return trip in the other lane (lane B), and in two in-line two-truck runs.
 
 Errors below are given as a percentage of the gross vehicle weight (GVW). Because the weights vary by only a few per cent within each day, a predictor that always returns the mean calibration weight already has a mean absolute error (MAE) of 2.0 % on day 2 and 2.2 % on day 1. The field data therefore test the scatter and invariance of the integral constant, not the ability to discriminate weights.
 
@@ -432,9 +432,9 @@ To first order, the relative error of BPM is the sum of the relative errors of t
 
 Speed enters twice. It affects the response itself, and it enters again through its measurement, because the space integral is the time integral times the speed measured at the gauges; a speed error therefore passes one-to-one into the weight. Speed variation over a 605 m crossing was not measured.
 
-For a constant force moving across the laboratory beam, the quasi-static error is at most about 1 % when the ratio of the crossing time to the fundamental period, $t_\mathrm{cr}/T_1$, is at least 8, and it exceeds 15 % below 2.5 [50]. This bound omits vehicle–bridge interaction and road roughness.
+For a constant force moving across the laboratory beam, the quasi-static error is at most about 1 % when the ratio of the crossing time to the fundamental period, $t_\mathrm{cr}/T_1$, is at least 8, and it exceeds 15 % below 2.5 [51]. This bound omits vehicle–bridge interaction and road roughness.
 
-Table 7 evaluates Eq. (12) for the Cầu Mây gauges over the admissible set, with $L_\mathrm{tot} = 200$ m and the mean weighed truck of 25.06 t. The smaller offsets in Table 7 are typical of displacement transducers. Absolute deflection on a 90 m span over water would usually come from a non-contact technique, whose residual offset after re-zeroing has to be established on site, since environmental effects act over the same window [51,52].
+Table 7 evaluates Eq. (12) for the Cầu Mây gauges over the admissible set, with $L_\mathrm{tot} = 200$ m and the mean weighed truck of 25.06 t. The smaller offsets in Table 7 are typical of displacement transducers. Absolute deflection on a 90 m span over water would usually come from a non-contact technique, whose residual offset after re-zeroing has to be established on site, since environmental effects act over the same window [52,53].
 
 The authors' deflection records from two simply supported bridges (Supplementary Material) showed post-minus-pre level differences of up to 0.23 mm. Linear re-zeroing removes such differences, so this value bounds the drift before re-zeroing, not $\delta_0$.
 
@@ -469,7 +469,7 @@ Several vehicles on the structure return their combined weight; on the five-span
 
 In the laboratory, the reference record and the load-dependent step limit SLM to 0.6–0.7 %. In the field, the noise, the lane and the gauge position dominate, and the weight errors of single crossings, 5–12 % on these records, exceed the spread of the reference weights.
 
-The method is therefore proposed for preliminary overload screening, with the decision threshold set apart from the legal limit and the design live loads [53,54]. Setting that threshold needs field calibration with trucks of clearly different weights, which this study did not have.
+The method is therefore proposed for preliminary overload screening, with the decision threshold set apart from the legal limit and the design live loads [54,55]. Setting that threshold needs field calibration with trucks of clearly different weights, which this study did not have.
 
 ---
 
@@ -529,7 +529,7 @@ For a prismatic span with end-moment parameters $\bar M_l$, $\bar M_r$ and $\xi 
 
 All closed forms of Section 2.2 agree with FE evaluations of Eq. (2) in 981 checks, with a maximum error of 8.1 × 10⁻¹¹ on the normalised indicators. The verification covered two-span, symmetric and asymmetric three-span and four-span beams, zero-moment positions, ten blind configurations, the identity for a two-truck convoy on piecewise-prismatic girders with elastic pier springs (relative error 2.8 × 10⁻⁹), and the haunched Cầu Mây FE against an independent force-method solution (5.4 × 10⁻¹⁰). Truncating the record when the first axle leaves changed the integral by up to 59 % (rotation) and 10 % (moment) on the two-span example.
 
-For the most general linear estimator $\hat P = \sum_j\int g_j(x)y_j(x)\,\mathrm{d}x$, with weighting functions $g_j$ along the records $y_j$, the mean is $\sum_aP_ah(s_a)$ with $h(s) = \sum_j\int g_j(x)\eta_j(x-s)\,\mathrm{d}x$. If $h$ must be constant in $s$ for every set of influence lines supported on $[0, L_p]$, then $\int_0^{L_p}[g(u+s)-g(u+s')]\eta(u)\,\mathrm{d}u = 0$ for every admissible $\eta$, so $g(u+s) = g(u+s')$ almost everywhere. Each $g_j$ is therefore constant, and the only freedom lies across channels. When the influence line is known, other invariant weighting functions exist; for two equal spans their white-noise variance is 1.5–6.6 times smaller, but a 20 % stiffness error in the adjacent span then produces configuration-dependent errors of −1.1 % to +2.0 % (Supplementary Material).
+For the most general linear estimator $\hat P = \sum_j\int g_j(x)y_j(x)\,\mathrm{d}x$, with weighting functions $g_j$ along the records $y_j$, the mean is $\sum_aP_ah(s_a)$ with $h(s) = \sum_j\int g_j(x)\eta_j(x-s)\,\mathrm{d}x$. If $h$ must be constant in $s$ for every set of influence lines supported on $[0, L_p]$, then $\int_0^{L_p}[g(u+s)-g(u+s')]\eta(u)\,\mathrm{d}u = 0$ for every admissible $\eta$, so $g(u+s) = g(u+s')$ almost everywhere. Each $g_j$ is therefore constant, and the only freedom lies across channels. An estimate built on the absolute value of the record [44] is not linear in the axle loads, so it loses this invariance whenever contributions of opposite sign overlap. When the influence line is known, other invariant weighting functions exist; for two equal spans their white-noise variance is 1.5–6.6 times smaller, but a 20 % stiffness error in the adjacent span then produces configuration-dependent errors of −1.1 % to +2.0 % (Supplementary Material).
 
 ## Appendix C. Identifiability: sensitivities and Möbius law
 
@@ -545,7 +545,7 @@ All analyses were implemented by the authors in reproducible scripts: the closed
 
 ## Data Availability
 
-The field strain records analysed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0) [48]. The laboratory deflection data are given in full in the Supplementary Material. The derived data behind every figure and table, the analysis scripts and the console output of each run are provided as supplementary material. The Cầu Mây load test was performed by an author of this paper, and the authors are permitted to publish the processed data (static deflection readings, truck positions, weighed truck masses and reported frequencies), which are available at [NEED VALUE: repository name and DOI].
+The field strain records analysed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0) [49]. The laboratory deflection data are given in full in the Supplementary Material. The derived data behind every figure and table, the analysis scripts and the console output of each run are provided as supplementary material. The Cầu Mây load test was performed by an author of this paper, and the authors are permitted to publish the processed data (static deflection readings, truck positions, weighed truck masses and reported frequencies), which are available at [NEED VALUE: repository name and DOI].
 
 ## Conflicts of Interest
 
@@ -663,27 +663,29 @@ The supplementary material contains: (i) the analysis scripts and the console ou
 
 [43] A. Moghadam, M. AlHamaydeh, R. Sarlo, Dual-purpose procedure for bridge health monitoring and weigh-in-motion used for multiple-vehicle events, Autom. Constr. 148 (2023) 104768. https://doi.org/10.1016/j.autcon.2023.104768
 
-[44] C. Zhou, C. Demartino, Y. Narazaki, Y. Xu, E. Chatzi, B.F. Spencer, Optimal sensor placement for bridge weigh-in-motion using an augmented Kalman filter, Mech. Syst. Signal Process. 241 (2025) 113522. https://doi.org/10.1016/j.ymssp.2025.113522
+[44] L. Deng, P. Liu, T. Huang, S. Kaewunruen, A novel moving load identification method for continuous rigid-frame bridges using a field-based displacement influence line, Appl. Sci. 15 (11) (2025) 6028. https://doi.org/10.3390/app15116028
 
-[45] J. Zhang, Y. Liu, X. Fan, An AR(1)-Tikhonov-SVD-GCV framework for stochastic moving load identification driven by bridge multi-point deflection data, Structures 88 (2026) 111844. https://doi.org/10.1016/j.istruc.2026.111844
+[45] C. Zhou, C. Demartino, Y. Narazaki, Y. Xu, E. Chatzi, B.F. Spencer, Optimal sensor placement for bridge weigh-in-motion using an augmented Kalman filter, Mech. Syst. Signal Process. 241 (2025) 113522. https://doi.org/10.1016/j.ymssp.2025.113522
 
-[46] Z. Shen, W. Peng, X. Zhang, et al., A lightweight weigh-in-motion system based on vehicle-induced bridge deflection and impact dynamic responses, Int. J. Struct. Stab. Dyn. (2026), online. https://doi.org/10.1142/s0219455427503664
+[46] J. Zhang, Y. Liu, X. Fan, An AR(1)-Tikhonov-SVD-GCV framework for stochastic moving load identification driven by bridge multi-point deflection data, Structures 88 (2026) 111844. https://doi.org/10.1016/j.istruc.2026.111844
 
-[47] Y. Zhou, Z. Feng, S.-K. Di, Z.-J. Jia, A novel approach for bending stiffness inversion and rapid evaluation of continuous beam bridges based on a deflection influence line, Struct. Control Health Monit. 2026 (2026) 1361157. https://doi.org/10.1155/stc/1361157
+[47] Z. Shen, W. Peng, X. Zhang, et al., A lightweight weigh-in-motion system based on vehicle-induced bridge deflection and impact dynamic responses, Int. J. Struct. Stab. Dyn. (2026), online. https://doi.org/10.1142/s0219455427503664
 
-[48] A. Moghadam, R. Sarlo, Nothing-on-Road Bridge-Weigh-In-Motion (NOR-BWIM) Dataset, version 1, University Libraries, Virginia Tech, figshare, 2024. https://doi.org/10.7294/26880898.v1
+[48] Y. Zhou, Z. Feng, S.-K. Di, Z.-J. Jia, A novel approach for bending stiffness inversion and rapid evaluation of continuous beam bridges based on a deflection influence line, Struct. Control Health Monit. 2026 (2026) 1361157. https://doi.org/10.1155/stc/1361157
 
-[49] A. Moghadam, Integration of Traffic and Structural Health Monitoring Systems Using a Novel Nothing-On-Road (NOR) Bridge-Weigh-In-Motion (BWIM) System, PhD dissertation, Virginia Polytechnic Institute and State University, Blacksburg, VA, 2022. http://hdl.handle.net/10919/111390
+[49] A. Moghadam, R. Sarlo, Nothing-on-Road Bridge-Weigh-In-Motion (NOR-BWIM) Dataset, version 1, University Libraries, Virginia Tech, figshare, 2024. https://doi.org/10.7294/26880898.v1
 
-[50] L. Frýba, Vibration of Solids and Structures under Moving Loads, 3rd ed., Thomas Telford, London, 1999.
+[50] A. Moghadam, Integration of Traffic and Structural Health Monitoring Systems Using a Novel Nothing-On-Road (NOR) Bridge-Weigh-In-Motion (BWIM) System, PhD dissertation, Virginia Polytechnic Institute and State University, Blacksburg, VA, 2022. http://hdl.handle.net/10919/111390
 
-[51] H. Sohn, Effects of environmental and operational variability on structural health monitoring, Philos. Trans. R. Soc. A 365 (1851) (2007) 539–560. https://doi.org/10.1098/rsta.2006.1935
+[51] L. Frýba, Vibration of Solids and Structures under Moving Loads, 3rd ed., Thomas Telford, London, 1999.
 
-[52] E.J. Cross, K.Y. Koo, J.M.W. Brownjohn, K. Worden, Long-term monitoring and data analysis of the Tamar Bridge, Mech. Syst. Signal Process. 35 (1–2) (2013) 16–34. https://doi.org/10.1016/j.ymssp.2012.08.026
+[52] H. Sohn, Effects of environmental and operational variability on structural health monitoring, Philos. Trans. R. Soc. A 365 (1851) (2007) 539–560. https://doi.org/10.1098/rsta.2006.1935
 
-[53] EN 1991-2:2003, Eurocode 1: Actions on Structures – Part 2: Traffic Loads on Bridges, CEN, Brussels, 2003.
+[53] E.J. Cross, K.Y. Koo, J.M.W. Brownjohn, K. Worden, Long-term monitoring and data analysis of the Tamar Bridge, Mech. Syst. Signal Process. 35 (1–2) (2013) 16–34. https://doi.org/10.1016/j.ymssp.2012.08.026
 
-[54] AASHTO, LRFD Bridge Design Specifications, 10th ed., American Association of State Highway and Transportation Officials, Washington, DC, 2024.
+[54] EN 1991-2:2003, Eurocode 1: Actions on Structures – Part 2: Traffic Loads on Bridges, CEN, Brussels, 2003.
+
+[55] AASHTO, LRFD Bridge Design Specifications, 10th ed., American Association of State Highway and Transportation Officials, Washington, DC, 2024.
 
 ---
 
