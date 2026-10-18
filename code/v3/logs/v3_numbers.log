@@ -1,0 +1,21 @@
+PART A  offset bias eps0*L/(C*P) in %, P = 245.75 kN, L = 200.0 m
+case | C (m2/kN) | 0.02 mm | 0.05 mm | 0.1 mm | 0.2 mm | 0.5 mm | P_eps(0.1 mm) kN
+N7 calib A (design EI, k_FE) | 3.610e-04 | 4.5 | 11.3 | 22.5 | 45.1 | 112.7 | 55.4
+N7 calib A' (alpha 1.088, k_FE) | 3.350e-04 | 4.9 | 12.1 | 24.3 | 48.6 | 121.5 | 59.7
+N7 calib B (alpha 0.716, k 1.2e8) | 4.047e-04 | 4.0 | 10.1 | 20.1 | 40.2 | 100.5 | 49.4
+N7 joint set (static+f3) min C | 3.280e-04 | 5.0 | 12.4 | 24.8 | 49.6 | 124.1 | 61.0
+N7 joint set (static+f3) max C | 3.840e-04 | 4.2 | 10.6 | 21.2 | 42.4 | 106.0 | 52.1
+N7 static set max C | 4.950e-04 | 3.3 | 8.2 | 16.4 | 32.9 | 82.2 | 40.4
+N8 calib A | 4.376e-05 | 37.2 | 93.0 | 186.0 | 371.9 | 929.9 | 457.0
+N8 calib A' | 3.850e-05 | 42.3 | 105.7 | 211.4 | 422.8 | 1056.9 | 519.5
+N8 calib B | 1.147e-04 | 14.2 | 35.5 | 71.0 | 141.9 | 354.8 | 174.4
+N8 joint set (static+f3) min C | 3.000e-05 | 54.3 | 135.6 | 271.3 | 542.5 | 1356.4 | 666.7
+N8 joint set (static+f3) max C | 9.390e-05 | 17.3 | 43.3 | 86.7 | 173.3 | 433.3 | 213.0
+N8 static set max C | 1.980e-04 | 8.2 | 20.6 | 41.1 | 82.2 | 205.5 | 101.0
+
+PART B  NOR-BWIM beam model, haunch n = 2 (and n = 2.5, uniform)
+haunch=True n=2.0: net/positive area of M-IL at gauge = 0.513; span shares % = [-26.0, 171.5, -65.5, 23.4, -3.5]; |C_eps(gauge)|/max|C_eps| = 0.692 (max at x = 374.2 m)
+haunch=True n=2.5: net/positive area of M-IL at gauge = 0.480; span shares % = [-30.0, 180.2, -73.7, 28.1, -4.6]; |C_eps(gauge)|/max|C_eps| = 0.926 (max at x = 374.2 m)
+haunch=False n=2.0: net/positive area of M-IL at gauge = 0.653; span shares % = [-14.2, 143.5, -38.0, 9.7, -1.0]; |C_eps(gauge)|/max|C_eps| = 0.560 (max at x = 374.2 m)
+
+PART C  r2 of global-shape fit, documented single-truck lane-A crossings (n=15): min 0.791, median 0.922, max 0.940
