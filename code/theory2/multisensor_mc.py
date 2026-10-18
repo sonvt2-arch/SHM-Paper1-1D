@@ -244,7 +244,8 @@ for tag, truth in [("D", model), ("D-misspecified", m_mis)]:
     rng = np.random.default_rng(SEED + 7 + len(tag))
     errs = {e: [] for e in wts}
     rel = {e: [] for e in wts}
-    naxs = []
+    naxs, Pts = [], []
+    zs = {e: [] for e in wts}
     t0 = time.time()
     for b0 in range(0, NREAL, BATCH):
         s, P, nax = configs(rng, BATCH, mc.ALLOW)
@@ -255,8 +256,10 @@ for tag, truth in [("D", model), ("D-misspecified", m_mis)]:
             # SLM-style scale: divide by the estimator's response to a unit load
             # on the TRUE structure, averaged over entry shifts (scale is calibrated)
             errs[e].append(z @ g - Ptot)
+            zs[e].append(z @ g)
             rel[e].append((y @ g) / Ptot)
         naxs.append(nax)
+        Pts.append(Ptot)
     nax = np.concatenate(naxs)
     log(f"  [{tag}] {NREAL} realisations in {time.time()-t0:.0f} s; truth: {truth.name}")
     for e in wts:
@@ -273,10 +276,12 @@ for tag, truth in [("D", model), ("D-misspecified", m_mis)]:
             np_save[f"D_{e}"] = err.astype(np.float32)
         else:
             rs = r / r.mean()          # scale error removed (SLM calibrates it)
+            Pt_all = np.concatenate(Pts)
+            sd = np.std(np.concatenate(zs[e]) / r.mean() - Pt_all, ddof=1)
             byn = [rs[nax == n].mean() - 1 for n in range(1, 7)]
             log(f"      {e:22s} noise-free P_hat/P after scale calibration: range "
                 f"[{rs.min()-1:+.4f}, {rs.max()-1:+.4f}], std {rs.std():.4f}; mean by axle count "
-                f"{np.round(byn, 4).tolist()}; total std incl. noise/offset {sd:.3f} kN")
+                f"{np.round(byn, 4).tolist()}; total std after scale calibration incl. noise/offset {sd:.3f} kN")
             rows.append([tag, e, NREAL, "", "", f"{sd:.6g}", "", "",
                          f"range {rs.min()-1:.4f}..{rs.max()-1:.4f}", f"cfg std {rs.std():.5f}"])
     np_save[f"{tag}_nax"] = nax.astype(np.int8)

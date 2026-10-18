@@ -64,11 +64,11 @@ for rE, ls in [(0.5, ":"), (1.0, "-"), (2.0, "--"), (4.0, "-.")]:
     ax[1].plot(rL, np.where(x0 > 0, x0, np.nan), color=C_M, ls=ls,
                label=rf"$\rho_{{EI}}={rE:g}$")
     # deflection blind position at this rho_EI (root of F in (0,1)) for comparison
+    # deflection blind position: F/[xi(1-xi)] = 0 -> xi^2 - (1-mu/2) xi - (1-mu/2) = 0
     xb = []
     for m in mu:
-        r = np.roots([1.0, 0.0, -2.0 + m / 2, 0, 1 - m / 2])  # F/xi = 1-2x^2+x^3 - mu/2(1-x^2)
-        r = np.roots([1.0, -2.0 + m / 2, 0.0, 1 - m / 2])
-        rr = [z.real for z in r if abs(z.imag) < 1e-12 and 0 < z.real < 1]
+        a_ = 1 - m / 2
+        rr = [z for z in np.roots([1.0, -a_, -a_]).real if 0 < z < 1]
         xb.append(min(rr) if rr else np.nan)
     ax[1].plot(rL, xb, color=C_W, ls=ls, lw=1.0)
 ax[1].plot([], [], color=C_M, label="strain blind point")
@@ -76,8 +76,7 @@ ax[1].plot([], [], color=C_W, lw=1.0, label="deflection blind point")
 ax[1].set_xlabel(r"span ratio $\rho_L = L_2/L_1$")
 ax[1].set_ylabel(r"blind position $\xi$ in span 1")
 ax[1].set_ylim(0, 1); ax[1].grid(alpha=0.3)
-ax[1].set_title("(b) blind positions: strain exists for every $\\rho_L$ below "
-                r"$\mu=4$; deflection only for $\mu>5/3$")
+ax[1].set_title(r"(b) blind positions: strain for every $\mu<4$, deflection only for $1<\mu<2$")
 ax[1].legend(fontsize=7.5, ncol=2, loc="lower left")
 save(fig, "fig_gc_strain_map_2span")
 
