@@ -4,6 +4,12 @@ Cập nhật: 2026-10-12. Trạng thái: **chờ câu trả lời của người
 
 Cập nhật trước: 2026-10-11. Nhánh: `claude/focused-bell-33lm0n`.
 
+## Cập nhật 2026-10-18
+- Đưa câu trả lời mới (từ bảng hỏi bài MSSP, `08_cap_nhat_...md`) vào bản SCHM: xe Cầu Mây 25,06 t (dải sai số nhịp biên 35–93%), Data Availability, Conflicts of Interest (còn [NEED VALUE] tên tác giả), thiết bị Mitutoyo, sai số đặt xe < 20 cm (≤ 0,6% ở N8).
+- Xuất Word: `manuscript/schm/word/Manuscript_SCHM.docx`, `Cover_Letter_SCHM.docx` (dựng lại bằng `build_docx.sh --pdf`).
+- Gói script bổ sung `code/supplementary/` (`run_all.sh`, `REPRODUCTION_REPORT.md`). 10 nhận định cũ không tái lập được đã được sửa cho khớp script; ghi tại `manuscript/schm/changelog_reproduction.md`. Khi có `SupplementaryMaterial_JCSHM.zip` gốc thì đối chiếu lại.
+- Còn chờ tác giả: giải nén `Thông tin bổ sung.rar` (phiếu cân, Midas); chia phần `SupplementaryMaterial_JCSHM.zip`; tên tác giả tham gia thử tải; hình thí nghiệm; bảng hỏi riêng của Paper1 (B2, B3, B7, phần A).
+
 ## 1. Đã làm
 
 | Gói | Kết quả | Tác nhân (model) |

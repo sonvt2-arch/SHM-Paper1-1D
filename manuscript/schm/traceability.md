@@ -1,5 +1,27 @@
 # Traceability of numeric values in `manuscript/schm/manuscript.md`
 
+## Update 2026-10-18 (consistency with the supplementary scripts, `code/supplementary/REPRODUCTION_REPORT.md`)
+
+Source codes: S02 = `code/supplementary/logs/s02_quadrature_table3.log`, S03 = `logs/s03_load_identification.log`, S04 = `logs/s04_monte_carlo.log`, S05 = `logs/s05_moving_force.log` (scripts `code/supplementary/s0x_*.py`, run with `python3 -I`). These rows supersede the older sources marked *(superseded)* below. Old → new text for every change: `manuscript/schm/changelog_reproduction.md`.
+
+| Value or statement | Location | Source |
+|---|---|---|
+| Simpson nearly exact for a single load; kinks at entry/exit of each further axle; trapezoid with Δx ≤ l/20 otherwise | §2.4 | S02 l. 12–14 (single n = 20 Simpson +0.0267 %; two/three −0.9215/−0.4442 %); l. 22 (n/span 20, trapezoid −0.1250 %) |
+| Simpson + 3/8 bias −0.92 % (two loads), −0.44 % (three loads) against −0.500 % | §3.2 | S02 l. 13–14 |
+| Largest deviation 0.0126 mm, 0.44 % (2.53 × resolution, "two and a half times" kept) | §3.2 | S03 l. 17–20 |
+| Two-load group, spacing 300 mm −0.171 %, 375 mm +0.014 %; residual 0.33 and 0.51 percentage points | §6.1 | S02 l. 30–31 |
+| Trapezoidal bias removed by Simpson quadrature or by fine sampling | §6.6 (Table 10 text) | follows from S02 l. 13–14, 22 |
+| Table 9 from the dense sweep: 17.6, 8.6, 4.1, 1.8, 0.99, 0.59, 0.23, 0.13 %; 300 speeds | §6.5, Table 9 | S05 l. 83–86 (dense sweep 17.64 … 0.13); 47-speed envelope l. 78–80 not used for the table |
+| Eq. (21): ≥ 4 ⇒ < 4.2 % | §6.5 | S05 l. 89 (fine scan max 4.115 % at 4.48), l. 92 (dense 4.09 %) |
+| Exit deflection 34.5 % of the static peak, opposite sign, at T_cr/T₁ = 1.5 | §6.5 | S05 l. 95 |
+| Window + 4T₁ reduces the error by 20–28 % | §6.5 | S05 l. 96–98 (ratios 0.72, 0.77, 0.80) |
+| Damping 0.5–5 % changes E monotonically ("less damping, less error" removed) | §6.5 | S05 l. 101–104 (not true at T_cr/T₁ = 5) |
+| Multi-axle: 1 axle; 2 or 3 equal axles at 0.5, 1.0, 1.5 m; spread 0.23 % at 11.9, 2.31 % at 3.0 | §6.5 | S05 l. 112–119 |
+| Step 9: Simpson only when every axle's entry and exit fall on panel edges, otherwise trapezoid with l/20 | §7.1 | S02 l. 12–14, 22 |
+| Three-load case: bias +0.08–0.09 pp; sd within 0.07 pp except zero offset alone (0.64 → 0.37 %, BPM) | Appendix B | S04 l. 11–16, 54–66 |
+
+---
+
 ## Update 2026-10-18 (new facts from the authors' answers, `docs/08_cap_nhat_2026-10-18_tra_loi_tu_bai_MSSP.md`)
 
 Source code ANS = authors' answers to the MSSP questionnaires (numbering of that questionnaire; mapped to Paper1 codes in docs/08). WP9 = `code/analysis/logs/wp9_truckweight_check.log` (`code/analysis/wp9_truckweight_check.py`). P7w = `code/analysis/logs/wp7b_peps_2506.log` (`python3 code/analysis/wp7b_peps.py --truck-t 25.06`; the original `wp7b_peps.log` is unchanged).
@@ -162,7 +184,7 @@ Verification-report items N1–N5: N1, 0.181 is the rounding of 0.181497 in `wp3
 | shear 8 × 10⁻⁴, span/depth 100 | OLD l. 899 |
 | LVDT 0–50 mm, 0.005 mm, TDS-303, Δx = 250 mm, three cycles | OLD Section 3.2 |
 | 4.143 kg (40.64 N); 2145/4684 g; 2550/5100/5100 g; 250/500 mm; 5000/5250/5750 mm | OLD l. 979 ff.; 40.64 N from Fig. 4/Table 2 caption |
-| 0.0125 mm, 0.43 %, 2.5 × resolution | OLD l. 1015 |
+| 0.0125 mm, 0.43 %, 2.5 × resolution *(superseded: 0.0126 mm, 0.44 %, see the reproduction block)* | OLD l. 1015 |
 | 1.86 % at 2250 mm | OLD l. 1019 |
 | Table 3 (2501.19, 2488.68, 2501.85, 2513.43; −0.500, +0.027, +0.49 %) | OLD Table 3 l. 1041 |
 | Table 4 (66.99, 67.73, 67.40, 125.08, 126.57, 125.95 N; 4168.15, 7788.93 mm²; +1.10, +0.61, +1.19, +0.70 %) | OLD Table 5 l. 1069 |
@@ -220,7 +242,7 @@ Verification-report items N1–N5: N1, 0.181 is the rounding of 0.181497 in `wp3
 
 | Value | Source |
 |---|---|
-| −0.5000 %; 300 mm −0.110 %; 375 mm +0.249 %; 0.4–0.75 % | OLD l. 1235–1257 |
+| −0.5000 %; 300 mm −0.110 %; 375 mm +0.249 %; 0.4–0.75 % *(superseded except −0.5000 %: S02 l. 29–34)* | OLD l. 1235–1257 |
 | (1.2596 − 1.9893) mm⁻¹ | DER correction of OLD l. 1269 (0.1260 − 0.1989 was a decimal error): 5250/4168.15 = 1.2596; 5000/2513.43 = 1.9893; flagged in `docs/rejection_evidence.md` §2 (A3) |
 | about 37 % | OLD l. 1269 (unchanged by the decimal correction: (1.9893 − 1.2596)/1.9893 = 0.367) |
 | Table 7 (all) | OLD Table 6 l. 1303 |
@@ -228,10 +250,10 @@ Verification-report items N1–N5: N1, 0.181 is the rounding of 0.181497 in `wp3
 | 200 000; 0.07 %; 60 %; 1.47; 2.11 %, 3.09 %, 2.12 %; five reference crossings | OLD l. 1341–1440 |
 | interior zero crossing; factor of two | OLD Section 4.4 |
 | 1.464 kg/m; 2 %; 11.942 Hz; 1000 → 16 000 steps, 0.002 points; 47 speeds; 0.6–120 | OLD l. 1653–1675 |
-| Table 8 (17.6 … 0.08) | OLD Table 9 l. 1681 |
-| ≥ 8 → ≈1 %, ≥ 4 → < 4 %; 2.5, 15 % | OLD Eq. (22) l. 1697 |
-| 39 % at 1.5; four periods halves error; 0.5–5 % damping | OLD l. 1703–1711 |
-| 0.33 % at 11.9; 1.95 % at 3.0; 0.5–1.5 m | OLD l. 1763 |
+| Table 8 (17.6 … 0.08) *(now Table 9; superseded by S05 l. 83–86)* | OLD Table 9 l. 1681 |
+| ≥ 8 → ≈1 %, ≥ 4 → < 4 %; 2.5, 15 % *(≥ 4 → < 4.2 %: S05 l. 89, 92)* | OLD Eq. (22) l. 1697 |
+| 39 % at 1.5; four periods halves error; 0.5–5 % damping *(superseded: S05 l. 95–104)* | OLD l. 1703–1711 |
+| 0.33 % at 11.9; 1.95 % at 3.0; 0.5–1.5 m *(superseded: S05 l. 112–119)* | OLD l. 1763 |
 | 10–30 m, 50–80 km/h, 7–20 | OLD Table 10 and l. 1747 |
 | Table 9 (all entries); 0.61, 0.70 % | OLD Table 11 l. 1789 ff. |
 
@@ -253,7 +275,8 @@ Verification-report items N1–N5: N1, 0.181 is the rounding of 0.181497 in `wp3
 | 2.875, 71.9 %, 0.480l, 72.1 % | OLD l. 377 |
 | μ = 0.750 at ρL = 1/2, 1 at equal spans, 3 at ρL = 2 | OLD l. 589 |
 | Table A.1 | OLD Table 8 l. 1629 |
-| Table B.1 | OLD Table 7 l. 1365 |
+| Table B.1 | OLD Table 7 l. 1365; S04 l. 4–52 |
+| Three-load comparison of Appendix B | S04 l. 54–66 (reproduction block) |
 | Table C.1 | OLD Tables 2 and 4 (l. 1001, 1053) |
 
 ## Declarations
