@@ -98,3 +98,7 @@ Quy tắc chung:
 - **Tạp chí đích: Structural Control and Health Monitoring (Wiley).** Tác giả xác nhận không phải nộp phí; cần kiểm lại ở bước khai báo phí khi nộp (DOAJ ghi APC tối đa 2.370 USD và có chính sách miễn giảm).
 - Dự phòng: Structure and Infrastructure Engineering (cần đổi khung bài sang lập kế hoạch quan trắc và quản lý).
 - Bản làm việc: `manuscript/v2/` → hoàn thiện thành `manuscript/schm/`.
+
+## 8. Quyết định 2026-10-18 (sau phân tích lại NOR-BWIM)
+- Không làm thêm thí nghiệm (phòng lab và hiện trường).
+- Viết v4 trung thực: bài định vị là lý thuyết + tiêu chí thiết kế hệ quan trắc; thí nghiệm tĩnh; NOR-BWIM là kiểm tra phù hợp có giới hạn (không đủ sức phân biệt trọng lượng); bộ ước lượng miễn nhiễm kèm cảnh báo thực nghiệm (hiệp phương sai lúc không xe không chuyển sang lúc có xe); Cầu Mây là ví dụ nhận dạng.
