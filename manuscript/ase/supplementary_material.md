@@ -198,7 +198,7 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 | 2, gauge average (4 gauges) | 0.978 (0.697–1.374) | shown only within ±26.7 % |
 | 2, lane B, average | 0.749 (0.440–1.276) | – (constants fail the $\chi^2$ test, Table S5) |
 
-**Table S7.** Mean absolute error of the gross weight (% of GVW), out of sample, with 95 % bootstrap CIs over the test runs (n = 8 on day 2, n = 7 on day 1). LOTO: calibrated on one truck, tested on the other. The leave-one-run-out columns contain every row of the estimator table of the main text (Table 2).
+**Table S7.** Mean absolute error of the gross weight (% of GVW), out of sample, with 95 % bootstrap CIs over the test runs (8 on day 2, 7 on day 1). LOTO: calibrated on one truck, tested on the other. The leave-one-run-out columns contain every row of the estimator table of the main text (Table 2).
 
 | Estimator | Day 2, leave-one-run-out | Day 2, LOTO | Day 1, 12 gauges | Day 1, 4 wheel-path gauges |
 |---|---|---|---|---|
@@ -361,7 +361,7 @@ The archive `scripts.zip` contains the analysis scripts and the console output o
 
 **Fig. S3.** Structure-aware weighting functions for two equal spans (Section S3): (a) weighting functions along the record, (b) white-noise variance relative to uniform weighting against the range of entry shift, (c) invariance defect, (max − min)/mean of the constant over the axle configurations, under a 20 % rigidity error in the adjacent span or a 0.5 m sensor-position error.
 
-**Fig. S4.** Multi-channel estimation under the assumed noise model: (a) variance with two or three optimally placed sensors relative to the best single sensor, against the common-mode fraction $\rho$ of the offset; (b) standard deviation of the load against the offset level for single sensors and three-sensor designs; (c) zero-sum pair at $\rho = 1$ against the white-noise level. Line style: (a) $k$ = 2 sensors solid, $k$ = 3 dashed; (b) $\rho$ = 0 dotted, 0.9 solid, 1 dashed; thick light lines: single sensor.
+**Fig. S4.** Multi-channel estimation under the assumed noise model: (a) variance with two or three optimally placed sensors relative to the best single sensor, against the common-mode fraction $\rho$ of the offset; (b) standard deviation of the load against the offset level for single sensors and three-sensor designs; (c) zero-sum pair at $\rho = 1$ against the white-noise level. Line style: (a) two sensors solid, three sensors dashed; (b) $\rho$ = 0 dotted, 0.9 solid, 1 dashed; thick light lines: single sensor.
 
 **Fig. S5.** Uniform-load response $C(x)$ along six girders (two-span, three-span and the Mây Bridge girder under calibrations A and B), with the maximum and minimum selected by the placement rule.
 

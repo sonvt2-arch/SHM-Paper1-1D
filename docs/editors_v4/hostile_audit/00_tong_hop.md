@@ -38,3 +38,10 @@ Sau đó: vẽ lại hình (Opus), đóng gói lại scripts.zip (Sonnet), đọ
 - In nghiêng tên tạp chí, "Fig." trong chữ: để Sage biên tập.
 - Tóm tắt 183 từ (dài hơn mục tiêu 150 vì thêm điều kiện phạm vi theo quyết định của thầy).
 - Thứ tự trích bảng S ở bài chính (S10, S11, S13 trước S12) khác Supplementary; Supplementary đã theo thứ tự.
+
+## Đọc mù liền mạch cuối (Opus, sau mọi sửa)
+5 bắt buộc: sửa 2 (ký hiệu k ở Hình S4 đổi thành "2/3 sensors", vẽ lại; n bỏ khỏi chú thích Bảng 2, S7 và Hình 7);
+đóng 3 theo nguồn (Lobo-Aguilar 2023 đúng như Crossref; địa chỉ không dấu theo VII.6; số thập phân Bảng S10 giữ như phiếu cân).
+6 cân nhắc: thầy cho sửa 4 nhóm ("design pier stiffness" thay "calibration A" khi α refit = 1.07; "influence-area identity" ở tóm tắt;
+tách câu dài ở 5.3; nối kết quả GLS với quy tắc ở (ii) và viết gọn mục 2, 3 của thư). Các chỗ sửa này nằm sau lượt đọc cuối; kiem_khoa đạt.
+Ghi chú: điểm A′ ở Hình S15 (α = 1.088, best static α tại k thiết kế) khác α* = 1.07 ở mục 5.3 (refit ở Hình 7b); không gắn hai chỗ với nhau.

@@ -65,9 +65,9 @@ for key in mk:
         ax.semilogy(rh, [float(x["ratio"]) for x in r], ls, marker=mk[key], ms=3.5, lw=1,
                     color=MCOL[key], label=NAME[key] if k == 2 else None)
 for k, ls in ((2, "-"), (3, "--")):
-    ax.plot([], [], ls, color="0.3", lw=1, label=f"k = {k}")
+    ax.plot([], [], ls, color="0.3", lw=1, label=f"{k} sensors")
 ax.set_xlabel(r"common-mode fraction $\rho$")
-ax.set_ylabel(r"Var$_k$/Var$_1$ (GLS)")
+ax.set_ylabel("variance ratio to one sensor (GLS)")
 ax.set_title("(a) gain over the best single sensor", loc="left")
 ax.legend(fontsize=6, frameon=False, loc="lower left")
 ax = axs[1]
@@ -85,7 +85,7 @@ for key, c in (("CM-A", COL["gls"]), ("2S-eq", COL["aux"])):
               lw=2.2, alpha=0.35)
 for key in ("CM-A", "2S-eq"):
     ax.plot([], [], "-", color={"CM-A": COL["gls"], "2S-eq": COL["aux"]}[key], lw=1,
-            label=f"{NAME[key]}, k = 3")
+            label=f"{NAME[key]}, 3 sensors")
 for rho, ls in ((0.0, ":"), (0.9, "-"), (1.0, "--")):
     ax.plot([], [], ls, color="0.3", lw=1, label=f"$\\rho$ = {rho:g}")
 ax.plot([], [], "-", color="0.3", lw=2.2, alpha=0.35, label="single sensor")
