@@ -39,6 +39,7 @@ The following sections describe the scripts written for the SCHM v2 manuscript (
 pip install -r code/supplementary/requirements.txt
 bash code/supplementary/run_all.sh                  # s01-s05, about 3 min, logs -> code/supplementary/logs/
 bash code/supplementary/run_all.sh --with-analysis  # also re-runs the code/analysis scripts (writes inside code/analysis and figures/)
+bash code/supplementary/run_all.sh --v4             # also every manuscript-v4 analysis (theory2, norbwim, v3, fieldplan, v4), about 20 min
 ```
 
 Each script can also be run on its own with `python3 -I code/supplementary/<script>.py`. Isolated mode works because each script puts its own directory on `sys.path`. Units are N and mm unless a script states otherwise (`s05` works in SI). All random numbers come from a fixed seed (`s04`: 20260817).

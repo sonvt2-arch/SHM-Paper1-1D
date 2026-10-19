@@ -3,6 +3,13 @@
 #
 #   bash code/supplementary/run_all.sh                 # s01-s05 (about 3 min)
 #   bash code/supplementary/run_all.sh --with-analysis # also the code/analysis scripts
+#   bash code/supplementary/run_all.sh --v4            # also every analysis of manuscript v4 (about 20 min)
+#
+# --v4 runs, each from its own folder, the scripts of code/theory2 (closed forms,
+# FE checks, multi-channel placement and Monte Carlo, identifiability),
+# code/norbwim (public field records; needs data/public/norbwim_figshare26880898),
+# code/v3, code/fieldplan and the figure scripts of code/v4. Each script writes
+# its own log in its folder (logs/ or results/).
 #
 # --with-analysis re-runs the three-span and Cau May scripts of code/analysis.
 # Those scripts write their own outputs inside the repository
@@ -22,7 +29,7 @@ for s in beam_theory s01_symbolic_two_span s02_quadrature_table3 s03_load_identi
     "$PY" -I -u "$HERE/$s.py" > "$HERE/logs/$s.log" 2>&1
 done
 
-if [[ "${1:-}" == "--with-analysis" ]]; then
+if [[ " $* " == *" --with-analysis "* ]]; then
     mkdir -p "$HERE/logs/analysis"
     cd "$ROOT"
     for s in cm_multispan cm_3span_theory verify_3span; do
@@ -35,5 +42,16 @@ if [[ "${1:-}" == "--with-analysis" ]]; then
     done
     cp code/analysis/logs/wp3_run.log code/analysis/logs/wp4.log \
        code/analysis/logs/wp7b_peps.log "$HERE/logs/analysis/"
+fi
+if [[ " $* " == *" --v4 "* ]]; then
+    run_in() { local d="$1"; shift; for s in "$@"; do
+        echo ">>> code/$d/$s.py"; (cd "$ROOT/code/$d" && "$PY" -u "$s.py" > /dev/null); done; }
+    run_in theory2 gc_theory gc_fe gc_force_method verify_general gc_results gc_figures \
+        multisensor_theory multisensor_placement multisensor_mc multisensor_figures \
+        ident_theory ident_static ident_freq ident_fisher
+    run_in norbwim nb_field nb_v4 nb_tests nb_beam nb_fig1 nb_fe_veb
+    run_in v3 v3_numbers
+    run_in fieldplan fieldplan_compute
+    run_in v4 fig1_beams figS1_lab_il
 fi
 echo "done; logs in $HERE/logs"

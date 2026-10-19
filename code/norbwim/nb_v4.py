@@ -717,10 +717,10 @@ def figures(T1, S, E, SM, NZ, G):
             a.errorbar(x, sub.MAE, yerr=[sub.MAE - sub.MAE_lo, sub.MAE_hi - sub.MAE],
                        fmt=mk, ms=3, capsize=1.5, label=sch)
         a.set_xticks(range(len(order)))
-        a.set_xticklabels([e.replace("single ", "") for e in order], rotation=90,
+        a.set_xticklabels([e.replace("single ", "").replace("immune", "zero-sum") for e in order], rotation=90,
                           fontsize=6.5)
         a.set_title({"day2 4ch": "(a) Day 2, 4 gauges", "day1 wheel-path 4ch": "(b) Day 1, 4 wheel-path gauges",
-                     "day1 12ch": "(c) Day 1, 12 gauges"}[tag], fontsize=8, loc="left")
+                     "day1 12ch": "(c) Day 1, 12 gauges (2 singles shown)"}[tag], fontsize=8, loc="left")
         a.set_ylabel("MAE of GVW (%)")
         a.legend(fontsize=6)
     save(fig, "v4_estimators")
