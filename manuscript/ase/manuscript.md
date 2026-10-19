@@ -12,7 +12,7 @@ E-mail addresses: baonq@huce.edu.vn (Q.-B. Nguyen), sonvt2@huce.edu.vn (T.-S. Vu
 
 ## Abstract
 
-On a continuous girder the influence line of a channel changes sign over the piers, so the area under a record, which gives the total load in influence-area weighing, can vanish. This paper gives criteria for choosing, before installation, channels that observe the total load. Closed forms give the blind loci, where this area vanishes, of five channel types on continuous and haunched girders; strain gauges are blind at every zero of the uniform-load moment and nearly blind in a band that can contain gauges set back from the piers. Optimal sensors lie at the extremes of the uniform-load response, and the integral constant (record integral per unit total load) follows a linear-fractional (Möbius) law in the scaled pier stiffness. A laboratory test confirms the identity. Public moving-truck records, whose reference weights vary too little to test weight discrimination, are consistent with the assumptions of the identity within margins of 10–27 % and show that vehicle-free noise covariance misleads multi-channel weighting. On an in-service box girder, two static readings leave a side-span deflection constant uncertain by a factor of 6.6, whereas the main-span constant is well determined.
+On a continuous girder the influence line of a channel changes sign over the piers, so the area under a record, which gives the total load in influence-area weighing, can vanish. This paper gives criteria for choosing, before installation, channels that observe the total load. Closed forms give the blind loci, where this area vanishes, of five channel types on continuous and haunched girders; strain gauges are blind at every zero of the uniform-load moment and nearly blind in a band that can contain gauges set back from the piers. Optimal sensors lie at the extremes of the uniform-load response, and the integral constant (record integral per unit total load) follows a linear-fractional (Möbius) law in the scaled pier stiffness. A laboratory test is consistent with the identity. Public moving-truck records, whose reference weights vary too little to test weight discrimination, are consistent with the assumptions of the identity within margins of 10–27 % and show that vehicle-free noise covariance misleads multi-channel weighting. On an in-service box girder, two static readings leave a side-span deflection constant uncertain by a factor of 6.6, whereas the main-span constant is well determined.
 
 **Keywords:** Structural health monitoring; Sensor placement; Observability; Continuous girder; Bridge weigh-in-motion; Identifiability
 
@@ -42,13 +42,13 @@ Its integral over the complete crossing is
 
 $$J_m=\int_0^{L_p+d_\mathrm{max}}y_m\,\mathrm{d}x=P_\mathrm{tot}\,C_m,\qquad C_m=\int_0^{L_p}\eta_m(u)\,\mathrm{d}u=\frac{y_m[q_0]}{q_0}, \tag{2}$$
 
-where $P_\mathrm{tot}$ is the total load and $y_m[q_0]$ the response to a uniform load $q_0$ over the whole path. This is the classical influence-area identity (Ojio and Yamada, 2002; Ghali et al., 2017); the second equality, $C_m = y_m[q_0]/q_0$, needs superposition only. $C_m$ is called the integral constant, or the constant, and a channel is blind where $C_m = 0$. For a strain gauge at distance $c_m$ from the neutral axis of a section of rigidity $EI_m$ at $x_m$,
+where $d_\mathrm{max}$ is the largest axle offset, $P_\mathrm{tot}$ the total load and $y_m[q_0]$ the response to a uniform load $q_0$ over the whole path. This is the classical influence-area identity (Ojio and Yamada, 2002; Ghali et al., 2017); the second equality, $C_m = y_m[q_0]/q_0$, needs superposition only. $C_m$ is called the integral constant, or the constant, and a channel is blind where $C_m = 0$. For a strain gauge at distance $c_m$ from the neutral axis of a section of rigidity $EI_m$ at $x_m$,
 
 $$C_\varepsilon=\frac{c_m\,M_q(x_m)}{EI_m\,q_0}. \tag{3}$$
 
 The section enters only as a gain, so a strain channel is blind exactly at the zeros of the uniform-load moment diagram $M_q$, for any $EI(x)$ and any elastic supports. The beam-property method (BPM) computes $C$ from a structural model and returns the estimate $P = J/C$ of $P_\mathrm{tot}$; SLM takes the constant from a reference crossing of known weight $P_0$ and returns $P_t = P_0J_t/J_0$ (Ojio and Yamada, 2002).
 
-Eq. (2) assumes a linear, time-invariant structure, a quasi-static response, axles on the path on which $\eta_m$ is defined (so each lane has its own constant), a complete crossing and re-zeroing to the unloaded state; Sections 3, 4 and 6 test these assumptions, and truncating the record when the first axle leaves changes the rotation integral by up to 59 % on a two-span example (Supplementary Section S3).
+Eq. (2) assumes a linear, time-invariant structure, a quasi-static response, axles on the path on which $\eta_m$ is defined (so each lane has its own constant), a complete crossing and re-zeroing to the unloaded state; Sections 3, 4 and 6 test these assumptions. The complete crossing matters: truncating the record when the first axle leaves changes the rotation integral by up to 59 % on a two-span example (Supplementary Section S3).
 
 ### 2.2. Closed-form blind loci
 
@@ -72,7 +72,7 @@ For a mid side-span sensor on a symmetric three-span beam of uniform rigidity, t
 
 $$\beta_\mathrm{crit}=\sqrt{10/3}\,\cos\!\Big[\tfrac13\arccos\!\Big(\tfrac25\sqrt{6/5}\Big)\Big]=1.7006. \tag{8}$$
 
-The locus ends at $\beta = 2\cos(\pi/9) = 1.8794$. A channel is called near-blind when its indicator (Section 2.3) is below 0.2 in magnitude; for this gauge the near-blind band is $1.621<\beta<1.775$ (Fig. 2). Derivations and optimal side-span positions are in Supplementary Section S2 and Table S2, and all closed forms agree with finite element (FE) evaluations of Eq. (2) in 981 checks (Supplementary Section S3).
+The blind locus over all side-span positions ends at $\beta = 2\cos(\pi/9) = 1.8794$. A channel is called near-blind when its indicator (Section 2.3) is below 0.2 in magnitude; for this gauge the near-blind band is $1.621<\beta<1.775$ (Fig. 2). Derivations and optimal side-span positions are in Supplementary Section S2 and Table S2, and all closed forms agree with finite element (FE) evaluations of Eq. (2) in 981 checks (Supplementary Section S3).
 
 For strain, with $(\bar M_l, \bar M_r) = (0, \mu)$, the indicator and the blind point $\xi_0$ are
 
@@ -85,7 +85,7 @@ Strain blind points exist in every span that has a sagging zone ($\mu<4$), so ev
 | Channel | Blind where | Two-span beam (span 1) | Symmetric three-span beam |
 |---|---|---|---|
 | Strain, moment, curvature | zeros of $M_q$ | $\xi_0 = 1-\mu/4$ (0.75 at $\lambda = 1$); band $0.676<\xi<0.812$ at $\lambda = 1$ | side: $\xi_0 = 1-\mu/4$; main: $\zeta_0=\tfrac12(1-\sqrt{1-\mu/\beta^2})$ from the pier (0.276 at $\beta = 1$) |
-| Deflection | zeros of the uniform-load deflection $w_q$ | $\mu = \mu_\mathrm{crit}(\xi)$, only for $1<\mu<2$; mid-span: $\lambda = 1.4574$, band $1.385<\lambda<1.525$ | mid side span: $\beta = 1.7006$, band $1.621<\beta<1.775$; locus ends at $\beta = 1.8794$ |
+| Deflection | zeros of the uniform-load deflection $w_q$ | $\mu = \mu_\mathrm{crit}(\xi)$, only for $1<\mu<2$; mid-span: $\lambda = 1.4574$, band $1.385<\lambda<1.525$ | mid side span: $\beta = 1.7006$, band $1.621<\beta<1.775$; locus over all side-span positions ends at $\beta = 1.8794$ |
 | Rotation | extrema of $w_q$ | end: $\mu = 2$ ($\lambda = 1.6180$); pier: $\lambda = 1$ for any $\gamma$ | end: $\beta = 2\cos(\pi/9)$; pier: $\beta = \sqrt{3/2}$ for any $\gamma$; mid main span: always |
 | Shear | maxima of $M_q$ | $\xi = \xi_0/2$ | side: $\xi_0/2$; mid main span: always |
 | End reaction | no sagging zone in the end span | $\mu = 4$ ($\lambda = 2.3028$) | $\mu = 4$ ($\beta = 2.6691$) |
@@ -143,7 +143,7 @@ Eq. (16) replaces $\mu_\mathrm{3span}$ in Eq. (5). In the main span the end-mome
 
 A static test on a two-span beam checks the model and the algorithm, not performance under moving traffic. A steel hollow square tube, 25 mm × 25 mm × 2.03 mm ($I = 16\,530$ mm⁴, $E = 200$ GPa), formed two equal spans of 2500 mm, giving $C_m = l^4/(192EI) = 61.54$ mm²/N at mid-span of the first span ($l$ the span length). Deflection there was measured with 0.005 mm resolution while calibrated weights of OIML class M1 were suspended at 250 mm steps: a single 40.64 N reference load, two loads 250 mm apart, and three loads. The order of the three loads was not recorded; the order used fits the record best (root-mean-square residual 0.030 mm against 0.55 mm for the reversed order), so the three-load result is not a fully independent test.
 
-The analytical influence line matched the single-load record within 0.0126 mm, 0.44 % of the peak. With the trapezoidal rule, BPM overestimated the weighed totals of 66.99 N and 125.08 N by 1.10 % and 1.19 %, and SLM by 0.61 % and 0.70 % (Supplementary Table S3). The BPM-to-SLM ratio equals 1.0049, the ratio of the measured reference integral to its exact value: SLM absorbs the calibration error of the reference record, whereas BPM does not. The SLM deviations match the growth of the measured-to-analytical integral ratio (1.010, 1.016 and 1.017 for one, two and three loads), which the data cannot attribute to support seating or to the stated masses. The test supports the invariance of Eq. (2) only indirectly, and the predicted blind configuration (spans of 2500 mm and 3644 mm) was not tested.
+The analytical influence line matched the single-load record within 0.0126 mm, 0.44 % of the peak. With the trapezoidal rule, BPM overestimated the weighed totals of 66.99 N and 125.08 N by 1.10 % and 1.19 %, and SLM by 0.61 % and 0.70 % (Supplementary Table S3). The BPM-to-SLM ratio equals 1.0049, the ratio of the measured reference integral to its exact value: SLM absorbs the calibration error of the reference record, whereas BPM does not. The SLM deviations match the growth of the measured-to-analytical integral ratio (1.010, 1.016 and 1.017 for one, two and three loads), which the data cannot assign to either support seating or the stated masses. The test supports the invariance of Eq. (2) only indirectly, and the predicted blind configuration (spans of 2500 mm and 3644 mm) was not tested.
 
 ---
 

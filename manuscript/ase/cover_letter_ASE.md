@@ -16,7 +16,7 @@ Monitoring the loads that a bridge actually carries is often done with few chann
 2. a placement rule, optimal sensors at the extremes of the uniform-load response, together with a field finding from public moving-truck records that weighting gauges by their vehicle-free noise covariance raises the out-of-sample error above that of a plain gauge average;
 3. an identifiability analysis under uncertain pier stiffness, in which the constant follows a linear-fractional (Möbius) law, applied to an in-service 55 + 90 + 55 m box girder: its side-span deflection constant is not identifiable from static acceptance data, the main-span constant is, and a pier tiltmeter is the most informative additional measurement.
 
-A laboratory test confirms the identity. The field records are used to check the assumptions behind the criteria; they cannot test weight discrimination, because their reference weights vary little, and the manuscript states this. The moving-load test of the in-service bridge is designed but not yet performed, and its predicted outcomes are given so that they can be checked.
+A laboratory test is consistent with the identity. The field records are used to check the assumptions behind the criteria; they cannot test weight discrimination, because their reference weights vary little, and the manuscript states this. The moving-load test of the in-service bridge is designed but not yet performed, and its predicted outcomes are given so that they can be checked.
 
 The manuscript builds on bridge weigh-in-motion work published in this journal, including the review by Yu, Cai and Deng (2016). It is about 11,000 word-equivalents with 7 figures and 4 tables; derivations, full field tables and the error budget are in the Supplementary Material.
 
