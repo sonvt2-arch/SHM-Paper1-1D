@@ -28,7 +28,7 @@ def size(f):
 out = []
 def cites(b):
     ns = []
-    for m in re.finditer(r"Figs?\.\s*((?:\d+[a-z]?(?:\s*(?:,|and|–|-)\s*)?)+)", b):
+    for m in re.finditer(r"(?:Figs?\.|Figures?)\s*((?:\d+[a-z]?(?:\s*(?:,|and|–|-)\s*)?)+)", b):
         for x in re.findall(r"\d+", m.group(1)):
             ns.append(int(x))
     return ns

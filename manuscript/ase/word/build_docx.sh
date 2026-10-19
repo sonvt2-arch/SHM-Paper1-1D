@@ -21,5 +21,8 @@ if [[ -f "$S/cover_letter_ASE.md" ]]; then
 fi
 if [[ "${1:-}" == "--pdf" ]]; then
   for f in "$W"/*.docx; do soffice --headless --convert-to pdf --outdir "$W" "$f" >/dev/null 2>&1 || true; done
+  # LibreOffice drops OMML silently when libreoffice-math is missing; fail loudly instead
+  n=$(pdftotext "$W/Manuscript_ASE.pdf" - | grep -o 'β\|μ\|κ' | wc -l)
+  if [[ "$n" -lt 20 ]]; then echo "ERROR: equations missing in Manuscript_ASE.pdf (install libreoffice-math)" >&2; exit 1; fi
 fi
 echo "Built in $W"

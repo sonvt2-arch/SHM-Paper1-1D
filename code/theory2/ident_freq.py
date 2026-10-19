@@ -178,7 +178,8 @@ def main():
     mis = np.maximum(abs(np.log(m8) - lp8), abs(np.log(m7) - lp7)) * 100
     fig, ax = plt.subplots(figsize=(6.8, 4.8), constrained_layout=True)
     cs = ax.contourf(A, LK, mis, levels=[0, 3, 4, 5, tau_rec * 100, 6, 8, 12, 20, 40], cmap="Greys_r", extend="max")
-    cb = fig.colorbar(cs, ax=ax)
+    cb = fig.colorbar(cs, ax=ax, format=matplotlib.ticker.FuncFormatter(
+        lambda v, _: f"{v:.0f}" if abs(v - round(v)) < 1e-9 else f"{v:.2f}"))
     cb.set_label("static misfit max$_j$|ln(meas/pred)| (%)")
     cols = {"low": "#2a9d8f", "base": "#d0563b", "high": "#3b6fb6"}
     for c in ("low", "base", "high"):
@@ -191,17 +192,15 @@ def main():
             c1 = ax.contour(A, LK, F1, levels=[1.4, 1.6, 1.8, 2.0], colors="#e9c46a", linewidths=0.7)
             ax.clabel(c1, fmt=lambda v: f"f1={v:.1f}", fontsize=6)
     ax.plot([1.0], [np.log10(K_FE)], "o", color="#d0563b", mfc="none", ms=6)
-    ax.text(1.0, np.log10(K_FE) - 0.25, "A", color="#d0563b")
+    ax.text(0.955, np.log10(K_FE) - 0.3, "A", color="#d0563b")
     ax.plot([1.088], [np.log10(K_FE)], "o", color="#d0563b", ms=4)
     ax.text(1.1, np.log10(K_FE) + 0.08, "A'", color="#d0563b")
     ax.plot([0.716], [np.log10(1.199e8)], "s", color="#3b6fb6", ms=5)
-    ax.text(0.73, np.log10(1.199e8) + 0.08, "B", color="#3b6fb6")
+    ax.text(0.665, np.log10(1.199e8) - 0.3, "B", color="#3b6fb6")
     ax.plot(np.exp(r["lnalpha"]), np.log10(KAPPA * np.exp(r["lnalpha"])), color="w", lw=0.8, ls=":")
     ax.set_ylim(6, 11)
     ax.set_xlabel("$\\alpha = EI_{eff}/EI_{design}$")
     ax.set_ylabel("log$_{10}$ k (kN m/rad)")
-    ax.set_title("f3 contours = measured band 3.43 (dashed) / 3.64 Hz (solid); mass low/base/high = green/red/blue",
-                 fontsize=7.5)
     fig.savefig(os.path.join(FIGD, "ident_alpha_k_map.png"), dpi=200)
     plt.close(fig)
 
@@ -210,11 +209,12 @@ def main():
         for i, col in zip(range(3), ("k", "#3b6fb6", "#d0563b")):
             ax.semilogx(kap, fh[c][:, i], color=col, ls=ls, lw=1.0,
                         label=f"f{i+1}" if c == "base" else None)
-    ax.axhspan(fb[0], fb[1], color="#2a9d8f", alpha=0.2, lw=0, label="measured N6-N8")
+    ax.axhspan(fb[0], fb[1], color="#2a9d8f", alpha=0.2, lw=0, label="measured band")
     ax.set_xlabel("$\\kappa = k/\\alpha$ (kN m/rad)")
-    ax.set_ylabel("f (Hz) at $\\alpha$ = 1, e$_d$ = 1")
-    ax.set_title("solid base mass, dotted low, dashed high; scale by $\\sqrt{\\alpha e_d/\\gamma}$", fontsize=8)
-    ax.legend(fontsize=7, ncol=4)
+    ax.set_ylabel("f (Hz) at $\\alpha$ = 1")
+    for lab, ls in (("base mass", "-"), ("low mass", ":"), ("high mass", "--")):
+        ax.plot([], [], color="0.4", ls=ls, lw=1.0, label=lab)
+    ax.legend(fontsize=7, ncol=2, loc="lower right")
     fig.savefig(os.path.join(FIGD, "ident_freq_vs_kappa.png"), dpi=200)
     plt.close(fig)
     log.save()

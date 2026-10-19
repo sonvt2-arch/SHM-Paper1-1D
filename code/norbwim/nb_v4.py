@@ -684,7 +684,8 @@ def figures(T1, S, E, SM, NZ, G):
         a.set_ylim(0.4, 1.6)
     save(fig, "v4_invariance")
     # noise correlation
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.3), gridspec_kw={"width_ratios": [3, 2]})
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.3), gridspec_kw={"width_ratios": [3, 2]},
+                            layout="constrained")
     for a, day, chans in [(axs[0], 1, CH1), (axs[1], 2, CH2)]:
         R = np.corrcoef(NZ[day][NZ[day]["Tref"]].T)
         im = a.imshow(R, vmin=-1, vmax=1, cmap="RdBu_r")
@@ -693,13 +694,13 @@ def figures(T1, S, E, SM, NZ, G):
         a.set_xticklabels(chans, rotation=90, fontsize=7)
         a.set_yticklabels(chans, fontsize=7)
         a.grid(False)
-        a.set_title(f"Day {day}: correlation of vehicle-free integrals, "
-                    f"T = {NZ[day]['Tref']} s", fontsize=7)
+        a.set_title(f"({'a' if day == 1 else 'b'}) Day {day}, T = {NZ[day]['Tref']} s",
+                    fontsize=8, loc="left")
         if day == 2:
             for i in range(4):
                 for j in range(4):
                     a.text(j, i, f"{R[i,j]:.2f}", ha="center", va="center", fontsize=7)
-    fig.colorbar(im, ax=axs, shrink=0.8)
+    fig.colorbar(im, ax=axs, shrink=0.8, label="correlation")
     fig.savefig(os.path.join(FIG, "v4_noise_corr.png"), dpi=300)
     fig.savefig(os.path.join(FIG, "v4_noise_corr.pdf"))
     plt.close(fig)
@@ -717,10 +718,11 @@ def figures(T1, S, E, SM, NZ, G):
             a.errorbar(x, sub.MAE, yerr=[sub.MAE - sub.MAE_lo, sub.MAE_hi - sub.MAE],
                        fmt=mk, ms=3, capsize=1.5, label=sch)
         a.set_xticks(range(len(order)))
-        a.set_xticklabels([e.replace("single ", "").replace("immune", "zero-sum") for e in order], rotation=90,
+        a.set_xticklabels([e.replace("single ", "").replace("immune", "zero-sum")
+                            .replace("mean-GVW", "mean weight") for e in order], rotation=90,
                           fontsize=6.5)
         a.set_title({"day2 4ch": "(a) Day 2, 4 gauges", "day1 wheel-path 4ch": "(b) Day 1, 4 wheel-path gauges",
-                     "day1 12ch": "(c) Day 1, 12 gauges (2 singles shown)"}[tag], fontsize=8, loc="left")
+                     "day1 12ch": "(c) Day 1, 12 gauges"}[tag], fontsize=8, loc="left")
         a.set_ylabel("MAE of GVW (%)")
         a.legend(fontsize=6)
     save(fig, "v4_estimators")
@@ -734,9 +736,11 @@ def figures(T1, S, E, SM, NZ, G):
             if m.any():
                 a.plot(df.v1.values[m], y[m], "o", color=col, ms=4, label=tk)
         r = S[(S.group == g) & (S.channel == c) & (S.model == "truck+v")].iloc[0]
-        a.set_title(f"{'Day 1' if g == 'd1A' else 'Day 2'} {c}: slope|truck "
-                    f"{r.slope_pct_10ms:+.0f} [{r.ci95_lo:+.0f},{r.ci95_hi:+.0f}] %/10 m/s",
-                    fontsize=6.5)
+        k = "abc"[list(axs).index(a)]
+        a.set_title(f"({k}) {'Day 1' if g == 'd1A' else 'Day 2'}, "
+                    f"{'gauge average' if c == 'avg' else 'gauge ' + c}\nslope within truck "
+                    f"{r.slope_pct_10ms:+.0f} [{r.ci95_lo:+.0f}, {r.ci95_hi:+.0f}] %/10 m/s",
+                    fontsize=7)
         a.set_xlabel("speed (m/s)")
         a.set_ylabel(r"$C$ ($\mu\varepsilon$ m/t)")
         a.legend(fontsize=6)

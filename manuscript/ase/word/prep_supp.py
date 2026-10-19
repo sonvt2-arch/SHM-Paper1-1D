@@ -20,7 +20,7 @@ for b in blocks:
     out.append(b)
     if b.lstrip().startswith(("#", "|", "$$", "**Table")):
         continue
-    for m in re.finditer(r"Figs?\.\s*((?:S\d+[a-z]?(?:\s*(?:,|and|–|-)\s*)?)+)", b):
+    for m in re.finditer(r"(?:Figs?\.|Figures?)\s*((?:S\d+[a-z]?(?:\s*(?:,|and|–|-)\s*)?)+)", b):
         for x in re.findall(r"S(\d+)", m.group(1)):
             n = int(x)
             if n in CAP and n not in placed:
