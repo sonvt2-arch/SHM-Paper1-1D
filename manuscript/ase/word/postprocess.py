@@ -95,6 +95,24 @@ for t in d.tables:
         cs = OxmlElement("w:cantSplit"); row._tr.get_or_add_trPr().append(cs)
     for tc in t.rows[0]._tr.findall(qn("w:tc")):  # header bottom rule
         borders(tc.get_or_add_tcPr(), {"bottom": 6})
+# upright (sty p) multi-letter subscripts such as "tot", "max": pandoc writes one
+# math run per letter; merge neighbouring runs with identical properties so
+# Word shows and edits them as one upright word
+from lxml import etree
+M = "{http://schemas.openxmlformats.org/officeDocument/2006/math}"
+def _props(r):
+    p = r.find(M + "rPr")
+    return etree.tostring(p) if p is not None else b""
+for parent in list(d.element.body.iter(M + "sub", M + "sup", M + "e", M + "oMath", M + "num", M + "den")):
+    runs = [c for c in parent if c.tag == M + "r"]
+    for a in runs:
+        b = a.getnext()
+        while b is not None and b.tag == M + "r" and a.getparent() is not None and _props(a) == _props(b) and b"sty" in _props(a):
+            ta, tb = a.find(M + "t"), b.find(M + "t")
+            if ta is None or tb is None or not (ta.text or "").isalpha() or not (tb.text or "").isalpha():
+                break
+            ta.text += tb.text
+            nb = b.getnext(); parent.remove(b); b = nb
 # table titles stay with their table; figures stay with their captions
 for par in d.paragraphs:
     if re.match(r"Table S?\d+\.", par.text.strip()):

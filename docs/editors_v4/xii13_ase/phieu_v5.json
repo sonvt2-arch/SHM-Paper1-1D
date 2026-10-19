@@ -1,0 +1,12 @@
+{
+  "ngon_ngu": "en",
+  "ngay": "2026-10-19",
+  "van_ban": "Bai + Supplementary + thu (sau khi rut tom tat, them 4 bai ASE, dien ngay nop)",
+  "tong_ket": {"cam_giac_chung": "The text is dense but reads cleanly, with defined terms and consistent American spelling; I stumbled in only a few places: one British spelling, one pair of competing names for the same method, and two sentences I had to reread.", "so_muc_bat_buoc": 2, "so_muc_can_nhac": 2},
+  "phieu": [
+    {"stt": 1, "loai": 2, "muc": "bat_buoc", "vi_tri": "bai bao, muc 4.1; Supplementary S7", "trich": "The weights vary by only a few per cent within each day.", "van_de": "British 'per cent' in an American-spelling text.", "goi_y": "a few percent", "xu_ly": "Da sua ca 2 cho"},
+    {"stt": 2, "loai": 3, "muc": "bat_buoc", "vi_tri": "bai bao, muc 6; Supplementary S10", "trich": "flagged vehicles should be weighed by instrumented BWIM; influence-line BWIM does not suffer the blindness of Table 1", "van_de": "Two names for the same method.", "goi_y": "influence-line BWIM", "xu_ly": "Da sua ca 2 cho, dung 'influence-line BWIM'"},
+    {"stt": 3, "loai": 1, "muc": "can_nhac", "vi_tri": "bai bao, muc 4.2", "trich": "The constant of ch11 is 3.9 times that of ch8, ... so a spread of gauge factors is an unlikely cause of the differences between gauges.", "van_de": "Too many clauses.", "xu_ly": "Thay chon tach thanh ba cau"},
+    {"stt": 4, "loai": 1, "muc": "can_nhac", "vi_tri": "Abstract", "trich": "Public moving-truck records, whose weights vary too little to test weight discrimination", "van_de": "'whose' attaches to records, not trucks.", "xu_ly": "Thay chon sua; khi rut tom tat ve ~165 tu cau duoc viet lai thanh 'Public moving-truck records are consistent with its assumptions within 10–27 % but vary too little in weight to test weight discrimination'"}
+  ]
+}

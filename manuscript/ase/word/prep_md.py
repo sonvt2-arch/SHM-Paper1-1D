@@ -19,6 +19,12 @@ title = "::: {custom-style=\"Title\"}\n" + tl[0].lstrip("# ").strip() + "\n:::\n
 blocks = rest.split("\n\n")
 body_end = next(i for i, b in enumerate(blocks) if b.startswith("## Acknowledgements"))
 placed = set()
+def size(f):
+    # 14 cm wide, but tall figures are capped at 12 cm high so they fit the
+    # space left on a page and do not leave half a page blank before them
+    from PIL import Image
+    w, h = Image.open(f).size
+    return "width=14cm" if 14 * h / w <= 12 else "height=12cm"
 out = []
 def cites(b):
     ns = []
@@ -34,7 +40,7 @@ for i, b in enumerate(blocks):
         if n in CAP and n not in placed:
             placed.add(n)
             style = "Caption centred" if len(CAP[n]) < 90 else "Caption justified"
-            out.append(f"::: {{custom-style=\"Figure\"}}\n![]({FILES[n]}){{width=14cm}}\n:::")
+            out.append(f"::: {{custom-style=\"Figure\"}}\n![]({FILES[n]}){{{size(FILES[n])}}}\n:::")
             out.append(f"::: {{custom-style=\"{style}\"}}\n**Figure {n}.** {CAP[n]}\n:::")
 missing = sorted(set(CAP) - placed)
 assert not missing, f"figures never cited in body: {missing}"
