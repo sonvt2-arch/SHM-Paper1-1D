@@ -214,7 +214,7 @@ def main():
     ax.set_ylabel("$r_{87}$ = (meas/pred)$_{N8}$ / (meas/pred)$_{N7}$")
     ax.set_ylim(0.98, 1.16)
     ax.legend(fontsize=7, loc="upper right")
-    ax.set_title("(a) ratio misfit; grey: model-form variants (L$_v$, n, rigid pier zone)", fontsize=8, loc="left")
+    ax.set_title("(a) misfit ratio; gray: model-form variants (L$_v$, n, rigid pier zone)", fontsize=8, loc="left")
     ax = axs[1]
     ax.semilogx(KAPPA, norm_index(r["C8"], 55), "k", label="N8 index, EI$_{ref}$ = $\\alpha$EI$_{mid}$")
     ax.semilogx(KAPPA, norm_index(r["C8"], 55) / np.exp(r["lnalpha"]), "k--", lw=0.9,
@@ -230,7 +230,7 @@ def main():
     ax.set_ylabel("index")
     ax.legend(fontsize=6.5, ncol=2)
     ax.set_title("(b) indicators along the static valley $\\alpha^*(\\kappa)$", fontsize=8, loc="left")
-    fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.png"), dpi=200)
+    fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.png"), dpi=300)
     fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.pdf"))
     plt.close(fig)
     log.save()

@@ -130,7 +130,7 @@ for a_, spl, title in ((ax[0], th.two_span(1.0), "(a) equal two-span beam"),
     for xs in np.cumsum([0] + [s_[0] for s_ in spl]):
         a_.axvline(xs / spl[0][0], color="0.4", lw=0.6)
     a_.set_xlabel(r"$x/L_1$" if len(spl) == 2 else r"$x/L_\mathrm{side}$")
-    a_.set_ylabel("normalised constant (1 = simply supported reference)")
+    a_.set_ylabel("normalized constant (1 = simply supported reference)")
     a_.set_title(title); a_.set_ylim(-2.2, 1.6); a_.grid(alpha=0.25)
 ax[0].legend(fontsize=7.5, loc="lower left")
 save(fig, "fig_gc_channels_prismatic")

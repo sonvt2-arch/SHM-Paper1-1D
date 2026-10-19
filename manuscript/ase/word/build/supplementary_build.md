@@ -25,9 +25,9 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 | $C_0$, $C_\infty$ | integral constant for pinned and for fixed piers at $\alpha = 1$, Eq. (15) |
 | $C_m$ | integral constant of the channel at $m$, Eq. (2) (m²/kN for deflection); called "the constant" in the text |
 | $C_\varepsilon$, $C_\theta$, $C_V$ | integral constant of a strain, rotation and shear channel |
-| $c$ | distance of the gauged fibre from the neutral axis (m) |
+| $c$ | distance of the gauged fiber from the neutral axis (m) |
 | $d_i$ | distance of axle $i$ behind the first axle (m) |
-| $EI$, $EI_\mathrm{mid}$, $EI_\mathrm{ref}$ | flexural rigidity; design value at mid main span; reference rigidity used to normalise $N_w$ (kN m²) |
+| $EI$, $EI_\mathrm{mid}$, $EI_\mathrm{ref}$ | flexural rigidity; design value at mid main span; reference rigidity used to normalize $N_w$ (kN m²) |
 | $F_A$ | end-support reaction (kN) |
 | $f_1$, $T_1$ | fundamental frequency and period of the girder |
 | $g(x)$ | weighting function applied along a record |
@@ -41,7 +41,7 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 | $L_p$ | length of the loaded path (m) |
 | $L_\mathrm{tot}$ | length of the integration record (m) |
 | $M_q$ | bending moment under a uniform load $q_0$ over the whole path |
-| $\bar M_l$, $\bar M_r$ | normalised end moments $-8M/(q_0L^2)$ at the left and right ends of a span (positive for hogging) |
+| $\bar M_l$, $\bar M_r$ | normalized end moments $-8M/(q_0L^2)$ at the left and right ends of a span (positive for hogging) |
 | $N_w$, $N_M$ | deflection and strain (moment) indicators, Eqs. (10) and (9) |
 | $N_\theta$, $N_V$, $N_F$ | rotation, shear and end-reaction indicators (Section 2.2, Section S3) |
 | $P_\mathrm{tot}$, $P_0$ | total load of a crossing; weighed reference load (kN) |
@@ -67,12 +67,12 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 | $\sigma_{P,\mathrm{noise}}$ | standard deviation of the load estimate caused by white noise |
 | $\tau$ | tolerance on the static misfit of a gauge |
 | $\xi$ | sensor position as a fraction of its span |
-| BPM | beam-property method: load = record integral / modelled constant |
+| BPM | beam-property method: load = record integral / modeled constant |
 | SLM | standard-load method: constant taken from a crossing of known weight |
 | WIM, BWIM, NOR | weigh-in-motion; bridge weigh-in-motion; Nothing-on-Road (no sensors on the road surface) |
 | CI, CV, MAE, SD | confidence interval; coefficient of variation; mean absolute error; standard deviation |
 | FE | finite element |
-| GLS | generalised least squares |
+| GLS | generalized least squares |
 | GUM | Guide to the Expression of Uncertainty in Measurement |
 | GVW | gross vehicle weight |
 | LOO, LOTO | leave-one-run-out and leave-one-truck-out cross-validation |
@@ -83,7 +83,7 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 
 ## S2. Closed forms for two- and three-span beams
 
-For unequal spans the uniform-load support moment of a two-span beam is $M_B = -q_0(L_1^3/EI_1+L_2^3/EI_2)/[8(L_1/EI_1+L_2/EI_2)]$. Superposing the simply supported uniform-load deflection of span 1 and the deflection due to $M_B$, evaluating at $x_m$ and dividing by $q_0$ gives Eq. (5) with $\mu = -8M_B/(q_0L_1^2)$, which is $\mu_\mathrm{2span}$ of Eq. (4). Because $1-2\xi^2+\xi^3 = (1-\xi)(1+\xi-\xi^2)$, setting $F = 0$ gives Eq. (6). With uniform rigidity, the blind condition for a mid-span sensor is $3\lambda^2-3\lambda-2=0$, and maximising $F$ over $\xi$ at $\mu = 1$ gives $8\xi^2-\xi-1=0$, hence Eq. (7). In units of $L_1^4/(192EI_1)$, the positive contribution of the instrumented span varies only between 1.50 and 2.00 for $\lambda$ from 0.5 to 2.0, whereas the negative contribution of the adjacent span sweeps from −0.125 to −4.00; the cancellation is driven almost entirely by the adjacent span.
+For unequal spans the uniform-load support moment of a two-span beam is $M_B = -q_0(L_1^3/EI_1+L_2^3/EI_2)/[8(L_1/EI_1+L_2/EI_2)]$. Superposing the simply supported uniform-load deflection of span 1 and the deflection due to $M_B$, evaluating at $x_m$ and dividing by $q_0$ gives Eq. (5) with $\mu = -8M_B/(q_0L_1^2)$, which is $\mu_\mathrm{2span}$ of Eq. (4). Because $1-2\xi^2+\xi^3 = (1-\xi)(1+\xi-\xi^2)$, setting $F = 0$ gives Eq. (6). With uniform rigidity, the blind condition for a mid-span sensor is $3\lambda^2-3\lambda-2=0$, and maximizing $F$ over $\xi$ at $\mu = 1$ gives $8\xi^2-\xi-1=0$, hence Eq. (7). In units of $L_1^4/(192EI_1)$, the positive contribution of the instrumented span varies only between 1.50 and 2.00 for $\lambda$ from 0.5 to 2.0, whereas the negative contribution of the adjacent span sweeps from −0.125 to −4.00; the cancellation is driven almost entirely by the adjacent span.
 
 For the symmetric three-span beam the three-moment equation gives $M_B = M_C = -q_0L_\mathrm{side}^2\mu/8$ with $\mu_\mathrm{3span}$ of Eq. (4). Three equal spans give $\mu = 4/5$. The optimal side-span position solves $8\xi^3-(12-3\mu)\xi^2+(2-\mu)=0$ (Table S2). The near-blind band at mid side span runs from the root of $30\beta^3-69\beta-16=0$ (1.621) to that of $10\beta^3-27\beta-8=0$ (1.775). A mid main-span deflection sensor is blind at $\beta = 0.9647$. For a sensor at $\zeta = x/L_\mathrm{main}$ in the main span, $192EI_\mathrm{main}C_m/L_\mathrm{main}^4 = 8[\zeta(1-2\zeta^2+\zeta^3)-\nu\zeta(1-\zeta)]$ with $\nu = 3(\gamma+\beta^3)/[\beta^2(2\gamma+3\beta)]$. For $\beta = 1.636$ the strain blind point in the main span lies at $\zeta_0 = 0.177$ from the pier.
 
@@ -122,7 +122,7 @@ Strain blind-locus maps. Figs. S1 and S2 map the strain indicator $N_M$ over the
 
 For a prismatic span with end-moment parameters $\bar M_l$, $\bar M_r$ and $\xi = x/L$, the indicators are $N_w = 8\Phi$ with $\Phi = \xi(1-2\xi^2+\xi^3)-\tfrac{\bar M_l}{2}(2\xi-3\xi^2+\xi^3)-\tfrac{\bar M_r}{2}(\xi-\xi^3)$, $N_\theta = 24EI\,C_\theta/L^3 = \Phi'(\xi)$, $N_M$ of Eq. (9) and $N_V = 2C_V/L = 1-2\xi+(\bar M_l-\bar M_r)/4$. $N_\theta$, $N_M$ and $N_V$ equal 1 for the simply supported reference (end rotation, mid-span moment, end shear). $N_w$ equals 2.5 at a simply supported mid-span and 1 at mid-span of each span of an equal two-span beam. For the two-span beam, $(\bar M_l, \bar M_r) = (0, \mu)$ in span 1 and $(\mu/\lambda^2, 0)$ in span 2; for the symmetric three-span beam, $(0, \mu)$ in the side span and $(\mu/\beta^2, \mu/\beta^2)$ in the main span with pinned piers; with pier springs, $\mu$ follows from Eq. (16) and the main-span values from $\bar M_\mathrm{main}$ in Section 2.5. Strain zeros solve $4\xi^2-(4+\bar M_l-\bar M_r)\xi+\bar M_l=0$.
 
-All closed forms of Section 2.2 agree with FE evaluations of Eq. (2) in 981 checks, with a maximum error of 8.1 × 10⁻¹¹ on the normalised indicators. The verification covered two-span, symmetric and asymmetric three-span and four-span beams, zero-moment positions, ten blind configurations, the identity for a two-truck convoy on piecewise-prismatic girders with elastic pier springs (relative error 2.8 × 10⁻⁹), and the haunched Cầu Mây FE against an independent force-method solution (5.4 × 10⁻¹⁰). Truncating the record when the first axle leaves changed the integral by up to 59 % (rotation) and 10 % (moment) on the two-span example.
+All closed forms of Section 2.2 agree with FE evaluations of Eq. (2) in 981 checks, with a maximum error of 8.1 × 10⁻¹¹ on the normalized indicators. The verification covered two-span, symmetric and asymmetric three-span and four-span beams, zero-moment positions, ten blind configurations, the identity for a two-truck convoy on piecewise-prismatic girders with elastic pier springs (relative error 2.8 × 10⁻⁹), and the haunched Cầu Mây FE against an independent force-method solution (5.4 × 10⁻¹⁰). Truncating the record when the first axle leaves changed the integral by up to 59 % (rotation) and 10 % (moment) on the two-span example.
 
 For the most general linear estimator $\hat P = \sum_j\int g_j(x)y_j(x)\,\mathrm{d}x$, with weighting functions $g_j$ along the records $y_j$, the mean is $\sum_iP_i\psi(s_i)$, with $s_i$ the position of axle $i$ and $\psi(s) = \sum_j\int g_j(x)\eta_j(x-s)\,\mathrm{d}x$. If $\psi$ must be constant in $s$ for every set of influence lines supported on $[0, L_p]$, then $\int_0^{L_p}[g(u+s)-g(u+s')]\eta(u)\,\mathrm{d}u = 0$ for every admissible $\eta$, so $g(u+s) = g(u+s')$ almost everywhere. Each $g_j$ is therefore constant, and the only freedom lies across channels. SLM relies on this invariance. An estimate built on the absolute value of the record (Deng et al., 2025) is not linear in the axle loads, so it loses this invariance whenever contributions of opposite sign overlap.
 
@@ -273,7 +273,7 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 :::
 
 ::: {custom-style="Caption justified"}
-**Figure S12.** Five-span girder, beam model with uniform rigidity and two haunch laws: uniform-load moment (top) and strain constant (middle) along the girder, normalised at the gauges, and the single-gauge error expected from the measured noise for a 25 t truck (bottom). Red line: gauge position; dotted lines: zero-moment points.
+**Figure S12.** Five-span girder, beam model with uniform rigidity and two haunch laws: uniform-load moment (top) and strain constant (middle) along the girder, normalized at the gauges, and the single-gauge error expected from the measured noise for a 25 t truck (bottom). Red line: gauge position; dotted lines: zero-moment points.
 :::
 
 ::: {custom-style="Figure"}
@@ -313,7 +313,7 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 | vehicle-free noise, non-overlapping windows | 0.92 (0.83–0.96) | 0.42 (0.26–0.54) |
 | vehicle-free noise, window length of each crossing | 0.90 | – |
 | crossing residuals | 0.63 | – |
-| crossing residuals, st40 with its neighbours | 0.30–0.37 | – |
+| crossing residuals, st40 with its neighbors | 0.30–0.37 | – |
 
 **Table S8.** Mean absolute error of the gross weight (% of GVW), out of sample, with 95 % bootstrap CIs over the test runs (n = 8 on day 2, n = 7 on day 1). LOTO: calibrated on one truck, tested on the other. The leave-one-run-out columns contain every row of the estimator table of the main text (Table 2).
 
@@ -378,10 +378,10 @@ Indicators and channels (Table S14). Going from pinned to fixed piers multiplies
 | Section | Measuring point | Central | Eccentric |
 |---|---|---|---|
 | N8, side span, 0.4L from T8 | right edge | 5.32 | 5.91 |
-| N8, side span, 0.4L from T8 | centreline | 5.56 | 5.55 |
+| N8, side span, 0.4L from T8 | centerline | 5.56 | 5.55 |
 | N8, side span, 0.4L from T8 | left edge | 5.76 | 5.22 |
 | N7, mid main span | right edge | 14.68 | 14.62 |
-| N7, mid main span | centreline | 15.24 | 15.51 |
+| N7, mid main span | centerline | 15.24 | 15.51 |
 | N7, mid main span | left edge | 15.83 | 16.67 |
 
 **Table S12.** Weighed 3-axle test trucks: gross weight and axle spacings (front to middle axle; middle to rear axle) and track width. Mean gross weight 25.06 t.
@@ -419,7 +419,7 @@ Indicators and channels (Table S14). Going from pinned to fixed piers multiplies
 | Haunched, fixed piers | 0.446 | 0.375 | 0.145 | – | – | – |
 | $B_m$ at the design stiffness | 0.51 | – | 0.12 | – | – | – |
 
-ᵃ Above the fixed-pier value because calibration B has $\alpha$ = 0.716; normalised by the effective rigidity $\alpha EI_\mathrm{mid}$ it is 0.341. ᵇ The upper part of this range requires $\alpha \approx 0.5$; normalised by the effective rigidity, the range is 0.144–0.422.
+ᵃ Above the fixed-pier value because calibration B has $\alpha$ = 0.716; normalized by the effective rigidity $\alpha EI_\mathrm{mid}$ it is 0.341. ᵇ The upper part of this range requires $\alpha \approx 0.5$; normalized by the effective rigidity, the range is 0.144–0.422.
 
 ## S9. Dynamics and baseline handling
 
