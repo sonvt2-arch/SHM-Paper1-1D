@@ -1,8 +1,12 @@
 # Trạng thái và việc tiếp theo
 
-Cập nhật: 2026-10-18. Trạng thái: **v4.4 chuẩn bị nộp SCHM; chờ thầy điền [NEED VALUE]**. Trước đó (2026-10-12): chờ câu trả lời của người lập báo cáo (bảng câu hỏi `docs/word/Cau_hoi_bo_sung_so_lieu.docx`). Mô tả đầy đủ: `00_MO_TA_CHI_TIET_DU_AN.md`.
+Cập nhật: 2026-10-19. Trạng thái: **bản ASE (`manuscript/ase/`) đã đóng gói, chờ thầy kiểm bằng Word và báo ngày nộp**. Trước đó (2026-10-18): v4.4 chuẩn bị nộp SCHM. Trước đó (2026-10-12): chờ câu trả lời của người lập báo cáo (bảng câu hỏi `docs/word/Cau_hoi_bo_sung_so_lieu.docx`). Mô tả đầy đủ: `00_MO_TA_CHI_TIET_DU_AN.md`.
 
 Cập nhật trước: 2026-10-11. Nhánh: `claude/focused-bell-33lm0n`.
+
+## Cập nhật 2026-10-19: chuyển sang Advances in Structural Engineering (ASE)
+- **Bản nộp hiện tại: `manuscript/ase/`** (Word/PDF ở `manuscript/ase/word/`). Chi tiết đầy đủ: `docs/06_trang_thai_ASE.md`. Prompt cho phiên sau: `docs/PROMPT_PHIEN_TIEP_THEO.md`.
+- v4.4 (SCHM) không nộp: 3/4 biên tập viên mô phỏng trả bài trước phản biện; thầy chọn đổi tạp chí rồi chọn ASE sau khi so sánh 5 tạp chí (`docs/editors_v4/journals/00_SO_SANH.md`).
 
 ## Cập nhật 2026-10-18 (khuya): bản v4.4, chuẩn bị nộp
 - **Bản hiện tại: `manuscript/v4/manuscript.md`** (Word/PDF: `manuscript/v4/word/`). Các vòng sửa độ dễ đọc v4.1–v4.4 và điểm chấm: `docs/editors_v4/00_doc_mu_tong_hop.md`.
