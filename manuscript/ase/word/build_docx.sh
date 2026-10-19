@@ -10,14 +10,7 @@ pandoc "$B/manuscript_build.md" -f markdown+tex_math_dollars-implicit_figures \
   --reference-doc="$B/reference.docx" --lua-filter="$W/eqnum.lua" \
   --resource-path="$S" -o "$W/Manuscript_ASE.docx"
 python3 "$W/postprocess.py" "$W/Manuscript_ASE.docx" --line-numbers
-python3 - "$S/supplementary_material.md" "$S/figures/supplementary" "$B/supplementary_build.md" <<'PY'
-import sys, re, glob, os
-src, fig, out = sys.argv[1:]
-t = open(src, encoding="utf-8").read()
-files = {int(re.findall(r"FigS(\d+)_", f)[0]): f for f in glob.glob(os.path.join(fig, "FigS*.png"))}
-t = re.sub(r"^\*\*Fig\. S(\d+)\.\*\*", lambda m: (f"![]({files[int(m.group(1))]}){{width=15.5cm}}\n\n" if int(m.group(1)) in files else "") + m.group(0), t, flags=re.M)
-open(out, "w", encoding="utf-8").write(t)
-PY
+python3 "$W/prep_supp.py" "$S/supplementary_material.md" "$S/figures/supplementary" "$B/supplementary_build.md"
 pandoc "$B/supplementary_build.md" -f markdown+tex_math_dollars-implicit_figures \
   --reference-doc="$B/reference.docx" -o "$W/Supplementary_Material_ASE.docx"
 python3 "$W/postprocess.py" "$W/Supplementary_Material_ASE.docx"

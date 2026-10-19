@@ -43,6 +43,36 @@ for st in list(d.styles):
     pf.line_spacing = 1.0 if name == "Compact" else 1.5
     if name in ("Body Text", "First Paragraph"):
         pf.space_after = Pt(6)
+# justified running text, widow/orphan control (Quy tac V.1)
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+for name in ("Body Text", "First Paragraph", "Abstract", "Bibliography"):
+    st = {x.name.lower(): x for x in d.styles if x.type == 1}.get(name.lower())
+    if st is None:
+        continue
+    st.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    st.paragraph_format.widow_control = True
+BYNAME = {x.name.lower(): x for x in d.styles if x.type == 1}
+for name in ("Heading 1", "Heading 2", "Heading 3", "Title"):
+    st = BYNAME.get(name.lower())
+    if st is None:
+        continue
+    st.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER if name == "Title" else WD_ALIGN_PARAGRAPH.LEFT
+    st.paragraph_format.keep_with_next = True
+def pstyle(name, align, italic=False, keep=False, size=12, before=0, after=6, spacing=1.5):
+    try:
+        st = d.styles[name]
+    except KeyError:
+        st = d.styles.add_style(name, 1)
+    st.base_style = d.styles["Normal"]
+    st.font.name = "Times New Roman"; st.font.size = Pt(size); st.font.italic = italic
+    pf = st.paragraph_format
+    pf.alignment = align; pf.keep_with_next = keep; pf.widow_control = True
+    pf.space_before = Pt(before); pf.space_after = Pt(after); pf.line_spacing = spacing
+    return st
+pstyle("Title block", WD_ALIGN_PARAGRAPH.CENTER)
+pstyle("Figure", WD_ALIGN_PARAGRAPH.CENTER, keep=True, before=6, after=0, spacing=1.0)
+pstyle("Caption centred", WD_ALIGN_PARAGRAPH.CENTER, size=11, after=12, spacing=1.15)
+pstyle("Caption justified", WD_ALIGN_PARAGRAPH.JUSTIFY, size=11, after=12, spacing=1.15)
 # figure placeholder style
 try:
     ph = d.styles["Figure placeholder"]

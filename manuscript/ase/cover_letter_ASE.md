@@ -31,4 +31,4 @@ Faculty of Bridge and Road Engineering, Hanoi University of Civil Engineering
 55 Giai Phong, Bach Mai ward, 11618 Ha Noi, Viet Nam
 E-mail: sonvt2@huce.edu.vn
 
-on behalf of Quoc-Bao Nguyen and Hung-Son Nguyen
+on behalf of Quoc-Bao Nguyen

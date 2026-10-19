@@ -2,7 +2,7 @@
 
 **Observability and sensor layout for influence-area load monitoring of continuous girder bridges**
 
-Quoc-Bao Nguyen, Thai-Son Vu, Hung-Son Nguyen
+Quoc-Bao Nguyen, Thai-Son Vu
 
 This document accompanies the main text. Equation, table, figure and section numbers without the prefix S refer to the main text; references are to the main-text reference list, cited here by author and year.
 

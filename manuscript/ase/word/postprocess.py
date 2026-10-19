@@ -49,10 +49,14 @@ def set_widths(t, fracs):
 
 for t in d.tables:
     tblPr = t._tbl.tblPr
-    eq = len(t.rows) == 1 and len(t.columns) == 2 and re.fullmatch(r"\([A-Z]?\.?\d+\)", t.cell(0, 1).text.strip() or "")
+    eq = len(t.rows) == 1 and len(t.columns) == 3 and re.fullmatch(r"\([A-Z]?\.?\d+\)", t.cell(0, 2).text.strip() or "")
+    jc = tblPr.find(qn("w:jc"))
+    if jc is None:
+        jc = OxmlElement("w:jc"); tblPr.append(jc)
+    jc.set(qn("w:val"), "center")  # tables centred horizontally (V.1.1)
     if eq:
         borders(tblPr, {})
-        set_widths(t, (0.88, 0.12))
+        set_widths(t, (0.1, 0.8, 0.1))
         for tc in t.rows[0]._tr.findall(qn("w:tc")):
             v = OxmlElement("w:vAlign"); v.set(qn("w:val"), "center")
             tc.get_or_add_tcPr().append(v)
@@ -67,8 +71,44 @@ for t in d.tables:
             wts[j] = max(wts[j], longest + 1.5, 0.6 * min(len(txt), 30))
     set_widths(t, [w / sum(wts) for w in wts])
     borders(tblPr, {"top": 8, "bottom": 8})
+    # numeric columns right-aligned, text columns left-aligned (V.1.1)
+    NUM = re.compile(r"^[\s\-−–+]*[\d.,]+[\d.,\s×⁻⁰-⁹eE()%–\-−a-dᵃᵇ]*$")
+    body = t.rows[1:]
+    for j in range(ncol):
+        vals = [xtext(r._tr.findall(qn("w:tc"))[j]).strip() for r in body if len(r._tr.findall(qn("w:tc"))) > j]
+        vals = [v for v in vals if v and v not in ("–", "-")]
+        numeric = bool(vals) and sum(bool(NUM.match(v)) for v in vals) >= 0.7 * len(vals)
+        for r in t.rows:
+            tcs = r._tr.findall(qn("w:tc"))
+            if len(tcs) > j:
+                for p_ in tcs[j].iter(qn("w:p")):
+                    ppr = p_.find(qn("w:pPr"))
+                    if ppr is None:
+                        ppr = OxmlElement("w:pPr"); p_.insert(0, ppr)
+                    for old in ppr.findall(qn("w:jc")):
+                        ppr.remove(old)
+                    jc_ = OxmlElement("w:jc"); jc_.set(qn("w:val"), "right" if numeric else "left"); ppr.append(jc_)
+    # header row repeats on page breaks; rows do not split
+    trPr = t.rows[0]._tr.get_or_add_trPr()
+    h = OxmlElement("w:tblHeader"); h.set(qn("w:val"), "true"); trPr.append(h)
+    for row in t.rows:
+        cs = OxmlElement("w:cantSplit"); row._tr.get_or_add_trPr().append(cs)
     for tc in t.rows[0]._tr.findall(qn("w:tc")):  # header bottom rule
         borders(tc.get_or_add_tcPr(), {"bottom": 6})
+# table titles stay with their table; figures stay with their captions
+for par in d.paragraphs:
+    if re.match(r"Table S?\d+\.", par.text.strip()):
+        par.paragraph_format.keep_with_next = True
+# reference list: left aligned with a hanging indent (justification stretches DOIs)
+from docx.shared import Cm
+inref = False
+for par in d.paragraphs:
+    if par.style is not None and par.style.name.startswith("Heading"):
+        inref = par.text.strip() in ("References",)
+        continue
+    if inref and par.text.strip():
+        pf = par.paragraph_format
+        pf.alignment = 0; pf.left_indent = Cm(0.75); pf.first_line_indent = Cm(-0.75)
 # tight lists outside tables: body size instead of the 10 pt table style
 for par in d.paragraphs:
     if par.style is not None and par.style.name == "Compact":

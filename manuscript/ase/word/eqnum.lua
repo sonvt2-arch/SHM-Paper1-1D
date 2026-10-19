@@ -2,10 +2,11 @@
 -- (display math centred in the left cell, "(n)" right-aligned in the right cell).
 -- Horizontal rules (---) are dropped.
 local function eq_table(tex, num)
-  local left = pandoc.Cell({pandoc.Para({pandoc.Math("DisplayMath", tex)})}, "AlignCenter")
+  local pad = pandoc.Cell({}, "AlignLeft")
+  local mid = pandoc.Cell({pandoc.Para({pandoc.Math("DisplayMath", tex)})}, "AlignCenter")
   local right = pandoc.Cell({pandoc.Para({pandoc.Str("(" .. num .. ")")})}, "AlignRight")
-  local body = {attr = pandoc.Attr(), body = {pandoc.Row({left, right})}, head = {}, row_head_columns = 0}
-  return pandoc.Table({long = {}, short = nil}, {{"AlignCenter", 0.88}, {"AlignRight", 0.12}},
+  local body = {attr = pandoc.Attr(), body = {pandoc.Row({pad, mid, right})}, head = {}, row_head_columns = 0}
+  return pandoc.Table({long = {}, short = nil}, {{"AlignLeft", 0.1}, {"AlignCenter", 0.8}, {"AlignRight", 0.1}},
     pandoc.TableHead(), {body}, pandoc.TableFoot(), pandoc.Attr("", {"eqtable"}))
 end
 
