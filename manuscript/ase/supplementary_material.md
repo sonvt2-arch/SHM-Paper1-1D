@@ -137,7 +137,7 @@ The specimen is a steel hollow square tube on three supports forming two equal s
 
 | $x$ (mm) | Analytical, single | Measured, single | Two loads | Three loads |
 |---|---|---|---|---|
-| 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| 0 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | 250 | 0.8874 | 0.8844 | 0.4625 | 0.5525 |
 | 500 | 1.6968 | 1.6975 | 1.8813 | 1.0450 |
 | 750 | 2.3501 | 2.3525 | 3.1413 | 2.5413 |
