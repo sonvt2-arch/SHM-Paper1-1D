@@ -10,3 +10,14 @@
 Ghi chú: theo quyết định của thầy, các chỗ sửa sau lượt 4 (7 cụm, đã kiểm số liệu, không có số mới) nằm sau lượt đọc cuối.
 
 Trước lượt xác nhận: chạy `kiem_khoa.py` giữa bản trước và sau sửa; chỉ khác ở các chuỗi đã sửa, không có số mới. Văn bản đưa tác nhân đọc là bản sao ở thư mục trung tính.
+
+## Vòng đọc ngày 19/10 (sau khi rút tóm tắt, thêm 4 bài ASE, điền ngày nộp)
+
+| Lượt | Phiếu | Bắt buộc | Xử lý | Cân nhắc | Xử lý |
+|---|---|---|---|---|---|
+| 5 | `phieu_v5.json` | 2 | Sửa cả 2 ("percent"; thống nhất "influence-line BWIM") | 2 | Thầy cho sửa cả 2 (tách câu ở 4.2; câu "records of trucks" ở tóm tắt) |
+| 6 | `phieu_v6.json` | 1 | Sửa (bỏ ký hiệu $l$, dùng $L$ cho chiều dài nhịp) | 3 | Sửa 2 (định nghĩa R ở Introduction; câu trỏ mục 2.1), giữ 1 ($N_w$ đã có câu trỏ) |
+| 7 | `phieu_v7.json` | 2 | Sửa 1 ("cutoff"); đóng 1 theo VII.6 (địa chỉ không dấu) | 3 | Thầy cho sửa cả 3 và mở thêm một lượt |
+| 8 | `phieu_v8.json` | 2 | Sửa cả 2 ("mean-weight predictor"; 0.0000 ở Bảng S4) | 3 | Thầy cho sửa cả 3 rồi chốt, không chạy thêm lượt đọc |
+
+Ghi chú: các chỗ sửa sau lượt 8 (5 cụm, không đổi số; kiem_khoa đạt) nằm sau lượt đọc cuối, theo quyết định của thầy.

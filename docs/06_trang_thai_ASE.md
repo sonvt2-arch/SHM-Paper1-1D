@@ -8,7 +8,7 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 - **Tác giả:** Quoc-Bao Nguyen, Thai-Son Vu (liên hệ, sonvt2@huce.edu.vn), cùng Faculty of Bridge and Road Engineering, HUCE. Hung-Son Nguyen đã được bỏ khỏi danh sách tác giả theo yêu cầu của thầy (19/10).
 - **Tạp chí:** Advances in Structural Engineering (Sage). Loại bài Original Research Article. Nộp qua Sage Track, theo đường thuê bao, không mất phí. Phản biện ẩn danh một chiều.
 - **Giới hạn của ASE:** tối đa 12.000 từ quy đổi (số từ Word cộng 300 cho mỗi hình và mỗi bảng); tóm tắt khoảng 150 từ; 4–8 từ khoá; kiểu trích dẫn Sage Harvard; mục "Statements and Declarations".
-- **Hiện trạng:** khoảng 7.700 từ theo cách đếm của Word, 7 hình, 4 bảng, tức khoảng 11.000 từ quy đổi. Tóm tắt 184 từ, 6 từ khoá, 42 tài liệu tham khảo. Chính tả lối Mỹ theo Quy tắc V.1.
+- **Hiện trạng (19/10, tối):** khoảng 7.900 từ theo cách đếm của Word, 7 hình, 4 bảng, tức khoảng 11.200 từ quy đổi. Tóm tắt khoảng 165 từ, 6 từ khoá, 46 tài liệu tham khảo. Chính tả lối Mỹ theo Quy tắc V.1. Ngày nộp ghi trong thư: 20 October 2026.
 
 ## 2. Lịch sử quyết định
 
@@ -55,6 +55,13 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
    - sửa nhãn trong ảnh Hình 3 ("normalized") và Hình 7 ("misfit ratio", "gray", 300 dpi);
    - thêm graphical abstract.
 
+8. **Tối 19/10 (phiên tiếp theo):**
+   - thầy chưa mở bằng Microsoft Word; em tự xử lý: gộp chỉ số chữ đứng (ví dụ "tot", "max") thành một khối OMML (`postprocess.py`); hình cao (Hình 4, 6) giới hạn cao 12 cm (`prep_md.py`), bản PDF từ 28 xuống 26 trang;
+   - III.19: thầy chọn **"viết đủ"**, giữ độ dài hiện tại. Cổng đo chỉ để báo cáo: `kiem_de_doc.py` FAIL (5.985 từ tính từ Abstract tới hết Conclusions; 41,9 số/1.000 từ; 19 đoạn quá 4 số; 21 chỗ trỏ phụ lục); `kiem_bao_toan_so.py` so v4.4 với bài và Supplementary: phần thiếu chỉ là số trích dẫn kiểu [n], DOI của các bài đã bỏ và địa chỉ, không mất số liệu;
+   - thêm 4 bài ASE: Hao et al. (2019), Zuo et al. (2019), Lin et al. (2023; online 2022), Wang et al. (2026; online 2025). Đã kiểm ba nguồn: Crossref, OpenAlex, Semantic Scholar, khớp tên bài, tạp chí, tập, trang, DOI. Semantic Scholar ghi tên Zuo là "Xiaoqiu", lệch với hai nguồn kia ("Xiao-Han"); giữ theo Crossref, là dữ liệu của nhà xuất bản. Năm ghi theo số tạp chí in. Mỗi bài một vế câu ở Introduction, viết theo tóm tắt; thư gửi tạp chí nhắc thêm bốn bài;
+   - tóm tắt rút từ 184 xuống khoảng 165 từ; giữ đủ số liệu, giữ rào "vary too little in weight to test weight discrimination";
+   - đọc mù XII.13 lượt 5–8 (`docs/editors_v4/xii13_ase/00_bao_cao.md`), sửa hết mục bắt buộc, trừ địa chỉ không dấu (đóng theo VII.6).
+
 ## 3. Cách dựng tệp Word
 
 ```bash
@@ -82,10 +89,7 @@ Hình nằm ở `manuscript/ase/figures/` (Fig1–Fig7, `supplementary/FigS1–S
 
 ## 5. Còn chờ
 
-1. **Thầy kiểm bằng Microsoft Word thật** (V.5). Em mới xem bản xuất PDF bằng LibreOffice. Cần kiểm chỉ số đứng (ví dụ $P_\mathrm{tot}$ phải hiện "tot" chữ đứng), vị trí hình và khoảng trắng.
-2. **Khoảng trắng gần hình:** vài trang còn khoảng nửa trang trống ngay trước hình lớn, vì hình không vừa phần còn lại của trang.
-3. **Ngày nộp:** điền ở dòng đầu `cover_letter_ASE.md`, rồi dựng lại gói.
-4. **Tóm tắt dài 184 từ**, trong khi ASE ghi "khoảng 150 từ". Có thể rút thêm nếu thầy muốn.
-5. **Bài ASE nên trích thêm:** Hao 2019, Zuo 2019, Lin 2022, Wang 2025. Chưa thêm; cần thầy đồng ý và phải kiểm từng bài từ ba nguồn (VII.4).
-6. **Quy tắc v4.0 (19/10)** thêm III.19: thân bài mặc định 4.500–5.000 từ, kể một mạch, nhiều nhất ba phát hiện. Bản ASE hiện khoảng 7.700 từ, được dựng trước khi quy tắc này ra. Cần thầy quyết: giữ nguyên ("viết đủ" cho bài này), hay rút tiếp. Cũng chưa chạy `kiem_de_doc.py`, `kiem_bao_toan_so.py` và chấm độ dễ đọc XII.14.
-7. **Sau khi nộp:** theo dõi phản hồi; nếu bị trả, phương án dự phòng là JBE hoặc SIE (xem bảng so sánh).
+1. **Thầy kiểm bằng Microsoft Word thật** (V.5) trước khi bấm nộp. Em đã gộp chỉ số chữ đứng và giới hạn chiều cao hình, nhưng vẫn mới xem bằng LibreOffice; còn khoảng 1/3 trang trống trước Hình 4 và Hình 6.
+2. **Nộp ngày 20/10/2026** trên Sage Track (xem `manuscript/ase/submission_checklist.md`).
+3. Chưa chấm độ dễ đọc XII.14 (chỉ để báo cáo; thầy chọn "viết đủ").
+4. **Sau khi nộp:** theo dõi phản hồi; nếu bị trả, phương án dự phòng là JBE hoặc SIE (xem bảng so sánh).

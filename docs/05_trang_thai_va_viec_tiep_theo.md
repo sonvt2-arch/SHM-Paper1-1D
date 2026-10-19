@@ -1,6 +1,6 @@
 # Trạng thái và việc tiếp theo
 
-Cập nhật: 2026-10-19. Trạng thái: **bản ASE (`manuscript/ase/`) đã đóng gói, chờ thầy kiểm bằng Word và báo ngày nộp**. Trước đó (2026-10-18): v4.4 chuẩn bị nộp SCHM. Trước đó (2026-10-12): chờ câu trả lời của người lập báo cáo (bảng câu hỏi `docs/word/Cau_hoi_bo_sung_so_lieu.docx`). Mô tả đầy đủ: `00_MO_TA_CHI_TIET_DU_AN.md`.
+Cập nhật: 2026-10-19 (tối). Trạng thái: **bản ASE (`manuscript/ase/`) đã đóng gói, ngày nộp 20/10/2026; thầy kiểm bằng Word trước khi bấm nộp**. Trước đó (2026-10-18): v4.4 chuẩn bị nộp SCHM. Trước đó (2026-10-12): chờ câu trả lời của người lập báo cáo (bảng câu hỏi `docs/word/Cau_hoi_bo_sung_so_lieu.docx`). Mô tả đầy đủ: `00_MO_TA_CHI_TIET_DU_AN.md`.
 
 Cập nhật trước: 2026-10-11. Nhánh: `claude/focused-bell-33lm0n`.
 

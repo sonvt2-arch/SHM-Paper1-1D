@@ -1,0 +1,10 @@
+{
+  "ngon_ngu": "en", "ngay": "2026-10-19", "luot": "doc lai sau sua phieu_v5",
+  "tong_ket": {"so_muc_bat_buoc": 1, "so_muc_can_nhac": 3},
+  "phieu": [
+    {"stt": 1, "loai": 1, "muc": "can_nhac", "vi_tri": "Introduction, dong gop (i)", "trich": "cancellation ratio $R_\\varepsilon = 0.667$ against $R_w = 0.571$", "van_de": "R dung truoc khi dinh nghia (Eq. 11)", "xu_ly": "Thay chon them dinh nghia ngan: 'the net influence area divided by its positive part'"},
+    {"stt": 2, "loai": 1, "muc": "can_nhac", "vi_tri": "muc 2.2", "trich": "Its left-hand side is the deflection indicator $N_w$, defined in Eq. (10) of Section 2.3.", "van_de": "N_w dung truoc khi dinh nghia", "xu_ly": "Thay chon giu nguyen (da co cau tro)"},
+    {"stt": 3, "loai": 1, "muc": "can_nhac", "vi_tri": "muc 2.1", "trich": "Sections 3, 4 and 6 test these assumptions.", "van_de": "Muc 6 khong kiem gia thiet", "xu_ly": "Thay chon sua: 'Sections 3 and 4 test these assumptions, and Section 6 discusses their limits.'"},
+    {"stt": 4, "loai": 3, "muc": "bat_buoc", "vi_tri": "muc 3; Supplementary Bang S1", "trich": "$C_m = l^4/(192EI) = 61.54$ ... ($l$ the span length)", "van_de": "Hai ky hieu L va l cho cung dai luong", "goi_y": "$L$", "xu_ly": "Da sua ca 2 cho"}
+  ]
+}

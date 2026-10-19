@@ -1,0 +1,11 @@
+{
+  "ngon_ngu": "en", "ngay": "2026-10-19", "luot": "doc lai sau sua phieu_v6 (luot cuoi theo tran; thay mo them mot luot)",
+  "tong_ket": {"so_muc_bat_buoc": 2, "so_muc_can_nhac": 3},
+  "phieu": [
+    {"stt": 1, "loai": 2, "muc": "bat_buoc", "vi_tri": "Supplementary S10, checklist muc 8", "trich": "whose cut-off is well below", "goi_y": "cutoff", "xu_ly": "Da sua"},
+    {"stt": 2, "loai": 2, "muc": "bat_buoc", "vi_tri": "dia chi tac gia; muc 5.1; chu ky thu", "trich": "55 Giai Phong, Bach Mai ward, 11618 Ha Noi, Viet Nam", "van_de": "dia chi khong dau, ten cau co dau", "xu_ly": "Dong theo nguon: dang dia chi quy dinh o VII.6"},
+    {"stt": 3, "loai": 1, "muc": "can_nhac", "vi_tri": "Acknowledgements", "trich": "Công ty TNHH Tư vấn Đại học Xây dựng for permission", "xu_ly": "Thay cho sua: them '(HUCE consultancy)'"},
+    {"stt": 4, "loai": 1, "muc": "can_nhac", "vi_tri": "Introduction, dong gop (i)", "trich": "(cancellation ratio, the net influence area divided by its positive part, ...)", "xu_ly": "Thay cho sua: tach cau"},
+    {"stt": 5, "loai": 1, "muc": "can_nhac", "vi_tri": "muc 5.2 doan 1", "trich": "..., because of a model-form misfit and the Möbius law of Eq. (15).", "xu_ly": "Thay cho sua: dua 'Because of ...' len dau cau (giai thich do bat dinh cua N8)"}
+  ]
+}

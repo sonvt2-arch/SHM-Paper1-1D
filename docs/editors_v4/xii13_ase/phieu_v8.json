@@ -1,0 +1,11 @@
+{
+  "ngon_ngu": "en", "ngay": "2026-10-19", "luot": "luot mo them theo quyet dinh cua thay, sau sua phieu_v7",
+  "tong_ket": {"so_muc_bat_buoc": 2, "so_muc_can_nhac": 3},
+  "phieu": [
+    {"stt": 1, "loai": 3, "muc": "bat_buoc", "vi_tri": "Bang 2; Bang S8; S7; Fig. S10", "trich": "Mean weight of the calibration runs / mean-weight (mean-GVW) predictors", "xu_ly": "Da sua: 'Mean-weight predictor (mean of the calibration runs)' trong bang; bo '(mean-GVW)'"},
+    {"stt": 2, "loai": 2, "muc": "bat_buoc", "vi_tri": "Bang S4", "trich": "| 0 |", "xu_ly": "Da sua: ghi 0.0000 cho dong nhat"},
+    {"stt": 3, "loai": 1, "muc": "can_nhac", "vi_tri": "muc 4.2", "trich": "although both fall below", "xu_ly": "Thay cho sua: 'both runs'"},
+    {"stt": 4, "loai": 1, "muc": "can_nhac", "vi_tri": "muc 4.2", "trich": "one such pass", "xu_ly": "Thay cho sua: 'one gauge passing this ±10 % check'"},
+    {"stt": 5, "loai": 1, "muc": "can_nhac", "vi_tri": "muc 5.3", "trich": "disagrees.", "xu_ly": "Thay cho sua: 'disagrees with the ranking by $N_M$'"}
+  ]
+}

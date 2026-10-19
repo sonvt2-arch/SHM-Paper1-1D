@@ -33,7 +33,7 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 | $k$, $k_g$ | rotational stiffness of a monolithic pier; girder stiffness against antisymmetric pier rotation (kN m/rad) |
 | $\hat k$ | pier stiffness relative to the side-span rigidity, $kL_\mathrm{side}/EI_\mathrm{side}$ |
 | $K_g$, $K_p$ | girder and pier parts of the stiffness matrix |
-| $L$, $l$ | length of the span containing the sensor; span of the laboratory beam (m) |
+| $L$ | length of the span containing the sensor, including the span of the laboratory beam (m) |
 | $L_p$ | length of the loaded path (m) |
 | $L_\mathrm{tot}$ | length of the integration record (m) |
 | $M_q$ | bending moment under a uniform load $q_0$ over the whole path |
@@ -137,7 +137,7 @@ The specimen is a steel hollow square tube on three supports forming two equal s
 
 | $x$ (mm) | Analytical, single | Measured, single | Two loads | Three loads |
 |---|---|---|---|---|
-| 0 | 0.0000 | 0.0000 | 0 | 0 |
+| 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | 250 | 0.8874 | 0.8844 | 0.4625 | 0.5525 |
 | 500 | 1.6968 | 1.6975 | 1.8813 | 1.0450 |
 | 750 | 2.3501 | 2.3525 | 3.1413 | 2.5413 |
@@ -158,9 +158,9 @@ The specimen is a steel hollow square tube on three supports forming two equal s
 | 4500 | −0.5763 | −0.5816 | −1.2213 | −2.9450 |
 | 4750 | −0.2971 | −0.3019 | −0.8125 | −2.4125 |
 | 5000 | 0.0000 | 0.0000 | −0.3325 | −1.7088 |
-| 5250 | | | 0 | −1.0713 |
+| 5250 | | | 0.0000 | −1.0713 |
 | 5500 | | | | −0.3650 |
-| 5750 | | | | 0 |
+| 5750 | | | | 0.0000 |
 
 ## S7. Public field records
 
@@ -218,7 +218,7 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 | GLS, measured $\Sigma$ | 20.4 (12.3–28.8) | 17.7 | 5.8 (3.5–8.1) | 4.9 (3.0–6.9) |
 | Zero-sum, measured $\Sigma$ | 20.3 (12.4–28.6) | 18.0 | 6.0 (2.9–9.3) | 8.3 (3.9–13.4) |
 | Zero-sum, $\Sigma$ = identity matrix | 12.3 (6.1–20.2) | 10.8 | 13.0 (7.1–19.0) | 8.4 (4.6–12.9) |
-| Mean weight of the calibration runs | 2.0 (1.9–2.0) | 3.4 | 2.2 (1.1–3.5) | 2.2 (1.1–3.5) |
+| Mean-weight predictor (mean of the calibration runs) | 2.0 (1.9–2.0) | 3.4 | 2.2 (1.1–3.5) | 2.2 (1.1–3.5) |
 
 **Table S9.** Day 2: per-crossing standard deviation (SD) of the gross weight predicted by two covariance models, and the observed error (% of GVW). SD and MAE are different measures; the table compares the order of the two estimators, not magnitudes.
 
@@ -345,7 +345,7 @@ Design checklist. The results combine into the following procedure for designing
 5. Placement. Place sensors at the extremes of $C(x)$ of each channel type: $w_q$ for deflection and $cM_q/EI$ for strain.
 6. Estimator. Use SLM with weighed vehicles of clearly different weights, several reference crossings and lane-specific constants. Combine channels by GLS or zero-sum weights only after estimating $\Sigma$ from the residuals of calibration crossings and checking it out of sample against the gauge average; covariances from vehicle-free windows alone can mislead. Use BPM only where the location is well conditioned and the structure is known; on box girders with deck-mounted gauges, a beam model does not give the constant.
 7. Offset and dynamics. Evaluate $P_\delta$, Eq. (12), for the residual offset that the instrumentation achieves after re-zeroing, and compare it with the lightest vehicle to be screened. Check $t_\mathrm{cr}/T_1 \ge 8$ with the measured fundamental frequency $f_1 = 1/T_1$.
-8. Processing. Integrate in space over the complete crossing, re-zero before and after each crossing, remove dynamics with a low-pass filter whose cut-off is well below the fundamental frequency $f_1$ and never with a high-pass filter, and discard overlapping crossings.
+8. Processing. Integrate in space over the complete crossing, re-zero before and after each crossing, remove dynamics with a low-pass filter whose cutoff is well below the fundamental frequency $f_1$ and never with a high-pass filter, and discard overlapping crossings.
 
 Influence-area weighing is a simplified alternative to influence-line BWIM, not a competitor. It returns the gross weight of a vehicle or group from one scalar constant per channel and one weighted sum. Its natural role is low-cost screening across many continuous structures, with influence-line BWIM or enforcement weighing for the vehicles it flags.
 
@@ -373,7 +373,7 @@ The archive `scripts.zip` contains the analysis scripts and the console output o
 
 **Fig. S9.** NOR-BWIM: correlation matrices of the integrated vehicle-free noise between gauges, for windows of crossing length; day 1 (12 gauges) and day 2 (4 gauges).
 
-**Fig. S10.** NOR-BWIM: mean absolute error of the gross weight for single-gauge, gauge-average, GLS, zero-sum and mean-weight (mean-GVW) predictors, with 95 % bootstrap confidence intervals: in sample (IN), leave-one-run-out (LOO) and leave-one-truck-out (LOTO). (a) Day 2, 4 gauges; (b) day 1, 4 wheel-path gauges; (c) day 1, 12 gauges (multi-gauge estimators use all 12; only the single gauges ch5 and ch11 are shown). GLS-diag: diagonal covariance; zero-sum-eq: zero-sum estimator with equal noise ($\Sigma$ = identity matrix); GLS-resid: covariance from crossing residuals.
+**Fig. S10.** NOR-BWIM: mean absolute error of the gross weight for single-gauge, gauge-average, GLS, zero-sum and mean-weight predictors, with 95 % bootstrap confidence intervals: in sample (IN), leave-one-run-out (LOO) and leave-one-truck-out (LOTO). (a) Day 2, 4 gauges; (b) day 1, 4 wheel-path gauges; (c) day 1, 12 gauges (multi-gauge estimators use all 12; only the single gauges ch5 and ch11 are shown). GLS-diag: diagonal covariance; zero-sum-eq: zero-sum estimator with equal noise ($\Sigma$ = identity matrix); GLS-resid: covariance from crossing residuals.
 
 **Fig. S11.** NOR-BWIM: integral constant against speed for the day-1 gauge average, gauge ch1 and the day-2 gauge average, by truck; the panel titles give the fitted slope per 10 m/s with its 95 % CI.
 
