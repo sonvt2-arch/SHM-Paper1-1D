@@ -267,7 +267,7 @@ During the preparation of this work the authors used Claude (Anthropic) to assis
 
 ## Author contributions
 
-Quoc-Bao Nguyen: Conceptualization, Methodology, Formal analysis, Software, Writing – original draft. Thai-Son Vu: Conceptualization, Investigation, Validation, Supervision, Project administration, Writing – review & editing.
+Quoc-Bao Nguyen: Conceptualization, Methodology, Investigation, Data curation, Formal analysis, Software, Writing – original draft. Thai-Son Vu: Conceptualization, Investigation, Validation, Supervision, Project administration, Writing – review & editing.
 
 ## Statements and Declarations
 
