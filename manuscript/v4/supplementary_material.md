@@ -12,7 +12,7 @@ The archive `scripts.zip` contains the analysis scripts and the console output o
 
 ## S2. Laboratory specimen and data (item iii)
 
-The specimen is a steel hollow square tube on three supports forming two equal spans of 2500 mm; its measured single-load influence line is shown in Fig. S15. Table S1 lists the mid-span deflection of the first span for all three load configurations; the order of the three-load group is the best-fitting order discussed in Section 3.
+The specimen is a steel hollow square tube on three supports forming two equal spans of 2500 mm; its measured single-load influence line is shown in Fig. S1. Table S1 lists the mid-span deflection of the first span for all three load configurations; the order of the three-load group is the best-fitting order discussed in Section 3.
 
 **Table S1.** Mid-span deflection of the first span (mm), mean of three cycles. Single load 40.64 N; analytical values from the closed-form influence line.
 
@@ -104,22 +104,26 @@ Processing details and further results:
 - Speeds were obtained from the axle spikes and the measured wheelbase and agree with the dataset authors' processing script within 1–2 %. Records were integrated over the whole time the truck was on the bridge plus 5 s at each end. Three day-1 runs with two trucks on the bridge and four passes without documented weights were excluded. Vehicle-free noise windows were at least 70 s from any detected vehicle.
 - Day 1: eight of the twelve gauges have a coefficient of variation of 5.8–13.5 %, consistent with the noise (χ² p = 0.13–0.71). The first truck ran at 10.4–12.8 m/s and the second at 19.1–19.8 m/s. Day 2 speeds: 13–28 m/s; no speed effect resolved (+6 % per 10 m/s, 95 % CI −23 to +35 %).
 - Day-2 noise amplitudes at the median speed: 13.7–32.8 µε m.
+- Day-2 per-crossing SD predicted by the vehicle-free covariance (% of GVW): best single gauge 16.2, worst single gauge 32.5, gauge average 19.8, GLS diagonal Σ 19.4, GLS measured Σ 12.7, zero-sum measured Σ 13.3, zero-sum Σ = identity 16.1.
+- Lane B, failing channels: CV 31–40 %, χ² p = 0.016–0.027.
 - GLS weights with the measured Σ: st40 +0.16, st36 −0.35. GLS with Σ estimated from the crossing residuals: error 10.4 % of GVW in sample, 28.4 % out of sample.
 - Lane B: st36 ratio 0.64 (95 % CI 0.47–0.81). Two-truck runs: 0.92 and 0.92 of the summed single-truck predictions (pooled 95 % CI 0.77–1.06); GLS combination 0.82 (95 % CI 0.73–0.91).
 - Gauges: a one-dimensional beam model predicts ch11/ch8 ratios of 0.978–1.003. Ratio of st36 to st40 constants: 3.24 ± 0.56 in lane A against 1.82 ± 0.10 in lane B (± one standard error), about 2.5 standard errors apart.
-- Beam model (Euler–Bernoulli, parabolic haunch, second moment proportional to h²): r² = 0.79–0.94 against the strain histories; zeros of the uniform-load moment in span 2 at 121.6 m and 190.8 m; strain constant of the gauges 0.69 of the largest on the girder (0.56–0.93 across stiffness laws); cancellation ratio R = 0.51; span 2 contributes about 170 % of the net integral and the adjacent spans −26 % and −66 %.
+- Beam model (Euler–Bernoulli, parabolic haunch, second moment proportional to h²): r² = 0.79–0.94 against the strain histories; zeros of the uniform-load moment in span 2 at 121.6 m and 190.8 m; strain constant of the gauges 0.69 of the largest on the girder (0.56–0.93 across rigidity laws); cancellation ratio R = 0.51; span 2 contributes about 170 % of the net integral and the adjacent spans −26 % and −66 %.
 
 ## S4. Beam model of the five-span girder and synthetic records (item v)
 
-The one-dimensional beam model of the five-span girder (Euler–Bernoulli, parabolic haunch) is described in Section 4.2 and in the notes of S3. Fig. S3 shows its observability along the girder, and Fig. S4 the synthetic records of the dataset authors processed with the same integration.
+The one-dimensional beam model of the five-span girder (Euler–Bernoulli, parabolic haunch) is described in Section 4.2 and in the notes of S3. Fig. S4 shows its observability along the girder, and Fig. S5 the synthetic records of the dataset authors processed with the same integration.
 
 ## S5. Strain blind-locus maps (item vi)
 
-Figs. S5 and S6 map the strain indicator $N_M$ over the sensor position and the span ratio for two-span and symmetric three-span beams.
+Figs. S6 and S7 map the strain indicator $N_M$ over the sensor position and the span ratio for two-span and symmetric three-span beams.
 
 ## S6. Multi-channel placement and structure-aware weighting functions (item vii)
 
-Fig. S7 shows the extremes of the uniform-load response $C(x)$ that the placement rule of Section 2.4 selects. Fig. S8 gives the Monte Carlo verification of Eqs. (13) and (14), and Fig. S9 the structure-aware weighting functions of Appendix B.
+Fig. S8 shows the extremes of the uniform-load response $C(x)$ that the placement rule of Section 2.4 selects. Fig. S9 gives the Monte Carlo verification of Eqs. (13) and (14), and Fig. S10 the structure-aware weighting functions of Appendix B.
+
+- Placement (Section 2.4): verified by a brute-force search over 96 cases and a Monte Carlo study with 10⁵ random axle configurations per case; white-noise to offset ratio σ²Δx/(δ₀²L_tot) ≈ 5 × 10⁻⁶ at σ = 0.01 mm, δ₀ = 0.1 mm, Δx = 0.1 m, L_tot = 220 m.
 
 ## S7. Asymmetric three-span beams (item viii)
 
@@ -127,9 +131,6 @@ For arbitrary spans $L_1, L_2, L_3$ and rigidities $EI_1, EI_2, EI_3$, the two s
 
 ## S8. Cầu Mây model, admissible sets and frequencies (item ix); dynamics (item x); simply supported records (item xi)
 
-- Placement (Section 2.4): verified by a brute-force search over 96 cases and a Monte Carlo study with 10⁵ random axle configurations per case; white-noise to offset ratio σ²Δx/(δ₀²L_tot) ≈ 5 × 10⁻⁶ at σ = 0.01 mm, δ₀ = 0.1 mm, Δx = 0.1 m, L_tot = 220 m.
-- Day-2 per-crossing SD predicted by the vehicle-free covariance (% of GVW): best single gauge 16.2, worst single gauge 32.5, gauge average 19.8, GLS diagonal Σ 19.4, GLS measured Σ 12.7, zero-sum measured Σ 13.3, zero-sum Σ = identity 16.1.
-- Lane B, failing channels: CV 31–40 %, χ² p = 0.016–0.027.
 - Cầu Mây design sections: depth 2.40 m (mid-span) to 5.40 m (piers), second moments 5.482 m⁴ and 59.61 m⁴, E_c = 36 057 MPa. Model-form variants: L_v = 40 and 45 m (base 44 m), exponents 2.5 and 3.2 (base 2.943), rigid pier zone ±1.5 m.
 - Misfit ratio r₈₇: 1.126 at κ = 10⁷ kN m/rad, minimum 1.058 at κ = 1.68 × 10⁸ kN m/rad (calibration B), 1.091 for fixed piers.
 - Admissible set against tolerance τ (Table S7):
@@ -175,46 +176,46 @@ The processed acceptance-test data of the Cầu Mây Bridge are listed in Tables
 
 | Span | Vertical frequency (Hz) |
 |---|---|
-| N6 (side span, 55 m) | 3.43 |
-| N7 (main span, 90 m) | 3.64 |
-| N8 (side span, 55 m) | 3.63 |
+| Side span T5–T6 (55 m) | 3.43 |
+| Main span T6–T7 (90 m) | 3.64 |
+| Side span T7–T8 (55 m) | 3.63 |
 
-Fig. S10 shows the predicted vertical frequencies against the scaled pier stiffness κ, Fig. S11 the static misfit over the plane of α and k, and Fig. S12 the closed-form Möbius law of Eq. (15) against FE.
+Fig. S11 shows the predicted vertical frequencies against the scaled pier stiffness κ, Fig. S12 the static misfit over the plane of α and k, and Fig. S13 the closed-form Möbius law of Eq. (15) against FE.
 
 The moving-force analysis behind the dynamic bound of Section 6 is reproduced by `s05_moving_force.py`; its console output (`s05_moving_force.log`) lists the quasi-static error against $t_\mathrm{cr}/T_1$, the effect of damping and the axle-configuration spread under dynamics.
 
-Figs. S13 and S14 show the deflection records of two simply supported bridges tested by the authors, which illustrate the baseline handling and the low-pass filtering recommended in Section 7.
+Figs. S14 and S15 show the deflection records of two simply supported bridges tested by the authors, which illustrate the baseline handling and the low-pass filtering recommended in Section 7.
 
 ## Supplementary figure captions
 
 Some panel labels use the notation of an earlier draft: $\rho_L$ = $\lambda$, $\rho_{EI}$ = $\gamma$, $L_m$, $L_s$ = $L_\mathrm{main}$, $L_\mathrm{side}$, $K$ = $\hat k$, "immune" = zero-sum estimator, "boundary-conditioning indicator" = boundary sensitivity $B_m$, "Cau May" = Cầu Mây.
 
-**Fig. S1.** NOR-BWIM: correlation matrices of the integrated vehicle-free noise between gauges, for windows of crossing length; day 1 (12 gauges) and day 2 (4 gauges).
+**Fig. S1.** Laboratory two-span beam: measured and analytical influence line of the mid-span deflection of the first span for the single 40.64 N load (Table S1).
 
-**Fig. S2.** NOR-BWIM: integral constant against speed for the day-1 gauge average, gauge ch1 and the day-2 gauge average, by truck; the panel titles give the fitted slope per 10 m/s with its 95 % CI.
+**Fig. S2.** NOR-BWIM: correlation matrices of the integrated vehicle-free noise between gauges, for windows of crossing length; day 1 (12 gauges) and day 2 (4 gauges).
 
-**Fig. S3.** Five-span girder, beam model with uniform rigidity and two haunch laws: uniform-load moment (top) and strain constant (middle) along the girder, normalised at the gauges, and the single-gauge error expected from the measured noise for a 25 t truck (bottom). Red line: gauge position; dotted lines: zero-moment points.
+**Fig. S3.** NOR-BWIM: integral constant against speed for the day-1 gauge average, gauge ch1 and the day-2 gauge average, by truck; the panel titles give the fitted slope per 10 m/s with its 95 % CI.
 
-**Fig. S4.** Synthetic strain records of the dataset authors: integral per unit gross weight by truck and lane, and for a 3-axle truck against speed.
+**Fig. S4.** Five-span girder, beam model with uniform rigidity and two haunch laws: uniform-load moment (top) and strain constant (middle) along the girder, normalised at the gauges, and the single-gauge error expected from the measured noise for a 25 t truck (bottom). Red line: gauge position; dotted lines: zero-moment points.
 
-**Fig. S5.** Two-span beam: (a) strain indicator $N_M$ over the sensor position and the span ratio $\lambda$, with the strain and deflection blind loci and the near-blind band; (b) blind positions against $\lambda$.
+**Fig. S5.** Synthetic strain records of the dataset authors: integral per unit gross weight by truck and lane, and for a 3-axle truck against speed.
 
-**Fig. S6.** Symmetric three-span beam: strain indicator $N_M$ (a) in the side span and (b) in the main span measured from the pier, over the span ratio $\beta$, with the blind loci, the near-blind band and the Cầu Mây span ratio.
+**Fig. S6.** Two-span beam: (a) strain indicator $N_M$ over the sensor position and the span ratio $\lambda$, with the strain and deflection blind loci and the near-blind band; (b) blind positions against $\lambda$.
 
-**Fig. S7.** Uniform-load response $C(x)$ along six girders (two-span, three-span and the Cầu Mây girder under calibrations A and B), with the maximum and minimum selected by the placement rule.
+**Fig. S7.** Symmetric three-span beam: strain indicator $N_M$ (a) in the side span and (b) in the main span measured from the pier, over the span ratio $\beta$, with the blind loci, the near-blind band and the Cầu Mây span ratio.
 
-**Fig. S8.** Monte Carlo verification: distribution of the load error for a single gauge, GLS and the zero-sum estimator with three gauges, (a) on a 30 + 60 + 30 m beam and (b) on the Cầu Mây girder (calibration A), and (c) scatter against the number of axles relative to theory.
+**Fig. S8.** Uniform-load response $C(x)$ along six girders (two-span, three-span and the Cầu Mây girder under calibrations A and B), with the maximum and minimum selected by the placement rule.
 
-**Fig. S9.** Structure-aware weighting functions for two equal spans (Appendix B): (a) weighting functions along the record, (b) white-noise variance relative to uniform weighting against the range of entry shift, (c) configuration-dependent error under a stiffness error in the adjacent span.
+**Fig. S9.** Monte Carlo verification: distribution of the load error for a single gauge, GLS and the zero-sum estimator with three gauges, (a) on a 30 + 60 + 30 m beam and (b) on the Cầu Mây girder (calibration A), and (c) scatter against the number of axles relative to theory.
 
-**Fig. S10.** Cầu Mây: first, second and third vertical frequencies against the scaled pier stiffness κ, for low, base and high mass, with the measured band.
+**Fig. S10.** Structure-aware weighting functions for two equal spans (Appendix B): (a) weighting functions along the record, (b) white-noise variance relative to uniform weighting against the range of entry shift, (c) configuration-dependent error under a rigidity error in the adjacent span.
 
-**Fig. S11.** Cầu Mây: static misfit over the rigidity factor α and the pier stiffness k, with contours of the third vertical frequency equal to the measured values.
+**Fig. S11.** Cầu Mây: first, second and third vertical frequencies against the scaled pier stiffness κ, for low, base and high mass, with the measured band.
 
-**Fig. S12.** Cầu Mây proportions, prismatic beam: (a) deflection indicators of the side-span and main-span gauges against the relative pier stiffness $\hat k$, closed form against FE; (b) boundary sensitivity $B_m$.
+**Fig. S12.** Cầu Mây: static misfit over the rigidity factor α and the pier stiffness k, with contours of the third vertical frequency equal to the measured values.
 
-**Fig. S13.** Deflection records of two simply supported bridges (Gie Cục I and Phương Độ): deviation of the event integral from a linear pre/post baseline for several baseline treatments and high-pass filters.
+**Fig. S13.** Cầu Mây proportions, prismatic beam: (a) deflection indicators of the side-span and main-span gauges against the relative pier stiffness $\hat k$, closed form against FE; (b) boundary sensitivity $B_m$.
 
-**Fig. S14.** The same records: (a) deflection relative to the linear baseline, unfiltered and low-pass filtered at 2 Hz; (b) dynamic residual removed by the low-pass filter.
+**Fig. S14.** Deflection records of two simply supported bridges (Gie Cục I and Phương Độ): deviation of the event integral from a linear pre/post baseline for several baseline treatments and high-pass filters.
 
-**Fig. S15.** Laboratory two-span beam: measured and analytical influence line of the mid-span deflection of the first span for the single 40.64 N load (Table S1).
+**Fig. S15.** The same records: (a) deflection relative to the linear baseline, unfiltered and low-pass filtered at 2 Hz; (b) dynamic residual removed by the low-pass filter.

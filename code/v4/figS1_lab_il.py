@@ -1,4 +1,4 @@
-"""Fig. S15: measured and analytical single-load influence line of the laboratory beam (Table S1)."""
+"""Fig. S1: measured and analytical single-load influence line of the laboratory beam (Table S1)."""
 import os, re
 import matplotlib
 matplotlib.use("Agg")
