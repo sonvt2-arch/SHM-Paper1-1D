@@ -313,7 +313,8 @@ for lab, df, c, cconst in [("day 1 (st40=ch4)", d1, "ch4", s1d["wmean"]),
     noise[lab] = sdx
     C = cconst * eps / es
     rel = 100 * sdx / (np.abs(C) * 25.0)
-    ax[2].semilogy(xm, rel, lw=1, label=f"{lab}: noise sd {sdx:.1f} microstrain m")
+    leg = {"day 1 (st40=ch4)": "day 1 (gauge ch4)", "day 2 (st40)": "day 2 (gauge st40)"}[lab]
+    ax[2].semilogy(xm, rel, lw=1, label=f"{leg}: noise sd {sdx:.1f} " + r"$\mu\varepsilon$ m")
     for thr in (5, 10):
         bad = xm[rel > thr]
         log(f"  {lab}: |sigma_W/W| > {thr}% over {np.sum(np.diff(xm)[:len(rel)-1][rel[:-1] > thr]):.1f} m "
@@ -324,6 +325,8 @@ for a in ax:
     for e in bm.EDGES:
         a.axvline(e, color="k", lw=0.6)
     a.axvline(bm.X_SENSOR, color="r", lw=1)
+for a, lt in zip(ax, "abc"):
+    a.set_title(f"({lt})", loc="left", fontsize=8)
 ax[0].set_ylabel(r"$M_q(x)/M_q(x_s)$")
 ax[1].set_ylabel(r"$C_\varepsilon(x)/C_\varepsilon(x_s)$ (top fibre)")
 ax[2].set_ylabel(r"$\sigma_W/W$ (%) for W = 25 t")
@@ -332,7 +335,7 @@ ax[2].axhline(5, color="0.5", lw=0.5)
 ax[2].axhline(10, color="0.5", lw=0.5)
 ax[2].set_ylim(0.5, 1000)
 ax[0].legend(fontsize=7)
-ax[2].legend(fontsize=7)
+ax[2].legend(fontsize=7, loc="lower right")
 save(fig, "fig6_observability_model")
 pd.DataFrame(obs_rows).to_csv(os.path.join(RES, "test_f_model.csv"), index=False)
 

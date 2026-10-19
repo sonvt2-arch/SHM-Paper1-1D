@@ -103,3 +103,313 @@ st36    0.85   1.00   0.90   0.96
 st34    0.89   0.90   1.00   0.93
 st31    0.86   0.96   0.93   1.00
 sd of channel-mean integral = 1.102 vs mean channel sd 1.141 (independent would give 0.600)
+
+Day 1: record 12284 s, 32 detected vehicles; window T = 58 s (median crossing window); 3405 sliding windows (step 2 s), 90 non-overlapping
+noise sd of integral (microstrain*s): ch1=0.323, ch2=0.303, ch3=0.399, ch4=0.422, ch5=0.503, ch6=0.536, ch7=0.466, ch8=0.274, ch9=0.332, ch10=0.515, ch11=0.582, ch12=0.338
+  same in microstrain*m at median speed 12.8 m/s: ch1=4.1, ch2=3.9, ch3=5.1, ch4=5.4, ch5=6.4, ch6=6.8, ch7=5.9, ch8=3.5, ch9=4.2, ch10=6.6, ch11=7.4, ch12=4.3
+mean off-diagonal r = 0.430 (range 0.077 to 0.739); first-eigenvalue fraction lambda1/k = 0.495
+non-overlapping windows: mean r = 0.424 [95% bootstrap 0.260, 0.542], lambda1/k = 0.499 [0.360, 0.604]
+correlation matrix:
+         ch1    ch2    ch3    ch4    ch5    ch6    ch7    ch8    ch9   ch10   ch11   ch12
+ch1     1.00   0.36   0.43   0.44   0.16   0.38   0.43   0.37   0.53   0.33   0.28   0.32
+ch2     0.36   1.00   0.30   0.31   0.08   0.26   0.26   0.37   0.40   0.21   0.16   0.21
+ch3     0.43   0.30   1.00   0.59   0.48   0.64   0.59   0.32   0.46   0.59   0.56   0.47
+ch4     0.44   0.31   0.59   1.00   0.47   0.59   0.61   0.33   0.46   0.56   0.54   0.49
+ch5     0.16   0.08   0.48   0.47   1.00   0.63   0.59   0.08   0.16   0.67   0.74   0.52
+ch6     0.38   0.26   0.64   0.59   0.63   1.00   0.71   0.27   0.37   0.74   0.71   0.49
+ch7     0.43   0.26   0.59   0.61   0.59   0.71   1.00   0.28   0.41   0.69   0.66   0.49
+ch8     0.37   0.37   0.32   0.33   0.08   0.27   0.28   1.00   0.44   0.16   0.18   0.24
+ch9     0.53   0.40   0.46   0.46   0.16   0.37   0.41   0.44   1.00   0.34   0.30   0.33
+ch10    0.33   0.21   0.59   0.56   0.67   0.74   0.69   0.16   0.34   1.00   0.74   0.54
+ch11    0.28   0.16   0.56   0.54   0.74   0.71   0.66   0.18   0.30   0.74   1.00   0.55
+ch12    0.32   0.21   0.47   0.49   0.52   0.49   0.49   0.24   0.33   0.54   0.55   1.00
+  subset wheel-path ch4,5,11,12: mean r = 0.551 (range 0.467-0.739), lambda1/k = 0.665
+  subset no-spike ch1,2,8,9: mean r = 0.412 (range 0.359-0.525), lambda1/k = 0.560
+  subset 8 spike channels: mean r = 0.594 (range 0.465-0.739), lambda1/k = 0.648
+sd of channel-mean integral = 0.299 vs mean channel sd 0.416 (independent would give 0.123)
+
+per window length:
+    day  T_win  n_windows  mean_r  min_r  max_r  lambda1_frac
+0     2     32       1261   0.912  0.876  0.970         0.934
+1     2     38       1239   0.905  0.860  0.967         0.929
+2     2     42       1227   0.899  0.849  0.965         0.925
+3     2     46       1215   0.888  0.831  0.959         0.916
+4     2     48       1209   0.883  0.821  0.956         0.913
+5     2     50       1203   0.880  0.814  0.954         0.910
+6     2     56       1185   0.873  0.793  0.952         0.905
+7     2     58       1180   0.870  0.784  0.951         0.903
+8     2     68       1156   0.845  0.731  0.942         0.885
+9     1     40       3621   0.394  0.137  0.746         0.470
+10    1     42       3597   0.397  0.129  0.751         0.473
+11    1     58       3405   0.430  0.077  0.739         0.495
+12    1     64       3333   0.436  0.031  0.732         0.497
+13    1     68       3287   0.441  0.008  0.737         0.501
+day 2: sliding-window sd / nb_field random-window sd: median 0.985 (range 0.900-1.139)
+day 1: sliding-window sd / nb_field random-window sd: median 0.962 (range 0.788-1.239)
+
+==============================================================================
+TASK 4. Estimators, out-of-sample. C_j = mean(Ix_j/GVW) over calibration runs only; Sigma = covariance of vehicle-free integrals for the test run's window length (from quiet data, so it never contains the test run), scaled by v_test^2. Schemes: LOO = leave-one-run-out; LOTO = calibrate on one truck, test on the other; IN = in-sample (C from all runs incl. the test run) for comparison.
+
+Diagnostic: scatter of crossing residuals (I_j - C_j W, all runs) versus the vehicle-free noise covariance at each run's window and speed
+day2 4ch: residual var / quiet var per channel: st40=1.10, st36=0.56, st34=0.51, st31=0.64
+   mean off-diag correlation: crossing residuals 0.630 (range 0.30 to 0.84) vs quiet noise 0.895
+   residual correlation matrix:
+   st40    1.00   0.30   0.37   0.66
+   st36    0.30   1.00   0.82   0.84
+   st34    0.37   0.82   1.00   0.79
+   st31    0.66   0.84   0.79   1.00
+   average : sd predicted by quiet Sigma  19.8%, by crossing-residual covariance  14.6%
+   GLS     : sd predicted by quiet Sigma  12.8%, by crossing-residual covariance  21.0%
+   immune  : sd predicted by quiet Sigma  13.4%, by crossing-residual covariance  20.2%
+day1 12ch: residual var / quiet var per channel: ch1=4.63, ch2=3.60, ch3=1.19, ch4=1.47, ch5=1.78, ch6=1.36, ch7=1.56, ch8=2.93, ch9=5.05, ch10=0.80, ch11=1.06, ch12=1.79
+   mean off-diag correlation: crossing residuals 0.301 (range -0.51 to 0.99) vs quiet noise 0.418
+   average : sd predicted by quiet Sigma   5.3%, by crossing-residual covariance   5.9%
+   GLS     : sd predicted by quiet Sigma   4.2%, by crossing-residual covariance   5.8%
+   immune  : sd predicted by quiet Sigma   6.2%, by crossing-residual covariance   7.2%
+day1 wheel-path 4ch: residual var / quiet var per channel: ch4=1.47, ch5=1.78, ch12=1.79, ch11=1.06
+   mean off-diag correlation: crossing residuals 0.273 (range -0.29 to 0.73) vs quiet noise 0.550
+   residual correlation matrix:
+   ch4     1.00   0.73   0.17   0.26
+   ch5     0.73   1.00  -0.29   0.65
+   ch12    0.17  -0.29   1.00   0.11
+   ch11    0.26   0.65   0.11   1.00
+   average : sd predicted by quiet Sigma   5.5%, by crossing-residual covariance   5.6%
+   GLS     : sd predicted by quiet Sigma   5.1%, by crossing-residual covariance   5.2%
+   immune  : sd predicted by quiet Sigma   6.7%, by crossing-residual covariance  10.0%
+
+--- day2 4ch LOO  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single st40     8   27.9 [ 12.9, 44.5]   36.2 [ 16.6, 51.1]   +1.6   65.9    32.5
+single st36     8    8.4 [  2.9, 15.3]   12.6 [  4.9, 19.0]   +0.2   28.5    16.2
+single st34     8   12.9 [  6.7, 19.7]   16.0 [  9.1, 21.9]   +0.3   30.7    21.5
+single st31     8   12.5 [  5.5, 20.8]   16.9 [  7.3, 24.3]   +0.4   34.9    20.4
+average         8   11.9 [  6.0, 18.6]   15.1 [  7.6, 21.5]   +0.3   30.8    19.8
+GLS-diag        8   11.4 [  6.0, 18.0]   14.5 [  7.3, 20.8]   +0.0   30.4    19.4
+GLS             8   20.4 [ 12.3, 28.8]   23.6 [ 15.4, 30.6]   -0.8   39.9    12.7
+immune          8   20.3 [ 12.4, 28.6]   23.4 [ 15.2, 30.6]   -0.2   40.8    13.3
+immune-eq       8   12.3 [  6.1, 20.2]   15.9 [  7.1, 23.2]   -0.0   34.1    16.1
+GLS-resid       8   23.4 [ 13.1, 35.4]   28.4 [ 15.7, 39.3]  -11.2   54.3    10.6
+mean-GVW        8    2.0 [  1.9,  2.0]    2.0 [  1.9,  2.0]   +0.0    2.0     nan
+
+--- day2 4ch IN  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single st40     8   24.4 [ 11.2, 38.8]   31.8 [ 14.4, 44.3]   -0.0   60.3    32.4
+single st36     8    7.4 [  2.5, 13.7]   11.2 [  4.2, 17.1]   -0.0   25.9    16.2
+single st34     8   11.4 [  5.8, 17.5]   14.2 [  8.0, 19.7]   -0.0   27.9    21.5
+single st31     8   11.0 [  4.8, 18.5]   15.0 [  6.3, 21.9]   +0.0   32.0    20.4
+average         8   10.5 [  5.3, 16.6]   13.4 [  6.6, 19.2]   -0.0   28.0    19.8
+GLS-diag        8   10.1 [  5.2, 16.0]   12.9 [  6.3, 18.7]   -0.1   27.7    19.4
+GLS             8   18.0 [ 10.5, 25.6]   21.0 [ 13.6, 27.0]   -0.1   34.4    12.7
+immune          8   18.0 [ 10.9, 25.3]   20.9 [ 13.6, 26.8]   +0.3   35.2    13.3
+immune-eq       8   10.9 [  5.3, 18.0]   14.2 [  6.4, 21.0]   +0.0   31.1    16.1
+GLS-resid       8    8.5 [  4.6, 12.9]   10.4 [  5.3, 14.6]   -0.0   20.3    11.3
+mean-GVW        8    1.7 [  1.7,  1.7]    1.7 [  1.7,  1.7]   +0.0    1.7     nan
+
+--- day2 4ch LOTO  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single st40     8   24.3 [ 10.1, 41.0]   33.3 [ 11.8, 49.7]   +0.7   62.9    32.5
+single st36     8    7.6 [  2.5, 13.7]   11.3 [  4.4, 17.0]   +0.0   25.5    16.2
+single st34     8   12.8 [  6.8, 18.8]   15.5 [  9.8, 19.9]   +0.2   25.6    21.5
+single st31     8   11.5 [  5.0, 19.0]   15.4 [  7.0, 22.0]   +0.0   31.0    20.4
+average         8   11.1 [  5.5, 17.1]   14.0 [  7.6, 19.3]   +0.1   26.6    19.8
+GLS-diag        8   10.8 [  5.5, 16.6]   13.6 [  7.5, 18.7]   -0.0   26.3    19.4
+GLS             8   17.7 [  9.6, 26.0]   21.3 [ 13.2, 28.1]   -0.6   37.1    12.7
+immune          8   18.0 [ 10.3, 26.1]   21.4 [ 13.4, 28.2]   +0.2   38.1    13.3
+immune-eq       8   10.8 [  5.2, 18.0]   14.2 [  6.3, 21.2]   -0.0   31.9    16.1
+mean-GVW        8    3.4 [  3.4,  3.5]    3.4 [  3.4,  3.5]   +0.1    3.5     nan
+
+--- day1 12ch LOO  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single ch1      7   17.4 [  8.7, 25.8]   20.9 [ 12.2, 27.2]   +0.6   32.5     8.9
+single ch2      7   16.7 [ 10.9, 23.6]   18.9 [ 11.3, 25.6]   +0.5   34.0     9.2
+single ch3      7    7.8 [  4.1, 11.7]    9.3 [  5.0, 12.8]   +0.1   16.9     7.9
+single ch4      7   12.1 [  6.4, 18.1]   14.4 [  8.0, 19.7]   +0.3   25.1    11.1
+single ch5      7    6.0 [  2.7,  9.7]    7.7 [  3.9, 10.8]   +0.1   14.4     5.3
+single ch6      7    7.6 [  4.8, 11.3]    8.8 [  5.2, 12.5]   +0.1   17.2     7.0
+single ch7      7   10.0 [  6.2, 14.0]   11.3 [  6.9, 14.9]   +0.2   19.3     8.3
+single ch8      7   17.6 [ 11.0, 23.4]   19.5 [ 13.6, 23.9]   +0.5   27.4    10.5
+single ch9      7   17.4 [ 10.9, 24.2]   19.6 [ 12.3, 25.3]   +0.5   30.5     8.0
+single ch10     7    6.3 [  4.6,  8.2]    6.8 [  4.8,  8.5]   +0.1   10.0     7.1
+single ch11     7    4.8 [  1.8,  7.9]    6.3 [  3.0,  8.6]   +0.1   10.6     5.8
+single ch12     7    8.3 [  3.2, 13.9]   11.1 [  4.1, 15.8]   +0.2   20.8     7.7
+average         7    5.3 [  2.5,  7.8]    6.4 [  3.8,  8.2]   +0.1    9.3     5.3
+GLS-diag        7    5.3 [  2.5,  8.0]    6.5 [  3.9,  8.4]   -0.3   10.3     5.1
+GLS             7    5.8 [  3.5,  8.1]    6.6 [  4.2,  8.4]   -1.3    9.8     4.2
+immune          7    6.0 [  2.9,  9.3]    7.4 [  3.8, 10.3]   -0.6   13.6     6.2
+immune-eq       7   13.0 [  7.1, 19.0]   15.4 [  9.0, 20.6]   +0.1   26.9     7.3
+mean-GVW        7    2.2 [  1.1,  3.5]    2.8 [  1.5,  3.9]   +0.1    5.2     nan
+
+--- day1 12ch IN  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single ch1      7   14.8 [  7.6, 21.7]   17.6 [ 10.7, 22.7]   +0.0   26.6     8.9
+single ch2      7   14.2 [  9.4, 19.8]   16.0 [  9.7, 21.3]   +0.0   27.8     9.2
+single ch3      7    6.7 [  3.6,  9.9]    7.9 [  4.3, 10.8]   +0.0   14.2     7.9
+single ch4      7   10.4 [  5.5, 15.7]   12.5 [  6.8, 17.2]   +0.0   22.3    11.1
+single ch5      7    5.1 [  2.4,  8.2]    6.5 [  3.3,  9.1]   -0.0   12.1     5.3
+single ch6      7    6.5 [  4.2,  9.5]    7.5 [  4.5, 10.5]   +0.0   14.4     7.0
+single ch7      7    8.6 [  5.3, 11.9]    9.7 [  5.9, 12.6]   -0.0   16.1     8.3
+single ch8      7   15.0 [  9.4, 19.9]   16.6 [ 11.7, 20.2]   -0.0   22.6    10.5
+single ch9      7   14.8 [  9.4, 20.2]   16.5 [ 10.8, 21.0]   +0.0   25.0     8.0
+single ch10     7    5.4 [  4.0,  7.0]    5.8 [  4.1,  7.3]   -0.0    8.5     7.1
+single ch11     7    4.1 [  1.5,  6.7]    5.4 [  2.6,  7.4]   -0.0    9.2     5.8
+single ch12     7    7.1 [  2.7, 12.0]    9.5 [  3.5, 13.7]   +0.0   18.4     7.7
+average         7    4.5 [  2.1,  6.7]    5.5 [  3.2,  7.1]   +0.0    8.1     5.3
+GLS-diag        7    4.6 [  2.2,  6.9]    5.6 [  3.4,  7.2]   -0.2    8.8     5.1
+GLS             7    5.1 [  3.3,  6.9]    5.7 [  3.8,  7.1]   -0.7    8.0     4.2
+immune          7    4.9 [  2.1,  7.8]    6.3 [  3.2,  8.5]   +0.2   10.9     6.2
+immune-eq       7   11.3 [  6.2, 16.5]   13.4 [  7.8, 18.0]   +0.0   23.6     7.3
+mean-GVW        7    1.9 [  0.9,  3.0]    2.4 [  1.2,  3.3]   +0.1    4.5     nan
+
+--- day1 12ch LOTO  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single ch1      7   30.0 [ 20.8, 40.5]   32.8 [ 21.4, 42.5]   +8.4   50.9     9.6
+single ch2      7   25.7 [ 17.0, 35.0]   28.4 [ 19.0, 37.2]   +6.7   48.5     9.7
+single ch3      7    8.4 [  4.1, 13.1]   10.4 [  5.3, 14.4]   +1.4   19.3     8.0
+single ch4      7   15.2 [  8.5, 22.0]   17.8 [ 10.4, 23.3]   +3.1   27.9    11.4
+single ch5      7    5.1 [  2.2,  8.4]    6.6 [  3.1,  9.5]   +0.2   12.9     5.3
+single ch6      7    6.7 [  4.3, 10.0]    7.8 [  4.4, 11.4]   +0.4   16.0     7.0
+single ch7      7    9.1 [  4.3, 14.4]   11.4 [  5.8, 15.7]   +1.2   20.6     8.4
+single ch8      7   31.5 [ 24.2, 39.5]   33.2 [ 24.8, 40.6]   +9.1   47.5    11.3
+single ch9      7   26.9 [ 17.9, 36.5]   29.8 [ 19.4, 38.6]   +7.2   46.4     8.5
+single ch10     7    5.5 [  4.0,  7.1]    5.9 [  4.2,  7.3]   +0.1    8.9     7.1
+single ch11     7    4.2 [  1.6,  6.8]    5.5 [  2.5,  7.4]   +0.1    8.9     5.8
+single ch12     7   13.6 [  8.6, 18.8]   15.3 [  9.2, 20.0]   +2.8   23.9     7.8
+average         7    8.9 [  6.2, 11.3]    9.5 [  7.0, 11.4]   +1.7   13.0     5.4
+GLS-diag        7    9.3 [  6.7, 11.7]    9.9 [  7.3, 11.8]   +0.8   13.0     5.2
+GLS             7   10.1 [  8.2, 12.0]   10.4 [  8.4, 12.3]   -0.7   14.1     4.2
+immune          7    7.1 [  3.9, 10.6]    8.4 [  4.6, 11.6]   -1.1   15.3     6.2
+immune-eq       7   14.3 [  8.4, 20.8]   16.6 [  9.6, 22.3]   -1.3   29.2     7.2
+mean-GVW        7    3.9 [  2.9,  5.0]    4.2 [  3.1,  5.1]   -0.5    6.2     nan
+
+--- day1 wheel-path 4ch LOO  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single ch4      7   12.1 [  6.4, 18.1]   14.4 [  8.0, 19.7]   +0.3   25.1    11.1
+single ch5      7    6.0 [  2.7,  9.7]    7.7 [  3.9, 10.8]   +0.1   14.4     5.3
+single ch12     7    8.3 [  3.2, 13.9]   11.1 [  4.1, 15.8]   +0.2   20.8     7.7
+single ch11     7    4.8 [  1.8,  7.9]    6.3 [  3.0,  8.6]   +0.1   10.6     5.8
+average         7    5.4 [  3.3,  7.4]    6.0 [  4.0,  7.7]   +0.1    9.9     5.5
+GLS-diag        7    5.2 [  3.3,  7.1]    5.8 [  4.0,  7.3]   -0.1    9.3     5.3
+GLS             7    4.9 [  3.0,  6.9]    5.5 [  3.2,  7.4]   -0.3    9.3     5.1
+immune          7    8.3 [  3.9, 13.4]   10.6 [  5.9, 14.8]   -0.4   19.7     6.7
+immune-eq       7    8.4 [  4.6, 12.9]   10.2 [  6.0, 14.1]   -0.0   18.6     6.8
+GLS-resid       7    5.5 [  2.6,  7.7]    6.5 [  4.4,  7.8]   +1.1    8.4     2.9
+mean-GVW        7    2.2 [  1.1,  3.5]    2.8 [  1.5,  3.9]   +0.1    5.2     nan
+
+--- day1 wheel-path 4ch IN  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single ch4      7   10.4 [  5.5, 15.7]   12.5 [  6.8, 17.2]   +0.0   22.3    11.1
+single ch5      7    5.1 [  2.4,  8.2]    6.5 [  3.3,  9.1]   -0.0   12.1     5.3
+single ch12     7    7.1 [  2.7, 12.0]    9.5 [  3.5, 13.7]   +0.0   18.4     7.7
+single ch11     7    4.1 [  1.5,  6.7]    5.4 [  2.6,  7.4]   -0.0    9.2     5.8
+average         7    4.6 [  2.8,  6.3]    5.2 [  3.5,  6.6]   -0.0    8.4     5.5
+GLS-diag        7    4.5 [  2.8,  6.0]    5.0 [  3.4,  6.3]   -0.0    7.9     5.3
+GLS             7    4.1 [  2.5,  5.9]    4.7 [  2.7,  6.4]   -0.0    8.2     5.1
+immune          7    7.4 [  3.8, 11.8]    9.3 [  5.2, 12.9]   -0.1   17.2     6.7
+immune-eq       7    7.4 [  4.1, 11.3]    8.9 [  5.2, 12.3]   +0.0   16.3     6.7
+GLS-resid       7    2.2 [  0.9,  3.6]    2.9 [  1.3,  4.0]   +0.0    5.0     3.1
+mean-GVW        7    1.9 [  0.9,  3.0]    2.4 [  1.2,  3.3]   +0.1    4.5     nan
+
+--- day1 wheel-path 4ch LOTO  (|error| % of GVW; 95% bootstrap CI over test runs)
+estimator       n    MAE         95% CI    RMS         95% CI   bias    max pred.sd
+single ch4      7   15.2 [  8.5, 22.0]   17.8 [ 10.4, 23.3]   +3.1   27.9    11.4
+single ch5      7    5.1 [  2.2,  8.4]    6.6 [  3.1,  9.5]   +0.2   12.9     5.3
+single ch12     7   13.6 [  8.6, 18.8]   15.3 [  9.2, 20.0]   +2.8   23.9     7.8
+single ch11     7    4.2 [  1.6,  6.8]    5.5 [  2.5,  7.4]   +0.1    8.9     5.8
+average         7    5.5 [  2.8,  8.2]    6.6 [  3.8,  8.8]   +0.8   11.3     5.5
+GLS-diag        7    5.3 [  2.6,  7.9]    6.4 [  3.8,  8.4]   +0.5   10.6     5.4
+GLS             7    4.6 [  2.8,  6.5]    5.2 [  3.2,  6.9]   -0.4    9.0     5.1
+immune          7    9.8 [  5.7, 14.5]   11.5 [  6.6, 15.8]   -1.0   21.1     6.7
+immune-eq       7    9.3 [  5.1, 14.0]   11.1 [  6.3, 15.2]   -0.8   20.1     6.7
+mean-GVW        7    3.9 [  2.9,  5.0]    4.2 [  3.1,  5.1]   -0.5    6.2     nan
+
+Paired bootstrap differences (LOO): mean(|e_a|-|e_b|) and RMS_a-RMS_b, 95% CI
+day2 4ch LOO             GLS     - average     : dMAE   +8.5 [  +2.3, +15.1]  dRMS   +8.5 [  +0.4, +15.8]
+day2 4ch LOO             GLS     - single st36 : dMAE  +12.0 [  +4.0, +21.1]  dRMS  +11.1 [  +1.5, +22.1]
+day2 4ch LOO             GLS     - single st31 : dMAE   +7.9 [  +0.7, +15.7]  dRMS   +6.7 [  -1.8, +15.3]
+day2 4ch LOO             immune  - average     : dMAE   +8.3 [  +2.8, +14.3]  dRMS   +8.3 [  +1.3, +14.9]
+day2 4ch LOO             immune  - single st36 : dMAE  +11.9 [  +4.7, +20.6]  dRMS  +10.9 [  +2.5, +21.6]
+day2 4ch LOO             immune  - single st31 : dMAE   +7.8 [  +1.5, +14.5]  dRMS   +6.5 [  -0.9, +14.0]
+day1 12ch LOO            GLS     - average     : dMAE   +0.5 [  -2.9,  +3.5]  dRMS   +0.2 [  -2.3,  +2.5]
+day1 12ch LOO            GLS     - single ch11 : dMAE   +1.0 [  -4.1,  +5.9]  dRMS   +0.3 [  -4.0,  +5.1]
+day1 12ch LOO            GLS     - mean-GVW    : dMAE   +3.5 [  +1.3,  +6.2]  dRMS   +3.8 [  +1.3,  +6.3]
+day1 12ch LOO            immune  - average     : dMAE   +0.7 [  -3.5,  +5.5]  dRMS   +1.0 [  -3.0,  +5.2]
+day1 12ch LOO            immune  - single ch11 : dMAE   +1.2 [  -2.5,  +4.6]  dRMS   +1.1 [  -2.3,  +4.2]
+day1 12ch LOO            immune  - mean-GVW    : dMAE   +3.7 [  +0.5,  +6.9]  dRMS   +4.6 [  +0.9,  +7.5]
+day1 wheel-path 4ch LOO  GLS     - average     : dMAE   -0.5 [  -1.9,  +1.1]  dRMS   -0.5 [  -1.7,  +0.8]
+day1 wheel-path 4ch LOO  GLS     - single ch11 : dMAE   +0.1 [  -2.1,  +2.1]  dRMS   -0.8 [  -2.7,  +1.6]
+day1 wheel-path 4ch LOO  GLS     - mean-GVW    : dMAE   +2.6 [  -0.1,  +5.3]  dRMS   +2.7 [  -0.1,  +5.3]
+day1 wheel-path 4ch LOO  immune  - average     : dMAE   +2.9 [  -2.0,  +8.1]  dRMS   +4.5 [  -0.6,  +8.8]
+day1 wheel-path 4ch LOO  immune  - single ch11 : dMAE   +3.5 [  -1.2,  +7.5]  dRMS   +4.3 [  -0.5,  +7.4]
+day1 wheel-path 4ch LOO  immune  - mean-GVW    : dMAE   +6.1 [  +1.3, +10.9]  dRMS   +7.8 [  +2.6, +11.8]
+
+Mean LOO weights (normalised so that sum |w_j C_j| reported as share):
+  day2 4ch LOO             GLS     mean w = +0.1568, -0.3452, -0.0955, +0.1599
+  day2 4ch LOO             immune  mean w = +0.1714, -0.3515, +0.0953, +0.0849
+  day1 wheel-path 4ch LOO  GLS     mean w = +0.0281, -0.1127, -0.0483, -0.0537
+  day1 wheel-path 4ch LOO  immune  mean w = +0.1554, -0.1504, +0.1449, -0.1499
+  day1 12ch LOO            GLS     mean w = -0.0482, -0.0626, -0.0002, +0.0570, -0.1061, +0.0003, +0.0358, -0.0469, -0.0657, +0.0056, -0.0344, -0.0114
+  day1 12ch LOO            immune  mean w = -0.0082, +0.0007, +0.0197, +0.1134, -0.1464, -0.0518, +0.0655, +0.1064, -0.0858, +0.0162, -0.1232, +0.0935
+
+Day-2 LOO errors per run (%):
+estimator   GLS  GLS-diag  GLS-resid  average  immune  immune-eq  mean-GVW  single st31  single st34  single st36  single st40
+test                                                                                                                          
+R11        31.5       8.9       23.4      7.2    28.4        9.8      -1.9          2.9         17.1         13.0         -7.9
+R12       -39.9      18.7      -54.3     21.1   -40.8       -2.8      -1.9         25.3         19.3          3.0         65.9
+R13        20.1      13.1       14.6     13.1    23.2       22.2      -1.9         15.7         10.7         16.0          0.3
+R14       -24.8     -30.4      -30.0    -30.8   -27.0      -34.1      -1.9        -34.9        -30.7        -28.5        -25.3
+R15        26.8     -11.1      -40.1    -13.4    22.6        6.5       2.0        -11.6          4.1         -3.2        -63.5
+R16        -4.3      -4.1      -14.2     -2.4     5.9       10.6       2.0          2.9        -17.1          0.5         -8.4
+R17        -9.3       3.7        5.0      5.4    -5.0       -2.1       2.0          4.6         -2.7          2.0         27.2
+R18        -6.7       1.4        5.7      2.2    -9.2      -10.4       2.0         -2.1          1.8         -1.2         25.0
+
+Day-1 LOO errors per run (%), 12-ch and wheel-path sets:
+day1 12ch LOO
+estimator  average  GLS  GLS-diag  immune  immune-eq  mean-GVW
+test                                                          
+R1            -0.2  4.1      -0.0   -13.6      -26.9      -3.6
+R2             2.9  7.7       3.5    -6.5      -18.5      -2.0
+R3             6.4  2.7       6.4    -1.7        3.8      -1.7
+R4             8.6  1.2       7.5     7.0       18.0      -0.3
+R7            -8.7 -9.4      -9.0    -1.2        1.9       0.1
+R8             0.7 -5.6      -0.4     1.6       10.0       5.2
+R9            -9.3 -9.8     -10.3    10.2       12.1       2.8
+day1 wheel-path 4ch LOO
+estimator  average  GLS  GLS-diag  immune  immune-eq  GLS-resid  mean-GVW
+test                                                                     
+R1            -6.1 -8.1      -6.0   -19.7      -18.6        6.6      -3.6
+R2            -0.7 -3.6      -1.2   -10.7      -11.0       -8.4      -2.0
+R3             6.5  4.8       6.5     1.0        2.9        8.1      -1.7
+R4             9.9  9.3       9.3    11.6       10.5        8.0      -0.3
+R7            -6.7 -4.5      -6.2     1.2        2.3        0.4       0.1
+R8             2.6  2.0       2.3     2.1        2.0        0.3       5.2
+R9            -5.1 -2.0      -5.3    11.8       11.7       -7.0       2.8
+
+==============================================================================
+TASK 5. Lane effect (day 2, same trucks) and two-truck events
+C_B/C_A, 95% CI from Welch t on log|C| and from bootstrap of runs:
+  channel  C_laneA  C_laneB  B_over_A  ci95_lo  ci95_hi  boot_lo  boot_hi  p_diff  CV_laneB
+0    st40   -2.107   -2.145     1.018    0.684    1.536    0.732    1.440   0.898     0.397
+1    st36   -5.973   -3.821     0.640    0.469    0.807    0.505    0.808   0.003     0.344
+2    st34   -2.399   -2.056     0.857    0.654    1.070    0.691    1.079   0.140     0.308
+3    st31   -6.015   -5.068     0.842    0.627    1.069    0.668    1.070   0.128     0.328
+4     avg   -4.124   -3.272     0.794    0.590    1.000    0.631    1.008   0.050     0.337
+M1: GLS estimate of total GVW = 43.6 t (true 52.7 t, -17.3%; noise-only 95% CI [37.1, 50.0] t)
+M2: GLS estimate of total GVW = 42.6 t (true 52.7 t, -19.1%; noise-only 95% CI [35.8, 49.4] t)
+measured / predicted (sum of single-truck constants), CI includes noise of the event integral and the SE of C (n = 8):
+   event channel    meas  noise_sd    pred  ratio  ratio_sd  ci95_lo  ci95_hi
+0     M1    st40  -9.552     1.370  -8.484  1.126     0.211    0.713    1.539
+1     M1    st36 -22.243     1.788 -24.048  0.925     0.084    0.760    1.090
+2     M1    st34  -7.230     0.977  -9.657  0.749     0.109    0.535    0.962
+3     M1    st31 -22.105     2.263 -24.217  0.913     0.107    0.703    1.122
+4     M1     avg -15.283     1.525 -16.601  0.921     0.103    0.719    1.123
+5     M1     GLS   3.330       NaN   4.026  0.827     0.063    0.705    0.950
+6     M2    st40  -8.206     1.370  -8.062  1.018     0.209    0.608    1.428
+7     M2    st36 -20.560     1.788 -22.850  0.900     0.087    0.729    1.070
+8     M2    st34  -7.418     0.977  -9.176  0.808     0.115    0.583    1.034
+9     M2    st31 -21.569     2.263 -23.011  0.937     0.112    0.718    1.156
+10    M2     avg -14.438     1.525 -15.774  0.915     0.107    0.705    1.126
+11    M2     GLS   3.093       NaN   3.825  0.809     0.066    0.680    0.938
+pooled M1+M2 (avg): 0.918 [0.772, 1.064] (note: C uncertainty is shared between the two events, so this CI is slightly too narrow)
+pooled M1+M2 (GLS): 0.818 [0.729, 0.907] (note: C uncertainty is shared between the two events, so this CI is slightly too narrow)
+
+written results/v4_*.csv, figures/v4_*.png/.pdf

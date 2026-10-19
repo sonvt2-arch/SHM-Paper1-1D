@@ -738,7 +738,7 @@ def figures(T1, S, E, SM, NZ, G):
         r = S[(S.group == g) & (S.channel == c) & (S.model == "truck+v")].iloc[0]
         k = "abc"[list(axs).index(a)]
         a.set_title(f"({k}) {'Day 1' if g == 'd1A' else 'Day 2'}, "
-                    f"{'gauge average' if c == 'avg' else 'gauge ' + c}\nslope within truck "
+                    f"{'gauge average' if c == 'avg' else 'gauge ' + c}\nslope within truck\n"
                     f"{r.slope_pct_10ms:+.0f} [{r.ci95_lo:+.0f}, {r.ci95_hi:+.0f}] %/10 m/s",
                     fontsize=7)
         a.set_xlabel("speed (m/s)")

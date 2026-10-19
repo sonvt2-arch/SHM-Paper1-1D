@@ -213,22 +213,24 @@ def main():
     ax.axvline(1.199e8 / 0.716, color="#3b6fb6", ls=":", lw=1); ax.text(1.68e8, 1.13, " B", color="#3b6fb6")
     ax.set_ylabel("$r_{87}$ = (meas/pred)$_{N8}$ / (meas/pred)$_{N7}$")
     ax.set_ylim(0.98, 1.16)
+    ax.plot([], [], color="0.65", lw=0.7, label="model-form variants")
     ax.legend(fontsize=7, loc="upper right")
-    ax.set_title("(a) misfit ratio; gray: model-form variants (L$_v$, n, rigid pier zone)", fontsize=8, loc="left")
+    ax.set_title("(a) misfit ratio", fontsize=8, loc="left")
     ax = axs[1]
-    ax.semilogx(KAPPA, norm_index(r["C8"], 55), "k", label="N8 index, EI$_{ref}$ = $\\alpha$EI$_{mid}$")
+    ax.semilogx(KAPPA, norm_index(r["C8"], 55), "k", label="N8 $N_w$, $EI_\\mathrm{ref} = \\alpha EI_\\mathrm{mid}$")
     ax.semilogx(KAPPA, norm_index(r["C8"], 55) / np.exp(r["lnalpha"]), "k--", lw=0.9,
-                label="N8 index, EI$_{ref}$ = design EI$_{mid}$, $\\alpha=\\alpha^*$")
+                label="N8 $N_w$, $EI_\\mathrm{ref}$ = design $EI_\\mathrm{mid}$, $\\alpha=\\alpha^*$")
     ax.semilogx(KAPPA, r["R8"], color="#d0563b", label="N8 $R$")
-    ax.semilogx(KAPPA, norm_index(r["C7"], 90), color="#3b6fb6", label="N7 index ($\\alpha$EI$_{mid}$)")
+    ax.semilogx(KAPPA, norm_index(r["C7"], 90), color="#3b6fb6", label="N7 $N_w$, $EI_\\mathrm{ref} = \\alpha EI_\\mathrm{mid}$")
     ax.semilogx(KAPPA, r["R7"], color="#3b6fb6", ls="--", label="N7 $R$")
     ok = r["res"] <= tau_rec
     if ok.any():
         ax.axvspan(KAPPA[ok].min(), KAPPA[ok].max(), color="#2a9d8f", alpha=0.15, lw=0)
     ax.axhline(0.2, color="0.5", ls=":", lw=0.8)
     ax.set_xlabel("$\\kappa = k/\\alpha$ (kN m/rad)")
-    ax.set_ylabel("index")
-    ax.legend(fontsize=6.5, ncol=2)
+    ax.set_ylabel("indicator")
+    ax.legend(fontsize=6, loc="center right", bbox_to_anchor=(1.0, 0.585), labelspacing=0.3,
+              handlelength=1.6, borderpad=0.3)
     ax.set_title("(b) indicators along the static valley $\\alpha^*(\\kappa)$", fontsize=8, loc="left")
     fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.png"), dpi=300)
     fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.pdf"))

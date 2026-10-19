@@ -43,6 +43,7 @@ plt.rcParams.update({
     "savefig.pad_inches": 0.02, "font.family": "DejaVu Sans",
 })
 W2 = 7.0      # double-column width (in)
+DISP = {"Gie Cuc I": "Gie Cục I", "Phuong Do": "Phương Độ"}   # names as printed in figures
 VALUES = []   # (figure, quantity, value) for traceability
 
 
@@ -84,8 +85,8 @@ def fig3_obs_map():
     ax[0].plot(B[ok], xo[ok, 0], "k--", lw=1.0, label=r"optimum $\xi^*(\beta)$")
     bcm = 90 / 55
     ax[0].plot(bcm, 0.5, "o", mfc="w", mec="k", ms=5, zorder=5)
-    ax[0].annotate("Mây Bridge\n55 + 90 + 55 m", (bcm, 0.5), (0.62, 0.80), fontsize=7,
-                   arrowprops=dict(arrowstyle="-", lw=0.6))
+    ax[0].annotate("Mây Bridge\n55 + 90 + 55 m", (bcm, 0.5), (0.58, 0.66), fontsize=7,
+                   va="center", arrowprops=dict(arrowstyle="-", lw=0.6))
     note("Fig3", "Cau May marker beta = 90/55, xi = 0.5; N_side", f"{bcm:.6f}, {c3.side_norm(0.5, bcm):.6f}")
     ax[0].set_xlabel(r"span ratio $\beta = L_\mathrm{main}/L_\mathrm{side}$")
     ax[0].set_ylabel(r"side-span sensor position $\xi = x/L_\mathrm{side}$")
@@ -257,7 +258,7 @@ def fig8_baseline():
         ax.bar(x + (k_ - 1.5) * wd, v, wd, color=c, label=lab)
         for r, vv in zip(sel, v):
             note("Fig8", f"{r['name']} {r.span} {r.channel} e{r.event} {lab} (%)", f"{vv}")
-    ticks = [f"{r['name']}\n{r.span}, crossing {r.event}" +
+    ticks = [f"{DISP[r['name']]}\n{r.span}, crossing {r.event}" +
              (f"\n({'raw' if r.channel == 'raw' else 'processed'})"
               if r["name"] == "Phuong Do" and r.span == "N1" else "") for r in sel]
     ax.set_xticks(x)
@@ -310,9 +311,13 @@ def fig9_lowpass():
         nm = ("Gie Cuc I " if br == "gie-cuc-1" else "Phuong Do ") + span
         axs[k_, 0].plot(t[m], (s - ref)[m], color="0.45", lw=0.6, label="unfiltered")
         axs[k_, 0].plot(t[m], (sl - ref)[m], color="#c0392b", lw=1.0, label="low-pass 2 Hz")
-        axs[k_, 0].text(0.01, 0.92, nm, transform=axs[k_, 0].transAxes, va="top", fontsize=7)
+        axs[k_, 0].text(0.01, 0.92, DISP[nm[:-len(span) - 1]] + " " + span,
+                        transform=axs[k_, 0].transAxes, va="top", fontsize=7)
         axs[k_, 1].plot(t[m], (s - sl)[m], color="#1f4e9c", lw=0.6)
         axs[k_, 1].axhline(0, color="k", lw=0.4)
+        rr = (s - sl)[m]
+        lo_, hi_ = np.nanmin(rr), np.nanmax(rr)
+        axs[k_, 1].set_ylim(lo_ - 0.05 * (hi_ - lo_), hi_ + 0.40 * (hi_ - lo_))  # headroom for the label
         axs[k_, 1].text(0.01, 0.92, f"$I_\\mathrm{{LP}}/I$ = {lr.ratio_LP_over_unfiltered}; "
                         f"net/abs = {lr.cancellation_net_over_abs}",
                         transform=axs[k_, 1].transAxes, va="top", fontsize=6.5)

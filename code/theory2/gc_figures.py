@@ -100,8 +100,9 @@ for a_, ys in ((ax[0], [0.4, 0.5]), (ax[1], [0.5])):
     a_.axvline(90 / 55, color="0.2", lw=0.8, ls=":")
     for y in ys:
         a_.plot(90 / 55, y, "ko", ms=4)
-ax[0].annotate("Mây Bridge gauges\n(N8 at 0.4L, 0.5L)", (90 / 55, 0.45), (1.9, 0.86),
-               fontsize=7.5, arrowprops=dict(arrowstyle="-", lw=0.6))
+ax[0].annotate("N8 (0.4L) and mid side span", (90 / 55, 0.45), (1.86, 0.86),
+               fontsize=7.5, arrowprops=dict(arrowstyle="-", lw=0.6),
+               bbox=dict(fc="white", ec="none", alpha=0.85, pad=1.5))
 ax[1].annotate("N7", (90 / 55, 0.5), (1.75, 0.44), fontsize=7.5,
                arrowprops=dict(arrowstyle="-", lw=0.6))
 ax[0].plot([], [], "k-", lw=1.8, label="strain blind")
@@ -130,7 +131,7 @@ for a_, spl, title in ((ax[0], th.two_span(1.0), "(a) equal two-span beam"),
     for xs in np.cumsum([0] + [s_[0] for s_ in spl]):
         a_.axvline(xs / spl[0][0], color="0.4", lw=0.6)
     a_.set_xlabel(r"$x/L_1$" if len(spl) == 2 else r"$x/L_\mathrm{side}$")
-    a_.set_ylabel("normalized constant (1 = simply supported reference)")
+    a_.set_ylabel(r"normalized indicator $N$")
     a_.set_title(title); a_.set_ylim(-2.2, 1.6); a_.grid(alpha=0.25)
 ax[0].legend(fontsize=7.5, loc="lower left")
 save(fig, "fig_gc_channels_prismatic")
@@ -175,12 +176,12 @@ ax[0].set_ylabel(r"$N_w = 192EI_\mathrm{mid}C_m/L^4$")
 ax[1].set_ylabel(r"$N_M = 8M_q/(q_0L^2)$")
 ax[2].set_ylabel(r"$N_{\varepsilon}$ (mid-span section units)")
 ax[0].set_title(r"(a) deflection channel, $N_w$")
-ax[1].set_title("(b) strain channel: uniform-load moment; dots = strain blind points")
-ax[2].set_title(r"(c) strain channel incl. section sensitivity $c/EI$ (assumption $c\propto h$)")
+ax[1].set_title("(b) strain channel, uniform-load moment")
+ax[2].set_title(r"(c) strain channel with section gain $c/EI$")
 ax[1].set_ylim(-2.3, 1.1); ax[2].set_ylim(-1.0, 1.1)
 ax[2].set_xlabel("x from end support T5 (m)")
 ax[0].set_ylim(-0.65, 0.85)
-for gl, xg, ha in (("N8 0.4L", 178.0, "left"), ("N8 mid", 172.5, "right"), ("N7", 100.0, "center")):
+for gl, xg, ha in (("N8 0.4L", 178.0, "left"), ("mid side span", 172.5, "right"), ("N7", 100.0, "center")):
     ax[0].text(xg + (0.8 if ha == "left" else -0.8 if ha == "right" else 0), 0.78, gl,
                fontsize=7, ha=ha, bbox=dict(fc="white", ec="none", pad=0.5))
 ax[0].legend(fontsize=7.5, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.02))

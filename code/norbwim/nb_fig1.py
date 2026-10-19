@@ -19,7 +19,7 @@ F = pd.read_csv(os.path.join(HERE, "results", "events_field.csv"))
 s2 = nio.load_strains200()
 a1 = nio.load_allstrain()
 fig, axs = plt.subplots(3, 1, figsize=(7.2, 7.5))
-for a, (eid, df, fs, chans) in zip(axs, [("R17", s2, 200, nf.CH2), ("R11", s2, 200, nf.CH2),
+for lt, a, (eid, df, fs, chans) in zip("abc", axs, [("R17", s2, 200, nf.CH2), ("R11", s2, 200, nf.CH2),
                                          ("R1", a1, 100, ["ch4", "ch5", "ch11", "ch1"])]):
     e = F[F.id == eid].iloc[0]
     t = np.arange(len(df)) / fs
@@ -42,10 +42,10 @@ for a, (eid, df, fs, chans) in zip(axs, [("R17", s2, 200, nf.CH2), ("R11", s2, 2
     a.axvspan(e.ta - e.t_entry, e.tb - e.t_entry, color="0.9", zorder=-1)
     a.axvline(0, color="k", lw=0.5)
     a.axvline(e.t_exit - e.t_entry, color="k", lw=0.5)
-    a.set_title(f"{eid}: {trk} ({nf.TRUCKS[trk]['n']}-axle), v = {e.v1:.1f} m/s, "
-                f"day {e.day}; shaded = integration window", fontsize=8)
+    a.set_title(f"({lt}) {nf.TRUCKS[trk]['n']}-axle truck, v = {e.v1:.1f} m/s, "
+                f"day {e.day}", fontsize=8)
     a.set_ylabel(r"strain ($\mu\varepsilon$)")
-    a.legend(fontsize=6, ncol=3, loc="lower right")
+    a.legend(fontsize=7, ncol=2, loc="lower left")
 axs[-1].set_xlabel("time from first-axle entry (s)")
 fig.tight_layout()
 for x in ("png", "pdf"):
