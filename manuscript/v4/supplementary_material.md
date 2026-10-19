@@ -146,9 +146,9 @@ For arbitrary spans $L_1, L_2, L_3$ and rigidities $EI_1, EI_2, EI_3$, the two s
 
 The processed acceptance-test data of the Cầu Mây Bridge are listed in Tables S8–S10. The longitudinal truck positions are given as drawings in the test report and are not tabulated.
 
-**Table S8.** Cầu Mây acceptance test (June 2020): measured peak deflection (mm, downward positive) at the two gauge sections, at three measuring points across each section, under centric and eccentric truck arrangements.
+**Table S8.** Cầu Mây acceptance test (June 2020): measured peak deflection (mm, downward positive) at the two gauge sections, at three measuring points across each section, under central and eccentric truck arrangements.
 
-| Section | Measuring point | Centric | Eccentric |
+| Section | Measuring point | Central | Eccentric |
 |---|---|---|---|
 | N8, side span, 0.4L from T8 | right edge | 5.32 | 5.91 |
 | N8, side span, 0.4L from T8 | axis | 5.56 | 5.55 |
@@ -188,7 +188,6 @@ Figs. S14 and S15 show the deflection records of two simply supported bridges te
 
 ## Supplementary figure captions
 
-Some panel labels use the notation of an earlier draft: $\rho_L$ = $\lambda$, $\rho_{EI}$ = $\gamma$, $L_m$, $L_s$ = $L_\mathrm{main}$, $L_\mathrm{side}$, $K$ = $\hat k$, "immune" = zero-sum estimator, "boundary-conditioning indicator" = boundary sensitivity $B_m$, "Cau May" = Cầu Mây.
 
 **Fig. S1.** Laboratory two-span beam: measured and analytical influence line of the mid-span deflection of the first span for the single 40.64 N load (Table S1).
 

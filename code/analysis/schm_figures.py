@@ -87,12 +87,12 @@ def fig3_obs_map():
     ax[0].annotate("Cầu Mây\n55 + 90 + 55 m", (bcm, 0.5), (0.62, 0.80), fontsize=7,
                    arrowprops=dict(arrowstyle="-", lw=0.6))
     note("Fig3", "Cau May marker beta = 90/55, xi = 0.5; N_side", f"{bcm:.6f}, {c3.side_norm(0.5, bcm):.6f}")
-    ax[0].set_xlabel(r"span ratio $\beta = L_m/L_s$")
-    ax[0].set_ylabel(r"side-span sensor position $\xi = x/L_s$")
+    ax[0].set_xlabel(r"span ratio $\beta = L_\mathrm{main}/L_\mathrm{side}$")
+    ax[0].set_ylabel(r"side-span sensor position $\xi = x/L_\mathrm{side}$")
     ax[0].set_title("(a) symmetric beam, uniform $EI$", loc="left")
     ax[0].legend(loc="lower left", frameon=True, framealpha=0.9)
     cb = fig.colorbar(cs, ax=ax[0], ticks=[-1.5, -1, -0.5, 0, 0.5, 1, 1.5])
-    cb.set_label(r"$192EI_sC_m/L_s^4$")
+    cb.set_label(r"$N_w = 192EI_\mathrm{side}C_m/L_\mathrm{side}^4$")
 
     cs2 = ax[1].contourf(AA1, AA3, np.clip(Z2, -1.5, 1.5), levels=lev, cmap="RdBu")
     ax[1].contour(AA1, AA3, Z2, levels=[0.0], colors="k", linewidths=1.6)

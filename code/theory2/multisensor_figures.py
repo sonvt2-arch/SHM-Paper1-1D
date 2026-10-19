@@ -74,22 +74,22 @@ for key, c in (("CM-A", COL["gls"]), ("2S-eq", COL["aux"])):
          and float(x["rho"]) == 0.0 and int(x["k"]) == 1]
     ax.loglog([float(x["eps"]) for x in r], [float(x["std_pct"]) for x in r], "-", color=c,
               lw=2.2, alpha=0.35, label=f"{key}, single sensor")
-ax.set_xlabel(r"offset std $\varepsilon_0$ (mm)")
+ax.set_xlabel(r"offset std $\delta_0$ (mm)")
 ax.set_xticks([0.02, 0.05, 0.1, 0.2, 0.5])
 ax.set_xticklabels(["0.02", "0.05", "0.1", "0.2", "0.5"])
 ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
 ax.set_ylabel(r"std of $\hat P$ (% of P)")
-ax.set_title(r"(b) $\sigma_a$ = 0.01 mm", loc="left")
+ax.set_title(r"(b) $\sigma$ = 0.01 mm", loc="left")
 ax.legend(fontsize=5.6, frameon=False, ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.28))
 ax = axs[2]
 t3 = list(csv.DictReader(open(f"{mc.RES}/T3_immune.csv")))
 for key, c in (("2S-eq", COL["aux"]), ("3S-b2.0", COL["immune"]), ("CM-A", COL["gls"])):
     r = [x for x in t3 if x["model"] == key and float(x["eps_mm"]) == 0.1 and float(x["rho"]) == 1.0]
     ax.plot([float(x["sig_mm"]) for x in r], [float(x["std_immune2_pct"]) for x in r], "-o",
-            color=c, ms=3, lw=1, label=f"{key} immune pair")
-ax.set_xlabel(r"white noise $\sigma_a$ (mm)")
+            color=c, ms=3, lw=1, label=f"{key} zero-sum pair")
+ax.set_xlabel(r"white noise $\sigma$ (mm)")
 ax.set_ylabel(r"std of $\hat P$ (% of P)")
-ax.set_title(r"(c) $\rho$ = 1: offset-immune pair", loc="left")
+ax.set_title(r"(c) $\rho$ = 1: zero-sum pair", loc="left")
 ax.legend(fontsize=5.6, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.28))
 fig.tight_layout()
 save(fig, "ms_fig2_placement_gain")
@@ -105,7 +105,7 @@ for ax, case in zip(axs[:2], ("A", "B")):
         sd = th[(case, e)]
         lim = 4 * th[(case, "single (Cmax)")]
         bins = np.linspace(-lim, lim, 121)
-        ax.hist(x, bins=bins, density=True, histtype="step", color=c, lw=1, label=e)
+        ax.hist(x, bins=bins, density=True, histtype="step", color=c, lw=1, label=e.replace("immune", "zero-sum"))
         xx = np.linspace(-lim, lim, 400)
         ax.plot(xx, np.exp(-xx**2 / (2 * sd**2)) / (sd * np.sqrt(2 * np.pi)), ":", color=c, lw=1)
     ax.set_xlabel(r"$\hat P - P$ (kN)")
@@ -119,7 +119,7 @@ for case, mkr in (("A", "o"), ("B", "s")):
         n = E[f"{case}_nax"]
         sd = [x[n == k].std(ddof=1) / th[(case, e)] for k in range(1, 7)]
         ax.plot(range(1, 7), sd, marker=mkr, color=c, lw=0.8, ms=3.5,
-                label=f"{case}: {e}" if case == "A" else None)
+                label=f"{case}: {e}".replace("immune", "zero-sum") if case == "A" else None)
 ax.axhline(1, color="k", lw=0.5)
 ax.set_ylim(0.9, 1.1)
 ax.set_xlabel("number of axles")

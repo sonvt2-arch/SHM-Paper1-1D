@@ -179,8 +179,8 @@ def prismatic_models():
 
 
 def caumay_models():
-    return {"CM-A": Model("Cau May 55+90+55 m, calibration A", CM_GEOM["spans"], "cm", "A"),
-            "CM-B": Model("Cau May 55+90+55 m, calibration B", CM_GEOM["spans"], "cm", "B")}
+    return {"CM-A": Model("Cầu Mây 55+90+55 m, calibration A", CM_GEOM["spans"], "cm", "A"),
+            "CM-B": Model("Cầu Mây 55+90+55 m, calibration B", CM_GEOM["spans"], "cm", "B")}
 
 
 # ---------------------------------------------------------------- noise model

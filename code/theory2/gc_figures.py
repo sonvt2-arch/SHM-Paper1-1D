@@ -51,8 +51,8 @@ Z = th.N_M(XX, 0, MU)
 Zw = th.N_w(XX, 0, MU)
 fig, ax = plt.subplots(1, 2, figsize=(10.5, 4.2), constrained_layout=True)
 cs = map_panel(ax[0], XX, RR, Z, Zw, r"sensor position $\xi = x/L_1$ (span 1)",
-               r"span ratio $\rho_L = L_2/L_1$",
-               r"(a) strain indicator $N_M = 8M_q(x_m)/(q_0L_1^2)$, $\rho_{EI}=1$")
+               r"span ratio $\lambda = L_2/L_1$",
+               r"(a) strain indicator $N_M = 8M_q(x_m)/(q_0L_1^2)$, $\gamma=1$")
 ax[0].plot([], [], "k-", lw=1.8, label=r"strain blind: $\xi_0 = 1-\mu/4$")
 ax[0].plot([], [], "k--", lw=1.0, label="deflection blind (Eq. 6)")
 ax[0].fill_between([], [], [], facecolor="none", hatch="////", label=r"$|N_M|<0.2$")
@@ -62,7 +62,7 @@ for rE, ls in [(0.5, ":"), (1.0, "-"), (2.0, "--"), (4.0, "-.")]:
     mu = th.mu_two(rL, rE)
     x0 = 1 - mu / 4
     ax[1].plot(rL, np.where(x0 > 0, x0, np.nan), color=C_M, ls=ls,
-               label=rf"$\rho_{{EI}}={rE:g}$")
+               label=rf"$\gamma={rE:g}$")
     # deflection blind position at this rho_EI (root of F in (0,1)) for comparison
     # deflection blind position: F/[xi(1-xi)] = 0 -> xi^2 - (1-mu/2) xi - (1-mu/2) = 0
     xb = []
@@ -73,7 +73,7 @@ for rE, ls in [(0.5, ":"), (1.0, "-"), (2.0, "--"), (4.0, "-.")]:
     ax[1].plot(rL, xb, color=C_W, ls=ls, lw=1.0)
 ax[1].plot([], [], color=C_M, label="strain blind point")
 ax[1].plot([], [], color=C_W, lw=1.0, label="deflection blind point")
-ax[1].set_xlabel(r"span ratio $\rho_L = L_2/L_1$")
+ax[1].set_xlabel(r"span ratio $\lambda = L_2/L_1$")
 ax[1].set_ylabel(r"blind position $\xi$ in span 1")
 ax[1].set_ylim(0, 1); ax[1].grid(alpha=0.3)
 ax[1].set_title(r"(b) blind positions: strain for every $\mu<4$, deflection only for $1<\mu<2$")
@@ -91,10 +91,10 @@ BB2, EE = np.meshgrid(B, XE)
 M2 = th.mu_three(BB2) / BB2**2
 Zm, Zmw = th.N_M(EE, M2, M2), th.N_w(EE, M2, M2)
 fig, ax = plt.subplots(1, 2, figsize=(10.5, 4.2), constrained_layout=True)
-map_panel(ax[0], BB, XX, Zs, Zsw, r"$\beta = L_m/L_s$", r"side-span position $\xi = x/L_s$",
+map_panel(ax[0], BB, XX, Zs, Zsw, r"$\beta = L_\mathrm{main}/L_\mathrm{side}$", r"side-span position $\xi = x/L_\mathrm{side}$",
           r"(a) side span, $N_M = 8M_q/(q_0L_s^2)$, uniform $EI$")
-cs = map_panel(ax[1], BB2, EE, Zm, Zmw, r"$\beta = L_m/L_s$",
-               r"main-span position $\eta$ from the pier",
+cs = map_panel(ax[1], BB2, EE, Zm, Zmw, r"$\beta = L_\mathrm{main}/L_\mathrm{side}$",
+               r"main-span position $\zeta$ from the pier",
                r"(b) main span, $N_M = 8M_q/(q_0L_m^2)$")
 for a_, ys in ((ax[0], [0.4, 0.5]), (ax[1], [0.5])):
     a_.axvline(90 / 55, color="0.2", lw=0.8, ls=":")
@@ -129,7 +129,7 @@ for a_, spl, title in ((ax[0], th.two_span(1.0), "(a) equal two-span beam"),
     a_.axhline(0, color="k", lw=0.6)
     for xs in np.cumsum([0] + [s_[0] for s_ in spl]):
         a_.axvline(xs / spl[0][0], color="0.4", lw=0.6)
-    a_.set_xlabel(r"$x/L_1$" if len(spl) == 2 else r"$x/L_s$")
+    a_.set_xlabel(r"$x/L_1$" if len(spl) == 2 else r"$x/L_\mathrm{side}$")
     a_.set_ylabel("normalised constant (1 = simply supported reference)")
     a_.set_title(title); a_.set_ylim(-2.2, 1.6); a_.grid(alpha=0.25)
 ax[0].legend(fontsize=7.5, loc="lower left")
@@ -171,7 +171,7 @@ for a_ in ax:
     for gl, xg in br.GAUGES.items():
         a_.axvline(xg, color="k", lw=0.6, ls=":")
     a_.grid(alpha=0.25)
-ax[0].set_ylabel(r"$N_w = 192EI_\mathrm{mid}C_w/L^4$")
+ax[0].set_ylabel(r"$N_w = 192EI_\mathrm{mid}C_m/L^4$")
 ax[1].set_ylabel(r"$N_M = 8M_q/(q_0L^2)$")
 ax[2].set_ylabel(r"$N_{\varepsilon}$ (mid-span section units)")
 ax[0].set_title(r"(a) deflection channel, $N_w$")
