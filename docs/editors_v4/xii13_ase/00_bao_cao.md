@@ -1,0 +1,7 @@
+# Đọc mù chuẩn mực (XII.13), bản nộp Advances in Structural Engineering
+
+| Lượt | Văn bản | Bắt buộc | Xử lý | Cân nhắc | Xử lý |
+|---|---|---|---|---|---|
+| 1 (`phieu_v1.json`) | Bài + Supplementary + thư | 9 | Sửa 7 (slope-deflection method; main-span constant; integral method; ký hiệu L_tot, E_c, L_v, EI_mid; "that is,"; thứ tự trích dẫn theo năm; dấu câu ấn bản AASHTO/Frýba). Đóng theo nguồn: "Lobo-Aguilar" (bài 2021, 2023) và "Lobo Aguilar" (bài 2018) đúng như bản gốc từng bài. Ngày nộp ở thư: điền khi thầy nộp | 11 | Thầy cho sửa cả 11 |
+
+Trước lượt xác nhận: chạy `kiem_khoa.py` giữa bản trước và sau sửa; chỉ khác ở các chuỗi đã sửa, không có số mới. Văn bản đưa tác nhân đọc là bản sao ở thư mục trung tính.
