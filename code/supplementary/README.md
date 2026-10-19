@@ -4,6 +4,8 @@ Scripts and console logs for the manuscript
 
 > *Blind loci and design criteria for integral load-monitoring channels on continuous girder bridges, with laboratory verification and an assessment on public field records* (`manuscript/v4/manuscript.md`).
 
+**Advances in Structural Engineering submission.** The manuscript submitted to ASE renumbers figures, tables and supplementary items; `ASE_numbering.md` in this folder maps every ASE number to the v4 number used in the table below.
+
 This README is the entry point for the supplementary package of manuscript v4. The scripts are listed where they live; nothing is duplicated. Every number in the manuscript is traced to a log or CSV in `manuscript/v4/traceability.md`. Older material (the two-span and laboratory scripts `s01`–`s05` and the `code/analysis/` scripts) keeps its original, SCHM-v2 equation and table numbers; the second half of this README describes it.
 
 ## Manuscript v4: where each result comes from
