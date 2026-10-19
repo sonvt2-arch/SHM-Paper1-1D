@@ -77,5 +77,6 @@ for ax in axs:
 
 fig.tight_layout(h_pad=0.4)
 for ext in ("pdf", "png"):
+    os.makedirs(OUT, exist_ok=True)
     fig.savefig(os.path.join(OUT, f"Fig1_beams.{ext}"), dpi=300, bbox_inches="tight")
 print("saved Fig1_beams")

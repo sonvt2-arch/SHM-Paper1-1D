@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(__file__)
 SUP = os.path.join(HERE, "..", "..", "manuscript", "v4", "supplementary_material.md")
-OUT = os.path.join(HERE, "..", "..", "manuscript", "v4", "figures", "supplementary", "FigS15_lab_influence_line.png")
+OUT = os.path.join(HERE, "..", "..", "manuscript", "v4", "figures", "supplementary", "FigS1_lab_influence_line.png")
 plt.rcParams.update({"font.family": "serif", "mathtext.fontset": "cm", "font.size": 10})
 
 txt = open(SUP, encoding="utf-8").read()
@@ -35,5 +35,6 @@ ax.legend(frameon=False)
 ax.text(1.6, -0.8, "span 1", ha="center")
 ax.text(3.75, 2.4, "span 2", ha="center")
 fig.tight_layout()
+os.makedirs(os.path.dirname(OUT), exist_ok=True)
 fig.savefig(OUT, dpi=300)
 print("saved", OUT, len(x), "points")
