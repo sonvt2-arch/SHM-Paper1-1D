@@ -1,4 +1,4 @@
-[NEED VALUE: date]
+[date of submission]
 
 Lucia Faravelli, Editor
 *Structural Control and Health Monitoring*
@@ -24,9 +24,9 @@ The field assessment reports its results with 95 % confidence intervals and equi
 
 We believe the paper fits the journal's interest in sensor placement, identifiability, signal processing and field measurement. The journal has recently published work on deflection influence lines of continuous beam bridges, which we cite and distinguish, as we do a recent absolute-area weighing method for continuous rigid-frame bridges.
 
-**Data availability.** The field strain records are from the public NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0 licence). The laboratory data, the derived data behind every figure and table, and all analysis scripts with their console output are provided as Supplementary Material, and the processed in-service bridge data will be deposited at [NEED VALUE: repository name and DOI].
+**Data availability.** The field strain records are from the public NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0 licence). The laboratory data, the derived data behind every figure and table, and all analysis scripts with their console output are provided as Supplementary Material, as are the processed data of the in-service bridge.
 
-The manuscript is original, has not been published, and is not under consideration by any other journal. [NEED VALUE: two related papers by the authors are under review at *Structures*; state here whether they share the laboratory rig, data or text with this manuscript and how they are cited, or confirm that there is no overlap, and attach them as papers for the editor.] All authors have approved the submission. Conflicts of interest, funding and the use of generative AI are declared in the manuscript.
+The manuscript is original, has not been published, and is not under consideration by any other journal. Two other papers by the authors are under review at *Structures*; they address different problems and share no data, test rig or text with this manuscript. All authors have approved the submission. Conflicts of interest, funding and the use of generative AI are declared in the manuscript.
 
 Yours sincerely,
 

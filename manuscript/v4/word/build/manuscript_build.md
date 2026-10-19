@@ -255,7 +255,7 @@ From one static analysis, the theory thus gives the constant of every channel, i
 
 This section checks the deflection influence line, the record integral and the two single-channel estimators, BPM and SLM, on a two-span beam. The loads were positioned statically, so the test checks the model and the algorithm, not performance under moving traffic.
 
-The specimen was a steel hollow square tube, 25 mm × 25 mm × 2.03 mm ($I = 16\,530$ mm⁴, $E = 200$ GPa), on three supports forming two equal spans of 2500 mm. The theoretical constant at mid-span of the first span is $C_m = l^4/(192EI) = 61.54$ mm²/N, where $l$ is the span length. Deflection at that point was measured with a linear variable differential transformer of 0.005 mm resolution, while calibrated weights were suspended at 250 mm steps along the beam.
+The specimen was a steel hollow square tube, 25 mm × 25 mm × 2.03 mm ($I = 16\,530$ mm⁴, $E = 200$ GPa), on three supports forming two equal spans of 2500 mm. The theoretical constant at mid-span of the first span is $C_m = l^4/(192EI) = 61.54$ mm²/N, where $l$ is the span length. Deflection at that point was measured with a linear variable differential transformer of 0.005 mm resolution, while calibrated weights of OIML class M1 were suspended at 250 mm steps along the beam.
 
 Three configurations were tested: a single 40.64 N reference load, two loads 250 mm apart, and three loads. For the three-load group, the order of the loads along the beam was not recorded. The order used here is the one that fits the record best, with a root-mean-square residual of 0.030 mm against 0.55 mm for the reverse order. Because the data fixed this order, the three-load result is not a fully independent test. The specimen, the influence line and the data are in the Supplementary Material.
 
@@ -333,7 +333,7 @@ Each crossing thus carries a gauge-specific component, plausibly from the wheel 
 
 The records support linearity, superposition and per-gauge invariance within the 10–27 % that the noise allows, and they show that each lane, and each deck gauge, needs its own constant. They cannot show weight discrimination, because the reference weights hardly vary. They show no benefit from GLS or zero-sum combinations, because the common-mode assumption behind Eq. (14) holds for vehicle-free noise but not for crossing residuals.
 
-The tests rest on four trucks, two axle counts and seven or eight runs per day. The gauge calibration factors and exact positions are not published, so absolute constants cannot be checked. The GVW accuracy that the dataset authors reported for their influence-line system on this bridge [41–43] was not compared [NEED VALUE: GVW accuracy reported in [41–43] for the same runs, if the authors wish to add it].
+The tests rest on four trucks, two axle counts and seven or eight runs per day. The gauge calibration factors and exact positions are not published, so absolute constants cannot be checked. The dataset authors reported a mean absolute GVW error of 4.6 % for their influence-line system on this bridge [42]; it was obtained on different runs and is not compared directly with the results above.
 
 ---
 
@@ -345,7 +345,7 @@ This section applies the criteria to an in-service three-span box girder with st
 
 The Cầu Mây Bridge carries provincial road ĐT389 over the Kinh Môn River in Hải Dương, Viet Nam. Its main bridge is a three-span continuous prestressed concrete box girder of 55 + 90 + 55 m, built by balanced cantilever ($\beta = 1.636$). The depth varies from 2.40 m at mid-span to 5.40 m at the piers; the design section properties are in the Supplementary Material. The inner piers, including pier T7, are monolithic with the girder, and the end supports T5 and T8 carry pot bearings.
 
-Two deflection gauge sections were read: N8 in the side span between pier T7 and end support T8, at 0.4L (22 m) from T8, and N7 at mid main span. In the June 2020 acceptance test, four trucks stood in the side span (gauge N8) and six in the main span (gauge N7). The trucks were 3-axle, nominally 5 + 10 + 10 t, with a weighed mean of 25.06 t. Dial gauges read the peak deflection under centric and eccentric transverse positions [NEED VALUE: instrument type and fixed reference datum of the dial gauges, temperature correction, load-hold time and zero-reading procedure]. Each gauge section has six readings (three measuring points across the section, on the axis and at both edges, under centric and eccentric truck arrangements); their mean is 5.55 mm at N8 and 15.42 mm at N7.
+Two deflection gauge sections were read: N8 in the side span between pier T7 and end support T8, at 0.4L (22 m) from T8, and N7 at mid main span. In the June 2020 acceptance test, four trucks stood in the side span (gauge N8) and six in the main span (gauge N7). The trucks were 3-axle, nominally 5 + 10 + 10 t, with a weighed mean of 25.06 t. Mitutoyo dial gauges, mounted on independent frames fixed to the ground, read the peak deflection under centric and eccentric transverse positions. Each gauge section has six readings (three measuring points across the section, on the axis and at both edges, under centric and eccentric truck arrangements); their mean is 5.55 mm at N8 and 15.42 mm at N7.
 
 The girder was modelled with Euler–Bernoulli elements, a parabolic depth variation over $L_v = 44$ m from each inner pier, a second moment proportional to $h^{2.943}$ fitted to the two design sections, and a rotational spring $k$ at each inner pier. The depth law and the pier dimensions are not documented, so other depth lengths and exponents and a rigid pier zone were tested as model-form variants (Supplementary Material).
 
@@ -460,7 +460,7 @@ Several vehicles on the structure return their combined weight; on the five-span
 | Flexural rigidity $EI$ | 1 | yes | BPM only; Cầu Mây N8 constant varies 6.6-fold over the admissible set |
 | Span length | 4 | yes | BPM only |
 | Gain | 1 | if not recalibrated between crossings | not evaluated |
-| Reference weighing $P_0$ | 1 | no | laboratory: accuracy class [NEED VALUE]; field: day-1 weights driver-reported |
+| Reference weighing $P_0$ | 1 | no | laboratory: OIML class M1 weights; field: day-1 weights driver-reported |
 | Residual offset, drift $\delta_0$ | $L_\mathrm{tot}/J$ per unit offset | only if common-mode during crossings | Table 7; field per-crossing SD of the gauge average predicted 19.8 % (day 2), 5.3 % (day 1) |
 | Speed effect | 1 | no | day 2: +6 % per 10 m/s (95 % CI −23 to +35 %), not resolved |
 | Speed measurement | 1 | no | not evaluated beyond 1–2 % agreement with the dataset speeds |
@@ -547,15 +547,15 @@ All analyses were implemented by the authors in reproducible scripts: the closed
 
 ## Data Availability
 
-The field strain records analysed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0) [49]. The laboratory deflection data are given in full in the Supplementary Material. The derived data behind every figure and table, the analysis scripts and the console output of each run are provided as Supplementary Material. The Cầu Mây load test was performed by an author of this paper, and the authors are permitted to publish the processed data (static deflection readings, truck positions, weighed truck masses and reported frequencies), which are available at [NEED VALUE: repository name and DOI].
+The field strain records analysed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0) [49]. The laboratory deflection data are given in full in the Supplementary Material. The derived data behind every figure and table, the analysis scripts and the console output of each run are provided as Supplementary Material. The Cầu Mây load test was performed by an author of this paper, and the authors are permitted to publish the processed data; the static deflection readings, the weighed truck masses and axle spacings, and the reported frequencies are given in the Supplementary Material (Tables S8–S10).
 
 ## Conflicts of Interest
 
-The Cầu Mây load test analysed in Section 5 was performed by an author of this paper as part of inspection work carried out by Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy) [NEED VALUE: name(s) of authors involved and nature of relationship]. The authors declare that there is no other conflict of interest regarding the publication of this article.
+The Cầu Mây load test analysed in Section 5 was performed by an author of this paper (Q.-B. Nguyen) as part of inspection work carried out by Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy). The authors declare that there is no other conflict of interest regarding the publication of this article.
 
 ## Funding Statement
 
-This research did not receive any specific grant from funding agencies in the public, commercial or not-for-profit sectors. [NEED VALUE: name the employer under whose employment the work was performed, and the source of the article processing charge, if any.]
+This research did not receive any specific grant from funding agencies in the public, commercial or not-for-profit sectors. The work was carried out as part of the authors' employment at Hanoi University of Civil Engineering.
 
 ## Author Contributions
 
@@ -567,13 +567,13 @@ During the preparation of this work the authors used Claude (Anthropic) to assis
 
 ## Acknowledgments
 
-The authors gratefully acknowledge the Laboratory of Transportation Technology and Systems, Faculty of Bridge and Road Engineering, Hanoi University of Civil Engineering, for providing the test facilities used in this study, and A. Moghadam and R. Sarlo for making the NOR-BWIM dataset publicly available. [NEED VALUE: whether to acknowledge Hai Duong PMU and the testing consultant for access to the acceptance-test report.]
+The authors gratefully acknowledge the Laboratory of Transportation Technology and Systems, Faculty of Bridge and Road Engineering, Hanoi University of Civil Engineering, for providing the test facilities used in this study, and A. Moghadam and R. Sarlo for making the NOR-BWIM dataset publicly available. They also thank the Hải Dương provincial project management unit and Công ty TNHH Tư vấn Đại học Xây dựng for permission to use the acceptance-test data of the Cầu Mây Bridge.
 
 ---
 
 ## Supplementary Material
 
-The Supplementary Material contains: (i) the analysis scripts and the console output of each run, with a README that maps every table and figure to a script and log; (ii) the derived data behind every figure and table; (iii) the laboratory specimen and influence line (Fig. S15), the quadrature study and the full data (Table S1); (iv) the field-record tables: per-channel constants and scatter with χ² tests (Table S2), truck-to-truck ratios with equivalence tests (Table S3), correlations of vehicle-free noise and crossing residuals (Table S4), the per-crossing standard deviations predicted by both covariance models (Table S5) and the full table of estimator errors (Table S6); the processing details and excluded runs, the speed regressions, lane-B and two-truck results, and all estimator results including leave-one-truck-out, in-sample and GLS with the covariance estimated from crossing residuals (Figs. S1–S2); (v) the beam model of the five-span girder, including the strain constant of the gauges relative to the largest on the girder, and the synthetic records of the dataset authors (Figs. S3–S4); (vi) strain blind-locus maps (Figs. S5–S6); (vii) the multi-channel placement study (brute-force search over all cases), Monte Carlo verification and structure-aware weighting functions (Figs. S7–S9); (viii) the asymmetric three-span closed forms; (ix) the Cầu Mây design section properties and concrete modulus, the model-form variants (depth lengths, exponents, rigid pier zone), the frequency interpretation, admissible sets against tolerance (3 %, 4 % and 5.3 %, with and without a prior on $\alpha$; Table S7), the misfit ratio $r_{87}$ over $\kappa$ and the closed-form Möbius law (Figs. S10–S12); (x) the moving-force analysis behind the dynamic bound; (xi) the deflection records of two simply supported bridges, which illustrate baseline handling and low-pass filtering (Figs. S13–S14).
+The Supplementary Material contains: (i) the analysis scripts and the console output of each run, with a README that maps every table and figure to a script and log; (ii) the derived data behind every figure and table; (iii) the laboratory influence line (Fig. S15), the full laboratory data (Table S1) and the quadrature study; (iv) the field-record tables: per-channel constants and scatter with χ² tests (Table S2), truck-to-truck ratios with equivalence tests (Table S3), correlations of vehicle-free noise and crossing residuals (Table S4), the per-crossing standard deviations predicted by both covariance models (Table S5) and the full table of estimator errors (Table S6); the processing details and excluded runs, the speed regressions, lane-B and two-truck results, and all estimator results including leave-one-truck-out, in-sample and GLS with the covariance estimated from crossing residuals (Figs. S1–S2); (v) the beam model of the five-span girder, including the strain constant of the gauges relative to the largest on the girder, and the synthetic records of the dataset authors (Figs. S3–S4); (vi) strain blind-locus maps (Figs. S5–S6); (vii) the multi-channel placement study (brute-force search over all cases), Monte Carlo verification and structure-aware weighting functions (Figs. S7–S9); (viii) the asymmetric three-span closed forms; (ix) the Cầu Mây design section properties and concrete modulus, the model-form variants (depth lengths, exponents, rigid pier zone), the frequency interpretation, admissible sets against tolerance (3 %, 4 % and 5.3 %, with and without a prior on $\alpha$; Table S7), the misfit ratio $r_{87}$ over $\kappa$, the closed-form Möbius law (Figs. S10–S12) and the processed acceptance-test data (Tables S8–S10); (x) the moving-force analysis behind the dynamic bound; (xi) the deflection records of two simply supported bridges, which illustrate baseline handling and low-pass filtering (Figs. S13–S14).
 
 ---
 
@@ -695,7 +695,7 @@ The Supplementary Material contains: (i) the analysis scripts and the console ou
 
 ![](/home/user/SHM-Paper1-1D/manuscript/v4/figures/Fig1_beams.png){width=16cm}
 
-**Fig. 1.** Continuous beams considered: (a) two-span beam with instrumented span $L_1$, adjacent span $L_2 = \lambda L_1$ and sensor at $\xi L_1$; (b) symmetric three-span beam with side spans $L_\mathrm{side}$, main span $L_\mathrm{main} = \beta L_\mathrm{side}$ and side-span sensor at $\xi L_\mathrm{side}$.
+**Fig. 1.** Continuous beams considered: (a) two-span beam with instrumented span $L_1$ of rigidity $EI_1$, adjacent span $L_2 = \lambda L_1$ of rigidity $EI_2 = \gamma EI_1$, and sensor at $\xi L_1$; (b) symmetric three-span beam with side spans $L_\mathrm{side}$ of rigidity $EI_\mathrm{side}$, main span $L_\mathrm{main} = \beta L_\mathrm{side}$ of rigidity $EI_\mathrm{main} = \gamma EI_\mathrm{side}$, and side-span sensor at $\xi L_\mathrm{side}$.
 
 ![](/home/user/SHM-Paper1-1D/manuscript/v4/figures/Fig2_obs_map_3span.png){width=16cm}
 

@@ -12,7 +12,7 @@ The archive `scripts.zip` contains the analysis scripts and the console output o
 
 ## S2. Laboratory specimen and data (item iii)
 
-The specimen, a steel hollow square tube on three supports forming two equal spans of 2500 mm, and the measured single-load influence line are shown in Fig. S15. Table S1 lists the mid-span deflection of the first span for all three load configurations; the order of the three-load group is the best-fitting order discussed in Section 3.
+The specimen is a steel hollow square tube on three supports forming two equal spans of 2500 mm; its measured single-load influence line is shown in Fig. S15. Table S1 lists the mid-span deflection of the first span for all three load configurations; the order of the three-load group is the best-fitting order discussed in Section 3.
 
 **Table S1.** Mid-span deflection of the first span (mm), mean of three cycles. Single load 40.64 N; analytical values from the closed-form influence line.
 
@@ -143,6 +143,42 @@ For arbitrary spans $L_1, L_2, L_3$ and rigidities $EI_1, EI_2, EI_3$, the two s
 | τ = 5.3 % | ≥ 1.8 × 10⁷ | 0.51–1.15 | 0.14–0.42 | 0.12–0.82 | 3.0 × 10⁻⁵–2.0 × 10⁻⁴ |
 | τ = 5.3 %, prior α ∈ [0.9, 1.3] | – | – | 0.14–0.27 | 0.12–0.30 | – |
 
+The processed acceptance-test data of the Cầu Mây Bridge are listed in Tables S8–S10. The longitudinal truck positions are given as drawings in the test report and are not tabulated.
+
+**Table S8.** Cầu Mây acceptance test (June 2020): measured peak deflection (mm, downward positive) at the two gauge sections, at three measuring points across each section, under centric and eccentric truck arrangements.
+
+| Section | Measuring point | Centric | Eccentric |
+|---|---|---|---|
+| N8, side span, 0.4L from T8 | right edge | 5.32 | 5.91 |
+| N8, side span, 0.4L from T8 | axis | 5.56 | 5.55 |
+| N8, side span, 0.4L from T8 | left edge | 5.76 | 5.22 |
+| N7, mid main span | right edge | 14.68 | 14.62 |
+| N7, mid main span | axis | 15.24 | 15.51 |
+| N7, mid main span | left edge | 15.83 | 16.67 |
+
+**Table S9.** Weighed 3-axle test trucks: gross weight and axle spacings (front to middle axle; middle to rear axle) and track width. Mean gross weight 25.06 t.
+
+| Truck | Gross weight (t) | Front axle spacing (m) | Rear axle spacing (m) | Track (m) |
+|---|---|---|---|---|
+| 1 | 24.7 | 3.45 | 1.35 | 1.9 |
+| 2 | 25 | 3.65 | 1.45 | 1.85 |
+| 3 | 25.66 | 3.45 | 1.35 | 1.85 |
+| 4 | 25.06 | 3.85 | 1.35 | 1.85 |
+| 5 | 25.05 | 3.45 | 1.35 | 1.85 |
+| 6 | 25.3 | 3.65 | 1.45 | 1.85 |
+| 7 | 25.1 | 3.7 | 1.45 | 1.9 |
+| 8 | 25.5 | 3.65 | 1.45 | 1.9 |
+| 9 | 24.6 | 3.65 | 1.45 | 1.85 |
+| 10 | 24.6 | 3.6 | 1.45 | 1.85 |
+
+**Table S10.** Vertical natural frequencies of the main-bridge spans reported in the acceptance test.
+
+| Span | Vertical frequency (Hz) |
+|---|---|
+| N6 (side span, 55 m) | 3.43 |
+| N7 (main span, 90 m) | 3.64 |
+| N8 (side span, 55 m) | 3.63 |
+
 Fig. S10 shows the predicted vertical frequencies against the scaled pier stiffness κ, Fig. S11 the static misfit over the plane of α and k, and Fig. S12 the closed-form Möbius law of Eq. (15) against FE.
 
 The moving-force analysis behind the dynamic bound of Section 6 is reproduced by `s05_moving_force.py`; its console output (`s05_moving_force.log`) lists the quasi-static error against $t_\mathrm{cr}/T_1$, the effect of damping and the axle-configuration spread under dynamics.
@@ -209,4 +245,6 @@ Some panel labels use the notation of an earlier draft: $\rho_L$ = $\lambda$, $\
 
 **Fig. S14.** The same records: (a) deflection relative to the linear baseline, unfiltered and low-pass filtered at 2 Hz; (b) dynamic residual removed by the low-pass filter.
 
-**Fig. S15.** Laboratory specimen and measured single-load influence line. [NEED VALUE: author to supply the photographs and figure]
+![](/home/user/SHM-Paper1-1D/manuscript/v4/word/../figures/supplementary/FigS15_lab_influence_line.png){width=15.5cm}
+
+**Fig. S15.** Laboratory two-span beam: measured and analytical influence line of the mid-span deflection of the first span for the single 40.64 N load (Table S1).
