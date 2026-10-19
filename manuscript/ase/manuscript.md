@@ -12,7 +12,7 @@ E-mail addresses: baonq@huce.edu.vn (Q.-B. Nguyen), sonvt2@huce.edu.vn (T.-S. Vu
 
 ## Abstract
 
-On a continuous girder the influence line of a channel changes sign over the piers, so the area under a record, which gives the total load in influence-area weighing, can vanish. This paper gives criteria for choosing, before installation, channels that observe the total load. Closed forms give the blind loci of five channel types on continuous and haunched girders; strain gauges are blind at every zero of the uniform-load moment and nearly blind in a band that can contain gauges set back from the piers. Optimal sensors lie at the extremes of the uniform-load response, and the integral constant (record integral per unit total load) follows a linear-fractional (Möbius) law in the scaled pier stiffness. A laboratory test confirms the identity. Public moving-truck records, whose reference weights vary too little to test weight discrimination, are consistent with its assumptions within margins of 10–27 % and show that vehicle-free noise covariance misleads multi-channel weighting. On an in-service box girder, two static readings leave a side-span deflection constant uncertain by a factor of 6.6, whereas the main-span constant is well determined.
+On a continuous girder the influence line of a channel changes sign over the piers, so the area under a record, which gives the total load in influence-area weighing, can vanish. This paper gives criteria for choosing, before installation, channels that observe the total load. Closed forms give the blind loci, where this area vanishes, of five channel types on continuous and haunched girders; strain gauges are blind at every zero of the uniform-load moment and nearly blind in a band that can contain gauges set back from the piers. Optimal sensors lie at the extremes of the uniform-load response, and the integral constant (record integral per unit total load) follows a linear-fractional (Möbius) law in the scaled pier stiffness. A laboratory test confirms the identity. Public moving-truck records, whose reference weights vary too little to test weight discrimination, are consistent with its assumptions within margins of 10–27 % and show that vehicle-free noise covariance misleads multi-channel weighting. On an in-service box girder, two static readings leave a side-span deflection constant uncertain by a factor of 6.6, whereas the main-span constant is well determined.
 
 **Keywords:** Structural health monitoring; Sensor placement; Observability; Continuous girder; Bridge weigh-in-motion; Identifiability
 
@@ -26,7 +26,7 @@ A simpler family estimates only the gross weight from the area under the respons
 
 The identity behind these methods is classical: the area under an influence line equals the response to a uniform unit load, as design codes use for distributed lane loads (Ghali et al., 2017). On continuous girders, however, the influence line changes sign over each interior support, and positive and negative areas partly cancel. Continuous bridges have been weighed from distributed fibre-optic strain (Chaudhary et al., 2025), with lane-specific influence lines (Wu et al., 2020) and from deck strain on long-span box girders (Moghadam et al., 2022, 2023a, 2023b); Deng et al. (2025) replaced the small net area of a multi-span displacement influence line by its absolute area. Sensor placement for BWIM has been posed through an augmented Kalman filter (Zhou et al., 2025), deflection-based load identification as a regularised stochastic problem (Zhang et al., 2026), and deflection influence lines have been inverted for girder stiffness (Zhou et al., 2026). None of these studies says, before installation, which channel at which position can observe the total load at all, and how robust that observation is to uncertain boundary conditions.
 
-This paper supplies such criteria. Neither the influence-area identity nor the generalised least-squares (GLS) estimator is new; the contributions lie in the criteria built on them. (i) We derive a closed-form catalogue of blind loci for five channel types on two- and three-span and haunched girders, with two indicators that need no reference rigidity; at every prismatic location examined, strain influence lines cancel less than deflection influence lines (cancellation ratio $R_\varepsilon = 0.667$ against $R_w = 0.571$ at mid-span of two equal spans), yet strain gauges are blind in every continuous girder. (ii) We derive a placement rule, optimal sensors at the extremes of the uniform-load response, and show on one day of public moving-truck records that GLS weights built from vehicle-free noise raise the out-of-sample error above that of the gauge average (20.4 % against 11.9 % of gross weight). (iii) We show that the integral constant depends on pier stiffness through a linear-fractional (Möbius) law and, on an in-service box girder, that two static readings leave a side-span deflection constant uncertain by a factor of 6.6, while a pier tiltmeter would reduce the Cramér–Rao bound on its logarithm from 0.87 to 0.18.
+This paper supplies such criteria. Neither the influence-area identity nor the generalised least-squares (GLS) estimator is new; the contributions lie in the criteria built on them. (i) We derive a closed-form catalogue of blind loci for five channel types on two- and three-span and haunched girders, with two indicators that need no reference rigidity; at every prismatic location examined, strain influence lines cancel less than deflection influence lines (cancellation ratio $R_\varepsilon = 0.667$ against $R_w = 0.571$ at mid-span of two equal spans), yet every continuous girder has strain blind points. (ii) We derive a placement rule, optimal sensors at the extremes of the uniform-load response, and show on one day of public moving-truck records that GLS weights built from vehicle-free noise raise the out-of-sample error above that of the gauge average (20.4 % against 11.9 % of gross weight). (iii) We show that the integral constant depends on pier stiffness through a linear-fractional (Möbius) law and, on an in-service box girder, that two static readings leave a side-span deflection constant uncertain by a factor of 6.6, while a pier tiltmeter would reduce the Cramér–Rao bound on its logarithm from 0.87 to 0.18.
 
 ---
 
@@ -42,17 +42,17 @@ Its integral over the complete crossing is
 
 $$J_m=\int_0^{L_p+d_\mathrm{max}}y_m\,\mathrm{d}x=P_\mathrm{tot}\,C_m,\qquad C_m=\int_0^{L_p}\eta_m(u)\,\mathrm{d}u=\frac{y_m[q_0]}{q_0}, \tag{2}$$
 
-where $P_\mathrm{tot}$ is the total load and $y_m[q_0]$ the response to a uniform load $q_0$ over the whole path. This is the classical influence-area identity (Ojio and Yamada, 2002; Ghali et al., 2017); the second equality needs superposition only. $C_m$ is called the integral constant, or the constant. For a strain gauge at distance $c_m$ from the neutral axis of a section of rigidity $EI_m$ at $x_m$,
+where $P_\mathrm{tot}$ is the total load and $y_m[q_0]$ the response to a uniform load $q_0$ over the whole path. This is the classical influence-area identity (Ojio and Yamada, 2002; Ghali et al., 2017); the second equality, $C_m = y_m[q_0]/q_0$, needs superposition only. $C_m$ is called the integral constant, or the constant, and a channel is blind where $C_m = 0$. For a strain gauge at distance $c_m$ from the neutral axis of a section of rigidity $EI_m$ at $x_m$,
 
 $$C_\varepsilon=\frac{c_m\,M_q(x_m)}{EI_m\,q_0}. \tag{3}$$
 
-The section enters only as a gain, so a strain channel is blind exactly at the zeros of the uniform-load moment diagram $M_q$, for any $EI(x)$ and any elastic supports. The beam-property method (BPM) computes $C$ from a structural model and returns $P = J/C$; SLM takes the constant from a reference crossing of known weight $P_0$ and returns $P_t = P_0J_t/J_0$ (Ojio and Yamada, 2002).
+The section enters only as a gain, so a strain channel is blind exactly at the zeros of the uniform-load moment diagram $M_q$, for any $EI(x)$ and any elastic supports. The beam-property method (BPM) computes $C$ from a structural model and returns the total-load estimate $P = J/C$; SLM takes the constant from a reference crossing of known weight $P_0$ and returns $P_t = P_0J_t/J_0$ (Ojio and Yamada, 2002).
 
 Eq. (2) assumes a linear, time-invariant structure, a quasi-static response, axles on the path on which $\eta_m$ is defined (so each lane has its own constant), a complete crossing and re-zeroing to the unloaded state; Sections 3, 4 and 6 test these assumptions, and truncating the record when the first axle leaves changes the rotation integral by up to 59 % on a two-span example (Supplementary Section S3).
 
 ### 2.2. Closed-form blind loci
 
-For a prismatic span under a uniform load, every channel is fixed by the two end moments, written as $\bar M = -8M/(q_0L^2)$, positive for hogging: $\bar M_l$ at the left end and $\bar M_r$ at the right end. In the instrumented span of a two-span beam and in the side span of a symmetric three-span beam, $(\bar M_l, \bar M_r) = (0, \mu)$, with the classical interior-moment parameter (Ghali et al., 2017)
+For a prismatic span under a uniform load, every channel is determined by the two end moments, written as $\bar M = -8M/(q_0L^2)$, positive for hogging: $\bar M_l$ at the left end and $\bar M_r$ at the right end. In the instrumented span of a two-span beam and in the side span of a symmetric three-span beam, $(\bar M_l, \bar M_r) = (0, \mu)$, with the classical interior-moment parameter (Ghali et al., 2017)
 
 $$\mu_\mathrm{2span}=\frac{1+\lambda^3/\gamma}{1+\lambda/\gamma},\qquad \mu_\mathrm{3span}=\frac{2(\gamma+\beta^3)}{2\gamma+3\beta}. \tag{4}$$
 
@@ -97,7 +97,7 @@ Every estimator below divides by $C$, so to first order the sensitivity to measu
 
 $$N_w=\frac{192EI_\mathrm{ref}\,C_m}{L^4}, \tag{10}$$
 
-with $L$ the span containing the sensor and $EI_\mathrm{ref}$ a reference rigidity. $N_w$ equals 2.5 at mid-span of a simply supported span, where $N_M$ and the rotation and shear indicators (Supplementary Section S3) equal 1, so a common threshold of 0.2 is 8 % of the simply supported value for deflection and 20 % for strain; both thresholds are design conventions. On a non-prismatic girder $N_w$ also depends on the choice of $EI_\mathrm{ref}$, which, as Section 5 shows, can dominate the result, whereas $N_M$, the uniform-load moment relative to $q_0L^2/8$, needs no reference rigidity. Neither does the cancellation ratio
+with $L$ the span containing the sensor and $EI_\mathrm{ref}$ a reference rigidity. $N_w$ equals 2.5 at mid-span of a simply supported span, where $N_M$ equals 1, as do the rotation and shear indicators (Supplementary Section S3) for the simply supported end rotation and end shear, so a common threshold of 0.2 is 8 % of the simply supported value for deflection and 20 % for strain; both thresholds are design conventions. On a non-prismatic girder $N_w$ also depends on the choice of $EI_\mathrm{ref}$, which, as Section 5 shows, can dominate the result, whereas $N_M$, the uniform-load moment relative to $q_0L^2/8$, needs no reference rigidity. Neither does the cancellation ratio
 
 $$R=\frac{C}{A^+}=1-\frac{|A^-|}{A^+}, \tag{11}$$
 
@@ -107,7 +107,7 @@ A residual offset $\delta_0$, in the units of the channel, left after re-zeroing
 
 $$b=\frac{P_\delta}{P},\qquad P_\delta=\frac{\delta_0L_\mathrm{tot}}{C}. \tag{12}$$
 
-The offset-equivalent load $P_\delta$, at which the bias reaches 100 %, combines sensor position, baseline stability and the lightest vehicle to be screened into one number.
+The offset-equivalent load $P_\delta$, at which the bias reaches 100 %, combines sensor position and baseline stability into one number, to be compared with the lightest vehicle to be screened.
 
 ### 2.4. Multi-channel estimation and sensor placement
 
@@ -129,7 +129,7 @@ A girder with monolithic piers has the stiffness matrix $\alpha K_g + kK_p$, whe
 
 $$C_m(\alpha,\kappa)=\frac{1}{\alpha}\Big[C_\infty+\frac{C_0-C_\infty}{1+\kappa/k_g}\Big]. \tag{15}$$
 
-$C_0$ and $C_\infty$ are the constants for pinned and for fixed piers at $\alpha = 1$, and $k_g$ is the girder's own stiffness against antisymmetric pier rotation. Eq. (15) is called the Möbius law. The ratio $C_\infty/C_0$ is the full change that pier fixity can produce at a gauge, and the boundary sensitivity $B_m = |\partial\ln C_m/\partial\ln\kappa|$ is its local slope.
+$C_0$ and $C_\infty$ are the constants for pinned and for fixed piers at $\alpha = 1$, and $k_g$ is the girder's own stiffness against antisymmetric pier rotation. Eq. (15) is called the Möbius law. The ratio $C_\infty/C_0$ is the full change that pier fixity can produce at a gauge, and the boundary sensitivity $B_m = |\partial\ln C_m/\partial\ln\kappa|$ is the local slope of the Möbius curve $C_m(\kappa)$.
 
 For a symmetric prismatic three-span beam with rotational springs $k$ at the piers, the slope-deflection method gives, with $\hat k$ the pier stiffness relative to the side-span rigidity,
 
@@ -157,7 +157,7 @@ The Nothing-on-Road BWIM (NOR-BWIM) dataset (Moghadam and Sarlo, 2024) contains 
 
 ### 4.2. Invariance, lanes and gauges
 
-Invariance between trucks can be shown only within margins of 10–27 %. On day 1, the χ² test does not reject consistency with the measured noise for eight of the twelve gauges, but only ch11 shows equal constants for both trucks within ±10 % (Fig. 5a), about what chance alone would produce with twelve tests at the 5 % level. The four gauges without axle spikes give constants 22–26 % lower for the second truck (CIs exclude 1), but speed and truck are almost perfectly confounded on day 1 (correlation 0.98), so wheel path, local deck action or speed may cause this. On day 2, the ratio of the gauge-average constants of the 5-axle and the 3-axle truck is 0.98 (95 % CI 0.70–1.37; Fig. 5b): consistent with Eq. (2), but with eight runs it cannot exclude differences of up to about 27 %, so it is a coarse check of linearity and processing. A speed effect was neither resolved nor excluded (Supplementary Fig. S11).
+Invariance between trucks can be shown only within margins of 10–27 %. On day 1, the χ² test does not reject consistency with the measured noise for eight of the twelve gauges, but only ch11 shows equal constants for both trucks within ±10 % (Fig. 5a); with twelve tests at the 5 % level, one such pass is about what chance alone would produce. The four gauges without axle spikes give constants 22–26 % lower for the second truck (CIs exclude 1), but speed and truck are almost perfectly confounded on day 1 (correlation 0.98), so wheel path, local deck action or speed may cause this. On day 2, the ratio of the gauge-average constants of the 5-axle and the 3-axle truck is 0.98 (95 % CI 0.70–1.37; Fig. 5b): consistent with Eq. (2), but with eight runs it cannot exclude differences of up to about 27 %, so it is a coarse check of linearity and processing. A speed effect was neither resolved nor excluded (Supplementary Fig. S11).
 
 Each lane needs its own constant. For the gauge average, return trips in lane B gave constants 0.79 times those of lane A (95 % CI 0.59–1.00), as on another continuous girder (Wu et al., 2020); lane-B speeds came from the lag between gauges, so this ratio also contains any difference between the two speed estimates. The lane effect is clearly resolved for one gauge only (st36: 0.64, 95 % CI 0.47–0.81). For the gauge average, the two runs with the trucks one behind the other gave 0.92 of the summed single-truck predictions (pooled 95 % CI 0.77–1.06), consistent with superposition although both fall below the prediction.
 
@@ -188,13 +188,13 @@ The failure of GLS is itself a finding. The vehicle-free noise of the four day-2
 
 The Cầu Mây Bridge crosses the Kinh Môn River in Hải Dương, Viet Nam. Its main bridge is a 55 + 90 + 55 m continuous prestressed concrete box girder built by balanced cantilever ($\beta = 1.636$), 2.40 m deep at mid-span and 5.40 m at the piers. The inner piers, including T7, are monolithic with the girder; the end supports T5 and T8 carry pot bearings. In the June 2020 acceptance test, 3-axle trucks with a weighed mean of 25.06 t stood in the side and main spans, and dial gauges read the peak deflection at N8, in the side span at 0.4L (22 m) from T8, and at N7, mid main span. Each section has six readings (three points across, central and eccentric arrangements), with means of 5.55 mm at N8 and 15.42 mm at N7 (Supplementary Tables S11–S13).
 
-The Euler–Bernoulli model has a parabolic depth variation over $L_v = 44$ m from each inner pier, a second moment proportional to $h^{2.943}$, where $h$ is the girder depth, and a rotational spring $k$ at each inner pier; other haunch lengths and exponents and a rigid pier zone were tested as model-form variants (Supplementary Section S8). Calibration A, the design model, has $\alpha = 1$ and $k = 2.75\times10^7$ kN m/rad fitted to the designer's FE output and deviates from the measurements by +2.4 % at N8 and +12.3 % at N7. Calibration B, the joint least-squares fit, has $\alpha = 0.716$ and $k = 1.2\times10^8$ kN m/rad, with misfits of −2.8 % and +2.9 %. A lies at $\kappa = 2.75\times10^7$ kN m/rad and B at $\kappa = 1.68\times10^8$ kN m/rad. Fig. 6 shows the indicators along the girder.
+The Euler–Bernoulli model has a parabolic depth variation over $L_\mathrm{v} = 44$ m from each inner pier, a second moment proportional to $h^{2.943}$, where $h$ is the girder depth, and a rotational spring $k$ at each inner pier; other haunch lengths and exponents and a rigid pier zone were tested as model-form variants (Supplementary Section S8). Calibration A, the design model, has $\alpha = 1$ and $k = 2.75\times10^7$ kN m/rad fitted to the designer's FE output and deviates from the measurements by +2.4 % at N8 and +12.3 % at N7. Calibration B, the joint least-squares fit, has $\alpha = 0.716$ and $k = 1.2\times10^8$ kN m/rad, with misfits of −2.8 % and +2.9 %. A lies at $\kappa = 2.75\times10^7$ kN m/rad and B at $\kappa = 1.68\times10^8$ kN m/rad. Fig. 6 shows the indicators along the girder.
 
 ### 5.2. What the static data identify
 
 The static data leave the constant of the side-span gauge N8 uncertain by a factor of 6.6, whereas that of the main-span gauge N7 is well determined, because of a model-form misfit and the Möbius law of Eq. (15).
 
-The test quantity $r_{87}$, the measured-to-model ratio at N8 divided by that at N7, would equal 1 if one model fitted both gauges. Its minimum, 1.058, lies at calibration B (Fig. 7a), and the model-form variants move the minimum between 1.039 and 1.092 but never to 1. The 4–9 % residual is therefore model-form error, calibration B is the nearest fit rather than an exact one, and its $\alpha = 0.716$ would mean a 28 % loss of rigidity in a recently built prestressed girder.
+The misfit ratio $r_{87}$, the measured-to-model ratio at N8 divided by that at N7, would equal 1 if one model fitted both gauges. Its minimum, 1.058, lies at calibration B (Fig. 7a), and the model-form variants move the minimum between 1.039 and 1.092 but never to 1. The 4–9 % residual is therefore model-form error, calibration B is the nearest fit rather than an exact one, and its $\alpha = 0.716$ would mean a 28 % loss of rigidity in a recently built prestressed girder.
 
 The admissible set contains every model whose misfit at each gauge stays within a tolerance $\tau$. The six readings of each section have a standard deviation of 4.7–5.0 % about their mean, so the standard error of the mean is 1.9–2.0 %; this scatter comes from the transverse positions, not from repeatability, because the readings are not replicates. Combined in quadrature with a model-form standard uncertainty of 1.75 %, it gives 2.64 % for each section mean and $\tau = 5.3$ % at two standard deviations. At this tolerance the data bound $\kappa$ only from below: every $\kappa \ge 1.8\times10^7$ kN m/rad is admissible, with $\alpha$ between 0.51 and 1.15. At $\tau = 3$ % the admissible set shrinks and excludes the design rigidity, $\alpha = 1$ (Supplementary Table S10).
 
@@ -219,9 +219,9 @@ The main-span indicator is low (0.19–0.29) although $R$ is 0.56–1.00, so its
 
 For this girder the deflection channel at mid main span is the robust choice. A side-span deflection gauge is ill-conditioned with respect to pier stiffness and should not take its constant from a design model unless that stiffness is identified.
 
-Strain channels behave differently (Fig. 6). The haunches move every zero-moment point towards mid-span: the side-span zero lies 26.0–33.3 m from the end support, so a strain gauge at mid side span would be practically blind under calibration A ($N_M = 0.048$), and mid main span lies in or at the edge of the near-blind band in every haunched model ($N_M$ = 0.163–0.212 at N7), again because of restraint ($R_\varepsilon$ = 0.65–1). By $N_M$ alone the best strain locations in all haunched models are 5–10 m from the piers ($|N_M| \ge 0.39$), but with $c\propto h$ their gain $c/EI$ is about one fifth of that at mid-span (Fig. 6c), so the placement rule, which ranks by $C_\varepsilon = cM_q/(EI\,q_0)$, disagrees; which ranking governs depends on whether the strain resolution or the offset sets the noise. Load cells under the end bearings ($N_F = \xi_0$ = 0.47–0.61) cannot be blind unless the side span loses its sagging zone.
+Strain channels behave differently (Fig. 6). The haunches move every zero-moment point towards mid-span: the side-span zero lies 26.0–33.3 m from the end support, so a strain gauge at mid side span would be practically blind under calibration A ($N_M = 0.048$), and mid main span lies in or at the edge of the near-blind band in every haunched model ($N_M$ = 0.163–0.212 at N7), again because of restraint ($R_\varepsilon$ = 0.65–1). By $N_M$ alone the best strain locations in all haunched models are 5–10 m from the piers ($|N_M| \ge 0.39$), but with $c\propto h$ their gain $c/EI$ is about one fifth of that at mid-span (Fig. 6c), so the placement rule, which ranks by $C_\varepsilon = cM_q/(EI\,q_0)$, disagrees. Which ranking governs depends on whether the strain resolution or the offset sets the noise. Load cells under the end bearings ($N_F = \xi_0$ = 0.47–0.61) cannot be blind unless the side span loses its sagging zone.
 
-The placement rule puts a second deflection sensor at the most negative constant, in the side span 4–10 m from the inner pier; the pair at 100 m and 152 m from T5 is within 0.9 % of the calibration-specific optimum under both A and B, so placement is insensitive to the unresolved pier stiffness. Under the assumed noise model ($\sigma = 0.01$ mm, $\delta_0 = 0.1$ mm, a 220 m record, $\rho = 0.9$, calibration A), the standard deviation of the load falls from 24.8 % with N7 alone to 10.6 % with the pair; this gain is an upper bound, because such common-mode behaviour need not hold during crossings (Section 4.3).
+The placement rule puts a second deflection sensor at the most negative constant, in the side span 4–10 m from the inner pier; the pair at 100 m and 152 m from T5 is within 0.9 % of the calibration-specific optimum under both A and B, so placement is insensitive to the unresolved pier stiffness. Under the assumed noise model ($\sigma = 0.01$ mm, $\delta_0 = 0.1$ mm, a 220 m record including a 20 m convoy allowance, $\rho = 0.9$, calibration A), the standard deviation of the load falls from 24.8 % with N7 alone to 10.6 % with the pair; this gain is an upper bound, because such common-mode behaviour need not hold during crossings (Section 4.3).
 
 If a model-based constant is wanted, a tiltmeter on the monolithic pier T7 is the most informative additional measurement; under the side-span convoy it would read about 167 µrad. At calibration A ($\kappa = 2.75\times10^7$ kN m/rad, $\alpha$ refitted to $\alpha^* = 1.07$; Fig. 7b), with 2.64 % standard uncertainty per reading and an assumed 3 % for the rotation, the Cramér–Rao bound on the standard deviation of $\ln C_8$ is 0.87 from the two deflections and 0.18 with the tiltmeter. The first and third vertical frequencies would give 0.24 instead, but only if the first frequency were identified, and the test reports one frequency per span (Supplementary Table S13). At calibration B the two-reading Fisher matrix is singular; with the tiltmeter the bound is 0.04.
 
@@ -241,7 +241,7 @@ A moving-load test with weighed trucks has been designed for this bridge but not
 
 For design before installation (checklist in Supplementary Section S10), one static analysis under a uniform unit load on each lane gives the constant of every candidate channel. Strain gauges should stay out of the near-blind band $|N_M|<0.2$ around every zero-moment point, including gauges set back from a pier, and deflection gauges out of the bands of Table 1. Eq. (15) gives the constant over the plausible range of pier stiffness; locations with large $C_\infty/C_0$ or $B_m$ should be avoided, or a measurement that identifies $\kappa$ should be planned (a pier tiltmeter, an identified first frequency or an integral ratio between two gauges). Sensors belong at the extremes of $C(x)$. SLM with weighed vehicles of clearly different weights and lane-specific constants is preferred; GLS or zero-sum weights need $\Sigma$ from calibration-crossing residuals, checked out of sample.
 
-The residual offset limits single-channel accuracy on long spans. Over the Cầu Mây admissible set, with $L_\mathrm{tot} = 200$ m, $\delta_0 = 0.1$ mm biases a 25 t truck by 16–25 % at a single main-span gauge and by 41–271 % at a single side-span gauge (Supplementary Table S15). With present absolute-deflection technology, single-point integral weighing on a long-span girder is therefore marginal even at the best location, and non-contact techniques must establish their residual offset on site, because environmental effects act over the same window (Sohn, 2007; Cross et al., 2013). Speed enters through the response and its measurement: on lane A of the field records, speeds from a low-pass fit were 1.139 times those from the axle spikes (standard deviation 0.124, 22 runs), so the speed estimator alone can shift the weight by more than 10 %. The quasi-static error for a constant force crossing the laboratory beam is at most about 1 % when $t_\mathrm{cr}/T_1 \ge 8$ (crossing time over fundamental period; Frýba, 1999); the bound omits vehicle–bridge interaction and road roughness (Supplementary Sections S9 and S10). The method is therefore proposed for preliminary overload screening. Its threshold should be set with a margin below the legal limit and the design live loads (CEN, 2003; AASHTO, 2024), and flagged vehicles should be weighed by instrumented BWIM; influence-line BWIM does not suffer the blindness of Table 1, because it fits the whole record shape.
+The residual offset limits single-channel accuracy on long spans. Over the Cầu Mây admissible set, with $L_\mathrm{tot} = 200$ m, $\delta_0 = 0.1$ mm biases a 25 t truck by 16–25 % at a single main-span gauge and by 41–271 % at a single side-span gauge (Supplementary Table S15). With present absolute-deflection technology, single-point influence-area weighing on a long-span girder is therefore marginal even at the best location, and non-contact techniques must establish their residual offset on site, because environmental effects act over the same window (Sohn, 2007; Cross et al., 2013). Speed enters through the response and its measurement: on lane A of the field records, speeds from a low-pass fit were 1.139 times those from the axle spikes (standard deviation 0.124, 22 runs), so the speed estimator alone can shift the weight by more than 10 %. The quasi-static error for a constant force crossing the laboratory beam is at most about 1 % when $t_\mathrm{cr}/T_1 \ge 8$ (crossing time over fundamental period; Frýba, 1999); the bound omits vehicle–bridge interaction and road roughness (Supplementary Sections S9 and S10). The method is therefore proposed for preliminary overload screening. Its threshold should be set with a margin below the legal limit and the design live loads (CEN, 2003; AASHTO, 2024), and flagged vehicles should be weighed by instrumented BWIM; influence-line BWIM does not suffer the blindness of Table 1, because it fits the whole record shape.
 
 Several limitations remain. The laboratory beam had equal spans and statically positioned loads, and the blind configuration was not tested. The field data come from one public dataset with four trucks, nearly constant reference weights and no gauge at a zero-moment point, so weight discrimination, the deflection blind loci and a deflection pair could not be tested, and a screening threshold still needs field calibration with trucks of clearly different weights, which this study did not have. The in-service analysis uses static data and a beam model with an assumed depth law and equal pier springs, and its moving-load test is designed but not performed. The treatment is one-dimensional along each lane.
 
@@ -305,35 +305,35 @@ AASHTO (2024) LRFD Bridge Design Specifications. 10th ed. Washington, DC: Americ
 
 Agüero-Barrantes P, Lobo-Aguilar S and Christenson RE (2021) Sparse sensing bridge weigh-in-motion for single-span bridges. Métodos y Materiales 11: 43–53. DOI: 10.15517/mym.v11i0.46400.
 
-Agüero-Barrantes P, Christenson RE and Lobo-Aguilar S (2023) Utilizing Kriging metamodeling to provide practical and effective bridge weigh-in-motion. J. Bridge Eng. 28(2): 04022138. DOI: 10.1061/JBENF2.BEENG-5760.
+Agüero-Barrantes P, Christenson RE and Lobo-Aguilar S (2023) Utilizing Kriging metamodeling to provide practical and effective bridge weigh-in-motion. Journal of Bridge Engineering 28(2): 04022138. DOI: 10.1061/JBENF2.BEENG-5760.
 
 Al-Qadi I, Wang H, Ouyang Y, Grimmelsman K and Purdy JE (2016) LTBP Program's Literature Review on Weigh-in-Motion Systems. Report FHWA-HRT-16-024, Federal Highway Administration, Washington, DC. https://rosap.ntl.bts.gov/view/dot/35735.
 
-Cardini AJ and DeWolf JT (2009) Implementation of a long-term bridge weigh-in-motion system for a steel girder bridge in the interstate highway system. J. Bridge Eng. 14(6): 418–423. DOI: 10.1061/(ASCE)1084-0702(2009)14:6(418).
+Cardini AJ and DeWolf JT (2009) Implementation of a long-term bridge weigh-in-motion system for a steel girder bridge in the interstate highway system. Journal of Bridge Engineering 14(6): 418–423. DOI: 10.1061/(ASCE)1084-0702(2009)14:6(418).
 
-CEN (2003) EN 1991-2:2003, Eurocode 1: Actions on Structures – Part 2: Traffic Loads on Bridges, CEN, Brussels.
+CEN (2003) EN 1991-2:2003, Eurocode 1: Actions on Structures – Part 2: Traffic Loads on Bridges. Brussels: CEN.
 
-Chan THT, Law SS, Yung TH and Yuan XR (1999) An interpretive method for moving force identification. J. Sound Vib. 219(3): 503–524. DOI: 10.1006/jsvi.1998.1904.
+Chan THT, Law SS, Yung TH and Yuan XR (1999) An interpretive method for moving force identification. Journal of Sound and Vibration 219(3): 503–524. DOI: 10.1006/jsvi.1998.1904.
 
 Chaudhary MTA, Morgese M, Taylor TW and Ansari F (2025) Method and application for influence-line-free distributed detection of gross vehicle weights in bridges. Structures 73: 108298. DOI: 10.1016/j.istruc.2025.108298.
 
-Cross EJ, Koo KY, Brownjohn JMW and Worden K (2013) Long-term monitoring and data analysis of the Tamar Bridge. Mech. Syst. Signal Process. 35(1–2): 16–34. DOI: 10.1016/j.ymssp.2012.08.026.
+Cross EJ, Koo KY, Brownjohn JMW and Worden K (2013) Long-term monitoring and data analysis of the Tamar Bridge. Mechanical Systems and Signal Processing 35(1–2): 16–34. DOI: 10.1016/j.ymssp.2012.08.026.
 
-Deng L, Liu P, Huang T and Kaewunruen S (2025) A novel moving load identification method for continuous rigid-frame bridges using a field-based displacement influence line. Appl. Sci. 15(11): 6028. DOI: 10.3390/app15116028.
+Deng L, Liu P, Huang T and Kaewunruen S (2025) A novel moving load identification method for continuous rigid-frame bridges using a field-based displacement influence line. Applied Sciences 15(11): 6028. DOI: 10.3390/app15116028.
 
-Fan Y, Zhu J, Pei J and Li Z (2015) Analysis for Yangmingtan Bridge collapse. Eng. Fail. Anal. 56: 20–27. DOI: 10.1016/j.engfailanal.2015.05.003.
+Fan Y, Zhu J, Pei J and Li Z (2015) Analysis for Yangmingtan Bridge collapse. Engineering Failure Analysis 56: 20–27. DOI: 10.1016/j.engfailanal.2015.05.003.
 
 Frýba L (1999) Vibration of Solids and Structures under Moving Loads. 3rd ed. London: Thomas Telford.
 
-Ghali A, Neville AM and Brown TG (2017) Structural Analysis: A Unified Classical and Matrix Approach. CRC Press, Boca Raton. DOI: 10.1201/9781315273006.
+Ghali A, Neville AM and Brown TG (2017) Structural Analysis: A Unified Classical and Matrix Approach. Boca Raton: CRC Press. DOI: 10.1201/9781315273006.
 
-Helmi K, Bakht B and Mufti A (2014) Accurate measurements of gross vehicle weight through bridge weigh-in-motion: a case study. J. Civ. Struct. Health Monit. 4(3): 195–208. DOI: 10.1007/s13349-014-0076-5.
+Helmi K, Bakht B and Mufti A (2014) Accurate measurements of gross vehicle weight through bridge weigh-in-motion: a case study. Journal of Civil Structural Health Monitoring 4(3): 195–208. DOI: 10.1007/s13349-014-0076-5.
 
-Jacob B, OBrien EJ and Jehaes S (eds) (2002) Weigh-in-Motion of Road Vehicles: Final Report of the COST 323 Action. LCPC, Paris.
+Jacob B, OBrien EJ and Jehaes S (eds) (2002) Weigh-in-Motion of Road Vehicles: Final Report of the COST 323 Action. Paris: LCPC.
 
-Law SS and Zhu XQ (2000) Study on different beam models in moving force identification. J. Sound Vib. 234(4): 661–679. DOI: 10.1006/jsvi.2000.2867.
+Law SS and Zhu XQ (2000) Study on different beam models in moving force identification. Journal of Sound and Vibration 234(4): 661–679. DOI: 10.1006/jsvi.2000.2867.
 
-Law SS, Chan THT and Zeng QH (1997) Moving force identification: a time domain method. J. Sound Vib. 201(1): 1–22. DOI: 10.1006/jsvi.1996.0774.
+Law SS, Chan THT and Zeng QH (1997) Moving force identification: a time domain method. Journal of Sound and Vibration 201(1): 1–22. DOI: 10.1006/jsvi.1996.0774.
 
 Lobo Aguilar S and Christenson RE (2018) A simplified shear-strain based bridge weigh-in-motion method for in-service highway bridges. Métodos y Materiales 8: 11–22. DOI: 10.15517/mym.v8i1.34551.
 
@@ -341,49 +341,49 @@ Moghadam A (2022) Integration of Traffic and Structural Health Monitoring System
 
 Moghadam A and Sarlo R (2024) Nothing-on-Road Bridge-Weigh-In-Motion (NOR-BWIM) Dataset, version 1. University Libraries, Virginia Tech, figshare. DOI: 10.7294/26880898.v1.
 
-Moghadam A, AlHamaydeh M and Sarlo R (2022) Bridge-weigh-in-motion approach for simultaneous multiple vehicles on concrete-box-girder bridges. Autom. Constr. 137: 104179. DOI: 10.1016/j.autcon.2022.104179.
+Moghadam A, AlHamaydeh M and Sarlo R (2022) Bridge-weigh-in-motion approach for simultaneous multiple vehicles on concrete-box-girder bridges. Automation in Construction 137: 104179. DOI: 10.1016/j.autcon.2022.104179.
 
-Moghadam A, AlHamaydeh M and Sarlo R (2023a) Nothing-on-road bridge-weigh-in-motion used for long-span, concrete-box-girder bridges: an experimental case study. J. Struct. Integr. Maint. 8(2): 79–90. DOI: 10.1080/24705314.2023.2165606.
+Moghadam A, AlHamaydeh M and Sarlo R (2023a) Nothing-on-road bridge-weigh-in-motion used for long-span, concrete-box-girder bridges: an experimental case study. Journal of Structural Integrity and Maintenance 8(2): 79–90. DOI: 10.1080/24705314.2023.2165606.
 
-Moghadam A, AlHamaydeh M and Sarlo R (2023b) Dual-purpose procedure for bridge health monitoring and weigh-in-motion used for multiple-vehicle events. Autom. Constr. 148: 104768. DOI: 10.1016/j.autcon.2023.104768.
+Moghadam A, AlHamaydeh M and Sarlo R (2023b) Dual-purpose procedure for bridge health monitoring and weigh-in-motion used for multiple-vehicle events. Automation in Construction 148: 104768. DOI: 10.1016/j.autcon.2023.104768.
 
-Moses F (1979) Weigh-in-motion system using instrumented bridges. Transp. Eng. J. ASCE 105(3): 233–249. DOI: 10.1061/TPEJAN.0000783.
+Moses F (1979) Weigh-in-motion system using instrumented bridges. Transportation Engineering Journal of ASCE 105(3): 233–249. DOI: 10.1061/TPEJAN.0000783.
 
-Nguyen QB, Hoang T and Nguyen HS (2024) [Determination of the load applied on a simply supported beam based on measured deflection data]. J. Sci. Technol. Civ. Eng. (HUCE) 18(2V): 61–71 (in Vietnamese). DOI: 10.31814/stce.huce2024-18(2V)-05.
+Nguyen QB, Hoang T and Nguyen HS (2024) [Determination of the load applied on a simply supported beam based on measured deflection data]. Journal of Science and Technology in Civil Engineering (HUCE) 18(2V): 61–71 (in Vietnamese). DOI: 10.31814/stce.huce2024-18(2V)-05.
 
-OBrien EJ, Quilligan MJ and Karoumi R (2006) Calculating an influence line from direct measurements. Proc. Inst. Civ. Eng. Bridge Eng. 159(1): 31–34. DOI: 10.1680/bren.2006.159.1.31.
+OBrien EJ, Quilligan MJ and Karoumi R (2006) Calculating an influence line from direct measurements. Proceedings of the Institution of Civil Engineers: Bridge Engineering 159(1): 31–34. DOI: 10.1680/bren.2006.159.1.31.
 
-OBrien EJ, Rowley CW, González A and Green MF (2009) A regularised solution to the bridge weigh-in-motion equations. Int. J. Heavy Veh. Syst. 16(3): 310–327. DOI: 10.1504/IJHVS.2009.027135.
+OBrien EJ, Rowley CW, González A and Green MF (2009) A regularised solution to the bridge weigh-in-motion equations. International Journal of Heavy Vehicle Systems 16(3): 310–327. DOI: 10.1504/IJHVS.2009.027135.
 
 Ojio T and Yamada K (2002) Bridge weigh-in-motion systems using stringers of plate girder bridges, in: Proceedings of the Third International Conference on Weigh-in-Motion (ICWIM3). Orlando, FL, pp. 209–218.
 
-Shi S, Yarnold M, Hurlebaus S and Mander J (2025) Evaluation of a load cell-based bridge weigh-in-motion system. Transp. Res. Rec. 2679(2): 535–549. DOI: 10.1177/03611981241263336.
+Shi S, Yarnold M, Hurlebaus S and Mander J (2025) Evaluation of a load cell-based bridge weigh-in-motion system. Transportation Research Record 2679(2): 535–549. DOI: 10.1177/03611981241263336.
 
-Sohn H (2007) Effects of environmental and operational variability on structural health monitoring. Philos. Trans. R. Soc. A 365(1851): 539–560. DOI: 10.1098/rsta.2006.1935.
+Sohn H (2007) Effects of environmental and operational variability on structural health monitoring. Philosophical Transactions of the Royal Society A 365(1851): 539–560. DOI: 10.1098/rsta.2006.1935.
 
-Ventura R, Barabino B and Maternini G (2024) Estimating the frequency of traffic overloading on road bridges. J. Traffic Transp. Eng. (Engl. Ed.) 11(4): 776–796. DOI: 10.1016/j.jtte.2023.11.005.
+Ventura R, Barabino B and Maternini G (2024) Estimating the frequency of traffic overloading on road bridges. Journal of Traffic and Transportation Engineering (English Edition) 11(4): 776–796. DOI: 10.1016/j.jtte.2023.11.005.
 
-Wu H, Zhao H, Liu J and Hu Z (2020) A filtering-based bridge weigh-in-motion system on a continuous multi-girder bridge considering the influence lines of different lanes. Front. Struct. Civ. Eng. 14(5): 1232–1246. DOI: 10.1007/s11709-020-0653-0.
+Wu H, Zhao H, Liu J and Hu Z (2020) A filtering-based bridge weigh-in-motion system on a continuous multi-girder bridge considering the influence lines of different lanes. Frontiers of Structural and Civil Engineering 14(5): 1232–1246. DOI: 10.1007/s11709-020-0653-0.
 
-Yan WJ, Hao TT, Yuen KV and Papadimitriou C (2022) Monitoring gross vehicle weight with a probabilistic and influence line-free bridge weight-in-motion scheme based on a transmissibility-like index. Mech. Syst. Signal Process. 177: 109133. DOI: 10.1016/j.ymssp.2022.109133.
+Yan WJ, Hao TT, Yuen KV and Papadimitriou C (2022) Monitoring gross vehicle weight with a probabilistic and influence line-free bridge weight-in-motion scheme based on a transmissibility-like index. Mechanical Systems and Signal Processing 177: 109133. DOI: 10.1016/j.ymssp.2022.109133.
 
-Yang J, Hou P and Yang C (2021) Study on the method of moving load identification based on strain influence line. Appl. Sci. 11(2): 853. DOI: 10.3390/app11020853.
+Yang J, Hou P and Yang C (2021) Study on the method of moving load identification based on strain influence line. Applied Sciences 11(2): 853. DOI: 10.3390/app11020853.
 
-Yu Y, Cai CS and Deng L (2016) State-of-the-art review on bridge weigh-in-motion technology. Adv. Struct. Eng. 19(9): 1514–1530. DOI: 10.1177/1369433216655922.
+Yu Y, Cai CS and Deng L (2016) State-of-the-art review on bridge weigh-in-motion technology. Advances in Structural Engineering 19(9): 1514–1530. DOI: 10.1177/1369433216655922.
 
-Yu Y, Cai CS and Deng L (2018) Nothing-on-road bridge weigh-in-motion considering the transverse position of the vehicle. Struct. Infrastruct. Eng. 14(8): 1108–1122. DOI: 10.1080/15732479.2017.1401095.
+Yu Y, Cai CS and Deng L (2018) Nothing-on-road bridge weigh-in-motion considering the transverse position of the vehicle. Structure and Infrastructure Engineering 14(8): 1108–1122. DOI: 10.1080/15732479.2017.1401095.
 
 Zhang J, Liu Y and Fan X (2026) An AR(1)-Tikhonov-SVD-GCV framework for stochastic moving load identification driven by bridge multi-point deflection data. Structures 88: 111844. DOI: 10.1016/j.istruc.2026.111844.
 
-Zhou C, Demartino C, Narazaki Y, Xu Y, Chatzi E and Spencer BF (2025) Optimal sensor placement for bridge weigh-in-motion using an augmented Kalman filter. Mech. Syst. Signal Process. 241: 113522. DOI: 10.1016/j.ymssp.2025.113522.
+Zhou C, Demartino C, Narazaki Y, Xu Y, Chatzi E and Spencer BF (2025) Optimal sensor placement for bridge weigh-in-motion using an augmented Kalman filter. Mechanical Systems and Signal Processing 241: 113522. DOI: 10.1016/j.ymssp.2025.113522.
 
-Zhou Y, Feng Z, Di SK and Jia ZJ (2026) A novel approach for bending stiffness inversion and rapid evaluation of continuous beam bridges based on a deflection influence line. Struct. Control Health Monit. 2026: 1361157. DOI: 10.1155/stc/1361157.
+Zhou Y, Feng Z, Di SK and Jia ZJ (2026) A novel approach for bending stiffness inversion and rapid evaluation of continuous beam bridges based on a deflection influence line. Structural Control and Health Monitoring 2026: 1361157. DOI: 10.1155/stc/1361157.
 
-Zhu XQ and Law SS (2006) Moving load identification on multi-span continuous bridges with elastic bearings. Mech. Syst. Signal Process. 20(7): 1759–1782. DOI: 10.1016/j.ymssp.2005.06.004.
+Zhu XQ and Law SS (2006) Moving load identification on multi-span continuous bridges with elastic bearings. Mechanical Systems and Signal Processing 20(7): 1759–1782. DOI: 10.1016/j.ymssp.2005.06.004.
 
-Zhu J, Wang C, Qi T and Zhou Y (2022) Vehicle load identification on orthotropic steel box beam bridge based on the strain response area. Appl. Sci. 12(23): 12394. DOI: 10.3390/app122312394.
+Zhu J, Wang C, Qi T and Zhou Y (2022) Vehicle load identification on orthotropic steel box beam bridge based on the strain response area. Applied Sciences 12(23): 12394. DOI: 10.3390/app122312394.
 
-Žnidarič A, Kalin J and Kreslin M (2018) Improved accuracy and robustness of bridge weigh-in-motion systems. Struct. Infrastruct. Eng. 14(4): 412–424. DOI: 10.1080/15732479.2017.1406958.
+Žnidarič A, Kalin J and Kreslin M (2018) Improved accuracy and robustness of bridge weigh-in-motion systems. Structure and Infrastructure Engineering 14(4): 412–424. DOI: 10.1080/15732479.2017.1406958.
 
 ---
 
@@ -401,4 +401,4 @@ Zhu J, Wang C, Qi T and Zhou Y (2022) Vehicle load identification on orthotropic
 
 **Fig. 6.** Cầu Mây girder: indicators for a prismatic model with pinned piers and for the haunched model under calibrations A and B: (a) deflection $N_w$; (b) strain $N_M$; (c) strain indicator including the gain $c/EI$, with $c\propto h$. Dotted lines: gauge positions.
 
-**Fig. 7.** Identifiability of the Cầu Mây pier stiffness: (a) misfit ratio $r_{87}$ against $\kappa = k/\alpha$, with model-form variants (grey) and admissible band $|\ln r_{87}|\le 2\tau$, $\tau$ = 5.3 %; (b) N8 and N7 indicators and cancellation ratios along the best static fit $\alpha^*(\kappa)$; shaded: admissible range of $\kappa$.
+**Fig. 7.** Identifiability of the Cầu Mây pier stiffness: (a) misfit ratio $r_{87}$ against $\kappa = k/\alpha$, with model-form variants (grey) and admissible band $|\ln r_{87}|\le 2\tau$ implied by a misfit within $\tau$ = 5.3 % at each gauge; (b) N8 and N7 indicators and cancellation ratios along the best static fit $\alpha^*(\kappa)$; shaded: admissible range of $\kappa$.
