@@ -110,7 +110,7 @@ for ax, case in zip(axs[:2], ("A", "B")):
         ax.plot(xx, np.exp(-xx**2 / (2 * sd**2)) / (sd * np.sqrt(2 * np.pi)), ":", color=c, lw=1)
     ax.set_xlabel(r"$\hat P - P$ (kN)")
     ax.set_ylabel("density")
-    ax.set_title({"A": "(a) 30+60+30 m", "B": "(b) Cầu Mây, calibration A"}[case], loc="left")
+    ax.set_title({"A": "(a) 30+60+30 m", "B": "(b) Mây Bridge, calibration A"}[case], loc="left")
 axs[0].legend(fontsize=6, frameon=False)
 ax = axs[2]
 for case, mkr in (("A", "o"), ("B", "s")):

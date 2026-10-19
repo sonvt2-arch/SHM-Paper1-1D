@@ -84,7 +84,7 @@ def fig3_obs_map():
     ax[0].plot(B[ok], xo[ok, 0], "k--", lw=1.0, label=r"optimum $\xi^*(\beta)$")
     bcm = 90 / 55
     ax[0].plot(bcm, 0.5, "o", mfc="w", mec="k", ms=5, zorder=5)
-    ax[0].annotate("Cầu Mây\n55 + 90 + 55 m", (bcm, 0.5), (0.62, 0.80), fontsize=7,
+    ax[0].annotate("Mây Bridge\n55 + 90 + 55 m", (bcm, 0.5), (0.62, 0.80), fontsize=7,
                    arrowprops=dict(arrowstyle="-", lw=0.6))
     note("Fig3", "Cau May marker beta = 90/55, xi = 0.5; N_side", f"{bcm:.6f}, {c3.side_norm(0.5, bcm):.6f}")
     ax[0].set_xlabel(r"span ratio $\beta = L_\mathrm{main}/L_\mathrm{side}$")

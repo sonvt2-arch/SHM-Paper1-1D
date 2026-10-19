@@ -61,6 +61,7 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
    - thêm 4 bài ASE: Hao et al. (2019), Zuo et al. (2019), Lin et al. (2023; online 2022), Wang et al. (2026; online 2025). Đã kiểm ba nguồn: Crossref, OpenAlex, Semantic Scholar, khớp tên bài, tạp chí, tập, trang, DOI. Semantic Scholar ghi tên Zuo là "Xiaoqiu", lệch với hai nguồn kia ("Xiao-Han"); giữ theo Crossref, là dữ liệu của nhà xuất bản. Năm ghi theo số tạp chí in. Mỗi bài một vế câu ở Introduction, viết theo tóm tắt; thư gửi tạp chí nhắc thêm bốn bài;
    - tóm tắt rút từ 184 xuống khoảng 165 từ; giữ đủ số liệu, giữ rào "vary too little in weight to test weight discrimination";
    - đọc mù XII.13 lượt 5–8 (`docs/editors_v4/xii13_ase/00_bao_cao.md`), sửa hết mục bắt buộc, trừ địa chỉ không dấu (đóng theo VII.6).
+9. **Tối 19/10, theo yêu cầu của thầy:** "Cầu Mây" đổi thành "Mây Bridge" trong bài, Supplementary và thư; "at Cầu Mây" thành "at the Mây Bridge". Năm hình có chữ trong ảnh được vẽ lại bằng chính script (chỉ đổi nhãn, số liệu giữ nguyên; log Monte Carlo khớp): Hình 2 (`code/analysis/schm_figures.py`), Hình 3 và S2 (`code/theory2/gc_figures.py`), S5 và S6 (`code/theory2/multisensor_core.py`, `multisensor_figures.py`). Graphical abstract dựng lại. Phần chữ trong hình theo font Inter, cần `MATPLOTLIBRC` có `font.sans-serif: Inter`. Thay đổi nằm sau lượt đọc mù cuối; kiem_khoa đạt.
 
 ## 3. Cách dựng tệp Word
 

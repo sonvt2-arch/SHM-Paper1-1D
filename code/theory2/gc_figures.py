@@ -100,7 +100,7 @@ for a_, ys in ((ax[0], [0.4, 0.5]), (ax[1], [0.5])):
     a_.axvline(90 / 55, color="0.2", lw=0.8, ls=":")
     for y in ys:
         a_.plot(90 / 55, y, "ko", ms=4)
-ax[0].annotate("Cầu Mây gauges\n(N8 at 0.4L, 0.5L)", (90 / 55, 0.45), (1.9, 0.86),
+ax[0].annotate("Mây Bridge gauges\n(N8 at 0.4L, 0.5L)", (90 / 55, 0.45), (1.9, 0.86),
                fontsize=7.5, arrowprops=dict(arrowstyle="-", lw=0.6))
 ax[1].annotate("N7", (90 / 55, 0.5), (1.75, 0.44), fontsize=7.5,
                arrowprops=dict(arrowstyle="-", lw=0.6))
@@ -114,7 +114,7 @@ save(fig, "fig_gc_strain_map_3span")
 fig, ax = plt.subplots(1, 2, figsize=(10.5, 3.8), constrained_layout=True)
 for a_, spl, title in ((ax[0], th.two_span(1.0), "(a) equal two-span beam"),
                        (ax[1], th.three_span_sym(90 / 55),
-                        r"(b) symmetric three-span, $\beta=1.636$ (Cầu Mây, prismatic)")):
+                        r"(b) symmetric three-span, $\beta=1.636$ (Mây Bridge, prismatic)")):
     x0 = 0.0
     for j, (L, EI, ml, mr) in enumerate(spl):
         s = np.linspace(0, 1, 201)

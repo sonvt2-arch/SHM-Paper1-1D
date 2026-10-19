@@ -89,7 +89,7 @@ The blind locus over all side-span positions ends at $\beta = 2\cos(\pi/9) = 1.8
 :::
 
 ::: {custom-style="Caption justified"}
-**Figure 2.** Deflection observability of three-span beams of uniform rigidity: (a) symmetric beam, $N_w$ over $\beta$ and side-span sensor position $\xi$, with blind locus (thick line), near-blind band $|N_w|<0.2$ (hatched), optimum $\xi^*(\beta)$ (dashed) and Cầu Mây proportions with a mid side-span sensor (circle); (b) asymmetric beam, sensor at mid-span of span 1, over $L_1/L_2$ and $L_3/L_2$.
+**Figure 2.** Deflection observability of three-span beams of uniform rigidity: (a) symmetric beam, $N_w$ over $\beta$ and side-span sensor position $\xi$, with blind locus (thick line), near-blind band $|N_w|<0.2$ (hatched), optimum $\xi^*(\beta)$ (dashed) and Mây Bridge proportions with a mid side-span sensor (circle); (b) asymmetric beam, sensor at mid-span of span 1, over $L_1/L_2$ and $L_3/L_2$.
 :::
 
 For strain, with $(\bar M_l, \bar M_r) = (0, \mu)$, the indicator and the blind point $\xi_0$ are
@@ -228,7 +228,7 @@ The failure of GLS is itself a finding. The vehicle-free noise of the four day-2
 
 ### 5.1. Bridge, data and model
 
-The Cầu Mây Bridge crosses the Kinh Môn River in Hải Dương, Viet Nam. Its main bridge is a 55 + 90 + 55 m continuous prestressed concrete box girder built by balanced cantilever ($\beta = 1.636$), 2.40 m deep at mid-span and 5.40 m at the piers. The inner piers, including T7, are monolithic with the girder; the end supports T5 and T8 carry pot bearings. In the June 2020 acceptance test, 3-axle trucks with a mean weighed gross weight of 25.06 t stood in the side and main spans, and dial gauges read the peak deflection at N8, in the side span at 0.4L (22 m) from T8, and at N7, mid main span. Each section has six readings (three points across, central and eccentric arrangements), with means of 5.55 mm at N8 and 15.42 mm at N7 (Supplementary Tables S11–S13).
+The Mây Bridge crosses the Kinh Môn River in Hải Dương, Viet Nam. Its main bridge is a 55 + 90 + 55 m continuous prestressed concrete box girder built by balanced cantilever ($\beta = 1.636$), 2.40 m deep at mid-span and 5.40 m at the piers. The inner piers, including T7, are monolithic with the girder; the end supports T5 and T8 carry pot bearings. In the June 2020 acceptance test, 3-axle trucks with a mean weighed gross weight of 25.06 t stood in the side and main spans, and dial gauges read the peak deflection at N8, in the side span at 0.4L (22 m) from T8, and at N7, mid main span. Each section has six readings (three points across, central and eccentric arrangements), with means of 5.55 mm at N8 and 15.42 mm at N7 (Supplementary Tables S11–S13).
 
 The Euler–Bernoulli model has a parabolic depth variation over $L_\mathrm{v} = 44$ m from each inner pier, a second moment proportional to $h^{2.943}$, where $h$ is the girder depth, and a rotational spring $k$ at each inner pier; other haunch lengths and exponents and a rigid pier zone were tested as model-form variants (Supplementary Section S8). Calibration A, the design model, has $\alpha = 1$ and $k = 2.75\times10^7$ kN m/rad fitted to the designer's FE output and deviates from the measurements by +2.4 % at N8 and +12.3 % at N7. Calibration B, the joint least-squares fit, has $\alpha = 0.716$ and $k = 1.2\times10^8$ kN m/rad, with misfits of −2.8 % and +2.9 %. A lies at $\kappa = 2.75\times10^7$ kN m/rad and B at $\kappa = 1.68\times10^8$ kN m/rad. Fig. 6 shows the indicators along the girder.
 
@@ -237,7 +237,7 @@ The Euler–Bernoulli model has a parabolic depth variation over $L_\mathrm{v} =
 :::
 
 ::: {custom-style="Caption justified"}
-**Figure 6.** Cầu Mây girder: indicators for a prismatic model with pinned piers and for the haunched model under calibrations A and B: (a) deflection $N_w$; (b) strain $N_M$; (c) strain indicator including the gain $c/EI$, with $c\propto h$. Dotted lines: gauge positions.
+**Figure 6.** Mây Bridge girder: indicators for a prismatic model with pinned piers and for the haunched model under calibrations A and B: (a) deflection $N_w$; (b) strain $N_M$; (c) strain indicator including the gain $c/EI$, with $c\propto h$. Dotted lines: gauge positions.
 :::
 
 ### 5.2. What the static data identify
@@ -251,14 +251,14 @@ The misfit ratio $r_{87}$, the measured-to-model ratio at N8 divided by that at 
 :::
 
 ::: {custom-style="Caption justified"}
-**Figure 7.** Identifiability of the Cầu Mây pier stiffness: (a) misfit ratio $r_{87}$ against $\kappa = k/\alpha$, with model-form variants (gray) and admissible band $|\ln r_{87}|\le 2\tau$ implied by a misfit within $\tau$ = 5.3 % at each gauge; (b) N8 and N7 indicators and cancellation ratios along the best static fit $\alpha^*(\kappa)$; shaded: admissible range of $\kappa$.
+**Figure 7.** Identifiability of the Mây Bridge pier stiffness: (a) misfit ratio $r_{87}$ against $\kappa = k/\alpha$, with model-form variants (gray) and admissible band $|\ln r_{87}|\le 2\tau$ implied by a misfit within $\tau$ = 5.3 % at each gauge; (b) N8 and N7 indicators and cancellation ratios along the best static fit $\alpha^*(\kappa)$; shaded: admissible range of $\kappa$.
 :::
 
 The admissible set contains every model whose misfit at each gauge stays within a tolerance $\tau$. The six readings of each section have a standard deviation of 4.7–5.0 % about their mean, so the standard error of the mean is 1.9–2.0 %; this scatter comes from the transverse positions, not from repeatability, because the readings are not replicates. Combined in quadrature with a model-form standard uncertainty of 1.75 %, it gives 2.64 % for each section mean and $\tau = 5.3$ % at two standard deviations. At this tolerance the data bound $\kappa$ only from below: every $\kappa \ge 1.8\times10^7$ kN m/rad is admissible, with $\alpha$ between 0.51 and 1.15. At $\tau = 3$ % the admissible set shrinks and excludes the design rigidity, $\alpha = 1$ (Supplementary Table S10).
 
 Over the admissible set, $C_8$ ranges from $3.0\times10^{-5}$ to $2.0\times10^{-4}$ m²/kN, whereas $C_7$ stays within $3.3$–$5.0\times10^{-4}$ m²/kN; the N8 indicator spans 0.124–0.822 against 0.190–0.286 for N7 (Table 3). Going from pinned to fixed piers multiplies the N8 constant by 14.0 but reduces the N7 constant to 0.59 of its pinned value, and the design stiffness sits at $\kappa/k_g = 0.63$, near the steepest part of the Möbius curve, where $B_m$ is 0.51 at N8 and 0.12 at N7. Calibrating to the N8 reading does not fix the N8 constant either: the ratio of $C_m$ to the modeled N8 deflection varies by a factor of 6.5 over the admissible set, against 1.5 for N7.
 
-**Table 3.** Deflection indicator $N_w$, Eq. (10), and cancellation ratio $R$, Eq. (11), of the installed Cầu Mây gauges; $EI_\mathrm{ref}$ = design $EI_\mathrm{mid}$ (mid main span), $L$ = span containing the gauge. $\alpha = 1$ except for calibration B ($\alpha = 0.716$) and the admissible set ($\tau$ = 5.3 %, $\alpha$ = 0.51–1.15); haunched pinned-pier and fixed-pier rows give the extremes over all model-form variants. Values at mid side span: Supplementary Table S14. –: not computed.
+**Table 3.** Deflection indicator $N_w$, Eq. (10), and cancellation ratio $R$, Eq. (11), of the installed Mây Bridge gauges; $EI_\mathrm{ref}$ = design $EI_\mathrm{mid}$ (mid main span), $L$ = span containing the gauge. $\alpha = 1$ except for calibration B ($\alpha = 0.716$) and the admissible set ($\tau$ = 5.3 %, $\alpha$ = 0.51–1.15); haunched pinned-pier and fixed-pier rows give the extremes over all model-form variants. Values at mid side span: Supplementary Table S14. –: not computed.
 
 | Model | $N_w$, N8 at 0.4L | $N_w$, N7 | $R$, N8 at 0.4L | $R$, N7 |
 |:---|---:|---:|---:|---:|
@@ -285,7 +285,7 @@ If a model-based constant is wanted, a tiltmeter on the monolithic pier T7 is th
 
 A moving-load test with weighed trucks has been designed for this bridge but not performed. Table 4 gives the predicted values that would decide between the calibrations; the ratio of integrals at the side-span and main-span gauges is independent of truck weight and absolute rigidity, and it differs by a factor of 2.3 between A and B.
 
-**Table 4.** Predicted discriminating measurements at Cầu Mây for a 25 t 3-axle truck (predictions, not measured).
+**Table 4.** Predicted discriminating measurements at the Mây Bridge for a 25 t 3-axle truck (predictions, not measured).
 
 | Measured quantity | Calibration A | Calibration B |
 |:---|---:|---:|
@@ -299,7 +299,7 @@ A moving-load test with weighed trucks has been designed for this bridge but not
 
 For design before installation (checklist in Supplementary Section S10), one static analysis under a uniform unit load on each lane gives the constant of every candidate channel. Strain gauges should stay out of the near-blind band $|N_M|<0.2$ around every zero-moment point, including gauges set back from a pier, and deflection gauges out of the bands of Table 1. Eq. (15) gives the constant over the plausible range of pier stiffness; locations with large $C_\infty/C_0$ or $B_m$ should be avoided, or a measurement that identifies $\kappa$ should be planned (a pier tiltmeter, an identified first frequency or an integral ratio between two gauges). Sensors belong at the extremes of $C(x)$. SLM with weighed vehicles of clearly different weights and lane-specific constants is preferred; GLS or zero-sum weights need $\Sigma$ from calibration-crossing residuals, checked out of sample.
 
-The residual offset limits single-channel accuracy on long spans. Over the Cầu Mây admissible set, with $L_\mathrm{tot} = 200$ m, $\delta_0 = 0.1$ mm biases a 25 t truck by 16–25 % at a single main-span gauge and by 41–271 % at a single side-span gauge (Supplementary Table S15). With present absolute-deflection technology, single-point influence-area weighing on a long-span girder is therefore marginal even at the best location, and non-contact techniques must establish their residual offset on site, because environmental effects act over the same window (Sohn, 2007; Cross et al., 2013). Speed enters through the response and its measurement: on lane A of the field records, speeds from a low-pass fit were 1.139 times those from the axle spikes (standard deviation 0.124, 22 runs), so the speed estimator alone can shift the weight by more than 10 %. The quasi-static error for a constant force crossing the laboratory beam is at most about 1 % when $t_\mathrm{cr}/T_1 \ge 8$ (crossing time over fundamental period; Frýba, 1999); the bound omits vehicle–bridge interaction and road roughness (Supplementary Sections S9 and S10). The method is therefore proposed for preliminary overload screening. Its threshold should be set with a margin below the legal limit and the design live loads (CEN, 2003; AASHTO, 2024), and flagged vehicles should be weighed by influence-line BWIM, which does not suffer the blindness of Table 1 because it fits the whole record shape.
+The residual offset limits single-channel accuracy on long spans. Over the Mây Bridge admissible set, with $L_\mathrm{tot} = 200$ m, $\delta_0 = 0.1$ mm biases a 25 t truck by 16–25 % at a single main-span gauge and by 41–271 % at a single side-span gauge (Supplementary Table S15). With present absolute-deflection technology, single-point influence-area weighing on a long-span girder is therefore marginal even at the best location, and non-contact techniques must establish their residual offset on site, because environmental effects act over the same window (Sohn, 2007; Cross et al., 2013). Speed enters through the response and its measurement: on lane A of the field records, speeds from a low-pass fit were 1.139 times those from the axle spikes (standard deviation 0.124, 22 runs), so the speed estimator alone can shift the weight by more than 10 %. The quasi-static error for a constant force crossing the laboratory beam is at most about 1 % when $t_\mathrm{cr}/T_1 \ge 8$ (crossing time over fundamental period; Frýba, 1999); the bound omits vehicle–bridge interaction and road roughness (Supplementary Sections S9 and S10). The method is therefore proposed for preliminary overload screening. Its threshold should be set with a margin below the legal limit and the design live loads (CEN, 2003; AASHTO, 2024), and flagged vehicles should be weighed by influence-line BWIM, which does not suffer the blindness of Table 1 because it fits the whole record shape.
 
 Several limitations remain. The laboratory beam had equal spans and statically positioned loads, and the blind configuration was not tested. The field data come from one public dataset with four trucks, nearly constant reference weights and no gauge at a zero-moment point, so weight discrimination, the deflection blind loci and a deflection pair could not be tested, and a screening threshold still needs field calibration with trucks of clearly different weights, which this study did not have. The in-service analysis uses static data and a beam model with an assumed depth law and equal pier springs, and its moving-load test is designed but not performed. The treatment is one-dimensional along each lane.
 
@@ -319,7 +319,7 @@ The next steps are the moving-load test designed for the in-service girder, labo
 
 ## Acknowledgements
 
-The authors gratefully acknowledge the Laboratory of Transportation Technology and Systems, Faculty of Bridge and Road Engineering, Hanoi University of Civil Engineering, for providing the test facilities used in this study, and A. Moghadam and R. Sarlo for making the NOR-BWIM dataset publicly available. They also thank the Hải Dương provincial project management unit and Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy) for permission to use the acceptance-test data of the Cầu Mây Bridge.
+The authors gratefully acknowledge the Laboratory of Transportation Technology and Systems, Faculty of Bridge and Road Engineering, Hanoi University of Civil Engineering, for providing the test facilities used in this study, and A. Moghadam and R. Sarlo for making the NOR-BWIM dataset publicly available. They also thank the Hải Dương provincial project management unit and Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy) for permission to use the acceptance-test data of the Mây Bridge.
 
 During the preparation of this work the authors used Claude (Anthropic) to assist with code development and debugging and with language editing. All scientific formulations, procedures, numerical results and interpretations were independently reviewed and verified by the authors, who take full responsibility for the content of the manuscript.
 
@@ -343,7 +343,7 @@ Not applicable.
 
 ### Declaration of conflicting interest
 
-The Cầu Mây load test analyzed in Section 5 was performed by an author of this paper (Q.-B. Nguyen) as part of inspection work carried out by Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy). The authors declare that there is no other conflict of interest regarding the publication of this article.
+The Mây Bridge load test analyzed in Section 5 was performed by an author of this paper (Q.-B. Nguyen) as part of inspection work carried out by Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy). The authors declare that there is no other conflict of interest regarding the publication of this article.
 
 ### Funding
 
@@ -351,7 +351,7 @@ This research did not receive any specific grant from funding agencies in the pu
 
 ### Data availability
 
-The field strain records analyzed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0; Moghadam and Sarlo, 2024). The Cầu Mây load test was performed by an author of this paper, and the authors are permitted to publish the processed data. The laboratory and Cầu Mây data, the analysis scripts with the console output of each run, and the derived data behind every figure and table are provided as Supplementary Material. Every equation and numerical output was checked independently against an analytical, finite element or convergence-based route.
+The field strain records analyzed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0; Moghadam and Sarlo, 2024). The Mây Bridge load test was performed by an author of this paper, and the authors are permitted to publish the processed data. The laboratory and Mây Bridge data, the analysis scripts with the console output of each run, and the derived data behind every figure and table are provided as Supplementary Material. Every equation and numerical output was checked independently against an analytical, finite element or convergence-based route.
 
 
 

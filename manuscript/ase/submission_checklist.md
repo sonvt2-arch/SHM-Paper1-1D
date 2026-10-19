@@ -7,7 +7,7 @@
 | Thư gửi tạp chí | `word/Cover_Letter_ASE.docx` | Ngày nộp: 20 October 2026 |
 | Hình riêng (300 dpi) | `figures/Fig1–Fig7_*.png` (PDF vector kèm) | |
 | Graphical abstract | `figures/GraphicalAbstract.png` | Ghép từ Hình 1, 2, 7 (`code/v4/graphical_abstract.py`); nộp như tệp tuỳ chọn |
-| Gói mã | `word/scripts.zip` | 219 tệp; `run_all.sh --v4`; `ASE_numbering.md` đổi số |
+| Gói mã | `word/scripts.zip` | 221 tệp; `run_all.sh --v4`; `ASE_numbering.md` đổi số |
 
 Đã kiểm: số liệu so với v4.4 (kiem_khoa, không có số mới); kiểm sau cắt; tự trích dẫn trong trần 2 (kiem_tu_trich: 0 bài trong danh sách của thầy; Nguyen et al. 2024 là bài của đồng tác giả Quoc-Bao Nguyen); đọc mù chuẩn mực 8 lượt (`docs/editors_v4/xii13_ase/`; lượt 5–8 ngày 19/10); chạy lại toàn bộ mã khớp log.
 
