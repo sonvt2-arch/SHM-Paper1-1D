@@ -1,0 +1,54 @@
+# Hostile audit v2, role 7_ai_artifacts (AI/tool-production artifacts)
+
+Scope: manuscript.md, supplementary_material.md, cover_letter_ASE.md, the built PDFs and DOCX (text, XML, metadata), all 25 PNG figures, scripts.zip (221 files), folder manuscript/ase.
+Method: pdftotext, pdftoppm renders of affected pages, unzip of word/document.xml, core.xml, app.xml, comments.xml, custom.xml; every PNG opened; scripts.zip unpacked and grepped (absolute paths, IDs, non-ASCII, placeholders).
+
+## Categories with no finding
+- Placeholders in the three .md sources and in the PDF/DOCX text ([NEED VALUE], TODO, XXX, TBD, FIXME): none. Editor/reviewer IDs (BT17 etc.): none. Vietnamese prose or Vietnamese-language sentences in the manuscript, supplement, cover letter: none (only proper names: Mây Bridge, Hải Dương, Kinh Môn, Công ty TNHH Tư vấn Đại học Xây dựng, ĐT389, Gie Cục I, Phương Độ).
+- Markdown residue (**, backticks, $...$, #, {#...}, [..](..), <!-- -->) in DOCX document.xml and in the PDF text: none. DOCX has no tracked changes (no w:ins/w:del) and comments.xml is empty. The "&lt;" strings in document.xml are ordinary XML escapes.
+- Chatty or self-referential phrasing ("delve", "crucial", "let us", "as an AI", "see above" etc.): none found in the three sources. The AI-use statement is in Acknowledgements as required and is not counted.
+- Metadata: DOCX core.xml has empty dc:title, dc:creator, keywords; custom.xml empty; PDFs have Creator "Writer", Producer "LibreOffice 24.2", no Title/Author field. No personal name, path or tool-chain string beyond that. PNG files carry only "Software: Matplotlib version3.11.2"; figure PDFs carry Matplotlib creator. No annotation titles, debug text, file names or version labels were found inside any of the 25 PNGs.
+- scripts.zip: no /home/user, /tmp, /mnt, C:\ absolute paths; no license plates; no e-mail addresses or credentials; no Vietnamese comments in README.md or run_all.sh (README mentions "Mây Bridge", "Gie Cục I and Phương Độ" only as bridge names). No __pycache__, .DS_Store or .pyc.
+
+## Findings
+
+### BLOCKING
+
+B1. Built PDFs show garbled equations and symbols (red "¿" glyphs) – the PDFs are not publishable as they stand.
+Location: Manuscript_ASE.pdf p. 3 (Principal symbols table, row B_m: renders "¿ ∂ ln C_m/∂ ln κ ∨¿" instead of |∂ ln C_m/∂ ln κ|); p. 6 (Fig. 2 caption, line 143: the optimum "ξ*(β)" renders as ξ with a red superscript "¿"); p. 8 (Eq. (9), lines 174-178: "A^{+¿} = 1 − |A^−|/A^{+¿}, ¿" and in the text "A^{+¿¿}", the definition of R is unreadable); p. 17 (Fig. 7 caption, lines 375-376: "α^{¿}(κ)" for α*(κ)). Supplementary_Material_ASE.pdf pp. 1, 2, 3, 4, 19, 20 (Table S1 nomenclature rows for A+, B_m, Table S2 header "ξ^¿" and columns "N_w at ξ^¿", etc.; 8 lines contain "¿" in pdftotext).
+Why: the LibreOffice math import mis-renders `^{*}` and `\left|...\right|` constructs; the DOCX OMML is correct (no "¿" in document.xml; delimiters are begChr/endChr "|"), so only the PDFs are damaged. Eq. (9) defining the cancellation ratio R is a central definition and is unreadable in the PDF; a reader of the PDF cannot recover A+.
+Fix: rebuild the PDFs from the DOCX in Word (or replace `^{*}` by `^{\ast}`/a text star and `\left|`/`\right|` by plain |, then rebuild with LibreOffice and re-check with `pdftotext | grep ¿` = 0 and visual check of pp. 3, 6, 8, 17 and the supplement pages above). build_docx.sh should fail on any "¿" in the PDF text (it already fails on missing formulas, per submission_checklist.md).
+
+### SHOULD-FIX
+
+S1. scripts.zip ships a placeholder and internal notes: code/theory2/ident_static.py lines 185-186 ("# illustrative pier stiffness bracket (NOT sourced: pier drawings [NEED VALUE])" and log("... pier geometry [NEED VALUE] ...")); the same text is in the shipped log code/theory2/logs/ident_static.log line 53. code/analysis/wp7b_checks.py lines 77-79 searches the manuscript for "[NEED VALUE" (internal QA script). Fix: remove or rephrase the pier-stiffness bracket (state its assumption explicitly, as the paper's text does) and delete wp7b_checks.py from the archive or strip the QA loop; regenerate the log.
+
+S2. scripts.zip exposes private Google-Drive file IDs and internal consultancy document names: code/analysis/wp3_sections.py lines 9-13 ("04 - Danh gia tai trong cau chinh.pdf" (Drive id 1HNyul9T5k12wWprgo9gNZMh-w0qRNyWw), "T.Minh Thai Binh - 10-9-2020.doc" (Drive id 1LZZj8e5R0HtDuHVhP6-bAZkVOFLdgE39), "Ket cau phan tren"); code/analysis/wp3_run.py line 71 ("TB report PDF (Drive 1J4YgdZ3y7lATFSOsgt7ZUXEHokAyLOCP)"). These are internal identifiers, not citable sources, and the Vietnamese file names/section titles are Vietnamese text. Fix: replace by "test report supplied by the consultancy (not public)" and drop the IDs.
+
+S3. scripts.zip contains analysis of a second in-service bridge (Thai Binh, 42+63+42 m, "TB" test schemes) that is not mentioned anywhere in the manuscript or supplement: code/analysis/wp3_sections.py, wp3_run.py (tb_schemes), cm_3span_theory.py, verify_3span.py, cm_multispan.py, fieldplan_compute.py; logs (cm_3span_theory.log line 29, verify_3span.log lines 74-75, 104-106, wp3_run.log); results/wp3_loadtest_table.csv (TB rows). The Declaration of conflicting interest and Data availability cover only the Mây Bridge test ("the authors are permitted to publish the processed data"); no permission statement exists for Thai Binh data, and the cover letter says the archive holds "the processed data of the in-service bridge". Fix: either remove TB code, log lines and CSV rows from the archive, or add the bridge and a permission statement. At minimum verify that the permission covers it.
+
+S4. Internal workflow names leak into the shipped package and into the Supplementary text: folders code/v3, code/v4, code/theory2, files wp3_*, wp4_*, wp7b_*, wp9_*, schm_figures.py (schm = another manuscript, "manuscript/schm/figures"), fig1_beams.py writes to "manuscript/v4/figures" (code/v4/fig1_beams.py line 8), schm_figures.py lines 17-18 and 279 (".schm_bak"), num_diff.py ("python3 code/v4/num_diff.py OLD.md NEW.md"), graphical_abstract.py (refers to "manuscript/ase/figures"). The README table lists "code/v3" and "code/v4" as directory contents. The Supplementary Material itself cites "script wp3_run.py" (S8, Table S16 intro), "ident_static.py", "s05_moving_force.py"/"s05_moving_force.log", "s06_threshold_sensitivity.py". These are traceable via the README, so they are not wrong, but "v3/v4/wp*/schm" are internal version/work-package codes. Fix: rename folders (e.g. code/offset_bias, code/figures) and update README, run_all.sh and the output paths; delete num_diff.py (compares drafts); keep the Supplementary pointing to README rows only.
+
+S5. Draft-package files with Vietnamese text and version labels sit in the submission folder manuscript/ase: submission_checklist.md (entire file in Vietnamese: "Gói nộp ...", internal references "kiem_khoa", "kiem_tu_trich", "docs/editors_v4/...", "Cổng 4 vòng 1 cả 4 BTV", a note that the Sage site was blocked) and figure_map.md ("Figure, table and section map: ASE submission against v4.4", paths "manuscript/v4/figures/", "Fig5_norbwim_crossings.png" with names that do not match the actual files Fig4_norbwim_crossings.png etc.). Fix: do not upload these two files; keep outside the package (or move to docs/).
+
+S6. Figure fonts and styles are inconsistent across the figure set: Fig. 1 and Fig. S8 use DejaVu Serif with Computer-Modern math; GraphicalAbstract left panel uses small serif; Fig. 2 uses DejaVu Sans; Figs. 3-7 and S1-S7, S9-S15 use an Inter-like sans; Figs. S16-S17 use DejaVu Sans at a different size. Fig. S12 y-label says "top fibre" while the manuscript uses American spelling ("fiber"; Quy tắc V.1 in the checklist). Fix: regenerate with one rcParams block (one sans family, mathtext.fontset="custom" or stix), and replace "fibre" by "fiber".
+
+S7. Symbols in figures are not explained in the captions: Fig. 7a draws dotted vertical lines labelled "A" and "B" that the caption never defines (calibrations A and B appear only in the text). Fig. S15 caption says "Open circle A ... filled circle A′ ... square B", but the plot labels the filled circle "A" (no prime), and an open circle sits next to a second "A" label that overlaps contours (A at x≈0.97, "A"/"O" near the same point). Fig. S12c draws two unexplained horizontal lines at 5 % and 10 %. Fig. 4 draws two vertical black lines (t = 0 and the record end) not described in the caption. Fix: add the definitions, put the prime on the plotted A′ label, and remove or explain the lines.
+
+### MINOR
+
+M1. Fig. 5b: the st40 error bar is cut by the axis (the caption admits it); better extend the axis or add an arrow/note in the figure.
+M2. Fig. S17b numeric labels "I_LP/I = 1.0; net/abs = 0.0" (row 3) and "0.9999"/"1.0006" are at inconsistent precision (rounded to 1.0 and 0.0), which looks like an unformatted print. Use a fixed format (e.g. 1.0000, 0.000).
+M3. Fig. S11b: black cell values on dark red (0.85-1.00) are hard to read; use white text for values above 0.7.
+M4. Graphical Abstract panel 3: legend "admissible band ... / model-form variants" covers the y = 1.00 reference line and part of the shaded band; Fig. 2b: legend "symmetric layouts" covers part of the hatched blind band at the top left. Move the legends.
+M5. Fig. S8: the in-axes labels "span 1"/"span 2" collide with the legend ("measured" and "span 1" almost touch). Place the legend elsewhere.
+M6. Fig. S6, S4: legends for panel (b)/(c) are placed below the axes while panel (a) has it inside; Fig. S4b legend omits the blue/green "single sensor" colour mapping (gray thick lines are listed as "single sensor" but are drawn light blue/green). Check the legend entry style.
+M7. DOCX app.xml carries stale template values: Application "Microsoft Word 12.0.0", Words 83, Lines 12, TotalTime 6 (same in all three DOCX). Harmless but wrong; set via the reference docx or strip docProps/app.xml. PDF Creator is "Writer"; set a Title field (the paper title) for accessibility.
+M8. Cover letter PDF: justified text stretches single lines ("The   Editors-in-Chief", "Advances   in   Structural   Engineering", address line "55    Giai    Phong,    Bach    Mai ward") – cosmetic, use left alignment for the address block.
+M9. Cover letter wording "It is just under 12,000 word-equivalents with 7 figures and 5 tables" quotes an internal word-count convention (Word count + figure equivalents from the checklist); journals count words. Consider stating the actual word count. Not an error.
+M10. Fig. 3, Fig. 4: channel names in Figs. 4, 5, S9-S13 (ch1-ch12, st31-st40) are dataset channel IDs; the manuscript explains them only by reference to the dataset. Acceptable, but Fig. 4's legend values "∫ε dx = −67" lack the unit µε m inside the figure (the caption gives it).
+
+## Count
+- Blocking: 1 (B1)
+- Should-fix: 7 (S1-S7)
+- Minor: 10 (M1-M10)

@@ -137,4 +137,18 @@ if lines:
         ln.set(qn("w:countBy"), "1"); ln.set(qn("w:restart"), "continuous"); ln.set(qn("w:distance"), "283")
         pg = s._sectPr.find(qn("w:pgSz"))
         (pg.addnext(ln) if pg is not None else s._sectPr.append(ln))
+# operator-only scripts (A^+, xi^*) and lone bars as normal text: LibreOffice's OMML import
+# otherwise reads them as operators without operands and prints an error glyph in the PDF
+for r in d.element.body.iter(qn("m:r")):
+    t = r.find(qn("m:t"))
+    if t is None or t.text is None:
+        continue
+    par = r.getparent()
+    lone_bar = t.text == "|"
+    op_script = t.text in "+-\u2212*\u2217\u22c6" and len(t.text) == 1 and par.tag in (qn("m:sup"), qn("m:sub")) and len(par) == 1
+    if lone_bar or op_script:
+        old = r.find(qn("m:rPr"))
+        if old is not None:
+            r.remove(old)
+        pr = OxmlElement("m:rPr"); pr.append(OxmlElement("m:nor")); r.insert(0, pr)
 d.save(path)
