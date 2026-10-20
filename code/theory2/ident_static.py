@@ -148,7 +148,7 @@ def main():
 
     # admissible sets
     log("\n=== Admissible sets: max_j |ln(meas_j/pred_j)| <= tau, alpha and kappa free ===")
-    log("columns: kappa range | alpha range | k range | N8 index (EI_ref design EI_mid) | N8 index (EI_ref alpha EI_mid) | R8 | N7 (design) | R7 | C8 (m2/kN)")
+    log("columns: kappa range | alpha range | k range | N8 index (EI_ref design EI_mid) | N8 index (EI_ref alpha EI_mid) | R8 | N7 (design) | R7 | C8 | C7 (m2/kN)")
     adm = {}
     for tau in list(TAUS) + [tau_rec]:
         for name, s in scans.items():
@@ -161,7 +161,7 @@ def main():
                     f"[{a['alpha'][0]:.3f},{a['alpha'][1]:.3f}] | k [{a['k'][0]:.2e},{a['k'][1]:.2e}] | N8d "
                     f"[{a['Ndesign8'][0]:.3f},{a['Ndesign8'][1]:.3f}] | N8a [{a['Nalpha8'][0]:.3f},{a['Nalpha8'][1]:.3f}]"
                     f" | R8 [{a['R8'][0]:.3f},{a['R8'][1]:.3f}] | N7d [{a['Ndesign7'][0]:.3f},{a['Ndesign7'][1]:.3f}]"
-                    f" | R7 [{a['R7'][0]:.3f},{a['R7'][1]:.3f}] | C8 [{a['C8'][0]:.2e},{a['C8'][1]:.2e}]")
+                    f" | R7 [{a['R7'][0]:.3f},{a['R7'][1]:.3f}] | C8 [{a['C8'][0]:.2e},{a['C8'][1]:.2e}] | C7 [{a['C7'][0]:.2e},{a['C7'][1]:.2e}]")
             adm[(tau, name)] = a
     # union over variants at tau_rec
     for tau in (0.05, tau_rec):
