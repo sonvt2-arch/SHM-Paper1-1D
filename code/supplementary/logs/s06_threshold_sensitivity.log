@@ -1,0 +1,4 @@
+threshold | strain, two equal spans: distance from interior support (fraction of span) | deflection, mid-span, two spans: lambda | deflection, mid side span, three spans: beta
+0.1 | 0.218-0.285 | 1.422-1.492 | 1.662-1.738
+0.2 | 0.188-0.324 | 1.385-1.525 | 1.621-1.775
+0.3 | 0.161-0.369 | 1.347-1.557 | 1.580-1.811

@@ -231,7 +231,7 @@ def main():
     ax.set_ylabel("indicator")
     ax.legend(fontsize=6, loc="center right", bbox_to_anchor=(1.0, 0.585), labelspacing=0.3,
               handlelength=1.6, borderpad=0.3)
-    ax.set_title("(b) indicators along the static valley $\\alpha^*(\\kappa)$", fontsize=8, loc="left")
+    ax.set_title("(b) indicators along the best static fit $\\alpha^*(\\kappa)$", fontsize=8, loc="left")
     fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.png"), dpi=300)
     fig.savefig(os.path.join(FIGD, "ident_static_kappa_scan.pdf"))
     plt.close(fig)
