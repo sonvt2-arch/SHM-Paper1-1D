@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run every supplementary script and write its console output to logs/.
 #
-#   bash code/supplementary/run_all.sh                 # s01-s05 (about 3 min)
+#   bash code/supplementary/run_all.sh                 # s01-s06 (about 3 min)
 #   bash code/supplementary/run_all.sh --with-analysis # also the code/analysis scripts
 #   bash code/supplementary/run_all.sh --all           # also every remaining analysis (about 20 min)
 #

@@ -1,4 +1,4 @@
-# Source: 04 - Đo tĩnh - Cầu chính.xlsx (sheet 1, rows "Đúng tâm"/"Lệch tâm") and PDF Bảng 2.5, 2.6, 3.7. Static peak values only (convoy parked), negative = downward. Theory = MIDAS model in report.
+# Mây Bridge acceptance test (June 2020): static peak deflection of the main girder under the parked convoy; negative = downward; theory = FE model of the test report.
 span,section,load_case,measured_mm,theory_midas_mm,diff_percent_reported,measured_over_theory_computed
 N8 (55 m side span),right line,centric,-5.32,-5.93,10.4,0.897
 N8 (55 m side span),axis,centric,-5.56,-5.93,6.3,0.938

@@ -6,7 +6,7 @@ Paths are relative to the repository root (the `code/` folder of this archive). 
 
 | Directory | Contents |
 |---|---|
-| `code/supplementary` | shared module `beam_theory.py`, laboratory and two-span scripts `s01`–`s05`, `run_all.sh`, `requirements.txt`, logs |
+| `code/supplementary` | shared module `beam_theory.py`, laboratory and two-span scripts `s01`–`s05`, threshold-sensitivity script `s06`, `run_all.sh`, `requirements.txt`, logs |
 | `code/theory2` | closed forms and finite element checks for general channels, multi-channel placement and Monte Carlo, identifiability of the in-service girder |
 | `code/norbwim` | processing of the public NOR-BWIM field records |
 | `code/analysis` | three-span theory, Mây Bridge model, dynamic records |
@@ -18,12 +18,12 @@ Paths are relative to the repository root (the `code/` folder of this archive). 
 
 ```bash
 pip install -r code/supplementary/requirements.txt
-bash code/supplementary/run_all.sh                  # s01-s05, about 3 min, logs -> code/supplementary/logs/
+bash code/supplementary/run_all.sh                  # s01-s06, about 3 min, logs -> code/supplementary/logs/
 bash code/supplementary/run_all.sh --with-analysis  # also re-runs the code/analysis scripts (writes inside code/analysis and figures/)
 bash code/supplementary/run_all.sh --all            # also every remaining analysis (theory2, norbwim, v3, fieldplan, v4), about 20 min
 ```
 
-`--all` runs each script from its own folder, and each writes its own log in its folder (`logs/` or `results/`). The `code/norbwim` scripts need the public NOR-BWIM records (https://doi.org/10.7294/26880898.v1) in `data/public/norbwim_figshare26880898`; the raw records are not redistributed. The `theory2` and `norbwim` scripts import sibling modules, so run them from their own folder without `-I` isolation if you call them one by one (`python3 <script>.py`). The `s01`–`s05` scripts can be run as `python3 -I code/supplementary/<script>.py`. Units are N and mm unless a script states otherwise (`s05` works in SI). All random numbers come from fixed seeds (`s04`: 20260817).
+`--all` runs each script from its own folder, and each writes its own log in its folder (`logs/` or `results/`). The `code/norbwim` scripts need the public NOR-BWIM records (https://doi.org/10.7294/26880898.v1) in `data/public/norbwim_figshare26880898`; the raw records are not redistributed. The `theory2` and `norbwim` scripts import sibling modules, so run them from their own folder without `-I` isolation if you call them one by one (`python3 <script>.py`). The `s01`–`s06` scripts can be run as `python3 -I code/supplementary/<script>.py`. Units are N and mm unless a script states otherwise (`s05` works in SI). All random numbers come from fixed seeds (`s04`: 20260817).
 
 ## Article: figures
 
@@ -44,7 +44,8 @@ bash code/supplementary/run_all.sh --all            # also every remaining analy
 | Table 1 | Blind loci of response channels | `code/theory2/gc_theory.py`, `gc_fe.py`, `gc_force_method.py`, `verify_general.py`, `gc_results.py` | `code/theory2/logs/verify_general.log`, `gc_results.log`, `results/gc_T1_two_span.csv`, `gc_T2_three_span.csv`, `gc_T3_near_pier.csv`, `gc_T4_caumay.csv` |
 | Table 2 | Out-of-sample MAE of the gross weight (single gauge, average, GLS, mean weight) | `code/norbwim/nb_v4.py` | `code/norbwim/logs/v4.log` (estimator comparison), `results/v4_estimators.csv`, `v4_estimator_errors.csv`, `v4_estimator_paired.csv` |
 | Table 3 | Deflection indicator and cancellation ratio of the installed Mây Bridge gauges | `code/theory2/ident_static.py`, `ident_freq.py` | `code/theory2/logs/ident_static.log`, `ident_freq.log` |
-| Table 4 | Predicted discriminating measurements at the Mây Bridge | `code/fieldplan/fieldplan_compute.py` | `code/fieldplan/results/fieldplan_compute.log`, `A_caumay_*.csv` |
+
+The predictions of a moving-load test at the Mây Bridge, given in the main text as Table 4 in earlier versions, are now Supplementary Table S19 (see below).
 
 Other numbers quoted in the article text come from the logs named in the sections below: crossing integrals, speeds and noise windows (Section 4.1) from `code/norbwim/nb_field.py` (`logs/field.log`, `results/events_field.csv`, `events_field_qc.csv`); gauge ratios and beam-model shares (Section 4.2) from `code/norbwim/nb_tests.py`, `nb_beam.py` (`logs/tests.log`, `results/test_*.csv`); Cramér–Rao bounds (Section 5.3) from `code/theory2/ident_fisher.py` (`logs/ident_fisher.log`); the Mây Bridge model (Section 5.1) from `code/analysis/wp3_run.py` (`logs/wp3_run.log`).
 
@@ -86,12 +87,13 @@ Other numbers quoted in the article text come from the logs named in the section
 | Table S10 | Per-crossing standard deviation under two covariance models | `code/norbwim/nb_v4.py` | `code/norbwim/logs/v4.log`, `results/v4_estimator_paired.csv` |
 | Table S11 | Weighed 3-axle test trucks | `code/analysis/wp9_truckweight_check.py` | `code/analysis/logs/wp9_truckweight_check.log` |
 | Table S12 | Mây Bridge acceptance test | `code/analysis/wp3_run.py` | `code/analysis/logs/wp3_run.log`, `results/wp3_loadtest_table.csv`, `wp3_loadtest_summary.csv` |
-| Table S13 | Admissible set of the Mây Bridge model against the tolerance | `code/theory2/ident_static.py` | `code/theory2/logs/ident_static.log`, `ident_static_scan.npz` |
+| Table S13 | Admissible set of the Mây Bridge model against the tolerance | `code/theory2/ident_static.py`; row with the prior α = 0.9–1.3: `ident_freq.py` | `code/theory2/logs/ident_static.log`, `ident_static_scan.npz`; prior row: `code/theory2/logs/ident_freq.log` |
 | Table S14 | Vertical natural frequencies of the main-bridge spans | `code/theory2/ident_freq.py` | `code/theory2/logs/ident_freq.log` |
 | Table S15 | Deflection indicator, cancellation ratio and boundary sensitivity of the Mây Bridge gauges | `code/theory2/ident_static.py`, `ident_freq.py`, `gc_results.py` | `code/theory2/logs/ident_static.log`, `ident_freq.log`, `gc_results.log` |
 | Table S16 | Axle positions of the static test load (Mây Bridge) | `code/analysis/wp3_run.py` (`cm_schemes`) | positions as coded from the test plan |
 | Table S17 | Bias of a single-channel estimate caused by a residual offset | `code/v3/v3_numbers.py` | `code/v3/logs/v3_numbers.log` |
 | Table S18 | Indicative sensitivity budget | – (values taken from the sections of the article and the logs above) | – |
+| Table S19 | Predicted discriminating measurements at the Mây Bridge (moving-load test, predictions; Table 4 of earlier versions) | `code/fieldplan/fieldplan_compute.py` | `code/fieldplan/results/fieldplan_compute.log`, section "(A) discriminating A vs B": C(D3)/C(D1) = 0.121 (A) and 0.284 (B); R1 peak T1 = −58.1 and −29.0 µrad; strain-integral ratio = S1 integral / S2 integral of the signal table (2.35/381.32 = 0.006 for A, 81.59/477.96 = 0.17 for B); `results/A_caumay_*.csv` |
 
 ## Supplementary Material: sections
 
@@ -108,7 +110,7 @@ Other numbers quoted in the article text come from the logs named in the section
 | S10 | Error budget and design checklist | `code/v3/v3_numbers.py`, `code/analysis/wp7b_peps.py` (`logs/wp7b_peps.log`) |
 | S11 | Scripts, console output and derived data | this file |
 
-## Laboratory and two-span scripts in `code/supplementary`
+## Scripts in `code/supplementary`
 
 | Script | Reproduces | Log |
 |---|---|---|
@@ -118,6 +120,7 @@ Other numbers quoted in the article text come from the logs named in the section
 | `s03_load_identification.py` | Table S4 (BPM/SLM), the +1.61 % correction, measured/analytical ratios, the fitted line (slope 62.229, R² = 0.99998), three-load order, offset residual and its 58 %/42 % split. | `logs/s03_load_identification.log` |
 | `s04_monte_carlo.py` | Monte Carlo of the single-gauge model with gain, zero offset and additive noise (200 000 realisations, seed 20260817). | `logs/s04_monte_carlo.log` |
 | `s05_moving_force.py` | Dynamic study: FE with 40 Hermite elements per span, Rayleigh damping 2 % at modes 1 and 3, Newmark average acceleration, constant force crossing at speed v, E_dyn against C_mP over 47 speeds and a 300-speed dense sweep; f₁ = 11.942 Hz, time-step and mesh convergence, truncation and window-extension checks, multi-axle spread. Writes `logs/s05_sweep47.csv` and `logs/s05_sweep_dense.csv`. | `logs/s05_moving_force.log` |
+| `s06_threshold_sensitivity.py` | Table S3: near-blind bands of the strain and deflection indicators for the thresholds 0.1, 0.2 and 0.3 (closed forms, prismatic beams). | `logs/s06_threshold_sensitivity.log` |
 | `run_all.sh`, `requirements.txt` | Driver and dependencies (tested versions listed). | |
 
 ## Scripts in `code/analysis` (three-span theory, Mây Bridge, dynamic records)
@@ -132,7 +135,7 @@ Run them from the repository root, or use `run_all.sh --with-analysis`. Their lo
 | `wp3_sections.py`, `wp3_fe.py`, `wp3_run.py` | Mây Bridge section properties, variable-EI FE, calibrations A and B, acceptance-test comparison (Table S12) | `wp3_run.log` |
 | `wp9_truckweight_check.py` | Effect of the weighed test-truck mass (Table S11) | `wp9_truckweight_check.log` |
 | `wp4_dynamic_records.py` | Event detection, baselines, high- and low-pass filtering of the simply supported records (Figs. S16–S17) | `wp4.log` |
-| `wp7b_peps.py`, `wp7b_checks.py` | Offset-bias and k-sensitivity statements, near-blind band edges, root-sum-square budget | `wp7b_peps.log`, `wp7b_peps_2506.log` |
+| `wp7b_peps.py` | Offset-bias and k-sensitivity statements, near-blind band edges, root-sum-square budget | `wp7b_peps.log`, `wp7b_peps_2506.log` |
 | `schm_figures.py` | Plots of Fig. 2 and Figs. S16–S17 | not re-run |
 
 ## Data in this archive

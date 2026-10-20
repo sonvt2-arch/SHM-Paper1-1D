@@ -16,7 +16,7 @@ Case A: three-span 30+60+30 m, channels [('d', 60.0), ('d', 98.5), ('d', 15.0)],
       GLS-3                  mean error   +0.7784 kN (predicted   +0.7746), std 0.9108 kN
       immune-3               mean error   +0.0041 kN (predicted   +0.0000), std 0.9154 kN
 ==============================================================================
-Case B: Cầu Mây 55+90+55 m, calibration A, channels [('d', 100.0), ('d', 155.0), ('d', 178.0)], C = [0.360971, -0.01788, 0.04376], sig = 0.01 mm, eps = 0.1 mm, rho = 0.9
+Case B: Mây Bridge 55+90+55 m, calibration A, channels [('d', 100.0), ('d', 155.0), ('d', 178.0)], C = [0.360971, -0.01788, 0.04376], sig = 0.01 mm, eps = 0.1 mm, rho = 0.9
   [B] 100000 realisations in 202 s, N = 2201 samples/channel
   [B] single (Cmax)          w = [2.770302, 0.0, 0.0]  w'C = 1.000000
       mean error -0.0908 kN (z = -0.47); std 61.2020 kN, theory 60.9468 kN, ratio 1.0042 (+-0.0022)

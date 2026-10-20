@@ -1,4 +1,4 @@
-# Source: PDF Bang 2.15 (also 04 sheet). f in Hz. y_max, y_min in mm as printed (definition not explained in report). IM = 1+IM
+# Mây Bridge acceptance test (June 2020): measured span properties as printed in the test report; f in Hz; y_max, y_min in mm; one_plus_IM = 1 + dynamic increment.
 span,vertical_f_Hz,vertical_T_s,long_f_Hz,transverse_f_Hz,y_max_mm,y_min_mm,one_plus_IM
 N1,3.11,0.32,3.60,4.65,2.170,1.145,1.309
 N5,3.03,0.33,3.64,3.26,2.280,1.151,1.329

@@ -1,5 +1,5 @@
 """Package 3 - field-test design: influence lines, predicted integrals, signal
-levels and offset bias for (A) Cau May main bridge 55+90+55 m and (B) a generic
+levels and offset bias for (A) Mây Bridge main bridge 55+90+55 m and (B) a generic
 2-3 span continuous overpass.
 
 Stiffness assembly and solves use code/analysis/cm_multispan.py (imported, not
@@ -33,7 +33,7 @@ RES = os.path.join(HERE, "results")
 FIG = os.path.join(HERE, "figures")
 os.makedirs(RES, exist_ok=True)
 os.makedirs(FIG, exist_ok=True)
-LOG = open(os.path.join(RES, "fieldplan_compute.log"), "w")
+LOG = open(os.path.join(RES, "fieldplan_compute.log"), "w", encoding="utf-8")
 
 
 def log(*a):
@@ -49,13 +49,13 @@ g = 9.81
 # from the per-axle weighbridge tickets on the test day.
 TRUCKS = {
     # T1 = same type as the 2020 acceptance trucks (report Fig. 2.1): 5+10+10 t
-    "T1 (3 truc, 25 t)": dict(P=np.array([5.0, 10.0, 10.0]), a=np.array([0.0, 3.60, 4.95])),
+    "T1 (3-axle, 25 t)": dict(P=np.array([5.0, 10.0, 10.0]), a=np.array([0.0, 3.60, 4.95])),
     # T2 = 4-axle (spacings 1.80+3.00+1.35 m) loaded to ~25 t: same total, other axles
-    "T2 (4 truc, 25 t)": dict(P=np.array([5.5, 5.5, 7.0, 7.0]), a=np.array([0.0, 1.80, 4.80, 6.15])),
+    "T2 (4-axle, 25 t)": dict(P=np.array([5.5, 5.5, 7.0, 7.0]), a=np.array([0.0, 1.80, 4.80, 6.15])),
     # T3 = same 4-axle truck fully loaded, ~30 t: different total
-    "T3 (4 truc, 30 t)": dict(P=np.array([6.0, 6.0, 9.0, 9.0]), a=np.array([0.0, 1.80, 4.80, 6.15])),
+    "T3 (4-axle, 30 t)": dict(P=np.array([6.0, 6.0, 9.0, 9.0]), a=np.array([0.0, 1.80, 4.80, 6.15])),
     # T4 = optional light 2-axle truck, ~12 t, wheelbase 4.5 m (to show P_eps scaling)
-    "T4 (2 truc, 12 t, tuy chon)": dict(P=np.array([4.0, 8.0]), a=np.array([0.0, 4.50])),
+    "T4 (2-axle, 12 t, optional)": dict(P=np.array([4.0, 8.0]), a=np.array([0.0, 4.50])),
 }
 OFFSETS = [0.01, 0.02, 0.05, 0.10, 0.20, 0.50]           # mm
 
@@ -116,7 +116,7 @@ class Model:
         return -EIe * (B @ u[2 * e:2 * e + 4])
 
     def il_moment(self, xs):
-        """Moment influence line at xs: unit load at every node (one factorisation)."""
+        """Moment influence line at xs: unit load at every node (one factorization)."""
         F = np.zeros((2 * self.n, self.n))
         F[2 * np.arange(self.n), np.arange(self.n)] = 1.0
         u = self.solve(F)
@@ -148,7 +148,7 @@ def area_parts(x, eta):
 
 
 # ======================================================================
-# (A) CAU MAY 55+90+55
+# (A) MÂY BRIDGE 55+90+55
 # ======================================================================
 E = 36.057e6
 I_MID, I_PIER, H_MID, H_PIER, LV = 5.482, 59.612, 2.40, 5.40, 44.0
@@ -175,11 +175,11 @@ def zc_cm(x):
 
 
 CAL = {   # wp3_run.log, Lv = 44 m
-    "A (EI thiet ke, k_FE)": dict(alpha=1.0, k=2.748e7),
+    "A (design EI, k_FE)": dict(alpha=1.0, k=2.748e7),
     "A' (alpha=1.088, k_FE)": dict(alpha=1.088, k=2.748e7),
     "B (alpha=0.716, k=1.2e8)": dict(alpha=0.716, k=1.199e8),
 }
-CAL_MAIN = ["A (EI thiet ke, k_FE)", "B (alpha=0.716, k=1.2e8)"]
+CAL_MAIN = ["A (design EI, k_FE)", "B (alpha=0.716, k=1.2e8)"]
 
 # candidate sensor abscissae (x from end support T5)
 X_N7MID, X_N8_04, X_N8MID = 100.0, 178.0, 172.5
@@ -215,7 +215,7 @@ def m_cm(x):
 
 
 log("=" * 78)
-log("(A) CAU MAY 55+90+55 m: n = %.3f, Lv = %.0f m, Ec = %.0f MPa" % (N_EXP, LV, E / 1e3))
+log("(A) Mây Bridge 55+90+55 m: n = %.3f, Lv = %.0f m, Ec = %.0f MPa" % (N_EXP, LV, E / 1e3))
 models = {}
 for name, c in CAL.items():
     models[name] = Model(SP, EI_cm(c["alpha"]), c["k"], ne_per_span=550,
@@ -253,15 +253,15 @@ mA = models[CAL_MAIN[0]]
 XS_SIDE = round(float(mA.xstar_side), 1)
 XS_ZERO = round(float(mA.zero_M_N8[0]), 1)
 SENS = [
-    ("D1 N7 giua nhip (xi* nhip chinh)", "defl", X_N7MID),
-    ("D2 N8 giua nhip (gan mu)", "defl", X_N8MID),
-    ("D3 N8 0,4L (vi tri 2020)", "defl", X_N8_04),
-    (f"D4 N8 toi uu x={XS_SIDE:g} m", "defl", XS_SIDE),
-    ("D5 N6 0,4L (doi xung D3)", "defl", 22.0),
-    (f"S1 bien duoi, M_q=0 o N8 (x={XS_ZERO:g} m)", "strain", XS_ZERO),
-    ("S2 bien duoi giua N7", "strain", X_N7MID),
-    ("R1 goc xoay dam tren tru T7", "rot", P2),
-    ("R2 goc xoay dam tren tru T6", "rot", P1),
+    ("D1 N7 mid-span (xi* main span)", "defl", X_N7MID),
+    ("D2 N8 mid-span (near-blind)", "defl", X_N8MID),
+    ("D3 N8 0.4L (2020 position)", "defl", X_N8_04),
+    (f"D4 N8 optimum x={XS_SIDE:g} m", "defl", XS_SIDE),
+    ("D5 N6 0.4L (mirror of D3)", "defl", 22.0),
+    (f"S1 bottom fiber, M_q=0 in N8 (x={XS_ZERO:g} m)", "strain", XS_ZERO),
+    ("S2 bottom fiber mid-N7", "strain", X_N7MID),
+    ("R1 girder rotation over pier T7", "rot", P2),
+    ("R2 girder rotation over pier T6", "rot", P1),
 ]
 # re-build with sensor nodes present
 for name, c in CAL.items():
@@ -280,7 +280,7 @@ for name, m in models.items():
             C = area_parts(m.x, eta)
         else:
             Mil = m.il_moment(xs)
-            fac = zc_cm(xs) / m.EI(xs)           # bottom-fibre strain per kN m
+            fac = zc_cm(xs) / m.EI(xs)           # bottom-fiber strain per kN m
             eta = fac * Mil; unit = "ue"; scale = 1e6
             C = area_parts(m.x, eta)
             Cchk = fac * m.moment_uniform(xs)
@@ -398,7 +398,7 @@ for name in CAL_MAIN:
             f"{100*0.05e-3*200/(C*245.8):.0f} %")
 
 # ---- figures (A)
-cols = {"A (EI thiet ke, k_FE)": "#1f5fa8", "A' (alpha=1.088, k_FE)": "#7aa6d6",
+cols = {"A (design EI, k_FE)": "#1f5fa8", "A' (alpha=1.088, k_FE)": "#7aa6d6",
         "B (alpha=0.716, k=1.2e8)": "#c0392b"}
 fig, ax = plt.subplots(4, 1, figsize=(10, 12.5), gridspec_kw=dict(height_ratios=[0.8, 1.2, 1.4, 1.4]))
 # (a) elevation / layout
@@ -407,20 +407,20 @@ xx = np.linspace(0, 200, 801)
 a0.fill_between(xx, 0, -h_cm(xx), color="#d9d9d9")
 a0.plot(xx, -h_cm(xx), "k", lw=0.8)
 a0.plot([0, 200], [0, 0], "k", lw=1.2)
-for xp, lab in [(0, "T5 (goi)"), (55, "T6 (lien khoi)"), (145, "T7 (lien khoi)"), (200, "T8 (goi)")]:
+for xp, lab in [(0, "T5 (bearing)"), (55, "T6 (monolithic)"), (145, "T7 (monolithic)"), (200, "T8 (bearing)")]:
     a0.plot([xp, xp], [-h_cm(np.array(xp)) if xp in (55, 145) else -2.4, -9], "k", lw=3 if xp in (55, 145) else 1.5)
     a0.text(xp, -10.3, lab, ha="center", fontsize=8)
 a0.axhline(-7.5, color="#5dade2", lw=1, ls="--")
-a0.text(100, -8.6, "mat nuoc (minh hoa)", ha="center", fontsize=7, color="#2e86c1")
+a0.text(100, -8.6, "water level (illustrative)", ha="center", fontsize=7, color="#2e86c1")
 mk = {"defl": ("v", "#1f5fa8"), "strain": ("s", "#27ae60"), "rot": ("o", "#c0392b")}
 for lab, kind, xs in SENS:
     sym, c = mk[kind]
     a0.plot(xs, 0.6, sym, color=c, ms=8)
     a0.text(xs, 1.3, lab.split()[0], ha="center", fontsize=8, color=c)
 a0.set_ylim(-11, 2.4); a0.set_xlim(-5, 205)
-a0.set_title("(a) So do bo tri (cao do dam phong dai): D = vong (HLS trong hop + doi chung khong tiep xuc), "
-             "S = bien dang, R = nghieng", fontsize=9)
-a0.set_yticks([]); a0.set_xlabel("x tu tim goi T5 (m)")
+a0.set_title("(a) Sensor layout (girder elevation exaggerated): D = deflection (HLS in box girder + non-contact reference), "
+             "S = strain, R = tilt", fontsize=9)
+a0.set_yticks([]); a0.set_xlabel("x from centerline of bearing T5 (m)")
 # (b) C_m profile
 for name, w in prof.items():
     ax[1].plot(models[name].x, w * 1e3 * 245.8, color=cols[name], lw=1.6,
@@ -429,8 +429,8 @@ ax[1].axhline(0, color="k", lw=0.6)
 for lab, kind, xs in SENS[:5]:
     ax[1].axvline(xs, color="0.6", lw=0.6, ls=":")
     ax[1].text(xs, ax[1].get_ylim()[1] if False else 0, lab.split()[0], fontsize=7, rotation=90, va="bottom")
-ax[1].set_ylabel("I_y = C_m P (mm*m)\nvoi P = 25,06 t")
-ax[1].set_title("(b) Tich phan vong du bao tai moi diem do = C_m(x)*P (Eq. 3: vong duoi tai deu don vi)", fontsize=9)
+ax[1].set_ylabel("I_y = C_m P (mm*m)\nwith P = 25.06 t")
+ax[1].set_title("(b) Predicted deflection integral at each sensor point = C_m(x)*P (Eq. 3: deflection under unit uniform load)", fontsize=9)
 ax[1].legend(fontsize=8); ax[1].set_xlim(-5, 205)
 # (c) deflection influence lines
 for name in CAL_MAIN:
@@ -440,7 +440,7 @@ for name in CAL_MAIN:
                    label=f"{name[:2]} {lab}")
 ax[2].axhline(0, color="k", lw=0.6)
 ax[2].set_ylabel("eta (mm / 100 kN)"); ax[2].set_xlim(-5, 205)
-ax[2].set_title("(c) Duong anh huong do vong tai cac diem D1-D4 (A: xanh, B: do)", fontsize=9)
+ax[2].set_title("(c) Deflection influence lines at points D1-D4 (A: blue, B: red)", fontsize=9)
 ax[2].legend(fontsize=7, ncol=2)
 # (d) strain and rotation ILs
 a3 = ax[3]
@@ -453,11 +453,11 @@ for name in CAL_MAIN:
     x_, eta, kind, unit, sc = ils[(name, SENS[7][0])]
     a3b.plot(x_, eta * 1e6 * 100, ":", color=cols[name], lw=1.6, label=f"{name[:2]} R1 T7 (urad/100 kN)")
 a3.axhline(0, color="k", lw=0.6)
-a3.set_ylabel("bien dang (ue / 100 kN)"); a3b.set_ylabel("goc xoay (urad / 100 kN)")
-a3.set_xlabel("vi tri luc don vi x (m)"); a3.set_xlim(-5, 205)
+a3.set_ylabel("strain (ue / 100 kN)"); a3b.set_ylabel("rotation (urad / 100 kN)")
+a3.set_xlabel("unit-load position x (m)"); a3.set_xlim(-5, 205)
 h1, l1 = a3.get_legend_handles_labels(); h2, l2 = a3b.get_legend_handles_labels()
 a3.legend(h1 + h2, l1 + l2, fontsize=7, ncol=3)
-a3.set_title("(d) Duong anh huong bien dang (S1 tai diem M_q=0, S2 giua N7) va goc xoay tren tru T7", fontsize=9)
+a3.set_title("(d) Strain influence lines (S1 at M_q=0 point, S2 at mid-N7) and rotation over pier T7", fontsize=9)
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fA1_caumay_layout_IL.png"), dpi=200)
 plt.close(fig)
@@ -475,9 +475,9 @@ for j, (lab, unit, sc) in enumerate([(SENS[0][0], "mm", 1e3), (SENS[2][0], "mm",
                    label=f"{name[:2]} {tn.split()[0]}  I={Iy*sc:.1f}")
     a.axhline(0, color="k", lw=0.5)
     a.set_title(lab, fontsize=9); a.set_ylabel(unit)
-    a.set_xlabel("vi tri truc truoc (m)")
+    a.set_xlabel("front axle position (m)")
     a.legend(fontsize=6.5)
-fig.suptitle("Ban ghi tua tinh du bao (xe chay don, khong tinh dong luc); I = tich phan theo khong gian", fontsize=10)
+fig.suptitle("Predicted quasi-static records (single moving truck, no dynamics); I = integral over space", fontsize=10)
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fA2_caumay_predicted_records.png"), dpi=200)
 plt.close(fig)
@@ -492,9 +492,9 @@ for name in CAL_MAIN:
         ax.loglog(e, 100 * e * 1e-3 * 205 / (abs(C) * P), ls, color=cols[name], label=f"{name[:2]} {lab}")
 ax.axhline(5, color="k", lw=0.6); ax.axhline(2, color="k", lw=0.6, ls=":")
 ax.text(0.011, 5.4, "5 %", fontsize=8); ax.text(0.011, 2.15, "2 %", fontsize=8)
-ax.set_xlabel("do lech zero du sau tai-zero eps0 (mm)")
-ax.set_ylabel("sai lech tai trong |dP/P| (%) - xe T1 25 t")
-ax.set_title("Eq. (19): do chinh xac ky vong theo muc offset, L_tot = 205 m", fontsize=9)
+ax.set_xlabel("residual zero offset after load-zero eps0 (mm)")
+ax.set_ylabel("load error |dP/P| (%) - truck T1 25 t")
+ax.set_title("Eq. (19): expected accuracy vs. offset level, L_tot = 205 m", fontsize=9)
 ax.legend(fontsize=7); ax.grid(True, which="both", lw=0.3)
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fA3_caumay_bias_vs_offset.png"), dpi=200)
@@ -541,10 +541,10 @@ FB = xiB * (1 - 2 * xiB ** 2 + xiB ** 3) - muB / 2 * xiB * (1 - xiB ** 2)
 xiB_star = xiB[np.argmax(FB)]
 log(f"example beta = {betaB:.4f}: Eq.(8) N(mid side) = {8*np.interp(0.5, xiB, FB):+.3f}, xi* = {xiB_star:.3f}, N(xi*) = {8*FB.max():+.3f}")
 XB3 = round(LtB - SPB[0] * xiB_star, 1)
-SENSB = [("D1 giua nhip chinh", "defl", SPB[0] + SPB[1] / 2),
-         ("D2 giua nhip bien phai (gan mu)", "defl", LtB - SPB[0] / 2),
-         (f"D3 nhip bien phai xi* (x={XB3:.1f} m)", "defl", XB3),
-         ("D4 giua nhip bien trai (doi xung D2)", "defl", SPB[0] / 2)]
+SENSB = [("D1 mid-span of main span", "defl", SPB[0] + SPB[1] / 2),
+         ("D2 mid-span of right side span (near-blind)", "defl", LtB - SPB[0] / 2),
+         (f"D3 right side span xi* (x={XB3:.1f} m)", "defl", XB3),
+         ("D4 mid-span of left side span (mirror of D2)", "defl", SPB[0] / 2)]
 mB = Model(SPB, lambda x: EIB, 0.0, ne_per_span=400, extra=tuple(s[2] for s in SENSB))
 wq = mB.uniform()[0::2]
 Mq = np.array([mB.moment_uniform(v) for v in mB.x[mB.x > SPB[0] + SPB[1]][::4]])
@@ -553,8 +553,8 @@ zeroB = [0.5 * (xz[j] + xz[j + 1]) for j in range(len(Mq) - 1) if Mq[j] * Mq[j +
 log(f"{SPB}: M_q = 0 in right side span at x = {[round(float(v),2) for v in zeroB]} "
     f"({[round(float(v)-SPB[0]-SPB[1],2) for v in zeroB]} m from pier)")
 ZC_B = 1.1          # m, soffit to centroid [ASSUMPTION]
-SENSB += [(f"S1 bien duoi tai M_q=0 (x={zeroB[0]:.1f} m)", "strain", round(zeroB[0], 1)),
-          ("S2 bien duoi giua nhip chinh", "strain", SPB[0] + SPB[1] / 2)]
+SENSB += [(f"S1 bottom fiber at M_q=0 (x={zeroB[0]:.1f} m)", "strain", round(zeroB[0], 1)),
+          ("S2 bottom fiber at mid-span of main span", "strain", SPB[0] + SPB[1] / 2)]
 mB = Model(SPB, lambda x: EIB, 0.0, ne_per_span=400, extra=tuple(s[2] for s in SENSB))
 fB, _ = freqs(Model(SPB, lambda x: EIB, 0.0, ne_per_span=40), lambda x: MB, 3)
 log(f"f1..f3 (EI={EIB:.1e}, m={MB} t/m, assumed) = {fB[0]:.2f}, {fB[1]:.2f}, {fB[2]:.2f} Hz")
@@ -607,15 +607,15 @@ for lab, kind, xs in SENSB:
     if kind == "defl":
         a0.plot([xs, xs], [-0.1, -1.0], color=c, lw=0.8)
         a0.plot(xs, -1.05, "s", color="0.4", ms=5)
-a0.text(LtB / 2, -1.6, "LVDT/dong ho tren gia co dinh duoi dam (truy cap tu mat dat)", ha="center", fontsize=8)
+a0.text(LtB / 2, -1.6, "LVDT/dial gauge on fixed frame under girder (accessed from ground)", ha="center", fontsize=8)
 a0.set_ylim(-2, 1.3); a0.set_yticks([]); a0.set_xlim(-3, LtB + 3)
-a0.set_title(f"(a) Vi du cau vuot {SPB[0]:g}+{SPB[1]:g}+{SPB[2]:g} m (beta = {betaB:.3f}), lang tru, tren goi: so do diem do", fontsize=9)
+a0.set_title(f"(a) Example overpass {SPB[0]:g}+{SPB[1]:g}+{SPB[2]:g} m (beta = {betaB:.3f}), prismatic, on bearings: sensor layout", fontsize=9)
 ax[1].plot(mB.x, wq * 1e3 * 245.8, "k", lw=1.6)
 ax[1].axhline(0, color="k", lw=0.5)
 for lab, kind, xs in SENSB[:4]:
     ax[1].axvline(xs, color="0.6", ls=":", lw=0.7)
-ax[1].set_ylabel("I_y = C_m P (mm*m), P = 25,06 t")
-ax[1].set_title("(b) Tich phan du bao doc cau (EI = 6,0e7 kN m2 gia dinh)", fontsize=9)
+ax[1].set_ylabel("I_y = C_m P (mm*m), P = 25.06 t")
+ax[1].set_title("(b) Predicted integral along the bridge (EI = 6.0e7 kN m2 assumed)", fontsize=9)
 for lab, kind, xs in SENSB:
     eta, sc = ilsB[lab]
     if kind == "defl":
@@ -626,11 +626,11 @@ for lab, kind, xs in SENSB:
     if kind == "strain":
         ax2b.plot(mB.x, eta * 1e6 * 100, "--", label=lab)
 ax[2].axhline(0, color="k", lw=0.5)
-ax[2].set_ylabel("vong (mm/100 kN)"); ax2b.set_ylabel("bien dang (ue/100 kN)")
+ax[2].set_ylabel("deflection (mm/100 kN)"); ax2b.set_ylabel("strain (ue/100 kN)")
 ax[2].set_xlabel("x (m)")
 h1, l1 = ax[2].get_legend_handles_labels(); h2, l2 = ax2b.get_legend_handles_labels()
 ax[2].legend(h1 + h2, l1 + l2, fontsize=7)
-ax[2].set_title("(c) Duong anh huong", fontsize=9)
+ax[2].set_title("(c) Influence lines", fontsize=9)
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fB1_generic_overpass.png"), dpi=200)
 plt.close(fig)
