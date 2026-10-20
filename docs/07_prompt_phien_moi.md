@@ -1,3 +1,5 @@
+> **Đã cũ.** Dùng `docs/PROMPT_PHIEN_MOI_2026-10-20.md` và `docs/00_TONG_QUAN_HIEN_TRANG.md` (20/10/2026).
+
 # Prompt để mở phiên làm việc mới
 
 Dán một trong các prompt dưới đây vào phiên Claude Code mới, mở trên kho `sonvt2-arch/shm-paper1-1d`.

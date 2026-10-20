@@ -1,3 +1,5 @@
+> **Đã cũ.** Dùng `docs/PROMPT_PHIEN_MOI_2026-10-20.md` và `docs/00_TONG_QUAN_HIEN_TRANG.md` (20/10/2026).
+
 # Prompt cho phiên làm việc tiếp theo
 
 Chép nguyên khối dưới đây vào phiên mới.
