@@ -133,15 +133,15 @@ $$R=\frac{C}{A^+}=1-\frac{|A^-|}{A^+}, \tag{9}$$
 
 the net influence area divided by its positive part $A^+$ (cf. the comparison of net and absolute areas by Deng et al., 2025). $R$ is defined for $C > 0$ (for $C < 0$, $A^+$ and $A^-$ change roles); it equals 1 for a simply supported span and 0 at a blind configuration, so a small indicator with $R$ near 1 indicates restraint rather than cancellation. At mid-span of two equal spans, strain influence lines cancel less than deflection influence lines ($R_\varepsilon = 0.667$ against $R_w = 0.571$), but near a zero of $M_q$ the order reverses.
 
-A residual offset $\delta_0$, in the units of the channel, left after re-zeroing before and after the crossing, adds $\delta_0L_\mathrm{tot}$ to the integral over a record of length $L_\mathrm{tot}$. With $J = CP$ the relative bias $b$ of the load is
+A residual offset $\delta_0$, in the units of the channel, left after re-zeroing before and after the crossing, adds $\delta_0L_\mathrm{tot}$ to the integral over a record of length $L_\mathrm{tot}$. With $J = CP_\mathrm{tot}$ the relative bias $b$ of the load is
 
-$$b=\frac{P_\delta}{P},\qquad P_\delta=\frac{\delta_0L_\mathrm{tot}}{C}. \tag{10}$$
+$$b=\frac{P_\delta}{P_\mathrm{tot}},\qquad P_\delta=\frac{\delta_0L_\mathrm{tot}}{C}. \tag{10}$$
 
 The offset-equivalent load $P_\delta$, at which the bias reaches 100 %, combines sensor position and baseline stability into one number, to be compared with the lightest vehicle to be screened.
 
 ### 2.4. Multi-channel estimation and sensor placement
 
-Let channel $j$ give the integral $J_j = C_jP + \delta_{0,j}L_\mathrm{tot} + n_j$, with white noise $n_j$ and offsets that may be correlated between channels, and let $\Sigma$ be the covariance matrix of $J$. A linear estimator $\hat P = a^\top J$ is unbiased for every axle configuration if and only if $a^\top C = 1$, and minimizing its variance gives the GLS weights
+Let channel $j$ give the integral $J_j = C_jP_\mathrm{tot} + \delta_{0,j}L_\mathrm{tot} + n_j$, with white noise $n_j$ and offsets that may be correlated between channels, and let $\Sigma$ be the covariance matrix of $J$. A linear estimator $\hat P = a^\top J$ is unbiased for every axle configuration if and only if $a^\top C = 1$, and minimizing its variance gives the GLS weights
 
 $$a^\star=\frac{\Sigma^{-1}C}{C^\top\Sigma^{-1}C},\qquad \mathrm{Var}\,\hat P^\star=\big(C^\top\Sigma^{-1}C\big)^{-1}, \tag{11}$$
 
@@ -151,7 +151,7 @@ $$\mathrm{Var}\,\hat P_\mathrm{zs}=\frac{\sigma^2\Delta x\,L_\mathrm{tot}+(1-\rh
 
 with $\sigma$ the standard deviation of the white noise, $\Delta x$ the sampling interval and $\rho$ the common-mode fraction of the offset (Supplementary Section S4).
 
-If the noise statistics do not depend on position, $1/\mathrm{Var}$ is a convex quadratic in the constants $C(x_j)$ for both Eqs. (11) and (12), and the feasible constants form a box bounded by the smallest and largest $C(x)$ along the girder. A convex function on a box is maximal at a vertex, as in extreme-point optimal design (Elfving, 1952), so optimal sensors lie at the maximum and the minimum of $C(x)$: of $w_q(x)/q_0$ for deflection, with $w_q$ the uniform-load deflection, and of $c\,M_q(x)/(EI\,q_0)$ for strain, whose extremes on a haunched girder differ from those of $M_q$. With independent offsets every sensor should sit near the extreme of largest $|C|$; with correlated offsets one should sit at the minimum, because a common offset cancels in the difference. A brute-force search and a Monte Carlo study (Eqs. (11) and (12) within 0.6 %) confirm this (Supplementary Section S4). The zero-sum estimator helps only if the disturbance is common-mode during the crossings themselves, not merely in vehicle-free periods, and Section 4.3 shows that real records can violate this.
+If the noise statistics do not depend on position, $1/\mathrm{Var}$ is a convex quadratic in the constants $C(x_j)$ for both Eqs. (11) and (12), and the feasible constants form a box bounded by the smallest and largest $C(x)$ along the girder. A convex function on a box is maximal at a vertex, as in extreme-point optimal design (Elfving, 1952), so optimal sensors lie at the maximum and the minimum of $C(x)$: of $w_q(x)/q_0$ for deflection, with $w_q$ the uniform-load deflection, and of $c\,M_q(x)/(EI\,q_0)$ for strain, whose extremes on a haunched girder differ from those of $M_q$. With independent offsets every sensor should sit near the extreme of largest $|C|$; with correlated offsets one sensor should sit at the minimum, because a common offset cancels in the difference. A brute-force search and a Monte Carlo study (Eqs. (11) and (12) within 0.6 %) confirm this (Supplementary Section S4). The zero-sum estimator helps only if the disturbance is common-mode during the crossings themselves, not merely in vehicle-free periods, and Section 4.3 shows that real records can violate this.
 
 ### 2.5. Identifiability of the constant under boundary uncertainty
 
@@ -258,7 +258,7 @@ No single model fits both gauges; the remaining misfit of 4–9 % is model-form 
 **Figure 7.** Identifiability of the Mây Bridge pier stiffness: (a) misfit ratio $r_{87}$ against $\kappa = k/\alpha$, with model-form variants (gray: haunch length $L_\mathrm{v}$, haunch exponent, rigid pier zone) and admissible band $|\ln r_{87}|\le 2\tau$ implied by a misfit within $\tau$ = 5.3 % at each gauge; (b) N8 and N7 indicators and cancellation ratios along the best static fit $\alpha^*(\kappa)$; shaded: admissible range of $\kappa$. $r_{87}$: measured-to-model ratio at N8 divided by that at N7; $\alpha^*(\kappa)$: rigidity factor that best fits both readings at given $\kappa$ (log least squares; equal and opposite log misfits at N8 and N7).
 :::
 
-The admissible set contains every model whose misfit at each gauge is within $\tau$ = 5.3 %, two standard deviations of a section mean that combine measurement and model-form error (Supplementary Section S8). At this tolerance the data bound $\kappa$ only from below: every $\kappa \ge 1.8\times10^7$ kN m/rad is admissible, with $\alpha$ between 0.51 and 1.15. The tolerance treats the six transverse readings as independent samples, so Supplementary Table S13 repeats the analysis at $\tau$ = 3 and 4 %; the contrast between the gauges persists (1.5 against 1.1 and 3.4 against 1.4), and at $\tau$ = 3 % the admissible set excludes the design rigidity, $\alpha = 1$.
+The admissible set contains every model whose misfit at each gauge is within $\tau$ = 5.3 %, two combined standard uncertainties (measurement and model form) of a section mean (Supplementary Section S8). At this tolerance the data bound $\kappa$ only from below: every $\kappa \ge 1.8\times10^7$ kN m/rad is admissible, with $\alpha$ between 0.51 and 1.15. The tolerance treats the six transverse readings as independent samples, so Supplementary Table S13 repeats the analysis at $\tau$ = 3 and 4 %; the contrast between the gauges persists (1.5 against 1.1 and 3.4 against 1.4), and at $\tau$ = 3 % the admissible set excludes the design rigidity, $\alpha = 1$.
 
 The side-span constant is this uncertain because the design pier stiffness lies near the steepest part of the Möbius curve of Eq. (13), where the boundary sensitivity $B_m$ is 0.51 at N8 against 0.12 at N7; calibrating to the N8 reading does not fix the N8 constant either (Supplementary Section S8 and Table S15).
 
@@ -364,7 +364,7 @@ The field strain records analyzed in Section 4 are publicly available in the NOR
 
 AASHTO (2024) LRFD Bridge Design Specifications. 10th ed. Washington, DC: American Association of State Highway and Transportation Officials.
 
-Agüero-Barrantes P, Christenson RE and Lobo-Aguilar S (2023) Utilizing Kriging metamodeling to provide practical and effective bridge weigh-in-motion. Journal of Bridge Engineering 28(2): 04022138. DOI: 10.1061/JBENF2.BEENG-5760.
+Agüero-Barrantes P, Christenson RE and Lobo Aguilar S (2023) Utilizing Kriging metamodeling to provide practical and effective bridge weigh-in-motion. Journal of Bridge Engineering 28(2): 04022138. DOI: 10.1061/JBENF2.BEENG-5760.
 
 Agüero-Barrantes P, Lobo Aguilar S and Christenson RE (2021) Sparse sensing bridge weigh-in-motion for single-span bridges. Métodos y Materiales 11: 43–53. DOI: 10.15517/mym.v11i0.46400.
 
