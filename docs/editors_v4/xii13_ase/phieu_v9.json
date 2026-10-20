@@ -1,0 +1,13 @@
+{"ngon_ngu":"en","ngay":"2026-10-20","luot":"sau vong sua Cong 4",
+ "tong_ket":{"so_muc_bat_buoc":2,"so_muc_can_nhac":7},
+ "phieu":[
+  {"stt":1,"loai":3,"muc":"bat_buoc","trich":"antisymmetric ... mirror-symmetric","van_de":"mot dang xoay theta6 = -theta7 goi hai ten (bai chinh 2.5, S1, S5, Fig S7)"},
+  {"stt":2,"loai":2,"muc":"bat_buoc","trich":"with 95 % bootstrap CIs in brackets","van_de":"Bang S9 dung ngoac tron","goi_y":"in parentheses"},
+  {"stt":3,"loai":1,"muc":"can_nhac","trich":"alpha trong tom tat; alpha, tau o Introduction truoc dinh nghia"},
+  {"stt":4,"loai":1,"muc":"can_nhac","trich":"theta_6, theta_7: T6 chua duoc nhac o bai chinh"},
+  {"stt":5,"loai":1,"muc":"can_nhac","trich":"chuoi 6.6, 2.4, 1.5 noi bang dau phay o (iii), 5.2, thu"},
+  {"stt":6,"loai":1,"muc":"can_nhac","trich":"two standard deviations of a section mean (2.64 %) - de hieu nham tau = 2.64 %"},
+  {"stt":7,"loai":1,"muc":"can_nhac","trich":"an assumption, since ..."},
+  {"stt":8,"loai":1,"muc":"can_nhac","trich":"P_delta, delta_0, L_tot dung truoc dinh nghia o 2.3"},
+  {"stt":9,"loai":1,"muc":"can_nhac","trich":"thu muc 1 qua nhieu ve, 'showing' khong ro chu ngu"}
+ ]}
