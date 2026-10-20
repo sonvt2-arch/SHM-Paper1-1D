@@ -151,4 +151,12 @@ for r in d.element.body.iter(qn("m:r")):
         if old is not None:
             r.remove(old)
         pr = OxmlElement("m:rPr"); pr.append(OxmlElement("m:nor")); r.insert(0, pr)
+# overbars as U+00AF (LibreOffice draws U+203E as an acute accent); no line break between a number and its unit
+for c in d.element.body.iter(qn("m:chr")):
+    if c.get(qn("m:val")) == "\u203e":
+        c.set(qn("m:val"), "\u00af")
+UNIT = re.compile(r"(\d) (?=(%|mm|m|N|kN|t|Hz|s|µε|µrad|kN m|kN m/rad|m²/kN)(?![\w²]))")
+for t in d.element.body.iter(qn("w:t")):
+    if t.text and " " in t.text:
+        t.text = UNIT.sub("\\1\u00a0", t.text)
 d.save(path)

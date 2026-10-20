@@ -12,7 +12,7 @@ pandoc "$B/manuscript_build.md" -f markdown+tex_math_dollars-implicit_figures \
 python3 "$W/postprocess.py" "$W/Manuscript_ASE.docx" --line-numbers
 python3 "$W/prep_supp.py" "$S/supplementary_material.md" "$S/figures/supplementary" "$B/supplementary_build.md"
 pandoc "$B/supplementary_build.md" -f markdown+tex_math_dollars-implicit_figures \
-  --reference-doc="$B/reference.docx" -o "$W/Supplementary_Material_ASE.docx"
+  --reference-doc="$B/reference.docx" --lua-filter="$W/eqnum.lua" -o "$W/Supplementary_Material_ASE.docx"
 python3 "$W/postprocess.py" "$W/Supplementary_Material_ASE.docx"
 if [[ -f "$S/cover_letter_ASE.md" ]]; then
   pandoc "$S/cover_letter_ASE.md" -f markdown+hard_line_breaks --reference-doc="$B/reference.docx" \
