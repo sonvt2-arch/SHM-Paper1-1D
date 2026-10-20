@@ -1,16 +1,13 @@
-"""WP3 - cross-section properties of the two continuous box girders.
+"""Cross-section properties of the Mây Bridge (Cau May) box girder.
 
 Polygon (Green's theorem) section properties for single-cell box sections.
 Coordinates: half-section (x >= 0, symmetric about the bridge axis), z upward
 from the soffit at the axis, units m.  Vertical-bending I = I about the
 horizontal centroidal axis.
 
-Sources (every dimension is quoted with its source in `SOURCES` below):
-  CM  = Cau May, "04 - Danh gia tai trong cau chinh.pdf" (Drive id
-        1HNyul9T5k12wWprgo9gNZMh-w0qRNyWw), p.3 (cross-section drawing, mm)
-        and p.5 (MIDAS-type section table).
-  TB  = Thai Binh, "T.Minh Thai Binh - 10-9-2020.doc" (Drive id
-        1LZZj8e5R0HtDuHVhP6-bAZkVOFLdgE39), section "Ket cau phan tren".
+Source: load-rating report of the Mây Bridge main girder (supplied by the
+consultancy, not public), p. 3 (cross-section drawings, mm) and p. 5
+(section-property table).  The polygon routine is checked against that table.
 """
 import numpy as np
 
@@ -99,53 +96,9 @@ def caumay_pier():
     return box_props(outer, hole), dict(xin_top=xin(zt_w), x_w=x_w)
 
 
-# --------------------------------------------------------------- Thai Binh
-def thaibinh(H, b_bot, t_web, t_bot, t_root=0.55, t_tip=0.22, t_top=0.25,
-             web_slope=0.24, haunch_w=1.5, bot_haunch=0.3):
-    """Thai Binh single-cell box with inclined webs.
-    Given in TB design note: top width 11.7, depth H (2.0 mid / 4.0 pier),
-    bottom width b_bot (5.759 mid / 4.8 pier), web t_web (0.25 mid / 0.60
-    near pier), flange tip min 0.22, top slab inside box 0.25, 2% crossfall.
-    NOT given ([NEED VALUE], analogue values from Cau May drawing):
-    t_bot (bottom slab), t_root (flange root, CM: 0.55), top haunch width
-    (CM: 1.5), bottom haunch (CM: 0.3x0.3).  web_slope (horizontal per
-    vertical) = 0.24 follows from the two bottom widths if the web/flange
-    junction is at a fixed x (as in the CM drawing): (5.759-4.8)/2/(4.0-2.0).
-    """
-    top = lambda x: H - 0.02 * x
-    xb = b_bot / 2
-    # web/flange junction (outer face meets flange soffit)
-    # x_j = xb + s*z_j, z_j = top(x_j) - t_root  -> solve linear
-    s = web_slope
-    xj = (xb + s * (H - t_root)) / (1 + s * 0.02)
-    zj = top(xj) - t_root
-    outer = [(0, 0), (xb, 0), (xj, zj), (5.850, top(5.850) - t_tip),
-             (5.850, top(5.850)), (0, H)]
-    tw = t_web * np.sqrt(1 + s * s)
-    xin = lambda z: xb + s * z - tw
-    zt_c = H - t_top
-    # inner web top: where inner web face meets top-slab soffit (thickness t_root)
-    # z = top(x) - t_root, x = xin(z)
-    zt_w = (top(xb - tw) - t_root) / (1 + 0.02 * s)
-    zt_w = top(xin(zt_w)) - t_root
-    x_w = xin(zt_w)
-    x_h = max(x_w - haunch_w, 0.2)
-    zt_h = top(x_h) - t_top
-    hole = [(0, t_bot), (xin(t_bot + bot_haunch) - bot_haunch, t_bot),
-            (xin(t_bot + bot_haunch), t_bot + bot_haunch),
-            (x_w, zt_w), (x_h, zt_h), (0, zt_c)]
-    return box_props(outer, hole)
-
-
 if __name__ == "__main__":
     for name, f, ref in [("CM mid", caumay_mid, (7.233, 1.572, 5.482)),
                          ("CM pier face", caumay_pier, (14.437, 3.053, 59.612))]:
         (A, zc, I), _ = f()
         print(f"{name:14s} A={A:7.3f} (ref {ref[0]})  z(-)={zc:6.3f} (ref {ref[1]})"
               f"  I={I:7.3f} (ref Iyy {ref[2]})  err_I={100*(I/ref[2]-1):+.1f}%")
-    for tb in (0.21, 0.25):
-        A, zc, I = thaibinh(2.0, 5.759, 0.25, tb)
-        print(f"TB mid t_bot={tb}: A={A:.3f} zc={zc:.3f} I={I:.3f}")
-    for tb in (0.59, 0.80):
-        A, zc, I = thaibinh(4.0, 4.8, 0.60, tb)
-        print(f"TB pier t_bot={tb}: A={A:.3f} zc={zc:.3f} I={I:.3f}")
