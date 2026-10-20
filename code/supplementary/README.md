@@ -59,7 +59,7 @@ Other numbers quoted in the article text come from the logs named in the section
 | Fig. S5 | Uniform-load response along six girders | `code/theory2/multisensor_figures.py` | `code/theory2/figures/ms_fig1_Cx_extremes.*`, `logs/multisensor_figures.log` |
 | Fig. S6 | Monte Carlo verification of the multi-channel estimators | `code/theory2/multisensor_mc.py` | `code/theory2/figures/ms_fig3_montecarlo.*`, `logs/multisensor_mc.log`, `results/mc_summary.csv`, `mc_errors.npz` |
 | Fig. S7 | Möbius law, closed form against FE | `code/theory2/ident_theory.py` | `code/theory2/figures/ident_theory_closedform.*`, `logs/ident_theory.log` |
-| Fig. S8 | Laboratory influence line | `code/v4/figS1_lab_il.py` | uses the data of `code/supplementary/beam_theory.py` |
+| Fig. S8 | Laboratory influence line | `code/v4/figS1_lab_il.py` | reads `code/v4/lab_single_load_influence_line.csv` (Table S4); writes `code/v4/figures/FigS8_lab_influence_line.png` |
 | Fig. S9 | Integral constant against speed | `code/norbwim/nb_v4.py` | `code/norbwim/figures/v4_speed.*`, `results/v4_speed.csv` |
 | Fig. S10 | Estimator MAE, in sample, leave-one-run-out, leave-one-truck-out | `code/norbwim/nb_v4.py` | `code/norbwim/figures/v4_estimators.*`, `results/v4_estimators.csv` |
 | Fig. S11 | Noise correlation between gauges | `code/norbwim/nb_v4.py` | `code/norbwim/figures/v4_noise_corr.*`, `results/v4_noise_corr_day1.csv`, `v4_noise_corr_day2.csv` |
@@ -133,8 +133,13 @@ Run them from the repository root, or use `run_all.sh --with-analysis`. Their lo
 | `wp7b_peps.py`, `wp7b_checks.py` | Offset-bias and k-sensitivity statements, near-blind band edges, root-sum-square budget | `wp7b_peps.log`, `wp7b_peps_2506.log` |
 | `schm_figures.py` | Plots of Fig. 2 and Figs. S16–S17 | not re-run |
 
+## Data in this archive
+
+- `data/bridges/cau-may/`: Mây Bridge acceptance test (June 2020): static deflections at N7 and N8 (Table S11), weighed trucks (Table S10) and measured span frequencies (read by `code/theory2/ident_freq.py`).
+- `code/v4/lab_single_load_influence_line.csv`: laboratory single-load influence line (Table S4).
+
 ## What is not here
 
 - The laboratory raw records (each deflection is the mean of three cycles; only the means in Table S4 exist in the repository).
 - The Abaqus model of the laboratory beam. The Hermite FE in `beam_theory.py` stands in for it; cubic elements are nodally exact, so both give the same nodal influence line.
-- The raw NOR-BWIM records (available from the dataset DOI above) and the Mây Bridge field data files.
+- The raw NOR-BWIM records (available from the dataset DOI above; place them in `data/public/norbwim_figshare26880898/`) and the raw dynamic records of the Gie Cục I and Phương Độ bridges (Figs. S16 and S17).

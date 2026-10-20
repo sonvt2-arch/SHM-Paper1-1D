@@ -1,0 +1,14 @@
+# Mây Bridge acceptance test (June 2020): static peak deflection of the main girder under the parked convoy; negative = downward; theory = FE model of the test report.
+span,section,load_case,measured_mm,theory_midas_mm,diff_percent_reported,measured_over_theory_computed
+N8 (55 m side span),right line,centric,-5.32,-5.93,10.4,0.897
+N8 (55 m side span),axis,centric,-5.56,-5.93,6.3,0.938
+N8 (55 m side span),left line,centric,-5.76,-5.93,2.9,0.971
+N7 (90 m centre span),right line,centric,-14.68,-16.70,12.1,0.879
+N7 (90 m centre span),axis,centric,-15.24,-16.70,8.8,0.913
+N7 (90 m centre span),left line,centric,-15.83,-16.70,5.2,0.948
+N8 (55 m side span),right line,eccentric,-5.91,-5.93,0.4,0.997
+N8 (55 m side span),axis,eccentric,-5.55,-5.93,6.5,0.936
+N8 (55 m side span),left line,eccentric,-5.22,-5.93,12.0,0.880
+N7 (90 m centre span),right line,eccentric,-14.62,-16.70,12.5,0.875
+N7 (90 m centre span),axis,eccentric,-15.51,-16.70,7.1,0.929
+N7 (90 m centre span),left line,eccentric,-16.67,-16.70,0.2,0.998

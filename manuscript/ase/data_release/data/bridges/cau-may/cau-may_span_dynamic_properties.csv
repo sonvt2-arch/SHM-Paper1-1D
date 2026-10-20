@@ -1,0 +1,9 @@
+# Mây Bridge acceptance test (June 2020): measured span properties as printed in the test report; f in Hz; y_max, y_min in mm; one_plus_IM = 1 + dynamic increment.
+span,vertical_f_Hz,vertical_T_s,long_f_Hz,transverse_f_Hz,y_max_mm,y_min_mm,one_plus_IM
+N1,3.11,0.32,3.60,4.65,2.170,1.145,1.309
+N5,3.03,0.33,3.64,3.26,2.280,1.151,1.329
+N6 (side span 55 m),3.43,0.29,2.25,3.86,1.270,0.745,1.261
+N7 (centre 90 m),3.64,0.28,3.20,4.89,1.780,1.115,1.230
+N8 (side span 55 m),3.63,0.28,4.41,3.30,0.950,0.630,1.203
+N9,3.09,0.32,3.47,2.79,2.116,1.081,1.324
+N15,3.04,0.33,3.30,4.72,2.450,1.260,1.321
