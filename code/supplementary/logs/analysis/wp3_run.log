@@ -1,23 +1,11 @@
 [calib] CM varEI_Lv40: k_FE = 3.615e+07 kNm/rad (FE misfit % [-2.7, 2.5]); joint fit to measured: alpha = EI_eff/EI_design = 0.787, k = 1.070e+08 (misfit % [-2.1, 2.2]); alpha at k_FE = 1.094 (misfit % [-3.3, 3.5])
 [calib] CM varEI_Lv44: k_FE = 2.748e+07 kNm/rad (FE misfit % [-4.2, 3.7]); joint fit to measured: alpha = EI_eff/EI_design = 0.716, k = 1.199e+08 (misfit % [-2.8, 2.9]); alpha at k_FE = 1.088 (misfit % [-4.6, 5.0])
 [calib] CM varEI_Lv45: k_FE = 2.526e+07 kNm/rad (FE misfit % [-4.6, 4.1]); joint fit to measured: alpha = EI_eff/EI_design = 0.699, k = 1.236e+08 (misfit % [-2.9, 3.0]); alpha at k_FE = 1.086 (misfit % [-4.9, 5.4])
-[calib] TB varEI_tbot_CMabs_Lv28: k_FE = 1.704e+08 kNm/rad (FE misfit % [-10.7, 21.7, -11.4]); joint fit to measured: alpha = EI_eff/EI_design = 0.840, k = 8.973e+14 (misfit % [-4.3, 17.3, -10.9]); alpha at k_FE = 1.063 (misfit % [-5.4, 20.1, -11.4])
-[calib] TB varEI_tbot_CMabs_Lv30.5: k_FE = 1.429e+08 kNm/rad (FE misfit % [-11.1, 22.2, -11.8]); joint fit to measured: alpha = EI_eff/EI_design = 0.807, k = 5.850e+14 (misfit % [-4.3, 17.3, -10.9]); alpha at k_FE = 1.061 (misfit % [-5.6, 21.0, -11.6])
-[calib] TB varEI_tbot_CMabs_Lv31.5: k_FE = 1.332e+08 kNm/rad (FE misfit % [-11.4, 22.5, -12.0]); joint fit to measured: alpha = EI_eff/EI_design = 0.794, k = 8.797e+14 (misfit % [-4.3, 17.3, -10.9]); alpha at k_FE = 1.059 (misfit % [-5.8, 21.4, -11.7])
-[calib] TB varEI_tbot_CMprop_Lv28: k_FE = 2.585e+08 kNm/rad (FE misfit % [-10.0, 21.0, -10.9]); joint fit to measured: alpha = EI_eff/EI_design = 0.906, k = 8.264e+13 (misfit % [-4.3, 17.3, -10.9]); alpha at k_FE = 1.064 (misfit % [-5.0, 18.9, -11.2])
-[calib] TB varEI_tbot_CMprop_Lv30.5: k_FE = 2.039e+08 kNm/rad (FE misfit % [-10.4, 21.4, -11.3]); joint fit to measured: alpha = EI_eff/EI_design = 0.870, k = 5.223e+14 (misfit % [-4.3, 17.3, -10.9]); alpha at k_FE = 1.063 (misfit % [-5.2, 19.7, -11.3])
-[calib] TB varEI_tbot_CMprop_Lv31.5: k_FE = 1.867e+08 kNm/rad (FE misfit % [-10.6, 21.6, -11.4]); joint fit to measured: alpha = EI_eff/EI_design = 0.855, k = 2.187e+14 (misfit % [-4.3, 17.3, -10.9]); alpha at k_FE = 1.062 (misfit % [-5.3, 20.0, -11.4])
 [check] CM mid polygon: A=7.215 I=5.164 vs report A=7.233 Iyy=5.482
 [check] CM pier-face polygon: A=14.360 I=58.085 vs report A=14.437 Iyy=59.612
 [model] CM varEI_Lv40: I_mid=5.482 I_pier=59.612 n=2.943 Lv=40.0
 [model] CM varEI_Lv44: I_mid=5.482 I_pier=59.612 n=2.943 Lv=44.0
 [model] CM varEI_Lv45: I_mid=5.482 I_pier=59.612 n=2.943 Lv=45.0
-[model] TB varEI_tbot_CMabs_Lv28: I_mid=3.177 I_pier=25.531 n=3.007 Lv=28.0
-[model] TB varEI_tbot_CMabs_Lv30.5: I_mid=3.177 I_pier=25.531 n=3.007 Lv=30.5
-[model] TB varEI_tbot_CMabs_Lv31.5: I_mid=3.177 I_pier=25.531 n=3.007 Lv=31.5
-[model] TB varEI_tbot_CMprop_Lv28: I_mid=2.941 I_pier=23.744 n=3.013 Lv=28.0
-[model] TB varEI_tbot_CMprop_Lv30.5: I_mid=2.941 I_pier=23.744 n=3.013 Lv=30.5
-[model] TB varEI_tbot_CMprop_Lv31.5: I_mid=2.941 I_pier=23.744 n=3.013 Lv=31.5
 [check] max |C_m(IL area)/w(uniform) - 1| over all cases = 1.07e-04
 
 === Normalised C_m (192 EI_ref C_m / L^4), EI_ref = E I_mid (mid-span section) ===
@@ -33,59 +21,21 @@ CM constEI                    pinned CM N7 mid-span               norm=  0.755 n
 CM constEI                    fixed  CM N8 0.4L (22 m from T8)    norm=  1.037 neg/pos=  0.000 
 CM constEI                    fixed  CM N8 mid-span (alt.)        norm=  1.000 neg/pos=  0.000 
 CM constEI                    fixed  CM N7 mid-span               norm=  0.500 neg/pos=  0.000 
-TB varEI_tbot_CMabs_Lv30.5    pinned TB N12 mid-span              norm=  0.197 neg/pos= -0.867 NEAR-BLIND
-TB varEI_tbot_CMabs_Lv30.5    pinned TB N12 0.4L (alt.)           norm=  0.280 neg/pos= -0.813 
-TB varEI_tbot_CMabs_Lv30.5    pinned TB N13 mid-span              norm=  0.252 neg/pos= -0.577 
-TB varEI_tbot_CMabs_Lv30.5    pinned TB N14 mid-span              norm=  0.197 neg/pos= -0.867 NEAR-BLIND
-TB varEI_tbot_CMabs_Lv30.5    pinned TB N14 0.6L (alt.)           norm=  0.280 neg/pos= -0.813 
-TB varEI_tbot_CMabs_Lv30.5    fixed  TB N12 mid-span              norm=  0.433 neg/pos=  0.000 
-TB varEI_tbot_CMabs_Lv30.5    fixed  TB N12 0.4L (alt.)           norm=  0.504 neg/pos=  0.000 
-TB varEI_tbot_CMabs_Lv30.5    fixed  TB N13 mid-span              norm=  0.175 neg/pos=  0.000 NEAR-BLIND
-TB varEI_tbot_CMabs_Lv30.5    fixed  TB N14 mid-span              norm=  0.433 neg/pos=  0.000 
-TB varEI_tbot_CMabs_Lv30.5    fixed  TB N14 0.6L (alt.)           norm=  0.504 neg/pos=  0.000 
-TB constEI                    pinned TB N12 mid-span              norm=  0.481 neg/pos= -0.764 
-TB constEI                    pinned TB N12 0.4L (alt.)           norm=  0.572 neg/pos= -0.709 
-TB constEI                    pinned TB N13 mid-span              norm=  0.705 neg/pos= -0.368 
-TB constEI                    pinned TB N14 mid-span              norm=  0.481 neg/pos= -0.764 
-TB constEI                    pinned TB N14 0.6L (alt.)           norm=  0.572 neg/pos= -0.709 
-TB constEI                    fixed  TB N12 mid-span              norm=  1.000 neg/pos=  0.000 
-TB constEI                    fixed  TB N12 0.4L (alt.)           norm=  1.037 neg/pos=  0.000 
-TB constEI                    fixed  TB N13 mid-span              norm=  0.500 neg/pos=  0.000 
-TB constEI                    fixed  TB N14 mid-span              norm=  1.000 neg/pos=  0.000 
-TB constEI                    fixed  TB N14 0.6L (alt.)           norm=  1.037 neg/pos=  0.000 
 CM varEI_Lv44                 kFE    CM N8 0.4L (22 m from T8)    norm=  0.181 neg/pos= -0.817 NEAR-BLIND
 CM varEI_Lv44                 kFE    CM N8 mid-span (alt.)        norm=  0.105 neg/pos= -0.889 NEAR-BLIND
 CM varEI_Lv44                 kFE    CM N7 mid-span               norm=  0.209 neg/pos= -0.414 
 CM varEI_Lv44                 kMeas  CM N8 0.4L (22 m from T8)    norm=  0.476 neg/pos= -0.444 
 CM varEI_Lv44                 kMeas  CM N8 mid-span (alt.)        norm=  0.377 neg/pos= -0.511 
 CM varEI_Lv44                 kMeas  CM N7 mid-span               norm=  0.234 neg/pos= -0.228 
-TB varEI_tbot_CMabs_Lv30.5    kFE    TB N12 mid-span              norm=  0.395 neg/pos= -0.346 
-TB varEI_tbot_CMabs_Lv30.5    kFE    TB N12 0.4L (alt.)           norm=  0.468 neg/pos= -0.298 
-TB varEI_tbot_CMabs_Lv30.5    kFE    TB N13 mid-span              norm=  0.187 neg/pos= -0.230 NEAR-BLIND
-TB varEI_tbot_CMabs_Lv30.5    kFE    TB N14 mid-span              norm=  0.395 neg/pos= -0.346 
-TB varEI_tbot_CMabs_Lv30.5    kFE    TB N14 0.6L (alt.)           norm=  0.468 neg/pos= -0.298 
-TB varEI_tbot_CMabs_Lv30.5    kMeas  TB N12 mid-span              norm=  0.537 neg/pos= -0.000 
-TB varEI_tbot_CMabs_Lv30.5    kMeas  TB N12 0.4L (alt.)           norm=  0.625 neg/pos= -0.000 
-TB varEI_tbot_CMabs_Lv30.5    kMeas  TB N13 mid-span              norm=  0.216 neg/pos= -0.000 
-TB varEI_tbot_CMabs_Lv30.5    kMeas  TB N14 mid-span              norm=  0.537 neg/pos= -0.000 
-TB varEI_tbot_CMabs_Lv30.5    kMeas  TB N14 0.6L (alt.)           norm=  0.625 neg/pos= -0.000 
 
 === Range of normalised C_m over all variable-EI variants (Lv, t_bot, pier fixity) ===
 CM N8 0.4L (22 m from T8)      base kFE 0.181 (neg/pos -0.817) | base pinned 0.030 | base fixed 0.422 | range [0.023, 0.446] | constEI pinned 0.287 | neg/pos range [-0.985, 0.000]
 CM N8 mid-span (alt.)          base kFE 0.105 (neg/pos -0.889) | base pinned -0.052 | base fixed 0.354 | range [-0.066, 0.375] | constEI pinned 0.163 | neg/pos range [-1.046, 0.000]
 CM N7 mid-span                 base kFE 0.209 (neg/pos -0.414) | base pinned 0.248 | base fixed 0.147 | range [0.145, 0.263] | constEI pinned 0.755 | neg/pos range [-0.499, 0.000]
-TB N12 mid-span                base kFE 0.395 (neg/pos -0.346) | base pinned 0.197 | base fixed 0.433 | range [0.196, 0.451] | constEI pinned 0.481 | neg/pos range [-0.873, 0.000]
-TB N12 0.4L (alt.)             base kFE 0.468 (neg/pos -0.298) | base pinned 0.280 | base fixed 0.504 | range [0.277, 0.523] | constEI pinned 0.572 | neg/pos range [-0.820, 0.000]
-TB N13 mid-span                base kFE 0.187 (neg/pos -0.230) | base pinned 0.252 | base fixed 0.175 | range [0.171, 0.263] | constEI pinned 0.705 | neg/pos range [-0.581, 0.000]
-TB N14 mid-span                base kFE 0.395 (neg/pos -0.346) | base pinned 0.197 | base fixed 0.433 | range [0.196, 0.451] | constEI pinned 0.481 | neg/pos range [-0.873, 0.000]
-TB N14 0.6L (alt.)             base kFE 0.468 (neg/pos -0.298) | base pinned 0.280 | base fixed 0.504 | range [0.277, 0.523] | constEI pinned 0.572 | neg/pos range [-0.820, 0.000]
 
 === Static load-test consistency check ===
 [positions] CM_III_N8: axles x = [163.45, 167.05, 168.4, 174.4, 178.0, 179.35]
 [positions] CM_IV_N7: axles x = [87.7, 89.05, 92.65, 98.65, 100.0, 103.6, 109.6, 110.95, 114.55]
-[positions] TB_4_N12: axles x = [3.3, 4.65, 7.65, 9.45, 15.45, 16.8, 19.8, 21.6]
-[positions] TB_5_N13: axles x = [60.0, 61.35, 64.35, 66.15, 72.15, 73.5, 76.5, 78.3, 84.3, 85.65, 88.65, 90.45]
-[positions] TB_6_N14: axles x = [124.05, 125.4, 128.4, 130.2, 136.2, 137.55, 140.55, 142.35]
 (pred = this 2D model; meas = mean of 3 lines x 2 transverse cases)
 varEI_Lv44                 pinned CM N8 0.4L (22 m from T8)    W= 100.0 t pred=  7.18 [7.18,7.18] meas=  5.55 FE_rep=  5.93 meas/pred=0.773 FE/pred=0.826
 varEI_Lv44                 pinned CM N8 mid-span (alt.)        W= 100.0 t pred=  6.99 [6.99,6.99] meas=  5.55 FE_rep=  5.93 meas/pred=0.794 FE/pred=0.849
@@ -99,58 +49,19 @@ constEI                    pinned CM N7 mid-span               W= 150.0 t pred= 
 constEI                    fixed  CM N8 0.4L (22 m from T8)    W= 100.0 t pred=  7.02 [7.02,7.02] meas=  5.55 FE_rep=  5.93 meas/pred=0.791 FE/pred=0.845
 constEI                    fixed  CM N8 mid-span (alt.)        W= 100.0 t pred=  6.89 [6.89,6.89] meas=  5.55 FE_rep=  5.93 meas/pred=0.806 FE/pred=0.861
 constEI                    fixed  CM N7 mid-span               W= 150.0 t pred= 25.37 [25.37,25.37] meas= 15.42 FE_rep= 16.70 meas/pred=0.608 FE/pred=0.658
-varEI_tbot_CMabs_Lv30.5    pinned TB N12 mid-span              W= 122.1 t pred=  5.93 [4.84,7.09] meas=  3.21 FE_rep=  3.58 meas/pred=0.542 FE/pred=0.604
-varEI_tbot_CMabs_Lv30.5    pinned TB N12 0.4L (alt.)           W= 122.1 t pred=  6.26 [5.00,7.55] meas=  3.21 FE_rep=  3.58 meas/pred=0.513 FE/pred=0.571
-varEI_tbot_CMabs_Lv30.5    pinned TB N13 mid-span              W= 183.2 t pred= 17.56 [15.27,19.76] meas=  6.03 FE_rep=  6.25 meas/pred=0.343 FE/pred=0.356
-varEI_tbot_CMabs_Lv30.5    pinned TB N14 mid-span              W= 122.1 t pred=  6.34 [5.15,7.43] meas=  3.63 FE_rep=  3.82 meas/pred=0.573 FE/pred=0.602
-varEI_tbot_CMabs_Lv30.5    pinned TB N14 0.6L (alt.)           W= 122.1 t pred=  6.66 [5.28,7.88] meas=  3.63 FE_rep=  3.82 meas/pred=0.545 FE/pred=0.574
-varEI_tbot_CMabs_Lv30.5    fixed  TB N12 mid-span              W= 122.1 t pred=  2.48 [1.92,3.02] meas=  3.21 FE_rep=  3.58 meas/pred=1.295 FE/pred=1.443
-varEI_tbot_CMabs_Lv30.5    fixed  TB N12 0.4L (alt.)           W= 122.1 t pred=  2.99 [2.19,3.75] meas=  3.21 FE_rep=  3.58 meas/pred=1.074 FE/pred=1.197
-varEI_tbot_CMabs_Lv30.5    fixed  TB N13 mid-span              W= 183.2 t pred=  5.71 [4.58,6.82] meas=  6.03 FE_rep=  6.25 meas/pred=1.057 FE/pred=1.095
-varEI_tbot_CMabs_Lv30.5    fixed  TB N14 mid-span              W= 122.1 t pred=  2.61 [1.99,3.15] meas=  3.63 FE_rep=  3.82 meas/pred=1.391 FE/pred=1.464
-varEI_tbot_CMabs_Lv30.5    fixed  TB N14 0.6L (alt.)           W= 122.1 t pred=  3.11 [2.27,3.88] meas=  3.63 FE_rep=  3.82 meas/pred=1.167 FE/pred=1.228
-constEI                    pinned TB N12 mid-span              W= 122.1 t pred=  8.58 [6.88,10.31] meas=  3.21 FE_rep=  3.58 meas/pred=0.374 FE/pred=0.417
-constEI                    pinned TB N12 0.4L (alt.)           W= 122.1 t pred=  8.62 [7.03,10.31] meas=  3.21 FE_rep=  3.58 meas/pred=0.373 FE/pred=0.415
-constEI                    pinned TB N13 mid-span              W= 183.2 t pred= 32.51 [28.72,36.09] meas=  6.03 FE_rep=  6.25 meas/pred=0.185 FE/pred=0.192
-constEI                    pinned TB N14 mid-span              W= 122.1 t pred=  9.26 [7.66,10.74] meas=  3.63 FE_rep=  3.82 meas/pred=0.392 FE/pred=0.413
-constEI                    pinned TB N14 0.6L (alt.)           W= 122.1 t pred=  9.24 [7.55,10.79] meas=  3.63 FE_rep=  3.82 meas/pred=0.393 FE/pred=0.413
-constEI                    fixed  TB N12 mid-span              W= 122.1 t pred=  5.23 [4.27,6.26] meas=  3.21 FE_rep=  3.58 meas/pred=0.614 FE/pred=0.685
-constEI                    fixed  TB N12 0.4L (alt.)           W= 122.1 t pred=  5.62 [4.43,6.80] meas=  3.21 FE_rep=  3.58 meas/pred=0.572 FE/pred=0.637
-constEI                    fixed  TB N13 mid-span              W= 183.2 t pred= 15.68 [13.28,17.97] meas=  6.03 FE_rep=  6.25 meas/pred=0.385 FE/pred=0.399
-constEI                    fixed  TB N14 mid-span              W= 122.1 t pred=  5.58 [4.51,6.56] meas=  3.63 FE_rep=  3.82 meas/pred=0.650 FE/pred=0.684
-constEI                    fixed  TB N14 0.6L (alt.)           W= 122.1 t pred=  5.95 [4.64,7.10] meas=  3.63 FE_rep=  3.82 meas/pred=0.611 FE/pred=0.642
 varEI_Lv44                 kFE    CM N8 0.4L (22 m from T8)    W= 100.0 t pred=  5.69 [5.69,5.69] meas=  5.55 FE_rep=  5.93 meas/pred=0.977 FE/pred=1.044
 varEI_Lv44                 kFE    CM N8 mid-span (alt.)        W= 100.0 t pred=  5.44 [5.44,5.44] meas=  5.55 FE_rep=  5.93 meas/pred=1.021 FE/pred=1.091
 varEI_Lv44                 kFE    CM N7 mid-span               W= 150.0 t pred= 17.32 [17.32,17.32] meas= 15.42 FE_rep= 16.70 meas/pred=0.890 FE/pred=0.964
 varEI_Lv44                 kMeas  CM N8 0.4L (22 m from T8)    W= 100.0 t pred=  5.40 [5.40,5.40] meas=  5.55 FE_rep=  5.93 meas/pred=1.029 FE/pred=1.099
 varEI_Lv44                 kMeas  CM N8 mid-span (alt.)        W= 100.0 t pred=  4.96 [4.96,4.96] meas=  5.55 FE_rep=  5.93 meas/pred=1.120 FE/pred=1.197
 varEI_Lv44                 kMeas  CM N7 mid-span               W= 150.0 t pred= 15.87 [15.87,15.87] meas= 15.42 FE_rep= 16.70 meas/pred=0.972 FE/pred=1.053
-varEI_tbot_CMabs_Lv30.5    kFE    TB N12 mid-span              W= 122.1 t pred=  3.18 [2.52,3.84] meas=  3.21 FE_rep=  3.58 meas/pred=1.010 FE/pred=1.125
-varEI_tbot_CMabs_Lv30.5    kFE    TB N12 0.4L (alt.)           W= 122.1 t pred=  3.66 [2.76,4.51] meas=  3.21 FE_rep=  3.58 meas/pred=0.878 FE/pred=0.979
-varEI_tbot_CMabs_Lv30.5    kFE    TB N13 mid-span              W= 183.2 t pred=  7.64 [6.32,8.93] meas=  6.03 FE_rep=  6.25 meas/pred=0.789 FE/pred=0.818
-varEI_tbot_CMabs_Lv30.5    kFE    TB N14 mid-span              W= 122.1 t pred=  3.37 [2.63,4.01] meas=  3.63 FE_rep=  3.82 meas/pred=1.078 FE/pred=1.134
-varEI_tbot_CMabs_Lv30.5    kFE    TB N14 0.6L (alt.)           W= 122.1 t pred=  3.83 [2.88,4.70] meas=  3.63 FE_rep=  3.82 meas/pred=0.947 FE/pred=0.997
-varEI_tbot_CMabs_Lv30.5    kMeas  TB N12 mid-span              W= 122.1 t pred=  3.07 [2.38,3.75] meas=  3.21 FE_rep=  3.58 meas/pred=1.045 FE/pred=1.165
-varEI_tbot_CMabs_Lv30.5    kMeas  TB N12 0.4L (alt.)           W= 122.1 t pred=  3.71 [2.71,4.65] meas=  3.21 FE_rep=  3.58 meas/pred=0.866 FE/pred=0.966
-varEI_tbot_CMabs_Lv30.5    kMeas  TB N13 mid-span              W= 183.2 t pred=  7.07 [5.68,8.45] meas=  6.03 FE_rep=  6.25 meas/pred=0.852 FE/pred=0.884
-varEI_tbot_CMabs_Lv30.5    kMeas  TB N14 mid-span              W= 122.1 t pred=  3.23 [2.46,3.91] meas=  3.63 FE_rep=  3.82 meas/pred=1.123 FE/pred=1.181
-varEI_tbot_CMabs_Lv30.5    kMeas  TB N14 0.6L (alt.)           W= 122.1 t pred=  3.86 [2.82,4.81] meas=  3.63 FE_rep=  3.82 meas/pred=0.941 FE/pred=0.991
 
 === meas/pred range over all variable-EI variants (primary sensors) ===
 CM N8 0.4L (22 m from T8)    kFE: pred 5.69 mm, FE/pred 1.044, meas/pred 0.977 (variants [0.962,0.981]); alpha(EIeff/EIdesign at k_FE) 1.088
 CM N8 0.4L (22 m from T8)    meas/pred base pinned 0.773, fixed 2.020; range [0.708,2.053]; FE/pred range [0.756,2.194]; meas/FE_report 0.936
 CM N7 mid-span               kFE: pred 17.32 mm, FE/pred 0.964, meas/pred 0.890 (variants [0.887,0.901]); alpha(EIeff/EIdesign at k_FE) 1.088
 CM N7 mid-span               meas/pred base pinned 0.671, fixed 1.850; range [0.626,1.877]; FE/pred range [0.678,2.033]; meas/FE_report 0.923
-TB N12 mid-span              kFE: pred 3.18 mm, FE/pred 1.125, meas/pred 1.010 (variants [0.997,1.012]); alpha(EIeff/EIdesign at k_FE) 1.061
-TB N12 mid-span              meas/pred base pinned 0.542, fixed 1.295; range [0.475,1.317]; FE/pred range [0.530,1.468]; meas/FE_report 0.897
-TB N13 mid-span              kFE: pred 7.64 mm, FE/pred 0.818, meas/pred 0.789 (variants [0.788,0.797]); alpha(EIeff/EIdesign at k_FE) 1.061
-TB N13 mid-span              meas/pred base pinned 0.343, fixed 1.057; range [0.302,1.074]; FE/pred range [0.313,1.114]; meas/FE_report 0.965
-TB N14 mid-span              kFE: pred 3.37 mm, FE/pred 1.134, meas/pred 1.078 (variants [1.066,1.080]); alpha(EIeff/EIdesign at k_FE) 1.061
-TB N14 mid-span              meas/pred base pinned 0.573, fixed 1.391; range [0.501,1.415]; FE/pred range [0.528,1.489]; meas/FE_report 0.950
 
 === Load proportionality: deflection per tonne and per unit of sum(P*eta) ===
 CM N8 0.4L (22 m from T8)    n= 4 W= 100.0 t meas/W=0.0555 mm/t  meas/FE_report=0.936
 CM N7 mid-span               n= 6 W= 150.0 t meas/W=0.1028 mm/t  meas/FE_report=0.923
-TB N12 mid-span              n= 4 W= 122.1 t meas/W=0.0263 mm/t  meas/FE_report=0.897
-TB N13 mid-span              n= 6 W= 183.2 t meas/W=0.0329 mm/t  meas/FE_report=0.965
-TB N14 mid-span              n= 4 W= 122.1 t meas/W=0.0297 mm/t  meas/FE_report=0.950

@@ -1,4 +1,4 @@
-sigmas: static per gauge 2.64 % (tau_rec/2), frequency 3.3 %, rotation 3.0 % [NEED VALUE]
+sigmas: static per gauge 2.64 % (tau_rec/2), frequency 3.3 %, rotation 3.0 % (assumed)
 prior on ln gamma': uniform over [-0.300,0.079] (mass low..high, e_d 1.0..1.2) -> sd 0.109; tight alternative sd 0.03
 
 === Log-sensitivities d ln(.)/d ln kappa at alpha = 1 ===

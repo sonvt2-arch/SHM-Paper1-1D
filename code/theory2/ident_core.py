@@ -67,8 +67,8 @@ MASS_CASES = {
 }
 RHO_AS = 2.25        # t/m3 bituminous wearing surface (AASHTO LRFD Tab. 3.5.1-1)
 W_CARR = 11.0        # m, 12.0 m deck minus 2 x 0.5 m kerbs (INVENTORY sec.1)
-L_DIAPH_PIER = 3.0   # m, [NEED VALUE] assumed diaphragm length over T6/T7
-L_DIAPH_END = 2.0    # m, [NEED VALUE] assumed end-diaphragm length at T5/T8
+L_DIAPH_PIER = 3.0   # m, assumed diaphragm length over T6/T7 (not given in the test report)
+L_DIAPH_END = 2.0    # m, assumed end-diaphragm length at T5/T8 (not given in the test report)
 
 
 def area_law(h, law):

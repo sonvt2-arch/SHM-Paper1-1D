@@ -64,7 +64,7 @@ for beta, rho in [(1.0, 1.0), (1.5, 1.0), (90 / 55, 1.0), (1.2, 2.0), (1.8, 0.7)
 
 print("\n Dimensional bridges (uniform EI = 1, metres; 12 elements/span: prismatic Hermite"
       " elements are nodally exact, finer meshes only add round-off):")
-for name, spans in [("Cau May 55+90+55", [55, 90, 55]), ("Thai Binh 42+63+42", [42, 63, 42])]:
+for name, spans in [("Cau May 55+90+55", [55, 90, 55])]:
     b = spans[1] / spans[0]
     check(f"{name} mid side", th.side_norm(0.5, b), fe_norm(spans, spans[0] / 2, spans[0], 1.0))
     check(f"{name} mid main", th.main_norm(0.5, b),
@@ -116,9 +116,9 @@ contrib_main = [sp.lambdify((th.eta, b_, r_), th.main_contrib(j)) for j in range
 print(f"  {'case':34s} {'C1':>10s} {'C2':>10s} {'C3':>10s} {'sum':>10s} {'neg/pos':>9s}")
 for name, beta, rho, where, pos in [
         ("two-span-like beta=1 side", 1.0, 1.0, "side", 0.5),
-        ("Thai Binh side (beta=1.5)", 1.5, 1.0, "side", 0.5),
+        ("side (beta=1.5)", 1.5, 1.0, "side", 0.5),
         ("Cau May side (beta=1.636)", 90 / 55, 1.0, "side", 0.5),
-        ("Thai Binh main (beta=1.5)", 1.5, 1.0, "main", 0.5),
+        ("main (beta=1.5)", 1.5, 1.0, "main", 0.5),
         ("Cau May main (beta=1.636)", 90 / 55, 1.0, "main", 0.5)]:
     spans, EIs = [1, beta, 1], [1, rho, 1]
     cs, fes = [], []
@@ -291,14 +291,12 @@ def haunch_table(name, spans, ratios, lc_list, hm=1.0):
 
 rows_cm = haunch_table("Cau May (h 2.4 m mid-span, 5.4 m pier)", [55, 90, 55],
                        [5.4 / 2.4], [None, 55.0, 30.0], hm=2.4)
-rows_tb = haunch_table("Thai Binh (depths NOT available: parametrised by h_pier/h_mid)",
-                       [42, 63, 42], [1.0, 1.5, 2.0, 2.25, 2.5, 3.0], [None])
 
 os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"), exist_ok=True)
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "haunch_3span.csv"), "w") as fh:
     fh.write("bridge,h_ratio,n,Lc_side_m,side_mid,shift_vs_uniform,side_negpos,xi_star,"
              "Cm_xi_star,main_mid,main_negpos\n")
-    for nm, rows in [("CauMay", rows_cm), ("ThaiBinh", rows_tb)]:
+    for nm, rows in [("CauMay", rows_cm)]:
         for r in rows:
             fh.write(nm + "," + ",".join(f"{v:.6f}" for v in r) + "\n")
 

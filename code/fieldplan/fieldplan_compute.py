@@ -48,9 +48,9 @@ g = 9.81
 # Axle loads are ILLUSTRATIVE splits of the gross mass; the real values come
 # from the per-axle weighbridge tickets on the test day.
 TRUCKS = {
-    # T1 = same type as the 2020 acceptance trucks (report Hinh 2.1): 5+10+10 t
+    # T1 = same type as the 2020 acceptance trucks (report Fig. 2.1): 5+10+10 t
     "T1 (3 truc, 25 t)": dict(P=np.array([5.0, 10.0, 10.0]), a=np.array([0.0, 3.60, 4.95])),
-    # T2 = 4-axle (Thai Binh type 1.80+3.00+1.35 m) loaded to ~25 t: same total, other axles
+    # T2 = 4-axle (spacings 1.80+3.00+1.35 m) loaded to ~25 t: same total, other axles
     "T2 (4 truc, 25 t)": dict(P=np.array([5.5, 5.5, 7.0, 7.0]), a=np.array([0.0, 1.80, 4.80, 6.15])),
     # T3 = same 4-axle truck fully loaded, ~30 t: different total
     "T3 (4 truc, 30 t)": dict(P=np.array([6.0, 6.0, 9.0, 9.0]), a=np.array([0.0, 1.80, 4.80, 6.15])),
@@ -158,7 +158,7 @@ P1, P2 = 55.0, 145.0
 A_MID, A_PIER = 7.233, 14.437                 # m2, LRFR p.5
 ZC_MID, ZC_PIER = 1.572, 3.053                # soffit to centroid, LRFR p.5
 RHO = 2.55                                    # t/m3 (25 kN/m3) [assumption]
-M_SDL = 3.0                                   # t/m superimposed dead load [ASSUMPTION, NEED VALUE]
+M_SDL = 3.0                                   # t/m superimposed dead load [assumption, not given in the test report]
 
 
 def h_cm(x):

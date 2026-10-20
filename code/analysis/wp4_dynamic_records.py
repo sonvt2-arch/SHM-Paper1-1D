@@ -3,7 +3,7 @@ quasi-static integral.  Run from the repo root:  python3 code/analysis/wp4_dynam
 
 Sign convention: records are deflection y (mm, downward negative).  Everything below is
 done on s = -y (downward positive), so the integral of a crossing is positive.
-Truck weight, speed, lane and girder for these runs are NOT known [NEED VALUE]; nothing here
+Truck weight, speed, lane and girder for these runs are NOT known (not reported); nothing here
 uses them except in the clearly flagged "illustrative reference" columns.
 """
 import logging

@@ -180,8 +180,6 @@ if __name__ == "__main__":
         "lab 2x2.5 m, mid span 1": ([2.5, 2.5], 1.25),
         "Cau May 55+90+55, mid side span": ([55, 90, 55], 27.5),
         "Cau May 55+90+55, mid main span": ([55, 90, 55], 100.0),
-        "Thai Binh 42+63+42, mid side span": ([42, 63, 42], 21.0),
-        "Thai Binh 42+63+42, mid main span": ([42, 63, 42], 73.5),
     }
     for name, (spans, xm) in cases.items():
         c, x, w = Cm(spans, xm)

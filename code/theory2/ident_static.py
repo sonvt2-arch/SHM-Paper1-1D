@@ -182,18 +182,6 @@ def main():
         log(f"{lab:8s}: pinned {min(pin):.3f}..{max(pin):.3f} (Lv44 {pin[1]:.3f}); fixed {min(fix):.3f}..{max(fix):.3f} "
             f"(Lv44 {fix[1]:.3f})")
 
-    # illustrative pier stiffness bracket (NOT sourced: pier drawings [NEED VALUE])
-    log("\n=== Illustrative pier rotational stiffness bracket (pier geometry [NEED VALUE]) ===")
-    Ep = 30e6
-    ks = []
-    for b in (6.0, 9.0):
-        for t in (1.8, 2.5):
-            for H in (8.0, 15.0):
-                for c in (1.0, 4.0):
-                    ks.append(c * Ep * b * t**3 / 12 / H)
-    log(f"k = c E_p b t^3/(12 H), E_p 30 GPa, b 6-9 m, t 1.8-2.5 m, H 8-15 m, c 1 (sway) - 4 (no sway, rigid base):"
-        f" k in [{min(ks):.2e}, {max(ks):.2e}] kNm/rad (foundation flexibility would lower it)")
-
     np.savez(os.path.join(LOGD, "ident_static_scan.npz"), kappa=KAPPA, tau_rec=tau_rec,
              **{f"{n}__{k}": v for n, s in scans.items() for k, v in s.items() if k != "kappa"})
 

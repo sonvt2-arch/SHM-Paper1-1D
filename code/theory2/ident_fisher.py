@@ -18,7 +18,7 @@ from ident_static import KAPPA, K_FE
 
 SIG_STATIC = None          # taken from ident_static (total per-gauge sigma = tau_rec/2)
 SIG_F = 0.033              # sd of N6/N7/N8 measured frequencies (ident_freq.log)
-SIG_ROT = 0.03             # [NEED VALUE] tiltmeter, assumed 3 % of a ~1e-4 rad reading
+SIG_ROT = 0.03             # assumed tiltmeter accuracy, 3 % of a ~1e-4 rad reading
 
 
 def responses(m, k, sch):
@@ -45,7 +45,7 @@ def main():
     FQ = np.load(os.path.join(LOGD, "ident_freq_curves.npz"))
     kap = FQ["kap"]
     lnf = {i: np.log(FQ["f_base"][:, i]) for i in range(3)}
-    log(f"sigmas: static per gauge {100*sig_s:.2f} % (tau_rec/2), frequency {100*SIG_F:.1f} %, rotation {100*SIG_ROT:.1f} % [NEED VALUE]")
+    log(f"sigmas: static per gauge {100*sig_s:.2f} % (tau_rec/2), frequency {100*SIG_F:.1f} %, rotation {100*SIG_ROT:.1f} % (assumed)")
     gl = np.log(np.array([0.889 / 1.2, 1.082]))
     sig_g_wide = (gl[1] - gl[0]) / np.sqrt(12)
     log(f"prior on ln gamma': uniform over [{gl[0]:.3f},{gl[1]:.3f}] (mass low..high, e_d 1.0..1.2) -> sd {sig_g_wide:.3f};"

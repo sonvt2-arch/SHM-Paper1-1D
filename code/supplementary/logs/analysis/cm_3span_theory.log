@@ -26,7 +26,6 @@ Mid main-span, uniform EI: 3 b^3 + 10 b^2 - 12 = 0  -> beta_crit = [0.9647056469
 End of side-span blind locus, no positive C_m on the whole side span (mu = 2, i.e. mu_crit(xi->0)): beta^3 - 3 beta - rho = 0; rho=1 -> beta = 2 cos(pi/9) = 1.87938524157182  check: 0.e-124
 Near-blind edge |N|=0.2, mid side, uniform EI: mu = 23/15 <=> 30 b^3 - 69 b - 16 = 0 -> [1.62139880521926]
   Cau May: beta=1.636364  rho_crit(mid side)=0.436138  neg/pos(mid side, uniform)=0.920988
-  Thai Binh: beta=1.500000  rho_crit(mid side)=-0.562500  neg/pos(mid side, uniform)=0.764151
 
 Optimal side-span sensor: d/dxi F = 0  <=> 3*mu*xi**2 - mu + 8*xi**3 - 12*xi**2 + 2 = 0
   beta=1.00000: mu=0.80000000  xi*=0.44603660  Cm_norm(xi*)=1.32176895  Cm_norm(0.5)=1.30000000

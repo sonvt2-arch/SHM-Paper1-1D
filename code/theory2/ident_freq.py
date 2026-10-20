@@ -28,7 +28,7 @@ ED = (1.0, 1.2)            # E_dyn/E_static bracket (see doc, assumption D2)
 
 def main():
     log = Logger("ident_freq.log")
-    log("=== Measured vertical frequencies (CSV, PDF Bang 2.15) ===")
+    log("=== Measured vertical frequencies (CSV, acceptance-test report, Table 2.15) ===")
     log(", ".join(f"{k} {v:.2f} Hz" for k, v in F_MEAS.items()))
     log(f"main bridge N6/N7/N8: mean {F_MAIN.mean():.3f} Hz, sd {F_MAIN.std(ddof=1):.3f} Hz "
         f"({100*F_MAIN.std(ddof=1)/F_MAIN.mean():.1f} %), band [{F_MAIN.min():.2f}, {F_MAIN.max():.2f}]")

@@ -49,6 +49,3 @@ UNION over variants, tau=5.27%: N8 design-ref [0.052,0.833], N8 alpha-ref [0.064
 N8 0.4L : pinned 0.023..0.032 (Lv44 0.030); fixed 0.415..0.446 (Lv44 0.422)
 N8 mid  : pinned -0.066..-0.049 (Lv44 -0.052); fixed 0.349..0.375 (Lv44 0.354)
 N7 mid  : pinned 0.244..0.263 (Lv44 0.248); fixed 0.145..0.155 (Lv44 0.147)
-
-=== Illustrative pier rotational stiffness bracket (pier geometry [NEED VALUE]) ===
-k = c E_p b t^3/(12 H), E_p 30 GPa, b 6-9 m, t 1.8-2.5 m, H 8-15 m, c 1 (sway) - 4 (no sway, rigid base): k in [5.83e+06, 1.76e+08] kNm/rad (foundation flexibility would lower it)

@@ -1,4 +1,4 @@
-=== Measured vertical frequencies (CSV, PDF Bang 2.15) ===
+=== Measured vertical frequencies (CSV, acceptance-test report, Table 2.15) ===
 N1 3.11 Hz, N5 3.03 Hz, N6 3.43 Hz, N7 3.64 Hz, N8 3.63 Hz, N9 3.09 Hz, N15 3.04 Hz
 main bridge N6/N7/N8: mean 3.567 Hz, sd 0.118 Hz (3.3 %), band [3.43, 3.64]
 

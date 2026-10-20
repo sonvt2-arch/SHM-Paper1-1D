@@ -189,7 +189,7 @@ def make_maps():
     xo = np.array([xi_opt(b) for b in B])
     ok = xo[:, 1] > 0                                 # optimum only where C_m > 0
     ax[0].plot(B[ok], xo[ok, 0], "k--", lw=1, label=r"$\xi^*(\beta)$")
-    for nm, b in [("Cau May 55+90+55", 90 / 55), ("Thai Binh 42+63+42", 63 / 42)]:
+    for nm, b in [("Cau May 55+90+55", 90 / 55)]:
         ax[0].plot(b, 0.5, "ko", ms=5)
         ax[0].annotate(nm, (b, 0.5), (0.62, 0.80) if b > 1.6 else (0.62, 0.68),
                        fontsize=8, arrowprops=dict(arrowstyle="-", lw=0.6))
@@ -254,7 +254,7 @@ if __name__ == "__main__":
           " check:", sp.N((2 * sp.cos(sp.pi / 9))**3 - 3 * 2 * sp.cos(sp.pi / 9) - 1, 5))
     nb = [r for r in sp.Poly(30 * b**3 - 69 * b - 16, b).nroots(n=15) if r.is_real and r > 0]
     print("Near-blind edge |N|=0.2, mid side, uniform EI: mu = 23/15 <=> 30 b^3 - 69 b - 16 = 0 ->", nb)
-    for nm, bb in [("Cau May", sp.Rational(90, 55)), ("Thai Binh", sp.Rational(63, 42))]:
+    for nm, bb in [("Cau May", sp.Rational(90, 55))]:
         print(f"  {nm}: beta={float(bb):.6f}  rho_crit(mid side)={float(3*bb*(2*bb**2-5)/4):.6f}"
               f"  neg/pos(mid side, uniform)={float(6*bb**3/(15*bb+4)):.6f}")
     print("\nOptimal side-span sensor: d/dxi F = 0  <=>",
