@@ -1,5 +1,5 @@
 """Fig. S8: measured and analytical single-load influence line of the laboratory beam
-(data of Supplementary Table S4, stored in lab_single_load_influence_line.csv)."""
+(data of Supplementary Table S5, stored in lab_single_load_influence_line.csv)."""
 import csv, os
 import matplotlib
 matplotlib.use("Agg")

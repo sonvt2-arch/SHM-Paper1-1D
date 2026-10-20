@@ -24,7 +24,7 @@ PY="${PYTHON:-python3}"
 mkdir -p "$HERE/logs"
 
 for s in beam_theory s01_symbolic_two_span s02_quadrature_table3 s03_load_identification \
-         s04_monte_carlo s05_moving_force; do
+         s04_monte_carlo s05_moving_force s06_threshold_sensitivity; do
     echo ">>> $s"
     "$PY" -I -u "$HERE/$s.py" > "$HERE/logs/$s.log" 2>&1
 done

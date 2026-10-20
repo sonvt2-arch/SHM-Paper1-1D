@@ -1,6 +1,6 @@
 # Supplementary Material
 
-**Observability and sensor layout for influence-area load monitoring of continuous girder bridges**
+**Blind loci and sensor layout for influence-area bridge weigh-in-motion on continuous girders**
 
 Quoc-Bao Nguyen, Thai-Son Vu
 
@@ -16,9 +16,9 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 |---|---|
 | $A^+$ | positive part of the area under an influence line |
 | $a$ | vector of channel weights of a multi-channel estimator |
-| $b$ | relative bias of the load caused by a residual offset, Eq. (12) |
+| $b$ | relative bias of the load caused by a residual offset, Eq. (10) |
 | $B_m$ | boundary sensitivity $\lvert\partial\ln C_m/\partial\ln\kappa\rvert$ |
-| $C_0$, $C_\infty$ | integral constant for pinned and for fixed piers at $\alpha = 1$, Eq. (15) |
+| $C_0$, $C_\infty$ | integral constant for pinned and for fixed piers at $\alpha = 1$, Eq. (13) |
 | $C_m$ | integral constant of the channel at $m$, Eq. (2) (m²/kN for deflection); called "the constant" in the text |
 | $C_\varepsilon$, $C_\theta$, $C_V$ | integral constant of a strain, rotation and shear channel |
 | $c$ | distance of the gauged fiber from the neutral axis (m) |
@@ -38,7 +38,7 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 | $L_\mathrm{tot}$ | length of the integration record (m) |
 | $M_q$ | bending moment under a uniform load $q_0$ over the whole path |
 | $\bar M_l$, $\bar M_r$ | normalized end moments $-8M/(q_0L^2)$ at the left and right ends of a span (positive for hogging) |
-| $N_w$, $N_M$ | deflection and strain (moment) indicators, Eqs. (10) and (9) |
+| $N_w$, $N_M$ | deflection and strain (moment) indicators, Eqs. (8) and (7) |
 | $N_\theta$, $N_V$, $N_F$ | rotation, shear and end-reaction indicators (Section 2.2, Section S3) |
 | $P_\mathrm{tot}$, $P_0$ | total load of a crossing; weighed reference load (kN) |
 | $P_t$, $J_t$, $J_0$ | load and record integral of a target crossing; record integral of the reference crossing |
@@ -56,7 +56,7 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 | $\eta_m$ | influence line of the channel at $m$ |
 | $\kappa$ | scaled pier stiffness $k/\alpha$ (kN m/rad, since $\alpha$ is dimensionless) |
 | $\lambda$ | span ratio $L_2/L_1$ of the adjacent to the instrumented span (two spans) |
-| $\mu$ | interior-moment parameter, $\mu=-8M_B/(q_0L^2)$ with $L = L_1$ (two spans) or $L_\mathrm{side}$ (three spans); Eqs. (4), (16) |
+| $\mu$ | interior-moment parameter, $\mu=-8M_B/(q_0L^2)$ with $L = L_1$ (two spans) or $L_\mathrm{side}$ (three spans); Eqs. (4), (14) |
 | $r^2$ | coefficient of determination |
 | $\rho$ | common-mode fraction of the offset or noise between channels |
 | $\Sigma$ | covariance matrix of the channel integrals |
@@ -79,11 +79,19 @@ Contents: S1 Nomenclature; S2 Closed forms for two- and three-span beams; S3 Gen
 
 ## S2. Closed forms for two- and three-span beams
 
-For unequal spans the uniform-load support moment of a two-span beam is $M_B = -q_0(L_1^3/EI_1+L_2^3/EI_2)/[8(L_1/EI_1+L_2/EI_2)]$. Superposing the simply supported uniform-load deflection of span 1 and the deflection due to $M_B$, evaluating at $x_m$ and dividing by $q_0$ gives Eq. (5) with $\mu = -8M_B/(q_0L_1^2)$, which is $\mu_\mathrm{2span}$ of Eq. (4). Because $1-2\xi^2+\xi^3 = (1-\xi)(1+\xi-\xi^2)$, setting $F = 0$ gives Eq. (6). With uniform rigidity, the blind condition for a mid-span sensor is $3\lambda^2-3\lambda-2=0$, and maximizing $F$ over $\xi$ at $\mu = 1$ gives $8\xi^2-\xi-1=0$, hence Eq. (7). In units of $L_1^4/(192EI_1)$, the positive contribution of the instrumented span varies only between 1.50 and 2.00 for $\lambda$ from 0.5 to 2.0, whereas the negative contribution of the adjacent span sweeps from −0.125 to −4.00; the cancellation is driven almost entirely by the adjacent span.
+For unequal spans the uniform-load support moment of a two-span beam is $M_B = -q_0(L_1^3/EI_1+L_2^3/EI_2)/[8(L_1/EI_1+L_2/EI_2)]$. Superposing the simply supported uniform-load deflection of span 1 and the deflection due to $M_B$, evaluating at $x_m$ and dividing by $q_0$ gives Eq. (5) with $\mu = -8M_B/(q_0L_1^2)$, which is $\mu_\mathrm{2span}$ of Eq. (4). Because $1-2\xi^2+\xi^3 = (1-\xi)(1+\xi-\xi^2)$, setting $F = 0$ gives Eq. (6). With uniform rigidity, the blind condition for a mid-span sensor is $3\lambda^2-3\lambda-2=0$, and maximizing $F$ over $\xi$ at $\mu = 1$ gives $8\xi^2-\xi-1=0$. Hence, for a mid-span sensor on two spans of equal rigidity, the blind span ratio and, for equal spans, the optimal sensor position are
 
-For the symmetric three-span beam the three-moment equation gives $M_B = M_C = -q_0L_\mathrm{side}^2\mu/8$ with $\mu_\mathrm{3span}$ of Eq. (4). Three equal spans give $\mu = 4/5$. The optimal side-span position solves $8\xi^3-(12-3\mu)\xi^2+(2-\mu)=0$ (Table S2). The near-blind band at mid side span runs from the root of $30\beta^3-69\beta-16=0$ (1.621) to that of $10\beta^3-27\beta-8=0$ (1.775). A mid main-span deflection sensor is blind at $\beta = 0.9647$. For a sensor at $\zeta = x/L_\mathrm{main}$ in the main span, $192EI_\mathrm{main}C_m/L_\mathrm{main}^4 = 8[\zeta(1-2\zeta^2+\zeta^3)-\nu\zeta(1-\zeta)]$ with $\nu = 3(\gamma+\beta^3)/[\beta^2(2\gamma+3\beta)]$. For $\beta = 1.636$ the strain blind point in the main span lies at $\zeta_0 = 0.177$ from the pier.
+$$\lambda_\mathrm{crit}=\frac{3+\sqrt{33}}{6}=1.4574,\qquad \xi^*=\frac{1+\sqrt{33}}{16}=0.4215. \tag{S1}$$
 
-**Table S2.** Symmetric three-span beam, uniform rigidity: optimal side-span position $\xi^*$ and deflection indicator $N_w$ (Eq. (10); 2.5 for a simply supported mid-span).
+In units of $L_1^4/(192EI_1)$, the positive contribution of the instrumented span varies only between 1.50 and 2.00 for $\lambda$ from 0.5 to 2.0, whereas the negative contribution of the adjacent span sweeps from −0.125 to −4.00; the cancellation is driven almost entirely by the adjacent span.
+
+For the symmetric three-span beam the three-moment equation gives $M_B = M_C = -q_0L_\mathrm{side}^2\mu/8$ with $\mu_\mathrm{3span}$ of Eq. (4). Three equal spans give $\mu = 4/5$. For a mid side-span sensor and uniform rigidity, the blind ratio is the positive root of $6\beta^3-15\beta-4=0$,
+
+$$\beta_\mathrm{crit}=\sqrt{10/3}\,\cos\!\Big[\tfrac13\arccos\!\Big(\tfrac25\sqrt{6/5}\Big)\Big]=1.7006. \tag{S2}$$
+
+The blind locus over all side-span positions ends at $\beta = 2\cos(\pi/9) = 1.8794$. The optimal side-span position solves $8\xi^3-(12-3\mu)\xi^2+(2-\mu)=0$ (Table S2). For the threshold 0.2, the near-blind band at mid side span, $1.621<\beta<1.775$, runs from the root of $30\beta^3-69\beta-16=0$ (1.621) to that of $10\beta^3-27\beta-8=0$ (1.775). A mid main-span deflection sensor is blind at $\beta = 0.9647$. For a sensor at $\zeta = x/L_\mathrm{main}$ in the main span, $192EI_\mathrm{main}C_m/L_\mathrm{main}^4 = 8[\zeta(1-2\zeta^2+\zeta^3)-\nu\zeta(1-\zeta)]$ with $\nu = 3(\gamma+\beta^3)/[\beta^2(2\gamma+3\beta)]$. For $\beta = 1.636$ the strain blind point in the main span lies at $\zeta_0 = 0.177$ from the pier.
+
+**Table S2.** Symmetric three-span beam, uniform rigidity: optimal side-span position $\xi^*$ and deflection indicator $N_w$ (Eq. (8); 2.5 for a simply supported mid-span).
 
 | $\beta$ | $\mu$ | $\xi^*$ | $N_w$ at $\xi^*$ | $N_w$ at $\xi = 1/2$ |
 |---|---|---|---|---|
@@ -98,9 +106,19 @@ Asymmetric three-span beams. For arbitrary spans $L_1, L_2, L_3$ and rigidities 
 
 Strain blind-locus maps. Figures S1 and S2 map the strain indicator $N_M$ over the sensor position and the span ratio for two-span and symmetric three-span beams. For two equal spans the strain near-blind band is $0.676<\xi<0.812$, that is, 0.19–0.32 of the span from the interior support.
 
+Threshold sensitivity. The threshold 0.2 is a design convention (Section 2.3). Table S3 gives the near-blind bands of three gauges for thresholds of 0.1, 0.2 and 0.3 (script `s06_threshold_sensitivity.py`).
+
+**Table S3.** Near-blind bands against the threshold on the indicator magnitude; prismatic beams of uniform rigidity. Strain: two equal spans, distance from the interior support as a fraction of the span. Deflection: mid-span gauge on two spans (span ratio $\lambda$) and mid side-span gauge on a symmetric three-span beam (span ratio $\beta$).
+
+| Threshold | Strain, two equal spans | Deflection, mid-span, two spans: $\lambda$ | Deflection, mid side span, three spans: $\beta$ |
+|---|---|---|---|
+| 0.1 | 0.218–0.285 | 1.422–1.492 | 1.662–1.738 |
+| 0.2 | 0.188–0.324 | 1.385–1.525 | 1.621–1.775 |
+| 0.3 | 0.161–0.369 | 1.347–1.557 | 1.580–1.811 |
+
 ## S3. General channels, finite element verification and invariant weighting functions
 
-For a prismatic span with end-moment parameters $\bar M_l$, $\bar M_r$ and $\xi = x/L$, the indicators are $N_w = 8\Phi$ with $\Phi = \xi(1-2\xi^2+\xi^3)-\tfrac{\bar M_l}{2}(2\xi-3\xi^2+\xi^3)-\tfrac{\bar M_r}{2}(\xi-\xi^3)$, $N_\theta = 24EI\,C_\theta/L^3 = \Phi'(\xi)$, $N_M$ of Eq. (9) and $N_V = 2C_V/L = 1-2\xi+(\bar M_l-\bar M_r)/4$. $N_\theta$, $N_M$ and $N_V$ equal 1 for the simply supported reference (end rotation, mid-span moment, end shear). $N_w$ equals 2.5 at a simply supported mid-span and 1 at mid-span of each span of an equal two-span beam. For the two-span beam, $(\bar M_l, \bar M_r) = (0, \mu)$ in span 1 and $(\mu/\lambda^2, 0)$ in span 2; for the symmetric three-span beam, $(0, \mu)$ in the side span and $(\mu/\beta^2, \mu/\beta^2)$ in the main span with pinned piers; with pier springs, $\mu$ follows from Eq. (16) and the main-span values from $\bar M_\mathrm{main}$ in Section 2.5. Strain zeros solve $4\xi^2-(4+\bar M_l-\bar M_r)\xi+\bar M_l=0$.
+For a prismatic span with end-moment parameters $\bar M_l$, $\bar M_r$ and $\xi = x/L$, the indicators are $N_w = 8\Phi$ with $\Phi = \xi(1-2\xi^2+\xi^3)-\tfrac{\bar M_l}{2}(2\xi-3\xi^2+\xi^3)-\tfrac{\bar M_r}{2}(\xi-\xi^3)$, $N_\theta = 24EI\,C_\theta/L^3 = \Phi'(\xi)$, $N_M$ of Eq. (7) and $N_V = 2C_V/L = 1-2\xi+(\bar M_l-\bar M_r)/4$. $N_\theta$, $N_M$ and $N_V$ equal 1 for the simply supported reference (end rotation, mid-span moment, end shear). $N_w$ equals 2.5 at a simply supported mid-span and 1 at mid-span of each span of an equal two-span beam. For the two-span beam, $(\bar M_l, \bar M_r) = (0, \mu)$ in span 1 and $(\mu/\lambda^2, 0)$ in span 2; for the symmetric three-span beam, $(0, \mu)$ in the side span and $(\mu/\beta^2, \mu/\beta^2)$ in the main span with pinned piers; with pier springs, $\mu$ follows from Eq. (14) and the main-span values from $\bar M_\mathrm{main}$ in Section 2.5. Strain zeros solve $4\xi^2-(4+\bar M_l-\bar M_r)\xi+\bar M_l=0$.
 
 All closed forms of Section 2.2 agree with FE evaluations of Eq. (2) in 981 checks, with a maximum error of 8.1 × 10⁻¹¹ on the normalized indicators. The verification covered two-span, symmetric and asymmetric three-span and four-span beams, zero-moment positions, ten blind configurations, the identity for a two-truck convoy on piecewise-prismatic girders with elastic pier springs (relative error 2.8 × 10⁻⁹), and the haunched Mây Bridge FE against an independent force-method solution (5.4 × 10⁻¹⁰). Truncating the record when the first axle leaves changed the integral by up to 59 % (rotation) and 10 % (moment) on the two-span example.
 
@@ -112,28 +130,28 @@ When the influence line is known, other invariant weighting functions exist; for
 
 ## S4. Multi-channel estimation and placement
 
-For one channel, Eq. (13) returns $\hat P = J/C$ with variance $\sigma_{P,\mathrm{noise}}^2 + P_\delta^2$, where $\sigma_{P,\mathrm{noise}}$ is the standard deviation of the load estimate caused by white noise. For two channels the zero-sum weights are $a = (1,-1)/(C_1-C_2)$, and a second sensor over a support ($C_2 = 0$) gives the familiar differential measurement against a reference. The white-noise variance then rises by the factor $2C_1^2/(C_1-C_2)^2$, which is 1.65–2.0 on the beams studied. This price is small, because for the long-span parameters of Section 5.3 with $\Delta x = 0.1$ m the white-noise term of Eq. (14) is only about 5 × 10⁻⁶ of $\delta_0^2L_\mathrm{tot}^2$, and 5 × 10⁻⁵ of the offset term at $\rho = 0.9$ ($\sigma$ = 0.01 mm, $\delta_0$ = 0.1 mm, $L_\mathrm{tot}$ = 220 m, that is, the 200 m unit plus a 20 m convoy allowance). Strain and deflection channels need separate zero-sum constraints.
+For one channel, Eq. (11) returns $\hat P = J/C$ with variance $\sigma_{P,\mathrm{noise}}^2 + P_\delta^2$, where $\sigma_{P,\mathrm{noise}}$ is the standard deviation of the load estimate caused by white noise. For two channels the zero-sum weights are $a = (1,-1)/(C_1-C_2)$, and a second sensor over a support ($C_2 = 0$) gives the familiar differential measurement against a reference. The white-noise variance then rises by the factor $2C_1^2/(C_1-C_2)^2$, which is 1.65–2.0 on the beams studied. This price is small, because for the long-span parameters of Section 5.3 with $\Delta x = 0.1$ m the white-noise term of Eq. (12) is only about 5 × 10⁻⁶ of $\delta_0^2L_\mathrm{tot}^2$, and 5 × 10⁻⁵ of the offset term at $\rho = 0.9$ ($\sigma$ = 0.01 mm, $\delta_0$ = 0.1 mm, $L_\mathrm{tot}$ = 220 m, that is, the 200 m unit plus a 20 m convoy allowance). Strain and deflection channels need separate zero-sum constraints.
 
-Which extreme of $C(x)$ to use depends on the offsets. With independent offsets, every sensor should sit as close as possible to the maximum, because the GLS variance then falls with the sum of the squared constants. With correlated offsets, one sensor should sit at the minimum, because a common offset cancels in the difference of two channels and the variance of Eq. (14) falls with the spread of the constants. The placement rule was verified by a brute-force search over 96 cases, which found no design better than the vertex design, and by a Monte Carlo study with 10⁵ random axle configurations per case, which confirmed that the estimators are unbiased and that Eqs. (13) and (14) hold to within 0.6 %. Figure S4 shows the gain over the best single sensor under the assumed noise model, Fig. S5 the extremes of $C(x)$ that the rule selects, and Fig. S6 the Monte Carlo verification. For the Mây Bridge girder, the single-gauge standard deviation of the load at mid main span is 22.5 % for a 200 m record under the assumptions of Section 5.3 ($\rho$ = 0.9, calibration A), against 24.8 % for the 220 m record.
+Which extreme of $C(x)$ to use depends on the offsets. With independent offsets, every sensor should sit as close as possible to the maximum, because the GLS variance then falls with the sum of the squared constants. With correlated offsets, one sensor should sit at the minimum, because a common offset cancels in the difference of two channels and the variance of Eq. (12) falls with the spread of the constants. The placement rule was verified by a brute-force search over 96 cases, which found no design better than the vertex design, and by a Monte Carlo study with 10⁵ random axle configurations per case, which confirmed that the estimators are unbiased and that Eqs. (11) and (12) hold to within 0.6 %. Figure S4 shows the gain over the best single sensor under the assumed noise model, Fig. S5 the extremes of $C(x)$ that the rule selects, and Fig. S6 the Monte Carlo verification. For the Mây Bridge girder, the single-gauge standard deviation of the load at mid main span is 22.5 % for a 200 m record under the assumptions of Section 5.3 ($\rho$ = 0.9, calibration A), against 24.8 % for the 220 m record.
 
 ## S5. Identifiability, sensitivities and Möbius law
 
-Let $G = K^{-1}$ with $K = \alpha K_g + kK_p$, where $K_p$ has a unit entry on each inner-pier rotational degree of freedom, and $C_m = e_m^\top Gq$ with $q$ the consistent uniform load. Then $\mathrm{d}C_m/\mathrm{d}k = -\sum_i\theta_{m,i}\theta_{q,i}$, where $\theta_{m,i}$ and $\theta_{q,i}$ are the pier rotations under a unit load at the gauge and under the uniform load. The logarithmic sensitivities $S_\alpha = \partial\ln C_m/\partial\ln\alpha$ and $S_k = \partial\ln C_m/\partial\ln k$ satisfy $S_\alpha + S_k = -1$ by Euler's theorem, because $C_m$ is homogeneous of degree −1 in $(\alpha, k)$. Mirror symmetry decouples the symmetric and antisymmetric pier-rotation patterns, the uniform load excites only the antisymmetric one, and the Sherman–Morrison formula gives the linear-fractional (Möbius) law of Eq. (15) with $1/k_g$ the antisymmetric pier flexibility of the girder at $k = 0$. For the Mây Bridge model the law holds to a relative error of 5 × 10⁻⁶ over $k = 10^5$–$10^{12}$ kN m/rad, and Eq. (16) agrees with FE to 4.4 × 10⁻⁷ (Fig. S7).
+Let $G = K^{-1}$ with $K = \alpha K_g + kK_p$, where $K_p$ has a unit entry on each inner-pier rotational degree of freedom, and $C_m = e_m^\top Gq$ with $q$ the consistent uniform load. Then $\mathrm{d}C_m/\mathrm{d}k = -\sum_i\theta_{m,i}\theta_{q,i}$, where $\theta_{m,i}$ and $\theta_{q,i}$ are the pier rotations under a unit load at the gauge and under the uniform load. The logarithmic sensitivities $S_\alpha = \partial\ln C_m/\partial\ln\alpha$ and $S_k = \partial\ln C_m/\partial\ln k$ satisfy $S_\alpha + S_k = -1$ by Euler's theorem, because $C_m$ is homogeneous of degree −1 in $(\alpha, k)$. Mirror symmetry decouples the symmetric and antisymmetric pier-rotation patterns, the uniform load excites only the antisymmetric one ($\theta_6 = -\theta_7$, a mirror-symmetric deformation), and the Sherman–Morrison formula gives the linear-fractional (Möbius) law of Eq. (13) with $1/k_g$ the antisymmetric pier flexibility of the girder at $k = 0$. For the Mây Bridge model the law holds to a relative error of 5 × 10⁻⁶ over $k = 10^5$–$10^{12}$ kN m/rad, and Eq. (14) agrees with FE to 4.4 × 10⁻⁷ (Fig. S7).
 
-Because every static response has the form $f(\kappa)/\alpha$, the ratio of two static readings carries all the information about $\kappa$; once $\kappa$ is chosen, either reading gives $\alpha$. With two static readings the Fisher matrix has a determinant proportional to $(S_{y8}-S_{y7})^2$, where $S_{y8}$ and $S_{y7}$ are the logarithmic sensitivities of the N8 and N7 readings to $\kappa$; this determinant vanishes at the minimum of the misfit ratio, that is, at calibration B. A frequency adds a row with the mass as nuisance parameter; a pier rotation adds a row without a nuisance parameter. Unequal pier stiffnesses would bring in the symmetric pattern, which Eq. (15) does not cover.
+Because every static response has the form $f(\kappa)/\alpha$, the ratio of two static readings carries all the information about $\kappa$; once $\kappa$ is chosen, either reading gives $\alpha$. With two static readings the Fisher matrix has a determinant proportional to $(S_{y8}-S_{y7})^2$, where $S_{y8}$ and $S_{y7}$ are the logarithmic sensitivities of the N8 and N7 readings to $\kappa$; this determinant vanishes at the minimum of the misfit ratio, that is, at calibration B. A frequency adds a row with the mass as nuisance parameter; a pier rotation adds a row without a nuisance parameter. Unequal pier stiffnesses would bring in the symmetric pattern, which Eq. (13) does not cover.
 
 ## S6. Laboratory test
 
-The specimen is a steel hollow square tube on three supports forming two equal spans of 2500 mm. Deflection at mid-span of the first span was measured with a linear variable differential transformer of 0.005 mm resolution. The measured single-load influence line of the beam is shown in Fig. S8. Table S3 compares the identified total loads with direct weighing, and Table S4 lists the mid-span deflection for all three load configurations; the order of the three-load group is the best-fitting order discussed in Section 3. On the 250 mm grid the trapezoidal rule underestimates the exact single-load integral by 0.500 %. It is used throughout, because Simpson's rule loses its advantage when the kinks of trailing loads fall inside its panels.
+The specimen is a steel hollow square tube on three supports forming two equal spans of 2500 mm. Deflection at mid-span of the first span was measured with a linear variable differential transformer of 0.005 mm resolution. The measured single-load influence line of the beam is shown in Fig. S8. Table S4 compares the identified total loads with direct weighing, and Table S5 lists the mid-span deflection for all three load configurations; the order of the three-load group is the best-fitting order discussed in Section 3. On the 250 mm grid the trapezoidal rule underestimates the exact single-load integral by 0.500 %. It is used throughout, because Simpson's rule loses its advantage when the kinks of trailing loads fall inside its panels.
 
-**Table S3.** Identified total loads against direct weighing (trapezoidal rule). BPM: $P = J/C_m$ with the analytical constant; SLM: $P_t = P_0J_t/J_0$ with the single-load record as reference.
+**Table S4.** Identified total loads against direct weighing (trapezoidal rule). BPM: $P = J/C_m$ with the analytical constant; SLM: $P_t = P_0J_t/J_0$ with the single-load record as reference.
 
 | Configuration | Weighed (N) | BPM (N) | BPM deviation | SLM (N) | SLM deviation |
 |---|---|---|---|---|---|
 | Two loads | 66.99 | 67.73 | +1.10 % | 67.40 | +0.61 % |
 | Three loads | 125.08 | 126.57 | +1.19 % | 125.95 | +0.70 % |
 
-**Table S4.** Mid-span deflection of the first span (mm), mean of three cycles. Single load 40.64 N; analytical values from the closed-form influence line.
+**Table S5.** Mid-span deflection of the first span (mm), mean of three cycles. Single load 40.64 N; analytical values from the closed-form influence line.
 
 | $x$ (mm) | Analytical, single | Measured, single | Two loads | Three loads |
 |---|---|---|---|---|
@@ -168,15 +186,15 @@ Data. The strain transducers of the Virginia Smart Road Bridge lie 158.5 m from 
 
 Processing. Speeds were obtained from the axle spikes and the measured wheelbase and agree with the dataset authors' processing script within 1.4 % on average (at most 4.6 % for a single run). A low-pass fit of the records gives lane-A speeds 1.139 times the spike speeds (median; SD 0.124; 22 runs). Lane-B speeds were taken from the lag between gauges. Records were integrated over the whole time the truck was on the bridge plus 5 s at each end. Three day-1 runs with two trucks on the bridge and four passes without documented weights were excluded. Vehicle-free noise windows were at least 70 s from any detected vehicle.
 
-Invariance and speed. On day 1, eight of the 12 gauges have a coefficient of variation (CV) of 5.8–13.5 %, consistent with the noise ($\chi^2$ $p$ = 0.13–0.71; Table S5). The first truck ran at 10.4–12.8 m/s and the second at 19.1–19.8 m/s, so speed and truck are confounded. Day-2 speeds were 13–28 m/s; no speed effect was resolved (+6 % per 10 m/s, 95 % CI −23 to +35 %), but the confidence interval of the slope is too wide to call the constant speed-independent (Fig. S9). Equivalence was tested by two one-sided tests (TOST; Table S6). Day-2 noise amplitudes at the median speed were 13.7–32.8 µε m.
+Invariance and speed. On day 1, eight of the 12 gauges have a coefficient of variation (CV) of 5.8–13.5 %, consistent with the noise ($\chi^2$ $p$ = 0.13–0.71; Table S6), but only ch11 shows equal constants for both trucks within ±10 % (main-text Fig. 5a); with 12 tests at the 5 % level, one gauge passing this ±10 % check is about what chance alone would produce. The first truck ran at 10.4–12.8 m/s and the second at 19.1–19.8 m/s, so speed and truck are almost perfectly confounded (correlation 0.98). Day-2 speeds were 13–28 m/s; no speed effect was resolved (+6 % per 10 m/s, 95 % CI −23 to +35 %), but the confidence interval of the slope is too wide to call the constant speed-independent (Fig. S9). Equivalence was tested by two one-sided tests (TOST; Table S7); for the day-2 gauge average, the 90 % CI used for the equivalence test is 0.76–1.27, so differences of up to about 27 % cannot be excluded. Day-2 noise amplitudes at the median speed were 13.7–32.8 µε m.
 
-Lanes, superposition and gauges. In lane B, all channels have CV 31–40 %, and st36, st31 and the gauge average fail the $\chi^2$ test ($\chi^2$ $p$ = 0.016–0.027). The st36 constant in lane B is 0.64 of that in lane A (95 % CI 0.47–0.81). The two-truck runs gave 0.92 and 0.92 of the summed single-truck predictions (pooled 95 % CI 0.77–1.06); the GLS combination gave 0.82 (95 % CI 0.73–0.91). A one-dimensional beam model predicts ch11/ch8 ratios of 0.978–1.003. The ratio of st36 to st40 constants is 3.24 ± 0.56 in lane A against 1.82 ± 0.10 in lane B (± one standard error), about 2.5 standard errors apart.
+Lanes, superposition and gauges. In lane B, all channels have CV 31–40 %, and st36, st31 and the gauge average fail the $\chi^2$ test ($\chi^2$ $p$ = 0.016–0.027). The st36 constant in lane B is 0.64 of that in lane A (95 % CI 0.47–0.81). The two-truck runs gave 0.92 and 0.92 of the summed single-truck predictions (pooled 95 % CI 0.77–1.06); the GLS combination gave 0.82 (95 % CI 0.73–0.91). A one-dimensional beam model predicts ch11/ch8 ratios of 0.978–1.003. The ratio of st36 to st40 constants is 3.24 ± 0.56 in lane A against 1.82 ± 0.10 in lane B (± one standard error), about 2.5 standard errors apart. For the gauge average the lane-B constant is 0.79 of that in lane A (95 % CI 0.59–1.00), so the lane effect is resolved only for st36.
 
-Estimators. Table S7 gives all out-of-sample errors, including leave-one-truck-out (LOTO) and the four wheel-path gauges of day 1; Fig. S10 also shows in-sample results. On day 2, GLS with the measured covariance was significantly worse than the gauge average (paired difference +8.5 percentage points, 95 % CI +2.3 to +15.1); on day 1 the estimators cannot be told apart, and on both days every estimator is worse than the mean-weight predictor. Table S8 and Fig. S11 give the correlations behind this result, and Table S9 shows that the covariance of the crossing residuals, unlike the vehicle-free covariance, predicts the observed order of GLS and gauge average. The day-2 per-crossing SD predicted by the vehicle-free covariance (% of GVW) is 16.2 for the best single gauge, 32.5 for the worst single gauge, 19.8 for the gauge average, 19.4 for GLS with diagonal Σ, 12.7 for GLS with measured Σ, 13.3 for the zero-sum estimator with measured Σ and 16.1 for the zero-sum estimator with Σ = identity. The GLS weights with the measured Σ are st40 +0.16 and st36 −0.35. GLS with Σ estimated from the crossing residuals has a mean absolute error of 8.5 % of GVW in sample and 23.4 % out of sample (root-mean-square errors 10.4 % and 28.4 %), that is, it over-fits with eight runs.
+Estimators. Table S8 gives all out-of-sample errors, including leave-one-truck-out (LOTO) and the four wheel-path gauges of day 1; Fig. S10 also shows in-sample results. On day 2, GLS with the measured covariance was significantly worse than the gauge average (paired difference +8.5 percentage points, 95 % CI +2.3 to +15.1); on day 1 the estimators cannot be told apart, and on both days every estimator is worse than the mean-weight predictor. Table S9 and Fig. S11 give the correlations behind this result, and Table S10 shows that the covariance of the crossing residuals, unlike the vehicle-free covariance, predicts the observed order of GLS and gauge average. The day-2 per-crossing SD predicted by the vehicle-free covariance (% of GVW) is 16.2 for the best single gauge, 32.5 for the worst single gauge, 19.8 for the gauge average, 19.4 for GLS with diagonal Σ, 12.7 for GLS with measured Σ, 13.3 for the zero-sum estimator with measured Σ and 16.1 for the zero-sum estimator with Σ = identity. The GLS weights with the measured Σ are st40 +0.16 and st36 −0.35. GLS with Σ estimated from the crossing residuals has a mean absolute error of 8.5 % of GVW in sample and 23.4 % out of sample (root-mean-square errors 10.4 % and 28.4 %), that is, it over-fits with eight runs.
 
 Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli, parabolic haunch, second moment proportional to $h^2$) gives $r^2$ = 0.79–0.94 against the strain histories; zeros of the uniform-load moment in span 2 at 121.6 m and 190.8 m; a strain constant of the gauges 0.69 of the largest on the girder (0.56–0.93 across rigidity laws); a cancellation ratio $R$ = 0.51; and contributions of span 2 of about 170 % of the net integral and of the adjacent spans −26 % and −66 % (Fig. S12). Figure S13 shows the synthetic records of the dataset authors processed with the same integration. The tests rest on four trucks, two axle counts and seven or eight runs per day. The gauge calibration factors and exact positions are not published, so absolute constants cannot be checked. The dataset authors reported a mean absolute GVW error of 4.6 % for their influence-line system on this bridge (Moghadam et al., 2023a); it was obtained on different runs and is not compared directly with the results of the main text.
 
-**Table S5.** Integral constant $C$ and its scatter over the runs, lane A unless stated. CV expected: coefficient of variation predicted from the measured vehicle-free noise. For ch1, ch2, ch8 and ch9 the residual variance is 2.9–5.1 times the vehicle-free noise variance.
+**Table S6.** Integral constant $C$ and its scatter over the runs, lane A unless stated. CV expected: coefficient of variation predicted from the measured vehicle-free noise. For ch1, ch2, ch8 and ch9 the residual variance is 2.9–5.1 times the vehicle-free noise variance.
 
 | Day, channel | Runs | $C$ (µε m/t), 95 % CI | CV observed (%) | CV expected (%) | $\chi^2$ $p$ |
 |---|---|---|---|---|---|
@@ -187,7 +205,7 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 | 2, gauge average (4 gauges) | 8 | −4.12 (−4.62, −3.63) | 14.4 | 20.2 | 0.79 |
 | 2, lane B, average | 8 | −3.27 (−4.19, −2.35) | 33.7 | 23.2 | 0.027 |
 
-**Table S6.** Ratio of the integral constants of two trucks, lane A unless stated. Day 1: second to first truck, both 3-axle; day 2: 5-axle to 3-axle truck. Equivalence by two one-sided tests (TOST) at the 5 % level: the 90 % CI of the ratio lies inside the stated margin (for ch11, 0.904–1.098), so a 95 % CI can extend beyond a margin that is shown.
+**Table S7.** Ratio of the integral constants of two trucks, lane A unless stated. Day 1: second to first truck, both 3-axle; day 2: 5-axle to 3-axle truck. Equivalence by two one-sided tests (TOST) at the 5 % level: the 90 % CI of the ratio lies inside the stated margin (for ch11, 0.904–1.098), so a 95 % CI can extend beyond a margin that is shown.
 
 | Day, channel | Ratio (95 % CI) | Equivalence |
 |---|---|---|
@@ -196,9 +214,9 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 | 1, ch1, ch2, ch8, ch9 | 0.740–0.783 | invariance rejected (CIs exclude 1) |
 | 2, st36 | 1.005 (0.735–1.375) | not shown |
 | 2, gauge average (4 gauges) | 0.978 (0.697–1.374) | shown only within ±26.7 % |
-| 2, lane B, average | 0.749 (0.440–1.276) | – (constants fail the $\chi^2$ test, Table S5) |
+| 2, lane B, average | 0.749 (0.440–1.276) | – (constants fail the $\chi^2$ test, Table S6) |
 
-**Table S7.** Mean absolute error of the gross weight (% of GVW), out of sample, with 95 % bootstrap CIs over the test runs (8 on day 2, 7 on day 1). LOTO: calibrated on one truck, tested on the other. The leave-one-run-out columns contain every row of the estimator table of the main text (Table 2).
+**Table S8.** Mean absolute error of the gross weight (% of GVW), out of sample, with 95 % bootstrap CIs over the test runs (8 on day 2, 7 on day 1). LOTO: calibrated on one truck, tested on the other. The leave-one-run-out columns contain every row of the estimator table of the main text (Table 2).
 
 | Estimator | Day 2, leave-one-run-out | Day 2, LOTO | Day 1, 12 gauges | Day 1, 4 wheel-path gauges |
 |---|---|---|---|---|
@@ -211,7 +229,7 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 | Zero-sum, $\Sigma$ = identity matrix | 12.3 (6.1–20.2) | 10.8 | 13.0 (7.1–19.0) | 8.4 (4.6–12.9) |
 | Mean-weight predictor (mean of the calibration runs) | 2.0 (1.9–2.0) | 3.4 | 2.2 (1.1–3.5) | 2.2 (1.1–3.5) |
 
-**Table S8.** Correlation between gauges of the integrated strain: means over gauge pairs, with 95 % bootstrap CIs in brackets. Vehicle-free windows: 1227 on day 2 and 3405 on day 1. Crossing residual: deviation of a crossing's integral from its calibrated value. –: not computed.
+**Table S9.** Correlation between gauges of the integrated strain: means over gauge pairs, with 95 % bootstrap CIs in brackets. Vehicle-free windows: 1227 on day 2 and 3405 on day 1. Crossing residual: deviation of a crossing's integral from its calibrated value. –: not computed.
 
 | Correlation of | Day 2, 4 gauges | Day 1, 12 gauges |
 |---|---|---|
@@ -220,7 +238,7 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 | crossing residuals | 0.63 | – |
 | crossing residuals, st40 with its neighbors | 0.30–0.37 | – |
 
-**Table S9.** Day 2: per-crossing standard deviation (SD) of the gross weight predicted by two covariance models, and the observed error (% of GVW). SD and MAE are different measures; the table compares the order of the two estimators, not magnitudes. Row 1 is the mean of the leave-one-run-out predictions; on the all-run basis of row 2, the vehicle-free value for GLS is 12.8.
+**Table S10.** Day 2: per-crossing standard deviation (SD) of the gross weight predicted by two covariance models, and the observed error (% of GVW). SD and MAE are different measures; the table compares the order of the two estimators, not magnitudes. Row 1 is the mean of the leave-one-run-out predictions; on the all-run basis of row 2, the vehicle-free value for GLS is 12.8.
 
 | Quantity | GLS, measured $\Sigma$ | Gauge average |
 |---|---|---|
@@ -230,17 +248,23 @@ Beam model and limits. The beam model of the five-span girder (Euler–Bernoulli
 
 ## S8. Mây Bridge
 
-Bridge and test. The bridge carries provincial road ĐT389. In the June 2020 acceptance test, four trucks stood in the side span (gauge N8) and six in the main span (gauge N7). The trucks were 3-axle, nominally 5 + 10 + 10 t, with a mean weighed gross weight of 25.06 t (Table S10). Mitutoyo dial gauges, mounted on independent frames fixed to the ground, read the peak deflection under central and eccentric transverse positions at three measuring points across each section (Table S11). The longitudinal truck positions are given as drawings in the test report and are not tabulated. The readings across one section differ by up to 2.05 mm in the eccentric N7 case, about 13 % of the mean reading.
+Bridge and test. The bridge carries provincial road ĐT389. In the June 2020 acceptance test, four trucks stood in the side span (gauge N8) and six in the main span (gauge N7). The trucks were 3-axle, nominally 5 + 10 + 10 t, with a mean weighed gross weight of 25.06 t (Table S11). Mitutoyo dial gauges, mounted on independent frames fixed to the ground, read the peak deflection under central and eccentric transverse positions at three measuring points across each section (Table S12). The readings across one section differ by up to 2.05 mm in the eccentric N7 case, about 13 % of the mean reading.
 
 Model. Design sections: depth 2.40 m (mid-span) to 5.40 m (piers), second moments 5.482 m⁴ and 59.61 m⁴, $E_\mathrm{c}$ = 36 057 MPa. Model-form variants: $L_\mathrm{v}$ = 40 and 45 m (base 44 m), exponents 2.5 and 3.2 (base 2.943), rigid pier zone ±1.5 m. The misfit ratio $r_{87}$ is 1.126 at $\kappa$ = 10⁷ kN m/rad, has its minimum 1.058 at $\kappa$ = 1.68 × 10⁸ kN m/rad (calibration B) and is 1.091 for fixed piers.
 
-Admissible sets (Table S12). The conclusions depend on the tolerance. At $\tau$ = 3 % the admissible set shrinks and excludes the design rigidity, $\alpha$ = 1.
+Tolerance. The six readings of each section have a standard deviation of 4.7–5.0 % about their mean (Table S12), so the standard error of the mean is 1.9–2.0 %. Dividing the six-reading SD by $\sqrt6$ treats the transverse readings as independent samples; this is an assumption, because the scatter comes from the transverse positions and the readings are not replicates. The model-form standard uncertainty of 1.75 % is half the spread of $\ln$ of the predicted N8-to-N7 ratio across the model-form variants at the minimum of the misfit ratio ($\kappa$ = 1.68 × 10⁸ kN m/rad), divided by $\sqrt2$ to give a per-gauge value (script `ident_static.py`). Combined in quadrature with the pooled standard error of the mean, it gives 2.64 % for each section mean and $\tau$ = 5.3 % at two standard deviations.
 
-Frequencies. The measured vertical frequencies (3.43–3.64 Hz; Table S13) would narrow the admissible set further if they belonged to the third vertical mode. This interpretation is conditional: Fig. S14 shows the predicted vertical frequencies against the scaled pier stiffness $\kappa$, and Fig. S15 the static misfit over the plane of $\alpha$ and $k$ with contours of the third vertical frequency. The acceptance test reports only one frequency per span, so the first frequency is not identified, and the Cramér–Rao bound of 0.24 that the first and third frequencies would give (Section 5.3) assumes a measurement that was not made.
+Admissible sets (Table S13). The conclusions depend on the tolerance, so Table S13 gives the admissible set at $\tau$ = 3, 4 and 5.3 %. At $\tau$ = 3 % the admissible set shrinks and excludes the design rigidity, $\alpha$ = 1. The ratio of the largest to the smallest $C_8$ over the admissible set is 1.5 at $\tau$ = 3 %, 3.4 at 4 % and 6.6 at 5.3 %, and 2.4 at 5.3 % with the prior $\alpha$ = 0.9–1.3; the upper end of $C_8$ at 5.3 % needs $\alpha \approx 0.5$ with $\kappa$ toward fixity.
 
-Indicators and channels (Table S14). Going from pinned to fixed piers multiplies the N8 constant by 14.0 but reduces the N7 constant to 0.59 of its pinned value. A strain gauge at mid side span would be practically blind under calibration A ($N_M = 0.048$) and would change sign with pinned piers. A rotation reading at the end bearing T8 adds little, because its sensitivity duplicates that of N8. At calibration B the two-reading Fisher matrix is singular, so the deflections alone cannot bound $\ln C_8$ (Section S5).
+Frequencies. The measured vertical frequencies (3.43–3.64 Hz; Table S14) would narrow the admissible set further if they belonged to the third vertical mode. This interpretation is conditional: Fig. S14 shows the predicted vertical frequencies against the scaled pier stiffness $\kappa$, and Fig. S15 the static misfit over the plane of $\alpha$ and $k$ with contours of the third vertical frequency. The acceptance test reports only one frequency per span, so the first frequency is not identified, and the Cramér–Rao bound of 0.24 on the standard deviation of $\ln C_8$ that the first and third frequencies would give assumes a measurement that was not made. The bounds of Section 5.3 are evaluated at the design pier stiffness, $\kappa = 2.75\times10^7$ kN m/rad, with $\alpha$ refitted to $\alpha^* = 1.07$ (Fig. 7b).
 
-**Table S10.** Weighed 3-axle test trucks: gross weight and axle spacings (front to middle axle; middle to rear axle) and track width. Mean gross weight 25.06 t.
+Indicators and channels (Table S15). In the base model, going from pinned to fixed piers multiplies the N8 constant by 14.0 but reduces the N7 constant to 0.59 of its pinned value. The design stiffness sits at $\kappa/k_g = 0.63$, near the steepest part of the Möbius curve, where $B_m$ is 0.51 at N8 and 0.12 at N7. Calibrating to the N8 reading does not fix the N8 constant either: the ratio of $C_m$ to the modeled N8 deflection varies by a factor of 6.5 over the admissible set, against 1.5 for N7. A rotation reading at the end bearing T8 adds little, because its sensitivity duplicates that of N8. At calibration B the two-reading Fisher matrix is singular, so the deflections alone cannot bound $\ln C_8$ (Section S5); with the pier tiltmeter the bound is 0.04.
+
+Strain and end-reaction channels. The haunches move every zero-moment point toward mid-span; the side-span zero lies 26.0–33.3 m from the end support, so a strain gauge at mid side span would be practically blind under calibration A ($N_M = 0.048$) and would change sign with pinned piers. At mid main span the small strain indicator reflects restraint ($R_\varepsilon$ = 0.65–1.00). By $N_M$ alone the best strain locations in all haunched models are 5–10 m from the piers ($|N_M| \ge 0.39$), but their gain $c/EI$ is about one quarter to one third of that at mid-span, and one fifth at the pier face (main-text Fig. 6c). Load cells under the end bearings ($N_F = \xi_0$ = 0.47–0.61) cannot be blind unless the side span loses its sagging zone.
+
+Test-load positions. The longitudinal axle positions of the static test load, taken from the test plan (the test report gives them as drawings), are listed in Table S16 (script `wp3_run.py`).
+
+**Table S11.** Weighed 3-axle test trucks: gross weight and axle spacings (front to middle axle; middle to rear axle) and track width. Mean gross weight 25.06 t.
 
 | Truck | Gross weight (t) | Front axle spacing (m) | Rear axle spacing (m) | Track (m) |
 |---|---|---|---|---|
@@ -255,7 +279,7 @@ Indicators and channels (Table S14). Going from pinned to fixed piers multiplies
 | 9 | 24.6 | 3.65 | 1.45 | 1.85 |
 | 10 | 24.6 | 3.6 | 1.45 | 1.85 |
 
-**Table S11.** Mây Bridge acceptance test (June 2020): measured peak deflection (mm, downward positive) at the two gauge sections, at three measuring points across each section, under central and eccentric truck arrangements.
+**Table S12.** Mây Bridge acceptance test (June 2020): measured peak deflection (mm, downward positive) at the two gauge sections, at three measuring points across each section, under central and eccentric truck arrangements.
 
 | Section | Measuring point | Central | Eccentric |
 |---|---|---|---|
@@ -266,16 +290,16 @@ Indicators and channels (Table S14). Going from pinned to fixed piers multiplies
 | N7, mid main span | centerline | 15.24 | 15.51 |
 | N7, mid main span | left edge | 15.83 | 16.67 |
 
-**Table S12.** Admissible set of the Mây Bridge model against the tolerance $\tau$ on the misfit of each gauge.
+**Table S13.** Admissible set of the Mây Bridge model (base model, $L_\mathrm{v}$ = 44 m) against the tolerance $\tau$ on the misfit of each gauge. $C_8$ max/min: ratio of the largest to the smallest $C_8$ in the set. –: not computed.
 
-| Tolerance, prior | $\kappa$ (kN m/rad) | $\alpha$ | N8 indicator, $\alpha EI_\mathrm{mid}$ | N8 indicator, design $EI_\mathrm{mid}$ | $C_8$ (m²/kN) |
-|---|---|---|---|---|---|
-| $\tau$ = 3 % | 1.0–3.0 × 10⁸ | 0.64–0.80 | – | – | – |
-| $\tau$ = 4 % | 4.2 × 10⁷–2.0 × 10⁹ | 0.54–0.98 | – | – | – |
-| $\tau$ = 5.3 % | ≥ 1.8 × 10⁷ | 0.51–1.15 | 0.14–0.42 | 0.12–0.82 | 3.0 × 10⁻⁵–2.0 × 10⁻⁴ |
-| $\tau$ = 5.3 %, prior $\alpha$ ∈ [0.9, 1.3] | – | – | 0.14–0.27 | 0.12–0.30 | – |
+| Tolerance, prior | $\kappa$ (kN m/rad) | $\alpha$ | N8 indicator, $\alpha EI_\mathrm{mid}$ | N8 indicator, design $EI_\mathrm{mid}$ | $C_8$ (m²/kN) | $C_8$ max/min | $C_7$ (m²/kN) |
+|---|---|---|---|---|---|---|---|
+| $\tau$ = 3 % | 1.0–3.0 × 10⁸ | 0.64–0.80 | 0.30–0.37 | 0.38–0.58 | 9.1 × 10⁻⁵–1.4 × 10⁻⁴ | 1.5 | – |
+| $\tau$ = 4 % | 4.2 × 10⁷–2.0 × 10⁹ | 0.54–0.98 | 0.22–0.41 | 0.23–0.77 | 5.5 × 10⁻⁵–1.9 × 10⁻⁴ | 3.4 | – |
+| $\tau$ = 5.3 % | ≥ 1.8 × 10⁷ | 0.51–1.15 | 0.14–0.42 | 0.12–0.82 | 3.0 × 10⁻⁵–2.0 × 10⁻⁴ | 6.6 | 3.3–5.0 × 10⁻⁴ |
+| $\tau$ = 5.3 %, prior $\alpha$ ∈ [0.9, 1.3] | 1.8–6.7 × 10⁷ | 0.90–1.15 | 0.14–0.27 | 0.12–0.30 | 3.0 × 10⁻⁵–7.2 × 10⁻⁵ | 2.4 | 3.3–3.6 × 10⁻⁴ |
 
-**Table S13.** Vertical natural frequencies of the main-bridge spans reported in the acceptance test.
+**Table S14.** Vertical natural frequencies of the main-bridge spans reported in the acceptance test.
 
 | Span | Vertical frequency (Hz) |
 |---|---|
@@ -283,7 +307,7 @@ Indicators and channels (Table S14). Going from pinned to fixed piers multiplies
 | Main span T6–T7 (90 m) | 3.64 |
 | Side span T7–T8 (55 m) | 3.63 |
 
-**Table S14.** Deflection indicator $N_w$ (Eq. (10)), cancellation ratio $R$ (Eq. (11)) and boundary sensitivity $B_m$ of the Mây Bridge gauges, including the mid side-span position. $EI_\mathrm{ref}$ = design $EI_\mathrm{mid}$ and $L$ the span containing the gauge. Calibration A and the pinned-pier and fixed-pier rows have $\alpha = 1$, calibration B has $\alpha = 0.716$, and the admissible set spans $\alpha$ = 0.51–1.15; the haunched pinned-pier and fixed-pier rows give the extreme values over the haunch-length variants ($L_\mathrm{v}$ = 40–45 m). $B_m$ at the design stiffness, with $k_g = 4.36\times10^7$ kN m/rad. –: not computed.
+**Table S15.** Deflection indicator $N_w$ (Eq. (8)), cancellation ratio $R$ (Eq. (9)) and boundary sensitivity $B_m$ of the Mây Bridge gauges, including the mid side-span position. $EI_\mathrm{ref}$ = design $EI_\mathrm{mid}$ and $L$ the span containing the gauge. Calibration A and the pinned-pier and fixed-pier rows have $\alpha = 1$, calibration B has $\alpha = 0.716$, and the admissible set spans $\alpha$ = 0.51–1.15; the haunched pinned-pier and fixed-pier rows give the extreme values over the haunch-length variants ($L_\mathrm{v}$ = 40–45 m). $B_m$ at the design stiffness, with $k_g = 4.36\times10^7$ kN m/rad. –: not computed.
 
 | Model | $N_w$, N8 at 0.4$L$ (installed) | $N_w$, N8 at mid side span | $N_w$, N7 (installed) | $R$, N8 at 0.4$L$ | $R$, N8 at mid side span | $R$, N7 |
 |---|---|---|---|---|---|---|
@@ -297,6 +321,13 @@ Indicators and channels (Table S14). Going from pinned to fixed piers multiplies
 
 ᵃ Above the fixed-pier value because calibration B has $\alpha$ = 0.716; normalized by the effective rigidity $\alpha EI_\mathrm{mid}$ it is 0.341. ᵇ The upper part of this range requires $\alpha \approx 0.5$; normalized by the effective rigidity, the range is 0.144–0.422.
 
+**Table S16.** Longitudinal axle positions of the static test load (model positions from the test plan). Each longitudinal row consists of two 3-axle trucks side by side, so the axle loads per row are 10, 20 and 20 t (5, 10 and 10 t per truck). $x$ is measured from T5, with T8 at $x$ = 200 m.
+
+| Scheme | Axle positions $x$ (m), with axle load per row (t) | Distance from T8 (m) |
+|---|---|---|
+| N8, side span (2 rows) | 163.45 (10), 167.05 (20), 168.40 (20); 174.40 (10), 178.00 (20), 179.35 (20) | 36.55, 32.95, 31.60; 25.60, 22.00, 20.65 |
+| N7, main span (3 rows) | 87.70 (20), 89.05 (20), 92.65 (10); 98.65 (20), 100.00 (20), 103.60 (10); 109.60 (20), 110.95 (20), 114.55 (10) | – |
+
 ## S9. Dynamics and baseline handling
 
 For a constant force moving across the laboratory beam, the quasi-static error is at most about 1 % when the ratio of the crossing time to the fundamental period, $t_\mathrm{cr}/T_1$, is at least 8, and it exceeds 15 % below 2.5 (Frýba, 1999). This bound omits vehicle–bridge interaction and road roughness. The moving-force analysis is reproduced by `s05_moving_force.py`; its console output (`s05_moving_force.log`) lists the quasi-static error against $t_\mathrm{cr}/T_1$, the effect of damping and the axle-configuration spread under dynamics.
@@ -305,22 +336,22 @@ The authors' deflection records from two simply supported bridges showed post-mi
 
 ## S10. Error budget and design checklist
 
-The budget below is indicative, not an evaluation according to the Guide to the Expression of Uncertainty in Measurement (GUM): several entries are scenario ranges and the correlations between terms are not quantified. To first order, the relative error of BPM is the sum of the relative errors of the rigidity, the gain, the speed and the offset term of Eq. (12), plus four times the relative error of the span length for deflection (two times for strain). SLM removes the structural terms, because they belong to $C$. Every other term survives as the difference between the target and the reference crossings.
+The budget below is indicative, not an evaluation according to the Guide to the Expression of Uncertainty in Measurement (GUM): several entries are scenario ranges and the correlations between terms are not quantified. To first order, the relative error of BPM is the sum of the relative errors of the rigidity, the gain, the speed and the offset term of Eq. (10), plus four times the relative error of the span length for deflection (two times for strain). SLM removes the structural terms, because they belong to $C$. Every other term survives as the difference between the target and the reference crossings.
 
 Speed enters twice. It affects the response itself, and it enters again through its measurement, because the space integral is the time integral times the speed measured at the gauges; a speed error therefore passes one-to-one into the weight. Speed variation over a 605 m crossing was not measured. On lane A, speeds from a low-pass fit of the records were 1.139 times those from the axle spikes (SD 0.124, 22 runs), so the choice of speed estimator alone can shift the weight by more than 10 %.
 
-Table S15 evaluates Eq. (12) for the Mây Bridge gauges over the admissible set, with $L_\mathrm{tot} = 200$ m and a truck of the mean weighed gross weight, 25.06 t. The smaller offsets in Table S15 are typical of displacement transducers. Absolute deflection on a 90 m span over water would usually come from a non-contact technique, whose residual offset after re-zeroing has to be established on site, since environmental effects act over the same window (Sohn, 2007; Cross et al., 2013). At $\delta_0 = 0.1$ mm a single main-span gauge biases a 25 t truck by 16–25 %, and a single side-span gauge by 41–271 %. The zero-sum pair addresses this term only to the extent that the offset is common-mode during crossings.
+Table S17 evaluates Eq. (10) for the Mây Bridge gauges over the admissible set, with $L_\mathrm{tot} = 200$ m and a truck of the mean weighed gross weight, 25.06 t. The smaller offsets in Table S17 are typical of displacement transducers. Absolute deflection on a 90 m span over water would usually come from a non-contact technique, whose residual offset after re-zeroing has to be established on site, since environmental effects act over the same window (Sohn, 2007; Cross et al., 2013). At $\delta_0 = 0.1$ mm a single main-span gauge biases a 25 t truck by 16–25 %, and a single side-span gauge by 41–271 %. The zero-sum pair addresses this term only to the extent that the offset is common-mode during crossings.
 
-Transverse position and multiple presence add further terms; Table S16 collects all terms. On the five-span girder the far-lane constant was 0.79 of the near-lane value. At the Mây Bridge the readings across one section differ by up to 2.05 mm in the eccentric N7 case, about 13 % of the mean reading. Several vehicles on the structure return their combined weight; on the five-span girder the two-truck events gave 0.92 of the prediction. A crossing of the 200 m Mây Bridge unit, plus the wheelbase, takes 12.4 s at 60 km/h, and every crossing that overlaps another vehicle in that window must be discarded or treated as a group. The fraction of usable isolated crossings was not quantified. In the laboratory, the reference record and the load-dependent growth of the integral ratio cause the SLM deviations of 0.6–0.7 %. In the field, the noise, the lane and the gauge position dominate, and the weight errors of single crossings, 5–12 % on these records, exceed the spread of the reference weights.
+Transverse position and multiple presence add further terms; Table S18 collects all terms. On the five-span girder the far-lane constant was 0.79 of the near-lane value. At the Mây Bridge the readings across one section differ by up to 2.05 mm in the eccentric N7 case, about 13 % of the mean reading. Several vehicles on the structure return their combined weight; on the five-span girder the two-truck events gave 0.92 of the prediction. A crossing of the 200 m Mây Bridge unit, plus the wheelbase, takes 12.4 s at 60 km/h, and every crossing that overlaps another vehicle in that window must be discarded or treated as a group. The fraction of usable isolated crossings was not quantified. In the laboratory, the reference record and the load-dependent growth of the integral ratio cause the SLM deviations of 0.6–0.7 %. In the field, the noise, the lane and the gauge position dominate, and the weight errors of single crossings, 5–12 % on these records, exceed the spread of the reference weights.
 
-**Table S15.** Bias of a single-channel estimate caused by a residual offset $\delta_0$, Eq. (12), for a 25.06 t truck; $L_\mathrm{tot}$ = 200 m. Ranges over the admissible set ($\tau$ = 5.3 %).
+**Table S17.** Bias of a single-channel estimate caused by a residual offset $\delta_0$, Eq. (10), for a 25.06 t truck; $L_\mathrm{tot}$ = 200 m. Ranges over the admissible set ($\tau$ = 5.3 %).
 
 | Gauge | $C$ (m²/kN) | 0.02 mm | 0.05 mm | 0.1 mm | 0.2 mm | 0.5 mm |
 |---|---|---|---|---|---|---|
 | N7, mid main span | 3.3–5.0 × 10⁻⁴ | 3.3–5.0 % | 8–12 % | 16–25 % | 33–50 % | 82–124 % |
 | N8, 0.4$L$ | 3.0 × 10⁻⁵–2.0 × 10⁻⁴ | 8–54 % | 21–136 % | 41–271 % | 82–543 % | 206–1356 % |
 
-**Table S16.** Indicative sensitivity budget of influence-area weighing. Values are those measured or assumed in this study; they are not combined.
+**Table S18.** Indicative sensitivity budget of influence-area weighing. Values are those measured or assumed in this study; they are not combined.
 
 | Term | Sensitivity | Cancels in SLM? | Value in this study |
 |---|---|---|---|
@@ -328,9 +359,9 @@ Transverse position and multiple presence add further terms; Table S16 collects 
 | Span length | 4 (deflection), 2 (strain) | yes | BPM only |
 | Gain | 1 | if not recalibrated between crossings | not evaluated |
 | Reference weighing $P_0$ | 1 | no | laboratory: International Organization of Legal Metrology (OIML) class M1 weights; field: day-1 weights driver-reported |
-| Residual offset, drift $\delta_0$ | $L_\mathrm{tot}/J$ per unit offset | only if common-mode during crossings | Table S15; field per-crossing SD of the gauge average predicted 19.8 % (day 2), 5.3 % (day 1) |
+| Residual offset, drift $\delta_0$ | $L_\mathrm{tot}/J$ per unit offset | only if common-mode during crossings | Table S17; field per-crossing SD of the gauge average predicted 19.8 % (day 2), 5.3 % (day 1) |
 | Speed effect | 1 | no | day 2: +6 % per 10 m/s (95 % CI −23 to +35 %), not resolved |
-| Speed measurement | 1 | no | 1–2 % against the dataset speeds; a second estimator differs by a factor of 1.139 (SD 0.124) |
+| Speed measurement | 1 | no | 1.4 % on average (at most 4.6 %) against the dataset speeds; a second estimator differs by a factor of 1.139 (SD 0.124) |
 | Dynamics | 1 | partly | ≤ 1 % for $t_\mathrm{cr}/T_1 \ge 8$ (constant force) |
 | Transverse position | lane-dependent $C$ | no, unless lane-specific | field lane ratio 0.79; Mây Bridge range 2.05 mm across a section |
 | Multiple presence | group weight | – | two-truck events 0.92 of prediction |
@@ -338,13 +369,13 @@ Transverse position and multiple presence add further terms; Table S16 collects 
 
 Design checklist. The results combine into the following procedure for designing load-monitoring channels on a continuous girder before installation.
 
-1. Constants. For each candidate channel and position, compute $C$ from one static analysis under a uniform unit load on each lane, Eq. (2). Use Eqs. (4)–(9) for prismatic two- and three-span beams.
+1. Constants. For each candidate channel and position, compute $C$ from one static analysis under a uniform unit load on each lane, Eq. (2). Use Eqs. (4)–(7), (S1) and (S2) for prismatic two- and three-span beams.
 2. Blindness. Locate the blind loci of Table 1. Keep strain gauges out of the near-blind band $|N_M|<0.2$ around every zero-moment point, including gauges set back from a pier. Keep deflection gauges out of the near-blind bands $|N_w|<0.2$, for example $1.385<\lambda<1.525$ for a mid-span gauge on two spans and $1.621<\beta<1.775$ for a mid side-span gauge on three spans.
 3. Conditioning. Report $N_M$ for strain, $N_w$ with its $EI_\mathrm{ref}$ for deflection (or the absolute constant), and $R$ for both. A small indicator with $R$ near 1 is restraint, not cancellation.
-4. Boundary robustness. Evaluate $C$ over the plausible range of pier stiffness; for a symmetric girder, Eq. (15) gives the whole curve from the pinned and fixed constants. Avoid locations with large $C_\infty/C_0$ or $B_m$, or plan the measurement that identifies $\kappa$: a tiltmeter on a monolithic pier, an identified first frequency, or an integral ratio between two gauges.
+4. Boundary robustness. Evaluate $C$ over the plausible range of pier stiffness; for a symmetric girder, Eq. (13) gives the whole curve from the pinned and fixed constants. Avoid locations with large $C_\infty/C_0$ or $B_m$, or plan the measurement that identifies $\kappa$: a tiltmeter on a monolithic pier, an identified first frequency, or an integral ratio between two gauges.
 5. Placement. Place sensors at the extremes of $C(x)$ of each channel type: $w_q$ for deflection and $cM_q/EI$ for strain.
-6. Estimator. Use SLM with weighed vehicles of clearly different weights, several reference crossings and lane-specific constants. Combine channels by GLS or zero-sum weights only after estimating $\Sigma$ from the residuals of calibration crossings and checking it out of sample against the gauge average; covariances from vehicle-free windows alone can mislead. Use BPM only where the location is well conditioned and the structure is known; on box girders with deck-mounted gauges, a beam model does not give the constant.
-7. Offset and dynamics. Evaluate $P_\delta$, Eq. (12), for the residual offset that the instrumentation achieves after re-zeroing, and compare it with the lightest vehicle to be screened. Check $t_\mathrm{cr}/T_1 \ge 8$ with the measured fundamental frequency $f_1 = 1/T_1$.
+6. Estimator. Use SLM with weighed vehicles of clearly different weights, several reference crossings and lane-specific constants. For GLS or zero-sum weights, vehicle-free windows are not enough to estimate $\Sigma$; they misled on the field records (Section 4.3). Residuals of calibration crossings are a necessary condition, not a sufficient one: with eight runs, $\Sigma$ estimated from them over-fitted (mean absolute error 8.5 % in sample against 23.4 % out of sample; Section S7). Combine channels only with enough calibration crossings and an out-of-sample check against the gauge average. Use BPM only where the location is well conditioned and the structure is known; on box girders with deck-mounted gauges, a beam model does not give the constant.
+7. Offset and dynamics. Evaluate $P_\delta$, Eq. (10), for the residual offset that the instrumentation achieves after re-zeroing, and compare it with the lightest vehicle to be screened. Check $t_\mathrm{cr}/T_1 \ge 8$ with the measured fundamental frequency $f_1 = 1/T_1$.
 8. Processing. Integrate in space over the complete crossing, re-zero before and after each crossing, remove dynamics with a low-pass filter whose cutoff is well below the fundamental frequency $f_1$ and never with a high-pass filter, and discard overlapping crossings.
 
 Influence-area weighing is a simplified alternative to influence-line BWIM, not a competitor. It returns the gross weight of a vehicle or group from one scalar constant per channel and one weighted sum. Its natural role is low-cost screening across many continuous structures, with influence-line BWIM or enforcement weighing for the vehicles it flags.
@@ -369,7 +400,7 @@ The archive `scripts.zip` contains the analysis scripts and the console output o
 
 **Fig. S7.** Mây Bridge proportions, prismatic beam: (a) deflection indicators of the side-span and main-span gauges against the relative pier stiffness $\hat k$, closed form against FE; (b) boundary sensitivity $B_m$. Dotted line in (b): $\hat k = 3 + 2/\beta = 4.22$, the girder's own antisymmetric pier stiffness $k_gL_\mathrm{side}/EI_\mathrm{side}$.
 
-**Fig. S8.** Laboratory two-span beam: measured and analytical influence line of the mid-span deflection of the first span for the single 40.64 N load (Table S4).
+**Fig. S8.** Laboratory two-span beam: measured and analytical influence line of the mid-span deflection of the first span for the single 40.64 N load (Table S5).
 
 **Fig. S9.** NOR-BWIM: integral constant against speed for the day-1 gauge average, gauge ch1 and the day-2 gauge average, by truck; the panel titles give the fitted slope per 10 m/s with its 95 % CI.
 

@@ -92,7 +92,7 @@ for a, t in zip((a1, a2, ax), heads):
     bb = gs[[a1, a2, ax].index(a)].get_position(fig)
     fig.text((bb.x0 + bb.x1) / 2, 0.80, t, ha="center", va="center", fontsize=14,
              fontweight="semibold", color="#1f3a5f")
-fig.suptitle("Observability and sensor layout for influence-area load monitoring of continuous girder bridges",
+fig.suptitle("Blind loci and sensor layout for influence-area bridge weigh-in-motion on continuous girders",
              fontsize=16, fontweight="bold", y=0.975)
 out = os.path.join(F, "GraphicalAbstract.png")
 fig.savefig(out, dpi=300, bbox_inches="tight", pad_inches=0.08)
