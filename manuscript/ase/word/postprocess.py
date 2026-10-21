@@ -119,7 +119,7 @@ for r in d.element.body.iter(M + "r"):
     pr, t_ = r.find(M + "rPr"), r.find(M + "t")
     if pr is None or t_ is None or pr.find(M + "sty") is None or pr.find(M + "nor") is not None:
         continue
-    if (t_.text or "").isalpha() and len(t_.text) > 1:
+    if (t_.text or "").isalpha():
         pr.append(OxmlElement("m:nor"))
 # delimiters: drop the empty separator pandoc writes; LibreOffice then ignores endChr and
 # closes "[" and "|" with ")" in the PDF (Word shows the same either way: one element, no separator)
@@ -131,6 +131,31 @@ for dp in list(d.element.body.iter(M + "dPr")):
 for par in d.paragraphs:
     if re.match(r"Table S?\d+\.", par.text.strip()):
         par.paragraph_format.keep_with_next = True
+# page layout: symbol-table heading stays with its table; captions do not split across pages;
+# short tables (and their footnotes) stay on one page
+for par in d.paragraphs:
+    s_ = par.text.strip()
+    if s_.startswith("Principal symbols"):
+        par.paragraph_format.keep_with_next = True
+    if re.match(r"(Fig\.|Figure) S?\d+\.", s_) or re.match(r"Table S?\d+\.", s_):
+        par.paragraph_format.keep_together = True
+for t in d.tables:
+    if len(t.rows) > 20:
+        continue
+    nxt = t._tbl.getnext()
+    foot = nxt is not None and nxt.tag == qn("w:p") and xtext(nxt).strip()[:1] in ("ᵃ", "ᵇ", "*")
+    rows = t.rows if foot else t.rows[:-1]
+    for row in rows:
+        for p_ in row._tr.iter(qn("w:p")):
+            ppr = p_.find(qn("w:pPr"))
+            if ppr is None:
+                ppr = OxmlElement("w:pPr"); p_.insert(0, ppr)
+            if ppr.find(qn("w:keepNext")) is None:
+                ppr.insert(0, OxmlElement("w:keepNext"))
+# lines broken by hand (address and signature blocks) are left-aligned, not stretched
+for par in d.paragraphs:
+    if par._p.findall(".//" + qn("w:br")) and par.alignment in (None, 3):
+        par.paragraph_format.alignment = 0
 # reference list: left aligned with a hanging indent (justification stretches DOIs)
 from docx.shared import Cm
 inref = False
@@ -174,3 +199,15 @@ for t in d.element.body.iter(qn("w:t")):
     if t.text and " " in t.text:
         t.text = UNIT.sub("\\1\u00a0", t.text)
 d.save(path)
+# docProps/app.xml from the pandoc template carries stale statistics (1 page, 83 words, Word 12.0);
+# replace it with an empty properties part
+import zipfile, shutil, tempfile
+APP = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
+       '<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" '
+       'xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"/>')
+tmp = tempfile.mktemp(suffix=".docx")
+with zipfile.ZipFile(path) as zi, zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zo:
+    for it in zi.infolist():
+        data = APP.encode() if it.filename == "docProps/app.xml" else zi.read(it.filename)
+        zo.writestr(it, data)
+shutil.move(tmp, path)

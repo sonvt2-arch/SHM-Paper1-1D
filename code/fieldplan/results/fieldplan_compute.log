@@ -117,4 +117,4 @@ D4 mid-span of left side span (mirror of D2) C=+2.514e-06 R=+0.04 N=+0.087 T1 pk
 S1 bottom fiber at M_q=0 (x=73.5 m)      C=-2.004e-08 R=-0.02 T1 pk +18.02 I   -4.91 | T2 pk +16.75 I   -4.91 | T3 pk +20.33 I   -5.90
 S2 bottom fiber at mid-span of main span C=+1.544e-06 R=+0.80 T1 pk +26.21 I +378.55 | T2 pk +24.50 I +378.55 | T3 pk +29.72 I +454.25
 
-figures written to /home/user/SHM-Paper1-1D/code/fieldplan/figures
+figures written to code/fieldplan/figures

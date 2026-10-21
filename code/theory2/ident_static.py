@@ -96,7 +96,7 @@ def main():
     for name, EI in V.items():
         scans[name] = scan(Model(EI, None, ne=10))
     r = scans["Lv44"]
-    # reproduce WP3 / editor numbers
+    # values quoted in the text
     log("\n=== Base model (Lv = 44 m): ratio misfit rho(kappa) = (meas/pred)_N8 / (meas/pred)_N7 ===")
     for kk in (1e7, K_FE, 1.199e8 / 0.716, 1e9, 1e12):
         i = int(np.argmin(abs(np.log(KAPPA / kk))))

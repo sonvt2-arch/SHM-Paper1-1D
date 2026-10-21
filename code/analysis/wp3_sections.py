@@ -5,8 +5,8 @@ Coordinates: half-section (x >= 0, symmetric about the bridge axis), z upward
 from the soffit at the axis, units m.  Vertical-bending I = I about the
 horizontal centroidal axis.
 
-Source: load-rating report of the Mây Bridge main girder (supplied by the
-consultancy, not public), p. 3 (cross-section drawings, mm) and p. 5
+Source: load-rating report of the Mây Bridge main girder (not publicly
+available), p. 3 (cross-section drawings, mm) and p. 5
 (section-property table).  The polygon routine is checked against that table.
 """
 import numpy as np

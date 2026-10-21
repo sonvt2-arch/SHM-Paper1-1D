@@ -45,7 +45,6 @@ bash code/supplementary/run_all.sh --all            # also every remaining analy
 | Table 2 | Out-of-sample MAE of the gross weight (single gauge, average, GLS, mean weight) | `code/norbwim/nb_v4.py` | `code/norbwim/logs/v4.log` (estimator comparison), `results/v4_estimators.csv`, `v4_estimator_errors.csv`, `v4_estimator_paired.csv` |
 | Table 3 | Deflection indicator and cancellation ratio of the installed Mây Bridge gauges | `code/theory2/ident_static.py`, `ident_freq.py` | `code/theory2/logs/ident_static.log`, `ident_freq.log` |
 
-The predictions of a moving-load test at the Mây Bridge, given in the main text as Table 4 in earlier versions, are now Supplementary Table S19 (see below).
 
 Other numbers quoted in the article text come from the logs named in the sections below: crossing integrals, speeds and noise windows (Section 4.1) from `code/norbwim/nb_field.py` (`logs/field.log`, `results/events_field.csv`, `events_field_qc.csv`); gauge ratios and beam-model shares (Section 4.2) from `code/norbwim/nb_tests.py`, `nb_beam.py` (`logs/tests.log`, `results/test_*.csv`); Cramér–Rao bounds (Section 5.3) from `code/theory2/ident_fisher.py` (`logs/ident_fisher.log`); the Mây Bridge model (Section 5.1) from `code/analysis/wp3_run.py` (`logs/wp3_run.log`).
 
@@ -93,7 +92,7 @@ Other numbers quoted in the article text come from the logs named in the section
 | Table S16 | Axle positions of the static test load (Mây Bridge) | `code/analysis/wp3_run.py` (`cm_schemes`) | positions as coded from the test plan |
 | Table S17 | Bias of a single-channel estimate caused by a residual offset | `code/v3/v3_numbers.py` | `code/v3/logs/v3_numbers.log` |
 | Table S18 | Indicative sensitivity budget | – (values taken from the sections of the article and the logs above) | – |
-| Table S19 | Predicted discriminating measurements at the Mây Bridge (moving-load test, predictions; Table 4 of earlier versions) | `code/fieldplan/fieldplan_compute.py` | `code/fieldplan/results/fieldplan_compute.log`, section "(A) discriminating A vs B": C(D3)/C(D1) = 0.121 (A) and 0.284 (B); R1 peak T1 = −58.1 and −29.0 µrad; strain-integral ratio = S1 integral / S2 integral of the signal table (2.35/381.32 = 0.006 for A, 81.59/477.96 = 0.17 for B); `results/A_caumay_*.csv` |
+| Table S19 | Predicted discriminating measurements at the Mây Bridge (moving-load test, predictions) | `code/fieldplan/fieldplan_compute.py` | `code/fieldplan/results/fieldplan_compute.log`, section "(A) discriminating A vs B": C(D3)/C(D1) = 0.121 (A) and 0.284 (B); R1 peak T1 = −58.1 and −29.0 µrad; strain-integral ratio = S1 integral / S2 integral of the signal table (2.35/381.32 = 0.006 for A, 81.59/477.96 = 0.17 for B); `results/A_caumay_*.csv` |
 
 ## Supplementary Material: sections
 

@@ -1,31 +1,19 @@
 """beam_theory.py - shared module of the supplementary scripts.
 
-Manuscript: "Total-load observability of continuous girder bridges from a
-single deflection channel ..." (SCHM submission, manuscript/schm/manuscript.md).
-
-Contents (equation numbers refer to the SCHM manuscript):
-  * specimen constants of Section 3.1 (I = 16 529.8 mm^4, EI = 3.3060e9 N mm^2,
-    C_m = l^4/(192 EI) = 61.541 mm^2/N),
-  * the mid-span influence line of the equal two-span beam, Eq. (A.2),
-  * the closed form of C_m for two spans, Eqs. (4)-(5),
-  * the laboratory records of Appendix C (Table C.1) and the load groups,
-  * the quadrature rules of Eq. (12) (trapezoid; Simpson with a 3/8 end
-    panel for an odd number of intervals, as stated in Section 2.4),
-  * the estimators BPM (P = I_y/C_m) and SLM, Eq. (11),
+Contents:
+  * specimen constants of the laboratory beam (I = 16 529.8 mm^4,
+    EI = 3.3060e9 N mm^2, C_m = l^4/(192 EI) = 61.541 mm^2/N),
+  * the mid-span influence line of the equal two-span beam,
+  * the closed form of C_m for two spans,
+  * the laboratory records (Supplementary Section S6) and the load groups,
+  * quadrature rules (trapezoid; Simpson with a 3/8 end panel for an odd
+    number of intervals),
+  * the estimators BPM (P = I_y/C_m) and SLM,
   * a prismatic Euler-Bernoulli FE solver (Hermite cubic elements) with
-    stiffness, consistent mass and consistent point-load vectors, used for
-    Eq. (3) (Table 1) and for the moving-force study of Section 6.5.
+    stiffness, consistent mass and consistent point-load vectors.
 
-Derived from the authors' early package code/original/files-v2/beam_theory.py.
-Changes against files-v2:
-  * equation numbers follow the SCHM manuscript (files-v2 used Eq. (6), (11),
-    (12), (13)-(15) of an older draft);
-  * three-load group: 2550 g leading, second load 500 mm behind, third a
-    further 250 mm behind (Section 3.1); files-v2 stated "spacings 250 and
-    500 mm" (reverse order).  The order does not change any integral;
-  * Simpson rule implemented explicitly per Eq. (12) with a 3/8 end panel
-    (files-v2 used scipy.integrate.simpson, whose odd-n treatment differs);
-  * FE solver extended with consistent mass and a moving-load vector.
+Three-load group as used here: 2550 g leading, second load 500 mm behind,
+third a further 250 mm behind; the order does not change any integral.
 
 Units: N, mm (EI in N mm^2, integrals in mm^2) unless stated otherwise.
 """

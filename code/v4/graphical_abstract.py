@@ -1,4 +1,4 @@
-"""Graphical abstract for the ASE submission (13.3 x 5 in), assembled from main-text
+"""Graphical abstract (13.3 x 5 in), assembled from main-text
 Fig. 1, Fig. 2 panel (a) and Fig. 7 panel (a). No new data or numbers: Figs. 1 and 2
 are cropped from the figure files in manuscript/ase/figures, and Fig. 7 panel (a) is
 re-plotted from code/theory2/logs/ident_static_scan.npz, the file written by
