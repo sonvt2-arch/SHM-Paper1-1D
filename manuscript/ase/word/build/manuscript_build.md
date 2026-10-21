@@ -350,7 +350,7 @@ This research did not receive any specific grant from funding agencies in the pu
 
 ### Data availability
 
-The field strain records analyzed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0; Moghadam and Sarlo, 2024). The Mây Bridge load test was performed by an author of this paper, and the authors are permitted to publish the processed data. The laboratory mean readings, the processed Mây Bridge data, the scripts with their logs and the derived data (CSV and NumPy files) are provided as Supplementary Material and archived on Zenodo (https://doi.org/10.5281/zenodo.23535533); the records behind Figs. S16 and S17 are not.
+The field strain records analyzed in Section 4 are publicly available in the NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0; Moghadam and Sarlo, 2024). The Mây Bridge load test was performed by an author of this paper, and the authors are permitted to publish the processed data. The laboratory mean readings and the processed Mây Bridge data are in the Supplementary Material; these data, the scripts with their logs and the derived data (CSV and NumPy files) are archived on Zenodo (https://doi.org/10.5281/zenodo.23535533); the records behind Figs. S16 and S17 are not.
 
 
 

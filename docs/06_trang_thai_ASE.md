@@ -83,6 +83,8 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 
 18. **21/10, Zenodo:** gói mã và dữ liệu (CC BY 4.0) ở `manuscript/ase/zenodo/`; thầy giữ chỗ DOI 10.5281/zenodo.23535533, đã điền vào Data availability của bài và thư (kiem_khoa chỉ thêm số DOI). Khoảng 11.993 từ quy đổi. Hướng dẫn nộp: `manuscript/ase/HUONG_DAN_NOP_ASE.md`. Zenodo đã Publish (https://zenodo.org/records/23535533; md5 trùng scripts.zip). Còn: thầy xem bản Word bằng Microsoft Word, rồi nộp.
 
+19. **21/10, khi nộp:** hệ thống ASE không nhận tệp .zip, nên không tải scripts.zip. Theo ý thầy, sửa Supplementary S11, thư và Data availability của bài: mã và dữ liệu nằm ở Zenodo (10.5281/zenodo.23535533, CC BY 4.0), số liệu phòng thí nghiệm và cầu Mây vẫn có trong bảng của Supplementary. Khoảng 11.996 từ quy đổi.
+
 ## 3. Cách dựng tệp Word
 
 ```bash

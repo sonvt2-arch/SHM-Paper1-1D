@@ -1,11 +1,11 @@
 # Gói nộp ASE (21/10/2026) — danh sách tệp (KHÔNG nộp tệp này)
 
-Dựng từ commit db943ad. Zip: ASE_submission_package.zip, md5 b55c85eea9cf9ec7842114dffc427b9a.
+Hệ thống ASE không nhận .zip; mã và dữ liệu ở Zenodo (10.5281/zenodo.23535533), bài, Supplementary (S11) và thư đã ghi như vậy.
 
-| Thư mục (loại tệp trên Sage) | Tệp | md5 |
+| Thư mục | Tệp | md5 |
 |---|---|---|
-| 1_Main_document | Manuscript_ASE.docx | 9e4558788bcb45a82e9d8f880d841640 |
-| 1_Main_document | Manuscript_ASE.pdf | 1f1bba0112a2709432b46880e6e71789 |
+| 1_Main_document | Manuscript_ASE.docx | 376ff4bdae21588ee5c2d6662c701b75 |
+| 1_Main_document | Manuscript_ASE.pdf | 14388b49bc4392deae86d20839bbb92e |
 | 2_Figures | Fig1_beams.pdf | e3016ea2143ae2f8e5859f69f28408a3 |
 | 2_Figures | Fig1_beams.png | 36d59c8002df5e503fab0d27e449bf95 |
 | 2_Figures | Fig2_obs_map_3span.pdf | fae30c573838d84548b5523efb7cae8f |
@@ -20,9 +20,8 @@ Dựng từ commit db943ad. Zip: ASE_submission_package.zip, md5 b55c85eea9cf9ec
 | 2_Figures | Fig6_caumay_channels.png | 03fd6cd1f4aa18227e0bd05fe6a1ae5b |
 | 2_Figures | Fig7_caumay_identifiability.pdf | 8424542ff10b37617b41f8e721f8aa91 |
 | 2_Figures | Fig7_caumay_identifiability.png | 93e411493531aba0de4fa8bfb2fcc366 |
-| 3_Supplementary_material | Supplementary_Material_ASE.docx | 248293501b92a4fff037833bfc8ce285 |
-| 3_Supplementary_material | Supplementary_Material_ASE.pdf | 1a67d6ccf1ff151685d5d4a80a40c155 |
-| 3_Supplementary_material | scripts.zip | b2a821fa7922192e280bc6bfd6d23255 |
-| 4_Cover_letter | Cover_Letter_ASE.docx | 0b18a26ed9b69d99babaaaeb71ebe9e1 |
-| 4_Cover_letter | Cover_Letter_ASE.pdf | 0b3283b050cbeb9c23f657736987a9fe |
+| 3_Supplementary_material | Supplementary_Material_ASE.docx | 48c844cea82b9828132aa18a1a0a6f20 |
+| 3_Supplementary_material | Supplementary_Material_ASE.pdf | 2c510e1fa21f46f5afabe6f99b0aa210 |
+| 4_Cover_letter | Cover_Letter_ASE.docx | f406863a325798a4d1bdffa002474f81 |
+| 4_Cover_letter | Cover_Letter_ASE.pdf | 1aba3fc08eb4b572ff0373101353ce28 |
 | 5_Graphical_abstract | GraphicalAbstract.png | cc15967342d0fdf956770b697d505246 |
