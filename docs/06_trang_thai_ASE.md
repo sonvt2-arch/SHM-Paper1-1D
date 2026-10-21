@@ -75,6 +75,8 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
    - đọc mù XII.13 lượt 13–16 (`docs/editors_v4/xii13_ase/phieu_v13.md` đến `phieu_v16.md`); lượt 16 không còn mục bắt buộc; tên cầu Gie Cục I đổi thành Giẽ theo thầy;
    - khoảng 11.975 từ quy đổi.
 
+15. **21/10, theo yêu cầu của thầy: thêm 2 bài JSTCE-HUCE.** Danh sách hiện có 0 bài của thầy (kiem_tu_trich 0/2); các bài đã đăng của thầy không bài nào về cầu hay cân xe, bài JSTCE của thầy (vu2026jstce) không liên quan nên không trích. Thầy chọn hai bài của tác giả khác (kiểm Crossref và OpenAlex, khớp tác giả, năm, tạp chí, tập, trang, DOI): Dang, Ho và Ha (2023), chẩn đoán suy giảm độ cứng dầm qua đường ảnh hưởng chuyển vị, 17(3V): 47–65 (Mở đầu, cạnh Zhou et al. 2026); Vu, Luong, Cu, Vu và Bui (2023), TLS đo độ võng cầu, 17(4): 14–25 (mục 6, kỹ thuật không tiếp xúc). Để giữ dưới trần, cắt khoảng 80 từ lặp ý ở mục 2.1, 2.2, 2.5, 3, 4, 5.2, 6 (không mất số liệu; kiem_khoa chỉ mất một câu trỏ "Section 5.1"). 57 tài liệu, khoảng 11.990 từ quy đổi. Đọc mù lượt 17.
+
 ## 3. Cách dựng tệp Word
 
 ```bash

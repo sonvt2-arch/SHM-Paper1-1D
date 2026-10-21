@@ -2,7 +2,7 @@
 
 | Tệp | Đường dẫn | Ghi chú |
 |---|---|---|
-| Bản thảo | `word/Manuscript_ASE.docx` (PDF kèm) | Nhan đề: "Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders"; khoảng 8.650 từ theo Word + 7 hình + 3 bảng đánh số + bảng ký hiệu ≈ 11.975 từ quy đổi (trần 12.000); thân bài khoảng 6.400 từ (thầy giữ "viết đủ"); tóm tắt khoảng 190 từ (viết lại 21/10); độ dễ đọc XII.14 D = 5; 6 từ khoá; 55 tài liệu (thêm Hao 2019, Zuo 2019, Lin 2023, Wang 2026 của ASE, kiểm ba nguồn; 20/10 thêm Hong 2016, Wu 2018, Sherman–Morrison 1950, Pukelsheim 2006, Yamaguchi 2009 của ASE, kiểm Crossref; tên tạp chí và sách in nghiêng), Sage Harvard |
+| Bản thảo | `word/Manuscript_ASE.docx` (PDF kèm) | Nhan đề: "Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders"; khoảng 8.650 từ theo Word + 7 hình + 3 bảng đánh số + bảng ký hiệu ≈ 11.990 từ quy đổi (trần 12.000); thân bài khoảng 6.400 từ (thầy giữ "viết đủ"); tóm tắt khoảng 190 từ (viết lại 21/10); độ dễ đọc XII.14 D = 5; 6 từ khoá; 57 tài liệu (thêm Hao 2019, Zuo 2019, Lin 2023, Wang 2026 của ASE, kiểm ba nguồn; 20/10 thêm Hong 2016, Wu 2018, Sherman–Morrison 1950, Pukelsheim 2006, Yamaguchi 2009 của ASE, kiểm Crossref; 21/10 thêm Dang 2023 và Vu 2023 của JSTCE-HUCE, kiểm Crossref và OpenAlex; tên tạp chí và sách in nghiêng), Sage Harvard |
 | Supplementary Material | `word/Supplementary_Material_ASE.docx` (PDF kèm) | Mục S1–S11, Bảng S1–S19 (S19 là Bảng 4 cũ: dự đoán thử tải động), Hình S1–S17 |
 | Thư gửi tạp chí | `word/Cover_Letter_ASE.docx` | Ngày nộp: 21 October 2026 |
 | Hình riêng (300 dpi) | `figures/Fig1–Fig7_*.png` (PDF vector kèm) | |
