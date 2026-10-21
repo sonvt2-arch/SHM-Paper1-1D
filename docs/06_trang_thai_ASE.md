@@ -77,6 +77,8 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 
 15. **21/10, theo yêu cầu của thầy: thêm 2 bài JSTCE-HUCE.** Danh sách hiện có 0 bài của thầy (kiem_tu_trich 0/2); các bài đã đăng của thầy không bài nào về cầu hay cân xe, bài JSTCE của thầy (vu2026jstce) không liên quan nên không trích. Thầy chọn hai bài của tác giả khác (kiểm Crossref và OpenAlex, khớp tác giả, năm, tạp chí, tập, trang, DOI): Dang, Ho và Ha (2023), chẩn đoán suy giảm độ cứng dầm qua đường ảnh hưởng chuyển vị, 17(3V): 47–65 (Mở đầu, cạnh Zhou et al. 2026); Vu, Luong, Cu, Vu và Bui (2023), TLS đo độ võng cầu, 17(4): 14–25 (mục 6, kỹ thuật không tiếp xúc). Để giữ dưới trần, cắt khoảng 80 từ lặp ý ở mục 2.1, 2.2, 2.5, 3, 4, 5.2, 6 (không mất số liệu; kiem_khoa chỉ mất một câu trỏ "Section 5.1"). 57 tài liệu, khoảng 11.983 từ quy đổi. Đọc mù lượt 17–18; lượt 18 chỉ còn mục địa chỉ (đóng theo VII.6).
 
+16. **21/10, theo yêu cầu của thầy: thư coi như bài độc lập.** Bỏ câu liệt kê các bài ASE mà bài trích và câu khai hai bài đang phản biện ở *Structures*. Đọc mù riêng thư (lượt 19): sửa "0.9–1.3 times design" thành "times the design value" ở thư và hai chỗ trùng trong bài (Tóm tắt, Kết luận 3); địa chỉ đóng theo VII.6. Bài khoảng 11.987 từ quy đổi.
+
 ## 3. Cách dựng tệp Word
 
 ```bash
