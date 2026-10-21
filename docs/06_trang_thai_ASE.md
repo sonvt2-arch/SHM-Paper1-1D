@@ -85,6 +85,8 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 
 19. **21/10, khi nộp:** hệ thống ASE không nhận tệp .zip, nên không tải scripts.zip. Theo ý thầy, sửa Supplementary S11, thư và Data availability của bài: mã và dữ liệu nằm ở Zenodo (10.5281/zenodo.23535533, CC BY 4.0), số liệu phòng thí nghiệm và cầu Mây vẫn có trong bảng của Supplementary. Khoảng 11.996 từ quy đổi.
 
+20. **21/10, thư theo VI.1:** viết lại phần trên của thư (vấn đề, việc làm và kết quả có số, lý do hợp tạp chí), bỏ danh sách đóng góp lặp tóm tắt; thân thư 402 từ, một trang (postprocess.py --letter: giãn dòng đơn). Đọc mù lượt 21: thêm "at" trong "nearly blind at 0.19–0.32" ở thư, Tóm tắt và Kết luận 1. Khoảng 11.998 từ quy đổi. Tóm tắt dán trên ScholarOne cần cập nhật chữ "at".
+
 ## 3. Cách dựng tệp Word
 
 ```bash

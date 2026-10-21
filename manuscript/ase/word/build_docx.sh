@@ -17,7 +17,7 @@ python3 "$W/postprocess.py" "$W/Supplementary_Material_ASE.docx"
 if [[ -f "$S/cover_letter_ASE.md" ]]; then
   pandoc "$S/cover_letter_ASE.md" -f markdown+hard_line_breaks --reference-doc="$B/reference.docx" \
     -o "$W/Cover_Letter_ASE.docx"
-  python3 "$W/postprocess.py" "$W/Cover_Letter_ASE.docx"
+  python3 "$W/postprocess.py" "$W/Cover_Letter_ASE.docx" --letter
 fi
 if [[ "${1:-}" == "--pdf" ]]; then
   for f in "$W"/*.docx; do soffice --headless --convert-to pdf --outdir "$W" "$f" >/dev/null 2>&1 || true; done

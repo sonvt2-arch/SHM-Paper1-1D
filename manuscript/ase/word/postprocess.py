@@ -156,6 +156,14 @@ for t in d.tables:
 for par in d.paragraphs:
     if par._p.findall(".//" + qn("w:br")) and par.alignment in (None, 3):
         par.paragraph_format.alignment = 0
+# cover letter: single spacing so that it fits on one page (Quy tac VI.1)
+if "--letter" in sys.argv:
+    from docx.shared import Pt
+    for par in d.paragraphs:
+        pf = par.paragraph_format
+        pf.line_spacing = 1.0
+        pf.space_after = Pt(6)
+        pf.space_before = Pt(0)
 # reference list: left aligned with a hanging indent (justification stretches DOIs)
 from docx.shared import Cm
 inref = False
