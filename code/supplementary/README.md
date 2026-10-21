@@ -1,6 +1,6 @@
 # Scripts and console output
 
-This archive holds the scripts, console logs and derived data behind the article *Blind loci and sensor layout for influence-area bridge weigh-in-motion on continuous girders* and its Supplementary Material. Table and figure numbers below are those of the article ("Fig. 3", "Table 2") and of the Supplementary Material ("Fig. S4", "Table S8").
+This archive holds the scripts, console logs and derived data behind the article *Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders* and its Supplementary Material. Table and figure numbers below are those of the article ("Fig. 3", "Table 2") and of the Supplementary Material ("Fig. S4", "Table S8").
 
 Paths are relative to the repository root (the `code/` folder of this archive). Logs and CSV files are the committed outputs of the scripts; every script is deterministic, so rerunning it regenerates them unchanged. Directory contents:
 

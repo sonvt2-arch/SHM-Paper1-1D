@@ -5,8 +5,11 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon, Circle
 
-OUT = os.path.join(os.path.dirname(__file__), "..", "..", "manuscript", "v4", "figures")
-plt.rcParams.update({"font.family": "serif", "mathtext.fontset": "cm", "font.size": 10})
+OUT = os.environ.get("FIG1_OUT",
+                     os.path.join(os.path.dirname(__file__), "..", "..", "manuscript", "v4", "figures"))
+LABELS = os.environ.get("FIG1_LABELS", "1") != "0"   # panel letters off for the graphical abstract
+plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Inter", "DejaVu Sans"],
+                     "font.size": 10})
 
 
 def pin(ax, x, y=0.0, s=0.12):
@@ -50,7 +53,8 @@ ax.text(L1 + 0.5 * L2, 0.13, r"$EI_2 = \gamma EI_1$", ha="center", va="bottom")
 dim(ax, 0, xs, -0.42, r"$\xi L_1$")
 dim(ax, 0, L1, -0.78, r"$L_1$ (instrumented)")
 dim(ax, L1, L1 + L2, -0.78, r"$L_2 = \lambda L_1$")
-ax.text(-0.45, 0.25, "(a)", fontsize=11)
+if LABELS:
+    ax.text(-0.45, 0.25, "(a)", fontsize=11)
 
 # (b) symmetric three-span beam
 ax = axs[1]
@@ -67,7 +71,8 @@ dim(ax, 0, xs, -0.42, r"$\xi L_\mathrm{side}$")
 dim(ax, x[0], x[1], -0.78, r"$L_\mathrm{side}$")
 dim(ax, x[1], x[2], -0.78, r"$L_\mathrm{main} = \beta L_\mathrm{side}$")
 dim(ax, x[2], x[3], -0.78, r"$L_\mathrm{side}$")
-ax.text(-0.45, 0.25, "(b)", fontsize=11)
+if LABELS:
+    ax.text(-0.45, 0.25, "(b)", fontsize=11)
 
 for ax in axs:
     ax.set_xlim(-0.6, 8.2)

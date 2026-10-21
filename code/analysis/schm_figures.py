@@ -40,7 +40,8 @@ plt.rcParams.update({
     "font.size": 8, "axes.labelsize": 8, "axes.titlesize": 8, "legend.fontsize": 7,
     "xtick.labelsize": 7, "ytick.labelsize": 7, "axes.linewidth": 0.6,
     "pdf.fonttype": 42, "ps.fonttype": 42, "savefig.bbox": "tight",
-    "savefig.pad_inches": 0.02, "font.family": "DejaVu Sans",
+    "savefig.pad_inches": 0.02, "font.family": "sans-serif",
+    "font.sans-serif": ["Inter", "DejaVu Sans"],
 })
 W2 = 7.0      # double-column width (in)
 DISP = {"Gie Cuc I": "Gie Cục I", "Phuong Do": "Phương Độ"}   # names as printed in figures
@@ -92,7 +93,7 @@ def fig3_obs_map():
     ax[0].set_xlabel(r"span ratio $\beta = L_\mathrm{main}/L_\mathrm{side}$")
     ax[0].set_ylabel(r"side-span sensor position $\xi = x/L_\mathrm{side}$")
     ax[0].set_title("(a) symmetric beam, uniform $EI$", loc="left")
-    ax[0].legend(loc="lower left", frameon=True, framealpha=0.9)
+    ax[0].legend(loc="lower left", bbox_to_anchor=(0.0, 0.06), frameon=True, framealpha=0.9)
     cb = fig.colorbar(cs, ax=ax[0], ticks=[-1.5, -1, -0.5, 0, 0.5, 1, 1.5])
     cb.set_label(r"$N_w = 192EI_\mathrm{side}C_m/L_\mathrm{side}^4$")
 
@@ -104,7 +105,7 @@ def fig3_obs_map():
     ax[1].set_xlabel(r"$L_1/L_2$ (instrumented side span)")
     ax[1].set_ylabel(r"$L_3/L_2$ (far side span)")
     ax[1].set_title("(b) asymmetric beam, sensor at mid span 1", loc="left")
-    ax[1].legend(loc="upper left", frameon=True, framealpha=0.9)
+    ax[1].legend(loc="lower right", frameon=True, framealpha=0.9)
     cb2 = fig.colorbar(cs2, ax=ax[1], ticks=[-1.5, -1, -0.5, 0, 0.5, 1, 1.5])
     cb2.set_label(r"$192EI_1C_m/L_1^4$")
     save(fig, "Fig3_obs_map_3span")

@@ -1,14 +1,14 @@
-# Tổng quan hiện trạng dự án SHM-Paper1-1D (cập nhật 20/10/2026, tạm dừng)
+# Tổng quan hiện trạng dự án SHM-Paper1-1D (cập nhật 21/10/2026)
 
 ## 1. Bài báo
 
-- **Nhan đề:** "Blind loci and sensor layout for influence-area bridge weigh-in-motion on continuous girders"
+- **Nhan đề:** "Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders"
 - **Tác giả:** Quoc-Bao Nguyen, Thai-Son Vu (tác giả liên hệ)
 - **Tạp chí đích:** Advances in Structural Engineering (Sage).
   - Loại bài: Original Research Article; không thu phí, không Gold OA.
   - Trần độ dài: 12.000 từ quy đổi (số từ Word + 300 cho mỗi hình hoặc bảng).
 - **Trạng thái: sẵn sàng nộp, CHƯA nộp.**
-  - Ngày nộp ghi trong thư: 20 October 2026; nếu nộp muộn thì sửa ngày này.
+  - Ngày nộp ghi trong thư: 21 October 2026; nếu nộp muộn thì sửa ngày này.
   - Trước khi bấm nộp, thầy còn ba việc (mục 6).
 
 ### Nội dung chính
@@ -39,12 +39,12 @@ Phần kiểm chứng:
 
 | Chỉ tiêu | Giá trị |
 |---|---|
-| Số từ Word | ≈ 8.600 |
+| Số từ Word | ≈ 8.650 |
 | Hình | 7 |
 | Bảng | 3 bảng đánh số + bảng ký hiệu |
-| Số từ quy đổi | ≈ 11.900 |
+| Số từ quy đổi | ≈ 11.975 (python-docx, cả bảng, +28, +300 × 11) |
 | Thân bài (Tóm tắt đến Kết luận) | ≈ 6.400 từ; thầy chọn "viết đủ", bỏ mặc định III.19 |
-| Tóm tắt | ≈ 180 từ (đếm thô cả ký hiệu toán); có thể vượt mức ~150 biên tập viên nêu |
+| Tóm tắt | ≈ 190 từ (đếm thô cả ký hiệu toán), viết lại 21/10 theo ba kết quả First/Second/Third; có thể vượt mức ~150 biên tập viên nêu |
 | Danh mục tài liệu | 55 bài, Sage Harvard, tên tạp chí và sách in nghiêng |
 | Supplementary | Mục S1–S11, Bảng S1–S19, Hình S1–S17 |
 | Độ dễ đọc XII.14 | D = 5 (chỉ để báo cáo) |
@@ -112,11 +112,7 @@ Trạng thái chi tiết theo từng ngày: `docs/06_trang_thai_ASE.md`.
    - mở `Manuscript_ASE.docx` bằng Microsoft Word thật, xem công thức, bảng, hình (mới xem bằng LibreOffice);
    - xem toàn văn Hong et al. (2016) và Wu et al. (2018), vì chỉ trích theo nghĩa rộng, Crossref không có tóm tắt;
    - lấy đường dẫn nộp từ trang ASE trên Sage (journals.sagepub.com/home/ase, mục Submit) rồi nộp.
-2. **Mục nhẹ chưa sửa** (danh sách trong `hostile_audit_v2/00_tong_hop.md`):
-   - Bảng S1 thiếu một số ký hiệu (A⁻, C̄, ν, ξ0, μ_crit…);
-   - PDF in nghiêng các chỉ số "tot, ref";
-   - vài lỗi nhỏ trong hình: chữ chồng ở Hình 2b và S8, nhãn "(a)" thừa ở graphical abstract, font chưa đồng nhất;
-   - S3 ghi "factor 1.5–6.6", thiếu trường hợp 8.1.
+2. **Mục nhẹ:** đã sửa hết ngày 21/10 (Bảng S1 thêm ký hiệu; chỉ số chữ đứng trong PDF; chữ chồng ở Hình 2b, S8; nhãn thừa và tiêu đề ô phải của graphical abstract; font Inter cho Hình 1, 2, S8, S16, S17; 'fiber' ở S12; S3 ghi rõ dải 2–160 m).
 3. **Không có dữ liệu nên chưa sửa:** độ lặp của đồng hồ so ở thử tải cầu Mây; tải trọng và thứ tự từng quả nặng trong thí nghiệm.
 4. **Nếu muốn nâng độ dễ đọc** (D = 5, mục tiêu 7): phải bỏ bớt số khỏi thân bài hoặc dựng thân bài ngắn theo III.19, khoảng 5.000–5.500 từ. Thầy đã chọn không làm cho lần nộp này.
 5. **Sau khi nộp:** theo dõi phản hồi. Nếu bị trả, phương án dự phòng là JBE hoặc SIE; bảng so sánh ở `docs/editors_v4/journals/`.

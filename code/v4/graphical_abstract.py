@@ -6,7 +6,9 @@ code/theory2/ident_static.py together with Fig. 7, with the same plotting comman
 Run after gc/schm/ident_static figures are current:  python3 code/v4/graphical_abstract.py
 """
 import os
+import subprocess
 import sys
+import tempfile
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -52,8 +54,21 @@ def left_panel(img, lo=0.45, hi=0.60, thr=0.97):
     return img[:, :cut]
 
 
-fig1 = trim(mpimg.imread(os.path.join(F, "Fig1_beams.png")))
-fig2a = trim(left_panel(mpimg.imread(os.path.join(F, "Fig2_obs_map_3span.png"))))
+def drop_title(img, thr=0.97):
+    """Remove the panel title above the axes: cut at the first blank row below the top ink."""
+    ink = (img[..., :3] < thr).any(axis=2).any(axis=1)
+    r = int(np.argmax(ink))
+    while r < img.shape[0] and ink[r]:
+        r += 1
+    return img[r:]
+
+
+# Fig. 1 redrawn by its own script without the panel letters (a), (b)
+with tempfile.TemporaryDirectory() as tmp:
+    subprocess.run([sys.executable, os.path.join(HERE, "fig1_beams.py")], check=True,
+                   env={**os.environ, "FIG1_OUT": tmp, "FIG1_LABELS": "0"})
+    fig1 = trim(mpimg.imread(os.path.join(tmp, "Fig1_beams.png")))
+fig2a = trim(drop_title(trim(left_panel(mpimg.imread(os.path.join(F, "Fig2_obs_map_3span.png"))))))
 
 fig = plt.figure(figsize=(13.3, 5.0))
 gs = fig.add_gridspec(1, 3, width_ratios=[1.32, 1.0, 0.92], left=0.006, right=0.992,
@@ -82,17 +97,17 @@ ax.axvline(1.199e8 / 0.716, color="#3b6fb6", ls=":", lw=1.2); ax.text(1.68e8, 1.
 ax.set_ylabel("$r_{87}$ = (meas/pred)$_{N8}$ / (meas/pred)$_{N7}$")
 ax.set_xlabel("$\\kappa = k/\\alpha$ (kN m/rad)")
 ax.set_ylim(0.98, 1.16)
-ax.legend(fontsize=8.5, loc="lower right")
+ax.legend(fontsize=8, loc="lower right", bbox_to_anchor=(1.0, 0.15), framealpha=0.95)
 ax.set_title("misfit ratio of Mây Bridge gauges N8 and N7", loc="left")
 
 heads = ["Continuous girder: influence lines change sign,\nso the record integral can vanish",
          "Closed-form blind loci and near-blind bands\nguide channel placement",
-         "In-service box girder: pier stiffness\ncontrols the side-span constant"]
+         "In-service box girder: static readings bound\npier stiffness only from below"]
 for a, t in zip((a1, a2, ax), heads):
     bb = gs[[a1, a2, ax].index(a)].get_position(fig)
     fig.text((bb.x0 + bb.x1) / 2, 0.80, t, ha="center", va="center", fontsize=14,
              fontweight="semibold", color="#1f3a5f")
-fig.suptitle("Blind loci and sensor layout for influence-area bridge weigh-in-motion on continuous girders",
+fig.suptitle("Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders",
              fontsize=16, fontweight="bold", y=0.975)
 out = os.path.join(F, "GraphicalAbstract.png")
 fig.savefig(out, dpi=300, bbox_inches="tight", pad_inches=0.08)

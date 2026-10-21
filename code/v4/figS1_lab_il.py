@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "lab_single_load_influence_line.csv")
 OUT = os.path.join(HERE, "figures", "FigS8_lab_influence_line.png")
-plt.rcParams.update({"font.family": "serif", "mathtext.fontset": "cm", "font.size": 10})
+plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Inter", "DejaVu Sans"],
+                     "font.size": 10})
 
 x, ana, mea = [], [], []
 with open(DATA, newline="") as f:
@@ -25,9 +26,9 @@ ax.plot(x, mea, "o", ms=4, mfc="white", mec="C3", label="measured")
 ax.set_xlabel("load position $x$ (m)")
 ax.set_ylabel("mid-span deflection of span 1 (mm)")
 ax.set_xlim(0, 5)
-ax.legend(frameon=False)
+ax.legend(frameon=False, loc="upper right")
 ax.text(1.6, -0.8, "span 1", ha="center")
-ax.text(3.75, 2.4, "span 2", ha="center")
+ax.text(3.3, 2.4, "span 2", ha="center")
 fig.tight_layout()
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 fig.savefig(OUT, dpi=300)

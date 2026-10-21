@@ -67,6 +67,14 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 12. **20/10, hostile audit lần 2** (8 vai; `docs/editors_v4/hostile_audit_v2/00_tong_hop.md`): 9 lỗi chặn đã sửa (điểm mù độ võng ở nhịp giữa dầm ba nhịp gần bằng nhau, chú thích Hình 6 và 3, phạm vi tóm tắt và đóng góp (ii), hai lỗi làm tròn, PDF lỗi ký tự); theo ý thầy: 6.6 ghi "base model" kèm dải biến thể 2.6–16/1.3–1.6, thêm 5 tài liệu, Bảng 4 thành Bảng S19, gỡ cầu Thái Bình khỏi scripts.zip (log của bài không đổi số). Đọc mù lượt 11: 3 bắt buộc đã xử lý. Khoảng 11.996 từ quy đổi.
 13. **20/10, chấm độ dễ đọc XII.14** (`docs/editors_v4/xii14_ase/`): D 4,5 -> 5 sau khi sửa có mục tiêu; đọc mù XII.13 lượt 12, 2 bắt buộc đã sửa. Thân bài khoảng 6.400 từ (III.19: 4.500–5.000); thầy chọn **giữ "viết đủ", nộp bản này** (khoảng 11.900 từ quy đổi, dưới trần 12.000 của ASE).
 
+14. **21/10, theo yêu cầu của thầy:**
+   - viết lại Tóm tắt (ba kết quả First/Second/Third, khoảng 190 từ), đoạn đóng góp ở Mở đầu (ba ý có tên: chỗ mù, chỗ đặt cảm biến, ảnh hưởng của độ cứng trụ; nói rõ mức đóng góp là bộ tiêu chí thiết kế, không phải thuật toán cân mới) và Kết luận (câu dẫn, năm ý có tên, câu chốt mức đóng góp; bỏ câu phụ về $N_M$ và $R$ ở ý 2). Bỏ khỏi Tóm tắt câu thí nghiệm trong phòng và câu thiết bị đo nghiêng trụ (vẫn có ở Mở đầu và Kết luận 3). Không thêm số mới (kiem_khoa đạt);
+   - đổi nhan đề thành "Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders" (bài, Supplementary, thư, graphical abstract, README);
+   - sửa các mục nhẹ của hostile audit lần 2: Bảng S1 thêm ký hiệu; S3 ghi dải 2–160 m và định nghĩa entry shift; PDF in đứng chỉ số chữ (postprocess.py thêm m:nor); vẽ lại Hình 1, 2, S8, S12, S16, S17 bằng font Inter, dời chú giải ở Hình 2b và S8, "fiber" ở S12; graphical abstract bỏ nhãn "(a)/(b)", đổi tiêu đề ô phải theo câu ở mục 5.2. scripts.zip thay đúng các script đó (log không đổi);
+   - ngày trong thư: 21 October 2026;
+   - đọc mù XII.13 lượt 13–15 (`docs/editors_v4/xii13_ase/phieu_v13.md`, `phieu_v14.md`, `phieu_v15.md`);
+   - khoảng 11.975 từ quy đổi.
+
 ## 3. Cách dựng tệp Word
 
 ```bash

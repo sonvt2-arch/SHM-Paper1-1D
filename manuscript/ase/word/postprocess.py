@@ -113,6 +113,14 @@ for parent in list(d.element.body.iter(M + "sub", M + "sup", M + "e", M + "oMath
                 break
             ta.text += tb.text
             nb = b.getnext(); parent.remove(b); b = nb
+# multi-letter upright words in math (tot, ref, max, Var) also as normal text: LibreOffice's
+# OMML import ignores sty p and would set them in italic in the PDF; Word shows them upright either way
+for r in d.element.body.iter(M + "r"):
+    pr, t_ = r.find(M + "rPr"), r.find(M + "t")
+    if pr is None or t_ is None or pr.find(M + "sty") is None or pr.find(M + "nor") is not None:
+        continue
+    if (t_.text or "").isalpha() and len(t_.text) > 1:
+        pr.append(OxmlElement("m:nor"))
 # table titles stay with their table; figures stay with their captions
 for par in d.paragraphs:
     if re.match(r"Table S?\d+\.", par.text.strip()):

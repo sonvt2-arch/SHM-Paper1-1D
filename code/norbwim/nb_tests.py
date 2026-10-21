@@ -328,7 +328,7 @@ for a in ax:
 for a, lt in zip(ax, "abc"):
     a.set_title(f"({lt})", loc="left", fontsize=8)
 ax[0].set_ylabel(r"$M_q(x)/M_q(x_s)$")
-ax[1].set_ylabel(r"$C_\varepsilon(x)/C_\varepsilon(x_s)$ (top fibre)")
+ax[1].set_ylabel(r"$C_\varepsilon(x)/C_\varepsilon(x_s)$ (top fiber)")
 ax[2].set_ylabel(r"$\sigma_W/W$ (%) for W = 25 t")
 ax[2].set_xlabel("x along bridge (m); red = gauges (mid-span 2), dotted = zero-moment points")
 ax[2].axhline(5, color="0.5", lw=0.5)
