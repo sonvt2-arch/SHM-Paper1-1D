@@ -34,3 +34,7 @@ Ghi chú: các chỗ sửa sau lượt 8 (5 cụm, không đổi số; kiem_khoa
 | 18 | `phieu_v18.md` | 1 | Đóng theo VII.6 (địa chỉ không dấu) | 5 | Giữ (lượt cuối) |
 
 Ghi chú: lượt 17–18 chạy sau khi thêm 2 bài JSTCE-HUCE (Dang et al. 2023; Vu et al. 2023) và cắt khoảng 90 từ lặp ý để giữ dưới 12 000 từ quy đổi (11 983).
+| 19 | `phieu_v19_thu.md` | 2 | Sửa 1 ("times the design value"), đóng 1 (VII.6) | 5 | Giữ |
+| 20 | `phieu_v20.md` | 3 | Sửa 2 (Acknowledgments; conflicting interests), đóng 1 (Matuso theo Crossref) | 4 | Giữ (lượt cuối) |
+
+Ghi chú: lượt 20 chạy sau hostile audit lần 3 (`docs/editors_v4/hostile_audit_v3/00_tong_hop.md`).

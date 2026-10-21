@@ -2,7 +2,7 @@
 
 | Tệp | Đường dẫn | Ghi chú |
 |---|---|---|
-| Bản thảo | `word/Manuscript_ASE.docx` (PDF kèm) | Nhan đề: "Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders"; khoảng 8.650 từ theo Word + 7 hình + 3 bảng đánh số + bảng ký hiệu ≈ 11.987 từ quy đổi (trần 12.000); thân bài khoảng 6.400 từ (thầy giữ "viết đủ"); tóm tắt khoảng 190 từ (viết lại 21/10); độ dễ đọc XII.14 D = 5; 6 từ khoá; 57 tài liệu (thêm Hao 2019, Zuo 2019, Lin 2023, Wang 2026 của ASE, kiểm ba nguồn; 20/10 thêm Hong 2016, Wu 2018, Sherman–Morrison 1950, Pukelsheim 2006, Yamaguchi 2009 của ASE, kiểm Crossref; 21/10 thêm Dang 2023 và Vu 2023 của JSTCE-HUCE, kiểm Crossref và OpenAlex; tên tạp chí và sách in nghiêng), Sage Harvard |
+| Bản thảo | `word/Manuscript_ASE.docx` (PDF kèm) | Nhan đề: "Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders"; khoảng 8.650 từ theo Word + 7 hình + 3 bảng đánh số + bảng ký hiệu ≈ 11.988 từ quy đổi (trần 12.000); thân bài khoảng 6.400 từ (thầy giữ "viết đủ"); tóm tắt khoảng 190 từ (viết lại 21/10); độ dễ đọc XII.14 D = 5; 6 từ khoá; 57 tài liệu (thêm Hao 2019, Zuo 2019, Lin 2023, Wang 2026 của ASE, kiểm ba nguồn; 20/10 thêm Hong 2016, Wu 2018, Sherman–Morrison 1950, Pukelsheim 2006, Yamaguchi 2009 của ASE, kiểm Crossref; 21/10 thêm Dang 2023 và Vu 2023 của JSTCE-HUCE, kiểm Crossref và OpenAlex; tên tạp chí và sách in nghiêng), Sage Harvard |
 | Supplementary Material | `word/Supplementary_Material_ASE.docx` (PDF kèm) | Mục S1–S11, Bảng S1–S19 (S19 là Bảng 4 cũ: dự đoán thử tải động), Hình S1–S17 |
 | Thư gửi tạp chí | `word/Cover_Letter_ASE.docx` | Ngày nộp: 21 October 2026; thư không nhắc bài báo nào khác (theo thầy) |
 | Hình riêng (300 dpi) | `figures/Fig1–Fig7_*.png` (PDF vector kèm) | |
@@ -18,3 +18,6 @@ Khi nộp trên Sage Track: loại bài Original Research Article; nhập ORCID 
 Cần cài `libreoffice-math` trước khi dựng PDF (build_docx.sh báo lỗi nếu PDF thiếu công thức). Hostile audit 19/10: `docs/editors_v4/hostile_audit/`. Hostile audit lần 2 (20/10, 8 vai): `docs/editors_v4/hostile_audit_v2/00_tong_hop.md`; đọc mù XII.13 lượt 11. Cổng 4 (20/10): vòng 1 cả 4 BTV "sửa rồi gửi", vòng 2 cả 4 BTV "gửi phản biện" (`docs/editors_v4/gate4_ase/`).
 
 Trang nộp: thầy kiểm lại đường dẫn từ trang tạp chí trên Sage (https://journals.sagepub.com/home/ase, mục Submit); em chưa mở được https://mc.manuscriptcentral.com/AISE vì bị chặn.
+
+
+KHÔNG tải lên tạp chí: `submission_checklist.md`, `figure_map.md`, thư mục `word/build/`, `tools/` và các script dựng tệp. Chỉ tải: `word/Manuscript_ASE.docx`, `word/Supplementary_Material_ASE.docx`, `word/Cover_Letter_ASE.docx`, các hình trong `figures/` (và `figures/GraphicalAbstract.png` nếu muốn), `word/scripts.zip`.

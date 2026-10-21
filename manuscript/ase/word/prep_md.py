@@ -17,7 +17,7 @@ tl = title.strip().split("\n", 1)
 tb = re.sub(r"(?m)^---\s*$", "", tl[1]).strip()
 title = "::: {custom-style=\"Title\"}\n" + tl[0].lstrip("# ").strip() + "\n:::\n\n::: {custom-style=\"Title block\"}\n" + tb + "\n:::\n\n"
 blocks = rest.split("\n\n")
-body_end = next(i for i, b in enumerate(blocks) if b.startswith("## Acknowledgements"))
+body_end = next(i for i, b in enumerate(blocks) if b.startswith(("## Acknowledgments", "## Acknowledgements")))
 placed = set()
 def size(f):
     # 14 cm wide, but tall figures are capped at 12 cm high so they fit the

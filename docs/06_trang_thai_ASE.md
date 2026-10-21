@@ -79,6 +79,8 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 
 16. **21/10, theo yêu cầu của thầy: thư coi như bài độc lập.** Bỏ câu liệt kê các bài ASE mà bài trích và câu khai hai bài đang phản biện ở *Structures*. Đọc mù riêng thư (lượt 19): sửa "0.9–1.3 times design" thành "times the design value" ở thư và hai chỗ trùng trong bài (Tóm tắt, Kết luận 3); địa chỉ đóng theo VII.6. Bài khoảng 11.987 từ quy đổi.
 
+17. **21/10, hostile audit lần 3 gọn** (dấu vết AI, Crossref, soát chữ; `docs/editors_v4/hostile_audit_v3/00_tong_hop.md`): sửa lỗi ngoặc trong PDF (bỏ m:sepChr rỗng), căn trái khối địa chỉ trong thư, câu "Such criteria" thiếu tiền ngữ, chữ viết tắt tên đệm và in nghiêng trong danh mục, bố cục bảng và hình, chữ d vi phân in đứng, app.xml, dấu vết quy trình trong scripts.zip; đọc mù lượt 20: "Acknowledgments", "Declaration of conflicting interests". Khoảng 11.988 từ quy đổi. Không nộp các tệp nội bộ (submission_checklist.md, figure_map.md, word/build/, tools/).
+
 ## 3. Cách dựng tệp Word
 
 ```bash

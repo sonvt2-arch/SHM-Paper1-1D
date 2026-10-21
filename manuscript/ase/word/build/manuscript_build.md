@@ -316,7 +316,7 @@ The contribution is thus a set of design criteria for choosing channels and loca
 
 
 
-## Acknowledgements
+## Acknowledgments
 
 The authors gratefully acknowledge the Laboratory of Transportation Technology and Systems, Faculty of Bridge and Road Engineering, Hanoi University of Civil Engineering, for providing the test facilities used in this study, and A. Moghadam and R. Sarlo for making the NOR-BWIM dataset publicly available. They also thank the Hải Dương provincial project management unit and Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy) for permission to use the acceptance-test data of the Mây Bridge.
 
@@ -340,7 +340,7 @@ Not applicable.
 
 Not applicable.
 
-### Declaration of conflicting interest
+### Declaration of conflicting interests
 
 The Mây Bridge load test analyzed in Section 5 was performed by an author of this paper (Q.-B. Nguyen) as part of inspection work carried out by Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy). The authors declare that there is no other conflict of interest regarding the publication of this article.
 
