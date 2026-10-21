@@ -9,7 +9,7 @@
 | Graphical abstract | `figures/GraphicalAbstract.png` | Ghép từ Hình 1, 2, 7 (`code/v4/graphical_abstract.py`); nộp như tệp tuỳ chọn |
 | Gói mã | `word/scripts.zip` | 220 mục (195 tệp; đã gỡ cầu Thái Bình, mã Drive, [NEED VALUE], wp7b_checks.py; nhãn tiếng Anh); `run_all.sh --all`; README theo số của bài |
 
-Đã kiểm: số liệu so với v4.4 (kiem_khoa, không có số mới); kiểm sau cắt; tự trích dẫn trong trần 2 (kiem_tu_trich: 0 bài trong danh sách của thầy; Nguyen et al. 2024 là bài của đồng tác giả Quoc-Bao Nguyen); đọc mù chuẩn mực 14 lượt (`docs/editors_v4/xii13_ase/`; lượt 13–14 ngày 21/10); chạy lại toàn bộ mã khớp log.
+Đã kiểm: số liệu so với v4.4 (kiem_khoa, không có số mới); kiểm sau cắt; tự trích dẫn trong trần 2 (kiem_tu_trich: 0 bài trong danh sách của thầy; Nguyen et al. 2024 là bài của đồng tác giả Quoc-Bao Nguyen); đọc mù chuẩn mực 16 lượt (`docs/editors_v4/xii13_ase/`; lượt 13–16 ngày 21/10, lượt cuối 0 bắt buộc); chạy lại toàn bộ mã khớp log.
 
 Tác giả: Quoc-Bao Nguyen, Thai-Son Vu (liên hệ). Chính tả lối Mỹ (Quy tắc V.1). Khai báo AI nằm trong Acknowledgements theo chính sách Sage.
 

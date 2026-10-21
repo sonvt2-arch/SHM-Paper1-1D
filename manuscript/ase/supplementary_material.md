@@ -438,6 +438,6 @@ The archive `scripts.zip` contains the analysis scripts and the console output o
 
 **Fig. S15.** Mây Bridge: static misfit over the effective-to-design rigidity ratio $\alpha$ and the pier stiffness $k$, with contours of the third vertical frequency equal to the measured values: dashed 3.43 Hz, solid 3.64 Hz; green, red and blue for low, base and high mass. Yellow: first-frequency contours (base mass). White dotted line: best static fit $\alpha^*(\kappa)$. Open circle A: calibration A; filled circle A′: best static $\alpha$ at the design $k$; square B: calibration B. Gray scale: maximum static misfit; the 5.27 % level is $\tau$ (5.3 % in the text).
 
-**Fig. S16.** Deflection records of two simply supported bridges (Gie Cục I and Phương Độ): deviation of the event integral from a linear pre/post baseline for several baseline treatments and high-pass filters.
+**Fig. S16.** Deflection records of two simply supported bridges (Giẽ and Phương Độ): deviation of the event integral from a linear pre/post baseline for several baseline treatments and high-pass filters.
 
 **Fig. S17.** The same records: (a) deflection relative to the linear baseline, unfiltered and low-pass filtered at 2 Hz; (b) dynamic residual removed by the low-pass filter.

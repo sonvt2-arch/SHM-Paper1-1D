@@ -72,7 +72,7 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
    - đổi nhan đề thành "Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders" (bài, Supplementary, thư, graphical abstract, README);
    - sửa các mục nhẹ của hostile audit lần 2: Bảng S1 thêm ký hiệu; S3 ghi dải 2–160 m và định nghĩa entry shift; PDF in đứng chỉ số chữ (postprocess.py thêm m:nor); vẽ lại Hình 1, 2, S8, S12, S16, S17 bằng font Inter, dời chú giải ở Hình 2b và S8, "fiber" ở S12; graphical abstract bỏ nhãn "(a)/(b)", đổi tiêu đề ô phải theo câu ở mục 5.2. scripts.zip thay đúng các script đó (log không đổi);
    - ngày trong thư: 21 October 2026;
-   - đọc mù XII.13 lượt 13–15 (`docs/editors_v4/xii13_ase/phieu_v13.md`, `phieu_v14.md`, `phieu_v15.md`);
+   - đọc mù XII.13 lượt 13–16 (`docs/editors_v4/xii13_ase/phieu_v13.md` đến `phieu_v16.md`); lượt 16 không còn mục bắt buộc; tên cầu Gie Cục I đổi thành Giẽ theo thầy;
    - khoảng 11.975 từ quy đổi.
 
 ## 3. Cách dựng tệp Word

@@ -21,3 +21,12 @@ Trước lượt xác nhận: chạy `kiem_khoa.py` giữa bản trước và sa
 | 8 | `phieu_v8.json` | 2 | Sửa cả 2 ("mean-weight predictor"; 0.0000 ở Bảng S4) | 3 | Thầy cho sửa cả 3 rồi chốt, không chạy thêm lượt đọc |
 
 Ghi chú: các chỗ sửa sau lượt 8 (5 cụm, không đổi số; kiem_khoa đạt) nằm sau lượt đọc cuối, theo quyết định của thầy.
+
+## Vòng đọc ngày 21/10 (sau khi viết lại Tóm tắt, đóng góp, Kết luận; đổi nhan đề; sửa mục nhẹ)
+
+| Lượt | Phiếu | Bắt buộc | Xử lý | Cân nhắc | Xử lý |
+|---|---|---|---|---|---|
+| 13 | `phieu_v13.md` | 4 | Sửa cả 4 (thuật ngữ rigidity ratio cho α; ký hiệu x ở Bảng S1; MAE; 12 000) | 6 | Thầy cho sửa 5, giữ 1 |
+| 14 | `phieu_v14.md` | 3 | Sửa 1 (OIML); đóng 2 theo nguồn (Matuso theo Crossref; địa chỉ theo VII.6) | 3 | Thầy cho sửa 2, giữ 1 |
+| 15 | `phieu_v15.md` | 2 | Sửa cả 2 (tên cầu Giẽ theo thầy; dấu câu danh sách trong thư) | 5 | Thầy cho sửa 4, giữ 1; thầy mở thêm lượt 16 |
+| 16 | `phieu_v16.md` | 0 | | 4 | Giữ (lượt cuối) |

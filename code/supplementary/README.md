@@ -147,4 +147,4 @@ Run them from the repository root, or use `run_all.sh --with-analysis`. Their lo
 
 - The laboratory raw records (each deflection is the mean of three cycles; only the means in Table S5 exist in the repository).
 - The Abaqus model of the laboratory beam. The Hermite FE in `beam_theory.py` stands in for it; cubic elements are nodally exact, so both give the same nodal influence line.
-- The raw NOR-BWIM records (available from the dataset DOI above; place them in `data/public/norbwim_figshare26880898/`) and the raw dynamic records of the Gie Cục I and Phương Độ bridges (Figs. S16 and S17).
+- The raw NOR-BWIM records (available from the dataset DOI above; place them in `data/public/norbwim_figshare26880898/`) and the raw dynamic records of the Giẽ and Phương Độ bridges (Figs. S16 and S17).

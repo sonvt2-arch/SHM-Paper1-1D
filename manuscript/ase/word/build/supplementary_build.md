@@ -475,7 +475,7 @@ The authors' deflection records from two simply supported bridges showed post-mi
 :::
 
 ::: {custom-style="Caption justified"}
-**Figure S16.** Deflection records of two simply supported bridges (Gie Cục I and Phương Độ): deviation of the event integral from a linear pre/post baseline for several baseline treatments and high-pass filters.
+**Figure S16.** Deflection records of two simply supported bridges (Giẽ and Phương Độ): deviation of the event integral from a linear pre/post baseline for several baseline treatments and high-pass filters.
 :::
 
 ::: {custom-style="Figure"}

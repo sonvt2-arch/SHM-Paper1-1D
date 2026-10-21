@@ -44,7 +44,7 @@ plt.rcParams.update({
     "font.sans-serif": ["Inter", "DejaVu Sans"],
 })
 W2 = 7.0      # double-column width (in)
-DISP = {"Gie Cuc I": "Gie Cục I", "Phuong Do": "Phương Độ"}   # names as printed in figures
+DISP = {"Gie Cuc I": "Giẽ", "Phuong Do": "Phương Độ"}   # names as printed in figures
 VALUES = []   # (figure, quantity, value) for traceability
 
 
