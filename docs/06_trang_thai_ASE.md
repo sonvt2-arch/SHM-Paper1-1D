@@ -87,6 +87,8 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 
 20. **21/10, thư theo VI.1:** viết lại phần trên của thư (vấn đề, việc làm và kết quả có số, lý do hợp tạp chí), bỏ danh sách đóng góp lặp tóm tắt; thân thư 402 từ, một trang (postprocess.py --letter: giãn dòng đơn). Đọc mù lượt 21: thêm "at" trong "nearly blind at 0.19–0.32" ở thư, Tóm tắt và Kết luận 1. Khoảng 11.998 từ quy đổi. Tóm tắt dán trên ScholarOne cần cập nhật chữ "at".
 
+21. **21/10/2026: ĐÃ NỘP.** Mã bài ASE-26-1194. Trước khi bấm nộp đã kiểm bản duyệt (proof) của hệ thống: bài và Supplementary là bản mới, đủ 7 hình, công thức đúng; sửa ô Abstract thêm "at". Hệ thống không nhận scripts.zip; mã và dữ liệu ở Zenodo.
+
 ## 3. Cách dựng tệp Word
 
 ```bash

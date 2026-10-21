@@ -7,7 +7,7 @@
 - **Tạp chí đích:** Advances in Structural Engineering (Sage).
   - Loại bài: Original Research Article; không thu phí, không Gold OA.
   - Trần độ dài: 12.000 từ quy đổi (số từ Word + 300 cho mỗi hình hoặc bảng).
-- **Trạng thái: sẵn sàng nộp, CHƯA nộp.**
+- **Trạng thái: ĐÃ NỘP ngày 21/10/2026, mã bài ASE-26-1194** (ScholarOne, https://mc.manuscriptcentral.com/aise).
   - Ngày nộp ghi trong thư: 21 October 2026; nếu nộp muộn thì sửa ngày này.
   - Trước khi bấm nộp, thầy còn ba việc (mục 6).
 
@@ -116,3 +116,12 @@ Trạng thái chi tiết theo từng ngày: `docs/06_trang_thai_ASE.md`.
 3. **Không có dữ liệu nên chưa sửa:** độ lặp của đồng hồ so ở thử tải cầu Mây; tải trọng và thứ tự từng quả nặng trong thí nghiệm.
 4. **Nếu muốn nâng độ dễ đọc** (D = 5, mục tiêu 7): phải bỏ bớt số khỏi thân bài hoặc dựng thân bài ngắn theo III.19, khoảng 5.000–5.500 từ. Thầy đã chọn không làm cho lần nộp này.
 5. **Sau khi nộp:** theo dõi phản hồi. Nếu bị trả, phương án dự phòng là JBE hoặc SIE; bảng so sánh ở `docs/editors_v4/journals/`.
+
+
+## 7. Đã nộp (21/10/2026)
+
+- Mã bài: **ASE-26-1194**, Advances in Structural Engineering, Original Research Article; tác giả Nguyen, Quoc-Bao; Vu, Thai-Son (liên hệ).
+- Tệp đã nộp: Manuscript_ASE.docx, Supplementary_Material_ASE.docx, Cover_Letter_ASE.docx (một trang), Fig1–Fig7 (PNG). Hệ thống không nhận .zip: mã và dữ liệu ở Zenodo, DOI 10.5281/zenodo.23535533 (CC BY 4.0), ghi trong Data availability, S11 và thư.
+- Thông tin khai: 7 hình (6 màu), 4 bảng, 8 698 từ, 11 998 từ quy đổi; không tài trợ; xung đột lợi ích: Yes (khai việc thử tải cầu Mây do Q.-B. Nguyen thực hiện trong công việc của HUCE consultancy); không nộp trước đây; không phải số chuyên đề; không trình bày ở hội nghị.
+- Danh sách tệp và md5: `manuscript/ase/submission_package_manifest.md`.
+- Việc tiếp: theo dõi email từ ScholarOne. Khi bài được nhận, thêm DOI của bài vào mục "Is supplement to" của bản lưu Zenodo. Nếu bị trả: phương án dự phòng JBE hoặc SIE (`docs/editors_v4/journals/`). Khi sửa bài theo phản biện: theo VI.4 (giữ khung, đánh dấu dark blue 0000CC chỉ cho thay đổi nội dung).

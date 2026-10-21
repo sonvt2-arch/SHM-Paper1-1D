@@ -1,3 +1,5 @@
+**ĐÃ NỘP 21/10/2026 — mã bài ASE-26-1194.**
+
 # Gói nộp Advances in Structural Engineering (Sage Track)
 
 | Tệp | Đường dẫn | Ghi chú |
