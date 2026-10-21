@@ -1,7 +1,7 @@
 # Hướng dẫn nộp Advances in Structural Engineering (KHÔNG nộp tệp này)
 
 ## Trước khi bấm nộp
-1. Zenodo: DOI 10.5281/zenodo.23535533 đã có trong bài và thư. Thầy bấm **Publish** trên Zenodo trước khi nộp; kiểm https://doi.org/10.5281/zenodo.23535533 mở được.
+1. Zenodo: DOI 10.5281/zenodo.23535533 đã có trong bài và thư. Đã Publish ngày 21/10; https://doi.org/10.5281/zenodo.23535533 mở được.
 2. Mở `word/Manuscript_ASE.docx` bằng Microsoft Word, xem công thức, bảng, hình.
 3. Lấy đường dẫn nộp từ https://journals.sagepub.com/home/ase (mục Submit); hệ thống của Sage (Sage Track / ScholarOne). Em không mở được trang nộp nên thầy kiểm lại.
 

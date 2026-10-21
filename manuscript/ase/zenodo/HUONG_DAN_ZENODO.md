@@ -54,3 +54,5 @@ Sau đó dựng lại, kiểm số, rồi thầy Publish Zenodo và nộp ASE.
 
 
 **21/10:** DOI đã giữ chỗ: 10.5281/zenodo.23535533 (https://doi.org/10.5281/zenodo.23535533). Đã điền vào bài và thư. Còn bước Publish.
+
+**21/10, đã Publish:** https://zenodo.org/records/23535533 (DOI 10.5281/zenodo.23535533; concept DOI cho mọi phiên bản 10.5281/zenodo.23535532). Đã kiểm qua API: tiêu đề, phiên bản 1.0, CC BY 4.0, hai tác giả, tệp có md5 b2a821fa7922192e280bc6bfd6d23255 trùng `word/scripts.zip`. Link DOI chuyển hướng đúng.
