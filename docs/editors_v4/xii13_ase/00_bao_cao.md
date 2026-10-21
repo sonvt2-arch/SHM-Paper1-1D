@@ -30,3 +30,7 @@ Ghi chú: các chỗ sửa sau lượt 8 (5 cụm, không đổi số; kiem_khoa
 | 14 | `phieu_v14.md` | 3 | Sửa 1 (OIML); đóng 2 theo nguồn (Matuso theo Crossref; địa chỉ theo VII.6) | 3 | Thầy cho sửa 2, giữ 1 |
 | 15 | `phieu_v15.md` | 2 | Sửa cả 2 (tên cầu Giẽ theo thầy; dấu câu danh sách trong thư) | 5 | Thầy cho sửa 4, giữ 1; thầy mở thêm lượt 16 |
 | 16 | `phieu_v16.md` | 0 | | 4 | Giữ (lượt cuối) |
+| 17 | `phieu_v17.md` | 1 | Sửa ("Figure 3 shows") | 5 | Thầy cho sửa 3 (gồm 1 chỗ do cắt chữ), giữ 2 |
+| 18 | `phieu_v18.md` | 1 | Đóng theo VII.6 (địa chỉ không dấu) | 5 | Giữ (lượt cuối) |
+
+Ghi chú: lượt 17–18 chạy sau khi thêm 2 bài JSTCE-HUCE (Dang et al. 2023; Vu et al. 2023) và cắt khoảng 90 từ lặp ý để giữ dưới 12 000 từ quy đổi (11 983).
