@@ -121,6 +121,12 @@ for r in d.element.body.iter(M + "r"):
         continue
     if (t_.text or "").isalpha() and len(t_.text) > 1:
         pr.append(OxmlElement("m:nor"))
+# delimiters: drop the empty separator pandoc writes; LibreOffice then ignores endChr and
+# closes "[" and "|" with ")" in the PDF (Word shows the same either way: one element, no separator)
+for dp in list(d.element.body.iter(M + "dPr")):
+    for sc in dp.findall(M + "sepChr"):
+        if (sc.get(M + "val") or "") == "":
+            dp.remove(sc)
 # table titles stay with their table; figures stay with their captions
 for par in d.paragraphs:
     if re.match(r"Table S?\d+\.", par.text.strip()):
