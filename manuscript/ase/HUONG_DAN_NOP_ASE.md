@@ -19,7 +19,7 @@ Không tải: `submission_checklist.md`, `figure_map.md`, `zenodo/`, `word/build
 ## Nội dung các ô
 - Article type: Original Research Article
 - Title: Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders
-- Authors: Quoc-Bao Nguyen (baonq@huce.edu.vn); Thai-Son Vu (sonvt2@huce.edu.vn, corresponding author). ORCID: [NEED VALUE] cho từng người.
+- Authors: Quoc-Bao Nguyen (baonq@huce.edu.vn); Thai-Son Vu (sonvt2@huce.edu.vn, corresponding author). ORCID: Quoc-Bao Nguyen 0000-0003-4406-2476; Thai-Son Vu 0009-0005-2491-6018 (lấy từ trang tiêu đề bản nộp Engineering Structures của thầy; checksum hợp lệ).
 - Affiliation (cả hai): Faculty of Bridge and Road Engineering, Hanoi University of Civil Engineering, 55 Giai Phong, Bach Mai ward, 11618 Ha Noi, Viet Nam
 - Keywords: Structural health monitoring; Sensor placement; Observability; Continuous girder; Bridge weigh-in-motion; Identifiability
 - Preprint: No. Previously submitted elsewhere: No.

@@ -20,7 +20,7 @@ Link của bản lưu sẽ là `https://doi.org/10.5281/zenodo.NNNNNNN` (và `ht
 | Resource type | Dataset |
 | Title | Code and data for: Blind spots and sensor placement for influence-area weigh-in-motion on continuous girders |
 | Publication date | ngày bấm Publish |
-| Creators | 1. Nguyen, Quoc-Bao; Affiliation: Hanoi University of Civil Engineering; ORCID: [NEED VALUE]. 2. Vu, Thai-Son; Affiliation: Hanoi University of Civil Engineering; ORCID: [NEED VALUE]; role: contact person |
+| Creators | 1. Nguyen, Quoc-Bao; Affiliation: Hanoi University of Civil Engineering; ORCID: 0000-0003-4406-2476. 2. Vu, Thai-Son; Affiliation: Hanoi University of Civil Engineering; ORCID: 0009-0005-2491-6018; role: contact person |
 | Description | xem khối dưới |
 | Licenses | Creative Commons Attribution 4.0 International (CC BY 4.0) |
 | Keywords | bridge weigh-in-motion; influence line; continuous girder; sensor placement; observability; identifiability; structural health monitoring |
