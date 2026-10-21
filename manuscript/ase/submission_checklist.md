@@ -21,3 +21,6 @@ Trang nộp: thầy kiểm lại đường dẫn từ trang tạp chí trên Sag
 
 
 KHÔNG tải lên tạp chí: `submission_checklist.md`, `figure_map.md`, thư mục `word/build/`, `tools/` và các script dựng tệp. Chỉ tải: `word/Manuscript_ASE.docx`, `word/Supplementary_Material_ASE.docx`, `word/Cover_Letter_ASE.docx`, các hình trong `figures/` (và `figures/GraphicalAbstract.png` nếu muốn), `word/scripts.zip`.
+
+
+**Zenodo (21/10):** tải `zenodo/BlindSpots_InfluenceAreaWIM_code_data_v1.0.zip` theo `zenodo/HUONG_DAN_ZENODO.md`, bấm Reserve DOI, gửi em DOI để thay `[NEED VALUE]` trong Data availability của bài và thư; Publish Zenodo trước khi nộp ASE. CHƯA NỘP khi còn `[NEED VALUE]`.
