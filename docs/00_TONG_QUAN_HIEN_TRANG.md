@@ -42,7 +42,7 @@ Phần kiểm chứng:
 | Số từ Word | ≈ 8.650 |
 | Hình | 7 |
 | Bảng | 3 bảng đánh số + bảng ký hiệu |
-| Số từ quy đổi | ≈ 11.988 (python-docx, cả bảng, +28, +300 × 11) |
+| Số từ quy đổi | ≈ 11.993 (python-docx, cả bảng, +28, +300 × 11) |
 | Thân bài (Tóm tắt đến Kết luận) | ≈ 6.400 từ; thầy chọn "viết đủ", bỏ mặc định III.19 |
 | Tóm tắt | ≈ 190 từ (đếm thô cả ký hiệu toán), viết lại 21/10 theo ba kết quả First/Second/Third; có thể vượt mức ~150 biên tập viên nêu |
 | Danh mục tài liệu | 57 bài (21/10 thêm 2 bài JSTCE-HUCE: Dang et al. 2023, Vu et al. 2023), Sage Harvard, tên tạp chí và sách in nghiêng; tự trích bài của thầy 0/2 |

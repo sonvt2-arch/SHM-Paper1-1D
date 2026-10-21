@@ -1,7 +1,7 @@
 # Hướng dẫn nộp Advances in Structural Engineering (KHÔNG nộp tệp này)
 
 ## Trước khi bấm nộp
-1. Zenodo: Reserve DOI, gửi em DOI để thay `[NEED VALUE]` trong bài và thư; em dựng lại. Thầy Publish Zenodo.
+1. Zenodo: DOI 10.5281/zenodo.23535533 đã có trong bài và thư. Thầy bấm **Publish** trên Zenodo trước khi nộp; kiểm https://doi.org/10.5281/zenodo.23535533 mở được.
 2. Mở `word/Manuscript_ASE.docx` bằng Microsoft Word, xem công thức, bảng, hình.
 3. Lấy đường dẫn nộp từ https://journals.sagepub.com/home/ase (mục Submit); hệ thống của Sage (Sage Track / ScholarOne). Em không mở được trang nộp nên thầy kiểm lại.
 
@@ -27,7 +27,7 @@ Không tải: `submission_checklist.md`, `figure_map.md`, `zenodo/`, `word/build
 - Conflict of interest: The Mây Bridge load test analyzed in Section 5 was performed by an author of this paper (Q.-B. Nguyen) as part of inspection work carried out by Công ty TNHH Tư vấn Đại học Xây dựng (HUCE consultancy). The authors declare that there is no other conflict of interest regarding the publication of this article.
 - Funding: This research did not receive any specific grant from funding agencies in the public, commercial or not-for-profit sectors. The work was carried out as part of the authors' employment at Hanoi University of Civil Engineering.
 - Ethics / consent: Not applicable (theo mục Statements and Declarations của bài).
-- Data availability: dán nguyên văn mục Data availability của bài (sau khi đã có DOI Zenodo).
+- Data availability: dán nguyên văn mục Data availability của bài (đã có DOI Zenodo 10.5281/zenodo.23535533).
 - Use of generative AI: đã khai trong Acknowledgments của bài.
 - Suggested reviewers: [NEED VALUE] (nếu hệ thống bắt buộc; em không tự đề xuất tên).
 

@@ -20,7 +20,7 @@ A laboratory test is consistent with the identity. The field records are used to
 
 The manuscript is just under 12 000 word-equivalents with 7 figures, 3 numbered tables and a table of symbols; derivations, full field tables and the error budget are in the Supplementary Material.
 
-**Data availability.** The field strain records are from the public NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0 license). The laboratory data, the processed data of the in-service bridge, the derived data behind the figures and tables, and all analysis scripts with their console output are provided as Supplementary Material and archived on Zenodo (https://doi.org/[NEED VALUE]).
+**Data availability.** The field strain records are from the public NOR-BWIM dataset (figshare, https://doi.org/10.7294/26880898.v1, CC0 license). The laboratory data, the processed data of the in-service bridge, the derived data behind the figures and tables, and all analysis scripts with their console output are provided as Supplementary Material and archived on Zenodo (https://doi.org/10.5281/zenodo.23535533).
 
 The manuscript is original, has not been published, and is not under consideration by any other journal. All authors have approved the submission. Conflicts of interest, funding and the use of generative AI are declared in the manuscript.
 

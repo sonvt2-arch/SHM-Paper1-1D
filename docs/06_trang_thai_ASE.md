@@ -81,6 +81,8 @@ Cập nhật: 2026-10-19. Nhánh: `claude/focused-bell-33lm0n`.
 
 17. **21/10, hostile audit lần 3 gọn** (dấu vết AI, Crossref, soát chữ; `docs/editors_v4/hostile_audit_v3/00_tong_hop.md`): sửa lỗi ngoặc trong PDF (bỏ m:sepChr rỗng), căn trái khối địa chỉ trong thư, câu "Such criteria" thiếu tiền ngữ, chữ viết tắt tên đệm và in nghiêng trong danh mục, bố cục bảng và hình, chữ d vi phân in đứng, app.xml, dấu vết quy trình trong scripts.zip; đọc mù lượt 20: "Acknowledgments", "Declaration of conflicting interests". Khoảng 11.988 từ quy đổi. Không nộp các tệp nội bộ (submission_checklist.md, figure_map.md, word/build/, tools/).
 
+18. **21/10, Zenodo:** gói mã và dữ liệu (CC BY 4.0) ở `manuscript/ase/zenodo/`; thầy giữ chỗ DOI 10.5281/zenodo.23535533, đã điền vào Data availability của bài và thư (kiem_khoa chỉ thêm số DOI). Khoảng 11.993 từ quy đổi. Hướng dẫn nộp: `manuscript/ase/HUONG_DAN_NOP_ASE.md`. Còn: thầy Publish Zenodo, xem bản Word bằng Microsoft Word, rồi nộp.
+
 ## 3. Cách dựng tệp Word
 
 ```bash

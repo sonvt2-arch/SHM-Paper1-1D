@@ -51,3 +51,6 @@ Em sửa hai chỗ đang để `[NEED VALUE]`:
 - bài, mục Data availability: "... and archived on Zenodo (https://doi.org/[NEED VALUE]) ...";
 - thư gửi tạp chí, đoạn Data availability.
 Sau đó dựng lại, kiểm số, rồi thầy Publish Zenodo và nộp ASE.
+
+
+**21/10:** DOI đã giữ chỗ: 10.5281/zenodo.23535533 (https://doi.org/10.5281/zenodo.23535533). Đã điền vào bài và thư. Còn bước Publish.
